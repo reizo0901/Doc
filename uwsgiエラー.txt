@@ -1,0 +1,58 @@
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.17.1 (64bit) on [Thu Jul 28 01:31:15 2022] ***
+compiled with version: 5.4.0 20160609 on 04 December 2018 09:28:16
+os: Linux-5.10.118-111.515.amzn2.x86_64 #1 SMP Wed May 25 22:12:19 UTC 2022
+nodename: 0a12fe3577b8
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/docker/code
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/docker/code/app/
+your memory page size is 4096 bytes
+detected max file descriptor number: 32768
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/docker/code/app.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x24bdea0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364520 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./website/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.5/dist-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/__init__.py", line 57, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/__init__.py", line 44, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/__init__.py", line 107, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module    return _bootstrap._gcd_import(name[level:], package, level)
+  File "./website/settings.py", line 30
+    ec2-18-179-112-81.ap-northeast-1.compute.amazonaws.com
+                       ^
+SyntaxError: invalid syntax
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 234)
+spawned uWSGI worker 1 (pid: 236, cores: 1)
+spawned uWSGI worker 2 (pid: 237, cores: 1)
+spawned uWSGI worker 3 (pid: 238, cores: 1)
+spawned uWSGI worker 4 (pid: 239, cores: 1)
