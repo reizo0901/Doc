@@ -209,5 +209,5 @@ else
     msgoutput "[Err]再起動が失敗しました。"
     exit
 fi
-msgoutput "[Inf]研修環境構築スクリプトを終了します。" >> ./result.txt
+msgoutput "[Inf]研修環境構築スクリプトを終了します。"
 
