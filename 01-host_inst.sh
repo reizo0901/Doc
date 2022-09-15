@@ -152,44 +152,44 @@ docker exec -it webapp apt-get update -y
 #docker exec -it webapp apt-get upgrade -y
 
 #Dockerコンテナ[webapp]構築スクリプト実行
-msgoutput "[Inf]コンテナ内に02-guest_inst.shを格納します。"
+msgoutput "[Inf]コンテナ内にスクリプト[02-guest_inst.sh]を格納します。"
 docker cp ./02-guest_inst.sh webapp:/home/docker/code/
 if [ $? -eq 0 ]; then
-    msgoutput "[Suc]スクリプトの格納に成功しました。"
+    msgoutput "[Suc]スクリプト[02-guest_inst.sh]の格納に成功しました。"
 else
-    msgoutput "[Err]スクリプトの格納に失敗しました。"
+    msgoutput "[Err]スクリプト[02-guest_inst.sh]の格納に失敗しました。"
     exit
 fi
-msgoutput "[Inf]コンテナ内に03-django_set.shを格納します。"
+msgoutput "[Inf]コンテナ内にスクリプト[03-django_set.sh]を格納します。"
 docker cp ./03-django_set.sh webapp:/home/docker/code/
 if [ $? -eq 0 ]; then
-    msgoutput "[Suc]スクリプトの格納に成功しました。"
+    msgoutput "[Suc]スクリプト[03-django_set.sh]の格納に成功しました。"
 else
-    msgoutput "[Err]スクリプトの格納に失敗しました。"
+    msgoutput "[Err]スクリプト[03-django_set.sh]の格納に失敗しました。"
     exit
 fi
-msgoutput "[Inf]スクリプトに実行権限を付与します。"
+msgoutput "[Inf]スクリプト[02-guest_inst.sh]に実行権限を付与します。"
 docker exec -it webapp chmod 777 /home/docker/code/02-guest_inst.sh
 if [ $? -eq 0 ]; then
-    msgoutput "[Suc]スクリプトの実行権限付与に成功しました。"
+    msgoutput "[Suc]スクリプト[02-guest_inst.sh]の実行権限付与に成功しました。"
 else
-    msgoutput "[Err]スクリプトの実行権限付与に失敗しました。"
+    msgoutput "[Err]スクリプト[02-guest_inst.sh]の実行権限付与に失敗しました。"
     exit
 fi
-msgoutput "[Inf]スクリプトに実行権限を付与します。"
+msgoutput "[Inf]スクリプト[03-django_set.sh]に実行権限を付与します。"
 docker exec -it webapp chmod 777 /home/docker/code/03-django_set.sh
 if [ $? -eq 0 ]; then
-    msgoutput "[Suc]スクリプトの実行権限付与に成功しました。"
+    msgoutput "[Suc]スクリプト[03-django_set.sh]の実行権限付与に成功しました。"
 else
-    msgoutput "[Err]スクリプトの実行権限付与に失敗しました。"
+    msgoutput "[Err]スクリプト[03-django_set.sh]の実行権限付与に失敗しました。"
     exit
 fi
-msgoutput "[Inf]スクリプトを実行します。"
+msgoutput "[Inf]スクリプト[02-guest_inst.sh]を実行します。"
 docker exec -it -d webapp /home/docker/code/02-guest_inst.sh
 if [ $? -eq 0 ]; then
-    msgoutput "[Suc]スクリプトの実行に成功しました。"
+    msgoutput "[Suc]スクリプト[02-guest_inst.sh]の実行に成功しました。"
 else
-    msgoutput "[Err]スクリプトの実行に失敗しました。"
+    msgoutput "[Err]スクリプト[02-guest_inst.sh]の実行に失敗しました。"
     exit
 fi
 
@@ -217,4 +217,3 @@ else
     exit
 fi
 msgoutput "[Inf]研修環境構築スクリプトを終了します。"
-
