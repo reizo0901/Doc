@@ -1,0 +1,93 @@
+setlocal enabledelayedexpansion
+@echo off
+
+rem エラーフラグ初期化
+set errflg=0
+
+rem ログ日付表記用YYYYMMDDhhmm文字列作成
+set sdate=%date:~0,4%%date:~5,2%%date:~8,2%
+rem 時刻表示の頭の空白を0に置き換え
+set time2=%time: =0%
+set stime=%time2:~0,2%%time2:~3,2%%time2:~6,2%
+set timestamp=%sdate%%stime%
+
+
+rem 存在チェック[copytarget.txt]
+if exist %~dp0copytarget.txt (
+    rem 実行ログに存在確認結果を書き出し
+    echo %date% %time% [INF]copytarget.txt OK! >> %~dp0log\robo_result_%timestamp%.log
+) else (
+    rem 標準出力にエラーメッセージを表示
+    echo %date% %time% 「%~dp0copytarget.txt」ファイルが存在しません。
+    rem 実行ログに存在確認結果を書き出し
+    echo %date% %time% [ERR]copytarget.txt NG! >> %~dp0log\robo_result_%timestamp%.log
+    rem ポーズ
+    pause
+    rem プログラム終了
+    exit /b 1
+)
+
+rem copytarget.txtファイル順次読み込み
+for /f "tokens=1,2,3 delims=," %%a in (%~dp0copytarget.txt) do (
+    echo %%a
+    echo %%b
+    echo %%c
+    echo -------
+
+    rem copytarget.txtが空の場合は終了
+    rem コピー元ディレクトリ存在確認
+    if exist %%b (
+        rem 実行ログに存在確認結果を書き出し
+        echo 実行ログに存在確認結果を書き出し [INF]コピー元[%%b] 存在あり >> %~dp0log\robo_result_%timestamp%.log
+    ) else (
+        rem イベントログにエラーを出力
+        rem ※JPiT PCでイベント発行コマンドは使えません。
+        rem eventcreate /T ERROR /L application /ID 123 /D "[zzz]のrobocopy実行に失敗しました。コピー元が存在しません。"
+        rem 実行ログに存在確認結果を書き出し
+        echo %date% %time% [ERR]コピー元[%%b] 存在しないためスキップします。 >> %~dp0log\robo_result_%timestamp%.log
+        set errflg=1
+    )
+    rem コピー先フォルダ存在確認
+    if exist %%c (
+        rem 実行ログに存在確認結果を書き出し
+        echo %date% %time% [INF]コピー先[%%c] 存在あり >> %~dp0log\robo_result_%timestamp%.log
+    ) else (
+        rem イベントログにエラーを出力
+        rem ※JPiT PCでイベント発行コマンドは使えません。
+        rem eventcreate /T ERROR /L application /ID 123 /D "[%%a]のrobocopy実行に失敗しました。コピー先が存在しません。"
+        rem 実行ログに存在確認結果を書き出し
+        echo %date% %time% [ERR]コピー先[%%c] 存在しないためスキップします。 >> %~dp0log\robo_result_%timestamp%.log
+        set errflg=1
+    )
+    rem エラーがなければrobocopy開始
+    if %errflg%==0 (
+        echo run
+        rem 実行ログにrobocopy開始を書き出し
+        echo %date% %time% [INF]robocopy開始[%%a] >> %~dp0log\robo_result_%timestamp%.log
+        echo robocopy %%b %%c >> %~dp0log\robo_%%a_%timestamp%.log
+        if !errorlevel!==0 (
+            rem 実行ログに正常終了を書き出し
+            echo %date% %time% [INF]robocopy正常終了[%%a] >> %~dp0log\robo_result_%timestamp%.log
+            rem OKリストに書き出し
+            echo %%a,%%b,%%c >> %~dp0copy_ok_%timestamp%.txt
+        ) else (
+            rem イベントログにエラーを出力
+            rem ※JPiT PCでイベント発行コマンドは使えません。
+            rem eventcreate /T ERROR /L application /ID 123 /D "[%%a]のrobocopy実行に失敗しました。robocopyでエラーが発生しました。"
+            rem 実行ログに異常終了を書き出し
+            echo %date% %time% [ERR]robocopy異常終了[!errorlevel!][%%a] >> %~dp0log\robo_result_%timestamp%.log
+            rem NGリストに書き出し
+            echo %%a,%%b,%%c >> %~dp0copy_ng_%timestamp%.txt
+        )
+    ) else (
+        echo no run
+        echo %%a,%%b,%%c >> %~dp0copy_ng_%timestamp%.txt
+        rem エラーフラグ初期化
+        set errflg=0
+    )
+    rem ウエイト
+    ping 127.0.0.1 -n 1 > nul
+)
+endlocal
+pause
+exit /b 0
