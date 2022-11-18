@@ -1,6 +1,13 @@
 setlocal enabledelayedexpansion
 @echo off
 
+rem バッチファイル内定数設定
+
+
+
+
+
+
 rem エラーフラグ初期化
 set errflg=0
 
@@ -10,7 +17,6 @@ rem 時刻表示の頭の空白を0に置き換え
 set time2=%time: =0%
 set stime=%time2:~0,2%%time2:~3,2%%time2:~6,2%
 set timestamp=%sdate%%stime%
-
 
 rem 存在チェック[copytarget.txt]
 if exist %~dp0copytarget.txt (
@@ -33,6 +39,13 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0copytarget.txt) do (
     echo %%b
     echo %%c
     echo -------
+
+    rem ネットワークドライブ接続確認
+
+
+
+    
+
 
     rem copytarget.txtが空の場合は終了
     rem コピー元ディレクトリ存在確認
