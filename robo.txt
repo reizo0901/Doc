@@ -3,8 +3,19 @@ setlocal enabledelayedexpansion
 
 rem バッチファイル内定数設定
 
+rem コピー元サーバ情報
+set origin_ipa=192.168.2.2
+set origin_drv=d:\
+set origin_use=root
+set origin_pas=password
 
+rem コピー先サーバ情報
+set copyto_ipa=192.168.2.3
+set copyto_drv=e:\
+set copyto_use=cals.local\administrator
+set copyto_pas=password
 
+rem ROBOCOPYパラメータ
 
 
 
@@ -17,6 +28,21 @@ rem 時刻表示の頭の空白を0に置き換え
 set time2=%time: =0%
 set stime=%time2:~0,2%%time2:~3,2%%time2:~6,2%
 set timestamp=%sdate%%stime%
+
+
+
+rem バッチ2重起動禁止
+tasklist /v | findstr /i %~nx0 > NUL
+echo %~nx0
+if %ERRORLEVEL% == 0 (
+    echo "既にバッチファイルが実行されています。"
+    echo "現在コピー中のバッチに影響がでるため、バッチ処理を中断します。"
+) else (
+    echo "起動していません。"
+)
+
+pause
+exit
 
 rem 存在チェック[copytarget.txt]
 if exist %~dp0copytarget.txt (
