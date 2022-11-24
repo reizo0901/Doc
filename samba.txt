@@ -160,3 +160,5 @@ DX推進グループ	c:\test\nfs\dummy00000074	c:\test\db1\施設部_DX推進グ
 施設部_00_総務担当管理用	h:\data\dummy00000062\files	i:\施設部_00_総務担当管理用
 施設部_09_ＤＸ推進グループ	h:\data\dummy00000073\files	i:\施設部_09_ＤＸ推進グループ
 施設部_DX推進グループ	h:\data\dummy00000074\files	i:\施設部_DX推進グループ
+
+robocopy /E /NOCOPY H:\data\dummy00000035\files I:\施設部_01_統括グループ /LOG:d:\robotools\robo.log
