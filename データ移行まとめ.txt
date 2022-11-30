@@ -20,3 +20,7 @@ ls dummy00000053 -UFR | grep -v "/\|.:\|^s*$" | wc -l
 ls dummy00000057 -UFR | grep -v "/\|.:\|^s*$" | wc -l
 ls dummy00000073 -UFR | grep -v "/\|.:\|^s*$" | wc -l
 
+robocopyログの結果あたりを表示
+※robocopyログを格納しているフォルダに移動してから実行
+get-content -path ".\robo_施設部_*_20221130144524.log" -tail 12
+
