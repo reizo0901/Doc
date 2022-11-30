@@ -42,6 +42,12 @@ ls -l /DATA2/data/dummy00000053/files -UFR | grep ^d | wc -l
 ls -l /DATA2/data/dummy00000057/files -UFR | grep ^d | wc -l
 ls -l /DATA2/data/dummy00000073/files -UFR | grep ^d | wc -l
 
+Windows Powershell ファイル数カウント
+(get-childitem -recurse -path .\施設部_01_統括グループ\  | Where-Object { ! $_.PsIsContainer }).Count
+
+Windows Powershell フォルダ数カウント
+(Get-ChildItem -Recurse .\施設部_01_統括グループ\ | Where-Object { $_.PsIsContainer }).Count
+
 robocopyログの結果あたりを表示
 ※robocopyログを格納しているフォルダに移動してから実行
 get-content -path ".\robo_施設部_*_20221130144524.log" -tail 12
