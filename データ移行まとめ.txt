@@ -1,24 +1,46 @@
 Linuxファイル数確認コマンド
 
-ls dummy00000034 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000036 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000038 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000040 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000042 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000044 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000046 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000054 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000062 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000074 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000035 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000037 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000039 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000041 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000043 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000045 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000053 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000057 -UFR | grep -v "/\|.:\|^s*$" | wc -l
-ls dummy00000073 -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000034/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000036/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000038/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000040/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000042/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000044/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000046/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000054/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000062/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000074/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000035/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000037/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000039/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000041/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000043/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000045/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000053/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000057/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+ls /DATA2/data/dummy00000073/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+
+Linuxディレクトリ数確認コマンド
+
+ls -l /DATA2/data/dummy00000034/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000036/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000038/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000040/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000042/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000044/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000046/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000054/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000062/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000074/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000035/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000037/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000039/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000041/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000043/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000045/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000053/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000057/files -UFR | grep ^d | wc -l
+ls -l /DATA2/data/dummy00000073/files -UFR | grep ^d | wc -l
 
 robocopyログの結果あたりを表示
 ※robocopyログを格納しているフォルダに移動してから実行
