@@ -1,6 +1,6 @@
 rem 遅延環境変数設定
 setlocal enabledelayedexpansion
-title=run_robocopy_batch
+title=run_robocopy_folder_batch
 @echo off
 
 rem バッチファイル内定数設定
@@ -13,15 +13,15 @@ rem コピー元サーバ情報
 set origin_srv=施設部NFSサーバ
 set origin_ipa=192.168.2.174
 set origin_pat=\\192.168.2.174\DATA2
-set origin_drv=h:
+set origin_drv=j:
 set origin_usr=nfsikou
 set origin_pas=nfsikou
 
 rem コピー先サーバ情報
 set copyto_srv=施設部設計DBサーバ
 set copyto_ipa=192.168.2.173
-set copyto_pat=\\192.168.2.173\c$\sharedfiles
-set copyto_drv=i:
+set copyto_pat=\\192.168.2.173\c$\sharedfiles2
+set copyto_drv=k:
 rem set copyto_use=cals.local\administrator
 set copyto_usr=cals.local\administrator
 set copyto_pas=p@ssw0rd2211
@@ -41,7 +41,7 @@ rem 0:コピーが行われます。
 rem 1:フォルダのみをコピーします。
 rem 2:デバッグモードのため、コピーされませんがログを出力します。
 
-set runmode=0
+set runmode=1
 
 if %runmode%==0 (
     set copytarget=%copyinfo1%
@@ -75,24 +75,24 @@ set time2=%time: =0%
 set stime=%time2:~0,2%%time2:~3,2%%time2:~6,2%
 set timestamp=%sdate%%stime%
 
-echo %date% %time% [INF]rcopy_exec.bat 処理開始 >> %~dp0log\robo_result_%timestamp%.log
+echo %date% %time% [INF]rcopy_exec_folder.bat 処理開始 >> %~dp0log\robo_result_%timestamp%.log
 
 rem バッチ2重起動禁止
-if exist %~dp0runrobo.txt (
+if exist %~dp0runrobo_folder.txt (
     echo 既にバッチファイルが実行されています。
     echo 現在コピー中のバッチに影響がでるため、バッチ処理を中断します。
-    echo バッチファイルが動作していないことを確認したら、runrobo.txtを削除して再実行してください。
-    echo %date% %time% [ERR]rcopy_exec.bat ２重起動 >> %~dp0log\robo_result_%timestamp%.log
+    echo バッチファイルが動作していないことを確認したら、runrobo_folder.txtを削除して再実行してください。
+    echo %date% %time% [ERR]rcopy_exec_folder.bat ２重起動 >> %~dp0log\robo_result_%timestamp%.log
     rem ポーズ
     pause
     rem プログラム異常終了
     exit /b 1
 ) else (
     echo 起動していません。
-    echo %date% %time% [INF]runrobo.txt作成 >> %~dp0log\robo_result_%timestamp%.log
-    echo 前回起動日時：%date% %time% > %~dp0runrobo.txt
-    echo このファイルが存在するとrcopy_exec.batを実行することはできません。 >> %~dp0runrobo.txt
-    echo rcopy_exec.batが動いていないことを確認してファイルを削除し、再実行してください。 >> %~dp0runrobo.txt
+    echo %date% %time% [INF]runrobo_folder.txt作成 >> %~dp0log\robo_result_%timestamp%.log
+    echo 前回起動日時：%date% %time% > %~dp0runrobo_folder.txt
+    echo このファイルが存在するとrcopy_exec_folcer.batを実行することはできません。 >> %~dp0runrobo_folder.txt
+    echo rcopy_exec_folder.batが動いていないことを確認してファイルを削除し、再実行してください。 >> %~dp0runrobo_folder.txt
 )
 
 echo %copytarget%
@@ -115,9 +115,9 @@ if exist %~dp0%copytarget% (
 )
 
 rem 監視タスク有効化
-schtasks /tn rcopy_monitoring /change /enable
+schtasks /tn rcopy_monitoring_folder /change /enable
 rem 監視タスク実行
-schtasks /tn rcopy_monitoring /run
+schtasks /tn rcopy_monitoring_folder /run
 
 rem ネットワークドライブ接続確認
 rem コピー元ネットワークドライブ確認
@@ -151,7 +151,7 @@ rem del %~dp0runrobo.txt
 rem exit
 
 rem ※JPiT PCでイベント発行コマンドは使えません。
-eventcreate /T INFORMATION /L application /ID 122 /D "rcopy_exec.batを開始しました。"
+eventcreate /T INFORMATION /L application /ID 122 /D "rcopy_exec_folder.batを開始しました。"
 
 rem copytarget.txtファイル順次読み込み
 for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
@@ -188,7 +188,7 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
     rem エラーがなければrobocopy開始
     if !errflg!==0 (
         rem 実行ログにrobocopy開始を書き出し
-        echo %date% %time% [INF]robocopy開始[%%a] >> %~dp0log\robo_result_%timestamp%.log
+        echo %date% %time% [INF]robocopy_folder開始[%%a] >> %~dp0log\robo_result_%timestamp%.log
         if %runmode%==0 (
             echo robocopy %robo_param% %%b %%c /LOG:%~dp0log\robo_%%a_%timestamp%.log >> %~dp0log\robo_result_%timestamp%.log
             robocopy %robo_param% %%b %%c /LOG:%~dp0log\robo_%%a_%timestamp%.log
@@ -204,9 +204,9 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
         if !errorlevel! lss 7 (
             echo OK %%a %%b
             rem 実行ログに正常終了を書き出し
-            echo %date% %time% [INF]robocopy正常終了[%%a] >> %~dp0log\robo_result_%timestamp%.log
+            echo %date% %time% [INF]robocopy_folder正常終了[%%a] >> %~dp0log\robo_result_%timestamp%.log
             rem OKリストに書き出し
-            echo %%a,%%b,%%c >> %~dp0copy_ok_%timestamp%.txt
+            echo %%a,%%b,%%c >> %~dp0copy_ok_folder_%timestamp%.txt
         ) else (
             rem イベントログにエラーを出力
             rem ※JPiT PCでイベント発行コマンドは使えません。
@@ -214,11 +214,11 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
             rem 実行ログに異常終了を書き出し
             echo %date% %time% [ERR]robocopy異常終了[%%a] >> %~dp0log\robo_result_%timestamp%.log
             rem NGリストに書き出し
-            echo %%a,%%b,%%c >> %~dp0copy_ng_%timestamp%.txt
+            echo %%a,%%b,%%c >> %~dp0copy_ng_folder_%timestamp%.txt
         )
     ) else (
         echo NG %%a %%b
-        echo %%a,%%b,%%c >> %~dp0copy_ng_%timestamp%.txt
+        echo %%a,%%b,%%c >> %~dp0copy_ng_folder_%timestamp%.txt
         rem エラーフラグ初期化
         set errflg=0
     )
@@ -226,14 +226,14 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
     ping 127.0.0.1 -n 1 > nul
 )
 pause
-del %~dp0runrobo.txt
-echo %date% %time% [INF]runrobo.txt削除 >> %~dp0log\robo_result_%timestamp%.log
+del %~dp0runrobo_folder.txt
+echo %date% %time% [INF]runrobo_folder.txt削除 >> %~dp0log\robo_result_%timestamp%.log
 rem プログラム正常終了
-echo %date% %time% [INF]rcopy_exec.bat 正常終了 >> %~dp0log\robo_result_%timestamp%.log
+echo %date% %time% [INF]rcopy_exec_folder.bat 正常終了 >> %~dp0log\robo_result_%timestamp%.log
 rem ※JPiT PCでイベント発行コマンドは使えません。
-eventcreate /T INFORMATION /L application /ID 124 /D "rcopy_exec.batが正常終了しました。"
+eventcreate /T INFORMATION /L application /ID 124 /D "rcopy_exec_folder.batが正常終了しました。"
 rem 監視タスク無効化
-schtasks /tn rcopy_monitoring /change /disable
+schtasks /tn rcopy_monitoring_folder /change /disable
 
 rem 遅延環境変数設定解除
 endlocal

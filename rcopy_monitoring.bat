@@ -2,14 +2,14 @@
 
 @tasklist /v | findstr /i run_robocopy_batch
 if %errorlevel%==0 (
-    echo %date% %time% "rcopy_execå‹•ä½œä¸­" >>  %~dp0tasklog.log
+    echo %date% %time% "rcopy_exec“®ì’†" >>  %~dp0tasklog.log
     exit /b 0
 ) else (
-    echo %date% %time% "rcopy_execåœæ­¢ä¸­" >>  %~dp0tasklog.log
+    echo %date% %time% "rcopy_exec’âŽ~’†" >>  %~dp0tasklog.log
 )
 if not exist %~dp0stoperr.txt (
-    rem ã‚¨ãƒ©ãƒ¼ã‚¤ãƒ™ãƒ³ãƒˆç™ºè¡Œ
-    eventcreate /T ERROR /L application /ID 123 /D "robocopyãŒåœæ­¢ã—ã¦ã„ã¾ã™ã€‚æ–½è¨­éƒ¨ãƒ‡ãƒ¼ã‚¿è»¢é€ã‚µãƒ¼ãƒã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚"
-    echo %date% %time% ã‚¨ãƒ©ãƒ¼ã‚’å†åº¦å‡ºåŠ›ã•ã›ã‚‹ã«ã¯ã€ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã—ã¦ãã ã•ã„ã€‚ >> %~dp0stoperr.txt
+    rem ƒGƒ‰[ƒCƒxƒ“ƒg”­s
+    eventcreate /T ERROR /L application /ID 123 /D "robocopy‚ª’âŽ~‚µ‚Ä‚¢‚Ü‚·BŽ{Ý•”ƒf[ƒ^“]‘—ƒT[ƒo‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B"
+    echo %date% %time% ƒGƒ‰[‚ðÄ“xo—Í‚³‚¹‚é‚É‚ÍA‚±‚Ìƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ä‚­‚¾‚³‚¢B >> %~dp0stoperr.txt
 )
 exit /b 1 
