@@ -2,12 +2,8 @@ rem 遅延環境変数設定
 setlocal enabledelayedexpansion
 title=run_robocopy_batch
 @echo off
-rem バッチファイル内定数設定
 
-rem タスク情報
-set tsyst=fileserver
-set tuser=administrator
-set tpass=P@ssw0rd123
+rem バッチファイル内定数設定
 
 rem コピー情報ファイル
 set copyinfo1=copytarget1.txt
@@ -46,6 +42,7 @@ rem 1:フォルダのみをコピーします。
 rem 2:デバッグモードのため、コピーされませんがログを出力します。
 
 set runmode=0
+
 if %runmode%==0 (
     set copytarget=%copyinfo1%
     cls
@@ -78,14 +75,14 @@ set time2=%time: =0%
 set stime=%time2:~0,2%%time2:~3,2%%time2:~6,2%
 set timestamp=%sdate%%stime%
 
-echo %date% %time% [INF]rcopy.bat 処理開始 >> %~dp0log\robo_result_%timestamp%.log
+echo %date% %time% [INF]rcopy_exec.bat 処理開始 >> %~dp0log\robo_result_%timestamp%.log
 
 rem バッチ2重起動禁止
 if exist %~dp0runrobo.txt (
     echo 既にバッチファイルが実行されています。
     echo 現在コピー中のバッチに影響がでるため、バッチ処理を中断します。
     echo バッチファイルが動作していないことを確認したら、runrobo.txtを削除して再実行してください。
-    echo %date% %time% [ERR]rcopy.bat ２重起動 >> %~dp0log\robo_result_%timestamp%.log
+    echo %date% %time% [ERR]rcopy_exec.bat ２重起動 >> %~dp0log\robo_result_%timestamp%.log
     rem ポーズ
     pause
     rem プログラム異常終了
@@ -94,8 +91,8 @@ if exist %~dp0runrobo.txt (
     echo 起動していません。
     echo %date% %time% [INF]runrobo.txt作成 >> %~dp0log\robo_result_%timestamp%.log
     echo 前回起動日時：%date% %time% > %~dp0runrobo.txt
-    echo このファイルが存在するとrcopy.batを実行することはできません。 >> %~dp0runrobo.txt
-    echo rcopy.batが動いていないことを確認してファイルを削除し、再実行してください。 >> %~dp0runrobo.txt
+    echo このファイルが存在するとrcopy_exec.batを実行することはできません。 >> %~dp0runrobo.txt
+    echo rcopy_exec.batが動いていないことを確認してファイルを削除し、再実行してください。 >> %~dp0runrobo.txt
 )
 
 echo %copytarget%
@@ -153,6 +150,8 @@ rem echo %date% %time% [INF]runrobo.txt削除 >> %~dp0log\robo_result_%timestamp
 rem del %~dp0runrobo.txt
 rem exit
 
+rem ※JPiT PCでイベント発行コマンドは使えません。
+eventcreate /T INFORMATION /L application /ID 122 /D "rcopy_exec.batを開始しました。"
 
 rem copytarget.txtファイル順次読み込み
 for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
@@ -190,7 +189,6 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
     if !errflg!==0 (
         rem 実行ログにrobocopy開始を書き出し
         echo %date% %time% [INF]robocopy開始[%%a] >> %~dp0log\robo_result_%timestamp%.log
-        echo %runmode%
         if %runmode%==0 (
             echo robocopy %robo_param% %%b %%c /LOG:%~dp0log\robo_%%a_%timestamp%.log >> %~dp0log\robo_result_%timestamp%.log
             robocopy %robo_param% %%b %%c /LOG:%~dp0log\robo_%%a_%timestamp%.log
@@ -203,7 +201,7 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
         echo robocopy %robo_parad% %%b %%c /LOG:%~dp0log\robo_%%a_%timestamp%.log >> %~dp0log\robo_result_%timestamp%.log
             robocopy %robo_parad% %%b %%c /LOG:%~dp0log\robo_%%a_%timestamp%.log
         )
-        if !errorlevel!==0 (
+        if !errorlevel! lss 7 (
             echo OK %%a %%b
             rem 実行ログに正常終了を書き出し
             echo %date% %time% [INF]robocopy正常終了[%%a] >> %~dp0log\robo_result_%timestamp%.log
@@ -212,9 +210,9 @@ for /f "tokens=1,2,3 delims=," %%a in (%~dp0%copytarget%) do (
         ) else (
             rem イベントログにエラーを出力
             rem ※JPiT PCでイベント発行コマンドは使えません。
-            rem eventcreate /T ERROR /L application /ID 123 /D "[%%a]のrobocopy実行に失敗しました。robocopyでエラーが発生しました。"
+            eventcreate /T ERROR /L application /ID 123 /D "[%%a]のrobocopy実行に失敗しました。robocopyでエラーが発生しました。"
             rem 実行ログに異常終了を書き出し
-            echo %date% %time% [ERR]robocopy異常終了[!errorlevel!][%%a] >> %~dp0log\robo_result_%timestamp%.log
+            echo %date% %time% [ERR]robocopy異常終了[%%a] >> %~dp0log\robo_result_%timestamp%.log
             rem NGリストに書き出し
             echo %%a,%%b,%%c >> %~dp0copy_ng_%timestamp%.txt
         )
@@ -231,7 +229,9 @@ pause
 del %~dp0runrobo.txt
 echo %date% %time% [INF]runrobo.txt削除 >> %~dp0log\robo_result_%timestamp%.log
 rem プログラム正常終了
-echo %date% %time% [INF]rcopy.bat 正常終了 >> %~dp0log\robo_result_%timestamp%.log
+echo %date% %time% [INF]rcopy_exec.bat 正常終了 >> %~dp0log\robo_result_%timestamp%.log
+rem ※JPiT PCでイベント発行コマンドは使えません。
+eventcreate /T INFORMATION /L application /ID 124 /D "rcopy_exec.batが正常終了しました。"
 rem 監視タスク無効化
 schtasks /tn rcopy_monitoring /change /disable
 
