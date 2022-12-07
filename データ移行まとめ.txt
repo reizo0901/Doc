@@ -309,3 +309,5 @@ rem 正常終了
 exit /b 0
 
 "C:\Program Files (x86)\teraterm\ttermpro.exe" 192.168.2.174:22 /ssh2 /KR=UTF8 /KT=UTF8 /auth=password /user=root /passwd=nfs@2211
+
+https://atmarkit.itmedia.co.jp/ait/articles/1407/01/news018.html
