@@ -45,6 +45,7 @@ ls -l /DATA2/data/dummy00000057/files -UFR | grep ^d | wc -l
 ls -l /DATA2/data/dummy00000073/files -UFR | grep ^d | wc -l
 
 ls -l -a /DATA2/data/dummy00000034/files -UFR | grep ^d | grep -v -E "\s\.+/" | wc -l
+echo dummy00000034,`ls -l -a /DATA2/data/dummy00000034/files -UFR | grep ^d | grep -v -E "\s\.+/" | wc -l`
 
 Windows Powershell ファイル数カウント
 (get-childitem -recurse -path .\施設部_01_統括グループ\  | Where-Object { ! $_.PsIsContainer }).Count
