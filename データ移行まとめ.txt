@@ -20,6 +20,8 @@ ls /DATA2/data/dummy00000053/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
 ls /DATA2/data/dummy00000057/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
 ls /DATA2/data/dummy00000073/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
 
+ls -a /DATA2/data/dummy00000034/files -UFR | grep -v "/\|.:\|^s*$" | wc -l
+
 Linuxディレクトリ数確認コマンド
 
 ls -l /DATA2/data/dummy00000034/files -UFR | grep ^d | wc -l
@@ -41,6 +43,8 @@ ls -l /DATA2/data/dummy00000045/files -UFR | grep ^d | wc -l
 ls -l /DATA2/data/dummy00000053/files -UFR | grep ^d | wc -l
 ls -l /DATA2/data/dummy00000057/files -UFR | grep ^d | wc -l
 ls -l /DATA2/data/dummy00000073/files -UFR | grep ^d | wc -l
+
+ls -l -a /DATA2/data/dummy00000034/files -UFR | grep ^d | grep -v -E "\s\.+/" | wc -l
 
 Windows Powershell ファイル数カウント
 (get-childitem -recurse -path .\施設部_01_統括グループ\  | Where-Object { ! $_.PsIsContainer }).Count
