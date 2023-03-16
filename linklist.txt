@@ -1,0 +1,69 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideColumnHeader": "True",
+  "hideSelection": "True",
+  "width": "95%",
+  "height": "95%",
+  "rowFormatter": {
+    "elmType": "div",
+    "style": {
+      "text-decoration": "none",
+      "float": "left",
+      "position": "relative"
+    },
+    "children": [
+      {
+        "elmType": "a",
+        "attributes": {
+          "href": "[$URL]",
+          "target": "=if([$NewTab] == true, '_blank', '')"
+        },
+        "style": {
+          "height": "60px",
+          "width": "150px",
+          "margin-right": "10px",
+          "margin-top": "10px",
+          "text-decoration": "none"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "attributes": {
+              "class": "ms-bgColor-themeLighterAlt ms-bgColor-themePrimary--hover ms-fontColor-white--hover"
+            },
+            "style": {
+              "display": "flex",
+              "flex-direction": "column",
+              "jastify-content": "center",
+              "width": "150px",
+              "border": "solid",
+              "border-radius": "6px",
+              "min-height": "60px",
+              "margin-right": "10px",
+              "margin-top": "10px",
+              "box-shadow": "2px 2px 4px darkgrey"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "text-align": "center",
+                  "margin": "auto"
+                },
+                "children": [
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "class": "ms-fontSize-m"
+                    },
+                    "txtContent": "[$Title]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
