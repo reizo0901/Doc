@@ -1,0 +1,29 @@
+
+【今回のコンテンツ修正手順的なもの】
+
+1.nginxのコンテンツが格納され値る以下のディレクトリに遷移
+2.lsコマンドで[index.html]が存在することを確認
+  ls
+
+3.cpコマンドで[index.html]をバックアップ
+  cp index.html index.html.back
+
+4.vimコマンドdで[index.html]ファイルを編集
+  "Welcom EC2 1a!"と表示を変更
+
+  vimエディタの簡単な操作説明
+
+5.vim起動時は、入力が出来る状態になっていないので、[i]キーを押下する。
+6.vimの画面の左下に[--挿入--]または[--INSERT--]と表示されていれば入力が出来る状態になる。。
+6.現在はNGINXのウェルカム画面が記載されているので、以下の２箇所の内容に変更する。
+  
+      4行目：<title>Welcom to nginx!</title> → <title>Welcom to EC2 1a!</title>
+     14行目：<h1>Welcom to nginx!</title>    → <title>Welcom to EC2 1a!</h1>
+  
+6.保存して終了する場合は、[ESC]を押下して、[--挿入--]の表示消えたら[:qw]を入力して[Enter]を押下する。
+     [:qw]は上書き保存(q = Quit w = Write)
+     保存しないで閉じる場合は[:q!]を入力する。
+
+8.ブラウザでコンテンツをリロード
+9."Welcome EC2 1a!"と表示されていること確認
+
