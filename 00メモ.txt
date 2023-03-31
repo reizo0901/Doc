@@ -27,3 +27,6 @@
 8.ブラウザでコンテンツをリロード
 9."Welcome EC2 1a!"と表示されていること確認
 
+
+EC2からAMI作成方法
+https://dev.classmethod.jp/articles/create-ami/
