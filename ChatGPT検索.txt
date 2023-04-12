@@ -1,0 +1,34 @@
+Dynamics 365 Account Protection
+Dynamics 365 Business Central Device
+Dynamics 365 Business Central Essentials
+Dynamics 365 Business Central Premium
+Dynamics 365 Business Central Team Members
+Dynamics 365 Commerce
+Dynamics 365 Customer Insights
+Dynamics 365 Customer Service
+Dynamics 365 Customer Service Insights
+Dynamics 365 Customer Voice
+Dynamics 365 Electronic Invoicing
+Dynamics 365 Field Service
+Dynamics 365 Finance
+Dynamics 365 Fraud Protection
+Dynamics 365 Guides
+Dynamics 365 Guides Device
+Dynamics 365 Human Resources
+Dynamics 365 Human Resources Self Service
+Dynamics 365 Intelligent Order Management
+Dynamics 365 Loss Prevention
+Dynamics 365 Marketing
+Dynamics 365 Operations - Activity
+Dynamics 365 Operations - Device
+Dynamics 365 Project Operations
+Dynamics 365 Purchase Protection
+Dynamics 365 Remote Assist
+Dynamics 365 Remote Assist Device
+Dynamics 365 Sales
+Dynamics 365 Sales Insights
+Dynamics 365 Sales Premium
+Dynamics 365 Supply Chain Management
+Dynamics 365 Team Members
+Microsoft Dataverse
+Microsoft Relationship Sales
