@@ -1,10 +1,209 @@
-Microsoft Cloud for Sustainabilityは、Microsoft Cloudポートフォリオに環境、社会、およびガバナンス（ESG）機能を追加することで、組織がサステナビリティの進歩とビジネスの成長を加速できるようにするスイートです。¹²³ Microsoft Cloud for Sustainabilityは、企業が二酸化炭素排出量を測定し、理解して管理できるよう、またサステナビリティに関する目標を設定し、測定可能な行動を起こせるようにするという考えから設計されたものです。²
+Microsoft Cloud for Healthcareは、医療に特化した構成、コネクタ、アプリケーションを提供するマイクロソフトのクラウドサービスです。このサービスには、技術リソースへの24時間365日無制限のアクセスを含むテクニカルサポート、幅広く豊富な経験を持つ医療パートナーエコシステムへのアクセスなどが含まれています¹。
 
-Microsoft Cloud for Sustainabilityは、各種データソースからデータを共通のデータフォーマットに一元化し、事業とバリューチェーン全体における温室効果ガス（GHG）排出量の影響を包括的に把握できるように支援するクラウドソリューションです。³
+このサービスは、患者エンゲージメントを向上させ、医療チームのコラボレーションを促進し、臨床および運用データの洞察力を高めて意思決定と運用効率を改善することで、医療業界におけるデジタル変革を推進することを目的としています³。
 
-Microsoft Cloud for Sustainabilityは、Microsoft Learnで学ぶことができます。¹
+このサービスは、仮想診療の実現や深い患者洞察力の獲得など、医療業界におけるデジタル変革を促進するために設計されています²。
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Sustainability とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/industry/sustainability/overview アクセス日時 2023/4/12.
-(2) Microsoft Cloud for Sustainability: ネットゼロに取り組む企業を .... https://news.microsoft.com/ja-jp/2021/07/15/210715-microsoft-cloud-for-sustainability-empowering-organizations-on-their-path-to-net-zero/ アクセス日時 2023/4/12.
-(3) 「Microsoft Cloud for Sustainability」とは 「ネットゼロ」業界別 .... https://www.itmedia.co.jp/enterprise/articles/2206/13/news054.html アクセス日時 2023/4/12.
-(4) Microsoft Cloud for Sustainability | Microsoft. https://www.microsoft.com/ja-jp/sustainability/cloud アクセス日時 2023/4/12.
+ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Healthcare | マイクロソフト. https://www.microsoft.com/ja-jp/industry/health/microsoft-cloud-for-healthcare アクセス日時 2023/4/12.
+(2) What is Microsoft Cloud for Healthcare? (contains video). https://learn.microsoft.com/en-us/industry/healthcare/overview アクセス日時 2023/4/12.
+(3) Microsoft Cloud for Healthcare. https://www.microsoft.com/en-us/industry/health/microsoft-cloud-for-healthcare アクセス日時 2023/4/12.
+
+Microsoft Cloud for Manufacturingは、製造業に特化したクラウドサービスで、製品やサービスのライフサイクル全体における体験をエンドツーエンドでつなぎます。このサービスは、製造業の中核プロセスと要件に対応するための機能を提供するように設計されています³。このサービスは、製造業において、生産性を高め、セキュリティを向上させる方法を提供しています³。
+
+このサービスは、マイクロソフトとパートナーによって最高の成果につながるソリューションと機能を提供し、お客様はエンドツーエンドでつながる体験を実現することができます²。このサービスは、製造業におけるデジタル変革を促進することを目的としています¹。
+
+ソース: Bing との会話 2023/4/12(1) 製造業向け Microsoft Cloud | マイクロソフト. https://www.microsoft.com/ja-jp/industry/manufacturing/microsoft-cloud-for-manufacturing アクセス日時 2023/4/12.
+(2) Microsoft Cloud for Manufacturing のプレビューを発表. https://news.microsoft.com/ja-jp/2021/11/15/211115-announcing-the-microsoft-cloud-for-manufacturing-preview/ アクセス日時 2023/4/12.
+(3) Announcing the Microsoft Cloud for Manufacturing preview. https://www.microsoft.com/en-us/industry/blog/manufacturing/2021/11/02/announcing-the-microsoft-cloud-for-manufacturing-preview/ アクセス日時 2023/4/12.
+(4) Microsoft Cloud for Manufacturing の紹介. https://www.microsoft.com/ja-jp/industry/blog/manufacturing/2021/02/24/introducing-microsoft-cloud-for-manufacturing/ アクセス日時 2023/4/12.
+
+Microsoft Cloud for Nonprofitは、Microsoft 365、Power Platform、Dynamics 365、Azure、LinkedInの機能を統合し、非営利団体が直面する一般的なケースに対応するように設計されたクラウドサービスです¹。このサービスは、非営利団体向けの共通データモデルに基づいており、異なるデータソースを統合することができます¹。このサービスは、非営利団体が直面する最も一般的なケースに対応するように設計されており、支援者管理、賞金管理、資金調達、ボランティア管理、プログラムの設計と提供、オペレーション、データ管理などの機能を提供しています³。
+
+Microsoft Cloud for Nonprofitは、非営利団体がミッションの成果を加速するために必要な信頼性の高いインテリジェントなクラウド機能を提供します⁴。Microsoftは、資格のある非営利団体を対象として寄贈版と割引を用意しています⁵。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Nonprofit | マイクロソフトの非営利団体向け .... https://www.microsoft.com/ja-JP/nonprofits/microsoft-cloud-for-nonprofit アクセス日時 2023/4/12.
+(2) What is Microsoft Cloud for Nonprofit? (contains video). https://learn.microsoft.com/en-us/industry/nonprofit/overview アクセス日時 2023/4/12.
+(3) 非営利団体向けソリューション & テクノロジ | マイクロソフト .... https://www.microsoft.com/ja-jp/nonprofits アクセス日時 2023/4/12.
+(4) 非営利団体 (NPO) 向け Office 365 | Microsoft 365. https://www.microsoft.com/ja-jp/microsoft-365/nonprofit アクセス日時 2023/4/12.
+(5) Microsoft 365 非営利団体向けソリューション | マイクロソフトの非 .... https://www.microsoft.com/ja-JP/nonprofits/microsoft-365 アクセス日時 2023/4/12.
+
+Microsoft Cloud for Retailは、小売バリューチェーン全体でさまざまなデータソースを統合し、Dynamics 365、Microsoft 365、Azureの機能を活用して買い物客体験全体のエクスペリエンスを連携させます。Microsoft Cloud for Retailを活用することで、小売業ビジネスを再創造し、シームレスなエクスペリエンスを提供することができます。²⁴¹
+
+Microsoft Cloud for Retailは、アドオンとして扱われるため、ユーザーはAzure、Microsoft 365、Dynamics 365、Power Platformのライセンスを保有している必要があります。¹
+
+料金については公表されていませんが、Cloud for Healthcareの場合、料金はユーザー1人当たり月額95ドルです。¹
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Retail とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/industry/retail/overview アクセス日時 2023/4/12.
+(2) Microsoft Cloud for Retail | Microsoft Industry. https://www.microsoft.com/ja-jp/industry/retail/microsoft-cloud-for-retail アクセス日時 2023/4/12.
+(3) マイクロソフト、小売業界向けクラウド「Cloud for Retail」の .... https://japan.zdnet.com/article/35165039/ アクセス日時 2023/4/12.
+(4) 新たな業界向けクラウドがイノベーションを加速 - News Center Japan. https://news.microsoft.com/ja-jp/2021/02/25/210225-new-industry-clouds-offer-launchpad-for-innovation/ アクセス日時 2023/4/12.
+(5) Microsoft Cloud for Retail の一般提供開始について. https://news.microsoft.com/ja-jp/2022/01/13/220113-microsoft-cloud-for-retail-is-now-generally-available/ アクセス日時 2023/4/12.
+
+Microsoft Sentinelは、クラウドネイティブのセキュリティ情報およびイベント管理 (SIEM) ソリューションで、多数のソースから脅威インテリジェンスをすばやく引き出すことができます。Microsoft Sentinelを使用すると、攻撃の検出、脅威の可視化、予防的ハンティング、脅威への対応のための単一ソリューションが得られます。¹³
+
+Microsoft Sentinelは、Microsoft社が提供するセキュリティ情報イベント管理（SIEM）とセキュリティオーケストレーション（SOAR）のソリューションです。²
+
+以上、ご参考になれば幸いです。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Sentinel の脅威インテリジェンスについて. https://learn.microsoft.com/ja-jp/azure/sentinel/understand-threat-intelligence アクセス日時 2023/4/12.
+(2) Microsoft Sentinel とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/sentinel/overview アクセス日時 2023/4/12.
+(3) Microsoft Sentinel活用支援サービス | 株式会社ラック. https://www.lac.co.jp/operation/sentinel.html アクセス日時 2023/4/12.
+(4) Microsoft Sentinel – クラウドネイティブの SIEM ソリューション .... https://azure.microsoft.com/ja-jp/products/microsoft-sentinel/ アクセス日時 2023/4/12.
+(5) Microsoft Sentinel - クラウド SIEM ソリューション | Microsoft .... https://www.microsoft.com/ja-jp/security/business/siem-and-xdr/microsoft-sentinel アクセス日時 2023/4/12.
+
+Microsoft Entraとは、すべてのIDおよびアクセス機能を網羅した製品グループで、Microsoft Azure Active Directory (Azure AD)、Microsoft Entra 確認済み ID、Microsoft Entra 権限管理などが含まれています。¹²
+
+Microsoft Entraは、マイクロソフトのIdentity機能とアクセス機能を網羅する新しい製品群で、Azure ADのほかに、Cloud Infrastructure Entitlement Management (CIEM) および分散型 Identity という2つの新しい製品カテゴリーが含まれています。²
+
+以上、ご参考になれば幸いです。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Entra - 安全な ID とアクセス | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/microsoft-entra アクセス日時 2023/4/12.
+(2) あらゆるものがつながる世界でセキュアなアクセスを実現する .... https://news.microsoft.com/ja-jp/2022/06/01/220601-secure-access-for-a-connected-worldmeet-microsoft-entra/ アクセス日時 2023/4/12.
+(3) Microsoft Entra 権限管理とは？ - Qiita. https://qiita.com/NIWAnatsuko/items/dab055b63cd5cd82d08b アクセス日時 2023/4/12.
+(4) Microsoft Entra 権限管理 | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-permissions-management アクセス日時 2023/4/12.
+(5) Microsoft Entraドキュメント | Microsoft Learn. https://learn.microsoft.com/ja-jp/entra/ アクセス日時 2023/4/12.
+
+Microsoft Purviewは、組織がデータ資産全体を管理、保護、管理するのに役立つデータ ガバナンス、リスク、コンプライアンス ソリューションのファミリです。¹² マイクロソフトが提供するサービスのひとつで、組織のデータガバナンス、コンプライアンス確立を目的とした、データ資産全体を管理や保護、管理するためのソリューションです。² Microsoft Purviewは、オンプレミスやクラウド、 SaaS のデータ管理とガバナンスに役立つソリューションであり、お客様のデータ資産全体のガバナンス、保護、管理を支援する包括的なデータ管理ソリューション セットです。⁵
+
+以上、ご参考になれば幸いです。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Purview とは? | Microsoft Learn. https://learn.microsoft.com/ja-jp/purview/purview アクセス日時 2023/4/12.
+(2) Microsoft Purview の具体的な使い方は？連携できるサービスや .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/28266/ アクセス日時 2023/4/12.
+(3) Microsoft Purview による統合データ ガバナンス | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/purview/ アクセス日時 2023/4/12.
+(4) Microsoft Purviewとは？概要や主な機能、導入するメリットを解説 .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/28257/ アクセス日時 2023/4/12.
+(5) Microsoft Purview - データ保護のソリューション | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/microsoft-purview アクセス日時 2023/4/12.
+
+Microsoft Privaは、Microsoft 365の基本的な機能を利用して、機密情報の種類 (SIT) を使用して、設定に基づいてこれらの個人データの種類を特定するのに役立ちます。Privaは、Microsoft 365テナント内の次のMicrosoft 365サービスに格納されている組織のデータを評価します。Exchange Online、SharePoint Online、OneDrive for Business、Microsoft Teamsです。¹³
+
+Privaは、境界を越えるプライベートデータ移転や過剰共有から生じる重大なプライバシーのリスクを特定して防止するのに役立ちます。²
+
+また、Microsoft Privaは、個人データ資産の検出を自動化し、重要な情報の視覚化を提供することで、組織が格納するデータを理解するのに役立ちます。³
+
+以上がMicrosoft Privaについての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Priva の詳細 - Microsoft Priva | Microsoft Learn. https://learn.microsoft.com/ja-jp/privacy/priva/priva-overview アクセス日時 2023/4/12.
+(2) Microsoft Privaで個人データを見つけて視覚化する - Microsoft Priva. https://learn.microsoft.com/ja-jp/privacy/priva/priva-data-profile アクセス日時 2023/4/12.
+(3) Microsoft Priva プライバシー リスク管理 | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/privacy/microsoft-priva-risk-management アクセス日時 2023/4/12.
+(4) Priva の使用を開始する - Microsoft Priva | Microsoft Learn. https://learn.microsoft.com/ja-jp/privacy/priva/priva-setup アクセス日時 2023/4/12.
+
+Azure Arcは、Azure上でマルチクラウドやハイブリッドクラウドを構成するためのサービスです。Azure Arcを使用すると、オンプレミスのサーバーやクラウド上の仮想マシン、コンテナーなど、あらゆる場所にあるリソースを一元管理できます。¹²⁶
+
+Azure Arcは、以下のような機能を提供しています。⁵
+- リソースの一元管理
+- セキュリティとコンプライアンスの強化
+- アプリケーションの一元管理
+- データの一元管理
+
+以上がAzure Arcについての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) Azure Arcとは？Azure Arcでハイブリッドクラウド/マルチクラウドを .... https://licensecounter.jp/azure/blog/word/azure-arc.html アクセス日時 2023/4/12.
+(2) Azure Arcとは？複雑なクラウド環境の管理サービスを解説. https://www.cloud-for-all.com/azure/blog/what-is-azure-arc-cloud アクセス日時 2023/4/12.
+(3) Azure Arcとは？Azureでハイブリッドクラウド・マルチクラウド環境 .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/26072/ アクセス日時 2023/4/12.
+(4) Azure Arc - ハイブリッドでマルチクラウドの管理とソリューション. https://azure.microsoft.com/ja-jp/products/azure-arc/ アクセス日時 2023/4/12.
+(5) 【AZ-900】Azure Arcとは？外部のサーバもAzureで一元管理！. https://az-start.com/azure-arc-overview/ アクセス日時 2023/4/12.
+(6) Azure Arc の概要 - Azure Arc | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/azure-arc/overview アクセス日時 2023/4/12.
+
+Azure VMware Solutionは、Microsoft Azure上で提供されるサービスのひとつで、Microsoft Azureのデータセンターで提供されるフルマネージドなVMware vSphere環境を数クリックで使えるサービスです。²⁵³
+
+Azure VMware Solutionは、以下のようなメリットがあります。²³
+- VMware環境をそのまま利用できる
+- ハイブリッドクラウド環境を構築できる
+- Azureの機能を利用できる
+
+以上がAzure VMware Solutionについての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) Azure VMware Solution(AVS) とは？3つのメリットをご紹介 .... https://cloud.nissho-ele.co.jp/blog/azure-vmware-solution-overview/ アクセス日時 2023/4/12.
+(2) Azure VMware Solution | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/azure-vmware/ アクセス日時 2023/4/12.
+(3) Azure VMware Solution(AVS)とは？メリットと構成、クラウドへ .... https://www.rworks.jp/cloud/azure/azure-column/azure-practice/24390/ アクセス日時 2023/4/12.
+(4) 価格 - Azure VMware Solution | Microsoft Azure. https://bing.com/search?q=azure+vmware+solution%e3%81%a8%e3%81%af アクセス日時 2023/4/12.
+(5) はじめに - Azure VMware Solution | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/azure-vmware/introduction アクセス日時 2023/4/12.
+
+SAP on Azureとは、Microsoft Azure上でSAPを稼働させるサービスです。SAP on Azureを利用することで、以下のようなメリットがあります。¹²³
+- SAP環境をそのまま利用できる
+- ハイブリッドクラウド環境を構築できる
+- Azureの機能を利用できる
+
+また、SAP on Azureには以下のような特徴があります。²
+- SAP HANA Large Instancesが利用可能
+- SAP HANA on Azureが利用可能
+- SAP S/4HANA on Azureが利用可能
+
+以上がSAP on Azureについての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) SAP on Azureとは？移行メリットやAWSとの違いを解説. https://www.cloud-for-all.com/azure/blog/the-benefits-of-migrating-sap-to-azure アクセス日時 2023/4/12.
+(2) SAPをAzureに移行するメリットとは？SAP on Azureの特長も紹介. https://www.storage-channel.jp/blog/advantages-of-sap-to-azure-migration.html アクセス日時 2023/4/12.
+(3) SAP on Azureとは!? 概要や導入メリットを解説. https://www.granpaz.co.jp/sap/1148/ アクセス日時 2023/4/12.
+(4) SAP on Azureとは？SAP導入企業の課題と移行のメリットについて. https://www.cloud-for-all.com/azure/blog/what-is-sap-on-azure アクセス日時 2023/4/12.
+
+Azure AIとは、Microsoft Azure上で提供される人工知能（AI）のサービスです。Azure AIには、以下のようなサービスがあります。¹³
+- Azure Machine Learning
+- Cognitive Services
+- Applied AI Services
+
+Azure Machine Learningは、エンドツーエンドのマシンラーニングサービスであり、Cognitive Servicesは、人間の知覚機能に近い機能群で学習済みモデルからAPIで呼び出せるサービスです。Applied AI Servicesは、シナリオが決まっている場合に単体や複数を組み合わせて使うことができます。
+
+また、Azure OpenAI Serviceでは、OpenAI GPT-4、GPT-3、Codex、DALL-Eモデルを使用した高度な言語AIを顧客に提供しています。²
+
+以上がAzure AIについての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) マイクロソフトのAI技術は何が違うのか? - PC Watch. https://pc.watch.impress.co.jp/docs/news/1373800.html アクセス日時 2023/4/12.
+(2) 人工知能 (AI) とは | Microsoft Azure. https://azure.microsoft.com/ja-jp/resources/cloud-computing-dictionary/what-is-artificial-intelligence/ アクセス日時 2023/4/12.
+(3) Azure OpenAI Service とは - Azure Cognitive Services. https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/overview アクセス日時 2023/4/12.
+(4) Azure OpenAI Service の一般提供開始 大規模かつ高度な AI .... https://news.microsoft.com/ja-jp/2023/01/23/230123-general-availability-of-azure-openai-service-expands-access-to-large-advanced-ai-models-with-added-enterprise-benefits/ アクセス日時 2023/4/12.
+
+Microsoft Dynamics 365は、Microsoftが提供するビジネスアプリケーションであり、ERP（総合基幹業務管理）CRM（顧客管理）ツールです。Dynamics 365によって、在庫管理や会計管理などの管理業務や営業先となる顧客管理を効率化することが可能です。¹²⁴
+
+Dynamics 365は、以下のようなサービスがあります。¹²
+- Sales
+- Customer Service
+- Field Service
+- Finance
+- Supply Chain Management
+- Human Resources
+
+以上がMicrosoft Dynamics 365についての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Dynamics 365とは？その概要を分かりやすく徹底解説 .... https://bizwind.co.jp/blog/sales-support/microsoft-dynamics-365/ アクセス日時 2023/4/12.
+(2) Dynamics 365とは？基本機能と導入するメリットを解説｜ferret. https://ferret-plus.com/36362 アクセス日時 2023/4/12.
+(3) Dynamics 365 とは何か | Microsoft Dynamics 365. https://dynamics.microsoft.com/ja-jp/what-is-dynamics365/ アクセス日時 2023/4/12.
+(4) Microsoft Dynamics 365 - マイクロソフト ボリューム ライセンス. https://www.microsoft.com/ja-jp/licensing/product-licensing/dynamics365 アクセス日時 2023/4/12.
+(5) Dynamics 365（CRM）とは？基本機能から評判までご紹介. https://geniee.co.jp/media/crm/dynamics-365/ アクセス日時 2023/4/12.
+
+Microsoft 365は、Microsoftが提供するサブスクリプションサービスであり、Office 365のすべてを含み、インテリジェントなクラウドと最高水準のセキュリティをひとつにまとめたサービスです。¹³
+
+Microsoft 365には、以下のようなサービスがあります。¹²
+- Word
+- Excel
+- PowerPoint
+- Outlook
+- OneNote
+- Publisher (PCのみ)
+- Access (PCのみ)
+- Teams
+- Exchange
+- SharePoint
+- OneDrive
+
+Microsoft 365は、家庭向けとビジネス向けのプランがあります。家庭向けプランには、個人向けと家族向けのプランがあります。ビジネス向けプランには、Business Basic、Business Standard、Business Premium、Apps for Business、Enterprise E1、Enterprise E3、Enterprise E5などがあります。¹³
+
+以上がMicrosoft 365についての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) Microsoft 365 とは? Office 365 との違い. https://www.microsoft.com/ja-jp/microsoft-365/what-is-microsoft-365 アクセス日時 2023/4/12.
+(2) すべての Microsoft 365 プランと価格を比較 (旧 Office 365 .... https://www.microsoft.com/ja-jp/microsoft-365/buy/compare-all-microsoft-365-products アクセス日時 2023/4/12.
+(3) Microsoft 365 の紹介 | Office アプリ、クラウド サービス .... https://www.microsoft.com/ja-JP/microsoft-365 アクセス日時 2023/4/12.
+
+Windows 365は、Microsoftが提供するクラウドPCサービスです。¹³
+
+Windows 365を利用すると、従業員が使い慣れたWindows環境を一人一人に合わせて、簡単にアクセスできるように用意することができます。また、組織のコストを予測し、コントロールし、削減することもできます。¹
+
+Windows 365は、以下のような特徴があります。¹³
+- クラウド上で動作するため、従業員はどこからでもアクセスできます。
+- 従業員が使い慣れたWindows環境を提供できます。
+- セキュリティが高いため、情報漏洩のリスクを低減できます。
+- 組織のコストを予測し、コントロールし、削減することができます。
+
+以上がWindows 365についての情報です。もし他に何か知りたいことがあればお知らせください。
+
+ソース: Bing との会話 2023/4/12(1) Windows 365 クラウド PC | Microsoft. https://www.microsoft.com/ja-jp/windows-365 アクセス日時 2023/4/12.
+(2) Windows 365とは何か？ Windows 365に関する基礎知識や .... https://www.hammock.jp/assetview/media/what-is-windows365.html アクセス日時 2023/4/12.
+(3) Microsoft 365 とは? Office 365 との違い. https://www.microsoft.com/ja-jp/microsoft-365/what-is-microsoft-365 アクセス日時 2023/4/12.
