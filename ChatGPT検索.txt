@@ -1,209 +1,215 @@
-Microsoft Cloud for Healthcareは、医療に特化した構成、コネクタ、アプリケーションを提供するマイクロソフトのクラウドサービスです。このサービスには、技術リソースへの24時間365日無制限のアクセスを含むテクニカルサポート、幅広く豊富な経験を持つ医療パートナーエコシステムへのアクセスなどが含まれています¹。
+Microsoft Defender（Windows Defender）は、Microsoft社が提供しているWindowsのセキュリティ対策ソフトで、マルウェアなどの悪意あるウイルスを検知し取り除くセキュリティ機能などを搭載しています²。Windows 8からOSに標準搭載されており、Windows 10では「Windows セキュリティ」という名称で提供されています¹。また、Microsoft Defenderは、Microsoft 365 Defenderという名称で提供されており、エンドポイント、ID、メール、およびアプリケーション全体での検出、防止、調査、応答をネイティブに調整し、高度な攻撃に対する統合された保護を提供する、侵害の前後に対応した統合エンタープライズ防御を提供しています³。
 
-このサービスは、患者エンゲージメントを向上させ、医療チームのコラボレーションを促進し、臨床および運用データの洞察力を高めて意思決定と運用効率を改善することで、医療業界におけるデジタル変革を推進することを目的としています³。
+ソース: Bing との会話 2023/4/12(1) Microsoft Defender（Windows Defender）とは？性能や設定 .... https://www.lanscope.jp/trend/21795/ アクセス日時 2023/4/12.
+(2) Windows セキュリティ: Defender、Windows 11 向けのウイルス .... https://www.microsoft.com/ja-jp/windows/comprehensive-security アクセス日時 2023/4/12.
+(3) Microsoft 365 Defender とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/microsoft-365/security/defender/microsoft-365-defender?view=o365-worldwide アクセス日時 2023/4/12.
 
-このサービスは、仮想診療の実現や深い患者洞察力の獲得など、医療業界におけるデジタル変革を促進するために設計されています²。
+Microsoft Endpoint Managerは、デバイスを管理するための統合ソリューションで、Microsoft IntuneとConfiguration Managerを組み合わせ、エンドポイントセキュリティやデバイス管理などを1つの管理プラットフォームに統合しています¹。Microsoft Endpoint Managerは、IT部門がPCとサーバーを管理し、ソフトウェアを常に最新に保ち、構成とセキュリティのポリシーを設定し、システムの状態を監視すると同時に従業員が会社のアプリケーションに各自の好みのデバイスでアクセスできるようにするのに役立ちます²。
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Healthcare | マイクロソフト. https://www.microsoft.com/ja-jp/industry/health/microsoft-cloud-for-healthcare アクセス日時 2023/4/12.
-(2) What is Microsoft Cloud for Healthcare? (contains video). https://learn.microsoft.com/en-us/industry/healthcare/overview アクセス日時 2023/4/12.
-(3) Microsoft Cloud for Healthcare. https://www.microsoft.com/en-us/industry/health/microsoft-cloud-for-healthcare アクセス日時 2023/4/12.
+ソース: Bing との会話 2023/4/12(1) Microsoft Intuneが名称変更？Microsoft Endpoint Managerとは？. https://www.jbsvc.co.jp/useful/windows10/what-is-endpoint-manager.html アクセス日時 2023/4/12.
+(2) Configuration Manager Current Branch | Microsoft Evaluation .... https://www.microsoft.com/ja-jp/evalcenter/evaluate-microsoft-endpoint-configuration-manager アクセス日時 2023/4/12.
+(3) Microsoft でのエンドポイント管理 | Microsoft Learn. https://learn.microsoft.com/ja-jp/mem/endpoint-manager-overview アクセス日時 2023/4/12.
+(4) エンドポイント分析とは - Microsoft Endpoint Manager. https://learn.microsoft.com/ja-jp/mem/analytics/overview アクセス日時 2023/4/12.
 
-Microsoft Cloud for Manufacturingは、製造業に特化したクラウドサービスで、製品やサービスのライフサイクル全体における体験をエンドツーエンドでつなぎます。このサービスは、製造業の中核プロセスと要件に対応するための機能を提供するように設計されています³。このサービスは、製造業において、生産性を高め、セキュリティを向上させる方法を提供しています³。
+Windows Server on Azureは、Windows ServerをAzure上で実行することができるサービスです。Windows Server 2019は、オンプレミス環境とAzureのサービスとの橋渡しをするオペレーティングシステムであり、Windows Server on Azureのクラウド運用にも使用されます²。Windows Server on Azureを使用すると、Windows Serverへの投資をさらに活用できます。また、ハイブリッドおよびマルチクラウド環境でのWindows Serverのクラウド運用が可能になります³。
 
-このサービスは、マイクロソフトとパートナーによって最高の成果につながるソリューションと機能を提供し、お客様はエンドツーエンドでつながる体験を実現することができます²。このサービスは、製造業におけるデジタル変革を促進することを目的としています¹。
+ソース: Bing との会話 2023/4/12(1) Windows Server 2019 | Microsoft Evaluation Center. https://www.microsoft.com/ja-jp/evalcenter/download-windows-server-2019 アクセス日時 2023/4/12.
+(2) Windows Server と Azure Management | Microsoft Learn. https://learn.microsoft.com/ja-jp/windows-server/administration/azure アクセス日時 2023/4/12.
+(3) Windows Server 向け Azure ハイブリッド特典 | Microsoft Learn. https://learn.microsoft.com/ja-jp/windows-server/get-started/azure-hybrid-benefit アクセス日時 2023/4/12.
+(4) Azure での Windows Server | Microsoft Azure. https://azure.microsoft.com/ja-jp/free/windows-server-on-azure/ アクセス日時 2023/4/12.
+(5) Azureとは何か？初心者向けにわかりやすく解説 | 株式会社 .... https://www.pasonatech.co.jp/workstyle/column/detail.html?p=2343 アクセス日時 2023/4/12.
 
-ソース: Bing との会話 2023/4/12(1) 製造業向け Microsoft Cloud | マイクロソフト. https://www.microsoft.com/ja-jp/industry/manufacturing/microsoft-cloud-for-manufacturing アクセス日時 2023/4/12.
-(2) Microsoft Cloud for Manufacturing のプレビューを発表. https://news.microsoft.com/ja-jp/2021/11/15/211115-announcing-the-microsoft-cloud-for-manufacturing-preview/ アクセス日時 2023/4/12.
-(3) Announcing the Microsoft Cloud for Manufacturing preview. https://www.microsoft.com/en-us/industry/blog/manufacturing/2021/11/02/announcing-the-microsoft-cloud-for-manufacturing-preview/ アクセス日時 2023/4/12.
-(4) Microsoft Cloud for Manufacturing の紹介. https://www.microsoft.com/ja-jp/industry/blog/manufacturing/2021/02/24/introducing-microsoft-cloud-for-manufacturing/ アクセス日時 2023/4/12.
+SQL Server on Azureは、Microsoft Azure上で実行されるSQL Serverのことです。Azure Virtual Machines上のSQL Serverでは、オンプレミスのハードウェアを一切管理することなく全バージョンのSQL Serverをクラウドで利用することができます。また、SQL Server仮想マシン (VM) によって従量課金制のライセンスコストが単純化されます¹。Azure SQL Databaseは、クラウドサーバー上で構築されているSQLデータベースで、Microsoft社が提供しています³。
 
-Microsoft Cloud for Nonprofitは、Microsoft 365、Power Platform、Dynamics 365、Azure、LinkedInの機能を統合し、非営利団体が直面する一般的なケースに対応するように設計されたクラウドサービスです¹。このサービスは、非営利団体向けの共通データモデルに基づいており、異なるデータソースを統合することができます¹。このサービスは、非営利団体が直面する最も一般的なケースに対応するように設計されており、支援者管理、賞金管理、資金調達、ボランティア管理、プログラムの設計と提供、オペレーション、データ管理などの機能を提供しています³。
+ソース: Bing との会話 2023/4/12(1) Azure Virtual Machines 上の SQL Server | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/virtual-machines/sql-server/ アクセス日時 2023/4/12.
+(2) 1. Azure SQL Database とは - クラウド導入・システム運用なら .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/21579/ アクセス日時 2023/4/12.
+(3) Azure Windows Virtual Machines 上の SQL Server とはどの .... https://learn.microsoft.com/ja-jp/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?view=azuresql アクセス日時 2023/4/12.
+(4) Azure VM 上で SQL Server をプロビジョニングする (Azure portal). https://learn.microsoft.com/ja-jp/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal?view=azuresql アクセス日時 2023/4/12.
+(5) Azure portal で Windows 仮想マシン上に SQL Server を作成 .... https://learn.microsoft.com/ja-jp/azure/azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart?view=azuresql アクセス日時 2023/4/12.
 
-Microsoft Cloud for Nonprofitは、非営利団体がミッションの成果を加速するために必要な信頼性の高いインテリジェントなクラウド機能を提供します⁴。Microsoftは、資格のある非営利団体を対象として寄贈版と割引を用意しています⁵。
+Linux on Azureは、Microsoft Azure上で実行されるLinuxのことです。Azure Virtual Machines上のLinuxでは、オンプレミスのハードウェアを一切管理することなく、Linuxをクラウドで利用することができます。また、Azure上で動作保証済みのLinuxディストリビューションが提供されています³。Azure上で動作保証済みのLinuxディストリビューションには、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、Ubuntu LTSなどがあります³。
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Nonprofit | マイクロソフトの非営利団体向け .... https://www.microsoft.com/ja-JP/nonprofits/microsoft-cloud-for-nonprofit アクセス日時 2023/4/12.
-(2) What is Microsoft Cloud for Nonprofit? (contains video). https://learn.microsoft.com/en-us/industry/nonprofit/overview アクセス日時 2023/4/12.
-(3) 非営利団体向けソリューション & テクノロジ | マイクロソフト .... https://www.microsoft.com/ja-jp/nonprofits アクセス日時 2023/4/12.
-(4) 非営利団体 (NPO) 向け Office 365 | Microsoft 365. https://www.microsoft.com/ja-jp/microsoft-365/nonprofit アクセス日時 2023/4/12.
-(5) Microsoft 365 非営利団体向けソリューション | マイクロソフトの非 .... https://www.microsoft.com/ja-JP/nonprofits/microsoft-365 アクセス日時 2023/4/12.
+ソース: Bing との会話 2023/4/12(1) Azure で動作保証済みの Linux ディストリビューション - Azure .... https://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/endorsed-distros アクセス日時 2023/4/12.
+(2) Linux on Azure の概要 - Training | Microsoft Learn. https://learn.microsoft.com/ja-jp/training/modules/intro-to-azure-linux/ アクセス日時 2023/4/12.
+(3) Virtual Machines - Linux | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/virtual-machines/linux/ アクセス日時 2023/4/12.
 
-Microsoft Cloud for Retailは、小売バリューチェーン全体でさまざまなデータソースを統合し、Dynamics 365、Microsoft 365、Azureの機能を活用して買い物客体験全体のエクスペリエンスを連携させます。Microsoft Cloud for Retailを活用することで、小売業ビジネスを再創造し、シームレスなエクスペリエンスを提供することができます。²⁴¹
+Azure Virtual Desktopは、Microsoft Azure上で実行されるデスクトップおよびアプリの仮想化サービスです¹。Azure上でAzure Virtual Desktopを実行すると、次のことができます²。
+- マルチセッションのWindows 11またはWindows 10デプロイをセットアップして、多数のユーザーが同時に使用できるようにします。
+- クラウド上で実行されるデスクトップおよびアプリケーションを、どこからでも安全にアクセスできるようにします。
+- デスクトップおよびアプリケーションを、Azure Active Directoryと統合して管理します。
+- Azure Monitorを使用して、仮想マシンのパフォーマンスと使用状況を監視します。
 
-Microsoft Cloud for Retailは、アドオンとして扱われるため、ユーザーはAzure、Microsoft 365、Dynamics 365、Power Platformのライセンスを保有している必要があります。¹
+¹: [Azure Virtual Desktop (AVD、旧 WVD)とは？メリット、コスト、導入方法を解説 | 日商エレクトロニクスクラウドブログ](https://cloud.nissho-ele.co.jp/vdiblog/windows-virtual-desktop/)
+²: [Azure Virtual Desktop とは - Azure | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/overview)
 
-料金については公表されていませんが、Cloud for Healthcareの場合、料金はユーザー1人当たり月額95ドルです。¹
+ソース: Bing との会話 2023/4/12(1) Azure Virtual Desktop (AVD、旧 WVD)とは？メリット、コスト .... https://cloud.nissho-ele.co.jp/vdiblog/windows-virtual-desktop/ アクセス日時 2023/4/12.
+(2) Azure Virtual Desktop とは - Azure | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/virtual-desktop/overview アクセス日時 2023/4/12.
+(3) Windows 365とAzure Virtual Desktopの違いを徹底比較！. https://www.cloud-for-all.com/azure/blog/differences-windows-365-and-azure-virtual-desktop アクセス日時 2023/4/12.
+(4) Azure Virtual Desktop | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/virtual-desktop/ アクセス日時 2023/4/12.
+(5) 3分でわかる「Azure Virtual Desktop（AVD）」とは. https://frontier.networld.co.jp/knowhow-horizoncloud/what-is-avd/ アクセス日時 2023/4/12.
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Retail とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/industry/retail/overview アクセス日時 2023/4/12.
-(2) Microsoft Cloud for Retail | Microsoft Industry. https://www.microsoft.com/ja-jp/industry/retail/microsoft-cloud-for-retail アクセス日時 2023/4/12.
-(3) マイクロソフト、小売業界向けクラウド「Cloud for Retail」の .... https://japan.zdnet.com/article/35165039/ アクセス日時 2023/4/12.
-(4) 新たな業界向けクラウドがイノベーションを加速 - News Center Japan. https://news.microsoft.com/ja-jp/2021/02/25/210225-new-industry-clouds-offer-launchpad-for-innovation/ アクセス日時 2023/4/12.
-(5) Microsoft Cloud for Retail の一般提供開始について. https://news.microsoft.com/ja-jp/2022/01/13/220113-microsoft-cloud-for-retail-is-now-generally-available/ アクセス日時 2023/4/12.
+Visual Studioは、Microsoft社が開発し、提供している統合開発環境（IDE）です¹。Visual Studioは、Windows API、.NET Framework/.NET Core（Windows Forms、Windows Presentation Foundation、Windows Communication Foundationなど）、UWP（Windowsランタイム）、Microsoft Silverlightなどのマイクロソフト製のソフトウェア開発プラットフォームやフレームワークを使用したソフトウェア開発を主にサポートしています¹。
 
-Microsoft Sentinelは、クラウドネイティブのセキュリティ情報およびイベント管理 (SIEM) ソリューションで、多数のソースから脅威インテリジェンスをすばやく引き出すことができます。Microsoft Sentinelを使用すると、攻撃の検出、脅威の可視化、予防的ハンティング、脅威への対応のための単一ソリューションが得られます。¹³
+Visual Studioには、多数の機能があります。例えば、デバッグ機能、コードの自動補完機能、コードの静的解析機能、コードの品質分析機能、コードのリファクタリング機能などがあります²。また、Visual Studioには多数のエディションがあります。例えば、Community Editionは無料で利用できるエディションであり、Professional EditionやEnterprise Editionなどもあります³。
 
-Microsoft Sentinelは、Microsoft社が提供するセキュリティ情報イベント管理（SIEM）とセキュリティオーケストレーション（SOAR）のソリューションです。²
+¹: [Microsoft Visual Studio - Wikipedia](https://ja.wikipedia.org/wiki/Microsoft_Visual_Studio)
+²: [Visual Studioとは？特徴や種類、使い方などをご紹介 | BIGMAC](https://big-mac.jp/column/what-is-visual-studio-features-types-and-how-to-use/)
+³: [Visual Studio のエディション - Visual Studio | Microsoft Docs](https://docs.microsoft.com/ja-jp/visualstudio/productinfo/vs-editions?view=vs-2022)
 
-以上、ご参考になれば幸いです。
+ソース: Bing との会話 2023/4/12(1) Microsoft Visual Studio - Wikipedia. https://ja.wikipedia.org/wiki/Microsoft_Visual_Studio アクセス日時 2023/4/12.
+(2) Visual Studioとは？特徴や種類、使い方などをご紹介 .... https://big-mac.jp/column/what-is-visual-studio-features-types-and-how-to-use/ アクセス日時 2023/4/12.
+(3) 【必見】VisualStudioとは？今話題の開発環境を徹底解説 | 侍 .... https://www.sejuku.net/blog/8356 アクセス日時 2023/4/12.
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Sentinel の脅威インテリジェンスについて. https://learn.microsoft.com/ja-jp/azure/sentinel/understand-threat-intelligence アクセス日時 2023/4/12.
-(2) Microsoft Sentinel とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/sentinel/overview アクセス日時 2023/4/12.
-(3) Microsoft Sentinel活用支援サービス | 株式会社ラック. https://www.lac.co.jp/operation/sentinel.html アクセス日時 2023/4/12.
-(4) Microsoft Sentinel – クラウドネイティブの SIEM ソリューション .... https://azure.microsoft.com/ja-jp/products/microsoft-sentinel/ アクセス日時 2023/4/12.
-(5) Microsoft Sentinel - クラウド SIEM ソリューション | Microsoft .... https://www.microsoft.com/ja-jp/security/business/siem-and-xdr/microsoft-sentinel アクセス日時 2023/4/12.
+GitHubは、ソフトウェア開発のプラットフォームであり、ソースコードをホスティングするサービスです¹。GitHubは、Gitというバージョン管理システムを使用しており、世界中の人々が自分の作品（プログラムコードやデザインデータなど）を保存、公開できるようにしたウェブサービスの名称です³。2018年には、マイクロソフト社がGitHubを75億ドルで買収しました²。
 
-Microsoft Entraとは、すべてのIDおよびアクセス機能を網羅した製品グループで、Microsoft Azure Active Directory (Azure AD)、Microsoft Entra 確認済み ID、Microsoft Entra 権限管理などが含まれています。¹²
+マイクロソフト社は、GitHubと協力し、開発ライフサイクルのあらゆる段階でより多くのことが実現できるよう開発者を支援しています²。また、GitHubとAzureを連携させることで、アプリのビルドとデプロイを行うことができます⁴。
 
-Microsoft Entraは、マイクロソフトのIdentity機能とアクセス機能を網羅する新しい製品群で、Azure ADのほかに、Cloud Infrastructure Entitlement Management (CIEM) および分散型 Identity という2つの新しい製品カテゴリーが含まれています。²
+¹: [GitHub - Wikipedia](https://ja.wikipedia.org/wiki/GitHub)
+²: [マイクロソフト、GitHub を 75 億ドルで買収へ - News Center Japan](https://news.microsoft.com/ja-jp/2018/06/05/microsoft-to-acquire-github-for-7-5-billion/)
+³: [GitHubとは何かわかりやすく解説！機能やメリットも簡単に紹介 | SEJUKU.NET](https://www.sejuku.net/blog/7901)
+⁴: [Azure と GitHub の統合 | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/developer/github/)
 
-以上、ご参考になれば幸いです。
+ソース: Bing との会話 2023/4/12(1) GitHub - Wikipedia. https://ja.wikipedia.org/wiki/GitHub アクセス日時 2023/4/12.
+(2) GitHubとは何かわかりやすく解説！機能やメリットも簡単に紹介 .... https://www.sejuku.net/blog/7901 アクセス日時 2023/4/12.
+(3) マイクロソフト、GitHub を 75 億ドルで買収へ - News Center Japan. https://news.microsoft.com/ja-jp/2018/06/05/microsoft-to-acquire-github-for-7-5-billion/ アクセス日時 2023/4/12.
+(4) Azure と GitHub の統合 | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/developer/github/ アクセス日時 2023/4/12.
+(5) GitHubが「開発者の囲い込み」を加速、買収したマイクロソフト .... https://www.sbbit.jp/article/cont1/64852 アクセス日時 2023/4/12.
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Entra - 安全な ID とアクセス | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/microsoft-entra アクセス日時 2023/4/12.
-(2) あらゆるものがつながる世界でセキュアなアクセスを実現する .... https://news.microsoft.com/ja-jp/2022/06/01/220601-secure-access-for-a-connected-worldmeet-microsoft-entra/ アクセス日時 2023/4/12.
-(3) Microsoft Entra 権限管理とは？ - Qiita. https://qiita.com/NIWAnatsuko/items/dab055b63cd5cd82d08b アクセス日時 2023/4/12.
-(4) Microsoft Entra 権限管理 | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-permissions-management アクセス日時 2023/4/12.
-(5) Microsoft Entraドキュメント | Microsoft Learn. https://learn.microsoft.com/ja-jp/entra/ アクセス日時 2023/4/12.
+Azure App Serviceは、HTTPベースのサービスであり、Webアプリケーション、REST API、およびモバイルバックエンドをホストするために使用されます¹。Azure App Serviceは、開発者向けのフルマネージドPaaS製品であり、WindowsまたはLinux上で実行されている.NET、.NET Core、Node.js、Java、Python、PHPなどの言語を使用できます²。
 
-Microsoft Purviewは、組織がデータ資産全体を管理、保護、管理するのに役立つデータ ガバナンス、リスク、コンプライアンス ソリューションのファミリです。¹² マイクロソフトが提供するサービスのひとつで、組織のデータガバナンス、コンプライアンス確立を目的とした、データ資産全体を管理や保護、管理するためのソリューションです。² Microsoft Purviewは、オンプレミスやクラウド、 SaaS のデータ管理とガバナンスに役立つソリューションであり、お客様のデータ資産全体のガバナンス、保護、管理を支援する包括的なデータ管理ソリューション セットです。⁵
+Azure App Serviceを使用すると、WebサイトやAPIを迅速に構築できる開発環境、デプロイ、スケーリングできる運用環境を兼ね備えたマネージドサービスが提供されます²。また、App Serviceは.NETワークロードをサポートするために一から構築された唯一のマネージドサービスです³。
 
-以上、ご参考になれば幸いです。
+¹: [Azure App Service | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/app-service/overview)
+²: [【Azure初心者から上級者まで！】Azure App Serviceを使いこなすための基礎知識 | シグマクト](https://www.sigmact.com/updated/zero-to-hero/)
+³: [App Service | Microsoft Azure](https://azure.microsoft.com/ja-jp/products/app-service/)
+
+ソース: Bing との会話 2023/4/12(1) 概要 - Azure App Service | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/app-service/overview アクセス日時 2023/4/12.
+(2) 【Azure初心者から上級者まで！】Azure App Serviceを使い .... https://www.sigmact.com/updated/zero-to-hero/ アクセス日時 2023/4/12.
+(3) App Service. https://azure.microsoft.com/ja-jp/products/app-service/ アクセス日時 2023/4/12.
+(4) Azure App Service のドキュメント - Azure App Service .... https://learn.microsoft.com/ja-jp/azure/app-service/ アクセス日時 2023/4/12.
+
+Microsoft Vivaは、Microsoft 365とMicrosoft Teams内に構築された統合された従業員エクスペリエンスプラットフォームであり、既存のインフラストラクチャを使用して、organizationの接続、分析情報、目的、および成長をサポートする機能を提供します¹。具体的には、以下の7つの機能を提供します²。
+- Viva Connections
+- Viva Insights
+- Viva Learning
+- Viva Topics
+- Viva Engage
+- Viva Goals
+- Viva アプリ
+
+¹: [Microsoft Vivaの概要 | Microsoft Learn](https://learn.microsoft.com/ja-jp/viva/microsoft-viva-overview)
+²: [Microsoft Vivaとは？従業員体験向上を実現する機能をご紹介 | お役立ち情報 | Windows10 | システム開発・運用のジェイビス](https://www.jbsvc.co.jp/useful/windows10/what-is-viva.html)
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Vivaの概要 | Microsoft Learn. https://learn.microsoft.com/ja-jp/viva/microsoft-viva-overview アクセス日時 2023/4/12.
+(2) Microsoft Vivaとは？従業員体験向上を実現する機能をご紹介 | お .... https://www.jbsvc.co.jp/useful/windows10/what-is-viva.html アクセス日時 2023/4/12.
+(3) Viva Insightsの概要 | Microsoft Learn. https://learn.microsoft.com/ja-jp/viva/insights/introduction アクセス日時 2023/4/12.
+(4) 従業員エクスペリエンスとエンゲージメント | Microsoft Viva. https://www.microsoft.com/ja-jp/microsoft-viva アクセス日時 2023/4/12.
+(5) Microsoft Viva. https://support.microsoft.com/ja-jp/viva アクセス日時 2023/4/12.
+
+Azure Container Appsは、Azureでコンテナをホストできるサービスであり、サーバーレスプラットフォームでマイクロサービスとコンテナ化されたアプリケーションを実行できるフルマネージド環境です¹。Azure Container Appsの一般的な用途には以下が含まれます¹。
+- マイクロサービス
+- コンテナ化されたアプリケーション
+- イベント駆動型アプリケーション
+- サーバーレス関数
+
+Azure Container Appsは、任意のプログラミング言語またはフレームワークを使用して、コンテナー化されたアプリケーションをデプロイできます³。また、Azure Container Appsは、AKS ClusterとKubernetesリソースの抽象化、KEDAのマネージドサービス化 + 柔軟なスケールアウト、およびAzure Functionsとの統合などの特徴があります⁴。
+
+¹: [Azure Container Apps の概要 | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/container-apps/overview)
+³: [Azure Container Apps | Microsoft Azure](https://azure.microsoft.com/ja-jp/products/container-apps/)
+⁴: [3つの特徴で理解するAzure Container Appsの概要 - APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2022/03/14/102811)
+
+ソース: Bing との会話 2023/4/12(1) Azure Container Apps の概要 | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/container-apps/overview アクセス日時 2023/4/12.
+(2) Azure Container Apps | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/container-apps/ アクセス日時 2023/4/12.
+(3) 3つの特徴で理解するAzure Container Appsの概要 - APC 技術 .... https://techblog.ap-com.co.jp/entry/2022/03/14/102811 アクセス日時 2023/4/12.
+(4) Azure Container Appsを試してみた - APC 技術ブログ. https://techblog.ap-com.co.jp/entry/2021/11/03/093821 アクセス日時 2023/4/12.
+
+Azure Kubernetes Service (AKS)とは、Azureが提供しているマネージドサービスのひとつで、Azure上でKubernetesクラスタの構築・管理を行うサービスです¹。AKSを使用することで、コンテナ化されたアプリケーションをデプロイおよび管理することができます²。AKSは、セキュリティが強化され、迅速に配信されるマネージドKubernetesサービスです²。
+
+AKSは、組み込みのコードからクラウドへのパイプラインとガードレールを使用して、Azure、データセンター、またはエッジでクラウドネイティブアプリの開発とデプロイを開始する最も簡単な方法を提供します²。また、KubernetesにはAKSとシームレスに連携する開発および管理ツールの豊富なエコシステムがあります⁴。
+
+¹: [3. Azure Kubernetes Service とは - クラウド導入・システム運用 ...](https://www.rworks.jp/cloud/azure/azure-column/azure-entry/24475/)
+²: [Azure Kubernetes Service (AKS) | Microsoft Azure](https://azure.microsoft.com/ja-jp/products/kubernetes-service/)
+⁴: [Azure Kubernetes Service の概要 - Azure Kubernetes Service](https://learn.microsoft.com/ja-jp/azure/aks/intro-kubernetes)
+
+ソース: Bing との会話 2023/4/12(1) 3. Azure Kubernetes Service とは - クラウド導入・システム運用 .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/24475/ アクセス日時 2023/4/12.
+(2) Azure Kubernetes Service (AKS) | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/kubernetes-service/ アクセス日時 2023/4/12.
+(3) Azure Kubernetes Service の概要 - Azure Kubernetes Service. https://learn.microsoft.com/ja-jp/azure/aks/intro-kubernetes アクセス日時 2023/4/12.
+(4) ゼロからはじめるAzure(46) Azureでコンテナ化アプリを動かして .... https://news.mynavi.jp/techplus/article/zeroazure-46/ アクセス日時 2023/4/12.
+(5) Azure Kubernetes Services (AKS) における Kubernetes の .... https://learn.microsoft.com/ja-jp/azure/aks/concepts-clusters-workloads アクセス日時 2023/4/12.
+
+Azure SQLは、AzureクラウドでSQL Serverデータベースエンジンを使用した、管理され、セキュリティで保護されたインテリジェントな製品のファミリです¹。Azure SQLには、以下の3つの形態があります¹。
+- Azure SQL Database：サーバーレス コンピューティングを含む、インテリジェントな管理されたデータベース サービスで最新のクラウド アプリケーションをサポートします。
+- Azure SQL Managed Instance：インテリジェントなサービスとしてのフル マネージド インスタンスを使用して、既存の SQL Server アプリケーションを大規模に最新化し、SQL Server データベース エンジンとほぼ 100% の機能パリティを実現します。クラウドへの移行に最適です。
+- Azure Synapse Analytics：分析とビジネス インテリジェンス (BI) を統合する分析サービスであり、大量のデータを処理するために設計されています。
+
+Azure SQLは、SQL Serverと同じエンジンを使用しているため、SQL Serverと同じように使えます¹。また、Azure SQLはフルマネージド型であるため、管理が簡単であり、セキュリティも高いです²。
+
+ソース: Bing との会話 2023/4/12(1) Azure SQL とは - Azure SQL | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview?view=azuresql-db アクセス日時 2023/4/12.
+(2) Azure SQL Database サービスとは - Azure SQL Database. https://learn.microsoft.com/ja-jp/azure/azure-sql/database/sql-database-paas-overview?view=azuresql アクセス日時 2023/4/12.
+(3) SQL ServerのAzure SQLの違いとは？メリットとお得な移行方法 .... https://cloud.nissho-ele.co.jp/blog/sql-server_azure-sql/ アクセス日時 2023/4/12.
+(4) Azure SQL Database - マネージド クラウド データベース サービス .... https://azure.microsoft.com/ja-jp/products/azure-sql/database/ アクセス日時 2023/4/12.
+(5) Azure Databaseとは？Azure SQL Databaseの機能や特徴 .... https://business.ntt-east.co.jp/content/cloudsolution/column-142.html アクセス日時 2023/4/12.
+
+Azure Cosmos DBは、Microsoft Azureが提供しているフルマネージド型のNoSQLデータベースサービスです²。Azure Cosmos DBは、グローバルでデータを分散保存することで、高いスケーラビリティと1桁ミリ秒の応答時間、99.999%の高可用性を保証しています²。Azure Cosmos DBは、以下の特徴を持っています³。
+- グローバルな分散型マルチモデルデータベース
+- 複数のデータモデルを管理できる
+- JSONフォーマット、XML、グラフ、PDFや静止画像および動画などのバイナリデータが管理可能
+- AIやIoTによるデジタルトランスフォーメーションが進展し、ビッグデータを格納したデータベースの効率的な活用が求められるようになりました。
+
+Azure Cosmos DBは、Azure SQLと同様にフルマネージド型であるため、管理が簡単であり、セキュリティも高いです¹。
+
+ソース: Bing との会話 2023/4/12(1) Azure Cosmos DBとは？RDBMSとの違いと最適な用途につい .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/24281/ アクセス日時 2023/4/12.
+(2) Azure Cosmos DBとは？その特徴やメリットを解説. https://www.cloud-for-all.com/azure/blog/azure-cosmos-db アクセス日時 2023/4/12.
+(3) はじめに - Azure Cosmos DB | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/cosmos-db/introduction アクセス日時 2023/4/12.
+
+Azure Synapse Analyticsは、Microsoft Azureが提供するエンタープライズ分析サービスで、データウェアハウスやビッグデータシステム全体にわたって分析情報を取得する時間を早めることができます¹。Azure Synapse Analyticsは、以下の特徴を持っています²。
+- エンタープライズデータウェアハウジングで使用されるSQLテクノロジ
+- ビッグデータ分析プラットフォーム
+- データレイクとの統合
+
+Azure Synapse Analyticsは、ビッグデータ分析の流れ「データ収集・蓄積」「ETLツールによってデータを抽出・加工」「構造化されたデータをデータウェアハウスに保管」「BIツールや機械学習（ML）と連携」の機能がオールインワンで提供され、全てを実現できるサービスです²。
+
+ソース: Bing との会話 2023/4/12(1) Azure Synapse Analytics | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/synapse-analytics/ アクセス日時 2023/4/12.
+(2) Azure Synapse Analyticsとは？主な機能と価格形態を解説 .... https://cloud.nissho-ele.co.jp/blog/what_is_azuresynapseanalytics/ アクセス日時 2023/4/12.
+(3) Azure Synapse Analyticsとは? データレイクとの違いを解説. https://www.cloud-for-all.com/azure/blog/what-is-azure-synapse-analytics アクセス日時 2023/4/12.
+(4) Azure Synapse Analytics とは - Azure Synapse Analytics. https://learn.microsoft.com/ja-jp/azure/synapse-analytics/overview-what-is アクセス日時 2023/4/12.
+
+Microsoft Purviewは、組織がデータ資産全体を管理、保護、管理するのに役立つデータガバナンス、リスク、コンプライアンスソリューションのファミリです¹。Microsoft Purviewは、以下の特徴を持っています²。
+- データ資産全体を管理、保護、管理するためのソリューション
+- データカタログを自動的に作成
+- データの検出、機密データの分類、エンドツーエンドのデータ系列によるデータガバナンス
+
+Microsoft Purviewは、Azure上にあるデータやオンプレミスにあるデータをスキャンし、データカタログを自動的に作成してくれるサービスです³。また、オンプレミス、マルチクラウド、サービスとしてのソフトウェア (SaaS) のデータの管理とガバナンスに役立つ統合データ ガバナンス ソリューションでもあります⁴。
 
 ソース: Bing との会話 2023/4/12(1) Microsoft Purview とは? | Microsoft Learn. https://learn.microsoft.com/ja-jp/purview/purview アクセス日時 2023/4/12.
 (2) Microsoft Purview の具体的な使い方は？連携できるサービスや .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/28266/ アクセス日時 2023/4/12.
-(3) Microsoft Purview による統合データ ガバナンス | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/purview/ アクセス日時 2023/4/12.
-(4) Microsoft Purviewとは？概要や主な機能、導入するメリットを解説 .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/28257/ アクセス日時 2023/4/12.
+(3) 【第1回】Microsoft Purviewって何？ - JBS Tech Blog. https://blog.jbs.co.jp/entry/2022/09/30/171513 アクセス日時 2023/4/12.
+(4) Microsoft Purview による統合データ ガバナンス | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/purview/ アクセス日時 2023/4/12.
 (5) Microsoft Purview - データ保護のソリューション | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/microsoft-purview アクセス日時 2023/4/12.
 
-Microsoft Privaは、Microsoft 365の基本的な機能を利用して、機密情報の種類 (SIT) を使用して、設定に基づいてこれらの個人データの種類を特定するのに役立ちます。Privaは、Microsoft 365テナント内の次のMicrosoft 365サービスに格納されている組織のデータを評価します。Exchange Online、SharePoint Online、OneDrive for Business、Microsoft Teamsです。¹³
+Microsoft Power Platformは、Power Apps、Power Automate、Power Virtual Agents、Power BIの4つのサービスの総称であり、ローコードであらゆるデジタルソリューションが作成できるようになっています¹。Power Platformは、以下の特徴を持っています²。
+- ローコードであらゆるデジタルソリューションが作成できる
+- ビジネスプロセスを自動化するためのツール
+- データを収集し、分析し、視覚化するためのツール
 
-Privaは、境界を越えるプライベートデータ移転や過剰共有から生じる重大なプライバシーのリスクを特定して防止するのに役立ちます。²
+Power Appsは、ビジネスアプリケーションを作成するためのプラットフォームです。Power Automateは、ビジネスプロセスを自動化するためのツールです。Power Virtual Agentsは、チャットボットを作成するためのプラットフォームです。Power BIは、データを収集し、分析し、視覚化するためのツールです¹。
 
-また、Microsoft Privaは、個人データ資産の検出を自動化し、重要な情報の視覚化を提供することで、組織が格納するデータを理解するのに役立ちます。³
+ソース: Bing との会話 2023/4/12(1) 超初心者向け Microsoft Power Platform とは - 吉田の備忘録. https://memo.tyoshida.me/power-platform/beginners-microsoft-power-platform/ アクセス日時 2023/4/12.
+(2) Power Platformとは？できること、やってみたことをまとめました .... https://www.jbsvc.co.jp/useful/windows10/what-is-powerplatform.html アクセス日時 2023/4/12.
+(3) 5 分でわかる Power Platform！その 1 ~Power Platform とは？~. https://www.softbanktech.co.jp/special/blog/cloud_blog/2021/0068/ アクセス日時 2023/4/12.
+(4) Microsoft Power Platform とは | Microsoft Power Platform. https://powerplatform.microsoft.com/ja-jp/what-is-power-platform/ アクセス日時 2023/4/12.
+(5) Power Platformとは 特徴やできること、使い方を解説 | ツギノジダイ. https://smbiz.asahi.com/article/14569958 アクセス日時 2023/4/12.
+(6) Power Platform - Microsoft Dynamics. https://www.microsoft.com/ja-jp/biz/dynamics/power-platform.aspx アクセス日時 2023/4/12.
 
-以上がMicrosoft Privaについての情報です。もし他に何か知りたいことがあればお知らせください。
+Windows Enterpriseとは、Microsoft Windows（Windows OS）を構成する各エディションのうち、企業の業務利用（エンタープライズ用途）向けに提供されている製品の総称です¹。Windows Enterpriseは、以下の特徴を持っています¹。
+- Windows10 EnterpriseはWindows10 Proにはできない機能が追加されており、中規模・大規模な企業向けのエディションです。
+- Windows11 Enterpriseは生産性、モビリティ、セキュリティのための総合ソリューションの一部です。
 
-ソース: Bing との会話 2023/4/12(1) Microsoft Priva の詳細 - Microsoft Priva | Microsoft Learn. https://learn.microsoft.com/ja-jp/privacy/priva/priva-overview アクセス日時 2023/4/12.
-(2) Microsoft Privaで個人データを見つけて視覚化する - Microsoft Priva. https://learn.microsoft.com/ja-jp/privacy/priva/priva-data-profile アクセス日時 2023/4/12.
-(3) Microsoft Priva プライバシー リスク管理 | Microsoft Security. https://www.microsoft.com/ja-jp/security/business/privacy/microsoft-priva-risk-management アクセス日時 2023/4/12.
-(4) Priva の使用を開始する - Microsoft Priva | Microsoft Learn. https://learn.microsoft.com/ja-jp/privacy/priva/priva-setup アクセス日時 2023/4/12.
+Windows10 Enterpriseは、Windows10 Proにはできない機能が追加されており、中規模・大規模な企業向けのエディションです³。Windows11 Enterpriseは、生産性、モビリティ、セキュリティのための総合ソリューションの一部であり、Windows11 Proと同じくビジネスユーザー向けのエディションですが、中規模・大規模企業向けのエディションです⁴。
 
-Azure Arcは、Azure上でマルチクラウドやハイブリッドクラウドを構成するためのサービスです。Azure Arcを使用すると、オンプレミスのサーバーやクラウド上の仮想マシン、コンテナーなど、あらゆる場所にあるリソースを一元管理できます。¹²⁶
-
-Azure Arcは、以下のような機能を提供しています。⁵
-- リソースの一元管理
-- セキュリティとコンプライアンスの強化
-- アプリケーションの一元管理
-- データの一元管理
-
-以上がAzure Arcについての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) Azure Arcとは？Azure Arcでハイブリッドクラウド/マルチクラウドを .... https://licensecounter.jp/azure/blog/word/azure-arc.html アクセス日時 2023/4/12.
-(2) Azure Arcとは？複雑なクラウド環境の管理サービスを解説. https://www.cloud-for-all.com/azure/blog/what-is-azure-arc-cloud アクセス日時 2023/4/12.
-(3) Azure Arcとは？Azureでハイブリッドクラウド・マルチクラウド環境 .... https://www.rworks.jp/cloud/azure/azure-column/azure-entry/26072/ アクセス日時 2023/4/12.
-(4) Azure Arc - ハイブリッドでマルチクラウドの管理とソリューション. https://azure.microsoft.com/ja-jp/products/azure-arc/ アクセス日時 2023/4/12.
-(5) 【AZ-900】Azure Arcとは？外部のサーバもAzureで一元管理！. https://az-start.com/azure-arc-overview/ アクセス日時 2023/4/12.
-(6) Azure Arc の概要 - Azure Arc | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/azure-arc/overview アクセス日時 2023/4/12.
-
-Azure VMware Solutionは、Microsoft Azure上で提供されるサービスのひとつで、Microsoft Azureのデータセンターで提供されるフルマネージドなVMware vSphere環境を数クリックで使えるサービスです。²⁵³
-
-Azure VMware Solutionは、以下のようなメリットがあります。²³
-- VMware環境をそのまま利用できる
-- ハイブリッドクラウド環境を構築できる
-- Azureの機能を利用できる
-
-以上がAzure VMware Solutionについての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) Azure VMware Solution(AVS) とは？3つのメリットをご紹介 .... https://cloud.nissho-ele.co.jp/blog/azure-vmware-solution-overview/ アクセス日時 2023/4/12.
-(2) Azure VMware Solution | Microsoft Azure. https://azure.microsoft.com/ja-jp/products/azure-vmware/ アクセス日時 2023/4/12.
-(3) Azure VMware Solution(AVS)とは？メリットと構成、クラウドへ .... https://www.rworks.jp/cloud/azure/azure-column/azure-practice/24390/ アクセス日時 2023/4/12.
-(4) 価格 - Azure VMware Solution | Microsoft Azure. https://bing.com/search?q=azure+vmware+solution%e3%81%a8%e3%81%af アクセス日時 2023/4/12.
-(5) はじめに - Azure VMware Solution | Microsoft Learn. https://learn.microsoft.com/ja-jp/azure/azure-vmware/introduction アクセス日時 2023/4/12.
-
-SAP on Azureとは、Microsoft Azure上でSAPを稼働させるサービスです。SAP on Azureを利用することで、以下のようなメリットがあります。¹²³
-- SAP環境をそのまま利用できる
-- ハイブリッドクラウド環境を構築できる
-- Azureの機能を利用できる
-
-また、SAP on Azureには以下のような特徴があります。²
-- SAP HANA Large Instancesが利用可能
-- SAP HANA on Azureが利用可能
-- SAP S/4HANA on Azureが利用可能
-
-以上がSAP on Azureについての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) SAP on Azureとは？移行メリットやAWSとの違いを解説. https://www.cloud-for-all.com/azure/blog/the-benefits-of-migrating-sap-to-azure アクセス日時 2023/4/12.
-(2) SAPをAzureに移行するメリットとは？SAP on Azureの特長も紹介. https://www.storage-channel.jp/blog/advantages-of-sap-to-azure-migration.html アクセス日時 2023/4/12.
-(3) SAP on Azureとは!? 概要や導入メリットを解説. https://www.granpaz.co.jp/sap/1148/ アクセス日時 2023/4/12.
-(4) SAP on Azureとは？SAP導入企業の課題と移行のメリットについて. https://www.cloud-for-all.com/azure/blog/what-is-sap-on-azure アクセス日時 2023/4/12.
-
-Azure AIとは、Microsoft Azure上で提供される人工知能（AI）のサービスです。Azure AIには、以下のようなサービスがあります。¹³
-- Azure Machine Learning
-- Cognitive Services
-- Applied AI Services
-
-Azure Machine Learningは、エンドツーエンドのマシンラーニングサービスであり、Cognitive Servicesは、人間の知覚機能に近い機能群で学習済みモデルからAPIで呼び出せるサービスです。Applied AI Servicesは、シナリオが決まっている場合に単体や複数を組み合わせて使うことができます。
-
-また、Azure OpenAI Serviceでは、OpenAI GPT-4、GPT-3、Codex、DALL-Eモデルを使用した高度な言語AIを顧客に提供しています。²
-
-以上がAzure AIについての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) マイクロソフトのAI技術は何が違うのか? - PC Watch. https://pc.watch.impress.co.jp/docs/news/1373800.html アクセス日時 2023/4/12.
-(2) 人工知能 (AI) とは | Microsoft Azure. https://azure.microsoft.com/ja-jp/resources/cloud-computing-dictionary/what-is-artificial-intelligence/ アクセス日時 2023/4/12.
-(3) Azure OpenAI Service とは - Azure Cognitive Services. https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/overview アクセス日時 2023/4/12.
-(4) Azure OpenAI Service の一般提供開始 大規模かつ高度な AI .... https://news.microsoft.com/ja-jp/2023/01/23/230123-general-availability-of-azure-openai-service-expands-access-to-large-advanced-ai-models-with-added-enterprise-benefits/ アクセス日時 2023/4/12.
-
-Microsoft Dynamics 365は、Microsoftが提供するビジネスアプリケーションであり、ERP（総合基幹業務管理）CRM（顧客管理）ツールです。Dynamics 365によって、在庫管理や会計管理などの管理業務や営業先となる顧客管理を効率化することが可能です。¹²⁴
-
-Dynamics 365は、以下のようなサービスがあります。¹²
-- Sales
-- Customer Service
-- Field Service
-- Finance
-- Supply Chain Management
-- Human Resources
-
-以上がMicrosoft Dynamics 365についての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) Microsoft Dynamics 365とは？その概要を分かりやすく徹底解説 .... https://bizwind.co.jp/blog/sales-support/microsoft-dynamics-365/ アクセス日時 2023/4/12.
-(2) Dynamics 365とは？基本機能と導入するメリットを解説｜ferret. https://ferret-plus.com/36362 アクセス日時 2023/4/12.
-(3) Dynamics 365 とは何か | Microsoft Dynamics 365. https://dynamics.microsoft.com/ja-jp/what-is-dynamics365/ アクセス日時 2023/4/12.
-(4) Microsoft Dynamics 365 - マイクロソフト ボリューム ライセンス. https://www.microsoft.com/ja-jp/licensing/product-licensing/dynamics365 アクセス日時 2023/4/12.
-(5) Dynamics 365（CRM）とは？基本機能から評判までご紹介. https://geniee.co.jp/media/crm/dynamics-365/ アクセス日時 2023/4/12.
-
-Microsoft 365は、Microsoftが提供するサブスクリプションサービスであり、Office 365のすべてを含み、インテリジェントなクラウドと最高水準のセキュリティをひとつにまとめたサービスです。¹³
-
-Microsoft 365には、以下のようなサービスがあります。¹²
-- Word
-- Excel
-- PowerPoint
-- Outlook
-- OneNote
-- Publisher (PCのみ)
-- Access (PCのみ)
-- Teams
-- Exchange
-- SharePoint
-- OneDrive
-
-Microsoft 365は、家庭向けとビジネス向けのプランがあります。家庭向けプランには、個人向けと家族向けのプランがあります。ビジネス向けプランには、Business Basic、Business Standard、Business Premium、Apps for Business、Enterprise E1、Enterprise E3、Enterprise E5などがあります。¹³
-
-以上がMicrosoft 365についての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) Microsoft 365 とは? Office 365 との違い. https://www.microsoft.com/ja-jp/microsoft-365/what-is-microsoft-365 アクセス日時 2023/4/12.
-(2) すべての Microsoft 365 プランと価格を比較 (旧 Office 365 .... https://www.microsoft.com/ja-jp/microsoft-365/buy/compare-all-microsoft-365-products アクセス日時 2023/4/12.
-(3) Microsoft 365 の紹介 | Office アプリ、クラウド サービス .... https://www.microsoft.com/ja-JP/microsoft-365 アクセス日時 2023/4/12.
-
-Windows 365は、Microsoftが提供するクラウドPCサービスです。¹³
-
-Windows 365を利用すると、従業員が使い慣れたWindows環境を一人一人に合わせて、簡単にアクセスできるように用意することができます。また、組織のコストを予測し、コントロールし、削減することもできます。¹
-
-Windows 365は、以下のような特徴があります。¹³
-- クラウド上で動作するため、従業員はどこからでもアクセスできます。
-- 従業員が使い慣れたWindows環境を提供できます。
-- セキュリティが高いため、情報漏洩のリスクを低減できます。
-- 組織のコストを予測し、コントロールし、削減することができます。
-
-以上がWindows 365についての情報です。もし他に何か知りたいことがあればお知らせください。
-
-ソース: Bing との会話 2023/4/12(1) Windows 365 クラウド PC | Microsoft. https://www.microsoft.com/ja-jp/windows-365 アクセス日時 2023/4/12.
-(2) Windows 365とは何か？ Windows 365に関する基礎知識や .... https://www.hammock.jp/assetview/media/what-is-windows365.html アクセス日時 2023/4/12.
-(3) Microsoft 365 とは? Office 365 との違い. https://www.microsoft.com/ja-jp/microsoft-365/what-is-microsoft-365 アクセス日時 2023/4/12.
+ソース: Bing との会話 2023/4/12(1) Windows Enterpriseとは何？ わかりやすく解説 Weblio辞書. https://www.weblio.jp/content/Windows+Enterprise アクセス日時 2023/4/12.
+(2) Windows10 の4つのエディションの違い（Home・Pro・Enterprise .... https://pc-chain.com/windows10-edition/324/ アクセス日時 2023/4/12.
+(3) Windows 11 Enterprise | Microsoft 365. https://www.microsoft.com/ja-jp/microsoft-365/windows/windows-11-enterprise アクセス日時 2023/4/12.
+(4) Windows Enterpriseとは何？ わかりやすく解説 Weblio辞書. https://www.weblio.jp/content/Windows%20Enterprise アクセス日時 2023/4/12.
+(5) 【企業向け】Windows 11 ProとEnterpriseの違いとは .... https://www.jbsvc.co.jp/useful/windows10/windows11pro-enterprise.html アクセス日時 2023/4/12.
+(6) Windows 365 Enterprise とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/windows-365/enterprise/overview アクセス日時 2023/4/12.
