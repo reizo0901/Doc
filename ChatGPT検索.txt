@@ -1,34 +1,10 @@
-Dynamics 365 Account Protection
-Dynamics 365 Business Central Device
-Dynamics 365 Business Central Essentials
-Dynamics 365 Business Central Premium
-Dynamics 365 Business Central Team Members
-Dynamics 365 Commerce
-Dynamics 365 Customer Insights
-Dynamics 365 Customer Service
-Dynamics 365 Customer Service Insights
-Dynamics 365 Customer Voice
-Dynamics 365 Electronic Invoicing
-Dynamics 365 Field Service
-Dynamics 365 Finance
-Dynamics 365 Fraud Protection
-Dynamics 365 Guides
-Dynamics 365 Guides Device
-Dynamics 365 Human Resources
-Dynamics 365 Human Resources Self Service
-Dynamics 365 Intelligent Order Management
-Dynamics 365 Loss Prevention
-Dynamics 365 Marketing
-Dynamics 365 Operations - Activity
-Dynamics 365 Operations - Device
-Dynamics 365 Project Operations
-Dynamics 365 Purchase Protection
-Dynamics 365 Remote Assist
-Dynamics 365 Remote Assist Device
-Dynamics 365 Sales
-Dynamics 365 Sales Insights
-Dynamics 365 Sales Premium
-Dynamics 365 Supply Chain Management
-Dynamics 365 Team Members
-Microsoft Dataverse
-Microsoft Relationship Sales
+Microsoft Cloud for Sustainabilityは、Microsoft Cloudポートフォリオに環境、社会、およびガバナンス（ESG）機能を追加することで、組織がサステナビリティの進歩とビジネスの成長を加速できるようにするスイートです。¹²³ Microsoft Cloud for Sustainabilityは、企業が二酸化炭素排出量を測定し、理解して管理できるよう、またサステナビリティに関する目標を設定し、測定可能な行動を起こせるようにするという考えから設計されたものです。²
+
+Microsoft Cloud for Sustainabilityは、各種データソースからデータを共通のデータフォーマットに一元化し、事業とバリューチェーン全体における温室効果ガス（GHG）排出量の影響を包括的に把握できるように支援するクラウドソリューションです。³
+
+Microsoft Cloud for Sustainabilityは、Microsoft Learnで学ぶことができます。¹
+
+ソース: Bing との会話 2023/4/12(1) Microsoft Cloud for Sustainability とは | Microsoft Learn. https://learn.microsoft.com/ja-jp/industry/sustainability/overview アクセス日時 2023/4/12.
+(2) Microsoft Cloud for Sustainability: ネットゼロに取り組む企業を .... https://news.microsoft.com/ja-jp/2021/07/15/210715-microsoft-cloud-for-sustainability-empowering-organizations-on-their-path-to-net-zero/ アクセス日時 2023/4/12.
+(3) 「Microsoft Cloud for Sustainability」とは 「ネットゼロ」業界別 .... https://www.itmedia.co.jp/enterprise/articles/2206/13/news054.html アクセス日時 2023/4/12.
+(4) Microsoft Cloud for Sustainability | Microsoft. https://www.microsoft.com/ja-jp/sustainability/cloud アクセス日時 2023/4/12.
