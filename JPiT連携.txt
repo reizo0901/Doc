@@ -1,0 +1,3 @@
+ネットワークポリシーサーバのトラブルシューティングガイダンス
+https://learn.microsoft.com/ja-jp/troubleshoot/windows-server/networking/troubleshoot-network-policy-server
+
