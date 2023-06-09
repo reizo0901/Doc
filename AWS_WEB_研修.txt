@@ -1,0 +1,232 @@
+Dockerインストール
+sudo yum install -y docker
+
+Dockerサービスの起動
+sudo systemctl start docker
+systemctl status docker
+
+Dockerサービスの自動起動を有効化
+sudo systemctl enable docker
+systemctl is-enabled docker
+
+ec2-userにdockerグループを追加
+grep docker /etc/group
+sudo usermod -a -G docker ec2-user
+
+再起動
+sudo reboot
+
+SSH接続
+docker info
+
+下のエラーは問題ない
+WARNING: bridge-nf-call-iptables is disabled
+WARNING: bridge-nf-call-ip6tables is disabled
+
+#docker-composeのインストール
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
+VER=2.8.1
+sudo curl -L "https://github.com/docker/compose/releases/download/v${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-compose
+docker-compose --version
+
+docker-composeからコンテナの起動を確認する
+
+docker-composeでnginxのイメージを取得してテストページを表示してみる。
+
+docker-compose.yml
+version: '3.7'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        ports:
+            - 80:80
+以下コマンドを実行しコンテナを立ち上げる。
+
+
+docker-compose up -d
+
+EC2インスタンスのIPアドレスをブラウザのURLバーに入れて表示してみる。
+
+上のようなnginxのテストページが見えていればOK。
+下記コマンドで一旦終了させる。
+
+docker-compose down
+
+3層アーキテクチャを構築する
+nginxコンテナの準備（Webサーバ）
+ディレクトリ構造
+
+containers/
+　├ django/
+　│　└ ...
+　├ nginx/
+　 　└ conf/
+　　　　└ nginx.conf
+　　 └ uwsgi_params
+　├ docker-compose.yml
+
+volumeの割り当てと依存関係を追加する。
+
+docker-compose.yml
+version: '3.7'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        volumes: # add
+            - ./nginx/conf:/etc/nginx/conf.d # add
+            - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params # add
+        ports:
+            - 80:80
+        depends_on: # add
+            - django # add
+            
+
+wsgiの通信で必要とされる uwsgi_params の作成を行う（参考）。
+
+uwsgi_params
+uwsgi_param QUERY_STRING $query_string;
+uwsgi_param REQUEST_METHOD $request_method;
+uwsgi_param CONTENT_TYPE $content_type;
+uwsgi_param CONTENT_LENGTH $content_length;
+uwsgi_param REQUEST_URI $request_uri;
+uwsgi_param PATH_INFO $document_uri;
+uwsgi_param DOCUMENT_ROOT $document_root;
+uwsgi_param SERVER_PROTOCOL $server_protocol;
+uwsgi_param REMOTE_ADDR $remote_addr;
+uwsgi_param REMOTE_PORT $remote_port;
+uwsgi_param SERVER_ADDR $server_addr;
+uwsgi_param SERVER_PORT $server_port;
+uwsgi_param SERVER_NAME $server_name;
+
+djangoコンテナの準備（アプリケーションサーバ）
+ディレクトリ構造
+
+containers/
+　├ django/
+　│　└ startup
+　│　　　└ setuser.sh
+　│　　　└ startup.sh
+　│　└ uwsgi
+　│　　　└ uwsgi.ini
+　│　└ Dockerfile
+　│　└ requirements.txt
+　├ nginx/
+　│　└ ...
+　├ docker-compose.yml
+
+#Treeコマンドをインストールする
+sudo yum install -y tree
+
+
+djangoコンテナ側でnginxコンテナからの通信を受けられるように、uwsgi.ini の作成を行う。
+
+uwsgi.ini
+[uwsgi]
+socket = :8000
+module = djangoapp.wsgi
+wsgi-file = /app/app/wsgi.py
+logto = /wsgi/wsgi.log
+py-autoreload = 1
+djangoコンテナのイメージの元となるDockerfileを作成する。
+
+Dockerfile
+FROM python:3
+WORKDIR /app
+COPY requirements.txt /app
+RUN pip install -r requirements.txt
+COPY . /app
+djangoコンテナで必要とするPythonのモジュールのリストを作成する。
+
+requirements.txt
+django
+psycopg2
+uwsgi
+djangoコンテナ内で実行されるシェルスクリプト（startup.sh, setuser.sh）を作成する。
+userを作成し、uwsgi,ini を実行する。
+
+startup.sh
+source /startup/setuser.sh # setuser.sh を実行する
+uwsgi --ini /wsgi/uwsgi.ini # uwsgi.ini の設定をもとに uwsgi を実行する
+setuser.sh
+#!/bin/bash -e
+SHELL_NAME='setuser.sh'
+echo "[$SHELL_NAME] START"
+
+# setup group
+if getent group "$GROUP_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' already exists."
+else
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' does NOT exist. So execute [groupadd -g \$GROUP_ID \$GROUP_NAME]."
+    groupadd -g $GROUP_ID $GROUP_NAME
+fi
+
+# setup user
+if getent passwd "$USER_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' already exists."
+else
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME]."
+    useradd -m -s /bin/bash -u $USER_ID -g $GROUP_ID $USER_NAME
+fi
+
+echo "[$SHELL_NAME] FINISH"
+startupディレクトリ配下の全てのファイルに実行権限を付与する。
+
+chmod +x -R ~/dev/3l_on_docker/django/startup/
+ホスト側でdjangoプロジェクトを作成する。
+そのためまずはホスト側でdjangoのインストールを行う。
+
+
+
+pip install django
+django ディレクトリ内でdjango projectの作成を行う。
+今回はプロジェクト名をdjangoappとする。
+
+python3 -m pip install django
+
+#pipが動かない場合は以下のコマンドを実行してパスを調べる
+
+vi 行魚番号h常時
+:set number
+:set nonumber
+
+
+django-admin startproject djangoapp
+プロジェクトを作成するとdjangoディレクトリ内にdjangoappディレクトリが作成される。
+デフォルトでは外部からの通信は全て拒否されているため、setting.py の修正を行う。
+
+setting.py
+...
+
+ALLOWED_HOSTS = ['*']
+
+...
+今回は外部の全ての通信を許可する'*'を設定した。
+
+docker-compose up -dでコンテナを立ち上げ、EC2のパブリックIPアドレスにアクセスする。
+
+Screen Shot 2021-06-24 at 9.54.07.png
+
+上のような django のテストページが見えていればOK。
+
+サンプルアプリケーションの作成
+テストページが見れたので、ここからは自身で作成したページを表示する。
+まずはホスト側でアプリケーションを作る。
+
+python manage.py startapp sampleapp
+sampleapp ディレクトリ直下に urls.py を作成する。
+
+docker-compose up -d ← -d デタッチモード 同一ターミナルでコンテナが起動して別の作業ができなくなることを回避する。
+docker-compose up --build ← --build 再度ビルド処理を行います。
+
+エラーでた！
+Error response from daemon: Conflict. the container name "/nginx" is already in use by container "aaa". you have to remove (or rename) that container to be able to reuse that name.
+
+
+コンテナ内でコマンドがない場合は
+
+apt-get update
+apt-get install vim
