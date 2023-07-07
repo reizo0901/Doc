@@ -1,0 +1,29 @@
+必要な機能		
+	証明書をストアにインポート	
+		#格納したいストアに遷移
+		set-location -path Cert:\CurrentUser\My
+		#現在のストアに対象の証明書をインポート
+		Import-Certificate -filepath 'C:\Users\hosoda-r\Desktop\g3h.crt'
+	証明書ストアから証明書を検索(サブジェクトキー識別子で検索)	
+		Get-Childitem -Path cert:\* -Recurse | where-object {$_.Thumbprint -eq 'AFAC2D9200AA99348FABAFDF8BDD41A95E4C3E8F'}
+	検索結果のパス取得	
+		Get-Childitem -Path cert:\* -Recurse | where-object {$_.Thumbprint -eq 'AFAC2D9200AA99348FABAFDF8BDD41A95E4C3E8F'} | %{$_.psparentpath}
+	検索結果のパスを変数に格納	
+		$temppath = Get-Childitem -Path cert:\* -Recurse | where-object {$_.Thumbprint -eq 'AFAC2D9200AA99348FABAFDF8BDD41A95E4C3E8F'} | %{$_.psparentpath}
+	格納したパスを編集(余計な文字列を削除)	
+		$temppath.replace("Microsoft.PowerShell.Security\Certificate::","")
+		
+	証明書ストア内の証明書を削除	
+		Get-Childitem -Path cert:\* -Recurse | where-object {$_.Thumbprint -eq 'AFAC2D9200AA99348FABAFDF8BDD41A95E4C3E8F'} | remove-item
+		
+	証明書ストア内の移動(対象の証明書を「信頼されたルート証明機関」に移動する)※ダイアログが表示される。	
+		Get-Childitem -Path cert:\* -Recurse | where-object {$_.Thumbprint -eq 'AFAC2D9200AA99348FABAFDF8BDD41A95E4C3E8F'} | move-item -Destination cert:\CurrentUser\Root
+		
+	VPN設定参照	
+		get-vpnconnection
+	VPN設定削除	
+		remove-vpnconnection
+	VPN設定追加	
+		add-vpnconnection
+	VPN設定変更	
+		set-vpnconnection
