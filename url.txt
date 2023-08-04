@@ -1,0 +1,16 @@
+MSCS-WSFC - マイクロソフト系技術情報 Wiki.url
+SOFSの構築 on Hyper-V（前編） - 開発者向けブログ・イベント - GMO Developers.url
+SOFSの構築 on Hyper-V（後編） - 開発者向けブログ・イベント - GMO Developers.url
+Windows Server 2019 MSFC 構築手順 - Qiita.url
+Windows Server 2019 ストレージ新機能の使いどころ - 開発者向けブログ・イベント - GMO Developers.url
+Windows Server 2019_WSFC構築手順_20230802.txt
+Windows Serverフェイルオーバークラスタ（WSFC）を試す - Qiita.url
+WS2016_WSFC_System_Configuration_Guide.pdf
+【図解 05】Windows Server 2019：WSFC (Windows Server Failover Clustering)構築手順 - Shima System Academy.url
+【図解 06】Windows Server 2019：WSFC (Windows Server Failover Clustering)構築手順 - Shima System Academy.url
+クラスター環境で提供するファイルサーバー - 開発者向けブログ・イベント - GMO Developers.url
+サーバー クラスターでボリューム マウント ポイントを構成する - Windows Server - Microsoft Learn.url
+フェールオーバー クラスターのクラスターの共有ボリュームについて.url
+フェールオーバークラスタ環境の構築～Hpyer-V Live Migration機能のため - オラクる。.url
+共有仮想ハードディスク - 開発者向けブログ・イベント - GMO Developers.url
+技術メモメモ- WSFC - MSFC入門 (Windows Serverのクラスターでファイルサーバーを構築する).url
