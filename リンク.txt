@@ -1,0 +1,5 @@
+https://learn.microsoft.com/ja-jp/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)
+
+https://learn.microsoft.com/ja-jp/windows-server/storage/disk-management/manage-virtual-hard-disks
+
+https://kb.vmware.com/s/article/79616?lang=ja
