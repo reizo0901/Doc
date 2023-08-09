@@ -3,3 +3,10 @@ https://learn.microsoft.com/ja-jp/previous-versions/windows/it-pro/windows-serve
 https://learn.microsoft.com/ja-jp/windows-server/storage/disk-management/manage-virtual-hard-disks
 
 https://kb.vmware.com/s/article/79616?lang=ja
+
+【ログインURL】
+　 https://kenshinweb-sv1.taknet.co.jp/kenshinwebmypage/qrkekkalogin?so=160002101
+     結果ID ：0020517358
+     ※パスワードはセキュリティ上の理由により、別途メールにて送信されます。
+
+MDNUF473ce
