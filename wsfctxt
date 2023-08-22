@@ -56,4 +56,73 @@ https://developers.gmo.jp/6742/
 https://learn.microsoft.com/ja-jp/troubleshoot/windows-server/high-availability/configure-volume-mount-points-server-cluser
 https://developers.gmo.jp/1697/
 
+MSCS-WSFC - マイクロソフト系技術情報 Wiki.url
+https://techinfoofmicrosofttech.osscons.jp/index.php?MSCS/WSFC
+
+SMB 経由で Hyper-V を展開する -マイクロソフト ラーニング.url
+https://learn.microsoft.com/ja-jp/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)
+
+SOFSの構築 on Hyper-V（前編） - 開発者向けブログ・イベント - GMO Developers.url
+https://developers.gmo.jp/6762/
+
+SOFSの構築 on Hyper-V（後編） - 開発者向けブログ・イベント - GMO Developers.url
+https://developers.gmo.jp/6805/
+
+VMware vSphere 7.x で共有ディスクを使用する Microsoft Windows Server Failover Clustering (WSFC) サポートされる構成のためのガイドライン (79616).url
+https://kb.vmware.com/s/article/79616?lang=ja
+
+Windows Server 2019 MSFC 構築手順 - Qiita.url
+https://qiita.com/bitterrich/items/a791b944c1e61dbd2543
+
+Windows Server 2019 ストレージ新機能の使いどころ - 開発者向けブログ・イベント - GMO Developers.url
+https://developers.gmo.jp/1330/
+
+Windows Serverフェイルオーバークラスタ（WSFC）を試す - Qiita.url
+https://qiita.com/minoden_osaka/items/c1ffa94c0421d4d3e524
+
+★iSCSIイニシエータ設定 - Qiita.url
+https://qiita.com/bitterrich/items/83d5eb4bf13166f126af
+
+★VMware vSphere での Windows Server フェールオーバー クラスタリングのセットアップについて.url
+https://docs.vmware.com/jp/VMware-vSphere/7.0/com.vmware.vsphere.wsfc.doc/GUID-1A2476C0-CA66-4B80-B6F9-8421B6983808.html
+
+★【WSFC】Windows Server 2022 でフェールオーバークラスタリングの構築【後編】 – たまテク.url
+https://tamnology.com/failover-clustering-part2/
+
+★【WSFC】Windows Server 2022でフェールオーバークラスタリングの構築【前編】 – たまテク.url
+https://tamnology.com/failover-clustering-part1/
+
+★技術メモメモ- WSFC - MSFC入門 (Windows Serverのクラスターでファイルサーバーを構築する).url
+https://tech-mmmm.blogspot.com/2017/06/wsfc-msfc.html
+
+【図解 05】Windows Server 2019：WSFC (Windows Server Failover Clustering)構築手順 - Shima System Academy.url
+https://inab818.site/microsoft-windows-server-failover-clustering/windows2019-failover-failover-clustering-install/
+
+【図解 06】Windows Server 2019：WSFC (Windows Server Failover Clustering)構築手順 - Shima System Academy.url
+https://inab818.site/microsoft-windows-server-failover-clustering/windows2019-failover-cluster-accesspoint-create/
+
+クラスター環境で提供するファイルサーバー - 開発者向けブログ・イベント - GMO Developers.url
+https://developers.gmo.jp/6742/
+
+サーバー クラスターでボリューム マウント ポイントを構成する - Windows Server - Microsoft Learn.url
+https://learn.microsoft.com/ja-jp/troubleshoot/windows-server/high-availability/configure-volume-mount-points-server-cluser
+
+フェールオーバー クラスタリングのハードウェア要件と記憶域オプション - Microsoft Learn.url
+https://learn.microsoft.com/ja-jp/windows-server/failover-clustering/clustering-requirements
+
+フェールオーバー クラスターでクラスターの共有ボリュームを使用する - Microsoft Learn.url
+https://learn.microsoft.com/ja-jp/windows-server/failover-clustering/failover-cluster-csvs
+
+フェールオーバー クラスターのクラスターの共有ボリュームについて.url
+https://forsenergy.com/ja-jp/cluadmin/html/eacfd042-bf92-4032-8f18-f11da99d0b65.htm
+
+フェールオーバークラスタ環境の構築～Hpyer-V Live Migration機能のため - オラクる。.url
+http://piro-shiki.dreamlog.jp/archives/46721112.html
+
+仮想ハード ディスク (VHD) の管理 - Microsoft Learn.url
+https://learn.microsoft.com/ja-jp/windows-server/storage/disk-management/manage-virtual-hard-disks
+
+共有仮想ハードディスク - 開発者向けブログ・イベント - GMO Developers.url
+https://developers.gmo.jp/1697/
+
 
