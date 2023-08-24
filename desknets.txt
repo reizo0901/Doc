@@ -1,0 +1,24 @@
+desknet's NEO アップデート制限事項｜desknet's NEO.url
+https://www.desknets.com/neo/download/doc/updv1tov2/upd_limitv40.html
+
+desknet’s NEO パッケージ版：各バージョンの製品サポートについて - グループウェア desknet's NEO.url
+https://www.desknets.com/neo/news/11695/
+
+Windows 動作確認済みソフトウェア- HAクラスタリングソフト CLUSTERPRO X- CLUSTERPRO - NEC.url
+https://jpn.nec.com/clusterpro/clpx/pplist_w.html
+
+よくあるご質問｜グループウェア desknet's NEO - PostgreSQLの保守（バックアップ・リストア-チューニング-メンテナンス）につ いて教えてください。.url
+https://faq.desknets.com/--61276c4c16d50b0023d7d185
+
+よくあるご質問｜グループウェア desknet's NEO - サーバーを移行する方法（手順･手続き）.url
+https://faq.desknets.com/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E7%A7%BB%E8%A1%8C%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%EF%BC%88%E6%89%8B%E9%A0%86%EF%BD%A5%E6%89%8B%E7%B6%9A%E3%81%8D%EF%BC%89-61276c4c16d50b0023d7d1b5
+
+アップデート／パッチモジュール（PostgreSQL版 V1.0 R4.6 - V2.0 R2.0 - V2.5 R1.4 - V3.0 R1.6 - V3.5 R1.4 → V4.0 R1.3）│グループウェア desknet's NEO.url
+https://www.desknets.com/neo/download/patch/updtov40r13pg.html
+
+アップデート／パッチモジュール（PostgreSQL版 V4.0 R1.3 - V5.0 R1.2 - V5.1 R1.2 - V5.2 R1.1 - V5.3 R2.0 - V5.5 R1.5 - V6.0 R1.1 → V6.1 R1.2）│グル.url
+https://www.desknets.com/neo/download/patch/updtov61r12pg.html
+
+アップデート／パッチモジュール（PostgreSQL版 V7.1 R1.1 → V7.5 R1.0）│グループウェア desknet's NEO.url
+https://www.desknets.com/neo/download/patch/updtov75r10pg.html
+
