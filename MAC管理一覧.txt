@@ -1,0 +1,37 @@
+
+設定済み
+192.168.2.124 00:1b:21:63:e7:d3 Letsnote_sc2?<Intel>
+192.168.2.131 bc:54:2f:bc:04:a3 Letsnote<Intel>
+192.168.2.137 00:15:5d:f1:54:13 CentOS7.6
+192.168.2.141 00:1b:21:63:e7:d7 hshvsv01
+192.168.2.181 f8:d0:27:55:ee:a1 EW-M571T<Seiko Epson>
+192.168.2.189 78:8c:b5:c5:0a:8c Letsnote_sx2<TP-Link>
+192.168.2.170 00:15:5D:F1:8B:00 Hyper-v outnic用:pad01
+192.168.2.171 00:15:5D:F1:8B:01 Hyper-v outnic用:pdn01
+192.168.2.172 00:15:5D:F1:8B:02 Hyper-v outnic用:pdn02
+192.168.2.173 00:15:5D:F1:8B:03 Hyper-v outnic用:
+192.168.2.174 00:15:5D:F1:8B:04 Hyper-v outnic用:
+192.168.2.175 00:15:5D:F1:8B:05 Hyper-v outnic用:
+192.168.2.176 00:15:5D:F1:8B:06 Hyper-v outnic用:
+192.168.2.177 00:15:5D:F1:8B:07 Hyper-v outnic用:
+192.168.2.178 00:15:5D:F1:8B:08 Hyper-v outnic用:
+192.168.2.179 00:15:5D:F1:8B:09 Hyper-v outnic用:
+
+
+未設定
+192.168.2.100 60:01:94:55:72:d8 Nature REMO
+192.168.2.101 1c:a0:b8:be:48:de <Hon Hai Precision Industry>？SHARP
+192.168.2.102 26:09:85:30:8d:26 <不明>
+192.168.2.103 52:b2:e9:69:40:72 <不明>
+192.168.2.142 c6:8a:b5:72:80:bf <不明>
+192.168.2.143 34:76:c5:ef:de:32 I-Oデータテレビチューナ
+192.168.2.155 74:a7:ea:69:7f:8d Amazon Echo
+192.168.2.200 00:d9:d1:bf:7f:a7 PLAY STATION 4
+192.168.2.xxx dc:52:85:54:8A:01 Reizo iPhone
+192.168.2.xxx dc:52:85:xx:xx:xx XUELAN iPhone
+
+表示なしデバイス
+IPAD
+IPOD
+XUELAN 旧iPhone
+空気清浄機 SHARP
