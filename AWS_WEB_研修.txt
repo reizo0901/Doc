@@ -83,7 +83,22 @@ services:
             - 80:80
         depends_on: # add
             - django # add
-            
+
+nginx.conf を作成する。
+今回は upstream ディレクティブの記述にあるように django コンテナの8000番ポートへ通信を流す設定を行う。
+
+nginx.conf
+upstream django {
+    server django:8000;
+}
+
+server {
+    listen 80;
+    location / {
+        uwsgi_pass django;
+        include /etc/nginx/uwsgi_params;
+    }
+}
 
 wsgiの通信で必要とされる uwsgi_params の作成を行う（参考）。
 
@@ -131,6 +146,7 @@ module = djangoapp.wsgi
 wsgi-file = /app/app/wsgi.py
 logto = /wsgi/wsgi.log
 py-autoreload = 1
+
 djangoコンテナのイメージの元となるDockerfileを作成する。
 
 Dockerfile
@@ -151,6 +167,7 @@ userを作成し、uwsgi,ini を実行する。
 startup.sh
 source /startup/setuser.sh # setuser.sh を実行する
 uwsgi --ini /wsgi/uwsgi.ini # uwsgi.ini の設定をもとに uwsgi を実行する
+
 setuser.sh
 #!/bin/bash -e
 SHELL_NAME='setuser.sh'
@@ -173,28 +190,26 @@ else
 fi
 
 echo "[$SHELL_NAME] FINISH"
+
+
 startupディレクトリ配下の全てのファイルに実行権限を付与する。
 
 chmod +x -R ~/dev/3l_on_docker/django/startup/
 ホスト側でdjangoプロジェクトを作成する。
 そのためまずはホスト側でdjangoのインストールを行う。
 
-
-
 pip install django
+
 django ディレクトリ内でdjango projectの作成を行う。
 今回はプロジェクト名をdjangoappとする。
 
 python3 -m pip install django
 
-#pipが動かない場合は以下のコマンドを実行してパスを調べる
-
-vi 行魚番号h常時
-:set number
-:set nonumber
-
+django ディレクトリ内でdjango projectの作成を行う。
+今回はプロジェクト名をdjangoappとする。
 
 django-admin startproject djangoapp
+
 プロジェクトを作成するとdjangoディレクトリ内にdjangoappディレクトリが作成される。
 デフォルトでは外部からの通信は全て拒否されているため、setting.py の修正を行う。
 
@@ -202,13 +217,13 @@ setting.py
 ...
 
 ALLOWED_HOSTS = ['*']
-
 ...
+
 今回は外部の全ての通信を許可する'*'を設定した。
 
 docker-compose up -dでコンテナを立ち上げ、EC2のパブリックIPアドレスにアクセスする。
 
-Screen Shot 2021-06-24 at 9.54.07.png
+
 
 上のような django のテストページが見えていればOK。
 
@@ -217,7 +232,128 @@ Screen Shot 2021-06-24 at 9.54.07.png
 まずはホスト側でアプリケーションを作る。
 
 python manage.py startapp sampleapp
+
 sampleapp ディレクトリ直下に urls.py を作成する。
+
+urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+
+views.py
+
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+
+http://[IP アドレス]/[app 名]にアクセスし、"Hello, world. You're at the polls index."が確認できればOK。
+
+データベースのレイアウト（models.py の編集）
+
+models.py
+
+class User(models.Model):
+    user_name = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+class FigurePaths(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    figure_url = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+    like_point = models.IntegerField(default=0)
+    
+setting.py
+
+INSTALLED_APPS = [
+    'instalikeapp.apps.InstalikeappConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+python manage.py makemigrations sampleapp
+
+migration ディレクトリ内に0001_initial.pyが作られる。
+
+docker exec -it bashで django コンテナに入り sqlmigrate と migrate を実行する
+これによってデータベースへデータを入力するための準備を完了する。
+
+[ec2-user@ip-10-0-1-89 djangoapp]$ docker exec -it django bash
+root@87e83722b47a:/app# python manage.py sqlmigrate sampleapp 0001
+root@87e83722b47a:/app# python manage.py migrate
+
+postgreSQLコンテナの準備（DBサーバ）
+postgresqlコンテナの設定を追加する。
+
+docker-compose.yml
+version: '3.7'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        volumes:
+            - ./nginx/conf:/etc/nginx/conf.d
+            - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+        ports:
+            - 80:80
+        depends_on:
+            - django
+
+    django:
+        container_name: django
+        build: ./django
+        command: bash -c /startup/startup.sh
+        volumes:
+            - ./django/uwsgi:/wsgi
+            - ./django/djangoapp:/app
+            - ./django/startup:/startup
+        ports:
+            - 8000:8000
+        environment:
+            - USER_ID=1000
+            - GROUP_ID=1000
+            - USER_NAME=ec2-user
+            - GROUP_NAME=ec2-user
+        depends_on: # add
+            - postgresql # add
+
+    postgresql: # add
+        image: postgres:latest # add
+        container_name: postgresql # add
+        environment: # add
+            - POSTGRES_DB=instalikeapp_db # add
+            - POSTGRES_USER=user # add
+            - POSTGRES_PASSWORD=password # add
+        volumes: # add
+            - ./pgdata:/var/lib/postgresql/data # add
+        ports: # add
+            - 5432:5432 # add
+
+コンテナを立ち上げ直す。
+
+docker-compose restart
+
+djangoコンテナ内のpython の インタプリタからデータベースにデータを入れてみる
+詳細はdjangoのチュートリアルを参考にすると良い。
+djangoコンテナに入り、pythonのインタプリタからデータベースへの入力を行う。
+
+docker exec -it django bash
+root@87e83722b47a:/app# python manage.py shell
+>>> from instalikeapp.models import User, FigurePaths
+下記コマンドでpostgresqlにログインする。
+
+psql -d myapp -U USERNAME -h localhost
+
+djangoコンテナからデータベースへデータの入力を行い、postgresqlコンテナでデータベースの中身を確認する。
+以下の図の左はdjangoコンテナ内でデータベースへの入力操作を行なったもの、 右側はpostgresqlコンテナ内でデータベースの中身を確認したもの。
 
 docker-compose up -d ← -d デタッチモード 同一ターミナルでコンテナが起動して別の作業ができなくなることを回避する。
 docker-compose up --build ← --build 再度ビルド処理を行います。
@@ -225,8 +361,8 @@ docker-compose up --build ← --build 再度ビルド処理を行います。
 エラーでた！
 Error response from daemon: Conflict. the container name "/nginx" is already in use by container "aaa". you have to remove (or rename) that container to be able to reuse that name.
 
-
 コンテナ内でコマンドがない場合は
 
 apt-get update
 apt-get install vim
+
