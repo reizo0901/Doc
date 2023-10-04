@@ -1,0 +1,2676 @@
+Generating view...
+Successfully generated view
+===>UsbView2<===
+===>Usb Host Controller<===
+    DeviceInterfacePath: \\?\PCI#VEN_8086&DEV_02ED&SUBSYS_833810F7&REV_00#3&11583659&0&A0#{3abf6f2d-71c4-462a-8a92-1e6861e6af27}
+    DeviceInstanceId: PCI\VEN_8086&DEV_02ED&SUBSYS_833810F7&REV_00\3&11583659&0&A0
+    DeviceDescription: USB xHCI ????? ???????
+    DeviceService: USBXHCI
+    DeviceClass: USB
+    DeviceProblemCode: 0n0 (0x0)
+    DeviceIsPresent: Yes
+    DeviceHasProblem: No
+    HardwareIds: 
+        -> PCI\VEN_8086&DEV_02ED&SUBSYS_833810F7&REV_00
+        -> PCI\VEN_8086&DEV_02ED&SUBSYS_833810F7
+        -> PCI\VEN_8086&DEV_02ED&CC_0C0330
+        -> PCI\VEN_8086&DEV_02ED&CC_0C03
+    VendorId: 0n32902 (0x8086)
+        -> Intel Corporation
+    ProductId: 0n749 (0x2ed)
+    HardwareRevision: 0n0 (0x0)
+    BusNumber: 0n0 (0x0)
+    Address: 0n20 (0x14)
+    Function: 0n0 (0x0)
+    BusParams: 0.20.0
+    ===>Usb Root Hub<===
+        PortIndex: 0n0 (0x0)
+        DeviceInterfacePath: \\.\USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+        DeviceInstanceId: USB\ROOT_HUB30\4&20157de1&0&0
+        DeviceDescription: USB ??? ?? (USB 3.0)
+        DeviceService: USBHUB3
+        DeviceClass: USB
+        DeviceProblemCode: 0n0 (0x0)
+        DeviceIsPresent: Yes
+        DeviceHasProblem: No
+        HardwareIds: 
+            -> USB\ROOT_HUB30&VID8086&PID02ED&REV0000
+            -> USB\ROOT_HUB30&VID8086&PID02ED
+            -> USB\ROOT_HUB30
+        Hub Is Bus Power: No
+        Is Port User Connectable: No
+        Is Port Debug Capable: No
+        Has Multiple Companions: No
+        Connector Is TypeC: No
+        Companion Port Index: 0n0 (0x0)
+        Companion Port Number: 0n0 (0x0)
+        Companion Hub Symbolic Link Name: 
+        Number of Ports: 0n18 (0x12)
+        Power switching: Ganged
+        Compound device: No
+        Over-current Protection: Global
+        High speed capable: No
+        High speed: Yes
+        Multiple transaction translations capable: No
+        Performs multiple transaction translations simultaneously: No
+        Hub wakes when device is connected: No
+        Hub is bus powered: No
+        Hub is root: Yes
+        ===>Usb Port<===
+            PortIndex: 0n1 (0x1)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n13 (0xd)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: High
+                -> Is not SuperSpeed or higher capable
+            Device Address: 0n20 (0x14)
+            Open Pipes: 0n3 (0x3)
+            USB 1.1 Supported: Yes
+            USB 2.0 Supported: Yes
+            USB 3.0 Supported: No
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n512 (0x200)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n64 (0x40)
+                idVendor: 0n1211 (0x4bb)
+                    -> I-O Data Device, Inc.
+                idProduct: 0n3077 (0xc05)
+                bcdDevice: 0n256 (0x100)
+                iManufacturer: 0n1 (0x1)
+                    -> USBest Technology
+                iProduct: 0n2 (0x2)
+                    -> USB Mass Storage Device
+                iSerialNumber: 0n3 (0x3)
+                    -> 021e8528ad4b4f
+                bNumConfigurations: 0n1 (0x1)
+            ===>Device Qualifier Descriptor<===
+                bLength: 0n10 (0xa)
+                bDescriptorType: 0n6 (0x6)
+                bcdUSB: 0n512 (0x200)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n64 (0x40)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n39 (0x27)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n128 (0x80)
+                    -> Bus Powered
+                MaxPower: 0n48 (0x30)
+                    -> 96mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n3 (0x3)
+                    bInterfaceClass: 0n8 (0x8)
+                    bInterfaceSubClass: 0n6 (0x6)
+                    bInterfaceProtocol: 0n80 (0x50)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n1 (0x1)
+                            -> Direction: OUT - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n130 (0x82)
+                            -> Direction: IN - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n8 (0x8)
+            ===>Other Speed Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n7 (0x7)
+                wTotalLength: 0n39 (0x27)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n128 (0x80)
+                    -> Bus Powered
+                MaxPower: 0n48 (0x30)
+                    -> 96mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n3 (0x3)
+                    bInterfaceClass: 0n8 (0x8)
+                    bInterfaceSubClass: 0n6 (0x6)
+                    bInterfaceProtocol: 0n80 (0x50)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n1 (0x1)
+                            -> Direction: OUT - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n130 (0x82)
+                            -> Direction: IN - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n8 (0x8)
+        ===>Usb Port<===
+            PortIndex: 0n2 (0x2)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: Yes
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n3 (0x3)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#7&1a34a7e2&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n3 (0x3)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n15 (0xf)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: Full
+                -> Is not SuperSpeed or higher capable
+            Device Address: 0n1 (0x1)
+            Open Pipes: 0n1 (0x1)
+            USB 1.1 Supported: Yes
+            USB 2.0 Supported: Yes
+            USB 3.0 Supported: No
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n272 (0x110)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n8 (0x8)
+                idVendor: 0n1578 (0x62a)
+                    -> MosArt Semiconductor Corp.
+                idProduct: 0n16642 (0x4102)
+                bcdDevice: 0n801 (0x321)
+                iManufacturer: 0n1 (0x1)
+                    -> MOSART Semi.
+                iProduct: 0n2 (0x2)
+                    -> 2.4G Wireless Mouse
+                iSerialNumber: 0n0 (0x0)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n34 (0x22)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n160 (0xa0)
+                    -> Bus Powered
+                    -> Remote Wakeup
+                MaxPower: 0n50 (0x32)
+                    -> 100mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n1 (0x1)
+                    bInterfaceClass: 0n3 (0x3)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n2 (0x2)
+                    iInterface: 0n0 (0x0)
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n33 (0x21)
+                        UnparsedData: 10 01 00 01 22 76 00
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n129 (0x81)
+                            -> Direction: IN - EndpointID:1
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n7 (0x7)
+                        bInterval: 0n4 (0x4)
+        ===>Usb Port<===
+            PortIndex: 0n4 (0x4)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n16 (0x10)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n5 (0x5)
+            Composite Device Child Descriptions: 
+                -> Sierra Wireless Snapdragon? X7 LTE-A DM Port / Sierra Wireless EM7430 Qualcomm® Snapdragon? X7 LTE-A
+                -> Sierra Wireless Snapdragon? X7 LTE-A NMEA Port / Sierra Wireless EM7430 Qualcomm® Snapdragon? X7 LTE-A
+                -> Sierra Wireless Snapdragon? X7 LTE-A WWAN Modem / Sierra Wireless EM7430 Qualcomm® Snapdragon? X7 LTE-A
+                -> ?????? ??????? ????? / Sierra Wireless EM7430 Qualcomm® Snapdragon? X7 LTE-A
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: High
+                -> Is not SuperSpeed or higher capable
+            Device Address: 0n5 (0x5)
+            Open Pipes: 0n11 (0xb)
+            USB 1.1 Supported: Yes
+            USB 2.0 Supported: Yes
+            USB 3.0 Supported: No
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n512 (0x200)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n64 (0x40)
+                idVendor: 0n4505 (0x1199)
+                    -> Sierra Wireless Inc.
+                idProduct: 0n36977 (0x9071)
+                bcdDevice: 0n6 (0x6)
+                iManufacturer: 0n1 (0x1)
+                iProduct: 0n2 (0x2)
+                iSerialNumber: 0n3 (0x3)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n216 (0xd8)
+                bNumInterfaces: 0n5 (0x5)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n160 (0xa0)
+                    -> Bus Powered
+                    -> Remote Wakeup
+                MaxPower: 0n250 (0xfa)
+                    -> 500mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n255 (0xff)
+                    bInterfaceSubClass: 0n255 (0xff)
+                    bInterfaceProtocol: 0n255 (0xff)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n129 (0x81)
+                            -> Direction: IN - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n1 (0x1)
+                            -> Direction: OUT - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n0 (0x0)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n2 (0x2)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n3 (0x3)
+                    bInterfaceClass: 0n255 (0xff)
+                    bInterfaceSubClass: 0n0 (0x0)
+                    bInterfaceProtocol: 0n0 (0x0)
+                    iInterface: 0n0 (0x0)
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n5 (0x5)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 00 10 01
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n5 (0x5)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 01 00 00
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n4 (0x4)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 02 02
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n5 (0x5)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 06 00 00
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n10 (0xa)
+                        bInterval: 0n9 (0x9)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n130 (0x82)
+                            -> Direction: IN - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n2 (0x2)
+                            -> Direction: OUT - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n0 (0x0)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n3 (0x3)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n3 (0x3)
+                    bInterfaceClass: 0n255 (0xff)
+                    bInterfaceSubClass: 0n0 (0x0)
+                    bInterfaceProtocol: 0n0 (0x0)
+                    iInterface: 0n0 (0x0)
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n5 (0x5)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 00 10 01
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n5 (0x5)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 01 00 00
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n4 (0x4)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 02 02
+                    ===>Unknown USB Descriptor<===
+                        bLength: 0n5 (0x5)
+                        bDescriptorType: 0n36 (0x24)
+                        UnparsedData: 06 00 00
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n133 (0x85)
+                            -> Direction: IN - EndpointID:5
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n10 (0xa)
+                        bInterval: 0n9 (0x9)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n132 (0x84)
+                            -> Direction: IN - EndpointID:4
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n0 (0x0)
+                ===>Interface Association Descriptor<===
+                    bLength: 0n8 (0x8)
+                    bDescriptorType: 0n11 (0xb)
+                    bFirstInterface: 0n12 (0xc)
+                    bInterfaceCount: 0n2 (0x2)
+                    bFunctionClass: 0n2 (0x2)
+                    bFunctionSubClass: 0n14 (0xe)
+                    bFunctionProtocol: 0n0 (0x0)
+                    iFunction: 0n0 (0x0)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n12 (0xc)
+                        bAlternateSetting: 0n0 (0x0)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n2 (0x2)
+                        bInterfaceSubClass: 0n14 (0xe)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n5 (0x5)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 00 10 01
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n5 (0x5)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 06 0c 0d
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n12 (0xc)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 1b 00 01 00 10 20 80 00 08 20
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n8 (0x8)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 1c 00 01 40 dc 05
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n135 (0x87)
+                                -> Direction: IN - EndpointID:7
+                            bmAttributes: 0n3 (0x3)
+                            wMaxPacketSize: 0n64 (0x40)
+                            bInterval: 0n9 (0x9)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n13 (0xd)
+                        bAlternateSetting: 0n0 (0x0)
+                        bNumEndpoints: 0n0 (0x0)
+                        bInterfaceClass: 0n10 (0xa)
+                        bInterfaceSubClass: 0n0 (0x0)
+                        bInterfaceProtocol: 0n2 (0x2)
+                        iInterface: 0n0 (0x0)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n13 (0xd)
+                        bAlternateSetting: 0n1 (0x1)
+                        bNumEndpoints: 0n2 (0x2)
+                        bInterfaceClass: 0n10 (0xa)
+                        bInterfaceSubClass: 0n0 (0x0)
+                        bInterfaceProtocol: 0n2 (0x2)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n134 (0x86)
+                                -> Direction: IN - EndpointID:6
+                            bmAttributes: 0n2 (0x2)
+                            wMaxPacketSize: 0n512 (0x200)
+                            bInterval: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n4 (0x4)
+                                -> Direction: OUT - EndpointID:4
+                            bmAttributes: 0n2 (0x2)
+                            wMaxPacketSize: 0n512 (0x200)
+                            bInterval: 0n0 (0x0)
+        ===>Usb Port<===
+            PortIndex: 0n6 (0x6)
+            Composite Device Child Descriptions: 
+                -> USB ??? ???? / USB HD Webcam
+                -> USB ??? ???? / IR Camera
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: FailedEnumeration
+            Current Config Value: 0n2 (0x2)
+                -> Device Bus Speed: High
+                -> Is not SuperSpeed or higher capable
+            Device Address: 0n2 (0x2)
+            Open Pipes: 0n2 (0x2)
+            USB 1.1 Supported: Yes
+            USB 2.0 Supported: Yes
+            USB 3.0 Supported: No
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n513 (0x201)
+                bDeviceClass: 0n239 (0xef)
+                bDeviceSubClass: 0n2 (0x2)
+                bDeviceProtocol: 0n1 (0x1)
+                bMaxPacketSize0: 0n64 (0x40)
+                idVendor: 0n22918 (0x5986)
+                    -> BISON ELECTRONICS INC.
+                idProduct: 0n4452 (0x1164)
+                bcdDevice: 0n12545 (0x3101)
+                iManufacturer: 0n3 (0x3)
+                iProduct: 0n1 (0x1)
+                iSerialNumber: 0n2 (0x2)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n1217 (0x4c1)
+                bNumInterfaces: 0n4 (0x4)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n4 (0x4)
+                bmAttributes: 0n128 (0x80)
+                    -> Bus Powered
+                MaxPower: 0n250 (0xfa)
+                    -> 500mA
+                ===>Interface Association Descriptor<===
+                    bLength: 0n8 (0x8)
+                    bDescriptorType: 0n11 (0xb)
+                    bFirstInterface: 0n0 (0x0)
+                    bInterfaceCount: 0n2 (0x2)
+                    bFunctionClass: 0n14 (0xe)
+                    bFunctionSubClass: 0n3 (0x3)
+                    bFunctionProtocol: 0n0 (0x0)
+                    iFunction: 0n5 (0x5)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n0 (0x0)
+                        bAlternateSetting: 0n0 (0x0)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n1 (0x1)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n5 (0x5)
+                        ===>Class-Specific Video Control Interface Header<===
+                            bLength: 0n13 (0xd)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n1 (0x1)
+                            bcdVideoSpec: 0n256 (0x100)
+                            wTotalLength: 0n107 (0x6b)
+                            dwClockFreq: 0n15000000 (0xe4e1c0)
+                            bInCollection: 0n1 (0x1)
+                            baInterfaceNr: [1]
+                        ===>Video Control Input Terminal Descriptor<===
+                            bLength: 0n18 (0x12)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n2 (0x2)
+                            bTerminalID: 0n1 (0x1)
+                            wTerminalType: 0n513 (0x201)
+                                -> ITT_CAMERA
+                            bAssocTerminal: 0n0 (0x0)
+                            iTerminal: 0n0 (0x0)
+                            wObjectiveFocalLengthMin: 0n0 (0x0)
+                            wObjectiveFocalLengthMax: 0n0 (0x0)
+                            wOcularFocalLength: 0n0 (0x0)
+                            bControlSize: 0n3 (0x3)
+                            bmControl: 0e 00 00
+                                -> D00 = 0   no -  Scanning Mode
+                                -> D01 = 1  yes -  Auto-Exposure Mode
+                                -> D02 = 1  yes -  Auto-Exposure Priority
+                                -> D03 = 1  yes -  Exposure Time (Absolute)
+                                -> D04 = 0   no -  Exposure Time (Relative)
+                                -> D05 = 0   no -  Focus (Absolute)
+                                -> D06 = 0   no -  Focus (Relative)
+                                -> D07 = 0   no -  Iris (Absolute)
+                                -> D08 = 0   no -  Iris (Relative)
+                                -> D09 = 0   no -  Zoom (Absolute)
+                                -> D10 = 0   no -  Zoom (Relative)
+                                -> D11 = 0   no -  PanTilt (Absolute)
+                                -> D12 = 0   no -  PanTilt (Relative)
+                                -> D13 = 0   no -  Roll (Absolute)
+                                -> D14 = 0   no -  Roll (Relative)
+                                -> D15 = 0   no -  Reserved
+                                -> D16 = 0   no -  Reserved
+                                -> D17 = 0   no -  Focus, Auto
+                                -> D18 = 0   no -  Privacy
+                                -> D19 = 0   no -  Focus, Simple
+                                -> D20 = 0   no -  Window
+                                -> D21 = 0   no -  Region of Interest
+                                -> D22 = 0   no -  Reserved
+                                -> D23 = 0   no -  Reserved
+                        ===>Video Control Processing Unit Descriptor<===
+                            bLength: 0n11 (0xb)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bUnitID: 0n2 (0x2)
+                            bSourceID: 0n1 (0x1)
+                            wMaxMultiplier: 0n0 (0x0)
+                            bControlSize: 0n2 (0x2)
+                            bmControl: 7f 15
+                                -> D00 = 1  yes -  Brightness
+                                -> D01 = 1  yes -  Contrast
+                                -> D02 = 1  yes -  Hue
+                                -> D03 = 1  yes -  Saturation
+                                -> D04 = 1  yes -  Sharpness
+                                -> D05 = 1  yes -  Gamma
+                                -> D06 = 1  yes -  White Balance Temperature
+                                -> D07 = 0   no -  White Balance Component
+                                -> D08 = 1  yes -  Backlight Compensation
+                                -> D09 = 0   no -  Gain
+                                -> D10 = 1  yes -  Power Line Frequency
+                                -> D11 = 0   no -  Hue, Auto
+                                -> D12 = 1  yes -  White Balance Temperature, Auto
+                                -> D13 = 0   no -  White Balance Component, Auto
+                                -> D14 = 0   no -  Digital Multiplier
+                                -> D15 = 0   no -  Digital Multiplier Limit
+                            iProcessing: 0n21 (0x15)
+                            bmVideoStandards: 00
+                                -> D00 = 0   no -  None
+                                -> D01 = 0   no -  NTSC  - 525/60
+                                -> D02 = 0   no -  PAL   - 625/50
+                                -> D03 = 0   no -  SECAM - 625/50
+                                -> D04 = 0   no -  NTSC  - 625/50
+                                -> D05 = 0   no -  PAL   - 525/60
+                                -> D06 = 0   no -  Reserved
+                                -> D07 = 0   no -  Reserved
+                        ===>Video Control Output Terminal Descriptor<===
+                            bLength: 0n9 (0x9)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n3 (0x3)
+                            bTerminalID: 0n3 (0x3)
+                            wTerminalType: 0n257 (0x101)
+                                -> TT_STREAMING
+                            bAssocTerminal: 0n0 (0x0)
+                            bSourceID: 0n6 (0x6)
+                            iTerminal: 0n0 (0x0)
+                        ===>Video Control Extension Unit Descriptor<===
+                            bLength: 0n27 (0x1b)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n6 (0x6)
+                            bUnitID: 0n4 (0x4)
+                            guidExtensionCode: 1229a78c-47b4-4094-b0ce-db07386fb938
+                            bNumControls: 0n2 (0x2)
+                            bNrInPins: 0n1 (0x1)
+                            bmControlsSize: 0n2 (0x2)
+                            baSourceIDs: [2]
+                            bmControls: 00 16
+                                -> D00 = 0   no -  Vendor-Specific (Optional)
+                                -> D01 = 0   no -  Vendor-Specific (Optional)
+                                -> D02 = 0   no -  Vendor-Specific (Optional)
+                                -> D03 = 0   no -  Vendor-Specific (Optional)
+                                -> D04 = 0   no -  Vendor-Specific (Optional)
+                                -> D05 = 0   no -  Vendor-Specific (Optional)
+                                -> D06 = 0   no -  Vendor-Specific (Optional)
+                                -> D07 = 0   no -  Vendor-Specific (Optional)
+                                -> D08 = 0   no -  Vendor-Specific (Optional)
+                                -> D09 = 1  yes -  Vendor-Specific (Optional)
+                                -> D10 = 1  yes -  Vendor-Specific (Optional)
+                                -> D11 = 0   no -  Vendor-Specific (Optional)
+                                -> D12 = 1  yes -  Vendor-Specific (Optional)
+                                -> D13 = 0   no -  Vendor-Specific (Optional)
+                                -> D14 = 0   no -  Vendor-Specific (Optional)
+                                -> D15 = 0   no -  Vendor-Specific (Optional)
+                            iExtension: 0n0 (0x0)
+                        ===>Video Control Extension Unit Descriptor<===
+                            bLength: 0n29 (0x1d)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n6 (0x6)
+                            bUnitID: 0n6 (0x6)
+                            guidExtensionCode: 26b8105a-0713-4870-979d-da79444bb68e
+                            bNumControls: 0n3 (0x3)
+                            bNrInPins: 0n1 (0x1)
+                            bmControlsSize: 0n4 (0x4)
+                            baSourceIDs: [4]
+                            bmControls: 04 00 0c 00
+                                -> D00 = 0   no -  Vendor-Specific (Optional)
+                                -> D01 = 0   no -  Vendor-Specific (Optional)
+                                -> D02 = 1  yes -  Vendor-Specific (Optional)
+                                -> D03 = 0   no -  Vendor-Specific (Optional)
+                                -> D04 = 0   no -  Vendor-Specific (Optional)
+                                -> D05 = 0   no -  Vendor-Specific (Optional)
+                                -> D06 = 0   no -  Vendor-Specific (Optional)
+                                -> D07 = 0   no -  Vendor-Specific (Optional)
+                                -> D08 = 0   no -  Vendor-Specific (Optional)
+                                -> D09 = 0   no -  Vendor-Specific (Optional)
+                                -> D10 = 0   no -  Vendor-Specific (Optional)
+                                -> D11 = 0   no -  Vendor-Specific (Optional)
+                                -> D12 = 0   no -  Vendor-Specific (Optional)
+                                -> D13 = 0   no -  Vendor-Specific (Optional)
+                                -> D14 = 0   no -  Vendor-Specific (Optional)
+                                -> D15 = 0   no -  Vendor-Specific (Optional)
+                                -> D16 = 0   no -  Vendor-Specific (Optional)
+                                -> D17 = 0   no -  Vendor-Specific (Optional)
+                                -> D18 = 1  yes -  Vendor-Specific (Optional)
+                                -> D19 = 1  yes -  Vendor-Specific (Optional)
+                                -> D20 = 0   no -  Vendor-Specific (Optional)
+                                -> D21 = 0   no -  Vendor-Specific (Optional)
+                                -> D22 = 0   no -  Vendor-Specific (Optional)
+                                -> D23 = 0   no -  Vendor-Specific (Optional)
+                                -> D24 = 0   no -  Vendor-Specific (Optional)
+                                -> D25 = 0   no -  Vendor-Specific (Optional)
+                                -> D26 = 0   no -  Vendor-Specific (Optional)
+                                -> D27 = 0   no -  Vendor-Specific (Optional)
+                                -> D28 = 0   no -  Vendor-Specific (Optional)
+                                -> D29 = 0   no -  Vendor-Specific (Optional)
+                                -> D30 = 0   no -  Vendor-Specific (Optional)
+                                -> D31 = 0   no -  Vendor-Specific (Optional)
+                            iExtension: 0n9 (0x9)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n131 (0x83)
+                                -> Direction: IN - EndpointID:3
+                            bmAttributes: 0n3 (0x3)
+                            wMaxPacketSize: 0n32 (0x20)
+                            bInterval: 0n6 (0x6)
+                            ===>Video Streaming Endpoint Interrupt Descriptor<===
+                                bLength: 0n5 (0x5)
+                                bDescriptorType: 0n37 (0x25)
+                                bDescriptorSubtype: 0n3 (0x3)
+                                wMaxTransferSize: 0n32 (0x20)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n0 (0x0)
+                        bNumEndpoints: 0n0 (0x0)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Video Streaming Input Header Descriptor<===
+                            bLength: 0n15 (0xf)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n1 (0x1)
+                            bNumFormats: 0n2 (0x2)
+                            wTotalLength: 0n605 (0x25d)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmInfo: 0n0 (0x0)
+                                -> Dynamic Format Change not Supported
+                            bTerminalLink: 0n3 (0x3)
+                            bStillCaptureMethod: 0n1 (0x1)
+                                -> Still Capture Method 1
+                            bTriggerSupport: 0n1 (0x1)
+                                -> Hardware Triggering Support
+                            bTriggerUsage: 0n0 (0x0)
+                                -> Host will initiate still image capture
+                            bControlSize: 0n1 (0x1)
+                            Video Payload Format 0: 00
+                                -> D00 = 0   no -  Key Frame Rate
+                                -> D01 = 0   no -  P Frame Rate
+                                -> D02 = 0   no -  Compression Quality
+                                -> D03 = 0   no -  Compression Window Size
+                                -> D04 = 0   no -  Generate Key Frame
+                                -> D05 = 0   no -  Update Frame Segment
+                                -> D06 = 0   no -  Reserved
+                                -> D07 = 0   no -  Reserved
+                            Video Payload Format 1: 00
+                                -> D00 = 0   no -  Key Frame Rate
+                                -> D01 = 0   no -  P Frame Rate
+                                -> D02 = 0   no -  Compression Quality
+                                -> D03 = 0   no -  Compression Window Size
+                                -> D04 = 0   no -  Generate Key Frame
+                                -> D05 = 0   no -  Update Frame Segment
+                                -> D06 = 0   no -  Reserved
+                                -> D07 = 0   no -  Reserved
+                        ===>Video Streaming MJPEG Format Descriptor<===
+                            bLength: 0n11 (0xb)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n6 (0x6)
+                            bFormatIndex: 0n1 (0x1)
+                            bNumFrameDescriptors: 0n9 (0x9)
+                            bmFlags: 0n1 (0x1)
+                                -> Sample Size is Fixed
+                            bDefaultFrameIndex: 0n1 (0x1)
+                            bAspectRatioX: 0n0 (0x0)
+                            bAspectRatioY: 0n0 (0x0)
+                            bmInterlaceFlags: 0n0 (0x0)
+                                -> D0    = 0 Interlaced stream or variable: No
+                                -> D1    = 0 Fields per frame: 2 fields
+                                -> D2    = 0 Field 1 first: No
+                                -> D3    = 0 Reserved
+                                -> D4..5 = 0 Field patterns -> Field 1 only
+                                -> D6..7 = 0 Display Mode ->Bob only
+                            bCopyProtect: 0n0 (0x0)
+                                -> Duplication Unrestricted
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n1 (0x1)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n1920 (0x780)
+                            wHeight: 0n1080 (0x438)
+                            dwMinBitRate: 0n995328000 (0x3b538000)
+                            dwMaxBitRate: 0n995328000 (0x3b538000)
+                            dwMaxVideoFrameBufferSize: 0n4147200 (0x3f4800)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n2 (0x2)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n160 (0xa0)
+                            wHeight: 0n120 (0x78)
+                            dwMinBitRate: 0n9216000 (0x8ca000)
+                            dwMaxBitRate: 0n9216000 (0x8ca000)
+                            dwMaxVideoFrameBufferSize: 0n38400 (0x9600)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n3 (0x3)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n176 (0xb0)
+                            wHeight: 0n144 (0x90)
+                            dwMinBitRate: 0n12165120 (0xb9a000)
+                            dwMaxBitRate: 0n12165120 (0xb9a000)
+                            dwMaxVideoFrameBufferSize: 0n50688 (0xc600)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n4 (0x4)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n320 (0x140)
+                            wHeight: 0n240 (0xf0)
+                            dwMinBitRate: 0n36864000 (0x2328000)
+                            dwMaxBitRate: 0n36864000 (0x2328000)
+                            dwMaxVideoFrameBufferSize: 0n153600 (0x25800)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n5 (0x5)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n640 (0x280)
+                            wHeight: 0n360 (0x168)
+                            dwMinBitRate: 0n110592000 (0x6978000)
+                            dwMaxBitRate: 0n110592000 (0x6978000)
+                            dwMaxVideoFrameBufferSize: 0n460800 (0x70800)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n6 (0x6)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n640 (0x280)
+                            wHeight: 0n480 (0x1e0)
+                            dwMinBitRate: 0n147456000 (0x8ca0000)
+                            dwMaxBitRate: 0n147456000 (0x8ca0000)
+                            dwMaxVideoFrameBufferSize: 0n614400 (0x96000)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n7 (0x7)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n960 (0x3c0)
+                            wHeight: 0n540 (0x21c)
+                            dwMinBitRate: 0n248832000 (0xed4e000)
+                            dwMaxBitRate: 0n248832000 (0xed4e000)
+                            dwMaxVideoFrameBufferSize: 0n1036800 (0xfd200)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n8 (0x8)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n1280 (0x500)
+                            wHeight: 0n720 (0x2d0)
+                            dwMinBitRate: 0n442368000 (0x1a5e0000)
+                            dwMaxBitRate: 0n442368000 (0x1a5e0000)
+                            dwMaxVideoFrameBufferSize: 0n1843200 (0x1c2000)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming MJPEG Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n7 (0x7)
+                            bFrameIndex: 0n9 (0x9)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n1920 (0x780)
+                            wHeight: 0n1080 (0x438)
+                            dwMinBitRate: 0n995328000 (0x3b538000)
+                            dwMaxBitRate: 0n995328000 (0x3b538000)
+                            dwMaxVideoFrameBufferSize: 0n4147200 (0x3f4800)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Color Matching Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n13 (0xd)
+                            bColorPrimaries: 0n1 (0x1)
+                            bTransferCharacteristics: 0n1 (0x1)
+                            bMatrixCoefficients: 0n4 (0x4)
+                        ===>Video Streaming Uncompressed Format Descriptor<===
+                            bLength: 0n27 (0x1b)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n4 (0x4)
+                            bFormatIndex: 0n2 (0x2)
+                            bNumFrameDescriptors: 0n9 (0x9)
+                            guidFormat: 32595559-0000-0010-8000-00aa00389b71
+                                -> YUY2 Format
+                            bBitsPerPixel: 0n16 (0x10)
+                            bDefaultFrameIndex: 0n1 (0x1)
+                            bAspectRatioX: 0n0 (0x0)
+                            bAspectRatioY: 0n0 (0x0)
+                            bmInterlaceFlags: 0n0 (0x0)
+                                -> D0    = 0 Interlaced stream or variable: No
+                                -> D1    = 0 Fields per frame: 2 fields
+                                -> D2    = 0 Field 1 first: No
+                                -> D3    = 0 Reserved
+                                -> D4..5 = 0 Field patterns -> Field 1 only
+                                -> D6..7 = 0 Display Mode ->Bob only
+                            bCopyProtect: 0n0 (0x0)
+                                -> Duplication Unrestricted
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n1 (0x1)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n1920 (0x780)
+                            wHeight: 0n1080 (0x438)
+                            dwMinBitRate: 0n99532800 (0x5eec000)
+                            dwMaxBitRate: 0n99532800 (0x5eec000)
+                            dwMaxVideoFrameBufferSize: 0n4147200 (0x3f4800)
+                            dwDefaultFrameInterval: 0n3333333 (0x32dcd5)
+                                -> 333.333300ms
+                                -> 3.500000 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n3333333 (0x32dcd5)
+                                -> 333.333300ms
+                                -> 3.500000 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n2 (0x2)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n160 (0xa0)
+                            wHeight: 0n120 (0x78)
+                            dwMinBitRate: 0n9216000 (0x8ca000)
+                            dwMaxBitRate: 0n9216000 (0x8ca000)
+                            dwMaxVideoFrameBufferSize: 0n38400 (0x9600)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n3 (0x3)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n176 (0xb0)
+                            wHeight: 0n144 (0x90)
+                            dwMinBitRate: 0n12165120 (0xb9a000)
+                            dwMaxBitRate: 0n12165120 (0xb9a000)
+                            dwMaxVideoFrameBufferSize: 0n50688 (0xc600)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n4 (0x4)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n320 (0x140)
+                            wHeight: 0n240 (0xf0)
+                            dwMinBitRate: 0n36864000 (0x2328000)
+                            dwMaxBitRate: 0n36864000 (0x2328000)
+                            dwMaxVideoFrameBufferSize: 0n153600 (0x25800)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n5 (0x5)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n640 (0x280)
+                            wHeight: 0n360 (0x168)
+                            dwMinBitRate: 0n110592000 (0x6978000)
+                            dwMaxBitRate: 0n110592000 (0x6978000)
+                            dwMaxVideoFrameBufferSize: 0n460800 (0x70800)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n6 (0x6)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n640 (0x280)
+                            wHeight: 0n480 (0x1e0)
+                            dwMinBitRate: 0n147456000 (0x8ca0000)
+                            dwMaxBitRate: 0n147456000 (0x8ca0000)
+                            dwMaxVideoFrameBufferSize: 0n614400 (0x96000)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n7 (0x7)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n960 (0x3c0)
+                            wHeight: 0n540 (0x21c)
+                            dwMinBitRate: 0n124416000 (0x76a7000)
+                            dwMaxBitRate: 0n124416000 (0x76a7000)
+                            dwMaxVideoFrameBufferSize: 0n1036800 (0xfd200)
+                            dwDefaultFrameInterval: 0n666666 (0xa2c2a)
+                                -> 66.666600ms
+                                -> 15.500015 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n666666 (0xa2c2a)
+                                -> 66.666600ms
+                                -> 15.500015 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n8 (0x8)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n1280 (0x500)
+                            wHeight: 0n720 (0x2d0)
+                            dwMinBitRate: 0n117964800 (0x7080000)
+                            dwMaxBitRate: 0n117964800 (0x7080000)
+                            dwMaxVideoFrameBufferSize: 0n1843200 (0x1c2000)
+                            dwDefaultFrameInterval: 0n1250000 (0x1312d0)
+                                -> 125.000000ms
+                                -> 8.500000 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n1250000 (0x1312d0)
+                                -> 125.000000ms
+                                -> 8.500000 Hz
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n9 (0x9)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n1920 (0x780)
+                            wHeight: 0n1080 (0x438)
+                            dwMinBitRate: 0n99532800 (0x5eec000)
+                            dwMaxBitRate: 0n99532800 (0x5eec000)
+                            dwMaxVideoFrameBufferSize: 0n4147200 (0x3f4800)
+                            dwDefaultFrameInterval: 0n3333333 (0x32dcd5)
+                                -> 333.333300ms
+                                -> 3.500000 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n3333333 (0x32dcd5)
+                                -> 333.333300ms
+                                -> 3.500000 Hz
+                        ===>Video Streaming Color Matching Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n13 (0xd)
+                            bColorPrimaries: 0n1 (0x1)
+                            bTransferCharacteristics: 0n1 (0x1)
+                            bMatrixCoefficients: 0n4 (0x4)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n1 (0x1)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n512 (0x200)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n2 (0x2)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n853 (0x355)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n3 (0x3)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n853 (0x355)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n4 (0x4)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n853 (0x355)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n5 (0x5)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n853 (0x355)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n6 (0x6)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n853 (0x355)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n1 (0x1)
+                        bAlternateSetting: 0n7 (0x7)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n129 (0x81)
+                                -> Direction: IN - EndpointID:1
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n4949 (0x1355)
+                            bInterval: 0n1 (0x1)
+                ===>Interface Association Descriptor<===
+                    bLength: 0n8 (0x8)
+                    bDescriptorType: 0n11 (0xb)
+                    bFirstInterface: 0n2 (0x2)
+                    bInterfaceCount: 0n2 (0x2)
+                    bFunctionClass: 0n14 (0xe)
+                    bFunctionSubClass: 0n3 (0x3)
+                    bFunctionProtocol: 0n0 (0x0)
+                    iFunction: 0n7 (0x7)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n2 (0x2)
+                        bAlternateSetting: 0n0 (0x0)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n1 (0x1)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n7 (0x7)
+                        ===>Class-Specific Video Control Interface Header<===
+                            bLength: 0n13 (0xd)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n1 (0x1)
+                            bcdVideoSpec: 0n256 (0x100)
+                            wTotalLength: 0n119 (0x77)
+                            dwClockFreq: 0n15000000 (0xe4e1c0)
+                            bInCollection: 0n1 (0x1)
+                            baInterfaceNr: [3]
+                        ===>Video Control Input Terminal Descriptor<===
+                            bLength: 0n18 (0x12)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n2 (0x2)
+                            bTerminalID: 0n8 (0x8)
+                            wTerminalType: 0n513 (0x201)
+                                -> ITT_CAMERA
+                            bAssocTerminal: 0n0 (0x0)
+                            iTerminal: 0n0 (0x0)
+                            wObjectiveFocalLengthMin: 0n0 (0x0)
+                            wObjectiveFocalLengthMax: 0n0 (0x0)
+                            wOcularFocalLength: 0n0 (0x0)
+                            bControlSize: 0n3 (0x3)
+                            bmControl: 00 00 00
+                                -> D00 = 0   no -  Scanning Mode
+                                -> D01 = 0   no -  Auto-Exposure Mode
+                                -> D02 = 0   no -  Auto-Exposure Priority
+                                -> D03 = 0   no -  Exposure Time (Absolute)
+                                -> D04 = 0   no -  Exposure Time (Relative)
+                                -> D05 = 0   no -  Focus (Absolute)
+                                -> D06 = 0   no -  Focus (Relative)
+                                -> D07 = 0   no -  Iris (Absolute)
+                                -> D08 = 0   no -  Iris (Relative)
+                                -> D09 = 0   no -  Zoom (Absolute)
+                                -> D10 = 0   no -  Zoom (Relative)
+                                -> D11 = 0   no -  PanTilt (Absolute)
+                                -> D12 = 0   no -  PanTilt (Relative)
+                                -> D13 = 0   no -  Roll (Absolute)
+                                -> D14 = 0   no -  Roll (Relative)
+                                -> D15 = 0   no -  Reserved
+                                -> D16 = 0   no -  Reserved
+                                -> D17 = 0   no -  Focus, Auto
+                                -> D18 = 0   no -  Privacy
+                                -> D19 = 0   no -  Focus, Simple
+                                -> D20 = 0   no -  Window
+                                -> D21 = 0   no -  Region of Interest
+                                -> D22 = 0   no -  Reserved
+                                -> D23 = 0   no -  Reserved
+                        ===>Video Control Output Terminal Descriptor<===
+                            bLength: 0n9 (0x9)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n3 (0x3)
+                            bTerminalID: 0n12 (0xc)
+                            wTerminalType: 0n257 (0x101)
+                                -> TT_STREAMING
+                            bAssocTerminal: 0n0 (0x0)
+                            bSourceID: 0n10 (0xa)
+                            iTerminal: 0n0 (0x0)
+                        ===>Video Control Extension Unit Descriptor<===
+                            bLength: 0n25 (0x19)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n6 (0x6)
+                            bUnitID: 0n11 (0xb)
+                            guidExtensionCode: 45b5da73-23c1-4a3d-a368-610f078c4397
+                            bNumControls: 0n0 (0x0)
+                            bNrInPins: 0n1 (0x1)
+                            bmControlsSize: 0n0 (0x0)
+                            baSourceIDs: [8]
+                            bmControls: 
+                            iExtension: 0n0 (0x0)
+                        ===>Video Control Extension Unit Descriptor<===
+                            bLength: 0n27 (0x1b)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n6 (0x6)
+                            bUnitID: 0n9 (0x9)
+                            guidExtensionCode: 1229a78c-47b4-4094-b0ce-db07386fb938
+                            bNumControls: 0n2 (0x2)
+                            bNrInPins: 0n1 (0x1)
+                            bmControlsSize: 0n2 (0x2)
+                            baSourceIDs: [11]
+                            bmControls: 00 06
+                                -> D00 = 0   no -  Vendor-Specific (Optional)
+                                -> D01 = 0   no -  Vendor-Specific (Optional)
+                                -> D02 = 0   no -  Vendor-Specific (Optional)
+                                -> D03 = 0   no -  Vendor-Specific (Optional)
+                                -> D04 = 0   no -  Vendor-Specific (Optional)
+                                -> D05 = 0   no -  Vendor-Specific (Optional)
+                                -> D06 = 0   no -  Vendor-Specific (Optional)
+                                -> D07 = 0   no -  Vendor-Specific (Optional)
+                                -> D08 = 0   no -  Vendor-Specific (Optional)
+                                -> D09 = 1  yes -  Vendor-Specific (Optional)
+                                -> D10 = 1  yes -  Vendor-Specific (Optional)
+                                -> D11 = 0   no -  Vendor-Specific (Optional)
+                                -> D12 = 0   no -  Vendor-Specific (Optional)
+                                -> D13 = 0   no -  Vendor-Specific (Optional)
+                                -> D14 = 0   no -  Vendor-Specific (Optional)
+                                -> D15 = 0   no -  Vendor-Specific (Optional)
+                            iExtension: 0n0 (0x0)
+                        ===>Video Control Extension Unit Descriptor<===
+                            bLength: 0n27 (0x1b)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n6 (0x6)
+                            bUnitID: 0n10 (0xa)
+                            guidExtensionCode: 0f3f95dc-2632-4c4e-92c9-a04782f43bc8
+                            bNumControls: 0n9 (0x9)
+                            bNrInPins: 0n1 (0x1)
+                            bmControlsSize: 0n2 (0x2)
+                            baSourceIDs: [9]
+                            bmControls: 20 01
+                                -> D00 = 0   no -  Vendor-Specific (Optional)
+                                -> D01 = 0   no -  Vendor-Specific (Optional)
+                                -> D02 = 0   no -  Vendor-Specific (Optional)
+                                -> D03 = 0   no -  Vendor-Specific (Optional)
+                                -> D04 = 0   no -  Vendor-Specific (Optional)
+                                -> D05 = 1  yes -  Vendor-Specific (Optional)
+                                -> D06 = 0   no -  Vendor-Specific (Optional)
+                                -> D07 = 0   no -  Vendor-Specific (Optional)
+                                -> D08 = 1  yes -  Vendor-Specific (Optional)
+                                -> D09 = 0   no -  Vendor-Specific (Optional)
+                                -> D10 = 0   no -  Vendor-Specific (Optional)
+                                -> D11 = 0   no -  Vendor-Specific (Optional)
+                                -> D12 = 0   no -  Vendor-Specific (Optional)
+                                -> D13 = 0   no -  Vendor-Specific (Optional)
+                                -> D14 = 0   no -  Vendor-Specific (Optional)
+                                -> D15 = 0   no -  Vendor-Specific (Optional)
+                            iExtension: 0n8 (0x8)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n133 (0x85)
+                                -> Direction: IN - EndpointID:5
+                            bmAttributes: 0n3 (0x3)
+                            wMaxPacketSize: 0n32 (0x20)
+                            bInterval: 0n6 (0x6)
+                            ===>Video Streaming Endpoint Interrupt Descriptor<===
+                                bLength: 0n5 (0x5)
+                                bDescriptorType: 0n37 (0x25)
+                                bDescriptorSubtype: 0n3 (0x3)
+                                wMaxTransferSize: 0n32 (0x20)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n0 (0x0)
+                        bNumEndpoints: 0n0 (0x0)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Video Streaming Input Header Descriptor<===
+                            bLength: 0n14 (0xe)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n1 (0x1)
+                            bNumFormats: 0n1 (0x1)
+                            wTotalLength: 0n77 (0x4d)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmInfo: 0n0 (0x0)
+                                -> Dynamic Format Change not Supported
+                            bTerminalLink: 0n12 (0xc)
+                            bStillCaptureMethod: 0n1 (0x1)
+                                -> Still Capture Method 1
+                            bTriggerSupport: 0n1 (0x1)
+                                -> Hardware Triggering Support
+                            bTriggerUsage: 0n0 (0x0)
+                                -> Host will initiate still image capture
+                            bControlSize: 0n1 (0x1)
+                            Video Payload Format 0: 00
+                                -> D00 = 0   no -  Key Frame Rate
+                                -> D01 = 0   no -  P Frame Rate
+                                -> D02 = 0   no -  Compression Quality
+                                -> D03 = 0   no -  Compression Window Size
+                                -> D04 = 0   no -  Generate Key Frame
+                                -> D05 = 0   no -  Update Frame Segment
+                                -> D06 = 0   no -  Reserved
+                                -> D07 = 0   no -  Reserved
+                        ===>Video Streaming Uncompressed Format Descriptor<===
+                            bLength: 0n27 (0x1b)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n4 (0x4)
+                            bFormatIndex: 0n1 (0x1)
+                            bNumFrameDescriptors: 0n1 (0x1)
+                            guidFormat: 00000032-0002-0010-8000-00aa00389b71
+                            bBitsPerPixel: 0n8 (0x8)
+                            bDefaultFrameIndex: 0n1 (0x1)
+                            bAspectRatioX: 0n0 (0x0)
+                            bAspectRatioY: 0n0 (0x0)
+                            bmInterlaceFlags: 0n0 (0x0)
+                                -> D0    = 0 Interlaced stream or variable: No
+                                -> D1    = 0 Fields per frame: 2 fields
+                                -> D2    = 0 Field 1 first: No
+                                -> D3    = 0 Reserved
+                                -> D4..5 = 0 Field patterns -> Field 1 only
+                                -> D6..7 = 0 Display Mode ->Bob only
+                            bCopyProtect: 0n0 (0x0)
+                                -> Duplication Unrestricted
+                        ===>Video Streaming Uncompressed Frame Descriptor<===
+                            bLength: 0n30 (0x1e)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n5 (0x5)
+                            bFrameIndex: 0n1 (0x1)
+                            bmCapabilities: 0n1 (0x1)
+                            wWidth: 0n480 (0x1e0)
+                            wHeight: 0n360 (0x168)
+                            dwMinBitRate: 0n41472000 (0x278d000)
+                            dwMaxBitRate: 0n41472000 (0x278d000)
+                            dwMaxVideoFrameBufferSize: 0n172800 (0x2a300)
+                            dwDefaultFrameInterval: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                            bFrameIntervalType: 0n1 (0x1)
+                            dwFrameInterval[0]: 0n333333 (0x51615)
+                                -> 33.333300ms
+                                -> 30.500030 Hz
+                        ===>Video Streaming Color Matching Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n36 (0x24)
+                            bDescriptorSubtype: 0n13 (0xd)
+                            bColorPrimaries: 0n1 (0x1)
+                            bTransferCharacteristics: 0n1 (0x1)
+                            bMatrixCoefficients: 0n4 (0x4)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n1 (0x1)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n64 (0x40)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n2 (0x2)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n128 (0x80)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n3 (0x3)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n256 (0x100)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n4 (0x4)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n384 (0x180)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n5 (0x5)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n512 (0x200)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n6 (0x6)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n768 (0x300)
+                            bInterval: 0n1 (0x1)
+                    ===>Interface Descriptor<===
+                        bLength: 0n9 (0x9)
+                        bDescriptorType: 0n4 (0x4)
+                        bInterfaceNumber: 0n3 (0x3)
+                        bAlternateSetting: 0n7 (0x7)
+                        bNumEndpoints: 0n1 (0x1)
+                        bInterfaceClass: 0n14 (0xe)
+                        bInterfaceSubClass: 0n2 (0x2)
+                        bInterfaceProtocol: 0n0 (0x0)
+                        iInterface: 0n0 (0x0)
+                        ===>Endpoint Descriptor<===
+                            bLength: 0n7 (0x7)
+                            bDescriptorType: 0n5 (0x5)
+                            bEndpointAddress: 0n130 (0x82)
+                                -> Direction: IN - EndpointID:2
+                            bmAttributes: 0n5 (0x5)
+                            wMaxPacketSize: 0n4608 (0x1200)
+                            bInterval: 0n1 (0x1)
+            ===>BOS Descriptor<===
+                bLength: 0n5 (0x5)
+                bDescriptorType: 0n15 (0xf)
+                wTotalLength: 0n41 (0x29)
+                bNumDeviceCaps: 0n2 (0x2)
+                ===>Platform Device Capability Descriptor<===
+                    bLength: 0n28 (0x1c)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n5 (0x5)
+                    PlatformCapabilityUuid: d8dd60df-4589-4cc7-9cd2-659d9e648a9f
+                    IsMicrosoftOs2Descriptor: Yes
+                    CapabililityData: 00 00 03 06 66 03 15 00
+                ===>Firmware Status Device Capability Descriptor<===
+                    bLength: 0n8 (0x8)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n17 (0x11)
+                    bcdDescriptorVersion: 0n1 (0x1)
+                    bmAttributes: 0n3 (0x3)
+                    GetFirmwareImageHashSupport: Yes
+                    DisallowFirmwareUpdateSupport: Yes
+        ===>Usb Port<===
+            PortIndex: 0n7 (0x7)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n8 (0x8)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: Full
+                -> Is not SuperSpeed or higher capable
+            Device Address: 0n6 (0x6)
+            Open Pipes: 0n3 (0x3)
+            USB 1.1 Supported: Yes
+            USB 2.0 Supported: Yes
+            USB 3.0 Supported: No
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n512 (0x200)
+                bDeviceClass: 0n255 (0xff)
+                bDeviceSubClass: 0n16 (0x10)
+                bDeviceProtocol: 0n255 (0xff)
+                bMaxPacketSize0: 0n8 (0x8)
+                idVendor: 0n1739 (0x6cb)
+                    -> Synaptics Inc.
+                idProduct: 0n198 (0xc6)
+                bcdDevice: 0n0 (0x0)
+                iManufacturer: 0n0 (0x0)
+                iProduct: 0n0 (0x0)
+                iSerialNumber: 0n1 (0x1)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n39 (0x27)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n160 (0xa0)
+                    -> Bus Powered
+                    -> Remote Wakeup
+                MaxPower: 0n50 (0x32)
+                    -> 100mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n3 (0x3)
+                    bInterfaceClass: 0n255 (0xff)
+                    bInterfaceSubClass: 0n0 (0x0)
+                    bInterfaceProtocol: 0n0 (0x0)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n1 (0x1)
+                            -> Direction: OUT - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n129 (0x81)
+                            -> Direction: IN - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n8 (0x8)
+                        bInterval: 0n4 (0x4)
+        ===>Usb Port<===
+            PortIndex: 0n9 (0x9)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n10 (0xa)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: Full
+                -> Is not SuperSpeed or higher capable
+            Device Address: 0n4 (0x4)
+            Open Pipes: 0n5 (0x5)
+            USB 1.1 Supported: Yes
+            USB 2.0 Supported: Yes
+            USB 3.0 Supported: No
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n513 (0x201)
+                bDeviceClass: 0n224 (0xe0)
+                bDeviceSubClass: 0n1 (0x1)
+                bDeviceProtocol: 0n1 (0x1)
+                bMaxPacketSize0: 0n64 (0x40)
+                idVendor: 0n32903 (0x8087)
+                    -> Intel
+                idProduct: 0n38 (0x26)
+                bcdDevice: 0n2 (0x2)
+                iManufacturer: 0n0 (0x0)
+                iProduct: 0n0 (0x0)
+                iSerialNumber: 0n0 (0x0)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n200 (0xc8)
+                bNumInterfaces: 0n2 (0x2)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n224 (0xe0)
+                    -> Self Powered
+                    -> Remote Wakeup
+                MaxPower: 0n50 (0x32)
+                    -> 100mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n3 (0x3)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n129 (0x81)
+                            -> Direction: IN - EndpointID:1
+                        bmAttributes: 0n3 (0x3)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n2 (0x2)
+                            -> Direction: OUT - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n130 (0x82)
+                            -> Direction: IN - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n64 (0x40)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n0 (0x0)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n0 (0x0)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n1 (0x1)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n9 (0x9)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n9 (0x9)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n2 (0x2)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n17 (0x11)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n17 (0x11)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n3 (0x3)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n25 (0x19)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n25 (0x19)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n4 (0x4)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n33 (0x21)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n33 (0x21)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n5 (0x5)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n49 (0x31)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n49 (0x31)
+                        bInterval: 0n1 (0x1)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n1 (0x1)
+                    bAlternateSetting: 0n6 (0x6)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n224 (0xe0)
+                    bInterfaceSubClass: 0n1 (0x1)
+                    bInterfaceProtocol: 0n1 (0x1)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n3 (0x3)
+                            -> Direction: OUT - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n63 (0x3f)
+                        bInterval: 0n1 (0x1)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n1 (0x1)
+                        wMaxPacketSize: 0n63 (0x3f)
+                        bInterval: 0n1 (0x1)
+            ===>BOS Descriptor<===
+                bLength: 0n5 (0x5)
+                bDescriptorType: 0n15 (0xf)
+                wTotalLength: 0n12 (0xc)
+                bNumDeviceCaps: 0n1 (0x1)
+                ===>USB 2.0 Extension Device Capability Descriptor<===
+                    bLength: 0n7 (0x7)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n2 (0x2)
+                    LPMCapable: Yes
+                        -> Supports Link Power Management protocol
+                    BESLAndAlternateHIRDSupported: Yes
+                    BaselineBESLValid: Yes
+                    DeepBESLValid: No
+                    BaselineBESL: 0n4 (0x4)
+                    DeepBESL: 0n0 (0x0)
+        ===>Usb Port<===
+            PortIndex: 0n11 (0xb)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n12 (0xc)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n13 (0xd)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n1 (0x1)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n14 (0xe)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n15 (0xf)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n3 (0x3)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n16 (0x10)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n4 (0x4)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: SuperSpeed
+            Device Address: 0n19 (0x13)
+            Open Pipes: 0n2 (0x2)
+            USB 1.1 Supported: No
+            USB 2.0 Supported: No
+            USB 3.0 Supported: Yes
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n784 (0x310)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n9 (0x9)
+                idVendor: 0n2316 (0x90c)
+                    -> Silicon Motion, Inc. - Taiwan
+                idProduct: 0n8192 (0x2000)
+                bcdDevice: 0n4352 (0x1100)
+                iManufacturer: 0n1 (0x1)
+                    -> SMI Corporation
+                iProduct: 0n2 (0x2)
+                    -> USB DISK
+                iSerialNumber: 0n0 (0x0)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Device Qualifier Descriptor<===
+                bLength: 0n10 (0xa)
+                bDescriptorType: 0n6 (0x6)
+                bcdUSB: 0n512 (0x200)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n64 (0x40)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n44 (0x2c)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n128 (0x80)
+                    -> Bus Powered
+                MaxPower: 0n63 (0x3f)
+                    -> 504mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n8 (0x8)
+                    bInterfaceSubClass: 0n6 (0x6)
+                    bInterfaceProtocol: 0n80 (0x50)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n1 (0x1)
+                            -> Direction: OUT - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n8 (0x8)
+                            bmAttributes: 0n0 (0x0)
+                            wBytesPerInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n130 (0x82)
+                            -> Direction: IN - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n8 (0x8)
+                            bmAttributes: 0n0 (0x0)
+                            wBytesPerInterval: 0n0 (0x0)
+            ===>Other Speed Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n7 (0x7)
+                wTotalLength: 0n32 (0x20)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n128 (0x80)
+                    -> Bus Powered
+                MaxPower: 0n250 (0xfa)
+                    -> 2000mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n8 (0x8)
+                    bInterfaceSubClass: 0n6 (0x6)
+                    bInterfaceProtocol: 0n80 (0x50)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n1 (0x1)
+                            -> Direction: OUT - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n255 (0xff)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n130 (0x82)
+                            -> Direction: IN - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n512 (0x200)
+                        bInterval: 0n255 (0xff)
+            ===>BOS Descriptor<===
+                bLength: 0n5 (0x5)
+                bDescriptorType: 0n15 (0xf)
+                wTotalLength: 0n22 (0x16)
+                bNumDeviceCaps: 0n2 (0x2)
+                ===>USB 2.0 Extension Device Capability Descriptor<===
+                    bLength: 0n7 (0x7)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n2 (0x2)
+                    LPMCapable: Yes
+                        -> Supports Link Power Management protocol
+                    BESLAndAlternateHIRDSupported: Yes
+                    BaselineBESLValid: No
+                    DeepBESLValid: No
+                    BaselineBESL: 0n0 (0x0)
+                    DeepBESL: 0n0 (0x0)
+                ===>SuperSpeed USB Device Capability Descriptor<===
+                    bLength: 0n10 (0xa)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n3 (0x3)
+                    bmAttributes: 0n0 (0x0)
+                    wSpeedsSupported: 0n12 (0xc)
+                        -> Supports high-speed operation
+                        -> Supports SuperSpeed operation
+                    bFunctionalitySupport: 0n2 (0x2)
+                        -> Lowest speed = high-speed
+                    bU1DevExitLat: 0n4 (0x4)
+                        -> Less than 4 micro-seconds
+                    wU2DevExitLat: 0n4 (0x4)
+                        -> Less than 4 micro-seconds
+        ===>Usb Port<===
+            PortIndex: 0n17 (0x11)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n18 (0x12)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+===>Usb Host Controller<===
+    DeviceInterfacePath: \\?\PCI#VEN_8086&DEV_15E9&SUBSYS_00081189&REV_06#157600F1A8B3020000#{3abf6f2d-71c4-462a-8a92-1e6861e6af27}
+    DeviceInstanceId: PCI\VEN_8086&DEV_15E9&SUBSYS_00081189&REV_06\157600F1A8B3020000
+    DeviceDescription: USB xHCI ????? ???????
+    DeviceService: USBXHCI
+    DeviceClass: USB
+    DeviceProblemCode: 0n0 (0x0)
+    DeviceIsPresent: Yes
+    DeviceHasProblem: No
+    HardwareIds: 
+        -> PCI\VEN_8086&DEV_15E9&SUBSYS_00081189&REV_06
+        -> PCI\VEN_8086&DEV_15E9&SUBSYS_00081189
+        -> PCI\VEN_8086&DEV_15E9&CC_0C0330
+        -> PCI\VEN_8086&DEV_15E9&CC_0C03
+    VendorId: 0n32902 (0x8086)
+        -> Intel Corporation
+    ProductId: 0n5609 (0x15e9)
+    HardwareRevision: 0n6 (0x6)
+    BusNumber: 0n57 (0x39)
+    Address: 0n0 (0x0)
+    Function: 0n0 (0x0)
+    BusParams: 57.0.0
+    ===>Usb Root Hub<===
+        PortIndex: 0n0 (0x0)
+        DeviceInterfacePath: \\.\USB#ROOT_HUB30#7&1a34a7e2&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+        DeviceInstanceId: USB\ROOT_HUB30\7&1a34a7e2&0&0
+        DeviceDescription: USB ??? ?? (USB 3.0)
+        DeviceService: USBHUB3
+        DeviceClass: USB
+        DeviceProblemCode: 0n0 (0x0)
+        DeviceIsPresent: Yes
+        DeviceHasProblem: No
+        HardwareIds: 
+            -> USB\ROOT_HUB30&VID8086&PID15E9&REV0006
+            -> USB\ROOT_HUB30&VID8086&PID15E9
+            -> USB\ROOT_HUB30
+        Hub Is Bus Power: No
+        Is Port User Connectable: No
+        Is Port Debug Capable: No
+        Has Multiple Companions: No
+        Connector Is TypeC: No
+        Companion Port Index: 0n0 (0x0)
+        Companion Port Number: 0n0 (0x0)
+        Companion Hub Symbolic Link Name: 
+        Number of Ports: 0n4 (0x4)
+        Power switching: Ganged
+        Compound device: No
+        Over-current Protection: Global
+        High speed capable: No
+        High speed: Yes
+        Multiple transaction translations capable: No
+        Performs multiple transaction translations simultaneously: No
+        Hub wakes when device is connected: No
+        Hub is bus powered: No
+        Hub is root: Yes
+        ===>Usb Port<===
+            PortIndex: 0n1 (0x1)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n2 (0x2)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: No
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+        ===>Usb Port<===
+            PortIndex: 0n3 (0x3)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: Yes
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: Yes
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n2 (0x2)
+            Companion Hub Symbolic Link Name: USB#ROOT_HUB30#4&20157de1&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+            ConnectionStatus: 
+            Current Config Value: 0n1 (0x1)
+                -> Device Bus Speed: SuperSpeedPlus
+            Device Address: 0n5 (0x5)
+            Open Pipes: 0n4 (0x4)
+            USB 1.1 Supported: No
+            USB 2.0 Supported: No
+            USB 3.0 Supported: Yes
+            ===>Device Descriptor<===
+                bLength: 0n18 (0x12)
+                bDescriptorType: 0n1 (0x1)
+                bcdUSB: 0n784 (0x310)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n9 (0x9)
+                idVendor: 0n5964 (0x174c)
+                    -> ASMedia Technology Inc.
+                idProduct: 0n21930 (0x55aa)
+                bcdDevice: 0n1 (0x1)
+                iManufacturer: 0n2 (0x2)
+                    -> SP
+                iProduct: 0n3 (0x3)
+                    -> B75 Pro
+                iSerialNumber: 0n1 (0x1)
+                    -> 23024064202000000109
+                bNumConfigurations: 0n1 (0x1)
+            ===>Device Qualifier Descriptor<===
+                bLength: 0n10 (0xa)
+                bDescriptorType: 0n6 (0x6)
+                bcdUSB: 0n528 (0x210)
+                bDeviceClass: 0n0 (0x0)
+                bDeviceSubClass: 0n0 (0x0)
+                bDeviceProtocol: 0n0 (0x0)
+                bMaxPacketSize0: 0n64 (0x40)
+                bNumConfigurations: 0n1 (0x1)
+            ===>Configuration Descriptor<===
+                bLength: 0n9 (0x9)
+                bDescriptorType: 0n2 (0x2)
+                wTotalLength: 0n121 (0x79)
+                bNumInterfaces: 0n1 (0x1)
+                bConfigurationValue: 0n1 (0x1)
+                iConfiguration: 0n0 (0x0)
+                bmAttributes: 0n192 (0xc0)
+                    -> Self Powered
+                MaxPower: 0n0 (0x0)
+                    -> 0mA
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n0 (0x0)
+                    bNumEndpoints: 0n2 (0x2)
+                    bInterfaceClass: 0n8 (0x8)
+                    bInterfaceSubClass: 0n6 (0x6)
+                    bInterfaceProtocol: 0n80 (0x50)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n129 (0x81)
+                            -> Direction: IN - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n15 (0xf)
+                            bmAttributes: 0n0 (0x0)
+                            wBytesPerInterval: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n2 (0x2)
+                            -> Direction: OUT - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n15 (0xf)
+                            bmAttributes: 0n0 (0x0)
+                            wBytesPerInterval: 0n0 (0x0)
+                ===>Interface Descriptor<===
+                    bLength: 0n9 (0x9)
+                    bDescriptorType: 0n4 (0x4)
+                    bInterfaceNumber: 0n0 (0x0)
+                    bAlternateSetting: 0n1 (0x1)
+                    bNumEndpoints: 0n4 (0x4)
+                    bInterfaceClass: 0n8 (0x8)
+                    bInterfaceSubClass: 0n6 (0x6)
+                    bInterfaceProtocol: 0n98 (0x62)
+                    iInterface: 0n0 (0x0)
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n129 (0x81)
+                            -> Direction: IN - EndpointID:1
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n15 (0xf)
+                            bmAttributes: 0n3 (0x3)
+                            wBytesPerInterval: 0n0 (0x0)
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n4 (0x4)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 03 00
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n2 (0x2)
+                            -> Direction: OUT - EndpointID:2
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n15 (0xf)
+                            bmAttributes: 0n3 (0x3)
+                            wBytesPerInterval: 0n0 (0x0)
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n4 (0x4)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 04 00
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n131 (0x83)
+                            -> Direction: IN - EndpointID:3
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n15 (0xf)
+                            bmAttributes: 0n3 (0x3)
+                            wBytesPerInterval: 0n0 (0x0)
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n4 (0x4)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 02 00
+                    ===>Endpoint Descriptor<===
+                        bLength: 0n7 (0x7)
+                        bDescriptorType: 0n5 (0x5)
+                        bEndpointAddress: 0n4 (0x4)
+                            -> Direction: OUT - EndpointID:4
+                        bmAttributes: 0n2 (0x2)
+                        wMaxPacketSize: 0n1024 (0x400)
+                        bInterval: 0n0 (0x0)
+                        ===>SuperSpeed Endpoint Companion Descriptor<===
+                            bLength: 0n6 (0x6)
+                            bDescriptorType: 0n48 (0x30)
+                            bMaxBurst: 0n0 (0x0)
+                            bmAttributes: 0n0 (0x0)
+                            wBytesPerInterval: 0n0 (0x0)
+                        ===>Unknown USB Descriptor<===
+                            bLength: 0n4 (0x4)
+                            bDescriptorType: 0n36 (0x24)
+                            UnparsedData: 01 00
+            ===>BOS Descriptor<===
+                bLength: 0n5 (0x5)
+                bDescriptorType: 0n15 (0xf)
+                wTotalLength: 0n42 (0x2a)
+                bNumDeviceCaps: 0n3 (0x3)
+                ===>USB 2.0 Extension Device Capability Descriptor<===
+                    bLength: 0n7 (0x7)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n2 (0x2)
+                    LPMCapable: Yes
+                        -> Supports Link Power Management protocol
+                    BESLAndAlternateHIRDSupported: Yes
+                    BaselineBESLValid: Yes
+                    DeepBESLValid: Yes
+                    BaselineBESL: 0n4 (0x4)
+                    DeepBESL: 0n15 (0xf)
+                ===>SuperSpeed USB Device Capability Descriptor<===
+                    bLength: 0n10 (0xa)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n3 (0x3)
+                    bmAttributes: 0n0 (0x0)
+                    wSpeedsSupported: 0n14 (0xe)
+                        -> Supports full-speed operation
+                        -> Supports high-speed operation
+                        -> Supports SuperSpeed operation
+                    bFunctionalitySupport: 0n1 (0x1)
+                        -> Lowest speed = full-speed
+                    bU1DevExitLat: 0n10 (0xa)
+                        -> Less than 10 micro-seconds
+                    wU2DevExitLat: 0n2047 (0x7ff)
+                        -> Less than 2047 micro-seconds
+                ===>SuperSpeedPlus USB Device Capability Descriptor<===
+                    bLength: 0n20 (0x14)
+                    bDescriptorType: 0n16 (0x10)
+                    bDevCapabilityType: 0n10 (0xa)
+                    bmAttributes: 0n1 (0x1)
+                    SublinkSpeedAttrCount: 0n1 (0x1)
+                    SublinkSpeedIDCount: 0n0 (0x0)
+                    wFunctionalitySupport: 0n4352 (0x1100)
+                    SublinkSpeedAttrID: 0n0 (0x0)
+                    MinRxLaneCount: 0n1 (0x1)
+                    MinTxLaneCount: 0n1 (0x1)
+                    ===>bmSublinkSpeedAttr<===
+                        Attr#: 0n0 (0x0)
+                        SublinkSpeedAttrID: 0n0 (0x0)
+                        LaneSpeedExponent: 0n3 (0x3)
+                            -> Gb/s
+                        SublinkTypeMode: 0n0 (0x0)
+                            -> Symmetric
+                        SublinkTypeDir: 0n0 (0x0)
+                            -> Receive mode
+                        LinkProtocol: 0n1 (0x1)
+                            -> SuperSpeedPlus
+                        LaneSpeedMantissa: 0n10 (0xa)
+                    ===>bmSublinkSpeedAttr<===
+                        Attr#: 0n1 (0x1)
+                        SublinkSpeedAttrID: 0n0 (0x0)
+                        LaneSpeedExponent: 0n3 (0x3)
+                            -> Gb/s
+                        SublinkTypeMode: 0n0 (0x0)
+                            -> Symmetric
+                        SublinkTypeDir: 0n1 (0x1)
+                            -> Transmit mode
+                        LinkProtocol: 0n1 (0x1)
+                            -> SuperSpeedPlus
+                        LaneSpeedMantissa: 0n10 (0xa)
+        ===>Usb Port<===
+            PortIndex: 0n4 (0x4)
+            Composite Device Child Descriptions: 
+            Is Port User Connectable: No
+            Is Port Debug Capable: Yes
+            Has Multiple Companions: No
+            Connector Is TypeC: No
+            Companion Port Index: 0n0 (0x0)
+            Companion Port Number: 0n0 (0x0)
+            Companion Hub Symbolic Link Name: 
+            ConnectionStatus: NoDeviceConnected
+
