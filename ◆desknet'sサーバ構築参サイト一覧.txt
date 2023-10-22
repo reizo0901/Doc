@@ -1,0 +1,30 @@
+◆ desknet's NEOのインストール先 ◆
+ 本体：c:\Inetpub\Scripts\dneo
+ スマートフォン：c:\Inetpub\Scripts\dneosp
+
+◆ Webサーバーのホームディレクトリ ◆
+ フォルダ：c:\Inetpub\wwwroot
+
+◆ PostgreSQLインストール情報 ◆
+ インストール方法：カスタムインストール
+ インストール先：C:\Program Files\PostgreSQL\9.3
+ ポート番号：5432
+ データ保存先：C:\Program Files\PostgreSQL\9.3\data
+ サービス実行ユーザー名：pgsql
+ サービス実行ユーザーパスワード：NjATZyYO6wn8Ppg
+
+◆ PostgreSQLアクセス情報 ◆
+ 管理ユーザー名：postgres
+ 管理ユーザーパスワード：postgres
+ DBアクセスユーザー名：dneo
+ DBアクセスユーザーパスワード：desknetsNeo_PgSql
+
+- インストール中、PostgreSQLのインストールが始まります -
+サーバー機のハードウェアスペックにより、数分から数十分の時間がかかります。
+インストールが始まりましたらそのままお待ちください。
+
+◆ desknet's Web Server ◆
+インストールしない
+
+ インストール先：C:\Program Files (x86)\DnWS
+※desknet's Web Serverをインストールする場合、desknet's NEOのインストール先は変更できません。
