@@ -1,30 +1,252 @@
-◆ desknet's NEOのインストール先 ◆
- 本体：c:\Inetpub\Scripts\dneo
- スマートフォン：c:\Inetpub\Scripts\dneosp
+desknet'sサーバ構築案件参考サイト一覧
 
-◆ Webサーバーのホームディレクトリ ◆
- フォルダ：c:\Inetpub\wwwroot
+●Windows Sever構築で注意が必要なこと●
 
-◆ PostgreSQLインストール情報 ◆
- インストール方法：カスタムインストール
- インストール先：C:\Program Files\PostgreSQL\9.3
- ポート番号：5432
- データ保存先：C:\Program Files\PostgreSQL\9.3\data
- サービス実行ユーザー名：pgsql
- サービス実行ユーザーパスワード：NjATZyYO6wn8Ppg
+【ウイルススキャン除外設定】
 
-◆ PostgreSQLアクセス情報 ◆
- 管理ユーザー名：postgres
- 管理ユーザーパスワード：postgres
- DBアクセスユーザー名：dneo
- DBアクセスユーザーパスワード：desknetsNeo_PgSql
+フェールオーバークラスタリング システム構築ガイド - 9.2.1. クラスター関連フォルダーやファイルの除外設定
+https://jpn.nec.com/nx7700x/support/ws2016/WS2016_WSFC_System_Configuration_Guide.pdf
 
-- インストール中、PostgreSQLのインストールが始まります -
-サーバー機のハードウェアスペックにより、数分から数十分の時間がかかります。
-インストールが始まりましたらそのままお待ちください。
+クラスター対応ではないウイルス対策ソフトウェアは、Cluster Services で問題を引き起こす可能性があります
+https://learn.microsoft.com/ja-jp/troubleshoot/windows-server/high-availability/not-cluster-aware-antivirus-software-cause-issue
 
-◆ desknet's Web Server ◆
-インストールしない
+Windows Server でのMicrosoft Defenderウイルス対策の除外
+https://learn.microsoft.com/ja-jp/microsoft-365/security/defender-endpoint/configure-server-exclusions-microsoft-defender-antivirus?view=o365-worldwide
 
- インストール先：C:\Program Files (x86)\DnWS
-※desknet's Web Serverをインストールする場合、desknet's NEOのインストール先は変更できません。
+IIS 観点でアンチ ウイルス スキャン対象から除外したいフォルダー
+https://jpdsi.github.io/blog/web-apps/iis-exclude-antivirus-scanning/
+
+ウイルス対策ソフトの導入にあたり注意事項はありますか。
+https://faq.desknets.com/%e3%82%a6%e3%82%a4%e3%83%ab%e3%82%b9%e5%af%be%e7%ad%96%e3%82%bd%e3%83%95%e3%83%88%e3%81%ae%e5%b0%8e%e5%85%a5%e3%81%ab%e3%81%82%e3%81%9f%e3%82%8a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a0%85%e3%81%af%e3%81%82%e3%82%8a%e3%81%be%e3%81%99%e3%81%8b%e3%80%82-61276c4e16d50b0023d7d35d?_ga=2.266434126.1751003446.1697989157-697057189.1697187205&_gl=1*l1hwd9*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MzI5OS40My4wLjA.
+
+●WSFC関連●
+
+クラスターの作成
+https://learn.microsoft.com/ja-jp/azure/databricks/clusters/configure
+
+フェールオーバー クラスターで実行されるサービスとアプリケーションの構成と検証
+https://learn.microsoft.com/ja-jp/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197611(v=ws.10)
+
+フェールオーバー クラスター展開ガイド
+https://learn.microsoft.com/ja-jp/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197477(v=ws.10)
+
+フェールオーバー クラスターのハードウェアの検証
+https://learn.microsoft.com/ja-jp/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)
+
+フェールオーバー クラスターのステップ バイ ステップ ガイド: フェールオーバー クラスターでのクォーラムの構成
+https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770620(v=ws.10)?redirectedfrom=MSDN
+
+Windows Server フェールオーバー クラスターでの IIS World Wide Web 発行サービスの構成
+https://learn.microsoft.com/ja-jp/troubleshoot/developer/webapps/iis/www-authentication-authorization/configure-w3svc-wsfc
+
+Failover Policy for Failover Cluster Instances
+https://learn.microsoft.com/ja-jp/sql/sql-server/failover-clusters/windows/failover-policy-for-failover-cluster-instances?view=sql-server-ver16
+
+●desknet's関連● ※頭に★がついているリンクはまとめリンクです。
+
+突然ライセンスキーが期限切れになり、入力を求められてログインできません。
+https://faq.desknets.com/%e7%aa%81%e7%84%b6%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9%e3%82%ad%e3%83%bc%e3%81%8c%e6%9c%9f%e9%99%90%e5%88%87%e3%82%8c%e3%81%ab%e3%81%aa%e3%82%8a%e3%80%81%e5%85%a5%e5%8a%9b%e3%82%92%e6%b1%82%e3%82%81%e3%82%89%e3%82%8c%e3%81%a6%e3%83%ad%e3%82%b0%e3%82%a4%e3%83%b3%e3%81%a7%e3%81%8d%e3%81%be%e3%81%9b%e3%82%93%e3%80%82-61276c4e16d50b0023d7d36c?_gl=1*1bck09j*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTc3NC41OS4wLjA.&_ga=2.8107506.1751003446.1697989157-697057189.1697187205
+
+desknet's NEOの「障害・メンテナンス情報」はどこで確認できますか。
+https://faq.desknets.com/desknet's%20NEO%e3%81%ae%e3%80%8c%e9%9a%9c%e5%ae%b3%e3%83%bb%e3%83%a1%e3%83%b3%e3%83%86%e3%83%8a%e3%83%b3%e3%82%b9%e6%83%85%e5%a0%b1%e3%80%8d%e3%81%af%e3%81%a9%e3%81%93%e3%81%a7%e7%a2%ba%e8%aa%8d%e3%81%a7%e3%81%8d%e3%81%be%e3%81%99%e3%81%8b%e3%80%82-61276c4d16d50b0023d7d2bb?_ga=2.62502252.1751003446.1697989157-697057189.1697187205&_gl=1*12nx37c*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTk4OC40NS4wLjA.
+
+参考サーバースペック
+https://faq.desknets.com/%e5%8f%82%e8%80%83%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%82%b9%e3%83%9a%e3%83%83%e3%82%af-61276c4d16d50b0023d7d333?_ga=2.263239244.1751003446.1697989157-697057189.1697187205&_gl=1*2cug7j*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTIzMy4zNS4wLjA.
+
+リビジョンアップモジュール適用前の注意事項
+https://faq.desknets.com/%e3%83%aa%e3%83%93%e3%82%b8%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%83%e3%83%97%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e9%81%a9%e7%94%a8%e5%89%8d%e3%81%ae%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a0%85-61276c4e16d50b0023d7d3c0?_ga=2.40965602.1751003446.1697989157-697057189.1697187205&_gl=1*168vgsw*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTM4OC4xMC4wLjA.
+
+アクセスログ等で確認できるエラーコードの内容と対処方法
+https://faq.desknets.com/%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%83%ad%e3%82%b0%e7%ad%89%e3%81%a7%e7%a2%ba%e8%aa%8d%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%a8%e3%83%a9%e3%83%bc%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e5%86%85%e5%ae%b9%e3%81%a8%e5%af%be%e5%87%a6%e6%96%b9%e6%b3%95-61276c4d16d50b0023d7d30f?_gl=1*13b2vni*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDIzOS42MC4wLjA.&_ga=2.33075966.1751003446.1697989157-697057189.1697187205
+
+Windows Server 2012 & IIS 8設定ガイド
+https://www.desknets.com/neo/download/doc/install/win2012iis8.html
+
+統合Windows認証の設定方法
+https://faq.desknets.com/%E7%B5%B1%E5%90%88Windows%E8%AA%8D%E8%A8%BC%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95-61276c4d16d50b0023d7d32d#:~:text=Web%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%EF%BC%88IIS%EF%BC%89%E3%81%A8desknet%E2%80%99s%20NEO%E6%9C%AC%E4%BD%93%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%8C%E5%AE%8C%E4%BA%86%E3%81%97%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88%E3%81%AF%E3%80%81%E5%85%88%E3%81%AB%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%92%E5%AE%8C%E4%BA%86%E3%81%95%E3%81%9B%E3%80%81%E5%8D%98%E4%BD%93%E3%81%A7%E3%81%AE%E5%8B%95%E4%BD%9C%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%9F%E3%81%86%E3%81%88%E3%81%A7%E3%80%81%E4%BB%A5%E4%B8%8B%E3%81%AE%E6%89%8B%E9%A0%86%E3%82%92%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%201.%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%92%E9%96%8B%E3%81%8D%E3%80%81%E3%80%8C%E5%BD%B9%E5%89%B2%E3%81%A8%E6%A9%9F%E8%83%BD%E3%81%AE%E8%BF%BD%E5%8A%A0%E3%80%8D%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%202.%20%E3%82%A6%E3%82%A3%E3%82%B6%E3%83%BC%E3%83%89%E3%81%AB%E5%BE%93%E3%81%A3%E3%81%A6%E6%89%8B%E9%A0%86%E3%82%92%E9%80%B2%E3%82%81%E3%80%81%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B%E5%BD%B9%E5%89%B2%E3%82%92%E9%81%B8%E6%8A%9E%E3%81%99%E3%82%8B%E7%94%BB%E9%9D%A2%E3%81%A7%E3%83%84%E3%83%AA%E3%83%BC%E3%81%8B%E3%82%89%E3%80%8CWeb,%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%EF%BC%88IIS%EF%BC%89%E3%80%8D%E3%80%81%E3%80%8CWeb%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%80%8D%E3%80%81%E3%80%8C%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%80%8D%E3%81%A8%E9%80%B2%E3%82%81%E3%80%81%E3%80%8CWindows%20%E8%AA%8D%E8%A8%BC%E3%80%8D%E3%81%AB%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E8%BF%BD%E5%8A%A0%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%203.%20%E5%BD%B9%E5%89%B2%E3%81%AE%E8%BF%BD%E5%8A%A0%E3%81%8C%E5%AE%8C%E4%BA%86%E3%81%97%E3%81%9F%E3%82%89%E3%80%81%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%81%8B%E3%82%89%E3%80%8C%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%20%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%EF%BC%88IIS%EF%BC%89%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%80%8D%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%97%E3%81%BE%E3%81%99%E3%80%82
+
+サーバーを移行する方法（手順･手続き）
+https://faq.desknets.com/%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%82%92%e7%a7%bb%e8%a1%8c%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95%ef%bc%88%e6%89%8b%e9%a0%86%ef%bd%a5%e6%89%8b%e7%b6%9a%e3%81%8d%ef%bc%89-61276c4c16d50b0023d7d1b5?_ga=2.268179278.1751003446.1697989157-697057189.1697187205&_gl=1*15vfmuq*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTM3NC42MC4wLjA.
+
+Windowsサーバーへのインストール時に「初期データの作成に失敗しました（ロール作成：２）」のエラーが表示されます。
+https://faq.desknets.com/Windows%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%b8%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%99%82%e3%81%ab%e3%80%8c%e5%88%9d%e6%9c%9f%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bd%9c%e6%88%90%e3%81%ab%e5%a4%b1%e6%95%97%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%ef%bc%88%e3%83%ad%e3%83%bc%e3%83%ab%e4%bd%9c%e6%88%90%ef%bc%9a%ef%bc%92%ef%bc%89%e3%80%8d%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e8%a1%a8%e7%a4%ba%e3%81%95%e3%82%8c%e3%81%be%e3%81%99%e3%80%82-61276c4f16d50b0023d7d580?_gl=1*10jxxoj*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTg4My42MC4wLjA.&_ga=2.98705118.1751003446.1697989157-697057189.1697187205
+
+ウイルス対策ソフトの導入にあたり注意事項はありますか。
+https://faq.desknets.com/%e3%82%a6%e3%82%a4%e3%83%ab%e3%82%b9%e5%af%be%e7%ad%96%e3%82%bd%e3%83%95%e3%83%88%e3%81%ae%e5%b0%8e%e5%85%a5%e3%81%ab%e3%81%82%e3%81%9f%e3%82%8a%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a0%85%e3%81%af%e3%81%82%e3%82%8a%e3%81%be%e3%81%99%e3%81%8b%e3%80%82-61276c4e16d50b0023d7d35d?_ga=2.61898476.1751003446.1697989157-697057189.1697187205&_gl=1*69vjey*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTUwMy4xNS4wLjA.
+
+Cドライブにインストールしたdesknet's NEOをDドライブに変更する方法
+https://faq.desknets.com/C%e3%83%89%e3%83%a9%e3%82%a4%e3%83%96%e3%81%ab%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9fdesknet's%20NEO%e3%82%92D%e3%83%89%e3%83%a9%e3%82%a4%e3%83%96%e3%81%ab%e5%a4%89%e6%9b%b4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95-61276c4e16d50b0023d7d411?_ga=2.108687682.1751003446.1697989157-697057189.1697187205&_gl=1*1ys2z3u*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTYxMS4yNy4wLjA.
+
+データのバックアップおよびリストアの方法【Windowsサーバー - PostgreSQL対応版】
+https://faq.desknets.com/%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%81%8A%E3%82%88%E3%81%B3%E3%83%AA%E3%82%B9%E3%83%88%E3%82%A2%E3%81%AE%E6%96%B9%E6%B3%95%E3%80%90Windows%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%20-%20PostgreSQL%E5%AF%BE%E5%BF%9C%E7%89%88%E3%80%91-61276c4c16d50b0023d7d134
+
+desknet's NEOのレスポンスが低下してきました。なぜでしょうか？
+https://faq.desknets.com/desknet's%20NEO%e3%81%ae%e3%83%ac%e3%82%b9%e3%83%9d%e3%83%b3%e3%82%b9%e3%81%8c%e4%bd%8e%e4%b8%8b%e3%81%97%e3%81%a6%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%e3%81%aa%e3%81%9c%e3%81%a7%e3%81%97%e3%82%87%e3%81%86%e3%81%8b%ef%bc%9f-61276c4d16d50b0023d7d2b5?_ga=2.99319262.1751003446.1697989157-697057189.1697187205&_gl=1*1hocxiw*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTAwNC4xMi4wLjA.
+
+アップデートツールにて「アップデート基本情報ファイルの書き込みに失敗しました。」とエラーが表示されます。
+https://faq.desknets.com/%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88%e3%83%84%e3%83%bc%e3%83%ab%e3%81%ab%e3%81%a6%e3%80%8c%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88%e5%9f%ba%e6%9c%ac%e6%83%85%e5%a0%b1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e6%9b%b8%e3%81%8d%e8%be%bc%e3%81%bf%e3%81%ab%e5%a4%b1%e6%95%97%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%e3%80%8d%e3%81%a8%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e8%a1%a8%e7%a4%ba%e3%81%95%e3%82%8c%e3%81%be%e3%81%99%e3%80%82-61276c4b16d50b0023d7d083?_gl=1*1mcynb3*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTc3NC4yOS4wLjA.&_ga=2.27357820.1751003446.1697989157-697057189.1697187205
+
+「ファイルオープンに失敗しました」とエラーが表示されます。
+https://faq.desknets.com/%e3%80%8c%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3%e3%81%ab%e5%a4%b1%e6%95%97%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%8d%e3%81%a8%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e8%a1%a8%e7%a4%ba%e3%81%95%e3%82%8c%e3%81%be%e3%81%99%e3%80%82-61276c4d16d50b0023d7d315?_ga=2.67351889.1751003446.1697989157-697057189.1697187205&_gl=1*moofqk*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTk0OS41OS4wLjA.
+
+ファイル添付において、2GBを超えるファイルのアップロードができません。
+https://faq.desknets.com/%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%b7%bb%e4%bb%98%e3%81%ab%e3%81%8a%e3%81%84%e3%81%a6%e3%80%812GB%e3%82%92%e8%b6%85%e3%81%88%e3%82%8b%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%ad%e3%83%bc%e3%83%89%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%be%e3%81%9b%e3%82%93%e3%80%82-61276c5016d50b0023d7d619?_ga=2.37386720.1751003446.1697989157-697057189.1697187205&_gl=1*1k2gwpj*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTcyOS44LjAuMA..
+
+desknet's NEOの操作時に「ディレクトリ作成に失敗しました」のエラーが表示されます。
+https://faq.desknets.com/desknet's%20NEO%e3%81%ae%e6%93%8d%e4%bd%9c%e6%99%82%e3%81%ab%e3%80%8c%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e4%bd%9c%e6%88%90%e3%81%ab%e5%a4%b1%e6%95%97%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%8d%e3%81%ae%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e8%a1%a8%e7%a4%ba%e3%81%95%e3%82%8c%e3%81%be%e3%81%99%e3%80%82-61276c4f16d50b0023d7d57d?_ga=2.67351889.1751003446.1697989157-697057189.1697187205&_gl=1*1d7jj1c*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTkxOC4yNS4wLjA.
+
+文書管理のファイル取込設定を行う際に「指定されたディレクトリにアクセス権がありません〜」とエラー表示されます。
+https://faq.desknets.com/%e6%96%87%e6%9b%b8%e7%ae%a1%e7%90%86%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e5%8f%96%e8%be%bc%e8%a8%ad%e5%ae%9a%e3%82%92%e8%a1%8c%e3%81%86%e9%9a%9b%e3%81%ab%e3%80%8c%e6%8c%87%e5%ae%9a%e3%81%95%e3%82%8c%e3%81%9f%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%81%ab%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e6%a8%a9%e3%81%8c%e3%81%82%e3%82%8a%e3%81%be%e3%81%9b%e3%82%93%e3%80%9c%e3%80%8d%e3%81%a8%e3%82%a8%e3%83%a9%e3%83%bc%e8%a1%a8%e7%a4%ba%e3%81%95%e3%82%8c%e3%81%be%e3%81%99%e3%80%82-61276c4a16d50b0023d7cfcd?_ga=2.268179278.1751003446.1697989157-697057189.1697187205&_gl=1*k2gmtl*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTMyMC40MC4wLjA.
+
+desknet's NEOの構成ファイルのアクセス権の再設定方法
+https://faq.desknets.com/desknet's%20NEO%e3%81%ae%e6%a7%8b%e6%88%90%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e6%a8%a9%e3%81%ae%e5%86%8d%e8%a8%ad%e5%ae%9a%e6%96%b9%e6%b3%95-61276c4d16d50b0023d7d306?_ga=2.73494866.1751003446.1697989157-697057189.1697187205&_gl=1*10l8qbw*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTE4Ny42MC4wLjA.
+
+「アクセスログファイル保存失敗通知 アクセスログを保存するフォルダにアクセス権がない〜」とエラーが表示されます。
+https://faq.desknets.com/%e3%80%8c%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%83%ad%e3%82%b0%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e4%bf%9d%e5%ad%98%e5%a4%b1%e6%95%97%e9%80%9a%e7%9f%a5%20%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%83%ad%e3%82%b0%e3%82%92%e4%bf%9d%e5%ad%98%e3%81%99%e3%82%8b%e3%83%95%e3%82%a9%e3%83%ab%e3%83%80%e3%81%ab%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e6%a8%a9%e3%81%8c%e3%81%aa%e3%81%84%e3%80%9c%e3%80%8d%e3%81%a8%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e8%a1%a8%e7%a4%ba%e3%81%95%e3%82%8c%e3%81%be%e3%81%99%e3%80%82-61276c4d16d50b0023d7d312?_gl=1*1x0nuno*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTE5NC41My4wLjA.&_ga=2.32554622.1751003446.1697989157-697057189.1697187205
+
+ファイル添付時にファイルを選択しても進捗バーが進まず止まったままとなります。
+https://faq.desknets.com/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E6%B7%BB%E4%BB%98%E6%99%82%E3%81%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E9%81%B8%E6%8A%9E%E3%81%97%E3%81%A6%E3%82%82%E9%80%B2%E6%8D%97%E3%83%90%E3%83%BC%E3%81%8C%E9%80%B2%E3%81%BE%E3%81%9A%E6%AD%A2%E3%81%BE%E3%81%A3%E3%81%9F%E3%81%BE%E3%81%BE%E3%81%A8%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82-61276c4f16d50b0023d7d4b7
+
+スケジューラーの仕様と起動方法
+https://faq.desknets.com/%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%a9%e3%83%bc%e3%81%ae%e4%bb%95%e6%a7%98%e3%81%a8%e8%b5%b7%e5%8b%95%e6%96%b9%e6%b3%95-61276c4c16d50b0023d7d1c3?_ga=2.99332446.1751003446.1697989157-697057189.1697187205&_gl=1*zb8v52*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTE3MS4zNC4wLjA.
+
+★自己署名証明書
+https://faq.desknets.com/%e8%87%aa%e5%b7%b1%e7%bd%b2%e5%90%8d%e8%a8%bc%e6%98%8e%e6%9b%b8?_gl=1*rlnk29*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDQyNS4xLjAuMA..&_ga=2.6902514.1751003446.1697989157-697057189.1697187205
+
+★管理者設定
+https://faq.desknets.com/%e7%ae%a1%e7%90%86%e8%80%85%e8%a8%ad%e5%ae%9a?_ga=2.268129742.1751003446.1697989157-697057189.1697187205&_gl=1*u79986*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDQ4Ni4xNy4wLjA.
+
+★組織システムID
+https://faq.desknets.com/%e7%b5%84%e7%b9%94%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0ID?_ga=2.268129742.1751003446.1697989157-697057189.1697187205&_gl=1*1r0zfum*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDUxNC41OS4wLjA.
+
+★AppSuite
+https://faq.desknets.com/AppSuite-61276c5016d50b0023d7d5da?_ga=2.6861554.1751003446.1697989157-697057189.1697187205&_gl=1*ma70ce*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDU1OC4xNS4wLjA.
+
+★組織ポータル
+https://faq.desknets.com/%e7%b5%84%e7%b9%94%e3%83%9d%e3%83%bc%e3%82%bf%e3%83%ab?_ga=2.33758817.1751003446.1697989157-697057189.1697187205&_gl=1*1cr09gg*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTg3OS4yNC4wLjA.
+
+★設備予約
+https://faq.desknets.com/%e8%a8%ad%e5%82%99%e4%ba%88%e7%b4%84?_ga=2.69344720.1751003446.1697989157-697057189.1697187205&_gl=1*1o72236*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTI2Ni4yLjAuMA..
+
+★ネオツイ
+https://faq.desknets.com/%e3%83%8d%e3%82%aa%e3%83%84%e3%82%a4?_ga=2.263239244.1751003446.1697989157-697057189.1697187205&_gl=1*o7683d*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTIwOS41OS4wLjA.
+
+★ウェブメール
+https://faq.desknets.com/%e3%82%a6%e3%82%a7%e3%83%96%e3%83%a1%e3%83%bc%e3%83%ab?_ga=2.96058076.1751003446.1697989157-697057189.1697187205&_gl=1*1fmy80p*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDU5MC42MC4wLjA.
+
+★ウェブメールIMAP
+https://faq.desknets.com/%e3%82%a6%e3%82%a7%e3%83%96%e3%83%a1%e3%83%bc%e3%83%abIMAP?_ga=2.99332446.1751003446.1697989157-697057189.1697187205&_gl=1*11ug422*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTE0Ni41OS4wLjA.
+
+★Gmail
+https://faq.desknets.com/Gmail?_ga=2.104419648.1751003446.1697989157-697057189.1697187205&_gl=1*aqasja*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDczMy41OS4wLjA.
+
+★SSL証明書
+https://faq.desknets.com/SSL%e8%a8%bc%e6%98%8e%e6%9b%b8?_ga=2.33298174.1751003446.1697989157-697057189.1697187205&_gl=1*34jpql*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTU3NS4yNS4wLjA.
+
+★交通費・経費
+https://faq.desknets.com/%e4%ba%a4%e9%80%9a%e8%b2%bb%e3%83%bb%e7%b5%8c%e8%b2%bb?_ga=2.104419648.1751003446.1697989157-697057189.1697187205&_gl=1*n1fnv0*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDcwNi40LjAuMA..
+
+★ウェブ会議
+https://faq.desknets.com/%e3%82%a6%e3%82%a7%e3%83%96%e4%bc%9a%e8%ad%b0-61276c4c16d50b0023d7d1cc?_ga=2.104600896.1751003446.1697989157-697057189.1697187205&_gl=1*u8r2sz*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDc4My45LjAuMA..
+
+★スケジューラー
+https://faq.desknets.com/%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%a9%e3%83%bc?_ga=2.263225036.1751003446.1697989157-697057189.1697187205&_gl=1*vekzu3*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTExMi42LjAuMA..
+
+★申請書アプリケーション
+https://faq.desknets.com/%e7%94%b3%e8%ab%8b%e6%9b%b8%e3%82%a2%e3%83%97%e3%83%aa%e3%82%b1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3?_ga=2.33298174.1751003446.1697989157-697057189.1697187205&_gl=1*ve1897*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTU0NC41Ni4wLjA.
+
+★ワークフロー
+https://faq.desknets.com/%e3%83%af%e3%83%bc%e3%82%af%e3%83%95%e3%83%ad%e3%83%bc?_ga=2.6853362.1751003446.1697989157-697057189.1697187205&_gl=1*1nu9h6y*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDg5MC41OS4wLjA.
+
+★文書管理
+https://faq.desknets.com/%e6%96%87%e6%9b%b8%e7%ae%a1%e7%90%86?_gl=1*1epjnhm*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDk0NS40LjAuMA..&_ga=2.3756784.1751003446.1697989157-697057189.1697187205
+
+★Active_Directory
+https://faq.desknets.com/Active_Directory?_ga=2.6861554.1751003446.1697989157-697057189.1697187205&_gl=1*w65cld*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDUzNC4zOS4wLjA.
+
+★ディレクトリサービス
+https://faq.desknets.com/%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9?_ga=2.104600896.1751003446.1697989157-697057189.1697187205&_gl=1*lpz1r4*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDgxNC41OS4wLjA.
+
+★IIS
+https://faq.desknets.com/IIS?_ga=2.263225036.1751003446.1697989157-697057189.1697187205&_gl=1*1d4g2de*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTA2Ny41MS4wLjA.
+
+★PostgreSQL
+https://faq.desknets.com/PostgreSQL?_ga=2.7999858.1751003446.1697989157-697057189.1697187205&_gl=1*3k9r47*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDg2NC45LjAuMA..
+
+★SMTP
+https://faq.desknets.com/SMTP?_gl=1*1s054u9*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTQ1OC42MC4wLjA.&_ga=2.264483535.1751003446.1697989157-697057189.1697187205
+
+★POP3
+https://faq.desknets.com/POP3?_ga=2.29514367.1751003446.1697989157-697057189.1697187205&_gl=1*fh9vd0*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTkxMC41OS4wLjA.
+
+★クライアントツール
+https://faq.desknets.com/%e3%82%af%e3%83%a9%e3%82%a4%e3%82%a2%e3%83%b3%e3%83%88%e3%83%84%e3%83%bc%e3%83%ab?_gl=1*6mtqxv*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTI5OS4zMS4wLjA.&_ga=2.95099228.1751003446.1697989157-697057189.1697187205
+
+★アップデートツール
+https://faq.desknets.com/%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88%e3%83%84%e3%83%bc%e3%83%ab?_ga=2.32148990.1751003446.1697989157-697057189.1697187205&_gl=1*d8hs6p*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDY3Ni4zNC4wLjA.
+
+★オプションバッチ
+https://faq.desknets.com/%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%83%90%e3%83%83%e3%83%81?_ga=2.62084588.1751003446.1697989157-697057189.1697187205&_gl=1*4faqqc*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTYzMi40Mi4wLjA.
+
+★エンタープライズライセンス
+https://faq.desknets.com/%e3%82%a8%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%97%e3%83%a9%e3%82%a4%e3%82%ba%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9?_ga=2.6853362.1751003446.1697989157-697057189.1697187205&_gl=1*mjrbea*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDkxMy4zNi4wLjA.
+
+★パッケージ版の運用・管理：インストール
+https://faq.desknets.com/%e3%83%91%e3%83%83%e3%82%b1%e3%83%bc%e3%82%b8%e7%89%88%e3%81%ae%e9%81%8b%e7%94%a8%e3%83%bb%e7%ae%a1%e7%90%86%ef%bc%9a%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab?_ga=2.36271840.1751003446.1697989157-697057189.1697187205&_gl=1*jbnuym*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTQ0My41OS4wLjA.
+
+★パッケージ版の運用・管理：バージョンアップ
+https://faq.desknets.com/%e3%83%91%e3%83%83%e3%82%b1%e3%83%bc%e3%82%b8%e7%89%88%e3%81%ae%e9%81%8b%e7%94%a8%e3%83%bb%e7%ae%a1%e7%90%86%ef%bc%9a%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%83%e3%83%97?_gl=1*12e0jup*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MTMzOS41OS4wLjA.&_ga=2.95099228.1751003446.1697989157-697057189.1697187205
+
+★パッケージ版の運用・管理：使用中のトラブル・エラー
+https://faq.desknets.com/%e3%83%91%e3%83%83%e3%82%b1%e3%83%bc%e3%82%b8%e7%89%88%e3%81%ae%e9%81%8b%e7%94%a8%e3%83%bb%e7%ae%a1%e7%90%86%ef%bc%9a%e4%bd%bf%e7%94%a8%e4%b8%ad%e3%81%ae%e3%83%88%e3%83%a9%e3%83%96%e3%83%ab%e3%83%bb%e3%82%a8%e3%83%a9%e3%83%bc?_gl=1*jb3mlg*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk4OTUwNC41OS4wLjA.&_ga=2.33052414.1751003446.1697989157-697057189.1697187205
+
+★パッケージ版
+https://faq.desknets.com/%e3%83%91%e3%83%83%e3%82%b1%e3%83%bc%e3%82%b8%e7%89%88?_ga=2.40417762.1751003446.1697989157-697057189.1697187205&_gl=1*cude8*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDAxMy41OS4wLjA.
+
+★共通：使用中のトラブル・エラー
+https://faq.desknets.com/%e5%85%b1%e9%80%9a%ef%bc%9a%e4%bd%bf%e7%94%a8%e4%b8%ad%e3%81%ae%e3%83%88%e3%83%a9%e3%83%96%e3%83%ab%e3%83%bb%e3%82%a8%e3%83%a9%e3%83%bc?_ga=2.28930684.1751003446.1697989157-697057189.1697187205&_gl=1*1ivti4y*_ga*Njk3MDU3MTg5LjE2OTcxODcyMDU.*_ga_YSWQYSSMPX*MTY5Nzk4OTAzMy45LjEuMTY5Nzk5MDEzMi4zNS4wLjA.
+
+【desknet's NEOバージョン毎の変更内容並びに機能紹介】
+
+V3.5 → V4.0 での変更内容に関する設定項目などの説明
+https://www.desknets.com/neo/download/doc/verup/updateset_tov40.html
+
+V4.0 → V6.1 での変更内容に関する設定項目などの説明
+https://www.desknets.com/neo/download/doc/verup/updateset_tov61.html
+
+V6.1 → V8.0 での変更内容に関する設定項目などの説明
+https://www.desknets.com/neo/download/doc/verup/updateset.html
+
+desknet's NEO V7.5 新バージョン機能紹介
+https://www.desknets.com/neo/releases/v75/index.html
+
+desknet's NEO V7.1 新バージョン機能紹介
+https://www.desknets.com/neo/releases/v71/index.html
+
+desknet's NEO V6.1 新バージョン機能紹介
+https://www.desknets.com/neo/releases/v61/index.html
+
+desknet's NEO V6.0 新バージョン機能紹介
+https://www.desknets.com/neo/releases/v60/index.html
+
+desknet's NEO V5.5 新バージョン機能紹介
+https://www.desknets.com/neo/releases/v55/index.html
+
+desknet's NEO V5.3 新バージョン機能紹介
+https://www.desknets.com/neo/v53/index.html
+
+desknet's NEO V5.2 新バージョン機能紹介
+https://www.desknets.com/neo/v52/index.html
+
+desknet's NEO V5.1 新バージョン機能紹介
+https://www.desknets.com/neo/v51/index.html
+
+desknet's NEO V5.0 新バージョン機能紹介
+https://www.desknets.com/neo/v50/index.html
+
+desknet's NEO V4.0 新バージョン機能紹介
+https://www.desknets.com/neo/v40/index.html
+
+desknet's NEO V3.5 新バージョン機能紹介
+https://www.desknets.com/neo/v35/index.html
+
