@@ -58,7 +58,43 @@ echo アーカイブファイル削除処理[%date% %time%]終了>>iisdel.log
 
 robocopy "c:\inetpub\logs\LogFiles\W3SVC1" "g:\" /DCOPY:DAT /E
 
+rem ################################################################################
+rem PostgreSQL自動起動
+rem ################################################################################
+@echo off
 
+net start "postgresql-x64-13"
+
+exit
+
+rem ################################################################################
+rem 過去１年以上前のイベントログのアーカイブファイルを削除
+rem ################################################################################
+cd c:\windows\system32\winevt\logs\
+echo アーカイブファイル削除処理[%date% %time%]開始>>evtxdel.log
+forfiles /d -365 /M archive-*.evtx /c "cmd /c del -f -q @file&&echo 削除[%date% %time%]@file>>evtxdel.log"
+echo アーカイブファイル削除処理[%date% %time%]終了>>evtxdel.log
+exit
+
+rem ################################################################################
+rem desknet's NEOメール索引最適化
+rem ################################################################################
+
+C:\Inetpub\Scripts\dneo\zbatwvacuumshare.exe -h "C:\Inetpub\Scripts\dneo" -l -a 
+C:\Inetpub\Scripts\dneo\zbatwvacuum.exe -h "C:\Inetpub\Scripts\dneo" -l -a 
+
+exit
+
+
+________________________________
+dumpdel.log
+oldevtxdelete.bat
+oldiisdelete.bat
+pg_backup.bat
+pg_backup_honban.bat
+pg_backup_kensho.bat
+pg_start.bat
+zbatwvacuum.bat
 ________________________________
 
 <?xml version="1.0" encoding="UTF-16"?>
