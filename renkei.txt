@@ -1,0 +1,107 @@
+rem ################################################################################
+rem PostgreSQLダンプ作成及び3世代より古いPostgreSQLダンプファイルの削除
+rem ################################################################################
+@echo off
+
+set APPDATA=C:\Users\Administrator\AppData\Roaming
+set USERPROFILE=C:\Users\Administrator
+set TIMESTAMP=%date:~0,4%%date:~5,2%%date:~8,2%
+
+if NOT EXIST G:\ goto exit_bat
+
+echo PostgreSQLダンプファイル作成処理[%date% %time%]開始>>dumpdel.log
+cd "C:\Program Files\PostgreSQL\13\bin"
+pg_dump.exe -b -Fc -U postgres dneodb > c:\tmp\dneodb.pgdmp
+pg_dump.exe -b -Fc -U postgres dneoftsdb > c:\tmp\dneoftsdb.pgdmp
+pg_dump.exe -b -Fc -U postgres dneologdb > c:\tmp\dneologdb.pgdmp
+echo PostgreSQLダンプファイル作成処理[%date% %time%]終了>>dumpdel.log
+
+echo PostgreSQLダンプファイル格納処理[%date% %time%]開始>>dumpdel.log
+copy /y c:\tmp\dneodb.pgdmp g:\pgdump\dneodb_%TIMESTAMP%.pgdmp
+copy /y c:\tmp\dneoftsdb.pgdmp g:\pgdump\dneoftsdb_%TIMESTAMP%.pgdmp
+copy /y c:\tmp\dneologdb.pgdmp g:\pgdump\dneologdb_%TIMESTAMP%.pgdmp
+echo PostgreSQLダンプファイル格納処理[%date% %time%]終了>>dumpdel.log
+
+echo PostgreSQLダンプファイル削除処理[%date% %time%]開始>>dumpdel.log
+forfiles /P "g:\pgdump" /d -3 /M "*.pgdmp" /c "cmd /c del @path && echo 削除[%date% %time%] @path >> %~dp0%dumpdel.log"
+echo PostgreSQLダンプファイル削除処理[%date% %time%]終了>>dumpdel.log
+
+:exit_bat
+
+
+rem ################################################################################
+rem 過去1年以上前のIISログのファイルを削除
+rem ################################################################################
+cd g$\iislog\W3SVC1
+c:\inetpub\logs\LogFiles\W3SVC1
+
+if NOT EXIST G:\ goto exit_bat
+
+echo アーカイブファイルコピー処理[%date% %time%]開始>>iisdel.log
+forfiles /P "c:\inetpub\logs\LogFiles\W3SVC1" /d -1 /M u_ex*.log /c "cmd /c del -f -q @file&&echo コピー[%date% %time%]@file>>iisdel.log"
+echo アーカイブファイルコピー処理[%date% %time%]終了>>iisdel.log
+
+echo アーカイブファイル削除処理[%date% %time%]開始>>iisdel.log
+forfiles /P "c:\inetpub\logs\LogFiles\W3SVC1" /d -1 /M u_ex*.log /c "cmd /c del -f -q @file&&echo 削除[%date% %time%]@file>>iisdel.log"
+echo アーカイブファイル削除処理[%date% %time%]終了>>iisdel.log
+
+echo アーカイブファイル削除処理[%date% %time%]開始>>iisdel.log
+forfile /P "c:\inetpub\logs\LogFiles\W3SVC1"s /d -1 /M u_ex*.log /c "cmd /c del -f -q @file&&echo 削除[%date% %time%]@file>>iisdel.log"
+echo アーカイブファイル削除処理[%date% %time%]終了>>iisdel.log
+
+echo アーカイブファイル削除処理[%date% %time%]開始>>iisdel.log
+forfiles /P "c:\inetpub\logs\LogFiles\W3SVC1" /d -1 /M u_ex*.log /c "cmd /c del -f -q @file&&echo 削除[%date% %time%]@file>>iisdel.log"
+echo アーカイブファイル削除処理[%date% %time%]終了>>iisdel.log
+
+
+:exit_bat
+
+robocopy "c:\inetpub\logs\LogFiles\W3SVC1" "g:\" /DCOPY:DAT /E
+
+
+________________________________
+
+<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2017-01-06T16:14:26.3639461</Date>
+    <Author>JPT\yamada</Author>
+  </RegistrationInfo>
+  <Triggers>
+    <EventTrigger>
+      <Enabled>true</Enabled>
+      <Subscription>&lt;QueryList&gt;&lt;Query Id="0" Path="System"&gt;&lt;Select Path="System"&gt;*[System[Provider[@Name='Microsoft-Windows-Ntfs'] and EventID=98]]&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;</Subscription>
+    </EventTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <UserId>PPFSSV01\Administrator</UserId>
+      <LogonType>Password</LogonType>
+      <RunLevel>LeastPrivilege</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>Parallel</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <AllowHardTerminate>true</AllowHardTerminate>
+    <StartWhenAvailable>false</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <WakeToRun>false</WakeToRun>
+    <ExecutionTimeLimit>P3D</ExecutionTimeLimit>
+    <Priority>7</Priority>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>"C:\Program Files\PostgreSQL\9.3\pg_start.bat"</Command>
+    </Exec>
+  </Actions>
+</Task>
