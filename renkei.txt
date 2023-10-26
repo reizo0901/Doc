@@ -141,3 +141,442 @@ ________________________________
     </Exec>
   </Actions>
 </Task>
+
+________________________________
+
+path	filename	size	maketime	updatetime	accesstime
+c:\tmp\	dneodb.pgdmp	1200	2023/10/25 0:00		
+c:\tmp\	dneoftsdb.pgdmp	1200	2023/10/25 0:00		
+c:\tmp\	dneologdb.pgdmp	1200	2023/10/25 0:00		
+g:\pgdump\	dneodb_20231019.pgdmp	1393	2023/10/19 0:00		
+g:\pgdump\	dneodb_20231020.pgdmp	1394	2023/10/20 0:00		
+g:\pgdump\	dneodb_20231021.pgdmp	1395	2023/10/21 0:00		
+g:\pgdump\	dneodb_20231022.pgdmp	1396	2023/10/22 0:00		
+g:\pgdump\	dneodb_20231023.pgdmp	1397	2023/10/23 0:00		
+g:\pgdump\	dneodb_20231024.pgdmp	1398	2023/10/24 0:00		
+g:\pgdump\	dneodb_20231025.pgdmp	1399	2023/10/25 0:00		
+g:\pgdump\	dneoftsdb_20231019.pgdmp	1393	2023/10/19 0:00		
+g:\pgdump\	dneoftsdb_20231020.pgdmp	1394	2023/10/20 0:00		
+g:\pgdump\	dneoftsdb_20231021.pgdmp	1395	2023/10/21 0:00		
+g:\pgdump\	dneoftsdb_20231022.pgdmp	1396	2023/10/22 0:00		
+g:\pgdump\	dneoftsdb_20231023.pgdmp	1397	2023/10/23 0:00		
+g:\pgdump\	dneoftsdb_20231024.pgdmp	1398	2023/10/24 0:00		
+g:\pgdump\	dneoftsdb_20231025.pgdmp	1399	2023/10/25 0:00		
+g:\pgdump\	dneologdb_20231019.pgdmp	1393	2023/10/19 0:00		
+g:\pgdump\	dneologdb_20231020.pgdmp	1394	2023/10/20 0:00		
+g:\pgdump\	dneologdb_20231021.pgdmp	1395	2023/10/21 0:00		
+g:\pgdump\	dneologdb_20231022.pgdmp	1396	2023/10/22 0:00		
+g:\pgdump\	dneologdb_20231023.pgdmp	1397	2023/10/23 0:00		
+g:\pgdump\	dneologdb_20231024.pgdmp	1398	2023/10/24 0:00		
+g:\pgdump\	dneologdb_20231025.pgdmp	1399	2023/10/25 0:00		
+
+_______________________________
+
+# テストファイル作成スクリプト
+
+# 使い方
+# 
+# tab区切りの読み込み用ファイル「makefiles.csv」を作成します。
+# 1行目に項目を作成します。
+# path<tab>filename<tab>size<tab>maketime<tab>updatetime<tab>accesstime
+# 2行目から、作成に必要な情報を入力します。
+
+# path:ファイルを作成するパス※末尾に\を付けないこと。
+# filename:作成するファイルの名称
+# size:作成するファイルのサイズ(Byte)
+# maketime:作成日時
+# updatetime:更新日時
+# accesstime:アクセス日時
+
+# 数値チェック関数
+function IsNumeric([string]$check_date)
+# 引数を倍精度浮動小数点数型に変換し、成功した場合は「True」を失敗した場合は「False」を返す。
+{
+    try
+    {
+        [double]::Parse($check_date)
+        $True
+    }
+    catch
+    {
+        $False
+    }
+}
+
+
+
+# 日時チェック関数
+# 引数を日付型に変換し、成功した場合は「True」を失敗した場合は「False」を返す。
+function IsDate([string]$check_date)
+{
+    try
+    {
+        [Datetime]::Parse($check_date)
+        $True
+    }
+    catch
+    {
+        $False
+    }
+}
+
+# 実行スクリプトのパスを取得
+$Folder_Pass = Get-Location
+# 余計な文字列を削除
+$Folder_Pass = $Folder_Pass -replace "Path`n---- "
+# スクリプトのパスを格納
+Set-Location $Folder_Pass
+# logファイルの定義
+$log_time = Get-Date -Format "yyyyMMddHHmmss"
+$log_file = $Folder_Pass+"\makefiles_result_"+$log_time+".log"
+# csvファイルの定義
+$csv_file = $Folder_Pass+"\makefiles.csv"
+# csvファイルの読み込み
+$csv_ary = Import-Csv $csv_file -Delimiter "`t" -Encoding Default
+
+
+# logファイル初期化
+$omsg = "[開始日時"+[datetime]::Now+"]"
+echo $omsg > $log_file
+
+
+# 変数初期化
+$skip = 0
+$mdir = 0
+$cnt = 0
+$omsg = ""
+
+# ファイルから1行ずつファイル作成パラーメータを取得
+foreach ($csv_line in $csv_ary){
+    $cnt += 1
+    $ocnt = ("00000" + $cnt).substring(("00000" + $cnt).length - 5)
+    #write-host $ocnt:$csv_line[0].path $csv_line[0].filename $csv_line[0].size $csv_line[0].maketime $csv_line[0].updatetime $csv_line[0].accesstime
+
+    # ファイルサイズの数値チェック
+    if ($skip -eq 0)
+    {
+        if (-not(IsNumeric $csv_line[0].size))
+        {
+            $omsg = ""+$ocnt+":[ERR]ファイルサイズに問題があります。"
+            $skip = 1
+        }
+    }
+
+    # ドライブ存在チェック
+    if ($skip -eq 0)
+    {
+        $temp_drv = Split-Path -Qualifier $csv_line[0].path
+        if (-not(Test-Path $temp_drv))
+        {
+            $omsg = ""+$ocnt+":[ERR]指定されたパスのドライブは存在しません。"
+            $skip = 1
+        }
+    }
+    # ディスクの空き容量チェックし、空き容量が30%以下の場合は処理しない。
+    # 処理が遅いので、一度の容量取得以降は、計算式のみで処理すれば早くなりそう...
+    if ($skip -eq 0)
+    {
+        $drive_letter = "c"
+        # ドライブ情報を取得する.
+        $drv = Get-PSDrive $drive_letter
+        # ドライブの空き容量と使用量を加算して総容量を知る.
+        $total = ( $drv.Free + $drv.Used )
+        # 作成語のドライブの使用量を試算
+        $temp_size = $drv.Used + $csv_line[0].size
+        # 使用率を計算する.
+        $rate =  $temp_size  / $total
+        # 空き容量が30%以下の場合
+        if ($rate -le 0.3 -or $rate -gt 1.0)
+        {
+            $omsg = ""+$ocnt+":[ERR]作成後のドライブの空き容量が30%を切っています。"
+            $skip = 1
+        }
+    }
+    
+    # パス作成チェック
+    if ($skip -eq 0)
+    {
+        if (Test-Path $csv_line[0].path)
+        {
+            $mdir = 0
+        }
+        else
+        {
+            $mdir = 1
+        }
+    }
+    # ファイル存在チェック
+    # write-host $skip
+    if ($skip -eq 0)
+    {
+        $temp_path = Join-Path $csv_line[0].path $csv_line[0].filename
+        if (Test-Path $temp_path)
+        {
+            $skip = 1
+            $omsg = ""+$ocnt+":[WAR]すでにファイルが存在しています。"
+        }
+    }
+    
+    # 作成日時チェック
+    if ($skip -eq 0)
+    {
+        if (IsDate $csv_line[0].maketime = $True)
+        {
+            # 日付型に変換
+            $maketime = [Datetime]::Parse($csv_line[0].maketime)
+        }
+        else
+        {
+            $omsg = ""+$ocnt+":[ERR]の作成日時の記述に誤りがあります。"
+            $skip = 1
+        }
+    }
+    # 更新日時チェック
+    if ($skip -eq 0)
+    {
+        # 読み込んだ更新日時が空の場合
+        if (($csv_line[0].updatetime).length -eq 0)
+        {
+            # 作成日時を更新日時に
+            $updatetime = $maketime
+        }
+        else
+        {
+            # 更新日時のエラーをチェック
+            if (IsDate $csv_line[0].updatetime = $False)
+            {
+                # 日付型に変換
+                $updatetime = [Datetime]::Parse($csv_line[0].updatetime)
+            }
+            else
+           {
+               $omsg = ""+$ocnt+":[ERR]の更新日時の記述に誤りがあります。"
+               $skip = 1
+           }
+        }
+    }
+    # アクセス日時チェック
+    if ($skip -eq 0)
+    {
+        # 読み込んだ更新日時が空の場合
+        if (($csv_line[0].accesstime.length) -eq 0)
+        {
+            # 作成日時を更新日時に
+            $accesstime = $maketime
+        }
+        else
+        {
+            # アクセス日時のエラーをチェック
+            if (IsDate $csv_line[0].accesstime = $False)
+            {
+                # 日付型に変換
+                $accesstime = [Datetime]::Parse($csv_line[0].accesstime)
+            }
+            else
+           {
+               $omsg = ""+$ocnt+":[ERR]アクセス日時の記述に誤りがあります。"
+               $skip = 1
+           }
+        }
+    }
+    # 問題がなければファイルを作成
+    if ($skip -eq 0)
+    {
+        # フォルダを作成
+        # 指定のフォルダまでの中間フォルダの日時も変更出来ると最高ですが...
+        if ($mdir -eq 1)
+        {
+            # 存在しない複数階層のフォルダを作成しながらタイムスタンプを変更する。
+            for ($sel = 1;$sel -le ($csv_line[0].path).length;$sel++)
+            {
+                if ((($csv_line[0].path).substring($sel - 1,1) -eq "\") -or ($sel -ge ($csv_line[0].path).length))
+                {
+                    # フォルダの区切りが発見出来たので、存在チェックで見つからなければフォルダ作成
+                    if (test-path ($csv_line[0].path).substring(0,$sel))
+                    {
+                    }
+                    else
+                    {
+                        New-Item ($csv_line[0].path).substring(0,$sel) -ItemType Directory | out-null
+                        Set-Itemproperty ($csv_line[0].path).substring(0,$sel) -name CreationTime -value $maketime
+                        Set-Itemproperty ($csv_line[0].path).substring(0,$sel) -name LastWriteTime -value $updatetime
+                        Set-Itemproperty ($csv_line[0].path).substring(0,$sel) -name LastAccessTime -value $accesstime
+                        $omsg = $omsg+$ocnt+":[INF]["+($csv_line[0].path).substring(0,$sel)+"]フォルダを作成しました。`n"
+                    }
+                }
+            }
+        }
+        # ファイルを作成
+        fsutil file createnew $temp_path $csv_line[0].size | out-null
+        Set-Itemproperty $temp_path -name CreationTime -value $maketime
+        Set-Itemproperty $temp_path -name LastWriteTime -value $updatetime
+        Set-Itemproperty $temp_path -name LastAccessTime -value $accesstime
+        $omsg = $omsg+""+$ocnt+":[INF]["+$temp_path+"]ファイルを作成しました。"
+    }
+    # メッセージを表示
+    write-host $omsg
+    echo $omsg >> $log_file
+    write-host ""
+    # ループ内変数初期化
+    $omsg = ""
+    $temp_drv = ""
+    $skip = 0
+}
+
+$omsg = "[終了日時"+[datetime]::Now+"]"
+echo $omsg >> $log_file
+
+
+_______________________________
+
+#タイトル表示
+Write-Host '######################################################################'
+Write-Host '#サーバ空き容量取得結果成形ツール Ver.1.0                            #'
+Write-Host '#作成日：2023/01/25                                                  #'
+Write-Host '#作成者：コンピュータ技研株式会社 Reizo.Hosoda                       #'
+Write-Host '######################################################################'`r`n
+
+#引数を取得する。
+if ($args.Length -ne 1) {
+    Write-Host 'このツールで処理するには１つの引数が必要です。'
+    Write-Host $MyInvocation.MyCommand.Name '<※Get-Psdriveで取得したデータファイル名>'`r`n
+    #画面停止
+    Read-Host '続けるには [Enter]キーを押してください。'
+    Exit
+}
+
+#引数を変数に格納
+$arg = $args[0]
+
+#サーバ名検索用配列
+$srvary = @('pad01','pad02','pit01','pit02','pvk01','pvk02','pws01','pws02','pfs01','pfs02','pfs03','pfs04')
+#ドライブ名検索用配列
+$drvary = @('C  ','D  ','E  ')
+
+#各変数初期化[出力用]
+$srvname = ''
+$drvname = ''
+$freesize = ''
+
+#引数のファイルを１行ずつ読込
+foreach ($l in [System.IO.File]::ReadLines($arg)) {
+    #読みこんだ行が5文字以上の場合
+    if ($l.length -ge 5){
+        #サーバ名が存在する場合
+        if ($srvary.Contains($l.substring(0,5))){
+            #サーバ名称を格納
+            $srvname = $l.substring(0,5)
+        }
+        #ドライブデータ(C,D,E)が存在する場合
+        if ($drvary.Contains($l.substring(0,3))){
+            #先頭の文字列をドライブ名として格納
+            $drvname = $l.substring(0,1)
+            #読みこんだ行から"FileSystem"の文字列を検索する。
+            $findidx = $l.IndexOf('FileSystem',0)
+            #FileSystemの文字列が見つかった場合
+            if ($findidx -ge 0) {
+                #見つかった"FileSystem"から11文字前から1文字前までの文字(※空き容量のあたり)を取得し、空白を削除する。
+                $freesize = $l.substring($findidx - 11,10).replace(' ','')
+            }
+            #空き容量(freesize)が空ではない場合
+            if ($freesize.length -ge 1) {
+                #クリップボード用に成形結果を１つの変数に格納する。
+                $allstr = $allstr + $srvname + "`t" + $drvname + "`t" + $freesize + "`r`n"
+                #成形結果を画面に出力
+                write-host $srvname`t$drvname`t$freesize
+            }
+        }
+    } 
+}
+#念のため、文字コードをShift-JISに設定
+$outputencoding=[console]::outputencoding
+#全ての結果をクリップボードに出力する
+$allstr | clip
+
+write-host `r`n'画面に出力されている結果は自動的にクリップボードへ格納されます。'
+write-host '『メモ帳』や『Excel』に貼り付けて保存してください。'
+#画面停止
+Read-Host `r`n'続けるには [Enter]キーを押してください。'
+
+
+########################################################################################
+#●通常の使い方
+#①powershellのコンソールを開きます。
+#②当スクリプトが格納されているフォルダへ遷移する。
+#③トプスクリプトのファイル名を入力し、引数でpsdriveで取得した内容が出力されてるファイルをドラッグする。
+
+#●アンコンにドラッグ＆ドロップして実行するための設定方法
+#①当スクリプトのショートカットアイコンを作成します。
+#②作成したショートカットのプロパティを開きます。
+#③現在リンク先の前に以下の文字列を挿入します。
+# C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy RemoteSigned -File 
+#④[OK]をクリックして、プロパティを閉じます。
+#⑤①～④の設定が行われていれば、ショートカットに対象のファイルをドラッグするだけで処理が行われます。
+########################################################################################
+
+_______________________________
+
+$targetfile="C:\work\20221216_施設部データ移行\202212_allinfo\202212_allinfo.txt"
+$outputfile="C:\work\20221216_施設部データ移行\202212_allinfo\chg_allinfo.txt"
+$i=1
+foreach ($l in [System.IO.File]::ReadLines($targetfile)) {
+    if ($l){
+        if ($l.Substring(0,1) -eq "/" -and $l.substring($l.length - 1,1) -eq ":"){
+            $dirname = $l.substring(0 , $l.length -1) + "/"
+            #write-host $i : $dirname
+        }
+        else
+        {
+            if ($l.substring($l.length - 1,1) -ne "/"){
+                write-output $dirname$l | out-file $outputfile -append -encoding utf8
+            }
+        }
+    } 
+    $i++
+}
+
+
+_______________________________
+
+$targetfile="C:\Users\hosoda-r\Desktop\移行設計書\Gdrivedir.txt"
+$outputfile="C:\Users\hosoda-r\Desktop\移行設計書\Gdrivedir_chg.txt"
+$file = new-object system.IO.StreamReader($targetfile, [System.Text.Encoding]::GetEncoding("sjis"))
+$delstrings=" C:\Users\adm001\Desktop"
+$i=1
+$filename=""
+
+while (($l = $file.ReadLine()) -ne $null) {
+    if ($l.length -gt 6) {
+        if ($l.substring(0,5) -ne " ドライブ" -and $l.substring(0,6) -ne " ボリューム" -and $l.substring(0,5) -ne "     ") { 
+            #write-host "パス"
+            if ($l.Substring(0,1) -eq " " -and $l.substring($l.length - 6,6) -eq "ディレクトリ"){
+                $dirname = $l.substring($delstrings.length  , $l.length - ($delstrings.length  + 8))
+                #write-host $dirname
+                write-output $dirname\ | out-file $outputfile -append -encoding utf8
+            }
+            else
+            {
+                #write-host "ファイル"
+                if ($l.IndexOf("    <DIR>") -lt 0){
+                    $filename =  $l.substring(36,$l.length - 36)
+                    #write-host $dirname\$filename
+                    write-output $dirname\$filename | out-file $outputfile -append -encoding utf8
+                }
+            }
+        }
+        else
+        {
+            #write-host "ドライブやボリューム"
+        }
+    } 
+    $i++
+}
+write-host "処理終了"
+_______________________________
+
+
+_______________________________
+
+
+_______________________________
+
