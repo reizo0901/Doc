@@ -574,7 +574,19 @@ while (($l = $file.ReadLine()) -ne $null) {
 write-host "処理終了"
 _______________________________
 
+メール索引の最適化について
 
+「wmldata」フォルダを「g:\dneo\wmldata」へ変更して利用する想定ですが、
+メール索引の最適化に実行するコマンドは以下のものを使う予定です。
+
+C:\Inetpub\Scripts\dneo\zbatwvacuumshare.exe -h "C:\Inetpub\Scripts\dneo" -l -a 
+C:\Inetpub\Scripts\dneo\zbatwvacuum.exe -h "C:\Inetpub\Scripts\dneo" -l -a 
+
+この引数で正常にメール索引の最適化は実施されるのでしょうか？
+
+「g:\dneo\wmldata」のサブフォルダ配下にある「mailindex.db」ファイルの更新日時が
+更新されていることは確認していますが、その他に最適化が行われたことを確認する方法は
+ありますでしょうか？
 _______________________________
 
 
