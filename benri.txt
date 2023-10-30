@@ -1,0 +1,945 @@
+Sub B01_特殊な枠組みを作成()
+    '特殊枠組みを作成する。
+    '枠組みサイズを取得
+    Dim ARng As Range
+    Dim rng As Range
+    Dim tgrow As Double
+    Dim tgcol As Double
+    Dim lnrow As Double
+    Dim lncol As Double
+    Dim strow As Double
+    Dim stcol As Double
+    Dim i, i2, i3 As Double
+    
+    If Workbooks.Count = 0 Then
+        Exit Sub
+    End If
+    If ActiveSheet.Type <> xlWorksheet Then
+        Exit Sub
+    End If
+    If TypeName(Selection) <> "Range" Then
+        Exit Sub
+    End If
+    scrlock (1)
+    cnt = 0
+    'ツール実行条件確認
+    For Each ARng In Selection.Areas
+        cnt = cnt + 1
+        If Cells(ARng.Rows.Row, ARng.Columns.Column) <> "" Then
+            If cnt > 1 Or ARng.Columns.Count <= 1 Then
+                scrlock (0)
+                MsgBox ("複数行を矩形選択してください。")
+                Exit Sub
+            Else
+                '選択範囲の情報格納
+                strow = ARng.Rows.Row
+                lnrow = ARng.Rows.Count - 1
+                stcol = ARng.Columns.Column
+                lncol = ARng.Columns.Count - 1
+                strtemp2 = "strow=[" & strow & "]" & Chr(10) & Chr(13) & "stcol=[" & stcol & "]" & Chr(10) & Chr(13) & "lnrow=[" & lnrow & "]" & Chr(10) & Chr(13) & "lncol=[" & lncol & "]"
+                MsgBox (strtemp2)
+            End If
+        Else
+            scrlock (0)
+            MsgBox ("選択範囲の左上のセルに文字列が入っていません。")
+            Exit Sub
+        End If
+    Next
+    '
+    temp = makeline(strow, stcol, strow + lnrow, stcol + lncol, 0)
+    temp = makeline(strow, stcol, strow + lnrow, stcol + lncol, 1)
+    tgrow = strow
+    For i = stcol To stcol + lncol Step 1
+        hitstrow = 0
+        For i2 = strow To strow + lnrow Step 1
+            '参照しているセルにデータがある場合
+            If Cells(i2, i).Value <> "" Then
+                hitstrow = i2
+            End If
+            hitedrow = 0
+            '最終行または最大セル位置の場合
+            If (i2 >= 65536) Or (i2 = strow + lnrow) Then
+                hitedrow = i2
+            Else
+                '横方向データチェック
+                For i3 = stcol To i
+                    If (Cells(i2 + 1, i3).Value <> "") Then
+                        hitedrow = i2
+                    End If
+                Next i3
+            End If
+            If (hitstrow > 0) And (hitedrow > 0) Then
+                '罫線描画処理
+                temp = makeline(hitstrow, i, hitedrow, stcol + lncol, 1)
+                hitstrow = 0
+            End If
+        Next i2
+    Next i
+    scrlock (0)
+End Sub
+
+Function makeline(x1, y1, x2, y2, sw) As Integer
+    Range(Cells(x1, y1), Cells(x2, y2)).Select
+    '罫線初期化
+    If sw = 0 Then
+        Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+        Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+        Selection.Borders(xlEdgeLeft).LineStyle = xlNone
+        Selection.Borders(xlEdgeTop).LineStyle = xlNone
+        Selection.Borders(xlEdgeBottom).LineStyle = xlNone
+        Selection.Borders(xlEdgeRight).LineStyle = xlNone
+        Selection.Borders(xlInsideVertical).LineStyle = xlNone
+        Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    '指定範囲の罫線描画
+    Else
+        With Selection.Borders(xlEdgeLeft)
+            .LineStyle = xlContinuous
+            .Weight = xlThin
+            .ColorIndex = xlAutomatic
+        End With
+        With Selection.Borders(xlEdgeTop)
+            .LineStyle = xlContinuous
+            .Weight = xlThin
+            .ColorIndex = xlAutomatic
+        End With
+        With Selection.Borders(xlEdgeBottom)
+            .LineStyle = xlContinuous
+            .Weight = xlThin
+            .ColorIndex = xlAutomatic
+        End With
+        With Selection.Borders(xlEdgeRight)
+            .LineStyle = xlContinuous
+            .Weight = xlThin
+            .ColorIndex = xlAutomatic
+        End With
+    End If
+    makeline = 1
+End Function
+
+Sub B02_下方向に特別な複製()
+    Dim Selcel As Range, n As Double
+    Dim tempstr As String
+    
+    Application.ScreenUpdating = False
+    n = 1
+    For Each Selcel In Selection
+        If n = 1 Then
+            rowtop = Selcel.Row
+            collft = Selcel.Column
+        Else
+            rowbot = Selcel.Row
+            colrgt = Selcel.Column
+        End If
+        n = n + 1
+    Next
+    For i2 = collft To colrgt Step 1
+        For i = rowtop To rowbot Step 1
+            If i = rowtop Then
+                tempstr = Cells(i, i2).Value
+            End If
+            If tempstr = "" Then
+                tempstr = Cells(i, i2).Value
+            End If
+            If Cells(i, i2).Value <> "" Then
+                tempstr = Cells(i, i2).Value
+            End If
+            If Cells(i, i2).Value = "" Then
+                If IsNumeric(tempstr) Then
+                    If Left(tempstr, 1) = "0" Then
+                        Cells(i, i2).Value2 = "'" & CStr(tempstr)
+                    Else
+                        Cells(i, i2).Value = CStr(tempstr)
+                    End If
+                Else
+                    Cells(i, i2).Value = CStr(tempstr)
+                End If
+                
+            End If
+        Next
+    Next
+    MsgBox ("処理が完了しました。")
+    Application.ScreenUpdating = True
+End Sub
+
+Sub B03_縦方向に特殊な結合()
+    On Error GoTo cellrmarge_errtrap
+    Dim ARng As Range
+    Dim rng As Range
+    Dim SelRng As String
+    Dim Option1 As Boolean
+    Dim Option2 As Boolean
+    Dim Btn As Integer
+    Dim str As String
+    Dim VL As Range
+    Dim sysname As String
+    
+    sysname = "セル＆文字列結合↓方向"
+    If Workbooks.Count = 0 Then
+        Exit Sub
+    End If
+    If ActiveSheet.Type <> xlWorksheet Then
+        Exit Sub
+    End If
+    If TypeName(Selection) <> "Range" Then
+        Exit Sub
+    End If
+    scrlock (1)
+    For Each ARng In Selection.Areas
+        If ARng.Rows.Count <= 1 Then
+            MsgBox "2つ以上のセルを選択してください。", vbExclamation, sysname
+            ARng.Select
+            Exit Sub
+        End If
+    Next
+    
+    Application.enablecancekey = xlErrorHandler
+    Btn = MsgBox("セルを縦方向に結合しますか？" & Chr(10) & "いいえを押すと文字だけの連結をします。", vbYesNoCancel + vbQuestion, sysname & " - セルの結合")
+    Select Case Btn
+        Case vbYes
+            Option1 = True
+        Case vbNo
+            Option1 = False
+        Case vbCancel
+            Exit Sub
+    End Select
+    
+    Btn = MsgBox("文字を結合しますか？", vbYesNoCancel + vbQuestion, sysname & " - 文字列の結合")
+    Select Case Btn
+        Case vbYes
+            Option2 = True
+        Case vbNo
+            Option2 = False
+        Case vbCancel
+            Exit Sub
+    End Select
+    Application.DisplayAlerts = False
+    scrlock (0)
+    For Each ARng In Selection.Areas
+        For Each rng In ARng.Columns
+            SelRng = rng.Address(False, False)
+            str = ""
+            For Each cl In rng.Cells
+                str = str & Chr(10) & cl.Text
+                If Option2 = True Then
+                    cl.Value = ""
+                End If
+            Next
+            If Option1 = True Then
+                Range(SelRng).MergeCells = True
+            End If
+            If Option2 = True Then
+                rng.Cells(1).Value = Right(str, Len(str) - 1)
+            End If
+        Next
+    Next
+    scrlock (0)
+cellrmarge_exit:
+    Application.DisplayAlerts = True
+    Exit Sub
+
+cellrmarge_errtrap:
+    If Err = 18 Then
+        MsgBox "[Esc]キーが押されました。処理を中断します。", vbExclamation, sysname
+        Resume cellrmarge_exit
+    End If
+    scrlock (0)
+    Resume Next
+End Sub
+
+Sub B04_縦方向に連続する同一内容をグループ化()
+
+Dim textstr As String
+Dim titlestr As String
+Dim param As Integer
+Dim resp As Integer
+Dim tempstr As String
+Dim rowtop As Double
+Dim rowbot As Double
+Dim collft As Double
+Dim colrgt As Double
+
+titlestr = "処理の開始の確認"
+textstr = "現在選択されている選択範囲を対象に処理を開始します。"
+param = vbYesNo + vbQuestion + vbApplicationModal + vbDefaultButton1
+resp = MsgBox(textstr, param, titlestr)
+Select Case resp
+    Case vbYes:
+        Application.DisplayAlerts = False
+        '縦方向選択範囲取得
+        n = 1
+        For Each Selcel In Selection
+            If n = 1 Then
+                rowtop = Selcel.Row
+                collft = Selcel.Column
+            Else
+                rowbot = Selcel.Row
+                colrgt = Selcel.Column
+            End If
+            n = n + 1
+        Next
+        n = 1
+        For i2 = collft To colrgt Step 1
+            tempstr = ""
+            margeflg = 0
+            margetop = rowtop
+            margebot = 0
+            For i = rowtop To rowbot Step 1
+                '同一文字列のセルの場合
+                If tempstr = Cells(i, i2).Value Then
+                    If i = rowbot Then
+                        margebot = i
+                        'マージ処理
+                        Range(Cells(margetop, i2), Cells(margebot, i2)).MergeCells = True
+                    Else
+                        'セル結合範囲に登録
+                        margeflg = 1
+                        margebot = i
+                    End If
+                Else
+                    'セルの結合範囲が存在する場合は結合処理を実施する。
+                    If (margeflg = 1) Then
+                        If (margetop < margebot) And (margebot > 0) Then
+                            'マージ処理
+                            Range(Cells(margetop, i2), Cells(margebot, i2)).MergeCells = True
+                        End If
+                        margeflg = 1
+                        margetop = i
+                        margebot = 0
+                        tempstr = Cells(i, i2).Value
+                    Else
+                        '結合グループ開始位置
+                        If margeflg = 0 Then
+                            tempstr = Cells(i, i2).Value
+                            margeflg = 1
+                            margetop = i
+                        End If
+                    End If
+                End If
+            Next
+        Next
+        Application.DisplayAlerts = True
+        MsgBox ("処理が終了しました。")
+    Case vbNo:
+        MsgBox ("処理をキャンセルしました。")
+    End Select
+End Sub
+
+Sub セルの高さを印刷用に合わせる()
+    '
+    '枠組みサイズを取得
+    Dim ARng As Range
+    Dim rng As Range
+    Dim tgrow As Double
+    Dim tgcol As Double
+    Dim lnrow As Double
+    Dim lncol As Double
+    Dim strow As Double
+    Dim stcol As Double
+    Dim i, i2, i3 As Double
+    Dim temp As Double
+    
+    If Workbooks.Count = 0 Then
+        MsgBox ("ブックがありません。")
+        Exit Sub
+    End If
+    If ActiveSheet.Type <> xlWorksheet Then
+        MsgBox ("シートをアクティブにしてください。")
+        Exit Sub
+    End If
+    If TypeName(Selection) <> "Range" Then
+        MsgBox ("単一列の複数セルを選択してください。")
+        Exit Sub
+    End If
+    scrlock (1)
+    cnt = 0
+    'ツール実行条件確認
+    For Each ARng In Selection.Areas
+        cnt = cnt + 1
+        If Cells(ARng.Rows.Row, ARng.Columns.Column) <> "" Then
+            If cnt > 1 Or ARng.Columns.Count <> 1 Then
+                scrlock (0)
+                MsgBox ("単一列の複数セルを選択してください。")
+                Exit Sub
+            Else
+                '選択範囲の情報格納
+                strow = ARng.Rows.Row
+                lnrow = ARng.Rows.Count - 1
+                stcol = ARng.Columns.Column
+            End If
+        Else
+            scrlock (0)
+            MsgBox ("選択範囲の先頭セルに文字が入っていません。")
+            Exit Sub
+        End If
+    Next
+    Debug.Print strow
+    Debug.Print lnrow
+    For i = strow To strow + lnrow Step 1
+        'Debug.Print i
+        temp = setrowheight(i, stcol)
+    Next i
+    scrlock (0)
+End Sub
+
+Function setrowheight(srow, scol)
+'ピクセル単位でセルの高さと幅を指定する
+    '1point=1.36として計算
+    Const rinch = 1.47
+    Const cinch = 1.4
+    '高さの調整
+    Dim sfontsize As Double
+    Dim slen As Double
+    Dim swid As Double
+    Dim sfsz As Double
+    Dim sobj As Range
+    Dim rowcnt As Double
+    Dim mojcnt As Double
+    Dim mojtmp As String
+    Dim mojisz As Double
+    'セルの情報取得
+    swid = Cells(srow, scol).Width
+    sfsz = Cells(srow, scol).Font.Size
+    'セルの文字情報取得
+    slen = Len(Cells(srow, scol))
+    mojtmp = Cells(srow, scol)
+    'Debug.Print "セル幅[" & swid & "]"
+    'Debug.Print "文字数[" & slen & "]"
+    'FONTサイズによる列幅の文字数算出
+    rowcnt = 1
+    ttlsz = 0
+    For i = 1 To slen Step 1
+        '改行コードが出現した場合は改行カウントを加算
+        If (Mid(mojtmp, i, 1) = Chr(13)) Then
+            rowcnt = rowcnt + 1
+            ttlsz = 0
+        Else
+            '全角の場合
+            If Asc(Mid(mojtmp, i, 1)) < 1 Then
+                mojisz = (cinch * sfsz) * 1
+                'Debug.Print "全角：" & Mid(mojtmp, i, 1) & "：" & Asc(Mid(mojtmp, i, 1))
+            '半角の場合
+            Else
+                mojisz = (cinch * sfsz) * 0.6
+                'Debug.Print "半角：" & Mid(mojtmp, i, 1) & "：" & Asc(Mid(mojtmp, i, 1))
+            End If
+            ttlsz = ttlsz + mojisz
+            'Debug.Print "長さ：" & ttlsz
+            '１行の指定長に到達した場合は改行カウントを加算
+            If (ttlsz > swid) Then
+                rowcnt = rowcnt + 1
+                ttlsz = 0
+            End If
+        End If
+    Next i
+    Set sobj = Cells(srow, scol)
+    'Debug.Print "行数[" & rowcnt & "]"
+    sobj.RowHeight = (rinch * sfsz * rowcnt)
+    
+End Function
+
+Sub SetCellsHW(MyHeight As Integer, MyWidth As Integer)
+'pixel to parinch
+    Cells.RowHeight = MyHeight * 0.75
+    Cells.ColumnWidth = MyWidth * 0.118
+
+End Sub
+
+Sub B05_全シートの表示倍率を統一とA1にカーソル移動()
+
+    Dim bairitsu As String
+    bairitsu = InputBox("設定したい倍率を入力してください。", "全ページ表示倍率一括変更")
+    Application.DisplayAlerts = False
+    '数値が入っていない場合は100を入力する。
+    If IsNumeric(bairitsu) = False Then
+        bairitsu = 100
+    End If
+    For Each sht In Sheets
+     sht.Activate
+     sht.Range("A1").Select
+     Application.GoTo Reference:=ActiveSheet.Range("a1"), Scroll:=True '表示位置をA1セルに指定
+     ActiveWindow.Zoom = bairitsu
+    Next sht
+    Application.DisplayAlerts = True
+    MsgBox "処理が完了しました。", , "全ページ表示倍率一括変更"
+End Sub
+
+Sub B06_全ページの名前の定義一括削除()
+
+    On Error Resume Next
+    
+    Dim n       As Name         '名前の定義（Nameオブジェクト）
+    Dim ar()    As String       '削除した名前の定義の配列
+    Dim s       As String       'MsgBox出力文字列
+    Dim sName   As Variant      'Nameプロパティ値
+    Dim er()    As String       'エラーで削除できなかった名前の定義の配列
+    
+    '配列初期化
+    ReDim ar(0)
+    ReDim er(0)
+    
+    '全ての名前の定義をループ
+    For Each n In ActiveWorkbook.Names
+        '印刷範囲と印刷タイトルの場合は処理対象外
+        If InStr(1, n.Name, "Print_Area") > 0 Or InStr(1, n.Name, "Print_Titles") > 0 Then
+            GoTo CONTINUE
+        End If
+        
+        '名前の定義の名称を保持（Nameプロパティ取得）
+        sName = n.Name
+        
+        '名前の定義を削除
+        Call n.Delete
+        
+        'エラー分
+        If Err.Number <> 0 Then
+            ReDim Preserve er(UBound(er) + 1)
+            er(UBound(er) - 1) = sName
+        '正常に削除した分
+        Else
+            ReDim Preserve ar(UBound(ar) + 1)
+            ar(UBound(ar) - 1) = sName
+        End If
+        
+        Err.Clear
+CONTINUE:
+    Next
+    
+    If ar(0) <> "" Then
+        ReDim Preserve ar(UBound(ar) - 1)
+    End If
+    If er(0) <> "" Then
+        ReDim Preserve er(UBound(er) - 1)
+    End If
+    
+    'エラー分を列挙
+    For Each sName In er
+        s = s & sName & vbCr
+        Debug.Print sName
+    Next
+End Sub
+
+Sub B07_シートをソート()
+    Dim i As Long
+    Dim arysht() As String
+    
+    For i = 1 To Sheets.Count
+        If i = 1 Then
+            ReDim arysht(0)
+        Else
+            ReDim Preserve arysht(UBound(arysht) + 1)
+        End If
+        arysht(UBound(arysht)) = Sheets(i).Name
+    Next
+    Call SheetSort(arysht)
+    For i = UBound(arysht) To LBound(arysht) Step -1
+        Sheets(arysht(i)).Move Before:=Sheets(1)
+    Next
+End Sub
+
+Sub SheetSort(ByRef argAry() As String)
+    Dim sSwap As String
+    Dim i As Integer
+    Dim j As Integer
+    For i = LBound(argAry) To UBound(argAry)
+        For j = UBound(argAry) To i Step -1
+            If argAry(i) > argAry(j) Then
+                sSwap = argAry(i)
+                argAry(i) = argAry(j)
+                argAry(j) = sSwap
+            End If
+        Next j
+    Next i
+End Sub
+
+Sub B08_全てシート名をクリップボードに出力()
+    Dim i
+    Dim shtnam As String
+    Dim MSFDO As MSForms.DataObject
+    Set MSFDO = New MSForms.DataObject
+    For Each i In ActiveWorkbook.Sheets
+        shtnam = shtnam & i.Name & vbCr
+    Next i
+    MSFDO.SetText shtnam
+    MSFDO.PutInClipboard
+    MsgBox "アクティブブックのシート名をクリップボードに格納しました。"
+End Sub
+
+Sub B09_クリップボードから複数シート作成()
+' ブックの最後尾にシートを追加
+    Dim 項目 As Range
+    Dim clipary
+    Dim shtary As String
+    Dim shtout
+    Dim skipcnt As Integer
+    Dim skipflg As Double
+    Dim skipsht As String
+    Dim cbformat As Variant
+    Dim MSFDO As MSForms.DataObject
+    Set MSFDO = New MSForms.DataObject
+    cbformat = Application.ClipboardFormats
+    If (cbformat(1) <> 0) Then
+        MsgBox "クリップボードが空か、テキスト以外です。" & vbCr & "利用したいシート名をメモ帳などでシート名毎に改行を入れてから全体をコピーし、実行してください。", 48
+        Exit Sub
+    Else
+        'クリップボードからオブジェクトに内容を取得
+        MSFDO.GetFromClipboard
+        '件数を数える
+        clipary = Split(Replace(MSFDO.GetText, Chr(13), ""), Chr(10))
+        '文字列のない情報を削除する。
+        i = 1
+        For Each len0 In clipary
+            If LenB(len0) > 0 Then
+            
+                'シート名に使えな文字列を削除
+                shtary = Replace(shtary, ":", "")
+                shtary = Replace(shtary, "[", "")
+                shtary = Replace(shtary, "]", "")
+                shtary = Replace(shtary, "'", "")
+                shtary = Replace(shtary, "?", "")
+                shtary = Replace(shtary, "/", "")
+                shtary = Replace(shtary, "\", "")
+                shtary = Replace(shtary, "*", "")
+                'シート名が長いものを短縮
+                If Len(len0) > 31 Then
+                    len0 = Right("0" & i, 2) & "_" & Left(len0, 28)
+                End If
+                'シート名を格納
+                shtary = shtary & Chr(10) & len0
+            End If
+            i = i + 1
+        Next len0
+        shtary = Mid(shtary, 2)
+        clipary = Split(shtary, Chr(10))
+        runok = MsgBox(UBound(clipary) + 1 & "シートを作成します。" & vbCr & _
+        "処理を続行してもよろしいですか？" & vbCr & _
+        "なおシート名の長さは31文字以上設定できません。また禁則文字「:/?[]\*'」は使用できません。", Buttons:=vbInformation + vbYesNo)
+        i = 1
+        skipsht = ""
+        skipcnt = 0
+        If runok = vbYes Then
+            For Each shtout In clipary
+                skipflg = 0
+                Debug.Print "[" & i & "][" & Len(shtout) & "]" & shtout
+                'シート作成前に同名のシートが存在しないか確認
+                For Each ws In Workbooks(ActiveWorkbook.Name).Sheets
+                    If LCase(shtout) = LCase(ws.Name) Then
+                        skipflg = 1
+                        skipcnt = skipcnt + 1
+                        skipsht = skipsht & vbCr & shtout
+                        Exit For
+                    End If
+                Next ws
+                If skipflg = 0 Then
+                    Sheets.Add(After:=Worksheets(Worksheets.Count)).Name = shtout
+                End If
+                i = i + 1
+            Next shtout
+            If skipcnt > 0 Then
+                MsgBox "処理が完了しました。" & vbrt & _
+                "同名のシートが存在するため、以下" & skipcnt & "シートの作成をスキップしました。" & vbCr & _
+                skipsht, Buttons:=vbInformation
+            Else
+                MsgBox "処理が完了しました。"
+            End If
+        Else
+            MsgBox "処理を中止しました。", Buttons:=vbInformation
+        End If
+    End If
+End Sub
+
+Sub B10_シート名変更()
+    Dim 項目 As Range
+    Dim clipary
+    Dim shtary As String
+    Dim shtout
+    Dim skipcnt As Integer
+    Dim skipflg As Double
+    Dim skipsht As String
+    Dim cbformat As Variant
+    Dim MSFDO As MSForms.DataObject
+    Set MSFDO = New MSForms.DataObject
+    cbformat = Application.ClipboardFormats
+    If (cbformat(1) <> 0) Then
+        MsgBox "クリップボードが空か、テキスト以外です。" & vbCr & "利用したいシート名をメモ帳などでシート名毎に改行を入れてから全体をコピーし、実行してください。", 48
+        Exit Sub
+    Else
+        'クリップボードからオブジェクトに内容を取得
+        MSFDO.GetFromClipboard
+        '件数を数える
+        clipary = Split(Replace(MSFDO.GetText, Chr(13), ""), Chr(10))
+        '文字列のない情報を削除する。
+        i = 1
+        newname = ""
+        oldname = ""
+        For Each len0 In clipary
+            tabcol = 0
+            '現シート名と新シート名を分割
+            tabcol = InStr(1, len0, Chr(9))
+            If tabcol > 0 Then
+                '新シート名を抽出
+                tmpname = Mid(len0, tabcol + 1)
+                If LenB(tmpname) > 0 Then
+                    'シート名に使えな文字列を削除
+                    tmpname = Replace(tmpname, ":", "")
+                    tmpname = Replace(tmpname, "[", "")
+                    tmpname = Replace(tmpname, "]", "")
+                    tmpname = Replace(tmpname, "'", "")
+                    tmpname = Replace(tmpname, "?", "")
+                    tmpname = Replace(tmpname, "/", "")
+                    tmpname = Replace(tmpname, "\", "")
+                    tmpname = Replace(tmpname, "*", "")
+                    'シート名が長いものを短縮
+                    If Len(tmpname) > 31 Then
+                        tmpname = Right("0" & i, 2) & "_" & Left(tmpname, 28)
+                    End If
+                    '旧シート名を抽出・格納
+                    oldname = oldname & Chr(10) & Mid(len0, 1, tabcol - 1)
+                    '新シート名を格納
+                    newname = newname & Chr(10) & tmpname
+                End If
+            'Else
+                'クリップボードの内容に誤りがある場合
+                'MsgBox "クリップボードの内容に誤りがあります。" & vbCr & "現在のシート名<TAB>変更後のシート名を複数行含まれる形でクリップボードに格納してください。", 48
+                'Exit Sub
+            End If
+            i = i + 1
+        Next len0
+        oldary = Split(oldname, Chr(10))
+        newary = Split(newname, Chr(10))
+        
+        runok = MsgBox(UBound(oldary) + 1 & "シートの名称を一括で変更します。" & vbCr & _
+        "処理を続行してもよろしいですか？" & vbCr & _
+        "なおシート名の長さは31文字以上設定できません。また禁則文字「:/?[]\*'」は使用できません。", Buttons:=vbInformation + vbYesNo)
+        skipsht = ""
+        skipcnt = 0
+        If runok = vbYes Then
+            'ワークシートを先頭から順番検索
+            For Each ws In Workbooks(ActiveWorkbook.Name).Sheets
+                i = 0
+                For Each oldsht In oldary
+                    If LCase(oldsht) = LCase(ws.Name) Then
+                        'Debug.Print "シート名検索:[" & oldsht & "]"
+                        For Each ws2 In Workbooks(ActiveWorkbook.Name).Sheets
+                            'Debug.Print "ws2[" & ws2.Name & "]newary[" & newary(i) & "]"
+                            If LCase(ws2.Name) = LCase(newary(i)) Then
+                                skipflg = 1
+                                skipcnt = skipcnt + 1
+                                skipsht = skipsht & vbCr & oldary(i) & "→" & newary(i)
+                            End If
+                        Next ws2
+                        If skipflg = 0 Then
+                            'Debug.Print "シート名書き換え:[" & ws.Name & "][" & oldsht & "]"
+                            ws.Name = newary(i)
+                        Else
+                            skipflg = 0
+                        End If
+                    End If
+                    i = i + 1
+                Next oldsht
+            Next ws
+            If skipcnt > 0 Then
+                MsgBox "処理が完了しました。" & vbrt & _
+                "同名のシートが存在するため、以下" & skipcnt & "シートの作成をスキップしました。" & vbCr & _
+                skipsht, Buttons:=vbInformation
+            Else
+                MsgBox "処理が完了しました。"
+            End If
+        Else
+            MsgBox "処理を中止しました。", Buttons:=vbInformation
+        End If
+    End If
+End Sub
+
+Sub B11_全てのシートウインドウ枠固定解除()
+    Dim ws As Worksheet
+         
+    For Each ws In ActiveWorkbook.Worksheets
+        ws.Activate
+        ActiveWindow.FreezePanes = False
+    Next ws
+End Sub
+
+Sub B12_フルパスを分割()
+    Dim Selcel As Range, n As Double
+    Dim tempstr As String
+    
+    Application.ScreenUpdating = False
+    n = 1
+    For Each Selcel In Selection
+        If n = 1 Then
+            rowtop = Selcel.Row
+            collft = Selcel.Column
+        Else
+            rowbot = Selcel.Row
+            colrgt = Selcel.Column
+        End If
+        n = n + 1
+    Next
+    For i2 = collft To colrgt Step 1
+        For i = rowtop To rowbot Step 1
+            If i = rowtop Then
+                tempstr = Cells(i, i2).Value
+            End If
+            If tempstr = "" Then
+                tempstr = Cells(i, i2).Value
+            End If
+            If Cells(i, i2).Value <> "" Then
+                tempstr = Cells(i, i2).Value
+            End If
+            If Cells(i, i2).Value = "" Then
+                If IsNumeric(tempstr) Then
+                    If Left(tempstr, 1) = "0" Then
+                        Cells(i, i2).Value2 = "'" & CStr(tempstr)
+                    Else
+                        Cells(i, i2).Value = CStr(tempstr)
+                    End If
+                Else
+                    Cells(i, i2).Value = CStr(tempstr)
+                End If
+                
+            End If
+        Next
+    Next
+    MsgBox ("処理が完了しました。")
+    Application.ScreenUpdating = True
+End Sub
+
+'選択範囲のセルの英文を日本語に一括変換する。
+Sub B12_選択範囲の英文を右隣のセルに日本語翻訳出力()
+
+    '韓国語  ko
+    '中国語（簡体）  zh-CN
+    '中国語（繁体）  zh-TW
+    '日本語 ja
+    
+    '翻訳元(英語)
+    translateFrom = "en"
+    '翻訳先(日本語)
+    translateTo = "ja"
+
+    'scrlock (1)
+    '変数設定
+    Dim param As String, trans As String, url As String
+    '参照設定で以下のLibraryの使用を設定
+    'Microsoft HTML Object Library
+    'Microsoft WinHTTP Services,version 5.1
+    'Microsoft XML v6.0
+    
+    Dim req As XMLHTTP60
+    Set req = New XMLHTTP60
+    Dim oHtml As New MSHTML.HTMLDocument
+    Set oHtml = New MSHTML.HTMLDocument
+    
+    cnt = 0
+    'ツール実行条件確認
+    For Each ARng In Selection.Areas
+        cnt = cnt + 1
+        If Cells(ARng.Rows.Row, ARng.Columns.Column) <> "" Then
+            If cnt > 1 Or ARng.Columns.Count <> 1 Then
+                scrlock (0)
+                MsgBox ("単一列の複数セルを選択してください。")
+                Exit Sub
+            Else
+                '選択範囲の情報格納
+                strow = ARng.Rows.Row
+                lnrow = ARng.Rows.Count - 1
+                stcol = ARng.Columns.Column
+            End If
+        Else
+            scrlock (0)
+            MsgBox ("選択範囲の先頭セルに文字が入っていません。")
+            Exit Sub
+        End If
+    Next
+    
+    For i = strow To strow + lnrow Step 1
+        'セルの値を取得
+        param = Cells(i, stcol).Value
+        'google翻訳のURLに直接翻訳対象を送信
+        url = "https://translate.google.pl/m?hl=" & translateFrom & "&sl=" & translateFrom & "&tl=" & translateTo & "&ie=UTF-8&prev=_m&q=" & EncodeURL(param)
+        req.Open "GET", url, False
+        req.setRequestHeader "User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)"
+        req.send
+        
+        'HTTPリクエストのレスポンスを取得
+        Debug.Print req.responseText
+        oHtml.body.innerHTML = req.responseText
+        
+        '翻訳結果を取得
+        Dim transtext As String
+        transtext = oHtml.getElementsByClassName("result-container")(0).innerText
+        'transtext = oHtml.getElementsByClassName("result-container")(0).innerText
+        
+        '翻訳結果があればClean関数を実行、なければエラー出力
+        If transtext <> "" Then
+            Cells(i, stcol + 1).Value = Clean(transtext)
+            DoEvents
+        Else
+            Cells(i, stcol + 1).Value = CVErr(xlErrValue)
+            DoEvents
+        End If
+    Next i
+    Set oHtml = Nothing
+    Set req = Nothing
+    'scrlock (0)
+    
+End Sub
+
+'翻訳後のテキスト内の文言を変換
+Function Clean(str As String)
+
+    'str = Replace(str, """", """")
+    'str = Replace(str, "%2C", ",")
+    'str = Replace(str, "'", "'")
+    Clean = str
+
+End Function
+
+'日本語をURLエンコード
+Function EncodeURL(ByVal str As String) As String
+    EncodeURL = Application.WorksheetFunction.EncodeURL(str)
+End Function
+
+Sub メイリオ改行調整()
+    Dim c As Range
+    Application.ScreenUpdating = False
+    toprow = Selection(1).Row
+    endrow = Selection(Selection.Count).Row
+    For i = toprow To endrow Step 1
+        Debug.Print i
+        temp = Cells(i, 1).RowHeight / 16.5
+        Cells(i, 1).RowHeight = (temp * 16.5) + (temp * 3.3)
+    Next i
+    Application.ScreenUpdating = True
+    MsgBox "成形完了しました。"
+End Sub
+
+Private Sub selectlook()
+    Dim rary As Range
+    For Each rary In Selection
+        Debug.Print "Row=[" & rary.Row & "]Col=[" & rary.Column & "]"
+    Next
+End Sub
+
+Private Sub scrlock(flg As Integer)
+    '画面の描画を抑止する。
+    If flg = 1 Then
+        Application.ScreenUpdating = False
+    Else
+        Application.ScreenUpdating = True
+    End If
+End Sub
+
+Private Sub sample1()
+    Dim i As Long
+    For i = Cells(Rows.Count, 1).End(xlUp).Row To 1 Step -1
+        Rows(i).Insert
+    Next i
+End Sub
+
+Private Sub sample2()
+    Dim i As Long
+    For i = Cells(1, Columns.Count).End(xlToLeft).Column To 1 Step -1
+        Columns(i).Insert
+    Next i
+End Sub
