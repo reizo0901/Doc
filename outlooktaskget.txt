@@ -1,0 +1,157 @@
+Sub 複数の他人のOutlook予定表をExcelへ取り込む_時間指定追加版_大量アイテム処理高速版()
+  
+    Dim strAddress As String
+    Dim strStart As String
+    Dim strEnd As String
+    Dim n As Integer
+  
+    'Excelのブックとワークシートのオブジェクトを設定します。
+    Set wbBook = ThisWorkbook
+    Set wsSheet1 = wbBook.Worksheets(1)
+    Set wsSheet2 = wbBook.Worksheets(2)
+     
+  
+    '対象予定表の抽出期間を指定します。※変更する場合は以下の日付を変更してください。
+    strStart = Format("2021/1/1 00:00", "yyyy/mm/dd hh:nn") '抽出するスケジュールの開始日+時刻を指定
+    strEnd = Format("2022/6/25 10:30", "yyyy/mm/dd hh:nn")   '抽出するスケジュールの終了日+時刻を指定
+    
+  
+    '1番目のシートの1行目にタイトルを記述します。
+    With wsSheet1
+        .Range("A1").CurrentRegion.Clear
+        .Cells(1, 1).Value = "件名"
+        .Cells(1, 2).Value = "場所"
+        .Cells(1, 3).Value = "開始日時"
+        .Cells(1, 4).Value = "終了日時"
+        .Cells(1, 5).Value = "予定の本文"
+        .Cells(1, 6).Value = "予約者"
+        .Cells(1, 7).Value = "必須出席者"
+        .Cells(1, 8).Value = "任意出席者"
+        .Cells(1, 9).Value = "EntryID" '予定のID※編集時にキーとして使用します。
+        .Cells(1, 10).Value = "定期的な予定" '定期的な予定であるかのフラグ。定期的な予定はTrue。
+        .Cells(1, 11).Value = "対象者（メアド）"
+        .Cells(1, 12).Value = "終日イベント"
+         
+        With .Range("A1:Z1")
+            .Font.Bold = True
+            .Font.ColorIndex = 10
+            .Font.Size = 11
+        End With
+    End With
+    
+     
+    '対象ユーザが記載されているメアド分予定表取り込み処理を繰り返します。
+    For n = 2 To wsSheet2.Cells(1048576, 1).End(xlUp).Row
+    
+        With wsSheet2
+           Call 他人のOutlook予定表予定をExcelへ取り込む(.Cells(n, 1).Value, strStart, strEnd)
+        End With
+     
+    Next
+     
+    MsgBox "Outlook予定表の取り込みが完了しました！", vbInformation
+     
+    'Null out the variables.
+    Set wbBook = Nothing
+    Set wsSheet1 = Nothing
+    Set wsSheet2 = Nothing
+     
+End Sub
+  
+  
+  
+Sub 他人のOutlook予定表予定をExcelへ取り込む(strAddress As String, strStart As String, strEnd As String)
+  
+    'Outlook用の定義
+    Dim olApp As Outlook.Application
+    Dim olNamespace As Outlook.Namespace
+    Dim olFolder As Folder
+    Dim olConItems As Outlook.Items
+    Dim olItem  As AppointmentItem
+  
+    'Excel用の定義
+    Dim wbBook As Workbook
+    Dim wsSheet As Worksheet
+    Dim lnContactCount As Long
+     
+    '他人予定表の定義
+    Dim recOther As Recipient
+    Dim objAppt As AppointmentItem
+  
+     
+    '処理速度優先のためスクリーンの更新は行われません。
+    Application.ScreenUpdating = False
+     
+  
+     
+    'Outlookオブジェクトを設定し、MAPI名前空間を介してOutlookの予定表を取得します。
+    Set olApp = New Outlook.Application
+    Set olNamespace = olApp.GetNamespace("MAPI")
+    '他人のオブジェクトを指定し取得します。
+    Set recOther = olNamespace.CreateRecipient(strAddress)
+
+    '取得した他人のオブジェクトの内、予定表のみ絞り込み再取得します。
+    Set olFolder = olNamespace.GetSharedDefaultFolder(recOther, olFolderCalendar)
+
+    Set olConItems = olFolder.Items
+  
+  
+    'ブックおよび、1番目のシート情報を取得します。
+    Set wbBook = ThisWorkbook
+    Set wsSheet1 = wbBook.Worksheets(1)
+     
+    '取得結果を記述する行番号を指定します。
+    lnContactCount = wsSheet1.Cells(1048576, 1).End(xlUp).Row + 1
+     
+  
+    '開始日でソートします。
+    olConItems.Sort "[Start]"
+    
+    'Trueで定期的な予定を含むようにします。※Falseであると定期的な予定は含まれません。
+    olConItems.IncludeRecurrences = True
+     
+     
+    'Restrictソッドで期間指定して抽出するスケジュールを絞り込みます。
+    Set olConItems = olConItems.Restrict("[End] <= """ & strEnd & """ AND [Start] >= """ & strStart & """")
+     
+     
+    For Each olItem In olConItems
+    
+        'Findで検索すると期間範囲外の余計なものまでヒットしてしまうので、再度フィルタリングします。
+        If TypeName(olItem) = "AppointmentItem" Then
+            With olItem
+                wsSheet1.Cells(lnContactCount, 1).Value = .Subject
+                wsSheet1.Cells(lnContactCount, 2).Value = .Location
+                wsSheet1.Cells(lnContactCount, 3).Value = .Start
+                wsSheet1.Cells(lnContactCount, 4).Value = .End
+                wsSheet1.Cells(lnContactCount, 5).Value = .Body
+                wsSheet1.Cells(lnContactCount, 6).Value = .Organizer
+                wsSheet1.Cells(lnContactCount, 7).Value = .RequiredAttendees
+                wsSheet1.Cells(lnContactCount, 8).Value = .OptionalAttendees
+                wsSheet1.Cells(lnContactCount, 9).Value = .EntryID
+                wsSheet1.Cells(lnContactCount, 10).Value = .IsRecurring
+                wsSheet1.Cells(lnContactCount, 11).Value = strAddress
+                wsSheet1.Cells(lnContactCount, 12).Value = .AllDayEvent
+
+            End With
+            lnContactCount = lnContactCount + 1
+        End If
+
+        Set olItem = olConItems.FindNext
+        
+    Next
+    
+     
+    'Null out the variables.
+    Set olItem = Nothing
+    Set olConItems = Nothing
+    Set olFolder = Nothing
+    Set olNamespace = Nothing
+    Set olApp = Nothing
+    Set wbBook = Nothing
+    Set wsSheet1 = Nothing
+     
+    'Turn screen updating back on.
+    Application.ScreenUpdating = True
+     
+End Sub
