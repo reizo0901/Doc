@@ -1,0 +1,62 @@
+「サーバマネージャー」の「ツール」から[タスクスケジューラ]をクリックする。
+"「タスクスケジューラ」の左ペインから「イベントビューアータスク」を展開し、クリックする。
+タスクスケジューラ
+  タスクスケジューラライブラリ
+    イベントビューアータスク"
+名前「IIS_PG_service_start」で右クリックし、「プロパティ」をクリックする。
+「IIS_PG_service_startのプロパティ」画面で、「トリガー」タブをクリックし、「イベント時」を選択し、[編集]ボタンをクリックする。
+「トリガーの編集」画面で[●カスタム]を選択する。
+[新しいイベント フィルター]ボタンをクリックする。
+「新しいイベント フィルター」画面の「XML」タブをクリックする。
+「■手動でクエリを編集する」にチェックを入れる。
+"「イベントビューアー
+クエリを手動で編集すると、～」ダイアログで[はい]をクリックする。"
+"以下のXMLを貼り付けて、[OK]をクリックする。
+
+<QueryList>
+  <Query Id=""0"" Path=""Microsoft-Windows-Ntfs/Operational"">
+    <Select Path=""Microsoft-Windows-Ntfs/Operational"">*[System[(EventID=4)] and EventData[Data[@Name='VolumeName']='G:']]</Select>
+  </Query>
+</QueryList>"
+「トリガーの編集」画面で、[OK]をクリックする。
+「IIS_PG_service_startのプロパティ」画面で、[OK]をクリックする。
+
+
+「サーバマネージャー」の「ツール」から[タスクスケジューラ]をクリックする。
+"「タスクスケジューラ」の左ペインから「イベントビューアータスク」を展開し、クリックする。
+タスクスケジューラ
+  タスクスケジューラライブラリ
+    イベントビューアータスク"
+名前「IIS_PG_service_stop」で右クリックし、「プロパティ」をクリックする。
+「IIS_PG_service_stopのプロパティ」画面で、「トリガー」タブをクリックし、「イベント時」を選択し、[編集]ボタンをクリックする。
+「トリガーの編集」画面で[●カスタム]を選択する。
+[新しいイベント フィルター]ボタンをクリックする。
+「新しいイベント フィルター」画面の「XML」タブをクリックする。
+「■手動でクエリを編集する」にチェックを入れる。
+"「イベントビューアー
+クエリを手動で編集すると、～」ダイアログで[はい]をクリックする。"
+"以下のXMLを貼り付けて、[OK]をクリックする。
+
+<QueryList>
+  <Query Id=""0"" Path=""Microsoft-Windows-Ntfs/Operational"">
+    <Select Path=""Microsoft-Windows-Ntfs/Operational"">*[System[(EventID=300)] and EventData[Data[@Name='VolumeName']='F:']]</Select>
+  </Query>
+</QueryList>"
+「トリガーの編集」画面で、[OK]をクリックする。
+「IIS_PG_service_startのプロパティ」画面で、[OK]をクリックする。
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+↓起動用_動作確認OK
+<QueryList>
+  <Query Id="0" Path="Microsoft-Windows-Ntfs/Operational">
+    <Select Path="Microsoft-Windows-Ntfs/Operational">*[System[(EventID=4)] and EventData[Data[@Name='VolumeName']='G:']]</Select>
+  </Query>
+</QueryList>
+
+↓停止用_動作確認OK 
+<QueryList>
+  <Query Id="0" Path="Microsoft-Windows-Ntfs/Operational">
+    <Select Path="Microsoft-Windows-Ntfs/Operational">*[System[(EventID=300)] and EventData[Data[@Name='VolumeName']='F:']]</Select>
+  </Query>
+</QueryList>
