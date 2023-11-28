@@ -1,0 +1,21 @@
+############################################################
+cat /home/ec2-user/containers/docker-compose.yml
+############################################################
+cat /home/ec2-user/containers/nginx/conf/nginx.conf
+############################################################
+cat /home/ec2-user/containers/nginx/uwsgi_params
+############################################################
+cat /home/ec2-user/containers/django/uwsgi/uwsgi.ini
+############################################################
+cat /home/ec2-user/containers/django/Dockerfile
+############################################################
+cat /home/ec2-user/containers/django/requirements.txt
+############################################################
+cat /home/ec2-user/containers/django/startup/startup.sh
+############################################################
+cat /home/ec2-user/containers/django/startup/setuser.sh
+############################################################
+cat /home/ec2-user/containers/docker-compose.yml
+############################################################
+cat /home/ec2-user/containers/django/djangoapp/djangoapp/settings.py
+############################################################
