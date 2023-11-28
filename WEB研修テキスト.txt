@@ -1,0 +1,1013 @@
+0.AWSコンソールへサインイン
+
+1.連携済みのURLからAWSに接続
+2.[IAMユーザーとしてサインイン]画面で[ユーザー名]と[パスワード]を入力して[サインイン]をクリック
+3.リージョンが[東京▼]以外になっている場合は、検索窓の右側にある[リージョン名▼]をクリックし、
+[アジアパシフィック(東京) ap-northeast-1]を選択
+
+2.ネットワーク環境構築
+
+2-1.VPC作成
+  ここでは１つのVPC(Amazon Virtual Private Cloud)を作成します。
+  Amazon VPCとは、Amazon Virtual Private Cloudの略です。Amazon VPCにより仮想ネットワークを構築し、
+  IPアドレスおよびサブネットの管理・ルーティング・ゲートウェイの設定等一連の仮想ネットワークの制御を簡単に
+  実現することができます。
+
+  1.[AWSコンソール]画面上部の検索窓で"vpc"と入力し、検索結果の[VPC]をクリック
+
+  2.[AWS VPC]画面で[VPCを作成]をクリック
+
+  3.[VPCを作成]画面で以下を設定し、[VPCを作成]をクリック
+
+    [VPCの設定]
+    [作成するリソース]
+    ●VPCのみ ○VPCなど
+    [名前タグ - オプション]
+    Key Name
+    Value vpc-<※LastName>
+    例:vpc-giken
+    [IPv4 CIDRブロック]
+    ●IPv4 CIDRの手動入力
+    ○IPAM割り当てのIPv4 CIDRブロック
+    [IPv4 CIDR]
+    10.0.0.0/16
+    [IPv6 CIDRブロック]
+    ●IPv6 CIDRブロックなし
+    ○IPAM割り当てのIPv6 CIDRブロック
+    ○Amazon提供のIPv6 CIDRブロック
+    ○IPv6 CIDR所有(ユーザー所有)
+    [テナンシー]
+    デフォルト
+    [タグ]
+
+    ※[新しいタグを追加]をクリックして以下を追加
+    Key Author
+    Value <※FullName>
+    例:giken.tarou
+
+    ※VPC作成後の画面の詳細に以下のエラーが表示されますが、問題はありません。
+       研修用アカウントは権限が低いため、ルールの表示に失敗します。
+
+2-2.VPCにサブネットを作成
+  ここではVPCに対して1つのサブネットを作成します。
+  サブネットとは、IPネットワークを細分化することを指します。記述方法はCIDR（サイダー）表記で、IPアドレスの
+  プレフィックスとしてネットワークアドレスの後にスラッシュ（/）の後とネットワークアドレスビット数を記載します。
+  使用例は、”10.0.0.0/16”等が挙げられます。
+
+  1.左ペインから[サブネット]をクリック
+  2.[サブネット]画面で[サブネットを作成]をクリック
+  3.[サブネットを作成]画面で、以下を設定し、[サブネットを作成]をクリック
+
+    [VPC]
+    vpc-<※LastName>
+    ※2-1で作成したVPCを選択
+    サブネットの設定
+    [サブネット名]
+    public-subnet-1a-<※LastName>
+    例:public-subnet-1a-giken
+    [アベイラビリティーゾーン]
+    ap-northeast-1a
+    [IPv4 CIDRブロック]
+    10.0.0.0/24
+    [タグ - オプション]
+    ※[新しいタグを追加]をクリックして以下を追加
+    キー Author
+    値-ｵﾌﾟｼｮﾝ <※FullName>
+    例:giken.tarou
+    ※[新しいサブネットを追加]をクリックして2つ目の
+    　サブネットを追加する。
+    [サブネット名]
+    public-subnet-1c-<※LastName>
+    例:public-subnet-1c-giken
+    [アベイラビリティーゾーン]
+    ap-northeast-1c
+    [IPv4 CIDRブロック]
+    10.0.1.0/24
+    [タグ - オプション]
+    ※[新しいタグを追加]をクリックして以下を追加
+    キー Author
+    値-ｵﾌﾟｼｮﾝ <※FullName>
+    例:giken.tarou
+
+2-3.インターネットゲートウェイ作成、VPCに紐付け
+  ここではインターネットゲートウェイを作成し、VPCと紐付けることにより、インターネットを使う準備ができます。
+  サブネットをパブリックサブネットとすることで、インターネットアクセスが可能です。
+  送信先をIPv4の場合は、0.0.0.0/0とします。
+  ターゲットをインターネットゲートウェイIDである、igw-XXXXXXXXXとします。
+
+  1.左ペインから[インターネットゲートウェイ]をクリック
+  2.[インターネットゲートウェイ]画面で[インターネットゲートウェイの作成]をクリック
+  3.[インターネットゲートウェイの作成]画面で、以下を設定し、[インターネットゲートウェイの作成]をクリック
+  [名前タグ]
+  igw-<※LastName>
+  例：igw-giken
+  [タグ - オプション]
+  ※[新しいタグを追加]をクリックして以下を追加
+  Key Author
+  Value <※FullName>
+  例:giken.tarou
+
+  4.画面右上の[VPCへアタッチ]をクリック
+
+  5.[VPCにアタッチ]画面の[使用可能なVPC]で、作成したVPCを選択し、[インターネットゲートウェイのアタッチ]をクリック
+
+2-4.ルートテーブル作成
+  ここではルートテーブルを設定することによりインターネットと通信をできるようにします。
+  VPCルートテーブルでは、ルートの送信先ならびにターゲットを関連付けします。
+
+2-4-1.ルートテーブルの設定
+  1.左ペインから[ルートテーブル]をクリック
+  2.[ルートテーブル]画面で[ルートテーブルを作成]をクリック
+  3.[ルートテーブル]画面で、以下を設定し、[ルートテーブルを作成]をクリック
+
+2-4-2.ルートテーブルを編集
+  1.作成したルートテーブル[rtb-xxxxxxxxxxxxxxxxx]の画面下の[ルート]タブをクリックして、[ルートを編集]をクリック
+  2.[ルートを編集]画面で[ルートを追加]をクリック
+  3.追加表示された[ルートを編集]で、以下を設定し、[変更を保存]をクリック
+  [送信先]
+  0.0.0.0/0
+  [ターゲット]
+  igw-xxxxxxxxx～(igw-<※LastName>)
+  ※2-3で作成したインターネットゲートウェイを選択
+
+2-4-3.サブネットの関連付けを編集
+  1.[サブネットの関連付け]タブをクリックして、[サブネットの関連付けを編集]をクリック
+  2.[サブネットの関連付けを編集]画面で、2-3で作成した２つのサブネットにチェックを入れ、[関連付けを保存]をクリック
+
+3.Amazon EC2(a)(仮想サーバ)作成
+  ここでは２つのEC2(Amazon Elastic Compute Cloud)を作成します。
+  EC2とはAmazon Cloud上に作成可能なコンピュータであり、OSやスペック、台数などを容易に準備することができます。
+  EC2は停止している場合は料金が発生しないというメリットがあります。
+  ※ただし、EC2自体に紐付いているEBS（ストレージサービス）は継続して課金されます
+
+3-1.AWS EC2(インスタンス)起動
+  1.[AWSコンソール]画面上部の検索窓で"ec2"と入力し、検索結果の[EC2]をクリック
+  2.[AWS EC2]画面の[インスタンスを起動]枠の[インスタンスを起動]をクリック
+
+3-2.名前とタグの追加
+  1.[インスタンスを起動]画面で以下を設定
+
+    ※[Add additional tags]をクリックして、
+    タグの入力欄を表示
+    [Name and tags]
+    キー name
+    値 ec2-django-a-<※LastName>
+    例:EC2-Nginx-a-giken
+    Resource types ※設定不要
+    ※[タグを追加]または、[Add new tag]をクリックして
+    　以下を追加
+    キー Author
+    値 <※FullName>
+    例:giken.tarou
+    Resource types ※設定不要
+
+3-3.アプリケーションおよびOSイメージ(AMI)の指定
+  1.[クイックスタート]タブ >[Amazon Linux]の順でクリックし、[Amazon Linux 2 AMI…]を選択
+
+3-4.インスタンスタイプの指定
+  1.[インスタンスタイプ]の選択欄で[t2.micro]を選択
+
+3-5.キーペア(ログイン用の鍵)作成
+  キーペアとは、EC2インスタンスにアクセスするために必要となる「鍵」のことで、「公開鍵」と「秘密鍵」になります。
+  キーペアを作成し、ローカルの端末の[c:\work]などのフォルダを作成し、[公開鍵]をダウンロードします。
+  1.[キーペア(ログイン)]枠の[新しいキーペアの作成]をクリック
+  2.[キーペアを作成]画面で以下を設定し、[キーペアを作成]をクリック
+    [キーペア名]
+    EC2-kpr-<※LastName>
+    例:EC2-kpr-giken
+    [キーペアのタイプ]
+    ● RSA
+    ○ ED25519
+    [プライベートキーファイル形式]
+    ● .pem
+    ○ .ppk
+    
+    キーペアは研修を通して同じものを利用します。この研修が終わるまで絶対に削除をしないでください。
+    もし削除しまった場合は、EC2インスタンスとキーペアの再作成が必要があります。
+
+  3.ダウンロード用のダイアログが表示されたら、
+    [c:\work]フォルダに保存する。
+    ※事前にCドライブの直下に[work]フォルダを作成する。
+    この後の手順でキーペアに対するコマンドを発行するので、必ず指定したフォルダ配下に保存してください
+  4.ダウンロード後に元の画面に遷移するので、キーペア名の欄に作成したキーペアが設定されていることを確認
+
+3-6.ネットワーク設定
+  ここでは作成するEC2インスタンスが利用するネットワークの設定を行います。
+
+3-6-1.VPC、サブネット設定
+  1.[ネットワーク設定]枠の右側にある[編集]をクリック
+  2.[ネットワーク設定]枠に以下を設定
+
+    [VPC]の選択欄で2-1で作成したVPCを選択
+    例:vpc-xxxxxxxxxx～(vpc-giken)
+    [サブネット]
+    2-2で作成した[ap-northeast-1a]のサブネットを選択
+    例:subnet-xxxxxxx～(public-subnet-1a-giken)
+    [パブリックIPの自動割り当て]
+    無効化
+    [ファイアウォール(セキュリティグループ)]
+    ●セキュリティグループを作成する
+    ○既存のセキュリティグループを選択する
+    [セキュリティグループ名]
+    for-EC2-<※LastName>
+    例:for-EC2-giken
+    [説明]
+    for-EC2-<※LastName>
+    例:for-EC2-giken
+    [インバウンドセキュリティグループのルール]
+    [セキュリティグループルール１]
+    タイプ ssh
+    ソースタイプ 任意の場所
+    説明 from home
+    ※[セキュリティグループルールを追加]をクリック
+    [セキュリティグループルール２]
+    タイプ HTTP
+    ソースタイプ 任意の場所
+    説明 from internet
+    ※[セキュリティグループルールを追加]をクリック
+    [セキュリティグループルール3]
+    タイプ HTTPS
+    ソースタイプ 任意の場所
+    説明 from internet
+
+3-6-2.ストレージを設定
+
+  1.[ストレージを設定]枠で以下を設定
+    [容量(GiB)]
+    8 GiB
+    [ストレージタイプ]
+    gp3
+
+3-6-3.インスタンスを起動
+  1.[概要]枠のインスタンス数が"1"であることを確認し、[インスタンスを起動]をクリック
+    [インスタンス数]
+    1
+    ※必ず"1"になっていることを確認すること
+
+4. EC2(a)にElastic IP アドレス割り当てと関連付け
+  1.左ペインから[Elastic IP]をクリック
+  2.[Elastic IP アドレスを割り当てる]をクリック
+  3.[Elastic IPアドレスを割り当てる]画面で、以下を設定し、[割り当て]をクリック
+    [Elastic IP アドレスの設定]
+    [ネットワークボーダーグループ]
+    ap-northeast-1
+    [パブリック IPv4アドレスプール]
+    ●Amazon の IPv4アドレスプール
+    ○AWSアカウントで持ち込むパブリック…
+    ○顧客所有のIPv4アドレスのプール(顧客…
+    [グローバル静的IPアドレス]
+    ※設定不要
+    [タグ - オプション]
+    ※[新規タグを追加]をクリックする
+    [キー] Name
+    [値] eip-a-<※LastName>
+    例：eip-a-giken
+    ※[新規タグを追加]をクリックする
+    キー Author
+    値 <※FullName>
+    例:giken.tarou
+
+  4.[Elastic IP アドレス]画面右上の、[このElastic IPアドレスを関連付ける]をクリック
+    ※後続の手順で必要となるので、作成した「Elastic IP アドレス」の「割り当てられたIPv4 アドレス」をメモする
+
+  5.[Elastic IP アドレスの関連付け]画面で以下を設定し、[関連付ける]をクリック
+
+    [リソースタイプ]
+    ●インスタンス
+    ○ネットワークインターフェイス
+    [インスタンス]
+    [EC2-Nginx-a-<※LastName>]
+    [プライベート IP アドレス]
+    ※入力しない
+    [再関連付け]
+    ※チェックなし
+
+5.Amazon EC2にSSH接続
+  ネットワークとサーバの準備が整いましたので、ローカル端末からAmazon EC2に接続してWEB開発環境を構築していきます。
+
+5-1.キーペアのアクセス権の変更
+  EC2作成時にダウンロードしたキーペアのアクセス権を変更していきます。
+  1.[スタート]ボタンをクリック後、"cmd"と入力し、[Enter]を押下して「コマンドプロンプト」を起動
+  2.[コマンドプロンプト]で、以下のコマンドを実行
+    
+    cd c:\work
+    dir
+    set PEM_PATH=c:\work\EC2-kpr-<※LastName>.pem
+    icacls.exe %PEM_PATH% /reset
+    icacls.exe %PEM_PATH% /GRANT:R "%USERNAME%":(R)
+    icacls.exe %PEM_PATH% /inheritance:r
+    ※icacls.exeコマンドを実行すると、以下のメッセージが返されます。紛らわしいメッセージですが正常です。
+    「処理ファイル： ./EC2-kpr-<※LastName>.pem」
+    「1個のファイルが正常に処理されました。0個のファイルを処理できませんでした」
+    
+5-2.Amazon EC2にSSHで接続
+  SSHクライアントでEC2サーバに接続します。
+
+  1.[コマンドプロンプト]で、以下のコマンドを実行
+    ssh -i "EC2-kpr-<※LastName>.pem" ec2-user@<パブリックIPアドレス>
+    例：ssh -i "EC2-kpr-giken.pem" ec2-user@xxx.xxx.xxx.xxx
+    4.で作成した「Elastic IP アドレス」の「割り当てられたIPv4アドレス」がパブリックIPアドレスになります
+
+  2.以下のメッセージが表示されたら、"yes"と入力し[Enter]キーを押下
+    The authenticity of host 'xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)' can't be established.
+    ED25519 key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    SSHでの接続が成功すると以下のようなプロンプトの表示になります
+    [ec2-user@ip-10-0-0-x ~]$ _
+    SSHクライアントがインストールされていない場合は、sshコマンドがエラーになりますので、[Windows]の[設定]の
+    [オプション機能]から以下の２つのオプションを追加する必要があります。
+    ・OpenSSHクライアント
+    ・OpenSSHサーバ
+
+6.ホスト側のソフトウェアのセットアップ
+
+6-1.Treeコマンドのインストール
+※ディレクトリの階層の確認用のコマンドインストールします。
+
+//
+sudo yum update
+sudo yum install -y tree
+//
+
+6-2.djangoのインストール
+
+//
+python3 -m pip install django
+//
+
+6-3.仮想コンテナのインストール
+※仮想コンテナのサービスをインストールします。
+
+  1.Dockerインストール
+
+//
+sudo yum install -y docker
+docker --version
+//
+
+  2.Dockerサービスの起動
+
+//
+sudo systemctl start docker
+systemctl status docker
+//
+  3.Dockerサービスの自動起動を有効化
+
+//  
+sudo systemctl enable docker
+systemctl is-enabled docker
+//
+
+  4.ec2-userにdockerグループを追加
+  ※これによりsudoコマンドを利用しなくてもdockerコマンドが利用可能となります。
+
+//
+grep docker /etc/group
+sudo usermod -a -G docker ec2-user
+cat /etc/group
+//
+
+  5.再起動
+
+//
+sudo reboot
+//
+
+    ※SSHのセッションが切断されます。
+
+  6.SSH接続
+    コマンドプロンプトでカーソルの↑を押下して、[Enter]を押下する。
+
+  7.dockerの状態確認
+
+//
+docker info
+systemctl status docker
+//
+
+    下のエラーは問題ない
+    WARNING: bridge-nf-call-iptables is disabled
+    WARNING: bridge-nf-call-ip6tables is disabled
+
+6-4.複数のコンテナを操作しやすくするためのツールをインストールします。
+※docker-composeのセットアップ
+
+  1.docker-composeファイルの格納フォルダ作成
+
+//
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
+//
+
+  2.docker-composeファイルダウンロード
+
+//
+VER=2.23.0
+sudo curl -L "https://github.com/docker/compose/releases/download/v${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
+//
+
+  3.ダウンロードしたdocker-composeファイルを実行形式に変更し、シンボリックリンクを作成
+
+//
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-compose
+docker-compose --version
+//
+
+7.docker-composeの動作確認(nginxを起動するまで)
+
+  1.フォルダ作成
+    今回の研修で必要となる以下のディレクトリ構成を作成する。
+
+    ディレクトリ構造
+
+    containers/
+    　├ django/
+    　│　└ startup/
+    　│　└ uwsgi/
+    　└ nginx/
+    　 　└ conf/
+
+//
+mkdir /home/ec2-user/containers
+mkdir /home/ec2-user/containers/django
+mkdir /home/ec2-user/containers/django/startup
+mkdir /home/ec2-user/containers/django/uwsgi
+mkdir /home/ec2-user/containers/nginx
+mkdir /home/ec2-user/containers/nginx/conf
+//
+
+  2.docker-composeファイルを作成する。
+  ※docker-composeとは複数の仮想コンテナを定義・共有・制御するために開発されたツールで、
+    今回のように複数の仮想コンテナを作成する場合に不可欠なツールとなります。
+
+  2.1.WEBサーバのコンテナを作成する。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+    以下の文章を張り付ける
+
+//version: '3.7'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        ports:
+            - 80:80
+//
+
+  2.2.WEBサーバを起動してみる。
+
+//
+docker-compose up -d
+//
+
+  2.3.WEBサーバが起動したか確認してみる。
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>
+
+  ※Nginxのようこそ画面が表示されること
+
+  2.4.WEBサーバを停止する。
+  
+//
+docker-compose down
+//
+
+8.3層アーキテクチャを構築する。
+
+  1.nginx.conf を作成する。
+    今回は upstream ディレクティブの記述にあるように django コンテナの8000番ポートへ通信を流す設定を行う。
+
+//
+cd /home/ec2-user/containers/nginx/conf
+vim nginx.conf
+//
+
+    以下の文章を貼り付ける。
+
+//
+upstream django {
+    server django:8000;
+}
+
+server {
+    listen 80;
+    location / {
+        uwsgi_pass django;
+        include /etc/nginx/uwsgi_params;
+    }
+}
+//
+
+  5.wsgiの通信で必要とされる uwsgi_params の作成を行う（参考）。
+
+//
+cd /home/ec2-user/containers/nginx/
+vim uwsgi_params
+//
+
+    以下の文章を貼り付ける
+
+//
+uwsgi_param QUERY_STRING $query_string;
+uwsgi_param REQUEST_METHOD $request_method;
+uwsgi_param CONTENT_TYPE $content_type;
+uwsgi_param CONTENT_LENGTH $content_length;
+uwsgi_param REQUEST_URI $request_uri;
+uwsgi_param PATH_INFO $document_uri;
+uwsgi_param DOCUMENT_ROOT $document_root;
+uwsgi_param SERVER_PROTOCOL $server_protocol;
+uwsgi_param REMOTE_ADDR $remote_addr;
+uwsgi_param REMOTE_PORT $remote_port;
+uwsgi_param SERVER_ADDR $server_addr;
+uwsgi_param SERVER_PORT $server_port;
+uwsgi_param SERVER_NAME $server_name;
+//
+
+  6.djangoコンテナ側でnginxコンテナからの通信を受けられるように、uwsgi.ini の作成を行う。
+
+//
+cd /home/ec2-user/containers/django/uwsgi
+vim uwsgi.ini
+//
+    以下の文章を貼り付ける
+
+//
+[uwsgi]
+socket = :8000
+module = djangoapp.wsgi
+wsgi-file = /app/app/wsgi.py
+logto = /wsgi/wsgi.log
+py-autoreload = 1
+//
+
+  7.djangoコンテナのイメージの元となるDockerfileを作成する。
+
+//
+cd /home/ec2-user/containers/django
+vim Dockerfile
+//
+
+    以下の文章を貼り付ける
+
+//
+FROM python:3.8.9
+WORKDIR /django
+COPY requirements.txt /django
+RUN pip install -r requirements.txt
+COPY . /django
+RUN apt-get update
+RUN apt-get install -y tree vim
+//
+
+  8.djangoコンテナで必要とするPythonのモジュールのリストを作成する。
+
+//
+vim requirements.txt
+//
+
+    以下の文章を貼り付ける
+
+//
+django
+psycopg2
+uwsgi
+django-bootstrap-datepicker-plus==5.0.3
+django-bootstrap4==22.3
+//
+
+  9.djangoコンテナ内で実行されるシェルスクリプト（startup.sh, setuser.sh）を作成する。
+    userを作成し、uwsgi,ini を実行する。
+
+    9.1.startup.shを作成する。
+
+//
+cd /home/ec2-user/containers/django/startup
+vim startup.sh
+//
+
+    以下の文章を貼り付ける
+
+//
+source /startup/setuser.sh # setuser.sh を実行する
+uwsgi --ini /wsgi/uwsgi.ini # uwsgi.ini の設定をもとに uwsgi を実行する
+//
+
+    9.2.setuser.shを作成する。
+
+//
+vim setuser.sh
+//
+
+    以下の文章を貼り付ける
+
+//
+#!/bin/bash -e
+SHELL_NAME='setuser.sh'
+echo "[$SHELL_NAME] START"
+
+# setup group
+if getent group "$GROUP_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' already exists."
+else
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' does NOT exist. So execute [groupadd -g \$GROUP_ID \$GROUP_NAME]."
+    groupadd -g $GROUP_ID $GROUP_NAME
+fi
+
+# setup user
+if getent passwd "$USER_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' already exists."
+else
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME]."
+    useradd -m -s /bin/bash -u $USER_ID -g $GROUP_ID $USER_NAME
+fi
+
+echo "[$SHELL_NAME] FINISH"
+//
+
+
+    9.3.startupディレクトリ配下の全てのファイルに実行権限を付与する。
+
+//
+sudo chmod +x -R *
+//
+
+  10.django ディレクトリ内でdjango projectの作成を行う。
+    今回はプロジェクト名をdjangoappとする。
+
+//
+cd /home/ec2-user/containers/django
+django-admin startproject djangoapp
+//
+
+    プロジェクトを作成するとdjangoディレクトリ内にdjangoappディレクトリが作成される。
+    
+  11.コンテナ内のdjangoに外部からの接続を許可する。  
+    デフォルトでは外部からの通信は全て拒否されているため、settings.py の修正を行う。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下に該当する行を修正する。
+
+//
+ALLOWED_HOSTS = []
+  ↓
+ALLOWED_HOSTS = ['*']
+//
+
+  12.WEBサーバを起動してみる。
+
+//
+docker-compose up -d
+//
+
+※エラーが発生するかも・・・。講師の説明で対応する
+
+  13.WEBサーバが起動したか確認してみる。
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>
+
+   「The install worked successfully! Congratulations!」のメッセージの画面が表示されていればNGINXとuWSGI、Djangoの環境は正常に作成されています。
+
+    上のような django のテストページが見えていればOK。
+
+  14.Djangoを日本語化します。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下に該当する行を修正する。
+
+//
+LANGUAGE_CODE = 'en-us'
+  ↓
+LANGUAGE_CODE = 'ja'
+//
+
+//
+TIME_ZONE = 'UTC'
+  ↓
+TIME_ZONE = 'Asia/Tokyo'
+//
+
+  15.日本語されたか確認する。
+  
+  ブラウザを再読み込みする。
+  
+    「インストールは成功しました！おめでとうございます！」のメッセージの画面が表示されていれば日本語化は成功です。
+
+★ここまで...。12-3のAmazon EC2(a)を終了に
+
+  14.WEBサーバを停止する。
+  
+//
+docker-compose down
+//
+
+★ここまで...。12-3のAmazon EC2(a)を終了に
+
+**********************************************************************
+
+9.WEBアプリ作成
+テストページが見れたので、ここからはページを作成していく。
+まずはホスト側でアプリケーションを作る。
+
+9.1.「Welcome to ...」の作成
+
+  1.dockerコンテナ「django」にログインする。
+
+//
+docker exec -it django bash
+//
+
+  2.WEBアプリケーション用の環境を作成
+  
+  2.1.カレントユーザをec2-userに切り替える。
+  
+//
+su - ec2-user
+//
+
+  2.2.WEBアプリケーション環境を作成する。
+
+//
+cd /app
+python3 manage.py startapp todoapp
+//
+
+  2.3.データベースのマイグレート
+
+//
+python manage.py migrate
+//
+
+  2.4.djangoの管理者ユーザを作成する。
+
+//
+python manage.py createsuperuser
+//
+
+以下を入力
+Username:
+Email address:
+Password:
+Password(again):
+
+
+  2.5.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※管理者画面が表示される。
+
+  2.6.CSSの崩れを修復する
+
+//
+cd /app/djangoapp/
+vim settings.py
+//
+
+  以下の行を追加
+
+//
+STATIC_ROOT = '/app/static/'
+//
+
+  以下のコマンドを実行
+//
+python3 manage.py collectstatic
+//
+
+  2.4.todoapp ディレクトリ直下に urls.py を作成する。
+
+//
+cd /app/todoapp
+vim urls.py
+//
+
+  下の文章を貼り付ける。
+
+//
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+//
+
+  2.5.todoapp ディレクトリ直下の views.pyを修正する。
+
+//
+vim views.py
+//
+
+  下の文章を貼り付ける。
+
+//
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Welcome to Hosoda's world.")
+//
+
+  2.6.djangoappディレクトリ直下のurls.pyを修正する。
+
+//
+cd /app/djangoapp
+vim urls.py
+//
+
+  下の文章を貼り付ける。
+
+//
+"""djangoapp URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('todoapp/', include('todoapp.urls')),
+    path('admin/', admin.site.urls),
+]
+//
+
+  2.7.作成したサイトを確認する。
+
+http://[IP アドレス]/[app 名]にアクセスし、"Welcome to .."が確認できればOK。
+
+
+
+
+
+
+
+
+
+データベースのレイアウト（models.py の編集）
+
+//
+vim models.py
+//
+
+  下の文章を貼り付ける。
+  
+//
+class User(models.Model):
+    user_name = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+class FigurePaths(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    figure_url = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+    like_point = models.IntegerField(default=0)
+//
+
+//
+vim setting.py
+//
+
+  下の文章を貼り付ける。
+
+//
+INSTALLED_APPS = [
+    'instalikeapp.apps.InstalikeappConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+//
+
+//
+python manage.py makemigrations sampleapp
+//
+
+migration ディレクトリ内に0001_initial.pyが作られる。
+
+docker exec -it bashで django コンテナに入り sqlmigrate と migrate を実行する
+これによってデータベースへデータを入力するための準備を完了する。
+
+//
+docker exec -it django bash
+python manage.py sqlmigrate sampleapp 0001
+python manage.py migrate
+//
+
+//
+docker exec -it django bash
+python manage.py shell
+//
+
+//
+from instalikeapp.models import User, FigurePaths
+//
+
+下記コマンドでpostgresqlにログインする。
+
+//
+psql -d myapp -U USERNAME -h localhost
+//
+
+djangoコンテナからデータベースへデータの入力を行い、postgresqlコンテナでデータベースの中身を確認する。
+以下の図の左はdjangoコンテナ内でデータベースへの入力操作を行なったもの、 右側はpostgresqlコンテナ内でデータベースの中身を確認したもの。
+
+//
+docker-compose up -d ← -d デタッチモード 同一ターミナルでコンテナが起動して別の作業ができなくなることを回避する。
+docker-compose up --build ← --build 再度ビルド処理を行います。
+//
+
+エラーでた！
+Error response from daemon: Conflict. the container name "/nginx" is already in use by container "aaa". you have to remove (or rename) that container to be able to reuse that name.
+
+**********************************************************************
+
+コンテナ内でコマンドがない場合は
+
+//
+apt-get update
+apt-get install vim
+//
+
+12-3. Amazon EC2(a)を終了
+
+1.左ペインから[インスタンス]をクリック
+2.[インスタンス]画面で、作成したインスタンスにチェックを入れる
+3.[インスタンスの状態] > [インスタンスを終了]をクリック
+4.[終了 インスタンス？]画面で、[終了]をクリック
+5.[インスタンスの状態]が「実行中」から「終了済み」になることを確認
+
+12-4. キーペアの削除
+
+1.左ペインで[キーペア]をクリック
+2.[キーペア]画面で、作成したキーペアにチェックを入れる
+3.[アクション] > [削除]をクリック
+4.[EC2-kpr-<※LastName>は１つ以上のインスタンスに関連付けることができます。]画面の入力欄に"削除"を入力し、[削除]をクリック
+5.作成したキーペアが削除されていることを確認
+6.ローカルにダウンロードしたキーペアも削除する
+
+12-5. セキュリティグループ削除
+
+1.左ペインで[セキュリティグループ]をクリック
+2.[セキュリティグループ]画面で、作成した２つのセキュリティグループにチェックを入れる
+3.[アクション] > [セキュリティグループを削除]をクリック
+4.[セキュリティグループを削除]画面の入力欄に、"削除"を入力し、[削除]をクリック
+5.作成したセキュリティグループが削除されたことを確認
+
+12-8. VPCを削除
+
+1.[AWSコンソール]画面上部の検索窓で"vpc"と入力し、検索結果の[VPC]をクリック
+2.[VPC]画面で、作成したVPCにチェックを入れる
+3.[アクション] > [VPCの削除]をクリック
+4.[VPCの削除]画面の同時削除対象で以下のリソースが表示されていることを確認
+5.[削除を確認するには、フィールドに削除と入力します。]の入力欄に、"削除"と入力し、[削除]をクリック
+6.作成したVPCが削除されていることを確認
+
+★★SSHの接続でエラーが出た場合の対処★★
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:GO9L0sxfMlNTW6dG/o5ot1gl/jsn2XvPxDcDT3q4fQg.
+Please contact your system administrator.
+Add correct host key in C:\\Users\\hlemo/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in C:\\Users\\hlemo/.ssh/known_hosts:28
+Host key for 18.176.30.149 has changed and you have requested strict checking.
+Host key verification failed.
+
+ssh-keygen -R 18.176.30.149
+
+
+2212e
