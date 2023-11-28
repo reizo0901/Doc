@@ -1,0 +1,5 @@
+■配送状況・開通のお手続きなどについて
+https://ahamo.com/contract/auth/delivery/login
+
+■商品到着後の設定・開通の流れについて
+https://ahamo.com/flow/shipping/
