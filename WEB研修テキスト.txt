@@ -435,19 +435,19 @@ docker-compose --version
     ディレクトリ構造
 
     /containers
-    　├ /django
-    　│　├ /startup
-    　│　│├setuser.sh
-    　│　│└startup.sh
-    　│　├ /uwsgi
-    　│　│└wusgi.ini
-    　│　├Dockerfile
-    　│　└requirements.txt
-    　├/nginx
-    　│├ /conf
-    　││└nginx.conf
-    　│└uwsgi_params
-    　└docker-compose.yml
+     ├/django
+     │├/startup
+     ││├setuser.sh
+     ││└startup.sh
+     │├/uwsgi
+     ││└wusgi.ini
+     │├Dockerfile
+     │└requirements.txt
+     ├/nginx
+     │├/conf
+     ││└nginx.conf
+     │└uwsgi_params
+     └docker-compose.yml
 
 //
 mkdir /home/ec2-user/containers
