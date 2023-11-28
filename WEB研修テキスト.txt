@@ -1,9 +1,12 @@
-0.AWSコンソールへサインイン
 
-1.連携済みのURLからAWSに接続
-2.[IAMユーザーとしてサインイン]画面で[ユーザー名]と[パスワード]を入力して[サインイン]をクリック
-3.リージョンが[東京▼]以外になっている場合は、検索窓の右側にある[リージョン名▼]をクリックし、
-[アジアパシフィック(東京) ap-northeast-1]を選択
+1.AWSコンソールへサインイン
+
+  1.連携済みのURLからAWSに接続
+  2.[IAMユーザーとしてサインイン]画面で[ユーザー名]と[パスワード]を入力して[サインイン]をクリック
+  3.リージョンが[東京▼]以外になっている場合は、検索窓の右側にある[リージョン名▼]をクリックし、
+    [アジアパシフィック(東京) ap-northeast-1]を選択
+
+########################################################################################################################
 
 2.ネットワーク環境構築
 
@@ -134,7 +137,10 @@
   1.[サブネットの関連付け]タブをクリックして、[サブネットの関連付けを編集]をクリック
   2.[サブネットの関連付けを編集]画面で、2-3で作成した２つのサブネットにチェックを入れ、[関連付けを保存]をクリック
 
+########################################################################################################################
+
 3.Amazon EC2(a)(仮想サーバ)作成
+
   ここでは２つのEC2(Amazon Elastic Compute Cloud)を作成します。
   EC2とはAmazon Cloud上に作成可能なコンピュータであり、OSやスペック、台数などを容易に準備することができます。
   EC2は停止している場合は料金が発生しないというメリットがあります。
@@ -244,7 +250,7 @@
     1
     ※必ず"1"になっていることを確認すること
 
-4. EC2(a)にElastic IP アドレス割り当てと関連付け
+3-6.4. EC2(a)にElastic IP アドレス割り当てと関連付け
   1.左ペインから[Elastic IP]をクリック
   2.[Elastic IP アドレスを割り当てる]をクリック
   3.[Elastic IPアドレスを割り当てる]画面で、以下を設定し、[割り当て]をクリック
@@ -282,10 +288,12 @@
     [再関連付け]
     ※チェックなし
 
-5.Amazon EC2にSSH接続
+########################################################################################################################
+
+4.Amazon EC2にSSH接続
   ネットワークとサーバの準備が整いましたので、ローカル端末からAmazon EC2に接続してWEB開発環境を構築していきます。
 
-5-1.キーペアのアクセス権の変更
+4-1.キーペアのアクセス権の変更
   EC2作成時にダウンロードしたキーペアのアクセス権を変更していきます。
   1.[スタート]ボタンをクリック後、"cmd"と入力し、[Enter]を押下して「コマンドプロンプト」を起動
   2.[コマンドプロンプト]で、以下のコマンドを実行
@@ -300,7 +308,7 @@
     「処理ファイル： ./EC2-kpr-<※LastName>.pem」
     「1個のファイルが正常に処理されました。0個のファイルを処理できませんでした」
     
-5-2.Amazon EC2にSSHで接続
+4-2.Amazon EC2にSSHで接続
   SSHクライアントでEC2サーバに接続します。
 
   1.[コマンドプロンプト]で、以下のコマンドを実行
@@ -320,9 +328,11 @@
     ・OpenSSHクライアント
     ・OpenSSHサーバ
 
-6.ホスト側のソフトウェアのセットアップ
+########################################################################################################################
 
-6-1.Treeコマンドのインストール
+5.ホスト側のソフトウェアのセットアップ
+
+5-1.Treeコマンドのインストール
 ※ディレクトリの階層の確認用のコマンドインストールします。
 
 //
@@ -330,13 +340,13 @@ sudo yum update
 sudo yum install -y tree
 //
 
-6-2.djangoのインストール
+5-2.djangoのインストール
 
 //
 python3 -m pip install django
 //
 
-6-3.仮想コンテナのインストール
+5-3.仮想コンテナのインストール
 ※仮想コンテナのサービスをインストールします。
 
   1.Dockerインストール
@@ -390,7 +400,7 @@ systemctl status docker
     WARNING: bridge-nf-call-iptables is disabled
     WARNING: bridge-nf-call-ip6tables is disabled
 
-6-4.複数のコンテナを操作しやすくするためのツールをインストールします。
+5-4.複数のコンテナを操作しやすくするためのツールをインストールします。
 ※docker-composeのセットアップ
 
   1.docker-composeファイルの格納フォルダ作成
@@ -407,6 +417,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v${VER}/docker
 //
 
   3.ダウンロードしたdocker-composeファイルを実行形式に変更し、シンボリックリンクを作成
+  ※シンボリックリンクを作成することによって、どのディレクトリからでもdocker-composeを実行することが可能になります。
 
 //
 sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
@@ -414,19 +425,29 @@ sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-comp
 docker-compose --version
 //
 
-7.docker-composeの動作確認(nginxを起動するまで)
+########################################################################################################################
+
+6.docker-composeの動作確認(nginxを起動するまで)
 
   1.フォルダ作成
-    今回の研修で必要となる以下のディレクトリ構成を作成する。
+    今回の研修で必要となる以下のディレクトリとファイルを構成する。
 
     ディレクトリ構造
 
-    containers/
-    　├ django/
-    　│　└ startup/
-    　│　└ uwsgi/
-    　└ nginx/
-    　 　└ conf/
+    /containers
+    　├ /django
+    　│　├ /startup
+    　│　│├setuser.sh
+    　│　│└startup.sh
+    　│　├ /uwsgi
+    　│　│└wusgi.ini
+    　│　├Dockerfile
+    　│　└requirements.txt
+    　├/nginx
+    　│├ /conf
+    　││└nginx.conf
+    　│└uwsgi_params
+    　└docker-compose.yml
 
 //
 mkdir /home/ec2-user/containers
@@ -478,7 +499,10 @@ docker-compose up -d
 docker-compose down
 //
 
-8.3層アーキテクチャを構築する。
+
+########################################################################################################################
+
+7.3層アーキテクチャを構築する。
 
   1.nginx.conf を作成する。
     今回は upstream ディレクティブの記述にあるように django コンテナの8000番ポートへ通信を流す設定を行う。
@@ -637,6 +661,62 @@ echo "[$SHELL_NAME] FINISH"
 sudo chmod +x -R *
 //
 
+
+  10.docker-composeファイルを修正する。
+  ※NGINXとDjango、PostgreSQLの設定を行う。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+    以下の文章を張り付ける
+
+//
+version: '3.7'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        volumes:
+            - ./nginx/conf:/etc/nginx/conf.d
+            - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+        ports:
+            - 80:80
+        depends_on:
+            - django
+
+    django:
+        container_name: django
+        build: ./django
+        command: bash -c /startup/startup.sh
+        volumes:
+            - ./django/uwsgi:/wsgi
+            - ./django/djangoapp:/app
+            - ./django/startup:/startup
+        ports:
+            - 8000:8000
+        environment:
+            - USER_ID=1000
+            - GROUP_ID=1000
+            - USER_NAME=ec2-user
+            - GROUP_NAME=ec2-user
+        depends_on:
+            - postgresql
+
+    postgresql:
+        image: postgres:latest
+        container_name: postgresql #
+        environment: #
+            - POSTGRES_DB=instalikeapp_db
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=password
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+        ports: # add
+            - 5432:5432
+//
+
   10.django ディレクトリ内でdjango projectの作成を行う。
     今回はプロジェクト名をdjangoappとする。
 
@@ -680,7 +760,7 @@ docker-compose up -d
 
     上のような django のテストページが見えていればOK。
 
-  14.Djangoを日本語化します。
+  14.Djangoの日本語化と日本ロケールに修正します。
 
 //
 cd /home/ec2-user/containers/django/djangoapp/djangoapp
@@ -707,17 +787,7 @@ TIME_ZONE = 'Asia/Tokyo'
   
     「インストールは成功しました！おめでとうございます！」のメッセージの画面が表示されていれば日本語化は成功です。
 
-★ここまで...。12-3のAmazon EC2(a)を終了に
-
-  14.WEBサーバを停止する。
-  
-//
-docker-compose down
-//
-
-★ここまで...。12-3のAmazon EC2(a)を終了に
-
-**********************************************************************
+########################################################################################################################
 
 9.WEBアプリ作成
 テストページが見れたので、ここからはページを作成していく。
@@ -764,7 +834,6 @@ Email address:
 Password:
 Password(again):
 
-
   2.5.adminサイトの確認
 
   ブラウザにインスタンスのIPアドレスを入力する。
@@ -772,7 +841,12 @@ Password(again):
 
   ※管理者画面が表示される。
 
-  2.6.CSSの崩れを修復する
+  2.6.CSSが適用されていないので修復する。
+  
+  ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、
+  ちょっとテクが必要。
+
+  2.6.1.静的コンテンツの設定を追加する。
 
 //
 cd /app/djangoapp/
@@ -790,7 +864,54 @@ STATIC_ROOT = '/app/static/'
 python3 manage.py collectstatic
 //
 
-  2.4.todoapp ディレクトリ直下に urls.py を作成する。
+※/app/static/ディレクトリ配下に静的コンテンツが集められる。
+
+
+  2.6.2.Dockerコンテナからログアウトする。
+
+//
+exit
+//
+
+  2.6.3.nginxから/app/static/が参照できるように、docker-compose.ymlを修正する。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+  以下の文書をnginxのvolumes項目に追加する。
+  ※これにより、djangoにマウントされているstaticディレクトリをnginxにマウントします。
+
+//
+    - ./django/djangoapp/static:/static
+//
+
+  2.6.4.nginx.confに/staticにアクセスが来たら自サーバ内の/staticを参照するように修正する。
+
+//
+cd /home/ec2-user/containers/nginx/conf
+vim nginx.conf
+//
+
+  以下の文書を追記する。
+
+//
+    location /static {
+        alias /static;
+    }
+//
+
+  2.6.5.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※CSSが適用された管理者画面が表示される。
+
+  2.7.todoapp ディレクトリ直下に urls.py を作成する。
+  ※/todoappのURLにアクセスした際に、何の処理をするか記述する。
+  ※下の記述ではviews.pyのindexを処理させるようにしている。
 
 //
 cd /app/todoapp
@@ -808,7 +929,9 @@ urlpatterns = [
 ]
 //
 
-  2.5.todoapp ディレクトリ直下の views.pyを修正する。
+  2.8.todoapp ディレクトリ直下の views.pyを修正する。
+  ※urls.pyで指定してあるviews.pyのindex処理を記述する。
+  ※下の記述ではHttpResponseオブジェクトを利用して、ブラウザにレスポンス返します。
 
 //
 vim views.py
@@ -823,122 +946,32 @@ def index(request):
     return HttpResponse("Welcome to Hosoda's world.")
 //
 
-  2.6.djangoappディレクトリ直下のurls.pyを修正する。
+  2.9.djangoappディレクトリ直下のurls.pyを修正する。
+  ※プロジェクトのurls.pyに/todoapp/のURLの指定があった場合に、todoappのurlsに遷移するように
+  　指示します。
 
 //
 cd /app/djangoapp
 vim urls.py
 //
 
-  下の文章を貼り付ける。
+  urlpatterns = [...]の中に、以下の行を追記する。
 
 //
-"""djangoapp URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import include, path
-
-urlpatterns = [
-    path('todoapp/', include('todoapp.urls')),
-    path('admin/', admin.site.urls),
-]
+path('todoapp/', include('todoapp.urls')),
 //
 
-  2.7.作成したサイトを確認する。
+  2.10.作成したサイトを確認する。
 
 http://[IP アドレス]/[app 名]にアクセスし、"Welcome to .."が確認できればOK。
 
+########################################################################################################################
 
+※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+ここからはtodoアプリの作成に入るので、次回へ続く。
+※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
 
-
-
-
-
-
-
-データベースのレイアウト（models.py の編集）
-
-//
-vim models.py
-//
-
-  下の文章を貼り付ける。
-  
-//
-class User(models.Model):
-    user_name = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-
-class FigurePaths(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    figure_url = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    like_point = models.IntegerField(default=0)
-//
-
-//
-vim setting.py
-//
-
-  下の文章を貼り付ける。
-
-//
-INSTALLED_APPS = [
-    'instalikeapp.apps.InstalikeappConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-//
-
-//
-python manage.py makemigrations sampleapp
-//
-
-migration ディレクトリ内に0001_initial.pyが作られる。
-
-docker exec -it bashで django コンテナに入り sqlmigrate と migrate を実行する
-これによってデータベースへデータを入力するための準備を完了する。
-
-//
-docker exec -it django bash
-python manage.py sqlmigrate sampleapp 0001
-python manage.py migrate
-//
-
-//
-docker exec -it django bash
-python manage.py shell
-//
-
-//
-from instalikeapp.models import User, FigurePaths
-//
-
-下記コマンドでpostgresqlにログインする。
-
-//
-psql -d myapp -U USERNAME -h localhost
-//
-
-djangoコンテナからデータベースへデータの入力を行い、postgresqlコンテナでデータベースの中身を確認する。
-以下の図の左はdjangoコンテナ内でデータベースへの入力操作を行なったもの、 右側はpostgresqlコンテナ内でデータベースの中身を確認したもの。
+【困ったときの手順】
 
 //
 docker-compose up -d ← -d デタッチモード 同一ターミナルでコンテナが起動して別の作業ができなくなることを回避する。
@@ -1009,5 +1042,3 @@ Host key verification failed.
 
 ssh-keygen -R 18.176.30.149
 
-
-2212e
