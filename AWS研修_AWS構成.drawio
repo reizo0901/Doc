@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-11-29T16:12:10.169Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="nlz-9DkOnM0h0UlLIcug" version="22.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-29T16:13:25.037Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="4VpkT-9CAvjJXE13uHW0" version="22.1.4" type="github">
   <diagram id="sJy378vkBmu3zpo50ejq" name="ページ1">
     <mxGraphModel dx="1351" dy="1168" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="-8KnsCUkzP_ov_TZV2t5-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="-8KnsCUkzP_ov_TZV2t5-24" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ea7425;strokeWidth=4;" parent="1" vertex="1">
           <mxGeometry x="51.11" y="417" width="739.45" height="630" as="geometry" />
         </mxCell>
         <mxCell id="R3VTfGZtO-Mdu-Q72Ekt-27" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;fillColor=none;" parent="1" vertex="1">
@@ -137,7 +137,7 @@
           <mxGeometry x="71.11" y="424" width="68.89" height="30" as="geometry" />
         </mxCell>
         <mxCell id="R3VTfGZtO-Mdu-Q72Ekt-30" value="EC2インスタンス" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#000000;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="353.33000000000004" y="393" width="134.45" height="30" as="geometry" />
+          <mxGeometry x="356.33000000000004" y="389" width="134.45" height="30" as="geometry" />
         </mxCell>
         <mxCell id="R3VTfGZtO-Mdu-Q72Ekt-41" value="Internet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="71.11" y="275.72" width="60" height="30" as="geometry" />
