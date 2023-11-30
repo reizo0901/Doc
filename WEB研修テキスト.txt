@@ -435,19 +435,19 @@ docker-compose --version
     ディレクトリ構造
 
     /containers
-     ├/django
-     │├/startup
-     ││├setuser.sh
-     ││└startup.sh
-     │├/uwsgi
-     ││└wusgi.ini
-     │├Dockerfile
-     │└requirements.txt
-     ├/nginx
-     │├/conf
-     ││└nginx.conf
-     │└uwsgi_params
-     └docker-compose.yml
+    　├ /django
+    　│　├ /startup
+    　│　│├setuser.sh
+    　│　│└startup.sh
+    　│　├ /uwsgi
+    　│　│└wusgi.ini
+    　│　├Dockerfile
+    　│　└requirements.txt
+    　├/nginx
+    　│├ /conf
+    　││└nginx.conf
+    　│└uwsgi_params
+    　└docker-compose.yml
 
 //
 mkdir /home/ec2-user/containers
@@ -796,6 +796,12 @@ TIME_ZONE = 'Asia/Tokyo'
 9.1.「Welcome to ...」の作成
 
   1.dockerコンテナ「django」にログインする。
+  ※今回作成したコンテナのベースOSは「UBUNTU」となっているため、ホストOSと多少コマンドが異なります。
+
+＜豆知識＞
+Linuxには大きく分けて３つのディストリビューションが存在しています。
+ディストリビューションのことは、便宜上「種類」とでも思っておいてください。
+Linuxはオープンソースのため、その開発体制は放任主義的であり、
 
 //
 docker exec -it django bash
@@ -816,16 +822,21 @@ cd /app
 python3 manage.py startapp todoapp
 //
 
+  ※同ディレクトリ内に、todoappというアプリケーション用のディレクトリが作成されます。
+
   2.3.データベースのマイグレート
 
 //
 python manage.py migrate
 //
 
+  ※同じディレクトリ内に、db.sqlite3というデータベース用のディレクトリが作成されます。
+  ※Djangoにはsqlite3というデータベースが組み込みされているため、特別に設定をしていない限り、sqlite3が利用されます。
+
   2.4.djangoの管理者ユーザを作成する。
 
 //
-python manage.py createsuperuser
+python3 manage.py createsuperuser
 //
 
 以下を入力
@@ -1042,3 +1053,5 @@ Host key verification failed.
 
 ssh-keygen -R 18.176.30.149
 
+
+2212e
