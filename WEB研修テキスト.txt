@@ -66,31 +66,12 @@
     ※2-1で作成したVPCを選択
     サブネットの設定
     [サブネット名]
-    public-subnet-1a-<※LastName>
-    例:public-subnet-1a-giken
+    psb-<※LastName>
+    例:p-subnet-giken
     [アベイラビリティーゾーン]
     ap-northeast-1a
     [IPv4 CIDRブロック]
     10.0.0.0/24
-    [タグ - オプション]
-    ※[新しいタグを追加]をクリックして以下を追加
-    キー Author
-    値-ｵﾌﾟｼｮﾝ <※FullName>
-    例:giken.tarou
-    ※[新しいサブネットを追加]をクリックして2つ目の
-    　サブネットを追加する。
-    [サブネット名]
-    public-subnet-1c-<※LastName>
-    例:public-subnet-1c-giken
-    [アベイラビリティーゾーン]
-    ap-northeast-1c
-    [IPv4 CIDRブロック]
-    10.0.1.0/24
-    [タグ - オプション]
-    ※[新しいタグを追加]をクリックして以下を追加
-    キー Author
-    値-ｵﾌﾟｼｮﾝ <※FullName>
-    例:giken.tarou
 
 2-3.インターネットゲートウェイ作成、VPCに紐付け
   ここではインターネットゲートウェイを作成し、VPCと紐付けることにより、インターネットを使う準備ができます。
@@ -104,11 +85,6 @@
   [名前タグ]
   igw-<※LastName>
   例：igw-giken
-  [タグ - オプション]
-  ※[新しいタグを追加]をクリックして以下を追加
-  Key Author
-  Value <※FullName>
-  例:giken.tarou
 
   4.画面右上の[VPCへアタッチ]をクリック
 
@@ -157,14 +133,8 @@
     タグの入力欄を表示
     [Name and tags]
     キー name
-    値 ec2-django-a-<※LastName>
-    例:EC2-Nginx-a-giken
-    Resource types ※設定不要
-    ※[タグを追加]または、[Add new tag]をクリックして
-    　以下を追加
-    キー Author
-    値 <※FullName>
-    例:giken.tarou
+    値 ec2-<※LastName>
+    例:ec2-giken
     Resource types ※設定不要
 
 3-3.アプリケーションおよびOSイメージ(AMI)の指定
@@ -179,8 +149,8 @@
   1.[キーペア(ログイン)]枠の[新しいキーペアの作成]をクリック
   2.[キーペアを作成]画面で以下を設定し、[キーペアを作成]をクリック
     [キーペア名]
-    EC2-kpr-<※LastName>
-    例:EC2-kpr-giken
+    kp-<※LastName>
+    例:kp-giken
     [キーペアのタイプ]
     ● RSA
     ○ ED25519
@@ -208,18 +178,18 @@
     例:vpc-xxxxxxxxxx～(vpc-giken)
     [サブネット]
     2-2で作成した[ap-northeast-1a]のサブネットを選択
-    例:subnet-xxxxxxx～(public-subnet-1a-giken)
+    例:subnet-xxxxxxx～(p-subnet-giken)
     [パブリックIPの自動割り当て]
     無効化
     [ファイアウォール(セキュリティグループ)]
     ●セキュリティグループを作成する
     ○既存のセキュリティグループを選択する
     [セキュリティグループ名]
-    for-EC2-<※LastName>
-    例:for-EC2-giken
+    scg-<※LastName>
+    例:scg-giken
     [説明]
-    for-EC2-<※LastName>
-    例:for-EC2-giken
+    scg-<※LastName>
+    例:sgc-giken
     [インバウンドセキュリティグループのルール]
     [セキュリティグループルール１]
     タイプ ssh
@@ -228,11 +198,6 @@
     ※[セキュリティグループルールを追加]をクリック
     [セキュリティグループルール２]
     タイプ HTTP
-    ソースタイプ 任意の場所
-    説明 from internet
-    ※[セキュリティグループルールを追加]をクリック
-    [セキュリティグループルール3]
-    タイプ HTTPS
     ソースタイプ 任意の場所
     説明 from internet
 
@@ -297,14 +262,18 @@
   EC2作成時にダウンロードしたキーペアのアクセス権を変更していきます。
   1.[スタート]ボタンをクリック後、"cmd"と入力し、[Enter]を押下して「コマンドプロンプト」を起動
   2.[コマンドプロンプト]で、以下のコマンドを実行
-    
-    cd c:\work
-    dir
-    set PEM_PATH=c:\work\EC2-kpr-<※LastName>.pem
-    icacls.exe %PEM_PATH% /reset
-    icacls.exe %PEM_PATH% /GRANT:R "%USERNAME%":(R)
-    icacls.exe %PEM_PATH% /inheritance:r
-    ※icacls.exeコマンドを実行すると、以下のメッセージが返されます。紛らわしいメッセージですが正常です。
+
+  ※以下//と//の間の文を実行する。
+//
+cd c:\work
+dir
+set PEM_PATH=c:\work\EC2-kpr-<※LastName>.pem
+icacls.exe %PEM_PATH% /reset
+icacls.exe %PEM_PATH% /GRANT:R "%USERNAME%":(R)
+icacls.exe %PEM_PATH% /inheritance:r
+//
+
+※icacls.exeコマンドを実行すると、以下のメッセージが返されます。紛らわしいメッセージですが正常です。
     「処理ファイル： ./EC2-kpr-<※LastName>.pem」
     「1個のファイルが正常に処理されました。0個のファイルを処理できませんでした」
     
@@ -312,8 +281,8 @@
   SSHクライアントでEC2サーバに接続します。
 
   1.[コマンドプロンプト]で、以下のコマンドを実行
-    ssh -i "EC2-kpr-<※LastName>.pem" ec2-user@<パブリックIPアドレス>
-    例：ssh -i "EC2-kpr-giken.pem" ec2-user@xxx.xxx.xxx.xxx
+    ssh -i "kp-<※LastName>.pem" ec2-user@<パブリックIPアドレス>
+    例：ssh -i "kp-giken.pem" ec2-user@xxx.xxx.xxx.xxx
     4.で作成した「Elastic IP アドレス」の「割り当てられたIPv4アドレス」がパブリックIPアドレスになります
 
   2.以下のメッセージが表示されたら、"yes"と入力し[Enter]キーを押下
@@ -471,7 +440,8 @@ vim docker-compose.yml
 
     以下の文章を張り付ける
 
-//version: '3.7'
+//
+version: '3.7'
 services:
     nginx:
         container_name: nginx
