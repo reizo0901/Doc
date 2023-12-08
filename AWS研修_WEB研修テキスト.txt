@@ -463,7 +463,7 @@ vim docker-compose.yml
     以下の文章を張り付ける
 
 //
-version: '3.7'
+version: '2.23.0'
 services:
     nginx:
         container_name: nginx
@@ -490,7 +490,6 @@ docker-compose up -d
 //
 docker-compose down
 //
-
 
 ########################################################################################################################
 
@@ -646,13 +645,11 @@ fi
 echo "[$SHELL_NAME] FINISH"
 //
 
-
     9.3.startupディレクトリ配下の全てのファイルに実行権限を付与する。
 
 //
 sudo chmod +x -R *
 //
-
 
   10.docker-composeファイルを修正する。
   ※NGINXとDjango、PostgreSQLの設定を行う。
@@ -665,7 +662,7 @@ vim docker-compose.yml
     以下の文章を張り付ける
 
 //
-version: '3.7'
+version: '2.23.0'
 services:
     nginx:
         container_name: nginx
@@ -698,7 +695,7 @@ services:
 
     postgresql:
         image: postgres:latest
-        container_name: postgresql #
+        container_name: postgresql
         environment: #
             - POSTGRES_DB=instalikeapp_db
             - POSTGRES_USER=user
