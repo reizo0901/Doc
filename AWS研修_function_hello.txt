@@ -29,3 +29,39 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('helloworld/', helloworldfunction),
 ]
+
+
+
+dockerの基本的な操作を学習する。
+
+1. docker hubのページを検索する。
+
+2. コンソールでhello-worldのdockerイメージをダウンロードする。
+ 　docker pull hello-world
+
+3. コンソールでhello-worldのdockerイメージがダウンロードされていることを確認する。
+ 　docker images
+
+4. コンソールでhello-worldイメージをコンテナとして実行する。
+ 　docker run hello-world
+
+ 　＞実行結果が表示された！
+
+5. コンソールからhello-worldコンテナが動作したことを確認する。
+  docker ps
+
+  docker ps -a
+
+6. コンソールからhello-worldコンテナを削除します。
+  docker ps -a
+  docker rm xxxxx
+
+  IDの入力やコンテナを消すの面倒くさいですね。
+
+7. コンテナに名前をつけてみましょう！ 
+  docker run --name helloworld -it hello-world
+
+
+
+
+
