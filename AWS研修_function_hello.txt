@@ -1,11 +1,12 @@
+//
 from django.http import HttpResponse
 
 def helloworldfunction(request):
     return HttpResponse('hello world')
+//
 
 
-
-
+//
 """djangoapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -29,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('helloworld/', helloworldfunction),
 ]
-
+//
 
 
 dockerの基本的な操作を学習する。
