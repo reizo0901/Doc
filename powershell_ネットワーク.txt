@@ -1,0 +1,269 @@
+現在有効なネットワークプロフェイルを取得する
+get-netconnectionprofile
+
+Name                     : 識別中...
+InterfaceAlias           : イーサネット
+InterfaceIndex           : 6
+NetworkCategory          : Public
+DomainAuthenticationKind : None
+IPv4Connectivity         : NoTraffic
+IPv6Connectivity         : NoTraffic
+
+Name                     : reizo_nets
+InterfaceAlias           : Wi-Fi
+InterfaceIndex           : 5
+NetworkCategory          : Private
+DomainAuthenticationKind : None
+IPv4Connectivity         : Internet
+IPv6Connectivity         : NoTraffic
+
+
+有線アダプタを取得
+Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.3*"}
+
+
+
+無線アダプタを取得
+Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.11*"}
+
+
+
+アダプタの設定を変更
+$adapter = Get-NetAdapter | Where-Object {$_.InterfaceAlias -eq "イーサネット 2"}
+
+# アダプターのコンフィグを取得
+$conf = $adapter | Get-NetIPConfiguration
+
+# IPアドレスが設定されている場合
+If ($conf.IPv4Address.IPAddress) {
+
+    # その設定を削除する
+    $adapter | Remove-NetIPAddress -AddressFamily $IPType -Confirm:$false
+}
+
+# デフォルトゲートウェイが設定されている場合
+If ($conf.Ipv4DefaultGateway) {
+
+    # その設定を削除する
+    $adapter | Remove-NetRoute -AddressFamily $IPType -Confirm:$false
+}
+
+$adapter | New-NetIPAddress `
+ -AddressFamily "IPv4" `
+ -IPAddress "192.168.0.1" `
+ -PrefixLength 24 `
+ -DefaultGateway "192.168.0.254"
+
+ $adapter | Set-DnsClientServerAddress -ServerAddresses "192.168.0.200,192.168.0.201"
+ 
+ 
+ 
+# DHCPのアドレスに変更する
+
+ $IPType = "IPv4"
+$adapter = Get-NetAdapter | ? {$_.Status -eq "up"}
+$interface = $adapter | Get-NetIPInterface -AddressFamily $IPType
+If ($interface.Dhcp -eq "Disabled") {
+ # Remove existing gateway
+ If (($interface | Get-NetIPConfiguration).Ipv4DefaultGateway) {
+ $interface | Remove-NetRoute -Confirm:$false
+ }
+ # Enable DHCP
+ $interface | Set-NetIPInterface -DHCP Enabled
+ # Configure the DNS Servers automatically
+ $interface | Set-DnsClientServerAddress -ResetServerAddresses
+}
+
+アダプタのすべての情報
+Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.IPEnabled -eq "TRUE"} | Format-List *
+
+
+
+Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq "Intel(R) Ethernet Connection (10) I219-V"} | Format-List *
+
+
+IPv4 アドレス . . . . . . . . . . . .: 192.168.2.131
+   サブネット マスク . . . . . . . . . .: 255.255.255.0
+   デフォルト ゲートウェイ . . . . . . .: 192.168.2.1
+   
+   
+   
+PSComputerName               : LETS-REIZO
+DHCPLeaseExpires             : 20231215202339.000000+540
+Index                        : 1
+Description                  : Intel(R) Wi-Fi 6 AX201 160MHz
+DHCPEnabled                  : True
+DHCPLeaseObtained            : 20231213202339.000000+540
+DHCPServer                   : 192.168.2.1
+DNSDomain                    : toshima.ne.jp
+DNSDomainSuffixSearchOrder   : {toshima.ne.jp}
+DNSEnabledForWINSResolution  : False
+DNSHostName                  : LETS-REIZO
+DNSServerSearchOrder         : {192.168.2.1}
+DomainDNSRegistrationEnabled : False
+FullDNSRegistrationEnabled   : True
+IPAddress                    : {192.168.2.131, fe80::dcea:c80f:1e22:726}
+IPConnectionMetric           : 35
+IPEnabled                    : True
+IPFilterSecurityEnabled      : False
+WINSEnableLMHostsLookup      : True
+WINSHostLookupFile           :
+WINSPrimaryServer            :
+WINSScopeID                  :
+WINSSecondaryServer          :
+__GENUS                      : 2
+__CLASS                      : Win32_NetworkAdapterConfiguration
+__SUPERCLASS                 : CIM_Setting
+__DYNASTY                    : CIM_Setting
+__RELPATH                    : Win32_NetworkAdapterConfiguration.Index=1
+__PROPERTY_COUNT             : 61
+__DERIVATION                 : {CIM_Setting}
+__SERVER                     : LETS-REIZO
+__NAMESPACE                  : root\cimv2
+__PATH                       : \\LETS-REIZO\root\cimv2:Win32_NetworkAdapterConfiguration.Index=1
+ArpAlwaysSourceRoute         :
+ArpUseEtherSNAP              :
+Caption                      : [00000001] Intel(R) Wi-Fi 6 AX201 160MHz
+DatabasePath                 : %SystemRoot%\System32\drivers\etc
+DeadGWDetectEnabled          :
+DefaultIPGateway             : {192.168.2.1}
+DefaultTOS                   :
+DefaultTTL                   :
+ForwardBufferMemory          :
+GatewayCostMetric            : {0}
+IGMPLevel                    :
+InterfaceIndex               : 5
+IPPortSecurityEnabled        :
+IPSecPermitIPProtocols       : {}
+IPSecPermitTCPPorts          : {}
+IPSecPermitUDPPorts          : {}
+IPSubnet                     : {255.255.255.0, 64}
+IPUseZeroBroadcast           :
+IPXAddress                   :
+IPXEnabled                   :
+IPXFrameType                 :
+IPXMediaType                 :
+IPXNetworkNumber             :
+IPXVirtualNetNumber          :
+KeepAliveInterval            :
+KeepAliveTime                :
+MACAddress                   : BC:54:2F:BC:04:A3
+MTU                          :
+NumForwardPackets            :
+PMTUBHDetectEnabled          :
+PMTUDiscoveryEnabled         :
+ServiceName                  : Netwtw08
+SettingID                    : {0C79C0A9-DBD2-4AA5-A1F3-19F27F9147A3}
+TcpipNetbiosOptions          : 0
+TcpMaxConnectRetransmissions :
+TcpMaxDataRetransmissions    :
+TcpNumConnections            :
+TcpUseRFC1122UrgentPointer   :
+TcpWindowSize                :
+Scope                        : System.Management.ManagementScope
+Path                         : \\LETS-REIZO\root\cimv2:Win32_NetworkAdapterConfiguration.Index=1
+Options                      : System.Management.ObjectGetOptions
+ClassPath                    : \\LETS-REIZO\root\cimv2:Win32_NetworkAdapterConfiguration
+Properties                   : {ArpAlwaysSourceRoute, ArpUseEtherSNAP, Caption, DatabasePath...}
+SystemProperties             : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                   : {dynamic, Locale, provider, UUID}
+Site                         :
+Container                    :
+
+
+https://qiita.com/mizar/items/de4d736ea5d86c5f83c4
+
+Write-Host '* ネットワークアダプタの一覧';
+# テーブル出力
+Get-NetAdapter|Format-Table;
+# リスト出力
+Get-NetAdapter|Format-List;
+
+Write-Host '* ネットワークアダプタのバインド';
+# テーブル出力
+Get-NetAdapterBinding|Format-Table;
+# リスト出力
+Get-NetAdapterBinding|Format-List;
+
+Write-Host '* ネットワークアダプタの詳細設定';
+# テーブル出力
+Get-NetAdapterAdvancedProperty|Format-Table;
+# リスト出力
+Get-NetAdapterAdvancedProperty|Format-List;
+
+Write-Host '* ネットワークアダプタのデバイス情報';
+# テーブル出力
+Get-PnpDevice|? Class -eq 'Net'|Format-Table;
+# リスト出力
+Get-PnpDevice|? Class -eq 'Net'|Format-List;
+
+Write-Host '* 電源の管理 - 電力の節約のために、コンピューターでこのデバイスの電源をオフにできるようにする';
+# テーブル出力
+Get-CimInstance MSPower_DeviceEnable -Namespace root/WMI|Format-Table;
+# リスト出力
+Get-CimInstance MSPower_DeviceEnable -Namespace root/WMI|Format-List;
+
+Write-Host '* 電源の管理 - このデバイスで、コンピューターのスタンバイ状態を解除できるようにする';
+# テーブル出力
+Get-CimInstance MSPower_DeviceWakeEnable -Namespace root/WMI|Format-Table;
+# リスト出力
+Get-CimInstance MSPower_DeviceWakeEnable -Namespace root/WMI|Format-List;
+
+Write-Host '* 電源の管理 - Magic Packet でのみ、コンピューターのスタンバイ状態を解除できるようにする';
+# テーブル出力
+Get-CimInstance MSNdis_DeviceWakeOnMagicPacketOnly -Namespace root/WMI|Format-Table;
+# リスト出力
+Get-CimInstance MSNdis_DeviceWakeOnMagicPacketOnly -Namespace root/WMI|Format-List;
+
+Write-Host '* ネットワークデバイスの電源管理の設定';
+# リスト出力
+Get-NetAdapterPowerManagement|Format-List;
+
+Write-Host '* ネットワークインターフェースのIP設定';
+# リスト出力
+Get-NetIPConfiguration|Format-List;
+
+Write-Host '* ネットワークインターフェースのIPアドレス';
+# テーブル出力
+Get-NetIPAddress|Format-Table
+# リスト出力
+Get-NetIPAddress|Format-List;
+
+Write-Host '* ネットワークインターフェースのDNSクライアントの対向DNSサーバアドレス';
+# テーブル出力
+Get-DnsClientServerAddress|Format-Table;
+# リスト出力
+Get-DnsClientServerAddress|Format-List;
+
+
+**************************************************************************************
+有効になっていないアダプタの情報も取得可能
+Get-NetIPAddress|Format-List;
+
+
+https://buralog.jp/powershell-get-the-default-gateway/
+
+https://qiita.com/mizar/items/de4d736ea5d86c5f83c4
+
+https://www.wannko.net/powershell/network/win32-sub.html
+
+https://win.just4fun.biz/?PowerShell/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%80%E3%83%97%E3%82%BF%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B+Get-NetAdapter%2CGet-NetIPConfiguration
+
+https://win2012r2.com/2021/01/12/powershell-%E3%81%A7-ip%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%92%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99/
+
+https://buralog.jp/powershell-set-static-and-dhcp-ip-address/
+
+https://atmarkit.itmedia.co.jp/ait/articles/2210/13/news004.html
+
+https://cloud-si.com/set-netipinterface/
+
+https://learn.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.4
+
+https://win.just4fun.biz/?PowerShell/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%80%E3%83%97%E3%82%BF%E3%83%BC%E4%B8%80%E8%A6%A7%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E3%83%BBGet-NetAdapter
+
+https://learn.microsoft.com/ja-jp/windows-server/networking/technologies/dhcp/dhcp-deploy-wps
+
+https://stl6812.hatenablog.com/entry/2017/07/04/112541
+
+
+
