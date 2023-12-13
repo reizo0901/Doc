@@ -18,7 +18,41 @@
 ・クラスベースドビューでHello Worldを表示しよう！
   ・
 
+今回の研修のゴール
 
+AWSでWEBアプリの構築方法を学び、WEBアプリの動作を知る
+
+WEBの仕組み
+～動画～
+
+構成図
+～構成図～
+
+・AWSで1台のEC2(仮想マシン)を構築する
+・EC2の中にWEBサーバー、APサーバー、DBサーバーに該当する3つのコンテナを構築する
+
+仮想化とは
+～概要～
+
+コンテナとは
+～概要～
+
+コンテナのメリット
+
+・起動、コピー、バックアップなどが速いため生産性向上に繋がる
+・複数環境の構築・管理・運用が楽になりコスト削減が期待できる
+・持ち運びしやすいためリリースにかかる時間を短縮できる
+
+⚫︎ソフトウェア一覧
+今回出てくるソフトウェアの表(分類、ソフトウェア名、何をするものか)
+
+
+
+
+コンテナ:Docker: コンテナ型の仮想環境を作成、配布、実行するためのソフトウェア
+WEBサーバー:nginx:〇〇
+APサーバー:〇〇:〇〇
+DBサーバー:postgresql:〇〇
 
 1.AWSコンソールへサインイン
 
@@ -28,8 +62,8 @@
     [アジアパシフィック(東京) ap-northeast-1]を選択
 
 ########################################################################################################################
-2.AWSのクラウド上に今回構築するサーバを設置するネットワークを構築して行きましょう。
-  ※これまでAWSの集合研修に参加されている方は復習になりますが、AWSのサービスを利用する時は必ず必要な作業となります。
+
+2.ネットワーク環境構築
 
 2-1.VPC作成
   ここでは１つのVPC(Amazon Virtual Private Cloud)を作成します。
@@ -402,7 +436,7 @@ sudo mkdir -p /usr/local/lib/docker/cli-plugins
   2.docker-composeファイルダウンロード
 
 //
-VER=2.23.0
+VER=2.23.3
 sudo curl -L "https://github.com/docker/compose/releases/download/v${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
 //
 
@@ -418,7 +452,6 @@ docker-compose --version
 ########################################################################################################################
 
 6.docker-composeの動作確認(nginxを起動するまで)
-まずはWEBサーバのアプリケーションでNGINXが動作できるところまで進めていきましょう。
 
   1.フォルダ作成
     今回の研修で必要となる以下のディレクトリとファイルを構成する。
@@ -463,7 +496,7 @@ vim docker-compose.yml
     以下の文章を張り付ける
 
 //
-version: '2.23.0'
+version: '2.23.3'
 services:
     nginx:
         container_name: nginx
@@ -490,6 +523,7 @@ docker-compose up -d
 //
 docker-compose down
 //
+
 
 ########################################################################################################################
 
@@ -571,13 +605,12 @@ vim Dockerfile
     以下の文章を貼り付ける
 
 //
-FROM python:3.8.9
+FROM python:2.23.3
+RUN apt-get update && apt-get install -y tree vim
 WORKDIR /django
 COPY requirements.txt /django
 RUN pip install -r requirements.txt
 COPY . /django
-RUN apt-get update
-RUN apt-get install -y tree vim
 //
 
   8.djangoコンテナで必要とするPythonのモジュールのリストを作成する。
@@ -645,11 +678,13 @@ fi
 echo "[$SHELL_NAME] FINISH"
 //
 
+
     9.3.startupディレクトリ配下の全てのファイルに実行権限を付与する。
 
 //
 sudo chmod +x -R *
 //
+
 
   10.docker-composeファイルを修正する。
   ※NGINXとDjango、PostgreSQLの設定を行う。
@@ -662,7 +697,7 @@ vim docker-compose.yml
     以下の文章を張り付ける
 
 //
-version: '2.23.0'
+version: '2.23.3'
 services:
     nginx:
         container_name: nginx
@@ -672,7 +707,7 @@ services:
             - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
         ports:
             - 80:80
-        depends_on:
+        depends_on: #依存関係を設定
             - django
 
     django:
@@ -691,15 +726,15 @@ services:
             - USER_NAME=ec2-user
             - GROUP_NAME=ec2-user
         depends_on:
-            - postgresql
+            - postgresql #依存関係を設定
 
     postgresql:
         image: postgres:latest
         container_name: postgresql
-        environment: #
-            - POSTGRES_DB=instalikeapp_db
-            - POSTGRES_USER=user
-            - POSTGRES_PASSWORD=password
+        environment:
+            - POSTGRES_DB=myappdb
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
         volumes:
             - ./pgdata:/var/lib/postgresql/data
         ports: # add
@@ -770,15 +805,14 @@ TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Tokyo'
 //
 
-  15.日本語化されたか確認する。
+  15.日本語されたか確認する。
   
   ブラウザを再読み込みする。
   
     「インストールは成功しました！おめでとうございます！」のメッセージの画面が表示されていれば日本語化は成功です。
 
-########################################################################################################################
 
-  2.3.データベースのマイグレート
+  16.データベースのマイグレート
 
 //
 python manage.py migrate
@@ -787,7 +821,7 @@ python manage.py migrate
   ※同じディレクトリ内に、db.sqlite3というデータベース用のディレクトリが作成されます。
   ※Djangoにはsqlite3というデータベースが組み込みされているため、特別に設定をしていない限り、sqlite3が利用されます。
 
-  2.4.djangoの管理者ユーザを作成する。
+  17.djangoの管理者ユーザを作成する。
 
 //
 python3 manage.py createsuperuser
@@ -799,19 +833,19 @@ Email address:
 Password:
 Password(again):
 
-  2.5.adminサイトの確認
+  18.adminサイトの確認
 
   ブラウザにインスタンスのIPアドレスを入力する。
   http://<インスタンスのパブリック IPv4アドレス>/admin
 
   ※管理者画面が表示される。
 
-  2.6.CSSが適用されていないので修復する。
+  19.CSSが適用されていないので修復する。
   
   ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、
   ちょっとテクが必要。
 
-  2.6.1.静的コンテンツの設定を追加する。
+  20.静的コンテンツの設定を追加する。
 
 //
 cd /app/djangoapp/
@@ -831,22 +865,14 @@ python3 manage.py collectstatic
 
 ※/app/static/ディレクトリ配下に静的コンテンツが集められる。
 
-//
-ls /app/static/
-//
 
-  「admin」のディレクトリが存在すること。
-  存在しない場合は、STATIC_ROOTのパスの指定が間違っているか、collectstaticコマンドが失敗している可能性があります。
-
-
-
-  2.6.2.Dockerコンテナからログアウトする。
+  21.Dockerコンテナからログアウトする。
 
 //
 exit
 //
 
-  2.6.3.nginxから/app/static/が参照できるように、docker-compose.ymlを修正する。
+  22.nginxから/app/static/が参照できるように、docker-compose.ymlを修正する。
 
 //
 cd /home/ec2-user/containers
@@ -860,7 +886,7 @@ vim docker-compose.yml
     - ./django/djangoapp/static:/static
 //
 
-  2.6.4.nginx.confに/staticにアクセスが来たら自サーバ内の/staticを参照するように修正する。
+  21.nginx.confに/staticにアクセスが来たら自サーバ内の/staticを参照するように修正する。
 
 //
 cd /home/ec2-user/containers/nginx/conf
@@ -875,27 +901,74 @@ vim nginx.conf
     }
 //
 
-  2.6.5.設定した「static」の情報をコンテナに反映する。
+  22.仮想コンテナを再作成
 
 //
 docker-compose up -d --build
+
 //
 
-  2.6.6.adminサイトの確認
+  22.adminサイトの確認
 
   ブラウザにインスタンスのIPアドレスを入力する。
   http://<インスタンスのパブリック IPv4アドレス>/admin
 
   ※CSSが適用された管理者画面が表示される。
 
+  23.管理者画面はDjangoの中で、どのような仕組みで表示されているか
 
 
 ########################################################################################################################
 
-9.MVCモデルを理解しよう。
-ここではMVCモデルを使って、実際にHello Worldが表示されるまでの流れを学習していきましょう。
+9.Helloworldを作成する。
 
-<図を入れる>
+先ほど表示をCSSを修正した管理者画面がどのような仕組みで表示されているか確認してみましょう！
+djangoのプロジェクトの設定ファイルが格納されている以下のパスに遷移し、「urls.py」ファイルを開きましょう。
+
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+
+//
+//
+"""djangoapp URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+//
+
+なにやら先頭に３種類の定義の例が記述してあります。
+
+・Function views
+  「ファンクションビュー」は作成したファンクション(関数)を呼び出して利用します。
+  こちらは自作した関数を使うため、オリジナリティの高いサイト作成することができます。
+  基本的な動作としては、HttpRequestオブジェクトを受け取って、HttpResponseオブジェクトを返すという単純なものです。
+  
+・Class-based views
+  「クラスベースドビュー」はDjangoで用意されているクラスや作成したクラスを呼ぶ出して利用します。
+  こちらのクラスを利用することにより、コードを再利用可能なコンポーネントとしてサイトを作成することができます。
+  ※クラスを自作する場合はオブジェクト指向の手法による設計とDjangoのクラスの理解が必要となるため、高い設計能力が必要となりますが、
+  簡単案
+  
+・Including another URLconf
+  「Including another URLconf」は現在のアプリケーションと他のアプリケーションのURLを組み合わせるために利用します。
+  ※Djangoでは、プロジェクトという大きな枠の中に、アプリケーションという機能単位を作り、プロジェクトはそれぞれのアプリケーションを呼び出して構成にできるため、大規模なプロジェクトでも小さい単位に分けて開発を進めることができます。
 
 
 
@@ -906,14 +979,11 @@ docker-compose up -d --build
 
 
 
-
-########################################################################################################################
-
-999.WEBアプリ作成
+9.WEBアプリ作成
 テストページが見れたので、ここからはページを作成していく。
 まずはホスト側でアプリケーションを作る。
 
-9.1.「Welcome to ...」の作成
+9.1.「Hello world...」をMVCモデルを使って表示してみましょう。
 
   1.dockerコンテナ「django」にログインする。
   ※今回作成したコンテナのベースOSは「UBUNTU」となっているため、ホストOSと多少コマンドが異なります。
@@ -935,8 +1005,6 @@ docker exec -it django bash
 su - ec2-user
 //
 
-
-
   2.2.WEBアプリケーション環境を作成する。
 
 //
@@ -946,12 +1014,12 @@ python3 manage.py startapp todoapp
 
   ※同ディレクトリ内に、todoappというアプリケーション用のディレクトリが作成されます。
 
-  2.7.todoapp ディレクトリ直下に urls.py を作成する。
+  2.3.todoapp ディレクトリ直下に urls.py を作成する。
   ※/todoappのURLにアクセスした際に、何の処理をするか記述する。
-  ※下の記述ではviews.pyのindexを処理させるようにしている。
+  ※下の記述ではviews.pyのindexを処理させるようにしている。 
 
 //
-cd /home/ec2-user/container/django/djangoapp/todoapp
+cd /app/todoapp
 vim urls.py
 //
 
@@ -966,7 +1034,7 @@ urlpatterns = [
 ]
 //
 
-  2.8.todoapp ディレクトリ直下の views.pyを修正する。
+  2.4.todoapp ディレクトリ直下の views.pyを修正する。
   ※urls.pyで指定してあるviews.pyのindex処理を記述する。
   ※下の記述ではHttpResponseオブジェクトを利用して、ブラウザにレスポンス返します。
 
@@ -980,15 +1048,16 @@ vim views.py
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Welcome to Hosoda's world.")
+    returnobject = HttpResponse("Welcome to Hosoda's world.")
+    retrun returnobject
 //
 
-  2.9.djangoappディレクトリ直下のurls.pyを修正する。
+  2.5.djangoappディレクトリ直下のurls.pyを修正する。
   ※プロジェクトのurls.pyに/todoapp/のURLの指定があった場合に、todoappのurlsに遷移するように
   　指示します。
 
 //
-cd /home/ec2-user/container/django/djangoapp/djangoapp
+cd /app/djangoapp
 vim urls.py
 //
 
@@ -998,15 +1067,12 @@ vim urls.py
 path('todoapp/', include('todoapp.urls')),
 //
 
-  2.10.作成したサイトを確認する。
+  2.6.作成したサイトを確認する。
 
 http://[IP アドレス]/[app 名]にアクセスし、"Welcome to .."が確認できればOK。
 
 ########################################################################################################################
 
-※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-ここからはtodoアプリの作成に入るので、次回へ続く。
-※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
 
 【困ったときの手順】
 
@@ -1078,6 +1144,3 @@ Host key for 18.176.30.149 has changed and you have requested strict checking.
 Host key verification failed.
 
 ssh-keygen -R 18.176.30.149
-
-
-2212e
