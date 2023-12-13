@@ -1,5 +1,84 @@
-現在有効なネットワークプロフェイルを取得する
+******************************************************************************************
+
+#現在利用可能なNIC情報を取得
+$activenic = Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.11*" -or $_.PhysicalMediaType -like "*802.3*"} | select-object -Property name,InterfaceDescription,MacAddress
+
+#//
+@{name=イーサネット; InterfaceDescription=Intel(R) Ethernet Connection (10) I219-V; MacAddress=4C-36-4E-45-46-3E} @{name=Wi-Fi; InterfaceDescription=Intel(R) Wi-Fi 6 AX201 160MHz; MacAddress=BC-54-2F-BC-04-A3}
+#//
+
+#取得した情報のレコード数を表示
+write-host $activenic.length
+
+#取得した情報のレコードを１つづつ表示する。
+foreach($a in $activenic){write-host $a}
+#一部のみ表示する
+#インタフェース名
+foreach($a in $activenic){write-host $a.name}
+#デバイス名
+foreach($a in $activenic){write-host $a.InterfaceDescription}
+
+#name=InterfaceAliasの条件を基に細かいIPアドレスやサブネットマスクを取得する。
+Get-NetIPAddress|Format-List;
+
+#activenic1に格納した情報から情報を取得する。
+foreach($a in $activenic){Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.name -and $_.AddressFamily -eq 'IPv4'}}
+
+#//
+IPAddress         : 192.168.2.131
+InterfaceIndex    : 5
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Dhcp
+SuffixOrigin      : Dhcp
+AddressState      : Preferred
+ValidLifetime     : 1.19:30:51
+PreferredLifetime : 1.19:30:51
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 192.168.2.132
+InterfaceIndex    : 6
+InterfaceAlias    : イーサネット
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Manual
+SuffixOrigin      : Manual
+AddressState      : Tentative
+ValidLifetime     :
+PreferredLifetime :
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 192.168.2.112
+InterfaceIndex    : 6
+InterfaceAlias    : イーサネット
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Dhcp
+SuffixOrigin      : Dhcp
+AddressState      : Deprecated
+ValidLifetime     : 1.19:23:39
+PreferredLifetime : 1.19:23:39
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+#//
+
+
+******************************************************************************************
+
+
+
+******************************************************************************************
+
+現在有効なネットワークプロフェイルを取得する(uplinkしていないと取得できない。)
 get-netconnectionprofile
+
+******************************************************************************************
 
 Name                     : 識別中...
 InterfaceAlias           : イーサネット
@@ -17,19 +96,39 @@ DomainAuthenticationKind : None
 IPv4Connectivity         : Internet
 IPv6Connectivity         : NoTraffic
 
+******************************************************************************************
 
 有線アダプタを取得
 Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.3*"}
 
+Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
+----                      --------------------                    ------- ------       ----------             ---------
+イーサネット              Intel(R) Ethernet Connection (10) I2...       6 Disconnected 4C-36-4E-45-46-3E          0 bps
 
+******************************************************************************************
 
 無線アダプタを取得
 Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.11*"}
 
+Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
+----                      --------------------                    ------- ------       ----------             ---------
+Wi-Fi                     Intel(R) Wi-Fi 6 AX201 160MHz                 5 Up           BC-54-2F-BC-04-A3     866.7 Mbps
+
+
+InterfaceDescription                     MacAddress
+--------------------                     ----------
+Intel(R) Ethernet Connection (10) I219-V 4C-36-4E-45-46-3E
+Intel(R) Wi-Fi 6 AX201 160MHz            BC-54-2F-BC-04-A3
+
+******************************************************************************************
+
+
+
+
 
 
 アダプタの設定を変更
-$adapter = Get-NetAdapter | Where-Object {$_.InterfaceAlias -eq "イーサネット 2"}
+$adapter = Get-NetAdapter | Where-Object {$_.InterfaceAlias -eq "イーサネット"}
 
 # アダプターのコンフィグを取得
 $conf = $adapter | Get-NetIPConfiguration
@@ -55,9 +154,9 @@ $adapter | New-NetIPAddress `
  -DefaultGateway "192.168.0.254"
 
  $adapter | Set-DnsClientServerAddress -ServerAddresses "192.168.0.200,192.168.0.201"
- 
- 
- 
+
+******************************************************************************************
+
 # DHCPのアドレスに変更する
 
  $IPType = "IPv4"
@@ -77,17 +176,16 @@ If ($interface.Dhcp -eq "Disabled") {
 アダプタのすべての情報
 Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.IPEnabled -eq "TRUE"} | Format-List *
 
-
+******************************************************************************************
 
 Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq "Intel(R) Ethernet Connection (10) I219-V"} | Format-List *
 
+******************************************************************************************
 
 IPv4 アドレス . . . . . . . . . . . .: 192.168.2.131
    サブネット マスク . . . . . . . . . .: 255.255.255.0
    デフォルト ゲートウェイ . . . . . . .: 192.168.2.1
-   
-   
-   
+
 PSComputerName               : LETS-REIZO
 DHCPLeaseExpires             : 20231215202339.000000+540
 Index                        : 1
@@ -170,6 +268,7 @@ Qualifiers                   : {dynamic, Locale, provider, UUID}
 Site                         :
 Container                    :
 
+******************************************************************************************
 
 https://qiita.com/mizar/items/de4d736ea5d86c5f83c4
 
