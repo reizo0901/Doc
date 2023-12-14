@@ -1,3 +1,56 @@
+#現在利用可能なNIC情報を取得
+$ActiveAdapter = $null
+$ActiveAdapter = Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.11*" -or $_.PhysicalMediaType -like "*802.3*"} | select-object -Property name,InterfaceDescription,MacAddress
+
+#可変長配列作成
+$AdapterArray = $null
+$AdapterArray = New-Object System.Data.Datatable
+[void]$AdapterArray.columns.add("Name")
+[void]$AdapterArray.columns.add("InterfaceDescription")
+[void]$AdapterArray.columns.add("MacAddress")
+[void]$AdapterArray.columns.add("IpAddress")
+[void]$AdapterArray.columns.add("PrefixOrigin")
+[void]$AdapterArray.columns.add("Dhcp")
+[void]$AdapterArray.columns.add("DefaultGateway")
+[void]$AdapterArray.columns.add("DNSServer")
+
+#取得した情報を可変配列に格納
+foreach($a in $ActiveAdapter){$AdapterArray.Rows.Add($a.name,$a.InterfaceDescription,$a.MacAddress,$null,$null,$null,$null,$null)}
+
+#activenic1に格納した情報から情報を取得する。
+#foreach($a in $ActiveAdapter){Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.name -and $_.AddressFamily -eq 'IPv4'}}
+
+#取得した情報のレコード数を表示
+#write-host $AdapterArray.length
+
+#取得した情報のレコードを１つづつ表示する。
+#foreach($a in $AdapterArray){write-host $a}
+
+#デバイス名
+foreach($a in $AdapterArray){write-host $a.InterfaceDescription}
+
+#ActivenAdapterに格納した情報から情報を取得する。
+foreach($a in $ActivenArray){Get-NetIPAddress | where-object $_.InterfaceAlias -eq $a.name}
+
+
+$AdapterArray
+
+Get-NetIPConfiguration
+
+#ActivenAdapterに格納した情報から情報を取得する。()
+foreach($a in $AdapterArray){
+    $ret = Get-NetIPConfiguration | where-object InterfaceAlias -eq $a.Name | select-object IPv4Address
+    $a.IpAddress = [string]$ret.IPv4Address
+    $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DefaultIPGateway
+    $a.DefaultGateway = ([string]$ret.DefaultIPGateway).trim()
+    $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DHCPEnabled
+    $a.Dhcp = ([string]$ret.DHCPEnabled)
+    $ret = get-DnsClientServerAddress | where-object InterfaceAlias -eq $a.name | select-object ServerAddresses
+    $a.DNSServer = [string]$ret.ServerAddresses
+}
+$AdapterArray
+
+
 ******************************************************************************************
 
 #現在利用可能なNIC情報を取得
