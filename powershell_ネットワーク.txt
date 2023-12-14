@@ -9,7 +9,7 @@ $AdapterArray = New-Object System.Data.Datatable
 [void]$AdapterArray.columns.add("InterfaceDescription")
 [void]$AdapterArray.columns.add("MacAddress")
 [void]$AdapterArray.columns.add("IpAddress")
-[void]$AdapterArray.columns.add("PrefixOrigin")
+[void]$AdapterArray.columns.add("PrefixLength")
 [void]$AdapterArray.columns.add("Dhcp")
 [void]$AdapterArray.columns.add("DefaultGateway")
 [void]$AdapterArray.columns.add("DNSServer")
@@ -41,14 +41,19 @@ Get-NetIPConfiguration
 foreach($a in $AdapterArray){
     $ret = Get-NetIPConfiguration | where-object InterfaceAlias -eq $a.Name | select-object IPv4Address
     $a.IpAddress = [string]$ret.IPv4Address
+    $ret = Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.Name -and $_.AddressFamily -eq 'IPv4'} | select-object PrefixLength
+    $a.PrefixLength = [string]$ret.PrefixLength
     $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DefaultIPGateway
     $a.DefaultGateway = ([string]$ret.DefaultIPGateway).trim()
     $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DHCPEnabled
     $a.Dhcp = ([string]$ret.DHCPEnabled)
     $ret = get-DnsClientServerAddress | where-object InterfaceAlias -eq $a.name | select-object ServerAddresses
     $a.DNSServer = [string]$ret.ServerAddresses
+    
+    
 }
 $AdapterArray
+
 
 
 ******************************************************************************************
