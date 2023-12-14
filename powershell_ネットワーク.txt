@@ -1,8 +1,18 @@
+################################################################################
+#DHCP設定有効化スクリプト
+#作成日:2023/12/14
+#作成者:JPiT
+################################################################################
+
+################################################################################
 #現在利用可能なNIC情報を取得
+
 $ActiveAdapter = $null
 $ActiveAdapter = Get-NetAdapter | Where-Object {$_.PhysicalMediaType -like "*802.11*" -or $_.PhysicalMediaType -like "*802.3*"} | select-object -Property name,InterfaceDescription,MacAddress
 
+################################################################################
 #可変長配列作成
+
 $AdapterArray = $null
 $AdapterArray = New-Object System.Data.Datatable
 [void]$AdapterArray.columns.add("Name")
@@ -14,45 +24,38 @@ $AdapterArray = New-Object System.Data.Datatable
 [void]$AdapterArray.columns.add("DefaultGateway")
 [void]$AdapterArray.columns.add("DNSServer")
 
+################################################################################
 #取得した情報を可変配列に格納
+
 foreach($a in $ActiveAdapter){$AdapterArray.Rows.Add($a.name,$a.InterfaceDescription,$a.MacAddress,$null,$null,$null,$null,$null)}
 
-#activenic1に格納した情報から情報を取得する。
-#foreach($a in $ActiveAdapter){Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.name -and $_.AddressFamily -eq 'IPv4'}}
-
-#取得した情報のレコード数を表示
-#write-host $AdapterArray.length
-
-#取得した情報のレコードを１つづつ表示する。
-#foreach($a in $AdapterArray){write-host $a}
-
-#デバイス名
-foreach($a in $AdapterArray){write-host $a.InterfaceDescription}
-
-#ActivenAdapterに格納した情報から情報を取得する。
-foreach($a in $ActivenArray){Get-NetIPAddress | where-object $_.InterfaceAlias -eq $a.name}
-
-
-$AdapterArray
-
-Get-NetIPConfiguration
-
+################################################################################
 #ActivenAdapterに格納した情報から情報を取得する。()
+
 foreach($a in $AdapterArray){
+    #IPアドレスを取得
     $ret = Get-NetIPConfiguration | where-object InterfaceAlias -eq $a.Name | select-object IPv4Address
     $a.IpAddress = [string]$ret.IPv4Address
+    #サブネットマスクを取得
     $ret = Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.Name -and $_.AddressFamily -eq 'IPv4'} | select-object PrefixLength
     $a.PrefixLength = [string]$ret.PrefixLength
+    #デフォルトゲートウェイを取得
     $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DefaultIPGateway
     $a.DefaultGateway = ([string]$ret.DefaultIPGateway).trim()
+    #DHCPの有効フラグを取得
     $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DHCPEnabled
     $a.Dhcp = ([string]$ret.DHCPEnabled)
+    #DNSサーバアドレスを取得
     $ret = get-DnsClientServerAddress | where-object InterfaceAlias -eq $a.name | select-object ServerAddresses
     $a.DNSServer = [string]$ret.ServerAddresses
-    
-    
 }
+
+################################################################################
+＃取得した情報を表示
 $AdapterArray
+
+################################################################################
+
 
 
 
