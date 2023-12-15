@@ -5,6 +5,52 @@
 ################################################################################
 
 ################################################################################
+#定数定義
+
+#取得したネットワークの設定の出力フォルダ
+Set-Variable -name CHGDHCPDIR -value "c:\chgdhcp\" -Option Constant
+#取得したネットワークの設定の出力ファイル
+Set-Variable -name IPCONFIGFILE  -value "chgdhcp_ipconfig.txt" -Option Constant
+#処理完了済みフラグファイル
+Set-Variable -name SUCCESSFILE -value "chgdhcp_success.txt" -Option Constant
+#実行ログファイル
+Set-Variable -name RESULTFILE -value "chgdhcp_result.txt" -Option Constant
+
+$resultlog = $CHGDHCPDIR + $RESULTFILE
+$successtxt = $CHGDHCPDIR + $SUCCESSFILE
+$ipconfigtxt = $CHGDHCPDIR + $IPCONFIGFILE
+
+################################################################################
+#ログ出力先作成と再実行防止措置
+
+#SUCCESSFILEが存在しないことを確認
+#CHGDHCPDIRの存在確認(フォルダ)
+if((Test-Path $CHGDHCPDIR) -eq "True"){
+    #success.txtの存在確認(ファイル)
+    if((Test-Path $successtxt) -eq "True"){
+        #スクリプトを終了します。
+        exit
+    }else{
+        #実行ログ出力
+        $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+        $writeresult = $timestamp + "DHCP「有効化」スクリプトを開始します。"
+        Set-Content -Path $resultlog -Value $writeresult
+        #実行ログ出力
+        $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+        $writeresult = $timestamp + "ディレクトリ[$CHGDHCPDIR]が存在しました。"
+        Add-Content -Path $resultlog -Value $writeresult
+    }
+}else{
+    mkdir $CHGDHCPDIR
+    $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+    $writeresult = $timestamp + "DHCP「有効化」スクリプトを開始します。"
+    Set-Content -Path $resultlog -Value $writeresult
+    $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+    $writeresult = $timestamp + "ディレクトリ[$CHGDHCPDIR]を作成しました。"
+    Add-Content -Path $resultlog -Value $writeresult
+}
+
+################################################################################
 #現在利用可能なNIC情報を取得
 
 $ActiveAdapter = $null
@@ -40,10 +86,10 @@ foreach($a in $AdapterArray){
     $ret = Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.Name -and $_.AddressFamily -eq 'IPv4'} | select-object PrefixLength
     $a.PrefixLength = [string]$ret.PrefixLength
     #デフォルトゲートウェイを取得
-    $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DefaultIPGateway
+    $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.MACAddress -eq $a.MACAddress.Replace("-",":")} | select-object DefaultIPGateway
     $a.DefaultGateway = ([string]$ret.DefaultIPGateway).trim()
     #DHCPの有効フラグを取得
-    $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.Description -eq $a.InterfaceDescription} | select-object DHCPEnabled
+    $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.MACAddress -eq $a.MACAddress.Replace("-",":")} | select-object DHCPEnabled
     $a.Dhcp = ([string]$ret.DHCPEnabled)
     #DNSサーバアドレスを取得
     $ret = get-DnsClientServerAddress | where-object InterfaceAlias -eq $a.name | select-object ServerAddresses
@@ -51,12 +97,99 @@ foreach($a in $AdapterArray){
 }
 
 ################################################################################
-＃取得した情報を表示
-$AdapterArray
+#取得した情報をc:\chgdhcp\ipconfigファイルへ出力する。
+
+$AdapterArray | out-file $ipconfigtxt -encoding Default
+$timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+$writeresult = $timestamp + "変更前のネットワーク設定を[$ipconfigtxt]に出力しました。"
+Add-Content -Path $resultlog -Value $writeresult
 
 ################################################################################
+#DHCPが有効になっていないネットワークのみを有効にする。
+
+#エラーカウントの初期化
+$errorcnt = 0
+#
+
+#
 
 
+
+foreach($a in $AdapterArray){
+    #DHCPの状態確認(Descriptionは何故か名称が異なるのでMACAddressにて突合)
+    $ret = get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.MACAddress -eq $a.MACAddress.Replace("-",":")} | select-object Description, DHCPEnabled
+    if([string]$ret.DHCPEnabled -eq "True"){
+        $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+        $writeresult = $timestamp + $a.InterfaceDescription + "のDHCPは「有効」になっています。"
+        Add-Content -Path $resultlog -Value $writeresult
+    }else{
+        $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+        $writeresult = $timestamp + $a.InterfaceDescription + "のDHCPは「無効」になっています。"
+        Add-Content -Path $resultlog -Value $writeresult
+        #DHCPの変更処理を入れる。
+        
+        
+        
+        
+        
+        #DHCPの確認処理を入れる。
+        $ret = get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.MACAddress -eq $a.MACAddress.Replace("-",":")} | select-object Description, DHCPEnabled
+        if([string]$ret.DHCPEnabled -eq "True"){
+        
+            $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+            $writeresult = $timestamp + $a.InterfaceDescription + "のDHCPは「有効化」に成功しました。"
+            Add-Content -Path $resultlog -Value $writeresult
+        }else{
+            $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+            $writeresult = $timestamp + $a.InterfaceDescription + "のDHCPの「有効化」は失敗しました。"
+            Add-Content -Path $resultlog -Value $writeresult
+            $errorcnt += 1
+        }
+    }
+}
+#変更の必要があるすべてのプロファイルのDHCPの有効化が成功した場合
+if($errorcnt -eq 0){
+    
+    #DHCP変更後に取得した情報を可変配列に格納
+    $ActiveAdapter = $null
+    foreach($a in $ActiveAdapter){$AdapterArray.Rows.Add($a.name,$a.InterfaceDescription,$a.MacAddress,$null,$null,$null,$null,$null)}
+    
+    #ActivenAdapterに格納した情報から情報を取得する。()
+    foreach($a in $AdapterArray){
+        #IPアドレスを取得
+        $ret = Get-NetIPConfiguration | where-object InterfaceAlias -eq $a.Name | select-object IPv4Address
+        $a.IpAddress = [string]$ret.IPv4Address
+        #サブネットマスクを取得
+        $ret = Get-NetIPAddress | where-object {$_.InterfaceAlias -eq $a.Name -and $_.AddressFamily -eq 'IPv4'} | select-object PrefixLength
+        $a.PrefixLength = [string]$ret.PrefixLength
+        #デフォルトゲートウェイを取得
+        $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.MACAddress -eq $a.MACAddress.Replace("-",":")} | select-object DefaultIPGateway
+        $a.DefaultGateway = ([string]$ret.DefaultIPGateway).trim()
+        #DHCPの有効フラグを取得
+        $ret = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object{$_.MACAddress -eq $a.MACAddress.Replace("-",":")} | select-object DHCPEnabled
+        $a.Dhcp = ([string]$ret.DHCPEnabled)
+        #DNSサーバアドレスを取得
+        $ret = get-DnsClientServerAddress | where-object InterfaceAlias -eq $a.name | select-object ServerAddresses
+        $a.DNSServer = [string]$ret.ServerAddresses
+    }
+    
+    #DHCP変更後に取得した情報をc:\chgdhcp\successファイルへ出力する。
+    
+    $AdapterArray | out-file $successtxt -encoding Default
+    $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+    $writeresult = $timestamp + "変更後のネットワーク設定を[$successtxt]に出力しました。"
+    Add-Content -Path $resultlog -Value $writeresult
+
+#一部のプロファイルのDHCPの有効化が失敗した場合
+}else{
+    $timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+    $writeresult = $timestamp + "一部のDHCPの「有効化」に失敗しました。`n次回の起動時にリトライが行われます。"
+    Add-Content -Path $resultlog -Value $writeresult
+}
+
+$timestamp = "[" + (get-date -FORMAT "yyyy/MM/dd hh:mm:ss") + "]"
+$writeresult = $timestamp + "DHCP「有効化」スクリプトを終了します。"
+Add-Content -Path $resultlog -Value $writeresult
 
 
 ******************************************************************************************
