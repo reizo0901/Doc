@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-19T02:59:09.349Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="ttDcOm9DP-9FpzEfeSTp" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-19T03:01:41.850Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="ix2RNMpll8CU9nJz4p5d" version="22.1.11" type="github">
   <diagram name="ページ1" id="wHj56v0oZ02i9ZqQ-0CH">
     <mxGraphModel dx="1156" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -284,6 +284,12 @@
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-81" value="有効なアダプタ数だけ&lt;br&gt;ループ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="171" y="227" width="139" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-82" value="手動で設定されている静的IPアドレスの削除を行わないとDHCPの有効化が&lt;br&gt;失敗することがあるための処理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="166" y="703" width="209" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-83" value="手動で設定されているデフォルトゲートウェイの削除を行わないとDHCPの有効化が失敗することがあるための処理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="166" y="796" width="209" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
