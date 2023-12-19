@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-19T02:53:52.146Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="faiBM-aR4Ei8HSMuQKxm" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-19T02:54:30.371Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="qhRdYl2Ovyn038M-pwJL" version="22.1.11" type="github">
   <diagram name="ページ1" id="wHj56v0oZ02i9ZqQ-0CH">
     <mxGraphModel dx="1156" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -201,6 +201,11 @@
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-33" value="DHCP設定:有効" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="161.5" y="936" width="107" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="241.6470588235295" y="1050" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-34" value="設定変更カウント" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="181.5" y="999" width="120" height="40" as="geometry" />
