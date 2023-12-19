@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-19T02:37:27.459Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="eySqoKFaTL2GV1gDcU7X" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-19T02:41:03.008Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="L4-lcvIEpEqJMrmo9SPb" version="22.1.11" type="github">
   <diagram name="ページ1" id="wHj56v0oZ02i9ZqQ-0CH">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,50 +7,8 @@
         <mxCell id="VmGl2ix6Ah8uTbjQqr3t-1" value="スタート" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-35" target="VmGl2ix6Ah8uTbjQqr3t-3" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="579" y="890" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-3" target="VmGl2ix6Ah8uTbjQqr3t-4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-3" value="アダプタ設定情報&lt;br&gt;ファイル出力" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="518.5" y="890" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-4" value="DHCP設定" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="519" y="950" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="FzYucY_n1YHXEH_8yHVl-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-6" target="VmGl2ix6Ah8uTbjQqr3t-38" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="FzYucY_n1YHXEH_8yHVl-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-6" target="FzYucY_n1YHXEH_8yHVl-1" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-6" value="設定成功？" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="520" y="1010" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-17" value="設定失敗" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="640" y="1000" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=block;endFill=1;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-47" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="420" y="1310" as="targetPoint" />
-            <mxPoint x="719" y="1330" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="720" y="1210" />
-              <mxPoint x="720" y="1310" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-20" value="設定済み&lt;br&gt;ファイル出力" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="518.5" y="1250" width="120" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="VmGl2ix6Ah8uTbjQqr3t-23" value="エンド" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
-          <mxGeometry x="360" y="1330" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-26" value="設定成功" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="590" y="1040" width="80" height="30" as="geometry" />
+          <mxGeometry x="39" y="1360" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="VmGl2ix6Ah8uTbjQqr3t-27" value="DHCP変更済み？" style="rhombus;whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="181" y="160" width="120" height="40" as="geometry" />
@@ -73,57 +31,8 @@
         <mxCell id="VmGl2ix6Ah8uTbjQqr3t-31" value="未設定" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="241" y="193" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="577.5" y="1290" as="sourcePoint" />
-            <mxPoint x="578" y="1310" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-33" target="VmGl2ix6Ah8uTbjQqr3t-35" edge="1">
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-2" target="vMYI4mo94rOwHd-NQ6uU-9">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-33" value="プロファイル" style="shape=loopLimit;whiteSpace=wrap;html=1;fillColor=#FFD966;" parent="1" vertex="1">
-          <mxGeometry x="519" y="770" width="121" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-35" value="アダプタ&lt;br&gt;設定情報取得" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="519" y="830" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-4" target="VmGl2ix6Ah8uTbjQqr3t-6" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="579.5" y="1170" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-38" value="" style="shape=loopLimit;whiteSpace=wrap;html=1;rotation=-180;verticalAlign=middle;fillColor=#FFD966;" parent="1" vertex="1">
-          <mxGeometry x="519.5" y="1130" width="121" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="VmGl2ix6Ah8uTbjQqr3t-38" target="VmGl2ix6Ah8uTbjQqr3t-20" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="579" y="1190" as="sourcePoint" />
-            <mxPoint x="579" y="1210" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-46" value="プロファイル" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="539" y="1135" width="81" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-47" value="エラーあり？" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="519" y="1190" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="VmGl2ix6Ah8uTbjQqr3t-48" value="DHCPの設定ができていない&lt;br&gt;プロファイルがある。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="639" y="1174" width="171" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="FzYucY_n1YHXEH_8yHVl-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="FzYucY_n1YHXEH_8yHVl-1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="580" y="1120" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="720" y="1120" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="FzYucY_n1YHXEH_8yHVl-1" value="エラーフラグ" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="660" y="1070" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="FzYucY_n1YHXEH_8yHVl-3" value="すべてのプロファイルで設定完了" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="610" y="1220" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-2" value="ログフォルダ？" style="rhombus;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="40" y="99" width="120" height="40" as="geometry" />
@@ -134,29 +43,44 @@
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-4" value="存在する" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="161.5" y="96" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="vMYI4mo94rOwHd-NQ6uU-6" value="アダプタ&lt;br&gt;設定情報取得" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="390" y="340" width="120" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-7" value="スクリプト終了&lt;br&gt;(exit)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="340" y="220" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-9" target="vMYI4mo94rOwHd-NQ6uU-10">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-9" value="ログフォルダ作成" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="160" width="120" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-10" target="vMYI4mo94rOwHd-NQ6uU-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-10" value="ネットワーク&lt;br&gt;アダプタ" style="shape=loopLimit;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
           <mxGeometry x="39.5" y="220" width="121" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-11" target="vMYI4mo94rOwHd-NQ6uU-13">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-11" value="ネットワーク&lt;br&gt;プロファイル取得" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="39.5" y="280" width="120" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-12" target="vMYI4mo94rOwHd-NQ6uU-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-12" value="プロファイル情報&lt;br&gt;ファイル出力" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="38.5" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-13" target="vMYI4mo94rOwHd-NQ6uU-12">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-13" value="" style="shape=loopLimit;whiteSpace=wrap;html=1;rotation=-180;verticalAlign=middle;fillColor=#FFD966;" vertex="1" parent="1">
           <mxGeometry x="38.5" y="340" width="121" height="40" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-14" value="ネットワーク&lt;br&gt;アダプタ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="58" y="345" width="81" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-15" target="vMYI4mo94rOwHd-NQ6uU-19">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-15" value="プロファイル" style="shape=loopLimit;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
           <mxGeometry x="37.5" y="460" width="121" height="40" as="geometry" />
@@ -167,6 +91,9 @@
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-18" value="プロファイル" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="59.5" y="1005" width="81" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-19" target="vMYI4mo94rOwHd-NQ6uU-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-19" value="DHCP有効？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="37.5" y="520" width="120" height="40" as="geometry" />
         </mxCell>
@@ -176,8 +103,14 @@
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-21" value="DHCP設定:有効" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="160" y="518" width="107" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-22" target="vMYI4mo94rOwHd-NQ6uU-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-22" value="IPv4 静的IPアドレス&lt;br&gt;削除" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="39" y="640" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-23" target="vMYI4mo94rOwHd-NQ6uU-22">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-23" value="静的IP設定あり？" style="rhombus;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="37.5" y="580" width="120" height="40" as="geometry" />
@@ -188,8 +121,14 @@
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-25" value="設定なし" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="161" y="577" width="57" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-26" target="vMYI4mo94rOwHd-NQ6uU-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-26" value="デフォルトゲート&lt;br&gt;ウェイ削除" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="760" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-27" target="vMYI4mo94rOwHd-NQ6uU-26">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-27" value="デフォルトゲート&lt;br style=&quot;font-size: 10px;&quot;&gt;ウェイ設定あり？" style="rhombus;whiteSpace=wrap;html=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="39" y="700" width="120" height="40" as="geometry" />
@@ -200,8 +139,18 @@
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-29" value="設定なし" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="161" y="700" width="57" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-30" target="vMYI4mo94rOwHd-NQ6uU-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-30" value="DHCP設定" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="820" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;endFill=0;" edge="1" parent="1" source="vMYI4mo94rOwHd-NQ6uU-31" target="vMYI4mo94rOwHd-NQ6uU-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="1000" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-31" value="DHCP有効？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="880" width="120" height="40" as="geometry" />
@@ -214,9 +163,6 @@
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-34" value="設定変更フラグ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="181" y="940" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="vMYI4mo94rOwHd-NQ6uU-35" value="設定済み&lt;br&gt;ファイル出力" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="37.5" y="1120" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" target="vMYI4mo94rOwHd-NQ6uU-37" parent="1" source="vMYI4mo94rOwHd-NQ6uU-17">
           <mxGeometry relative="1" as="geometry">
@@ -232,6 +178,21 @@
         </mxCell>
         <mxCell id="vMYI4mo94rOwHd-NQ6uU-39" value="すべてのプロファイルで設定完了" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="129" y="1090" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-40" value="ネットワーク&lt;br&gt;アダプタ" style="shape=loopLimit;whiteSpace=wrap;html=1;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="39" y="1120" width="121" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-41" value="ネットワーク&lt;br&gt;プロファイル取得" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="39" y="1180" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-42" value="プロファイル情報&lt;br&gt;ファイル出力" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="38" y="1300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-43" value="" style="shape=loopLimit;whiteSpace=wrap;html=1;rotation=-180;verticalAlign=middle;fillColor=#FFD966;" vertex="1" parent="1">
+          <mxGeometry x="38" y="1240" width="121" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vMYI4mo94rOwHd-NQ6uU-44" value="ネットワーク&lt;br&gt;アダプタ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="57.5" y="1245" width="81" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
