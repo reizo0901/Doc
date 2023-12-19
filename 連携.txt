@@ -1,0 +1,2 @@
+PS C:\Users\Administrator> get-adcomputer -Filter * -Property * | format-table Name,UserCertificate | out-file "c:\temp\
+ad_UserCertificate.csv" -Encoding default
