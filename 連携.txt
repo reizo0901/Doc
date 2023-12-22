@@ -11,3 +11,78 @@
 コスト	ハードウェアやコロケーション、メンテンナンスコストを抑えられる。	ハードウェアやコロケーション、メンテンナンス費用を抑えられる。	ハードウェアやコロケーション、メンテンナンス費用を抑えられる。
 耐障害		スナップショットや冗長化が容易	Kubernetsなどのツールにより対策が可能。
 災害対策	オンプレミスと同等レベルのため別途対策が必要。	HAやレプリケーションも容易で復旧、切り替えもスムーズ	Kubernetsなどのツールにより対策が可能。
+
+
+利用コマンド一覧		
+		
+■Linuxコマンド(Amazon Linux2)		
+設定ファイル	/etc/hostname	
+確認	hostname	
+変更	hostnamectl△set-hostname△[ホスト名]	
+		
+■Linuxコマンド(Ubuntu)※Dockerコンテナ内で利用します。		
+設定ファイル	/etc/hostname	
+確認	hostname	
+変更	hostnamectl△set-hostname△[ホスト名]	
+		
+■vimエディタコマンド		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+■Dockerコマンド		
+イメージ確認	docker△images	1
+イメージ取得	docker△pull△[イメージタグ]	1
+イメージ削除	docker△rmi△[イメージID/イメージタグ]	1
+イメージからコンテナ起動	docker△run△-it△[イメージID/イメージタグ]△bash	1
+イメージからコンテナ作成	docker△create△-name△[コンテナ名]△[イメージID/イメージタグ]	1
+コンテナに名前を付ける	-name△[コンテナ名]	1
+フォルダをマウント	-v△[ホストフォルダ]:[コンテナフォルダ]	1
+ポートフォワード設定	-p△[ホストポート]:[コンテナポート]	1
+ポートフォワード確認	docker△port△[イメージID/コンテナ名]	
+コンテナを起動	docker△start△[コンテナID/コンテナ名]	
+コンテナを停止	docker△stop△[コンテナID/コンテナ名]	
+コンテナを再起動	docker△restart△[コンテナID/コンテナ名]	
+コンテナを削除	docker△rm△[コンテナID/コンテナ名]	
+コンテナをすべて削除	docker△rm△$(docker△ps△-aq)	
+コンテナに接続１	docker△exec△-it△[コンテナID/コンテナ名]△/bin/bash	
+コンテナに接続２	docker△attach△[コンテナID/コンテナ名] ←exitするとコンテナが停止する。	
+Dockerfileビルド	docker△build△./	
+ビルドをやり直す	docker△build△--no-cache△.	
+起動中のコンテナ確認	docker△ps	
+全てのコンテナ確認	docker△ps△-a	
+コンテナのハッシュリスト	docker△ps△-aq	
+コンテナサイズ	docker△ps△-s	
+ビルド時のコマンド確認	docker△history△[イメージID]	
+イメージをエクスポート	docker△save△[イメージID/イメージタグ]△>△filename.tar	
+イメージをインポート	docker△load△<△filename.tar	
+コンテナをエクスポート	docker△export△[コンテナID/コンテナ名]△>△filename.tar	
+コンテナからイメージ作成	docker△commit△[コンテナID/コンテナ名]	
+コンテナの標準出力確認	docker△logs△「コンテナID/コンテナ名]	
+コンテナ→ホストコピー	docker△cp△[コンテナID/コンテナ名]:[ファイル名]△[ホストフォルダ]	
+コンテナ内でコマンド実行	docker△exec△[コンテナID/コンテナ名]△bash△-c△"コマンド"	
+CPU/Mem使用率	docker△stats	
+デタッチド<-d>	-d	
+コンテナ識別	--name△[コンテナ名]	
+再起動ポリシー設定	--restart	
+		
+Docker-Composeコマンド		
+コンテナを起動	docker-compose up -d	
+コンテナをリビルドして起動	docker-compose up -d --build	
+コンテナを再起動	docker-compose restart	
+コンテナを停止	docker-compose down	
+コンテナのログを表示	docker-compose logs	
+コンテナのログを表示	docker-compose logs <コンテナ名>	
+コンテナの削除	docker-compose rm	
+コンテナの状態確認	docker-compose watch	
+バージョン情報	docker-compose version	
+コンテナ外からコマンド実行	dokcer-compose run <コンテナ名> <コマンド>	
+コンテナ内でコマンド実行	docker-compose exec <コマンド>	
+コンテナの設定確認	docker-compose config	
