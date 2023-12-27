@@ -38,15 +38,11 @@ WEBの仕組みについて
 ①ホストOS型仮想化
 代表的なソフトウェア：Vitrual BOX
 
-
 ②ハイパーバイザー型仮想化
 代表的なソフトウェア：VMWare/Hyper-V
 
-
 ③コンテナ型仮想化
 代表的なソフトウェア：Docker/Podman
-
-
 
 コンテナのメリット
 
@@ -56,7 +52,6 @@ WEBの仕組みについて
 
 ??ソフトウェア一覧
 今回出てくるソフトウェアの表(分類、ソフトウェア名、何をするものか)
-
 
 
 
@@ -826,7 +821,7 @@ TIME_ZONE = 'Asia/Tokyo'
   16.データベースのマイグレート
 
 //
-python manage.py migrate
+python3 manage.py migrate
 //
 
   ※同じディレクトリ内に、db.sqlite3というデータベース用のディレクトリが作成されます。
@@ -937,7 +932,7 @@ docker-compose up -d --build
 djangoのプロジェクトの設定ファイルが格納されている以下のパスに遷移し、「urls.py」ファイルを開きましょう。
 
 cd /home/ec2-user/containers/django/djangoapp/djangoapp
-vim settings.py
+vim urls.py
 
 //
 //
