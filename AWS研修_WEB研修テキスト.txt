@@ -18,6 +18,77 @@
 ・クラスベースドビューでHello Worldを表示しよう！
   ・
 
+説明を適切なところに挿入する。
+①EC2インスタンスとVPCを構成します。
+・AWSの構成の基本について記載する。
+・EC2インスタンスの構成の基本について記載する。
+
+②SSHとは？※使っているけどそもそも何？
+・SSHとは？
+・keyとは？
+
+③Amazon　Linux2、Linuxディストリビュートについて
+・Redhat系とDebian系
+・パッケージやコマンドの違いについて
+
+④仮想化技術について
+・仮想化技術とは
+・サーバ仮想化について
+　・ホスト型仮想化
+　・ハイパーバイザー型仮想化
+　・コンテナ型仮想化
+　・それぞれのメリットとデメリット
+
+⑤研修に登場するソフトウェアやコマンドについて
+
+<コマンド>
+sudo
+yum
+apt-get
+tree
+python
+python3
+docker
+systemctl
+grep
+usermod
+cat
+reboot
+mkdir
+curl
+chmod
+ln
+docker-compose
+cd
+vim
+uwsgi
+bash
+django-admin
+
+<ソフトウェア>
+django
+psycopg2
+uwsgi
+django-bootstrap-datepicker-plus
+dhango-bootstarp4
+docker-compose
+
+⑥EC2に構築する環境について
+⑥定義ファイル・設定ファイル、シェルについて
+
+・docker-compose.yml
+・nginx.conf
+・uwsgi-prams
+・uwsgi.ini
+・Dockerfile
+・requirements.txt
+・setuser.sh
+・startup.sh
+・settings.py
+・urls.py
+・views.py
+・models.py
+
 今回の研修のゴール
 
 AWSでWEBサーバの構築、ならびに動的WEBサイトの作成について学んでいきます。
