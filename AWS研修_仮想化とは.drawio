@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2024-01-05T07:09:49.733Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="AIIi6kszfzK028eCrfTn" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-05T07:12:29.389Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="tdFg3QtiakW3uO_4W9QB" version="22.1.16" type="github">
   <diagram name="ページ1" id="EFtJADlw1mo4nO-pMKA7">
     <mxGraphModel dx="2316" dy="-345" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-4" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;hachureGap=4;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;rounded=0;swimlaneLine=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-450" y="1690" width="900" height="380" as="geometry" />
+          <mxGeometry x="-450" y="1690" width="900" height="430" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-5" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
           <mxGeometry width="900" height="30" as="geometry" />
@@ -187,6 +187,29 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-164" value="コンテナイメージをアップロード・ダウンロードするだけ" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-160">
+          <mxGeometry x="663" width="237" height="50" as="geometry">
+            <mxRectangle width="237" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-166" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1sAGVXY1Umkc6Cw3v1CU-4">
+          <mxGeometry y="380" width="900" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-167" value="仮想化の入れ子" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
+          <mxGeometry width="149" height="50" as="geometry">
+            <mxRectangle width="149" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-168" value="仮想サーバの中に仮想サーバを&lt;br&gt;作成することが可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
+          <mxGeometry x="149" width="266" height="50" as="geometry">
+            <mxRectangle width="266" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-169" value="入れ子はできない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
+          <mxGeometry x="415" width="248" height="50" as="geometry">
+            <mxRectangle width="248" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-170" value="サーバの中にサービスとして動作しているため入れ子が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
           <mxGeometry x="663" width="237" height="50" as="geometry">
             <mxRectangle width="237" height="50" as="alternateBounds" />
           </mxGeometry>
@@ -526,13 +549,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-155" value="ハイパーバイザー型仮想化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
-          <mxGeometry x="-450" y="1550" width="280" height="30" as="geometry" />
+          <mxGeometry x="-450" y="1557" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-156" value="ホスト型仮想化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
-          <mxGeometry x="-140" y="1550" width="280" height="30" as="geometry" />
+          <mxGeometry x="-140" y="1557" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-157" value="コンテナ型仮想化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
-          <mxGeometry x="170" y="1550" width="280" height="30" as="geometry" />
+          <mxGeometry x="170" y="1557" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-158" value="●仮想化別の特徴" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
           <mxGeometry x="-470" y="1650" width="280" height="30" as="geometry" />
