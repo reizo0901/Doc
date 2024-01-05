@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2024-01-05T06:45:05.481Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="40H2NZ_oSo4rg7lYigH2" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-05T06:45:43.739Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="xu_EM-9ir7kHDoX77hcG" version="22.1.16" type="github">
   <diagram name="ページ1" id="EFtJADlw1mo4nO-pMKA7">
     <mxGraphModel dx="2316" dy="-345" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-4" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;hachureGap=4;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;rounded=0;swimlaneLine=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-450" y="1600" width="900" height="360" as="geometry" />
+          <mxGeometry x="-450" y="1600" width="900" height="330" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-5" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
           <mxGeometry width="900" height="30" as="geometry" />
@@ -77,30 +77,30 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-35" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="130" width="900" height="60" as="geometry" />
+          <mxGeometry y="130" width="900" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-36" value="対象OS" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
-          <mxGeometry width="149" height="60" as="geometry">
-            <mxRectangle width="149" height="60" as="alternateBounds" />
+          <mxGeometry width="149" height="50" as="geometry">
+            <mxRectangle width="149" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-37" value="仮想サーバ毎に異なるOSを&lt;br&gt;構築することができる" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;colspan=2;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
-          <mxGeometry x="149" width="514" height="60" as="geometry">
-            <mxRectangle width="266" height="60" as="alternateBounds" />
+          <mxGeometry x="149" width="514" height="50" as="geometry">
+            <mxRectangle width="266" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-38" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1" visible="0">
-          <mxGeometry x="415" width="248" height="60" as="geometry">
-            <mxRectangle width="248" height="60" as="alternateBounds" />
+          <mxGeometry x="415" width="248" height="50" as="geometry">
+            <mxRectangle width="248" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-39" value="Linuxディストリビューションしかインストールすることができない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
-          <mxGeometry x="663" width="237" height="60" as="geometry">
-            <mxRectangle width="237" height="60" as="alternateBounds" />
+          <mxGeometry x="663" width="237" height="50" as="geometry">
+            <mxRectangle width="237" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-40" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="190" width="900" height="50" as="geometry" />
+          <mxGeometry y="180" width="900" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-41" value="リソース" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-40" vertex="1">
           <mxGeometry width="149" height="50" as="geometry">
@@ -123,30 +123,30 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-30" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="240" width="900" height="70" as="geometry" />
+          <mxGeometry y="230" width="900" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-31" value="起動・停止時間" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry width="149" height="70" as="geometry">
-            <mxRectangle width="149" height="70" as="alternateBounds" />
+          <mxGeometry width="149" height="50" as="geometry">
+            <mxRectangle width="149" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-32" value="ハイパーバイザー上で動作する&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;ため、ホスト型よりは早い" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry x="149" width="266" height="70" as="geometry">
-            <mxRectangle width="266" height="70" as="alternateBounds" />
+          <mxGeometry x="149" width="266" height="50" as="geometry">
+            <mxRectangle width="266" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-33" value="ホスト上の仮想化ソフトで&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;動作しているため遅い" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry x="415" width="248" height="70" as="geometry">
-            <mxRectangle width="248" height="70" as="alternateBounds" />
+          <mxGeometry x="415" width="248" height="50" as="geometry">
+            <mxRectangle width="248" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-34" value="ホストOSのサービスとして&lt;br&gt;動いているため速い" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry x="663" width="237" height="70" as="geometry">
-            <mxRectangle width="237" height="70" as="alternateBounds" />
+          <mxGeometry x="663" width="237" height="50" as="geometry">
+            <mxRectangle width="237" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-45" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="310" width="900" height="50" as="geometry" />
+          <mxGeometry y="280" width="900" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-46" value="カスタマイズ性" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-45" vertex="1">
           <mxGeometry width="149" height="50" as="geometry">
