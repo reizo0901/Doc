@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-05T07:12:29.389Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="tdFg3QtiakW3uO_4W9QB" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-05T07:14:09.187Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="uUqUDNvxEsZNdO9LV_ZF" version="22.1.16" type="github">
   <diagram name="ページ1" id="EFtJADlw1mo4nO-pMKA7">
     <mxGraphModel dx="2316" dy="-345" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -204,12 +204,12 @@
             <mxRectangle width="266" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-169" value="入れ子はできない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-169" value="入れ子はできない&lt;br&gt;※できるソフトもあるかもしれない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
           <mxGeometry x="415" width="248" height="50" as="geometry">
             <mxRectangle width="248" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-170" value="サーバの中にサービスとして動作しているため入れ子が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-170" value="サーバの中でサービスとして動作しているため入れ子が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
           <mxGeometry x="663" width="237" height="50" as="geometry">
             <mxRectangle width="237" height="50" as="alternateBounds" />
           </mxGeometry>
