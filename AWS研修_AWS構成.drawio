@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-05T05:42:09.406Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="-pV1hIO5IPTnf1Cvi5l2" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-05T05:43:50.807Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="c-Qj69SGo3PwPnaNpslN" version="22.1.16" type="github">
   <diagram id="sJy378vkBmu3zpo50ejq" name="ページ1">
-    <mxGraphModel dx="868" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -127,7 +127,7 @@
         <mxCell id="bA1XOdzTZ2kSw8sosjhB-50" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/CustomDomain.svg;imageBorder=#FFFFFF;comic=0;strokeWidth=0;perimeterSpacing=0;" vertex="1" parent="1">
           <mxGeometry x="56.00000000000001" y="513" width="35.71" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="bA1XOdzTZ2kSw8sosjhB-55" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=default;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#E6E6E6;shape=mxgraph.mscae.enterprise.internet;labelBackgroundColor=default;comic=0;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-55" value="" style="aspect=fixed;pointerEvents=1;shadow=1;html=1;strokeColor=default;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#E6E6E6;shape=mxgraph.mscae.enterprise.internet;labelBackgroundColor=default;comic=0;fontFamily=Helvetica;fontSize=12;fontColor=default;strokeWidth=3;labelBorderColor=none;fillStyle=hatch;" vertex="1" parent="1">
           <mxGeometry x="166.26" y="511.38" width="93.74" height="58.12" as="geometry" />
         </mxCell>
       </root>
