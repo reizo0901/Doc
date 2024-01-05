@@ -1,240 +1,240 @@
-<mxfile host="app.diagrams.net" modified="2024-01-05T07:22:49.139Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="QT9GfWWzXjPj-Aaue5Ce" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-05T07:27:44.925Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="M9ZL5FKpQgXRTkluPLwz" version="22.1.16" type="github">
   <diagram name="ページ1" id="EFtJADlw1mo4nO-pMKA7">
     <mxGraphModel dx="2316" dy="-345" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-4" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;hachureGap=4;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=12;rounded=0;swimlaneLine=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-450" y="1690" width="900" height="460" as="geometry" />
-        </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-171" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1sAGVXY1Umkc6Cw3v1CU-4">
-          <mxGeometry width="900" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-172" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#B3B3B3;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=20;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-171">
-          <mxGeometry width="149" height="30" as="geometry">
-            <mxRectangle width="149" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-173" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-171">
-          <mxGeometry x="149" width="266" height="30" as="geometry">
-            <mxRectangle width="266" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-174" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-171">
-          <mxGeometry x="415" width="248" height="30" as="geometry">
-            <mxRectangle width="248" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-175" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-171">
-          <mxGeometry x="663" width="237" height="30" as="geometry">
-            <mxRectangle width="237" height="30" as="alternateBounds" />
-          </mxGeometry>
+          <mxGeometry x="-450" y="1690" width="940" height="480" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-5" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="30" width="900" height="30" as="geometry" />
+          <mxGeometry width="940" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-6" value="&#xa;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;&lt;table style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; width: 769pt;&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;1027&quot;&gt;&lt;colgroup style=&quot;border-color: var(--border-color);&quot;&gt;&lt;col style=&quot;border-color: var(--border-color); width: 73pt;&quot; width=&quot;97&quot;&gt;&lt;/colgroup&gt;&lt;colgroup style=&quot;border-color: var(--border-color);&quot;&gt;&lt;col style=&quot;border-color: var(--border-color);&quot; width=&quot;310&quot; span=&quot;3&quot;&gt;&lt;/colgroup&gt;&lt;tbody style=&quot;border-color: var(--border-color);&quot;&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 31.95pt;&quot; height=&quot;42&quot;&gt;&lt;td style=&quot;border-color: var(--border-color); height: 31.95pt; width: 73pt;&quot; height=&quot;42&quot; class=&quot;xl66&quot; width=&quot;97&quot;&gt;　&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none; width: 232pt;&quot; class=&quot;xl67&quot; width=&quot;310&quot;&gt;ホスト型&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;(Virtual Box)&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none; width: 232pt;&quot; class=&quot;xl67&quot; width=&quot;310&quot;&gt;ハイパーバイザー型&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;(VMWare/Hyper-V)&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none; width: 232pt;&quot; class=&quot;xl67&quot; width=&quot;310&quot;&gt;コンテナ型&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;(Docker/Podman)&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;仮想化のメリット&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none;&quot; colspan=&quot;3&quot; class=&quot;xl69&quot;&gt;隔離されたアプリケーション実行環境を提供する。また、実行イメージのスナップショットをパッケージとしてファイルにして保存できる。&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;仮想イメージ&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none;&quot; colspan=&quot;2&quot; class=&quot;xl70&quot;&gt;アプリケーションに加えて仮想マシン・OSの実行イメージを持つ必要がある。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl71&quot;&gt;アプリケーションとOSの一部の実行イメージを持つ必要がある。&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;デプロイ&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;デプロイするサイズが大きい。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;デプロイするサイズが大きい。※thinなら抑えられる。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl71&quot;&gt;デプロイするサイズが小さい。コンテナの実使用量のみ。&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;構築時間&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right: 0.5pt solid black; border-bottom-color: ; border-left-color: ;&quot; colspan=&quot;2&quot; class=&quot;xl72&quot;&gt;CPU/メモリ/ディスクサイズの設定からOS・アプリケーションのインストールと設定が必要となり時間がかかる。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl71&quot;&gt;ベースイメージを利用すればアプリケーションの設定のみ。&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;起動・停止時間&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;ホスト上で動作している仮想環境のため遅い。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;ハイパーバイザー上で動作しているため、ホスト型より早い。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl71&quot;&gt;OS部がホストOSと共有しているため早い。&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;異なるOS環境&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none;&quot; colspan=&quot;2&quot; class=&quot;xl71&quot;&gt;仮想サーバ毎に異なるOSを構築可能。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;Linux以外のOSで構成できない。&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;リソース&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;多い。※仮想化ソフトウェアと仮想サーバ毎のリソースが必要&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl70&quot;&gt;多い。※仮想サーバ毎のリソースが必要。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl71&quot;&gt;少ない。※アプリケーションとOSの一部のリソースが必要&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-color: var(--border-color); height: 12.6pt;&quot; height=&quot;17&quot;&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left-color: ; height: 12.6pt;&quot; height=&quot;17&quot; class=&quot;xl68&quot;&gt;強み&lt;/td&gt;&lt;td style=&quot;border-top-color: ; border-right-color: ; border-bottom-color: ; border-left: none;&quot; colspan=&quot;2&quot; class=&quot;xl69&quot;&gt;構成の自由度が高い。&lt;/td&gt;&lt;td style=&quot;border-top: none; border-right-color: ; border-bottom-color: ; border-left: none;&quot; class=&quot;xl69&quot;&gt;軽量で可搬性が高い。&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&#xa;&#xa;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#B3B3B3;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-5" vertex="1">
-          <mxGeometry width="149" height="30" as="geometry">
-            <mxRectangle width="149" height="30" as="alternateBounds" />
+          <mxGeometry width="130" height="30" as="geometry">
+            <mxRectangle width="130" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-7" value="ハイパーバイザー型仮想化" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-5" vertex="1">
-          <mxGeometry x="149" width="266" height="30" as="geometry">
-            <mxRectangle width="266" height="30" as="alternateBounds" />
+          <mxGeometry x="130" width="270" height="30" as="geometry">
+            <mxRectangle width="270" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-8" value="ホスト型仮想化" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-5" vertex="1">
-          <mxGeometry x="415" width="248" height="30" as="geometry">
-            <mxRectangle width="248" height="30" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="30" as="geometry">
+            <mxRectangle width="270" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-9" value="コンテナ型仮想化" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-5" vertex="1">
-          <mxGeometry x="663" width="237" height="30" as="geometry">
-            <mxRectangle width="237" height="30" as="alternateBounds" />
+          <mxGeometry x="670" width="270" height="30" as="geometry">
+            <mxRectangle width="270" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-15" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="60" width="900" height="50" as="geometry" />
+          <mxGeometry y="30" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-16" value="仮想イメージ" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-15" vertex="1">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-17" value="サーバの実容量分のサイズが&lt;br&gt;必要なため大きい" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;colspan=2;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-15" vertex="1">
-          <mxGeometry x="149" width="514" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="540" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-18" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-15" vertex="1" visible="0">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-19" value="OS以外の容量のみで小さい" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-15" vertex="1">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-25" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="110" width="900" height="50" as="geometry" />
+          <mxGeometry y="80" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-26" value="構築時間" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-25" vertex="1">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-27" value="CPU/メモリ/ディスクサイズの設定からOS・アプリケーションの&lt;br&gt;インストールと設定が必要となり時間がかかる" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;colspan=2;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-25" vertex="1">
-          <mxGeometry x="149" width="514" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="540" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-28" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-25" vertex="1" visible="0">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-29" value="定義ファイルにより同一構成の&lt;br&gt;コンテナを素早く作成できる" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-25" vertex="1">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-35" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="160" width="900" height="50" as="geometry" />
+          <mxGeometry y="130" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-36" value="対象OS" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-37" value="仮想サーバ毎に異なるOSを&lt;br&gt;構築することができる" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;colspan=2;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
-          <mxGeometry x="149" width="514" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="540" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-38" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1" visible="0">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1sAGVXY1Umkc6Cw3v1CU-39" value="Linuxディストリビューションしかインストールすることができない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+        <mxCell id="1sAGVXY1Umkc6Cw3v1CU-39" value="Linuxディストリビューションしか&lt;br&gt;インストールすることができない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-35" vertex="1">
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-40" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="210" width="900" height="50" as="geometry" />
+          <mxGeometry y="180" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-41" value="リソース" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-40" vertex="1">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-42" value="仮想サーバ毎のリソースが必要" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-40" vertex="1">
-          <mxGeometry x="149" width="266" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-43" value="仮想化ソフトと仮想サーバ毎の&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;リソースが必要" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-40" vertex="1">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-44" value="アプリケーションのリソースのみ" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-40" vertex="1">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-30" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="260" width="900" height="50" as="geometry" />
+          <mxGeometry y="230" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-31" value="起動・停止時間" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-32" value="ハイパーバイザー上で動作する&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;ため、ホスト型よりは早い" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry x="149" width="266" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-33" value="ホスト上の仮想化ソフトで&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;動作しているため遅い" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-34" value="ホストOSのサービスとして&lt;br&gt;動いているため速い" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-30" vertex="1">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-45" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" parent="1sAGVXY1Umkc6Cw3v1CU-4" vertex="1">
-          <mxGeometry y="310" width="900" height="50" as="geometry" />
+          <mxGeometry y="280" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-46" value="カスタマイズ性" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" parent="1sAGVXY1Umkc6Cw3v1CU-45" vertex="1">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-47" value="通常のサーバと同じように扱えるため&lt;br&gt;細かくカスタマイズが可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;colspan=2;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-45" vertex="1">
-          <mxGeometry x="149" width="514" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="540" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-48" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" parent="1sAGVXY1Umkc6Cw3v1CU-45" vertex="1" visible="0">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1sAGVXY1Umkc6Cw3v1CU-49" value="稼働後のカスタマイズは&lt;br&gt;それなりに知識が必要となる" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" parent="1sAGVXY1Umkc6Cw3v1CU-45" vertex="1">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-191" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1sAGVXY1Umkc6Cw3v1CU-4">
+          <mxGeometry y="330" width="940" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-192" value="メンテナンス性" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-191">
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-193" value="管理ツールなどを利用することにより、複数サーバの保守・運用が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-191">
+          <mxGeometry x="130" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-194" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-191">
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-195" value="管理ツールなどを利用することにより、複数サーバの保守・運用が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-191">
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-160" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1sAGVXY1Umkc6Cw3v1CU-4">
-          <mxGeometry y="360" width="900" height="50" as="geometry" />
+          <mxGeometry y="380" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-161" value="サーバ移行" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-160">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-162" value="同じ製品であれば、イメージによる&lt;br&gt;移行が可能だがサイズが大きいため大変" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;rowspan=1;colspan=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-160">
-          <mxGeometry x="149" width="514" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="540" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-163" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" vertex="1" visible="0" parent="Nek6fTRxLABKXPJoWp9Q-160">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-164" value="コンテナイメージをアップロード・ダウンロードするだけ" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-160">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-164" value="コンテナイメージをアップロード・&lt;br&gt;ダウンロードするだけ移行可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-160">
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-166" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1sAGVXY1Umkc6Cw3v1CU-4">
-          <mxGeometry y="410" width="900" height="50" as="geometry" />
+          <mxGeometry y="430" width="940" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-167" value="仮想化の入れ子" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#E6E6E6;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
-          <mxGeometry width="149" height="50" as="geometry">
-            <mxRectangle width="149" height="50" as="alternateBounds" />
+          <mxGeometry width="130" height="50" as="geometry">
+            <mxRectangle width="130" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-168" value="仮想サーバの中に仮想サーバを&lt;br&gt;作成することが可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=15;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
-          <mxGeometry x="149" width="266" height="50" as="geometry">
-            <mxRectangle width="266" height="50" as="alternateBounds" />
+          <mxGeometry x="130" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-169" value="入れ子はできない&lt;br&gt;※できるソフトもあるかもしれない" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#FFE599;top=0;left=0;bottom=0;right=0;pointerEvents=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Helvetica;fontSize=13;align=center;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
-          <mxGeometry x="415" width="248" height="50" as="geometry">
-            <mxRectangle width="248" height="50" as="alternateBounds" />
+          <mxGeometry x="400" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Nek6fTRxLABKXPJoWp9Q-170" value="サーバの中でサービスとして動作しているため入れ子が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
-          <mxGeometry x="663" width="237" height="50" as="geometry">
-            <mxRectangle width="237" height="50" as="alternateBounds" />
+        <mxCell id="Nek6fTRxLABKXPJoWp9Q-170" value="サーバの中でサービスとして&lt;br&gt;動作しているため入れ子が可能" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#D5E8D4;top=0;left=0;bottom=0;right=0;pointerEvents=1;hachureGap=4;fontFamily=Helvetica;fontSize=15;align=center;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="Nek6fTRxLABKXPJoWp9Q-166">
+          <mxGeometry x="670" width="270" height="50" as="geometry">
+            <mxRectangle width="270" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Nek6fTRxLABKXPJoWp9Q-56" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;hachureGap=4;fontFamily=Helvetica;fontSize=20;swimlaneLine=0;" vertex="1" parent="1">
