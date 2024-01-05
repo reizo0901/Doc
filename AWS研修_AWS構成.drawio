@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-05T05:20:03.300Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="ruRei2VQEMZQHx4Oizv8" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-05T05:24:35.072Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="J87JYIQ3ZEQVwV8fkdRN" version="22.1.16" type="github">
   <diagram id="sJy378vkBmu3zpo50ejq" name="ページ1">
     <mxGraphModel dx="1226" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -171,6 +171,33 @@
         </mxCell>
         <mxCell id="bA1XOdzTZ2kSw8sosjhB-32" value="※通信の許可設定&lt;br&gt;port:22(SSH) /&amp;nbsp;port:80(HTTP)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="517.03" y="520" width="167.97" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-33" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="552.3599999999999" as="sourcePoint" />
+            <mxPoint x="201.11" y="552" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-38" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.95;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.17;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="bA1XOdzTZ2kSw8sosjhB-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="177" y="482" as="sourcePoint" />
+            <mxPoint x="200" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-40" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="bA1XOdzTZ2kSw8sosjhB-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="452" as="sourcePoint" />
+            <mxPoint x="201.11" y="552" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-44" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Laptop.svg;" vertex="1" parent="1">
+          <mxGeometry x="120" y="425.98999999999995" width="63.11" height="64.01" as="geometry" />
+        </mxCell>
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-45" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_with_Server.svg;" vertex="1" parent="1">
+          <mxGeometry x="87.60000000000002" y="516.24" width="62.400000000000006" height="62.400000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="bA1XOdzTZ2kSw8sosjhB-46" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Tablet.svg;" vertex="1" parent="1">
+          <mxGeometry x="235.95" y="391.5" width="27" height="57" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
