@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T07:38:47.859Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="4RtLcHICfbcsI4JAUk_V" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T08:11:21.990Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="JE_xo3uReO0hr3gdl67l" version="22.1.16" type="github">
   <diagram name="ページ1" id="IJRU0Sit2d09EKt1Dg38">
-    <mxGraphModel dx="719" dy="398" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="242" dy="134" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -64,12 +64,6 @@
         <mxCell id="bYI_Bjf83IYMnO6PkBGH-29" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;glass=1;" vertex="1" parent="bYI_Bjf83IYMnO6PkBGH-43">
           <mxGeometry width="60" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="bYI_Bjf83IYMnO6PkBGH-32" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/ionicons-fill-vol-2/512/logo-docker-128.png" vertex="1" parent="bYI_Bjf83IYMnO6PkBGH-43">
-          <mxGeometry x="9" y="4" width="42" height="42" as="geometry" />
-        </mxCell>
-        <mxCell id="bYI_Bjf83IYMnO6PkBGH-40" value="Docker" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=1" vertex="1" parent="bYI_Bjf83IYMnO6PkBGH-43">
-          <mxGeometry y="37" width="60" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="bYI_Bjf83IYMnO6PkBGH-44" value="" style="group" vertex="1" connectable="0" parent="1">
           <mxGeometry x="50" y="380" width="60" height="67" as="geometry" />
         </mxCell>
@@ -81,6 +75,18 @@
         </mxCell>
         <mxCell id="bYI_Bjf83IYMnO6PkBGH-41" value="NGINX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=1" vertex="1" parent="bYI_Bjf83IYMnO6PkBGH-44">
           <mxGeometry y="37" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bYI_Bjf83IYMnO6PkBGH-32" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/ionicons-fill-vol-2/512/logo-docker-128.png" vertex="1" parent="1">
+          <mxGeometry x="363" y="460" width="42" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="bYI_Bjf83IYMnO6PkBGH-40" value="Docker" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="354" y="493" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bYI_Bjf83IYMnO6PkBGH-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bYI_Bjf83IYMnO6PkBGH-32" target="bYI_Bjf83IYMnO6PkBGH-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bYI_Bjf83IYMnO6PkBGH-50" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="400" width="40" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
