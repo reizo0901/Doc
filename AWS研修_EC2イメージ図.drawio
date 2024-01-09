@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T05:30:26.352Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="XQuNbVhGg0MsyC_I8Ng6" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T05:31:52.892Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="XCX_rFpazH1is5SCRACg" version="22.1.16" type="github">
   <diagram name="ページ1" id="ntLUQj3zXpR2GrfyCho_">
-    <mxGraphModel dx="1226" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,7 +8,7 @@
           <mxGeometry x="39.44" y="400" width="740" height="650" as="geometry" />
         </mxCell>
         <mxCell id="FsDxIWnZCm4KXBWtry0k-43" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="500" width="210" height="520" as="geometry" />
+          <mxGeometry x="550" y="510" width="210" height="510" as="geometry" />
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-35" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#d5e8d4;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="584.34" y="829.5" width="170" height="40" as="geometry" />
@@ -245,6 +245,9 @@
         </mxCell>
         <mxCell id="FsDxIWnZCm4KXBWtry0k-42" value="※セキュリティグループでHTTPとSSHを許可する必要があります。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="229.26" y="366" width="384.74" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FsDxIWnZCm4KXBWtry0k-44" value="ディレクトリ構成" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="550.34" y="485" width="209.66" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
