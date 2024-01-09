@@ -1,138 +1,148 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T02:13:37.053Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="-XO_C3MOJcg8cUCZTHZS" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T02:23:40.068Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="tj39hf9ai_kRiTNvAkJU" version="22.1.16" type="github">
   <diagram name="ページ1" id="qkXRaQuu1xS7nbxDsZPN">
-    <mxGraphModel dx="1042" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="868" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="bLfK2yB55-KlpLb1q896-71" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#333333;shape=mxgraph.azure.user;" parent="1" vertex="1">
-          <mxGeometry x="76.25" y="310" width="47.5" height="50" as="geometry" />
+          <mxGeometry x="76.25" y="325" width="47.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="bLfK2yB55-KlpLb1q896-73" value="(Request)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="123.75" y="314.5" width="70" height="30" as="geometry" />
+          <mxGeometry x="123.75" y="329.5" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="bLfK2yB55-KlpLb1q896-74" value="(Response)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="103" y="469.5" width="77" height="21" as="geometry" />
+          <mxGeometry x="103" y="479" width="77" height="21" as="geometry" />
         </mxCell>
         <mxCell id="bLfK2yB55-KlpLb1q896-85" value="ユーザ&lt;br&gt;(画面閲覧者)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="50" y="361" width="100" height="30" as="geometry" />
+          <mxGeometry x="50" y="376" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="180" y="269.5" width="220" height="200" as="geometry" />
+          <mxGeometry x="180" y="269.5" width="220" height="220.5" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-30" value="&amp;nbsp; Controller" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="180" y="269.5" width="220" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-49" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="460" y="379.5" width="220" height="110" as="geometry" />
+          <mxGeometry x="460" y="394.5" width="220" height="125.5" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-50" value="&amp;nbsp; View" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="460" y="379.5" width="220" height="20" as="geometry" />
+          <mxGeometry x="460" y="390" width="220" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-53" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="460" y="250" width="220" height="110" as="geometry" />
+          <mxGeometry x="460" y="250" width="220" height="130" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-54" value="&amp;nbsp; Models" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="460" y="250" width="220" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-52" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ff8000;" vertex="1" parent="1">
-          <mxGeometry x="200" y="310" width="170" height="60" as="geometry" />
+          <mxGeometry x="200" y="325" width="170" height="60" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-63" value="&amp;nbsp; ユーザからの入力を処理し、&lt;br&gt;&amp;nbsp; ModelとViewを制御します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="200" y="330" width="170" height="40" as="geometry" />
+          <mxGeometry x="200" y="345" width="170" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="7YtSxur7-LAXrawJJjc7-51" value="urls.py" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="200" y="310" width="170" height="20" as="geometry" />
+        <mxCell id="7YtSxur7-LAXrawJJjc7-51" value="&amp;nbsp; urls.py" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="200" y="325" width="170" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-65" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ff8000;" vertex="1" parent="1">
-          <mxGeometry x="200" y="400.25" width="170" height="60" as="geometry" />
+          <mxGeometry x="200" y="415.25" width="170" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7YtSxur7-LAXrawJJjc7-66" value="views.py" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="200" y="400.25" width="170" height="20" as="geometry" />
+        <mxCell id="7YtSxur7-LAXrawJJjc7-66" value="&amp;nbsp; views.py" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="200" y="415.25" width="170" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="7YtSxur7-LAXrawJJjc7-69">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="370" y="410" as="sourcePoint" />
+            <mxPoint x="370" y="425" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="370" y="410" />
-              <mxPoint x="420" y="410" />
-              <mxPoint x="420" y="305" />
+              <mxPoint x="370" y="425" />
+              <mxPoint x="420" y="425" />
+              <mxPoint x="420" y="320" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-67" value="&amp;nbsp; ユーザからの入力を処理し、&lt;br&gt;&amp;nbsp; ModelとViewを制御します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="200" y="420.25" width="170" height="40" as="geometry" />
+          <mxGeometry x="200" y="435.25" width="170" height="40" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-68" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ff8000;" vertex="1" parent="1">
-          <mxGeometry x="480" y="289.5" width="170" height="60" as="geometry" />
+          <mxGeometry x="480" y="304.5" width="170" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7YtSxur7-LAXrawJJjc7-69" value="model.py" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="480" y="289.5" width="170" height="20" as="geometry" />
+        <mxCell id="7YtSxur7-LAXrawJJjc7-69" value="&amp;nbsp; model.py" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="480" y="304.5" width="170" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="7YtSxur7-LAXrawJJjc7-70" target="7YtSxur7-LAXrawJJjc7-67">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="440" y="330" />
-              <mxPoint x="440" y="430" />
+              <mxPoint x="440" y="345" />
+              <mxPoint x="440" y="445" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-70" value="&amp;nbsp; データベースデータの&lt;br&gt;&amp;nbsp; 管理・入出力をします。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="480" y="309.5" width="150" height="40" as="geometry" />
+          <mxGeometry x="480" y="324.5" width="150" height="40" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-71" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ff8000;" vertex="1" parent="1">
-          <mxGeometry x="480" y="419" width="170" height="60" as="geometry" />
+          <mxGeometry x="476" y="450" width="170" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7YtSxur7-LAXrawJJjc7-72" value="templates" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="480" y="419" width="170" height="20" as="geometry" />
+        <mxCell id="7YtSxur7-LAXrawJJjc7-72" value="&amp;nbsp; templates" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="476" y="449.5" width="170" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7YtSxur7-LAXrawJJjc7-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="7YtSxur7-LAXrawJJjc7-73">
+        <mxCell id="7YtSxur7-LAXrawJJjc7-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7YtSxur7-LAXrawJJjc7-73">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="100" y="400" as="targetPoint" />
+            <mxPoint x="100" y="410.0000000000001" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="430" y="470" />
-              <mxPoint x="430" y="490" />
-              <mxPoint x="100" y="490" />
+              <mxPoint x="440" y="490" />
+              <mxPoint x="440" y="500" />
+              <mxPoint x="101" y="500" />
+              <mxPoint x="101" y="410" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-73" value="&amp;nbsp; ユーザが見ることができる&lt;br&gt;&amp;nbsp; 画面を表示します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="480" y="439" width="170" height="40" as="geometry" />
+          <mxGeometry x="476" y="469.5" width="170" height="40" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-80" value="" style="fillColor=#666666;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.database;" vertex="1" parent="1">
-          <mxGeometry x="720" y="285" width="70" height="70" as="geometry" />
+          <mxGeometry x="720" y="300" width="70" height="70" as="geometry" />
         </mxCell>
         <mxCell id="bLfK2yB55-KlpLb1q896-72" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" edge="1" target="7YtSxur7-LAXrawJJjc7-63">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="130" y="339" as="sourcePoint" />
-            <mxPoint x="170" y="334.5" as="targetPoint" />
+            <mxPoint x="130" y="354" as="sourcePoint" />
+            <mxPoint x="170" y="349.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-81" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7YtSxur7-LAXrawJJjc7-63" target="7YtSxur7-LAXrawJJjc7-66">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="78" y="441" as="sourcePoint" />
-            <mxPoint x="200" y="440" as="targetPoint" />
+            <mxPoint x="78" y="456" as="sourcePoint" />
+            <mxPoint x="200" y="455" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-93" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="720" y="332" as="sourcePoint" />
-            <mxPoint x="650" y="332" as="targetPoint" />
+            <mxPoint x="720" y="347" as="sourcePoint" />
+            <mxPoint x="650" y="347" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-94" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="650" y="307" as="sourcePoint" />
-            <mxPoint x="720" y="307" as="targetPoint" />
+            <mxPoint x="650" y="322" as="sourcePoint" />
+            <mxPoint x="720" y="322" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-95" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;entryX=0;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="370" y="448.76" as="sourcePoint" />
-            <mxPoint x="479.9999999999999" y="448.76" as="targetPoint" />
+            <mxPoint x="370" y="463.76" as="sourcePoint" />
+            <mxPoint x="479.9999999999999" y="463.76" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-101" value="データベース" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="715" y="349.5" width="80" height="30" as="geometry" />
+          <mxGeometry x="715" y="364.5" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7YtSxur7-LAXrawJJjc7-102" value="アプリケーション内のデータを&lt;br&gt;管理する役割を持ちます。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="272" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7YtSxur7-LAXrawJJjc7-103" value="ユーザが見ることができる画面を&lt;br&gt;表示する役割を持ちます。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="476" y="407" width="204" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7YtSxur7-LAXrawJJjc7-104" value="ユーザからの入力を処理し、Modelと&lt;br&gt;Viewを制御する役割を持ちます。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="193.75" y="292" width="206.25" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
