@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T04:37:01.986Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="l7A33h6uqRTotkF8D3OI" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T04:38:19.535Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="d_8AEuKfCv-e77vTcwX3" version="22.1.16" type="github">
   <diagram name="ページ1" id="ntLUQj3zXpR2GrfyCho_">
-    <mxGraphModel dx="1226" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1489" dy="824" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -208,6 +208,9 @@
         </mxCell>
         <mxCell id="FsDxIWnZCm4KXBWtry0k-13" value="DBサーバとして動作します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="98.07999999999998" y="910" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FsDxIWnZCm4KXBWtry0k-14" value="AWS VPC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry x="51.11" y="330" width="738.89" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
