@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T04:44:43.265Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="cltIJipjIPXtcQwv7nI7" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T04:46:17.924Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="dfdDSXm93iMJhJLSmhQ6" version="22.1.16" type="github">
   <diagram name="ページ1" id="ntLUQj3zXpR2GrfyCho_">
     <mxGraphModel dx="2053" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -91,8 +91,8 @@
             <mxPoint x="175" y="629" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-51" value="port:8000(uWSGI)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="187" y="634" width="133" height="30" as="geometry" />
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-51" value="port:8000(NGINX⇔uWSGI)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="187" y="634" width="193" height="30" as="geometry" />
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-53" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/etc/nginx/conf.d&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;/etc/nginx/uwsgi_params&lt;/div&gt;&lt;div&gt;/static&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
           <mxGeometry x="238.92000000000002" y="526.75" width="160" height="55" as="geometry" />
@@ -109,8 +109,8 @@
             <mxPoint x="175" y="850" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-52" value="port:5432(DB)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="187" y="856" width="103" height="30" as="geometry" />
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-52" value="port:5432(Django⇔PostgreSQL)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="187" y="856" width="233" height="30" as="geometry" />
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-27" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="245.66" y="726" width="170" height="115" as="geometry" />
