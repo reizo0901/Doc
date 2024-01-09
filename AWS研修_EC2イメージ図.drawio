@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T04:16:00.096Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="eZHrcLwxdEXmBWFHt2dJ" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T04:16:26.336Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="3rUGIFFC1YAWrHPUVUOY" version="22.1.16" type="github">
   <diagram name="ページ1" id="ntLUQj3zXpR2GrfyCho_">
     <mxGraphModel dx="1042" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -100,7 +100,7 @@
         <mxCell id="PO0unFIX-wsbpKIqG6Li-66" value="&lt;div&gt;/containers&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/django&lt;/div&gt;&amp;nbsp;│├/djangoapp&lt;br&gt;&amp;nbsp;││├/db.sqllit3&lt;br&gt;&amp;nbsp;││├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├settins.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└wsgi.py&lt;br&gt;&amp;nbsp;││├/static&lt;br&gt;&amp;nbsp;│││└/admin&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; ├/css&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; ├/img&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; └/js&lt;br&gt;&amp;nbsp;││└/todoapp&lt;br&gt;&amp;nbsp;││ ├admin.py&lt;br&gt;&amp;nbsp;││ ├apps.py&lt;br&gt;&amp;nbsp;││ ├/migrations&lt;br&gt;&amp;nbsp;││ ├models.py&lt;br&gt;&amp;nbsp;││ ├tests.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││ ├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││ └views.py&lt;br&gt;&lt;div&gt;&amp;nbsp;│├/startup&lt;/div&gt;&lt;div&gt;&amp;nbsp;││├setuser.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└startup.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/uwsgi&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└wusgi.ini&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├Dockerfile&lt;/div&gt;&lt;div&gt;&amp;nbsp;│└requirements.txt&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/nginx&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/conf&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└nginx.conf&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;│└uwsgi_params&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;└docker-compose.yml&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
           <mxGeometry x="516" y="469" width="200" height="491" as="geometry" />
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-67" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.663;exitY=-0.002;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=3;" parent="1" edge="1">
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-67" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.663;exitY=-0.002;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="540.99407" y="418.74" as="sourcePoint" />
             <mxPoint x="540" y="360" as="targetPoint" />
@@ -133,13 +133,13 @@
         <mxCell id="PO0unFIX-wsbpKIqG6Li-45" value="Docker" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" parent="1" vertex="1">
           <mxGeometry x="71.11" y="424" width="68.89" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-47" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" edge="1">
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-47" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="175" y="669" as="sourcePoint" />
             <mxPoint x="175" y="629" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-49" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" edge="1">
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-49" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="175" y="469" as="sourcePoint" />
             <mxPoint x="175" y="360" as="targetPoint" />
@@ -160,7 +160,7 @@
         <mxCell id="FsDxIWnZCm4KXBWtry0k-5" value="&amp;nbsp; 仮想コンテナ(Django)" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="90" y="670" width="340" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-48" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" edge="1">
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-48" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="175" y="859" as="sourcePoint" />
             <mxPoint x="175" y="819" as="targetPoint" />
