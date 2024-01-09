@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T02:29:54.413Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="THvDPgMFLFV4GwfTsj49" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T02:30:57.715Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="FHsO9BlwfYKJCpeF65JF" version="22.1.16" type="github">
   <diagram name="ページ1" id="qkXRaQuu1xS7nbxDsZPN">
     <mxGraphModel dx="868" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="bLfK2yB55-KlpLb1q896-71" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#333333;shape=mxgraph.azure.user;" parent="1" vertex="1">
+        <mxCell id="bLfK2yB55-KlpLb1q896-71" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#666666;shape=mxgraph.azure.user;fontColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="76.25" y="325" width="47.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="bLfK2yB55-KlpLb1q896-73" value="リクエスト" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#006600;" parent="1" vertex="1">
