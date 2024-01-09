@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T02:10:50.909Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="Jc_6REpW_1AvIzY2rdM4" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T02:11:55.360Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="TIym8HizGEEDkvB8te7y" version="22.1.16" type="github">
   <diagram name="ページ1" id="qkXRaQuu1xS7nbxDsZPN">
-    <mxGraphModel dx="719" dy="398" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -192,7 +192,7 @@
           <mxGeometry x="480" y="1069" width="170" height="40" as="geometry" />
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-80" value="" style="fillColor=#666666;verticalLabelPosition=bottom;sketch=0;html=1;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.capability.database;" vertex="1" parent="1">
-          <mxGeometry x="740" y="915" width="70" height="70" as="geometry" />
+          <mxGeometry x="720" y="915" width="70" height="70" as="geometry" />
         </mxCell>
         <mxCell id="bLfK2yB55-KlpLb1q896-72" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" edge="1" target="7YtSxur7-LAXrawJJjc7-63">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -208,14 +208,14 @@
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-93" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="736" y="961.88" as="sourcePoint" />
+            <mxPoint x="720" y="962" as="sourcePoint" />
             <mxPoint x="650" y="962" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-94" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="650" y="937" as="sourcePoint" />
-            <mxPoint x="738" y="937" as="targetPoint" />
+            <mxPoint x="720" y="937" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="7YtSxur7-LAXrawJJjc7-95" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;entryX=0;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
@@ -223,6 +223,9 @@
             <mxPoint x="370" y="1078.76" as="sourcePoint" />
             <mxPoint x="479.9999999999999" y="1078.76" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="7YtSxur7-LAXrawJJjc7-101" value="データベース" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="979.5" width="80" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
