@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-09T04:24:08.353Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="HX5wliAxvOV6CK3mffcB" version="22.1.16" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-09T04:30:12.690Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="8C-YXcrm1iCNYqw5y-Jt" version="22.1.16" type="github">
   <diagram name="ページ1" id="ntLUQj3zXpR2GrfyCho_">
     <mxGraphModel dx="1226" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -76,9 +76,6 @@
         <mxCell id="PO0unFIX-wsbpKIqG6Li-35" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#d5e8d4;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="594" y="808" width="170" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-36" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#f8cecc;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="594" y="618" width="146" height="75" as="geometry" />
-        </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-46" value="EC2インスタンス" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#000000;fontSize=16;" parent="1" vertex="1">
           <mxGeometry x="353.33000000000004" y="393" width="134.45" height="30" as="geometry" />
         </mxCell>
@@ -108,9 +105,9 @@
             <mxPoint x="504" y="952" as="sourcePoint" />
             <mxPoint x="410.8399999999999" y="558" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="480" y="952" />
-              <mxPoint x="470" y="735" />
-              <mxPoint x="490" y="524" />
+              <mxPoint x="510" y="956" />
+              <mxPoint x="500" y="730" />
+              <mxPoint x="520" y="550" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -119,41 +116,36 @@
             <mxPoint x="589" y="927" as="sourcePoint" />
             <mxPoint x="410.8399999999999" y="538.75" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="480" y="935" />
-              <mxPoint x="520" y="585" />
-              <mxPoint x="510" y="525" />
+              <mxPoint x="530" y="930" />
+              <mxPoint x="520" y="730" />
+              <mxPoint x="540" y="530" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-57" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#DBB8B6;strokeWidth=4;startArrow=classic;startFill=1;" parent="1" source="PO0unFIX-wsbpKIqG6Li-36" edge="1">
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-57" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#DBB8B6;strokeWidth=4;startArrow=classic;startFill=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="350" y="644" as="sourcePoint" />
+            <mxPoint x="590" y="629" as="sourcePoint" />
             <mxPoint x="410.8399999999999" y="573" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="440" y="652" />
-              <mxPoint x="510" y="585" />
-              <mxPoint x="490" y="555" />
+              <mxPoint x="470" y="629" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-58" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#dab8b7;strokeWidth=4;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="510" y="651" as="sourcePoint" />
+            <mxPoint x="576" y="630" as="sourcePoint" />
             <mxPoint x="414" y="788" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="440" y="644" />
-              <mxPoint x="480" y="754" />
+              <mxPoint x="480" y="630" />
+              <mxPoint x="480" y="690" />
+              <mxPoint x="480" y="790" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-59" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#C3D4C2;strokeWidth=4;startArrow=classic;startFill=1;" parent="1" edge="1">
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-59" value="" style="curved=1;endArrow=classic;html=1;rounded=0;strokeColor=#C3D4C2;strokeWidth=4;startArrow=classic;startFill=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="590" y="817" as="sourcePoint" />
-            <mxPoint x="414" y="816.5" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="480" y="824" />
-              <mxPoint x="470" y="788" />
-            </Array>
+            <mxPoint x="416" y="819" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-60" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#CABFCF;strokeWidth=3;startArrow=classic;startFill=1;endFill=1;" parent="1" edge="1">
@@ -161,8 +153,7 @@
             <mxPoint x="589" y="861" as="sourcePoint" />
             <mxPoint x="414" y="831" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="480" y="874" />
-              <mxPoint x="470" y="804" />
+              <mxPoint x="480" y="870" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -180,9 +171,6 @@
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-65" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#e1d5e7;strokeColor=none;" parent="PO0unFIX-wsbpKIqG6Li-61" vertex="1">
           <mxGeometry y="314" width="170" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="PO0unFIX-wsbpKIqG6Li-66" value="&lt;div&gt;/containers&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/django&lt;/div&gt;&amp;nbsp;│├/djangoapp&lt;br&gt;&amp;nbsp;││├/db.sqllit3&lt;br&gt;&amp;nbsp;││├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├settins.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└wsgi.py&lt;br&gt;&amp;nbsp;││├/static&lt;br&gt;&amp;nbsp;│││└/admin&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; ├/css&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; ├/img&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; └/js&lt;br&gt;&amp;nbsp;││└/todoapp&lt;br&gt;&amp;nbsp;││ ├admin.py&lt;br&gt;&amp;nbsp;││ ├apps.py&lt;br&gt;&amp;nbsp;││ ├/migrations&lt;br&gt;&amp;nbsp;││ ├models.py&lt;br&gt;&amp;nbsp;││ ├tests.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││ ├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││ └views.py&lt;br&gt;&lt;div&gt;&amp;nbsp;│├/startup&lt;/div&gt;&lt;div&gt;&amp;nbsp;││├setuser.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└startup.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/uwsgi&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└wusgi.ini&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├Dockerfile&lt;/div&gt;&lt;div&gt;&amp;nbsp;│└requirements.txt&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/nginx&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/conf&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└nginx.conf&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;│└uwsgi_params&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;└docker-compose.yml&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
-          <mxGeometry x="570" y="498" width="200" height="491" as="geometry" />
         </mxCell>
         <mxCell id="PO0unFIX-wsbpKIqG6Li-67" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=3;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -204,6 +192,12 @@
         </mxCell>
         <mxCell id="FsDxIWnZCm4KXBWtry0k-10" value="SSH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="570" y="448.5" width="128.98359049718349" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-36" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#f8cecc;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="594" y="618" width="146" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="PO0unFIX-wsbpKIqG6Li-66" value="&lt;div&gt;/containers&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/django&lt;/div&gt;&amp;nbsp;│├/djangoapp&lt;br&gt;&amp;nbsp;││├/db.sqllit3&lt;br&gt;&amp;nbsp;││├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├settins.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└wsgi.py&lt;br&gt;&amp;nbsp;││├/static&lt;br&gt;&amp;nbsp;│││└/admin&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; ├/css&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; ├/img&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││&amp;nbsp; └/js&lt;br&gt;&amp;nbsp;││└/todoapp&lt;br&gt;&amp;nbsp;││ ├admin.py&lt;br&gt;&amp;nbsp;││ ├apps.py&lt;br&gt;&amp;nbsp;││ ├/migrations&lt;br&gt;&amp;nbsp;││ ├models.py&lt;br&gt;&amp;nbsp;││ ├tests.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││ ├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││ └views.py&lt;br&gt;&lt;div&gt;&amp;nbsp;│├/startup&lt;/div&gt;&lt;div&gt;&amp;nbsp;││├setuser.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└startup.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/uwsgi&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└wusgi.ini&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├Dockerfile&lt;/div&gt;&lt;div&gt;&amp;nbsp;│└requirements.txt&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/nginx&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/conf&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└nginx.conf&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;│└uwsgi_params&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;└docker-compose.yml&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
+          <mxGeometry x="570" y="498" width="200" height="491" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
