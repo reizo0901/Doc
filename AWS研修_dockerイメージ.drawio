@@ -1,9 +1,18 @@
-<mxfile host="app.diagrams.net" modified="2024-01-10T02:27:55.919Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="sLdipGn4bfjy4FqAbO9n" version="22.1.17" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-10T02:28:36.808Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="zOKUsofv5Nh0ZtKYmlsh" version="22.1.17" type="github">
   <diagram name="ページ1" id="IJRU0Sit2d09EKt1Dg38">
     <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="bYI_Bjf83IYMnO6PkBGH-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="160" width="250" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="bYI_Bjf83IYMnO6PkBGH-12" value="&amp;nbsp; Local Machine" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="300" y="160" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="XCfuhhf9zU3BOSTOOajx-180" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeColor=none;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="322" y="320" width="70" height="80" as="geometry" />
+        </mxCell>
         <mxCell id="XCfuhhf9zU3BOSTOOajx-44" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="430" width="220" height="310" as="geometry" />
         </mxCell>
@@ -21,12 +30,6 @@
         </mxCell>
         <mxCell id="bYI_Bjf83IYMnO6PkBGH-10" value="Docker HUBには、公式Dockerイメージを含む、様々なDockerイメージが公開・共有されています。&lt;br&gt;またGitHubのように共同作業を行ったり、世界中のユーザが作成したイメージが公開されています。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="300" width="220" height="84.5" as="geometry" />
-        </mxCell>
-        <mxCell id="bYI_Bjf83IYMnO6PkBGH-11" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="300" y="160" width="250" height="250" as="geometry" />
-        </mxCell>
-        <mxCell id="bYI_Bjf83IYMnO6PkBGH-12" value="&amp;nbsp; Local Machine" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="300" y="160" width="250" height="20" as="geometry" />
         </mxCell>
         <mxCell id="XCfuhhf9zU3BOSTOOajx-6" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
           <mxGeometry x="40" y="120" width="45.5" height="33" as="geometry" />
