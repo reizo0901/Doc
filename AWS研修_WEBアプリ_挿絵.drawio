@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-10T06:21:38.295Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="dA2rlo9ymTx1ZYEi_OIM" version="22.1.17" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-01-10T06:22:08.900Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="HWzbVgZ3odxxYQtYeFwQ" version="22.1.17" type="github" pages="5">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1506,8 +1506,8 @@
         <mxCell id="nk2i5-FgXJUdOM6Z8GR--2" value="●定義ファイルを利用した&lt;font face=&quot;Helvetica&quot;&gt;Dockerコンテナ作成の流れ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
           <mxGeometry x="14" y="280" width="586" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="nk2i5-FgXJUdOM6Z8GR--3" value="●&lt;font face=&quot;Helvetica&quot;&gt;docker-compose&lt;/font&gt;を利用した&lt;font face=&quot;Helvetica&quot;&gt;Dockerコンテナ作成の流れ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
-          <mxGeometry x="14" y="620" width="586" height="30" as="geometry" />
+        <mxCell id="nk2i5-FgXJUdOM6Z8GR--3" value="●&lt;font face=&quot;Helvetica&quot;&gt;docker-compose&lt;/font&gt;を利用した複数&lt;font face=&quot;Helvetica&quot;&gt;Dockerコンテナ作成の流れ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
+          <mxGeometry x="14" y="620" width="566" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
