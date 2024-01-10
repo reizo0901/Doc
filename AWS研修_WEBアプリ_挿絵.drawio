@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-10T06:29:22.581Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="YPXcVQ0FqpmM2UVCg8el" version="22.1.17" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-01-10T06:33:33.448Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="2d93jbRG79-KaBJfHWDK" version="22.1.17" type="github" pages="5">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1503,7 +1503,7 @@
         <mxCell id="nk2i5-FgXJUdOM6Z8GR--4" value="Dockerfileには、利用するimage名、コンテナ名、利用ポート、ストレージの共有設定、環境変数、作成時実行コマンドなどが記述することができます。&lt;br&gt;このファイルを利用することにより、たのサーバでも同じ環境を素早く作成することができます。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="74" y="510" width="220" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="nk2i5-FgXJUdOM6Z8GR--5" value="docker-composeは複数の種類の異なるコンテナを一気に作成・構築することができるツールです。&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="nk2i5-FgXJUdOM6Z8GR--5" value="docker-composeは複数の種類の異なるコンテナを一気に作成・構築・管理が可能になるツールです。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="74" y="1000" width="220" height="110" as="geometry" />
         </mxCell>
       </root>
