@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-10T06:10:35.156Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="5VBeSodbJH-am26YiM9S" version="22.1.17" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-01-10T06:15:48.837Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="8LvPawb9njp6YZBCJGcE" version="22.1.17" type="github" pages="5">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1500,8 +1500,8 @@
         <mxCell id="AarR5cB8WNFemI6xRRU4-47" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;imageAspect=0;image=data:image/png,iVBORw0KGgoAAAANSUhEUgAAAFAAAACaCAMAAAAJvD9NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACxUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICBAQEBgYGCAgICgoKDg4OEBAQEhISFBQUFhYWGBgYGhoaHBwcHh4eH9/f4eHh4+Pj5eXl5+fn6enp6+vr7e3t7+/v8fHx8/Pz9/f3+fn5+/v7/f39////22Pj1MAAAAcdFJOUwAIEBggKDA4QEhYaHB4gIePn6evt7/P19/n7/f8NDR+AAAACXBIWXMAABcRAAAXEQHKJvM/AAACE0lEQVRoQ+3a607CQBCG4UFFRVFERASXg1ZFrUcQar3/C5PChxy6na3OJkYzz69tu/umllIJgaa2y9VTI9I4PtiZtSYKR9grdLI56203sEOsuZv0Ct56xrSSc6xgw4saURFDT0pUxsiTI6pi5EmdhPffuhZh4I0G5TQop0EI8uli+jJ78COfPqYv0yBggct/Cg7zucL0ZfaggAblNCj3V4N487vo83BKg4AFLvmDAhqU06CcBuU0KKdBOQ3KaVDud4Kdfvg0DMMAm6wcwcsBPg5+RA8d7MvmDHaeUZuKrrE7kyvYGyE194gDWRzBboTOwhMOZeCD7TdUltk+WS/wwXs0VsS2rw2/sMFujMYq9jKywRCFNTF387DB9Vd4jruKXLCH9SkvmGDDBQOsTxlhgg0X7GN9SoQJNlzwFuvTMMGGC95gecoYE2x+dA3fMMGGC3bs9zX/duaCZojAOttXpXNsMONVido4bsMG2+mHV+IOh63YoLlGYsWYO0FH0Kw8/2fiSxyzcwQtT1j2D3YGTfsVHYhvcCCLK2jM3TtaieEF9mZyB033YYzcwHV6EzmCExdBGN4G7v/yE/mC36BBOQ3KaVBOg3IalNOgnAblNCinQbk/EGxi4AvVMPDklA4x8qRKJYw82SeqY+hFo0C0dY4NH6Y/at/zV6wkPaKip5/JN0uzHlGhXDvDzh9rnhxsEBF9AlaXwrlOszuOAAAAAElFTkSuQmCC;" vertex="1" parent="1">
           <mxGeometry x="311.3766202090593" y="30.002114882506532" width="17.62337979094077" height="28.067885117493475" as="geometry" />
         </mxCell>
-        <mxCell id="AarR5cB8WNFemI6xRRU4-48" value="Dockerにコンテナを作成する場合は、必ずDocker HUBからイメージをpullする必要があります。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="330" y="170" width="260" height="84.5" as="geometry" />
+        <mxCell id="AarR5cB8WNFemI6xRRU4-48" value="Dockerにコンテナを作成する場合は、必ずDocker HUBからイメージをpullする必要があります。&lt;br&gt;またimageをコンテナ化する際に、コンテナ名や利用するポート、ストレージの共有設定を行います。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="170" width="260" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
