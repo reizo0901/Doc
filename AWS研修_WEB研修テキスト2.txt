@@ -1,0 +1,1371 @@
+0.今回の研修で学習する内容は以下の通りとなります。
+・AWSのネットワークと仮想サーバ構成と設定方法
+・Amazon Linuxへの接続と設定方法
+・仮想コンテナ(Docker)と複数のコンテナの定義や実行方法
+  ・NGINXの画面を表示させよう。
+・Pythonのフレームワーク(Django)について
+  ・MVCモデルやMVTモデルとは？
+  ・Djangoの画面を表示させよう。
+  ・プロジェクト作成について
+  ・プロジェクトの管理画面を表示させよう！
+    ・表示がおかしくなっている管理画面を直そう！
+
+・WEBアプリケーションを作成してみよう！
+・ファンクションベースドビューとクラスベースドビューについて
+・ファンクションベースドビューでHello Worldを表示しよう！
+  ・urls.pyに参照先を追加する。
+  ・views.pyにファンクションを登録する。
+・クラスベースドビューでHello Worldを表示しよう！
+  ・
+
+説明を適切なところに挿入する。
+
+②SSHとは？※使っているけどそもそも何？ ※図を入れる
+
+  SSHとは「Secure Shell」の略で、安全に通信を行って、ネットワークに接続された機器を遠隔操作するための通信手段（プロトコル）の１つです。
+  SSHでの接続を行うには接続先には「SSHデーモン」もしくは「SSHサーバ」が必要となり、接続元には「SSHクライアント」が必要になります。
+  SSHの認証方式には２つの方式があり「パスワード認証方式」と「公開鍵認証方式」があります。
+  「パスワード認証方式」は、ユーザアカウントとパスワードによる認証で、接続する方式でセキュリティは低めです。
+  「公開鍵認証方式」は、公開鍵と秘密鍵による認証で接続する方式で、公開鍵がないと接続できないためセキュリティは高めです。
+  EC2インスタンスへのSSH接続は、「キーペア」という名称の公開鍵を取得して接続する手順をとります。
+
+③Amazon　Linux2、Linuxディストリビュートについて ※図いる？
+・Redhat系とDebian系
+・パッケージやコマンドの違いについて
+
+④仮想化技術について ※図を入れる
+
+・仮想化技術とは
+・サーバ仮想化について
+　・ホスト型仮想化
+　・ハイパーバイザー型仮想化
+　・コンテナ型仮想化
+　・それぞれのメリットとデメリット
+
+⑤研修に登場するソフトウェアやコマンドについて ※チートシート作成
+
+<コマンド>
+sudo
+yum
+apt-get
+tree
+python
+python3
+docker
+  -詳細情報
+  inspect <コンテナ名>
+  -ステータス(CPU/MEM/NET/DISK)
+  stats
+  -Dockerの情報
+  info
+  -コンテナのログ確認
+  logs <コンテナ名>
+  -Dockerバージョン情報
+  version
+  -imageに対する捜査履歴
+  history
+  -Docker HUBからイメージの取得
+  pull イメージ名
+  -コンテナの削除
+  rm <コンテナ名>
+  -イメージの削除
+  rmi イメージ名
+  -コンテナの起動
+  start <コンテナ名>
+  -コンテナの停止
+  stop <コンテナ名>
+  -コンテナの再起動
+  restart <コンテナ名>
+  
+  
+  
+  
+systemctl
+grep
+usermod
+cat
+reboot
+mkdir
+curl
+chmod
+ln
+docker-compose
+cd
+vim
+uwsgi
+bash
+django-admin
+
+<ソフトウェア>
+nginx
+  
+python
+  
+postgresql
+  
+django
+  
+uwsgi
+
+docker
+docker-compose
+
+
+psycopg2
+django-bootstrap-datepicker-plus
+django-bootstarp4
+
+⑥定義ファイル・設定ファイル、シェルについて ※図を入れる？
+
+・docker-compose.yml
+・nginx.conf
+・uwsgi-params
+・uwsgi.ini
+・Dockerfile
+・requirements.txt
+・setuser.sh
+・startup.sh
+・settings.py
+・urls.py
+・views.py
+・models.py
+
+今回の研修のゴール
+
+AWSでWEBサーバの構築、ならびに動的WEBサイトの作成について学んでいきます。
+
+WEBの仕組みについて
+・そもそもWEBサイトってどういう仕組みで見えているの？ってところを動画で紹介します。
+～動画～
+
+構成図
+①今回の研修で作成するAWSの環境について ※図を入れる
+
+
+・AWSにインターネットからアクセス可能なネットワーク(VPN)を構築し、そのネットワーク内にLinux仮想マシン(EC2インスタンス)を１台構築します。
+  今回の研修で利用する環境を作成するためには、最低限以下のAWSのサービスや仕組みを利用する必要があります。
+    
+  ・region(リージョン)
+    リージョンとは、AWSは世界に均一なサービスを提供するために、地域を物理的なロケーションに分割してサービスを提供しています。
+    今回の研修では、「アジアパシフィック（東京）リージョン」というリージョンを利用します。
+    
+  ・Availability Zone(AZ/アベイラビリティーゾーン)
+    アベイラビリティーゾーンとは、冗長性・信頼性・可用性を確保した1つ以上のデータセンターで構成する単位を指し、1つのリージョンに複数存在します。
+    AWSでは利用者に、複数のアベイラビリティーゾーンに環境を構築して冗長化することを強く推奨しています。
+
+  ・Internet Gateway(インターネットゲートウェイ)
+    Internet Gatewayとは、インターネットとVPC間の通信を可能にするためのサービス
+
+  ・VPC(Virtual Private Cloud)
+    AWSの仮想ネットワークサービスで、AWS内のサービスの通信を制御するために使用します。
+    
+  ・サブネット
+    サブネットには、「プライベートサブネット」と「パブリックサブネット」の２つがあり、インターネットにできるものとできないものがあります。
+    今回の研修では、インターネットからアクセスが必要となるため、「パブリックサブネット」内にサーバを構築します。
+    
+  ・Security group(セキュリティグループ)
+    セキュリティグループとは、VPC内で(仮想サーバ)などのリソースに適用可能な仮想ファイアウォールのことを指します。
+    AWSのセキュリティは基本的にすべて遮断となっているため、必要なポートのみを開放する作業が必要となります。
+    今回の研修では、インターネット接続用に80番ポートとSSH接続用に22番ポートを開放します。
+
+  ・EC2インスタンス(Elastic Compute Cloud)
+    EC2インスタンスとは、AWSクラウド内に作成できる仮想サーバを指します。
+    今回の研修では、「Amazon Linux 2」というRedhat系のLinuxを使って環境構築を行います。
+  
+  ・Elastic IP
+    AWSが保有しているグローバルIPアドレスを利用するためのサービス
+    Elastic IPをEC2に付与することにより、インターネットから対象のEC2インスタンスにアクセスすることが可能になります。
+
+～構成図～
+
+
+・Linux仮想マシン内に、コンテナ仮想化技術(Docker)を使って、WEBサーバ、APサーバ、DBサーバの３つのコンテナを構築します。
+
+
+
+～構成図～
+
+仮想化とは
+・近年の本番環境や開発環境の構築において仮想化技術は切っても切れない関係になりつつあります。
+・ここでは代表的な３つの仮想化技術について簡単に紹介します。
+
+①ホストOS型仮想化
+  ホストOS上に仮想化ソフトウェアをインストールし、その上に仮想マシンを作成することができます。
+  ソフトウェア上で、仮想マシンを動かしているため動作も遅くソフト、ホストOSのシャットダウンや
+  再起動を行うと仮想マシンも停止します。
+
+  代表的なソフトウェア：Oracle VM VitrualBOX/MVware Workstation player/
+  
+②ハイパーバイザー型仮想化
+  ホストOSが不要でハイパーバイザーの上に仮想マシンを作成することができます。
+  ハイパーバイザーを管理するツールが動作するサーバが別途必要となります。
+  ホスト型仮想化よりも軽く、代表的な仮想化技術といえます。
+
+  代表的なソフトウェア：VMWare ESXi/Microsoft Hyper-V/Citrix Xen Server
+
+③コンテナ型仮想化
+  ホストOS上にコンテナというホストから隔離された名前空間を作成し、アプリケーションの実行環境を作成できます。
+  他の仮想化と仮想マシンという概念ではないためゲストOSをインストールするような作業がありません。
+  ホストOSのカーネルやリソースを間借りして利用しているため動作も早く今注目されている仮想化技術です。
+
+  代表的なソフトウェア：Docker/Podman/Kubernetes
+
+
+Dockerとは？
+
+  Dockerの歴史は長く、Linuxが誕生してから
+
+コンテナ型仮想化を実行するソフトウェアであり、ハイパーバイザー型やホスト型とは異なる仮想化技術が使われている。
+「コンテナ」はひとつのホストOS上で動作する「他のユーザやアプリケーションから隔離されたアプリケーションの実行環境」となる。
+
+「他のユーザやアプリケーションから隔離されたアプリケーション実行環境」という点では他の仮想化技術同じだが、
+ホスト型仮想化やハイパーバイザー型仮想化は、仮想サーバ毎にOSやメモリ、ハードディスクが必要となりリソース消費が多いが、
+コンテナ型仮想化はひとつのOS上で動作し、ホストのハードウェアやOSの差異はコンテナ管理ソフトウェアによって吸収している。
+
+これにより、同じコンテナ型仮想化が動作する環境であれば、サーバ移行をしても確実に動くことが一応保証されている。
+
+構築の時間においても、ホスト型やハイパーバイザー型は仮想サーバのハードウェア設定からアプリケーション構築までを行うが、
+コンテナ型の場合はもとになるイメージファイルをダウンロードしコンテナ化するため、OSとアプリケーションに簡単な設定を行えば
+すぐに利用が可能となる。
+
+コンテナのメリット
+
+・起動、コピー、バックアップなどが速いため生産性向上に繋がる
+・複数環境の構築・管理・運用が楽になりコスト削減が期待できる
+・持ち運びしやすいためリリースにかかる時間を短縮できる
+
+??ソフトウェア一覧
+今回出てくるソフトウェアの表(分類、ソフトウェア名、何をするものか)
+
+コンテナ:Docker: コンテナ型の仮想環境を作成、配布、実行するためのソフトウェア
+WEBサーバー:nginx:〇〇
+APサーバー:〇〇:〇〇
+DBサーバー:postgresql:〇〇
+
+1.AWSコンソールへサインイン
+
+  1.連携済みのURLからAWSに接続
+  2.[IAMユーザーとしてサインイン]画面で[ユーザー名]と[パスワード]を入力して[サインイン]をクリック
+  3.リージョンが[東京▼]以外になっている場合は、検索窓の右側にある[リージョン名▼]をクリックし、
+    [アジアパシフィック(東京) ap-northeast-1]を選択
+
+########################################################################################################################
+
+2.ネットワーク環境構築
+
+2-1.VPC作成
+  ここでは１つのVPC(Amazon Virtual Private Cloud)を作成します。
+  Amazon VPCとは、Amazon Virtual Private Cloudの略です。Amazon VPCにより仮想ネットワークを構築し、
+  IPアドレスおよびサブネットの管理・ルーティング・ゲートウェイの設定等一連の仮想ネットワークの制御を簡単に
+  実現することができます。
+
+  1.[AWSコンソール]画面上部の検索窓で"vpc"と入力し、検索結果の[VPC]をクリック
+
+  2.[AWS VPC]画面で[VPCを作成]をクリック
+
+  3.[VPCを作成]画面で以下を設定し、[VPCを作成]をクリック
+
+    [VPCの設定]
+    [作成するリソース]
+    ●VPCのみ ○VPCなど
+    [名前タグ - オプション]
+    Key Name
+    Value vpc-<※LastName>
+    例:vpc-giken
+    [IPv4 CIDRブロック]
+    ●IPv4 CIDRの手動入力
+    ○IPAM割り当てのIPv4 CIDRブロック
+    [IPv4 CIDR]
+    10.0.0.0/16
+    [IPv6 CIDRブロック]
+    ●IPv6 CIDRブロックなし
+    ○IPAM割り当てのIPv6 CIDRブロック
+    ○Amazon提供のIPv6 CIDRブロック
+    ○IPv6 CIDR所有(ユーザー所有)
+    [テナンシー]
+    デフォルト
+    [タグ]
+
+    ※[新しいタグを追加]をクリックして以下を追加
+    Key Author
+    Value <※FullName>
+    例:giken.tarou
+
+    ※VPC作成後の画面の詳細に以下のエラーが表示されますが、問題はありません。
+       研修用アカウントは権限が低いため、ルールの表示に失敗します。
+
+2-2.VPCにサブネットを作成
+  ここではVPCに対して1つのサブネットを作成します。
+  サブネットとは、IPネットワークを細分化することを指します。記述方法はCIDR（サイダー）表記で、IPアドレスの
+  プレフィックスとしてネットワークアドレスの後にスラッシュ（/）の後とネットワークアドレスビット数を記載します。
+  使用例は、”10.0.0.0/16”等が挙げられます。
+
+  1.左ペインから[サブネット]をクリック
+  2.[サブネット]画面で[サブネットを作成]をクリック
+  3.[サブネットを作成]画面で、以下を設定し、[サブネットを作成]をクリック
+
+    [VPC]
+    vpc-<※LastName>
+    ※2-1で作成したVPCを選択
+    サブネットの設定
+    [サブネット名]
+    psb-<※LastName>
+    例:p-subnet-giken
+    [アベイラビリティーゾーン]
+    ap-northeast-1a
+    [IPv4 CIDRブロック]
+    10.0.0.0/24
+
+2-3.インターネットゲートウェイ作成、VPCに紐付け
+  ここではインターネットゲートウェイを作成し、VPCと紐付けることにより、インターネットを使う準備ができます。
+  サブネットをパブリックサブネットとすることで、インターネットアクセスが可能です。
+  送信先をIPv4の場合は、0.0.0.0/0とします。
+  ターゲットをインターネットゲートウェイIDである、igw-XXXXXXXXXとします。
+
+  1.左ペインから[インターネットゲートウェイ]をクリック
+  2.[インターネットゲートウェイ]画面で[インターネットゲートウェイの作成]をクリック
+  3.[インターネットゲートウェイの作成]画面で、以下を設定し、[インターネットゲートウェイの作成]をクリック
+  [名前タグ]
+  igw-<※LastName>
+  例：igw-giken
+
+  4.画面右上の[VPCへアタッチ]をクリック
+
+  5.[VPCにアタッチ]画面の[使用可能なVPC]で、作成したVPCを選択し、[インターネットゲートウェイのアタッチ]をクリック
+
+2-4.ルートテーブル作成
+  ここではルートテーブルを設定することによりインターネットと通信をできるようにします。
+  VPCルートテーブルでは、ルートの送信先ならびにターゲットを関連付けします。
+
+2-4-1.ルートテーブルの設定
+  1.左ペインから[ルートテーブル]をクリック
+  2.[ルートテーブル]画面で[ルートテーブルを作成]をクリック
+  3.[ルートテーブル]画面で、以下を設定し、[ルートテーブルを作成]をクリック
+
+2-4-2.ルートテーブルを編集
+  1.作成したルートテーブル[rtb-xxxxxxxxxxxxxxxxx]の画面下の[ルート]タブをクリックして、[ルートを編集]をクリック
+  2.[ルートを編集]画面で[ルートを追加]をクリック
+  3.追加表示された[ルートを編集]で、以下を設定し、[変更を保存]をクリック
+  [送信先]
+  0.0.0.0/0
+  [ターゲット]
+  igw-xxxxxxxxx～(igw-<※LastName>)
+  ※2-3で作成したインターネットゲートウェイを選択
+
+2-4-3.サブネットの関連付けを編集
+  1.[サブネットの関連付け]タブをクリックして、[サブネットの関連付けを編集]をクリック
+  2.[サブネットの関連付けを編集]画面で、2-3で作成した２つのサブネットにチェックを入れ、[関連付けを保存]をクリック
+
+########################################################################################################################
+
+3.Amazon EC2(a)(仮想サーバ)作成
+
+  ここでは２つのEC2(Amazon Elastic Compute Cloud)を作成します。
+  EC2とはAmazon Cloud上に作成可能なコンピュータであり、OSやスペック、台数などを容易に準備することができます。
+  EC2は停止している場合は料金が発生しないというメリットがあります。
+  ※ただし、EC2自体に紐付いているEBS（ストレージサービス）は継続して課金されます
+
+3-1.AWS EC2(インスタンス)起動
+  1.[AWSコンソール]画面上部の検索窓で"ec2"と入力し、検索結果の[EC2]をクリック
+  2.[AWS EC2]画面の[インスタンスを起動]枠の[インスタンスを起動]をクリック
+
+3-2.名前とタグの追加
+  1.[インスタンスを起動]画面で以下を設定
+
+    ※[Add additional tags]をクリックして、
+    タグの入力欄を表示
+    [Name and tags]
+    キー name
+    値 ec2-<※LastName>
+    例:ec2-giken
+    Resource types ※設定不要
+
+3-3.アプリケーションおよびOSイメージ(AMI)の指定
+  1.[クイックスタート]タブ >[Amazon Linux]の順でクリックし、[Amazon Linux 2 AMI…]を選択
+
+3-4.インスタンスタイプの指定
+  1.[インスタンスタイプ]の選択欄で[t2.micro]を選択
+
+3-5.キーペア(ログイン用の鍵)作成
+  キーペアとは、EC2インスタンスにアクセスするために必要となる「鍵」のことで、「公開鍵」と「秘密鍵」になります。
+  キーペアを作成し、ローカルの端末の[c:\work]などのフォルダを作成し、[公開鍵]をダウンロードします。
+  1.[キーペア(ログイン)]枠の[新しいキーペアの作成]をクリック
+  2.[キーペアを作成]画面で以下を設定し、[キーペアを作成]をクリック
+    [キーペア名]
+    kp-<※LastName>
+    例:kp-giken
+    [キーペアのタイプ]
+    ● RSA
+    ○ ED25519
+    [プライベートキーファイル形式]
+    ● .pem
+    ○ .ppk
+    
+    キーペアは研修を通して同じものを利用します。この研修が終わるまで絶対に削除をしないでください。
+    もし削除しまった場合は、EC2インスタンスとキーペアの再作成が必要があります。
+
+  3.ダウンロード用のダイアログが表示されたら、
+    [c:\work]フォルダに保存する。
+    ※事前にCドライブの直下に[work]フォルダを作成する。
+    この後の手順でキーペアに対するコマンドを発行するので、必ず指定したフォルダ配下に保存してください
+  4.ダウンロード後に元の画面に遷移するので、キーペア名の欄に作成したキーペアが設定されていることを確認
+
+3-6.ネットワーク設定
+  ここでは作成するEC2インスタンスが利用するネットワークの設定を行います。
+
+3-6-1.VPC、サブネット設定
+  1.[ネットワーク設定]枠の右側にある[編集]をクリック
+  2.[ネットワーク設定]枠に以下を設定
+
+    [VPC]の選択欄で2-1で作成したVPCを選択
+    例:vpc-xxxxxxxxxx～(vpc-giken)
+    [サブネット]
+    2-2で作成した[ap-northeast-1a]のサブネットを選択
+    例:subnet-xxxxxxx～(p-subnet-giken)
+    [パブリックIPの自動割り当て]
+    無効化
+    [ファイアウォール(セキュリティグループ)]
+    ●セキュリティグループを作成する
+    ○既存のセキュリティグループを選択する
+    [セキュリティグループ名]
+    scg-<※LastName>
+    例:scg-giken
+    [説明]
+    scg-<※LastName>
+    例:sgc-giken
+    [インバウンドセキュリティグループのルール]
+    [セキュリティグループルール１]
+    タイプ ssh
+    ソースタイプ 任意の場所
+    説明 from home
+    ※[セキュリティグループルールを追加]をクリック
+    [セキュリティグループルール２]
+    タイプ HTTP
+    ソースタイプ 任意の場所
+    説明 from internet
+
+3-6-2.ストレージを設定
+
+  1.[ストレージを設定]枠で以下を設定
+    [容量(GiB)]
+    8 GiB
+    [ストレージタイプ]
+    gp3
+
+3-6-3.インスタンスを起動
+  1.[概要]枠のインスタンス数が"1"であることを確認し、[インスタンスを起動]をクリック
+    [インスタンス数]
+    1
+    ※必ず"1"になっていることを確認すること
+
+3-6.4. EC2(a)にElastic IP アドレス割り当てと関連付け
+  1.左ペインから[Elastic IP]をクリック
+  2.[Elastic IP アドレスを割り当てる]をクリック
+  3.[Elastic IPアドレスを割り当てる]画面で、以下を設定し、[割り当て]をクリック
+    [Elastic IP アドレスの設定]
+    [ネットワークボーダーグループ]
+    ap-northeast-1
+    [パブリック IPv4アドレスプール]
+    ●Amazon の IPv4アドレスプール
+    ○AWSアカウントで持ち込むパブリック…
+    ○顧客所有のIPv4アドレスのプール(顧客…
+    [グローバル静的IPアドレス]
+    ※設定不要
+    [タグ - オプション]
+    ※[新規タグを追加]をクリックする
+    [キー] Name
+    [値] eip-a-<※LastName>
+    例：eip-a-giken
+    ※[新規タグを追加]をクリックする
+    キー Author
+    値 <※FullName>
+    例:giken.tarou
+
+  4.[Elastic IP アドレス]画面右上の、[このElastic IPアドレスを関連付ける]をクリック
+    ※後続の手順で必要となるので、作成した「Elastic IP アドレス」の「割り当てられたIPv4 アドレス」をメモする
+
+  5.[Elastic IP アドレスの関連付け]画面で以下を設定し、[関連付ける]をクリック
+
+    [リソースタイプ]
+    ●インスタンス
+    ○ネットワークインターフェイス
+    [インスタンス]
+    [EC2-Nginx-a-<※LastName>]
+    [プライベート IP アドレス]
+    ※入力しない
+    [再関連付け]
+    ※チェックなし
+
+########################################################################################################################
+
+4.Amazon EC2にSSH接続
+  ネットワークとサーバの準備が整いましたので、ローカル端末からAmazon EC2に接続してWEB開発環境を構築していきます。
+
+4-1.キーペアのアクセス権の変更
+  EC2作成時にダウンロードしたキーペアのアクセス権を変更していきます。
+  1.[スタート]ボタンをクリック後、"cmd"と入力し、[Enter]を押下して「コマンドプロンプト」を起動
+  2.[コマンドプロンプト]で、以下のコマンドを実行
+
+  ※以下//と//の間の文を実行する。
+//
+cd c:\work
+dir
+set PEM_PATH=c:\work\EC2-kpr-<※LastName>.pem
+icacls.exe %PEM_PATH% /reset
+icacls.exe %PEM_PATH% /GRANT:R "%USERNAME%":(R)
+icacls.exe %PEM_PATH% /inheritance:r
+//
+
+※icacls.exeコマンドを実行すると、以下のメッセージが返されます。紛らわしいメッセージですが正常です。
+    「処理ファイル： ./EC2-kpr-<※LastName>.pem」
+    「1個のファイルが正常に処理されました。0個のファイルを処理できませんでした」
+    
+4-2.Amazon EC2にSSHで接続
+  SSHクライアントでEC2サーバに接続します。
+
+  1.[コマンドプロンプト]で、以下のコマンドを実行
+    ssh -i "kp-<※LastName>.pem" ec2-user@<パブリックIPアドレス>
+    例：ssh -i "kp-giken.pem" ec2-user@xxx.xxx.xxx.xxx
+    4.で作成した「Elastic IP アドレス」の「割り当てられたIPv4アドレス」がパブリックIPアドレスになります
+
+  2.以下のメッセージが表示されたら、"yes"と入力し[Enter]キーを押下
+    The authenticity of host 'xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)' can't be established.
+    ED25519 key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    SSHでの接続が成功すると以下のようなプロンプトの表示になります
+    [ec2-user@ip-10-0-0-x ~]$ _
+    SSHクライアントがインストールされていない場合は、sshコマンドがエラーになりますので、[Windows]の[設定]の
+    [オプション機能]から以下の２つのオプションを追加する必要があります。
+    ・OpenSSHクライアント
+    ・OpenSSHサーバ
+
+########################################################################################################################
+
+5.ホスト側のソフトウェアのセットアップ
+
+5-1.Treeコマンドのインストール
+※ディレクトリの階層の確認用のコマンドインストールします。
+
+//
+sudo yum update
+sudo yum install -y tree
+//
+
+5-2.djangoのインストール
+
+//
+python3 -m pip install django
+//
+
+5-3.コンテナ型仮想化ソフトウェアのインストール
+※コンテナ型仮想化ソフトウェアをインストールします。
+
+  1.Dockerインストール
+
+//
+sudo yum install -y docker
+docker --version
+//
+
+  2.Dockerサービスの起動
+
+//
+sudo systemctl start docker
+systemctl status docker
+//
+  3.Dockerサービスの自動起動を有効化
+
+//  
+sudo systemctl enable docker
+systemctl is-enabled docker
+//
+
+  4.ec2-userにdockerグループを追加
+  ※これによりsudoコマンドを利用しなくてもdockerコマンドが利用可能となります。
+
+//
+grep docker /etc/group
+sudo usermod -a -G docker ec2-user
+cat /etc/group
+//
+
+  5.再起動
+
+//
+sudo reboot
+//
+
+    ※SSHのセッションが切断されます。
+
+  6.SSH接続
+    コマンドプロンプトでカーソルの↑を押下して、[Enter]を押下する。
+
+  7.dockerの状態確認
+
+//
+docker info
+systemctl status docker
+//
+
+    下のエラーは問題ない
+    WARNING: bridge-nf-call-iptables is disabled
+    WARNING: bridge-nf-call-ip6tables is disabled
+
+5-4.コンテナ型仮想化ソフトウェア(Docker)を操作してみよう。
+
+「Hello from Docker!」と表示するだけのイメージを取得し、コンテナ化した後、コンテナとイメージの削除までを行います。
+
+※Dockerの説明の図を入れる。
+
+  1.Docker HUBからイメージを取得する。
+  docker pull hello-world
+  
+  2.取得したイメージを確認する。
+  docker images
+  
+  3.取得したイメージをコンテナ化し、実行する。
+  docker run hello-world
+  
+  以下の内容のメッセージが出力されます。
+  ********************************************************************************
+  Dockerからこんにちは！
+  このメッセージは、インストールが正しく動作していることを示しています。
+  
+  このメッセージを生成するために、Dockerは以下の手順を実施しました。
+  1.Dockerクライアントが、Dockerデーモンに接続しました。
+  2.Dockerデーモンは、Docker Hubから「Hello-world」イメージをプルしました。
+  3.Dockerデーモンは、そのイメージから、現在出力されているメッセージを生成する実行可能ファイルが含まれるコンテナを作成しました。
+  4.Dockerデーモンは、その出力をDockerクライアントにストリーミングし、Dockerクライアントがそれを端末に送信しました。
+  ********************************************************************************
+  
+  4.コンテナを確認する。
+  docker ps -a
+  
+  5.コンテナの情報を確認する。
+  docker inspect <コンテナ名>
+  
+  6.コンテナのログを確認する。
+  docker logs <コンテナ名>
+  
+  7.コンテナを削除し、確認する。
+  docker rm hello-world
+  docker ps -a
+  
+  8.イメージを確認・削除・確認する。
+  docker images
+  docker rmi hello-world
+  docker images
+
+5-5.複数のコンテナを操作しやすくするためのツールをインストールします。
+※docker-composeのセットアップ
+
+  1.docker-composeファイルの格納フォルダ作成
+
+//
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
+//
+
+  2.docker-composeファイルダウンロード
+
+//
+VER=2.23.3
+sudo curl -L "https://github.com/docker/compose/releases/download/v${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
+//
+
+  3.ダウンロードしたdocker-composeファイルを実行形式に変更し、シンボリックリンクを作成
+  ※シンボリックリンクを作成することによって、どのディレクトリからでもdocker-composeを実行することが可能になります。
+
+//
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-compose
+docker-compose --version
+//
+
+########################################################################################################################
+
+6.docker-composeの動作確認(nginxを起動するまで)
+
+  1.フォルダ作成
+    今回の研修で必要となる以下のディレクトリとファイルを構成する。
+
+    ディレクトリ構造
+
+    /containers
+    　├ /django
+    　│　├ /startup
+    　│　│├setuser.sh
+    　│　│└startup.sh
+    　│　├ /uwsgi
+    　│　│└wusgi.ini
+    　│　├Dockerfile
+    　│　└requirements.txt
+    　├/nginx
+    　│├ /conf
+    　││└nginx.conf
+    　│└uwsgi_params
+    　└docker-compose.yml
+
+//
+mkdir /home/ec2-user/containers
+mkdir /home/ec2-user/containers/django
+mkdir /home/ec2-user/containers/django/startup
+mkdir /home/ec2-user/containers/django/uwsgi
+mkdir /home/ec2-user/containers/nginx
+mkdir /home/ec2-user/containers/nginx/conf
+//
+
+  2.docker-composeファイルを作成する。
+  ※docker-composeとは複数の仮想コンテナを定義・共有・制御するために開発されたツールで、
+    今回のように複数の仮想コンテナを作成する場合に不可欠なツールとなります。
+
+  2.1.WEBサーバのコンテナを作成する。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+    以下の文章を張り付ける
+
+//
+version: '2.23.3'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        ports:
+            - 80:80
+//
+
+  2.2.WEBサーバを起動してみる。
+
+//
+docker-compose up -d
+//
+
+  2.3.WEBサーバが起動したか確認してみる。
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>
+
+  ※Nginxのようこそ画面が表示されること
+
+  2.4.WEBサーバを停止する。
+  
+//
+docker-compose down
+//
+
+
+########################################################################################################################
+
+7.3層アーキテクチャを構築する。
+
+  1.nginx.conf を作成する。
+    今回は upstream ディレクティブの記述にあるように django コンテナの8000番ポートへ通信を流す設定を行う。
+
+//
+cd /home/ec2-user/containers/nginx/conf
+vim nginx.conf
+//
+
+    以下の文章を貼り付ける。
+
+//
+upstream django {
+    server django:8000;
+}
+
+server {
+    listen 80;
+    location / {
+        uwsgi_pass django;
+        include /etc/nginx/uwsgi_params;
+    }
+}
+//
+
+  5.wsgiの通信で必要とされる uwsgi_params の作成を行う（参考）。
+
+//
+cd /home/ec2-user/containers/nginx/
+vim uwsgi_params
+//
+
+    以下の文章を貼り付ける
+
+//
+uwsgi_param QUERY_STRING $query_string;
+uwsgi_param REQUEST_METHOD $request_method;
+uwsgi_param CONTENT_TYPE $content_type;
+uwsgi_param CONTENT_LENGTH $content_length;
+uwsgi_param REQUEST_URI $request_uri;
+uwsgi_param PATH_INFO $document_uri;
+uwsgi_param DOCUMENT_ROOT $document_root;
+uwsgi_param SERVER_PROTOCOL $server_protocol;
+uwsgi_param REMOTE_ADDR $remote_addr;
+uwsgi_param REMOTE_PORT $remote_port;
+uwsgi_param SERVER_ADDR $server_addr;
+uwsgi_param SERVER_PORT $server_port;
+uwsgi_param SERVER_NAME $server_name;
+//
+
+  6.djangoコンテナ側でnginxコンテナからの通信を受けられるように、uwsgi.ini の作成を行う。
+
+//
+cd /home/ec2-user/containers/django/uwsgi
+vim uwsgi.ini
+//
+    以下の文章を貼り付ける
+
+//
+[uwsgi]
+socket = :8000
+module = djangoapp.wsgi
+wsgi-file = /app/app/wsgi.py
+logto = /wsgi/wsgi.log
+py-autoreload = 1
+//
+
+  7.djangoコンテナのイメージの元となるDockerfileを作成する。
+
+//
+cd /home/ec2-user/containers/django
+vim Dockerfile
+//
+
+    以下の文章を貼り付ける
+
+//
+FROM python:2.23.3
+RUN apt-get update && apt-get install -y tree vim
+WORKDIR /django
+COPY requirements.txt /django
+RUN pip install -r requirements.txt
+COPY . /django
+//
+
+  8.djangoコンテナで必要とするPythonのモジュールのリストを作成する。
+
+//
+vim requirements.txt
+//
+
+    以下の文章を貼り付ける
+
+//
+django
+psycopg2
+uwsgi
+django-bootstrap-datepicker-plus==5.0.3
+django-bootstrap4==22.3
+//
+
+  9.djangoコンテナ内で実行されるシェルスクリプト（startup.sh, setuser.sh）を作成する。
+    userを作成し、uwsgi,ini を実行する。
+
+    9.1.startup.shを作成する。
+
+//
+cd /home/ec2-user/containers/django/startup
+vim startup.sh
+//
+
+    以下の文章を貼り付ける
+
+//
+source /startup/setuser.sh # setuser.sh を実行する
+uwsgi --ini /wsgi/uwsgi.ini # uwsgi.ini の設定をもとに uwsgi を実行する
+//
+
+    9.2.setuser.shを作成する。
+
+//
+vim setuser.sh
+//
+
+    以下の文章を貼り付ける
+
+//
+#!/bin/bash -e
+SHELL_NAME='setuser.sh'
+echo "[$SHELL_NAME] START"
+
+# setup group
+if getent group "$GROUP_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' already exists."
+else
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' does NOT exist. So execute [groupadd -g \$GROUP_ID \$GROUP_NAME]."
+    groupadd -g $GROUP_ID $GROUP_NAME
+fi
+
+# setup user
+if getent passwd "$USER_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' already exists."
+else
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME]."
+    useradd -m -s /bin/bash -u $USER_ID -g $GROUP_ID $USER_NAME
+fi
+
+echo "[$SHELL_NAME] FINISH"
+//
+
+
+    9.3.startupディレクトリ配下の全てのファイルに実行権限を付与する。
+
+//
+sudo chmod +x -R *
+//
+
+
+  10.docker-composeファイルを修正する。
+  ※NGINXとDjango、PostgreSQLの設定を行う。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+    以下の文章を張り付ける
+
+//
+version: '2.23.3'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        volumes:
+            - ./nginx/conf:/etc/nginx/conf.d
+            - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+        ports:
+            - 80:80
+        depends_on: #依存関係を設定
+            - django
+
+    django:
+        container_name: django
+        build: ./django
+        command: bash -c /startup/startup.sh
+        volumes:
+            - ./django/uwsgi:/wsgi
+            - ./django/djangoapp:/app
+            - ./django/startup:/startup
+        ports:
+            - 8000:8000
+        environment:
+            - USER_ID=1000
+            - GROUP_ID=1000
+            - USER_NAME=ec2-user
+            - GROUP_NAME=ec2-user
+        depends_on:
+            - postgresql #依存関係を設定
+
+    postgresql:
+        image: postgres:latest
+        container_name: postgresql
+        environment:
+            - POSTGRES_DB=myappdb
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+        ports: # add
+            - 5432:5432
+//
+
+  10.django ディレクトリ内でdjango projectの作成を行う。
+    今回はプロジェクト名をdjangoappとする。
+
+//
+cd /home/ec2-user/containers/django
+django-admin startproject djangoapp
+//
+
+    プロジェクトを作成するとdjangoディレクトリ内にdjangoappディレクトリが作成される。
+    
+  11.コンテナ内のdjangoに外部からの接続を許可する。  
+    デフォルトでは外部からの通信は全て拒否されているため、settings.py の修正を行う。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下に該当する行を修正する。
+
+//
+ALLOWED_HOSTS = []
+  ↓
+ALLOWED_HOSTS = ['*']
+//
+
+  12.WEBサーバを起動してみる。
+
+//
+docker-compose up -d
+//
+
+※エラーが発生するかも・・・。講師の説明で対応する
+
+  13.WEBサーバが起動したか確認してみる。
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>
+
+   「The install worked successfully! Congratulations!」のメッセージの画面が表示されていればNGINXとuWSGI、Djangoの環境は正常に作成されています。
+
+    上のような django のテストページが見えていればOK。
+
+  14.Djangoの日本語化と日本ロケールに修正します。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下に該当する行を修正する。
+
+//
+LANGUAGE_CODE = 'en-us'
+  ↓
+LANGUAGE_CODE = 'ja'
+//
+
+//
+TIME_ZONE = 'UTC'
+  ↓
+TIME_ZONE = 'Asia/Tokyo'
+//
+
+  15.日本語されたか確認する。
+  
+  ブラウザを再読み込みする。
+  
+    「インストールは成功しました！おめでとうございます！」のメッセージの画面が表示されていれば日本語化は成功です。
+
+
+  16.データベースのマイグレート ※postgersqlを利用する場合は、settings.pyを編集する必要がある。
+
+//
+python3 manage.py migrate
+//
+
+  ※同じディレクトリ内に、db.sqlite3というデータベース用のディレクトリが作成されます。
+  ※Djangoにはsqlite3というデータベースが組み込みされているため、特別に設定をしていない限り、sqlite3が利用されます。
+
+  17.djangoの管理者ユーザを作成する。
+
+//
+python3 manage.py createsuperuser
+//
+
+以下を入力
+Username:
+Email address:
+Password:
+Password(again):
+
+  18.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※管理者画面が表示される。
+
+  19.CSSが適用されていないので修復する。
+  
+  ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、
+  ちょっとテクが必要。
+
+  20.静的コンテンツの設定を追加する。
+
+//
+cd /app/djangoapp/
+vim settings.py
+//
+
+  以下の行を追加
+
+//
+STATIC_ROOT = '/app/static/'
+//
+
+  以下のコマンドを実行
+//
+python3 manage.py collectstatic
+//
+
+※/app/static/ディレクトリ配下に静的コンテンツが集められる。
+
+
+  21.Dockerコンテナからログアウトする。
+
+//
+exit
+//
+
+  22.nginxから/app/static/が参照できるように、docker-compose.ymlを修正する。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+  以下の文書をnginxのvolumes項目に追加する。
+  ※これにより、djangoにマウントされているstaticディレクトリをnginxにマウントします。
+
+//
+    - ./django/djangoapp/static:/static
+//
+
+  21.nginx.confに/staticにアクセスが来たら自サーバ内の/staticを参照するように修正する。
+
+//
+cd /home/ec2-user/containers/nginx/conf
+vim nginx.conf
+//
+
+  以下の文書を追記する。
+
+//
+    location /static {
+        alias /static;
+    }
+//
+
+  22.仮想コンテナを再作成
+
+//
+docker-compose up -d --build
+
+//
+
+  22.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※CSSが適用された管理者画面が表示される。
+
+  23.管理者画面はDjangoの中で、どのような仕組みで表示されているか
+
+
+########################################################################################################################
+
+9.Helloworldを作成する。
+
+先ほど表示をCSSを修正した管理者画面がどのような仕組みで表示されているか確認してみましょう！
+djangoのプロジェクトの設定ファイルが格納されている以下のパスに遷移し、「urls.py」ファイルを開きましょう。
+
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim urls.py
+
+//
+//
+"""djangoapp URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+//
+
+なにやら先頭に３種類の定義の例が記述してあります。
+
+・Function views
+  「ファンクションビュー」は作成したファンクション(関数)を呼び出して利用します。
+  こちらは自作した関数を使うため、オリジナリティの高いサイト作成することができます。
+  基本的な動作としては、HttpRequestオブジェクトを受け取って、HttpResponseオブジェクトを返すという単純なものです。
+  
+・Class-based views
+  「クラスベースドビュー」はDjangoで用意されているクラスや作成したクラスを呼ぶ出して利用します。
+  こちらのクラスを利用することにより、コードを再利用可能なコンポーネントとしてサイトを作成することができます。
+  ※クラスを自作する場合はオブジェクト指向の手法による設計とDjangoのクラスの理解が必要となるため、高い設計能力が必要となりますが、
+  簡単案
+  
+・Including another URLconf
+  「Including another URLconf」は現在のアプリケーションと他のアプリケーションのURLを組み合わせるために利用します。
+  ※Djangoでは、プロジェクトという大きな枠の中に、アプリケーションという機能単位を作り、プロジェクトはそれぞれのアプリケーションを呼び出して構成にできるため、大規模なプロジェクトでも小さい単位に分けて開発を進めることができます。
+
+
+9.WEBアプリ作成
+テストページが見れたので、ここからはページを作成していく。
+まずはホスト側でアプリケーションを作る。
+
+9.1.「Hello world...」をMVCモデルを使って表示してみましょう。
+
+  1.dockerコンテナ「django」にログインする。
+  ※今回作成したコンテナのベースOSは「UBUNTU」となっているため、ホストOSと多少コマンドが異なります。
+
+＜豆知識＞
+Linuxには大きく分けて３つのディストリビューションが存在しています。
+ディストリビューションのことは、便宜上「種類」とでも思っておいてください。
+Linuxはオープンソースのため、その開発体制は放任主義的であり、
+
+//
+docker exec -it django bash
+//
+
+  2.WEBアプリケーション用の環境を作成
+  
+  2.1.カレントユーザをec2-userに切り替える。
+  
+//
+su - ec2-user
+//
+
+  2.2.WEBアプリケーション環境を作成する。
+
+//
+cd /app
+python3 manage.py startapp todoapp
+//
+
+  ※同ディレクトリ内に、todoappというアプリケーション用のディレクトリが作成されます。
+
+  2.3.todoapp ディレクトリ直下に urls.py を作成する。
+  ※/todoappのURLにアクセスした際に、何の処理をするか記述する。
+  ※下の記述ではviews.pyのindexを処理させるようにしている。 
+
+//
+cd /app/todoapp
+vim urls.py
+//
+
+  下の文章を貼り付ける。
+
+//
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+//
+
+  2.4.todoapp ディレクトリ直下の views.pyを修正する。
+  ※urls.pyで指定してあるviews.pyのindex処理を記述する。
+  ※下の記述ではHttpResponseオブジェクトを利用して、ブラウザにレスポンス返します。
+
+//
+vim views.py
+//
+
+  下の文章を貼り付ける。
+
+//
+from django.http import HttpResponse
+
+def index(request):
+    returnobject = HttpResponse("Welcome to Hosoda's world.")
+    retrun returnobject
+//
+
+  2.5.djangoappディレクトリ直下のurls.pyを修正する。
+  ※プロジェクトのurls.pyに/todoapp/のURLの指定があった場合に、todoappのurlsに遷移するように
+    指示します。
+
+//
+cd /app/djangoapp
+vim urls.py
+//
+
+  urlpatterns = [...]の中に、以下の行を追記する。
+
+//
+path('todoapp/', include('todoapp.urls')),
+//
+
+  2.6.作成したサイトを確認する。
+
+http://[IP アドレス]/[app 名]にアクセスし、"Welcome to .."が確認できればOK。
+
+########################################################################################################################
+
+
+【困ったときの手順】
+
+//
+docker-compose up -d ← -d デタッチモード 同一ターミナルでコンテナが起動して別の作業ができなくなることを回避する。
+docker-compose up --build ← --build 再度ビルド処理を行います。
+//
+
+エラーでた！
+Error response from daemon: Conflict. the container name "/nginx" is already in use by container "aaa". you have to remove (or rename) that container to be able to reuse that name.
+
+**********************************************************************
+
+コンテナ内でコマンドがない場合は以下のコマンドをroot権限で実行する。
+
+//
+apt-get update
+apt-get install vim
+//
+
+12-3. Amazon EC2(a)を終了
+
+1.左ペインから[インスタンス]をクリック
+2.[インスタンス]画面で、作成したインスタンスにチェックを入れる
+3.[インスタンスの状態] > [インスタンスを終了]をクリック
+4.[終了 インスタンス？]画面で、[終了]をクリック
+5.[インスタンスの状態]が「実行中」から「終了済み」になることを確認
+
+12-4. キーペアの削除
+
+1.左ペインで[キーペア]をクリック
+2.[キーペア]画面で、作成したキーペアにチェックを入れる
+3.[アクション] > [削除]をクリック
+4.[EC2-kpr-<※LastName>は１つ以上のインスタンスに関連付けることができます。]画面の入力欄に"削除"を入力し、[削除]をクリック
+5.作成したキーペアが削除されていることを確認
+6.ローカルにダウンロードしたキーペアも削除する
+
+12-5. セキュリティグループ削除
+
+1.左ペインで[セキュリティグループ]をクリック
+2.[セキュリティグループ]画面で、作成した２つのセキュリティグループにチェックを入れる
+3.[アクション] > [セキュリティグループを削除]をクリック
+4.[セキュリティグループを削除]画面の入力欄に、"削除"を入力し、[削除]をクリック
+5.作成したセキュリティグループが削除されたことを確認
+
+12-8. VPCを削除
+
+1.[AWSコンソール]画面上部の検索窓で"vpc"と入力し、検索結果の[VPC]をクリック
+2.[VPC]画面で、作成したVPCにチェックを入れる
+3.[アクション] > [VPCの削除]をクリック
+4.[VPCの削除]画面の同時削除対象で以下のリソースが表示されていることを確認
+5.[削除を確認するには、フィールドに削除と入力します。]の入力欄に、"削除"と入力し、[削除]をクリック
+6.作成したVPCが削除されていることを確認
+
+★★SSHの接続でエラーが出た場合の対処★★
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:GO9L0sxfMlNTW6dG/o5ot1gl/jsn2XvPxDcDT3q4fQg.
+Please contact your system administrator.
+Add correct host key in C:\\Users\\hlemo/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in C:\\Users\\hlemo/.ssh/known_hosts:28
+Host key for 18.176.30.149 has changed and you have requested strict checking.
+Host key verification failed.
+
+ssh-keygen -R 18.176.30.149
