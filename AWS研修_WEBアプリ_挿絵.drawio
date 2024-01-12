@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-12T07:49:20.110Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="XUDt1PlugKGSZRMXG9-i" version="22.1.18" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-01-12T07:52:17.579Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="CDDx6v-QX98ruERV_pGu" version="22.1.18" type="github" pages="5">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1563,8 +1563,8 @@
         <mxCell id="dyhCjAqO1mqmQ2K4hZBf-10" value="create" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-45;" vertex="1" parent="1">
           <mxGeometry x="519" y="161.25" width="43" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dyhCjAqO1mqmQ2K4hZBf-11" value="start&lt;br&gt;stop&lt;br&gt;pause&lt;br&gt;unpause&lt;br&gt;rm" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="189.25" width="60" height="100.75" as="geometry" />
+        <mxCell id="dyhCjAqO1mqmQ2K4hZBf-11" value="start&lt;br&gt;stop&lt;br&gt;restart&lt;br&gt;pause&lt;br&gt;unpause&lt;br&gt;update&lt;br&gt;ps&lt;br&gt;logs&lt;br&gt;rm&lt;br&gt;history&lt;br&gt;attach&lt;br&gt;exec&lt;br&gt;cp&lt;br&gt;rename" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="98.07" width="60" height="213.75" as="geometry" />
         </mxCell>
         <mxCell id="dyhCjAqO1mqmQ2K4hZBf-12" value="" style="endArrow=none;html=1;rounded=0;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
