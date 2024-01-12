@@ -82,8 +82,8 @@ echo django-bootstrap4==22.3 >> $targetpath
 targetpath=/home/ec2-user/containers/django/startup/startup.sh
 echo makefile[$targetpath]
 
-echo source /startup/setuser.sh \# setuser.sh を実行する > $targetpath
-echo uwsgi --ini /wsgi/uwsgi.ini \# uwsgi.ini の設定をもとに uwsgi を実行する >> $targetpath
+echo source /startup/setuser.sh \# setuser.sh を実行する > $targetpath
+echo uwsgi --ini /wsgi/uwsgi.ini \# uwsgi.ini の設定をもとに uwsgi を実行する >> $targetpath
 
 targetpath=/home/ec2-user/containers/django/startup/setuser.sh
 echo makefile[$targetpath]
