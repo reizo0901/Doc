@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-12T08:00:23.532Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="crYPVMgSYCHPhO_OeVAe" version="22.1.18" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-01-12T08:01:15.879Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="DXfgKRX3Q8bCfsXS1JGl" version="22.1.18" type="github" pages="5">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1014,8 +1014,8 @@
         <mxCell id="dyhCjAqO1mqmQ2K4hZBf-19" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeColor=none;fillColor=#CCFFCC;" vertex="1" parent="1">
           <mxGeometry x="490" y="224.25" width="78" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="dyhCjAqO1mqmQ2K4hZBf-14" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeColor=none;fillColor=#CCFFCC;" vertex="1" parent="1">
-          <mxGeometry x="360" y="216" width="70" height="80" as="geometry" />
+        <mxCell id="dyhCjAqO1mqmQ2K4hZBf-14" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=13;strokeColor=none;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="351" y="216" width="79" height="80" as="geometry" />
         </mxCell>
         <mxCell id="AarR5cB8WNFemI6xRRU4-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="334" y="70" width="386" height="250" as="geometry" />
@@ -1594,10 +1594,10 @@
           <mxGeometry x="540" y="177" width="43" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dyhCjAqO1mqmQ2K4hZBf-15" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,iVBORw0KGgoAAAANSUhEUgAAAGUAAACICAMAAADJeNWhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACcUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICBAQEBgYGCAgICgoKDAwMDg4OEBAQEhISFBQUFhYWGBgYGhoaHBwcHh4eH9/f4eHh4+Pj5eXl5+fn6enp6+vr7e3t7+/v8fHx8/Pz9fX19/f3+fn5+/v7/f39/////fpnmkAAAATdFJOUwAIECAoMEhgcHiAp7e/x8/f7/eKVvwjAAAACXBIWXMAABcRAAAXEQHKJvM/AAAEC0lEQVRoQ+2ZaXejIBSGZ186+2i1iemWpkv2Jv7//zbIfUFUbrwmeM6c1udL9UJ4IsIF0jdndb79OIGvb/xEYTlDszVQGgy/BoXh+IKGK6AsIJ/RsguKQuLRoCQoTQ3Fr/OTyHQj56n+E0V/P6FxC8WDWNItq6FwGEvOaigayJJvzvWV0nxE+wQFQ1nytdH8qWgoFszCaCgUzuJoPkChoEhAS6n5/R6OPiz5Ota3robug1ryRUNDt2EtpebXux4tDQ3dhLbUNXQd3FJqfr7t0ZLPdUzxXWnoqgdL/qiDCqWhiz4sjqZPS6np1WI1/VqMJqTFB43nvi3EYKnzkiyPdxy0QQtj4aGnfMWWBfVzfLtHoI2jLBdUPYqeEGjjKAvVVtwh0MartMyTyQ6XHsvy3hb6kFpWaonIzJCi2gpjeYqi0aHxJrRsk6L8hm5UmwCB4itEl3TtRWbZYezeqxavzZGhIJ1uzVeIpqjsQWaZULmaINe4sMSz/QiX/OwRWW6pmMFsUqN4hfoNJJadbaeFhBsBEsuGSgUs8Yk6oh4bU3Er8TM+UEdkeTY/RhjiLJtOMhpaDmoI+hFZypOoZvyIiT6/QoTA7PEgs5THEPWK54gVbJzOtKmhidCS23lSZjNiiniUHshkQsvevINJ4wvfoeT0DJPfU4XowtMrZs6uce9BZjGPEm8QcDEZ5sDDyCzm5c9wX2WDEci/GJnlhsq5DIKh4Q6+KjILZiU369ZUzL/WNsv+QW1zzWhlu4RaSYotsXdpbrOgrzRjxJqY0VyQIebSZnFTC79jQZcRiLm0WaiAWCDmATU0CLl0sbBLoR0eGoRculjURoLD7pwVCLkEslAzBEIu/9+zcKu6wl02EXLpYuHH2B41NIi5tFncDr9FrMkSNQo8v/a0WlaTLMuQ2keINcHcV1WzzPfEbRbNjoojbiOErRT/LUSWHA/DdRkSDN+jMguScsysL5dUzI8OmcW8XX++XFEh9x0UMovpMu+U2SGJ8R0mtZiFP/EMAPQXu0lWCC02haSNNGP2gynfYVLLgioo0upmaVdulU/eKdl/DRZMnS/95CYw/mApspj3C5Ib2kZuZ24qVjzosAeRxR5eS1KTdlwS1G8gsYjPlWwKEj1L/SjG4dskaUQW54x0iIRdTEWWfEbl6mSBvy4TBGP+aCGz5JgVs3xWf0fqALilcc5vxqWWvV5BrtRVdfhe6oPsslD7Tx2E0KIP42NMx3K/6vxydeCzcku+Hl3al0u1FXYlWB/oLoXY4kK1Ffz+vMpgMfRqsemeTcI1jrKYVDA6sAhXOMrSmcHSlcHSlcHSlcHSlcHSlcHSlcHSlcHSlcHSlcHSlYplVPxjqw/ohxxYemawdOXlWKLoH2IDTnIA8drgAAAAAElFTkSuQmCC;" vertex="1" parent="1">
-          <mxGeometry x="373.95" y="226" width="40.1" height="54" as="geometry" />
+          <mxGeometry x="370.95" y="226" width="40.1" height="54" as="geometry" />
         </mxCell>
         <mxCell id="dyhCjAqO1mqmQ2K4hZBf-16" value="Dockerfile" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="364" y="274.25" width="60" height="30" as="geometry" />
+          <mxGeometry x="361" y="274.25" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
