@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-12T08:02:08.746Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="ybruSabS_NUra062tZ_0" version="22.1.18" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-01-12T08:03:10.124Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="ciap0dpnifol5_BwjIhW" version="22.1.18" type="github" pages="5">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -995,7 +995,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="uvtA_PXbMSZ9XiyVes7X" name="Dockerとは">
-    <mxGraphModel dx="693" dy="378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1264,7 +1264,7 @@
           <mxGeometry x="311.3766202090593" y="1220.0021148825065" width="17.62337979094077" height="28.067885117493475" as="geometry" />
         </mxCell>
         <mxCell id="AarR5cB8WNFemI6xRRU4-7" value="Docker HUBには、公式Dockerイメージを含む、様々なDockerイメージが公開・共有されています。&lt;br&gt;またGitHubのように共同作業を行ったり、世界中のユーザが作成したイメージが公開されています。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="74" y="340" width="220" height="84.5" as="geometry" />
+          <mxGeometry x="74" y="200" width="220" height="84.5" as="geometry" />
         </mxCell>
         <mxCell id="AarR5cB8WNFemI6xRRU4-10" value="pull" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="302" y="104" width="30" height="30" as="geometry" />
