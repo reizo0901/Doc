@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-17T07:18:43.002Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="KcdvTJuBfduAwvgeC_YA" version="22.1.18" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-01-17T07:19:22.439Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="7Eg0xh8aBqUAOihFg7pJ" version="22.1.18" type="github" pages="6">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2028,10 +2028,10 @@
         <mxCell id="p4YiydBRC9HWm_0MO-w6-5" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; EC2インスタンス" style="text;html=1;strokeColor=none;fillColor=#ED7100;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="360" y="350" width="380" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="p4YiydBRC9HWm_0MO-w6-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="p4YiydBRC9HWm_0MO-w6-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#009900;" vertex="1" parent="1">
           <mxGeometry x="380" y="380" width="340" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="p4YiydBRC9HWm_0MO-w6-2" value="&amp;nbsp; Docker" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+        <mxCell id="p4YiydBRC9HWm_0MO-w6-2" value="&amp;nbsp; Docker" style="text;html=1;strokeColor=none;fillColor=#009900;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="380" y="380" width="340" height="20" as="geometry" />
         </mxCell>
         <mxCell id="aOnBnxYwHSmpfNukf89y-1" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;" vertex="1" parent="1">
