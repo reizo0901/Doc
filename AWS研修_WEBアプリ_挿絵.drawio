@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-17T07:01:53.263Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="chqo9ycWVZTDxbhbK-9B" version="22.1.18" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-01-17T07:07:40.575Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="amk_UN82Y6-zJergEzbk" version="22.1.18" type="github" pages="6">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1953,6 +1953,15 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="rDOI4T25PB8SjkUVZ10Y-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="346" width="440" height="234" as="geometry" />
+        </mxCell>
+        <mxCell id="rDOI4T25PB8SjkUVZ10Y-2" value="&amp;nbsp; &amp;nbsp; &amp;nbsp;AWS Cloud" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="340" y="340" width="440" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="rDOI4T25PB8SjkUVZ10Y-3" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloud_2;fillColor=#000000;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="340" y="346" width="20" height="20" as="geometry" />
+        </mxCell>
         <mxCell id="OI08T-mcsIG6-EmImO_X-17" value="Internet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="232.4" y="507.36" width="60" height="30" as="geometry" />
         </mxCell>
@@ -2013,6 +2022,12 @@
         <mxCell id="OI08T-mcsIG6-EmImO_X-42" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/CustomDomain.svg;imageBorder=#FFFFFF;comic=0;strokeWidth=0;perimeterSpacing=0;" vertex="1" parent="OI08T-mcsIG6-EmImO_X-40">
           <mxGeometry x="2.842170943040401e-14" width="35.71" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="p4YiydBRC9HWm_0MO-w6-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="380.39" width="350" height="179.61" as="geometry" />
+        </mxCell>
+        <mxCell id="p4YiydBRC9HWm_0MO-w6-2" value="&amp;nbsp; Docker" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="350" y="380.39" width="350" height="20" as="geometry" />
+        </mxCell>
         <mxCell id="aOnBnxYwHSmpfNukf89y-1" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;" vertex="1" parent="1">
           <mxGeometry x="378.7" y="452.24" width="42.599999999999994" height="54" as="geometry" />
         </mxCell>
@@ -2066,6 +2081,12 @@
             <mxPoint x="540" y="479.3599999999999" as="sourcePoint" />
             <mxPoint x="591.11" y="479" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="p4YiydBRC9HWm_0MO-w6-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="454.34999999999997" y="414.68" width="211.3" height="129.12" as="geometry" />
+        </mxCell>
+        <mxCell id="p4YiydBRC9HWm_0MO-w6-4" value="MVCモデル" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="454.34999999999997" y="414.68" width="211.3" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
