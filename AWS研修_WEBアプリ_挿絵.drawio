@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-17T07:45:53.880Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="cPkh5qPdQuXCC3G1h2u5" version="22.1.18" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-01-17T07:46:51.944Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="UlGVXYtoTIYEJMoWuQLl" version="22.1.18" type="github" pages="6">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -158,7 +158,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="UhBQMDP3PCFNMFY5FV0T" name="EC2イメージ">
-    <mxGraphModel dx="693" dy="378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -201,16 +201,16 @@
         <mxCell id="0ccPIg0OutjmOZlxM05i-13" value="&amp;nbsp; &amp;nbsp; &amp;nbsp;Docker" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="66" y="450" width="374.34" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-14" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF8000;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-14" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2496ed;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="500" width="340" height="151.5" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-15" value="&amp;nbsp; 仮想コンテナ(nginx)" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-15" value="&amp;nbsp; 仮想コンテナ(nginx)" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="500" width="340" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-16" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF8000;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-16" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2496ed;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="691.5" width="340" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-17" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF8000;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-17" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2496ed;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="912.5" width="340" height="97.5" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-18" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#f8cecc;strokeColor=none;" parent="1" vertex="1">
@@ -234,10 +234,10 @@
         <mxCell id="0ccPIg0OutjmOZlxM05i-23" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/etc/nginx/conf.d&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;/etc/nginx/uwsgi_params&lt;/div&gt;&lt;div&gt;/static&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
           <mxGeometry x="229.26000000000002" y="548.25" width="160" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-24" value="&amp;nbsp; 仮想コンテナ(Postgresql)" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-24" value="&amp;nbsp; 仮想コンテナ(Postgresql)" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="912.5" width="340" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-25" value="&amp;nbsp; 仮想コンテナ(django)" style="text;html=1;strokeColor=none;fillColor=#FF8000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-25" value="&amp;nbsp; 仮想コンテナ(django)" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="691.5" width="340" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-26" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" edge="1">
@@ -364,9 +364,6 @@
               <mxPoint x="540.34" y="771.5" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-50" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="320.34" y="681.5" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-51" value="&amp;nbsp; EC2インスタンス(Amazon Linux 2)" style="text;html=1;strokeColor=default;fillColor=#000000;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="40" y="400" width="740" height="30" as="geometry" />
