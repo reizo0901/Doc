@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-17T07:00:24.305Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="aQdgNyI5ZcP2ShDWmCKt" version="22.1.18" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-01-17T07:01:18.683Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="IfCsLvuGLHNHhya0K4u-" version="22.1.18" type="github" pages="6">
   <diagram id="sJy378vkBmu3zpo50ejq" name="AWS環境">
     <mxGraphModel dx="1212" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1780,7 +1780,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="g1lfylm0ypZhCCcdJ_qC" name="MVCモデル図">
-    <mxGraphModel dx="836" dy="456" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1010" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1808,7 +1808,7 @@
         <mxCell id="Q56ltZYXQO9eLLlLqcve-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="490" y="250" width="220" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="Q56ltZYXQO9eLLlLqcve-9" value="&amp;nbsp; &amp;nbsp; &amp;nbsp;odels" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
+        <mxCell id="Q56ltZYXQO9eLLlLqcve-9" value="&amp;nbsp; &amp;nbsp; &amp;nbsp;odel" style="text;html=1;strokeColor=none;fillColor=#000000;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="490" y="250" width="220" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Q56ltZYXQO9eLLlLqcve-10" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#ff8000;" parent="1" vertex="1">
