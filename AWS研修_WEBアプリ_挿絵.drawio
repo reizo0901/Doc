@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T08:12:56.878Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="TvvS9VjTSazd2JIW4nde" version="22.1.21" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2024-01-18T08:14:04.913Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="u9J1HcLyz1wkJLrYBM3m" version="22.1.21" type="github" pages="8">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3032,6 +3032,9 @@
         </mxCell>
         <mxCell id="bBk2BXZDwbiM68WT1fWv-4" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/CustomDomain.svg;imageBorder=#FFFFFF;comic=0;strokeWidth=0;perimeterSpacing=0;" vertex="1" parent="bBk2BXZDwbiM68WT1fWv-2">
           <mxGeometry x="2.842170943040401e-14" width="35.71" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bBk2BXZDwbiM68WT1fWv-6" value="docker rm nginx" style="text;html=1;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;opacity=75;" vertex="1" parent="kNxPvKCZp8ak66DSuxOG-1">
+          <mxGeometry x="453.93" y="1560" width="126.07" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
