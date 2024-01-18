@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T08:38:43.075Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="cKnr5qTMMWc84JAxZykL" version="22.1.21" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2024-01-18T08:52:23.104Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="7lONDTvPycfvzuRCflRo" version="22.1.21" type="github" pages="8">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2453,7 +2453,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Dockerの操作の流れのコピー" id="tuXVJwfTFB8Ez46Q8zOU">
-    <mxGraphModel dx="1092" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="724" dy="472" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kNxPvKCZp8ak66DSuxOG-0" />
         <mxCell id="kNxPvKCZp8ak66DSuxOG-1" parent="kNxPvKCZp8ak66DSuxOG-0" />
