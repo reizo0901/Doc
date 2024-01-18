@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T01:14:03.356Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="qESQcD6Taq_gEYO8mouD" version="22.1.20" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2024-01-18T01:14:48.957Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="82kf4_IBklzTQ6IzCYvF" version="22.1.20" type="github" pages="7">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2440,13 +2440,13 @@
         <mxCell id="i3jIWxnyMZuVC9i3m6QS-140" value="イメージ取得" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;shadow=1;fontColor=#FFFFFF;" vertex="1" parent="b_DobbednAb_z2iC_BdG-1">
           <mxGeometry x="156" y="901" width="89" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="i3jIWxnyMZuVC9i3m6QS-141" value="コンテナ作成＆起動" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFF00;" vertex="1" parent="b_DobbednAb_z2iC_BdG-1">
+        <mxCell id="i3jIWxnyMZuVC9i3m6QS-141" value="コンテナ作成＆起動" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="b_DobbednAb_z2iC_BdG-1">
           <mxGeometry x="340" y="890" width="89" height="31" as="geometry" />
         </mxCell>
         <mxCell id="i3jIWxnyMZuVC9i3m6QS-142" value="イメージ確認" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="b_DobbednAb_z2iC_BdG-1">
           <mxGeometry x="257.5" y="979.25" width="89" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="i3jIWxnyMZuVC9i3m6QS-143" value="コンテナ確認" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="b_DobbednAb_z2iC_BdG-1">
+        <mxCell id="i3jIWxnyMZuVC9i3m6QS-143" value="コンテナ確認" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFF00;" vertex="1" parent="b_DobbednAb_z2iC_BdG-1">
           <mxGeometry x="440" y="979.25" width="89" height="20" as="geometry" />
         </mxCell>
       </root>
