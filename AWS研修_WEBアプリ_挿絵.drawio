@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T05:01:21.706Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="B4RsZp-U-S5IZKjyZoSx" version="22.1.21" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2024-01-18T06:15:07.549Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="m8RE4UXGIwhODSy4abwa" version="22.1.21" type="github" pages="8">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2453,7 +2453,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Dockerの操作の流れのコピー" id="tuXVJwfTFB8Ez46Q8zOU">
-    <mxGraphModel dx="936" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1092" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kNxPvKCZp8ak66DSuxOG-0" />
         <mxCell id="kNxPvKCZp8ak66DSuxOG-1" parent="kNxPvKCZp8ak66DSuxOG-0" />
@@ -3018,11 +3018,8 @@
         <mxCell id="dT4wxs7EFxzTsVNW7hhz-22" value="イメージ検索" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;shadow=1;fontColor=#FFFF00;" vertex="1" parent="kNxPvKCZp8ak66DSuxOG-1">
           <mxGeometry x="156" y="361" width="89" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="dT4wxs7EFxzTsVNW7hhz-23" value="docker pull" style="text;html=1;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;opacity=75;" vertex="1" parent="kNxPvKCZp8ak66DSuxOG-1">
-          <mxGeometry x="170" y="480" width="83" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="bBk2BXZDwbiM68WT1fWv-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="kNxPvKCZp8ak66DSuxOG-1" source="bBk2BXZDwbiM68WT1fWv-1" target="dT4wxs7EFxzTsVNW7hhz-22">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="dT4wxs7EFxzTsVNW7hhz-23" value="https://hub.docker.com/" style="text;html=1;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;opacity=75;" vertex="1" parent="kNxPvKCZp8ak66DSuxOG-1">
+          <mxGeometry x="217.93" y="419.25" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="bBk2BXZDwbiM68WT1fWv-1" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_with_Server.svg;imageBorder=none;" vertex="1" parent="kNxPvKCZp8ak66DSuxOG-1">
           <mxGeometry x="253" y="352.85" width="62.400000000000006" height="62.400000000000006" as="geometry" />
