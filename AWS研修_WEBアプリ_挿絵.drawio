@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-25T02:19:44.703Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="dGIwkY-MSTpyxZgO0EaE" version="22.1.21" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2024-01-25T02:58:34.841Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="zs7nTmi2z4Jcbn4TaATR" version="22.1.21" type="github" pages="9">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3331,7 +3331,7 @@
           <mxGeometry x="592.59" y="125" width="14.15" height="30" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-67" value="秘密鍵で暗号化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="234" y="134" width="84.75" height="20" as="geometry" />
+          <mxGeometry x="232" y="134" width="84.75" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-68" value="更改鍵で復号化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="557" y="149" width="84.75" height="20" as="geometry" />
