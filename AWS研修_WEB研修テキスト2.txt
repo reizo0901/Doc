@@ -20,14 +20,7 @@
 
 説明を適切なところに挿入する。
 
-②SSHとは？※使っているけどそもそも何？ ※図を入れる
 
-  SSHとは「Secure Shell」の略で、安全に通信を行って、ネットワークに接続された機器を遠隔操作するための通信手段（プロトコル）の１つです。
-  SSHでの接続を行うには接続先には「SSHデーモン」もしくは「SSHサーバ」が必要となり、接続元には「SSHクライアント」が必要になります。
-  SSHの認証方式には２つの方式があり「パスワード認証方式」と「公開鍵認証方式」があります。
-  「パスワード認証方式」は、ユーザアカウントとパスワードによる認証で、接続する方式でセキュリティは低めです。
-  「公開鍵認証方式」は、公開鍵と秘密鍵による認証で接続する方式で、公開鍵がないと接続できないためセキュリティは高めです。
-  EC2インスタンスへのSSH接続は、「キーペア」という名称の公開鍵を取得して接続する手順をとります。
 
 ③Amazon　Linux2、Linuxディストリビュートについて ※図いる？
 ・Redhat系とDebian系
@@ -504,6 +497,15 @@ DBサーバー:postgresql:〇〇
 4.Amazon EC2にSSH接続
   ネットワークとサーバの準備が整いましたので、ローカル端末からAmazon EC2に接続してWEB開発環境を構築していきます。
 
+  SSHとは？※使っているけどそもそも何？ ※図を入れる
+
+  SSHとは「Secure Shell」の略で、安全に通信を行って、ネットワークに接続された機器を遠隔操作するための通信手段（プロトコル）の１つです。
+  SSHでの接続を行うには接続先には「SSHデーモン」もしくは「SSHサーバ」が必要となり、接続元には「SSHクライアント」が必要になります。
+  SSHの認証方式には２つの方式があり「パスワード認証方式」と「公開鍵認証方式」があります。
+  「パスワード認証方式」は、ユーザアカウントとパスワードによる認証で、接続する方式でセキュリティは低めです。
+  「公開鍵認証方式」は、公開鍵と秘密鍵による認証で接続する方式で、公開鍵がないと接続できないためセキュリティは高めです。
+  EC2インスタンスへのSSH接続は、「キーペア」という名称の公開鍵を取得して接続する手順をとります。
+
 4-1.キーペアのアクセス権の変更
   EC2作成時にダウンロードしたキーペアのアクセス権を変更していきます。
   1.[スタート]ボタンをクリック後、"cmd"と入力し、[Enter]を押下して「コマンドプロンプト」を起動
@@ -522,7 +524,7 @@ icacls.exe %PEM_PATH% /inheritance:r
 ※icacls.exeコマンドを実行すると、以下のメッセージが返されます。紛らわしいメッセージですが正常です。
     「処理ファイル： ./EC2-kpr-<※LastName>.pem」
     「1個のファイルが正常に処理されました。0個のファイルを処理できませんでした」
-    
+
 4-2.Amazon EC2にSSHで接続
   SSHクライアントでEC2サーバに接続します。
 
@@ -733,7 +735,7 @@ docker-compose --version
 
 6.docker-composeの動作確認(nginxを起動するまで)
 
-  1.フォルダ作成
+  1.フォルダ並びにスクリプト、設定ファイルの作成
     今回の研修で必要となる以下のディレクトリとファイルを構成する。
 
     ディレクトリ構造
@@ -753,15 +755,137 @@ docker-compose --version
     　│└uwsgi_params
     　└docker-compose.yml
 
-以下の貼り付けする内容はシェルを作成後、実行権限を付与してから実行させる。
+以下のシェルファイルを作成します。
 
 //
+echo 各ディレクトリを作成
+
 mkdir /home/ec2-user/containers
 mkdir /home/ec2-user/containers/django
 mkdir /home/ec2-user/containers/django/startup
 mkdir /home/ec2-user/containers/django/uwsgi
 mkdir /home/ec2-user/containers/nginx
 mkdir /home/ec2-user/containers/nginx/conf
+
+echo 「docker-compose.yml」ファイルを作成
+targetpath=/home/ec2-user/containers/docker-compose.yml
+echo make file[$targetpath]
+
+echo version: '2.23.3' > $targetpath
+echo services: >> $targetpath
+echo \ \ \ \ nginx: >> $targetpath
+echo \ \ \ \ \ \ \ \ container_name: nginx >> $targetpath
+echo \ \ \ \ \ \ \ \ image: nginx:latest >> $targetpath
+echo \ \ \ \ \ \ \ \ ports: >> $targetpath
+echo \ \ \ \ \ \ \ \ \ \ \ \ - 80:80 >> $targetpath
+
+echo 「nginx.conf」ファイルを作成
+targetpath=/home/ec2-user/containers/nginx/conf/nginx.conf
+echo makefile[$targetpath]
+
+echo upstream django { > $targetpath
+echo \ \ \ \ server django:8000\; >> $targetpath
+echo } >> $targetpath
+echo  >> $targetpath
+echo server { >> $targetpath
+echo \ \ \ \ listen 80\; >> $targetpath
+echo \ \ \ \ location / { >> $targetpath
+echo \ \ \ \ \ \ \ \ uwsgi_pass django/\; >> $targetpath
+echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params/\; >> $targetpath
+echo \ \ \ \ } >> $targetpath
+echo } >> $targetpath
+
+echo 「params」ファイルを作成
+targetpath=/home/ec2-user/containers/nginx/params
+echo makefile[$targetpath]
+
+echo uwsgi_param QUERY_STRING \$query_string\; > $targetpath
+echo uwsgi_param REQUEST_METHOD \$request_method\; >> $targetpath
+echo uwsgi_param CONTENT_TYPE \$content_type\; >> $targetpath
+echo uwsgi_param CONTENT_LENGTH \$content_length\; >> $targetpath
+echo uwsgi_param REQUEST_URI \$request_uri\; >> $targetpath
+echo uwsgi_param PATH_INFO \$document_uri\; >> $targetpath
+echo uwsgi_param DOCUMENT_ROOT \$document_root\; >> $targetpath
+echo uwsgi_param SERVER_PROTOCOL \$server_protocol\; >> $targetpath
+echo uwsgi_param REMOTE_ADDR \$remote_addr\; >> $targetpath
+echo uwsgi_param REMOTE_PORT \$remote_port\; >> $targetpath
+echo uwsgi_param SERVER_ADDR \$server_addr\; >> $targetpath
+echo uwsgi_param SERVER_PORT \$server_port\; >> $targetpath
+echo uwsgi_param SERVER_NAME \$server_name\; >> $targetpath
+
+echo 「uwsgi.ini」ファイルを作成
+targetpath=/home/ec2-user/containers/django/uwsgi/uwsgi.ini
+echo makefile[$targetpath]
+
+echo [uwsgi] > $targetpath
+echo socket = :8000 >> $targetpath
+echo module = djangoapp.wsgi >> $targetpath
+echo wsgi-file = /app/app/wsgi.py >> $targetpath
+echo logto = /wsgi/wsgi.log >> $targetpath
+echo py-autoreload = 1 >> $targetpath
+
+echo 「Dockerfile」ファイルを作成
+targetpath=/home/ec2-user/containers/django/Dockerfile
+echo makefile[$targetpath]
+
+echo FROM python:3 > $targetpath
+echo RUN apt-get update \&\& apt-get install -y tree vim >> $targetpath
+echo WORKDIR /django >> $targetpath
+echo COPY requirements.txt /django >> $targetpath
+echo RUN pip install -r requirements.txt >> $targetpath
+echo COPY . /django >> $targetpath
+
+echo 「requirements.txt」ファイルを作成
+targetpath=/home/ec2-user/containers/django/requirements.txt
+echo makefile[$targetpath]
+
+echo django > $targetpath
+echo psycopg2 >> $targetpath
+echo uwsgi >> $targetpath
+echo django-bootstrap-datepicker-plus==5.0.3 >> $targetpath
+echo django-bootstrap4==22.3 >> $targetpath
+
+echo 「startup.sh」ファイルを作成
+targetpath=/home/ec2-user/containers/django/startup/startup.sh
+echo makefile[$targetpath]
+
+echo source /startup/setuser.sh \# setuser.sh を実行する > $targetpath
+echo uwsgi --ini /wsgi/uwsgi.ini \# uwsgi.ini の設定をもとに uwsgi を実行する >> $targetpath
+
+echo 「setuser.sh」ファイルを作成
+targetpath=/home/ec2-user/containers/django/startup/setuser.sh
+echo makefile[$targetpath]
+
+echo \#!/bin/bash -e > $targetpath
+echo SHELL_NAME=\'setuser.sh\' >> $targetpath
+echo echo \"[\$SHELL_NAME] START\" >> $targetpath
+echo  >> $targetpath
+echo \# setup group >> $targetpath
+echo if getent group \"\$GROUP_ID\" \> /dev/null 2\>\&1\; then >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] GROUP_ID \'\$GROUP_ID\' already exists.\" >> $targetpath
+echo else >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] GROUP_ID \'\$GROUP_ID\' does NOT exist. So execute [groupadd -g \$GROUP_ID \$GROUP_NAME].\" >> $targetpath
+echo \ \ \ \ groupadd -g \$GROUP_ID \$GROUP_NAME >> $targetpath
+echo fi >> $targetpath
+echo  >> $targetpath
+echo \# setup user >> $targetpath
+echo if getent passwd \"\$USER_ID\" \> /dev/null 2\>\&1\; then >> $targetpath
+echo \ \ \ \ echo \"[\\$SHELL_NAME] USER_ID \'\$USER_ID\' already exists.\" >> $targetpath
+echo else >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] USER_ID \'\$USER_ID\' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME].\" >> $targetpath
+echo \ \ \ \ useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME >> $targetpath
+echo fi >> $targetpath
+echo  >> $targetpath
+echo echo \"[\$SHELL_NAME] FINISH\" >> $targetpath
+
+echo file chmod[$targetpath]
+sudo chmod +x -R /home/ec2-user/containers/django/startup/*
+//
+
+  作成したシェルファイルに実行権限を付与します。
+
+//
+sudo chmod +x -R ./setting.sh
 //
 
   2.docker-composeファイルを作成する。
@@ -798,7 +922,17 @@ docker-compose up -d
   ブラウザにインスタンスのIPアドレスを入力する。
   http://<インスタンスのパブリック IPv4アドレス>
 
-  ※Nginxのようこそ画面が表示されること
+※次のページが表示されれば正常にnginxが起動されています。
+  
+
+Welcome to nginx!
+If you see this page, the nginx web server is successfully installed and working. Further configuration is required.
+
+For online documentation and support please refer to nginx.org.
+Commercial support is available at nginx.com.
+
+Thank you for using nginx.
+
 
   2.4.WEBサーバを停止する。
   
@@ -877,7 +1011,8 @@ logto = /wsgi/wsgi.log
 py-autoreload = 1
 //
 
-  7.djangoコンテナのイメージの元となるDockerfileを作成する。
+  7.djangoコンテナイメージの元となるDockerfileを作成する。
+  ※ここではpythonが設定されているイメージにdjangoの環境を構築しています。
 
 //
 cd /home/ec2-user/containers/django
@@ -887,7 +1022,7 @@ vim Dockerfile
     以下の文章を貼り付ける
 
 //
-FROM python:2.23.3
+FROM python:3
 RUN apt-get update && apt-get install -y tree vim
 WORKDIR /django
 COPY requirements.txt /django
@@ -977,6 +1112,7 @@ vim docker-compose.yml
 //
 
     以下の文章を張り付ける
+    ※ここは頑張って編集作業をしてもらう！！
 
 //
 version: '2.23.3'
