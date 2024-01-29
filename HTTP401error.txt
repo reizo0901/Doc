@@ -1,0 +1,23 @@
+FIX、エラー メッセージ"HTTP Error 401.1 - 権限がありません"が無効な資格情報を使用して、IIS 7.0 の Web にログオンしようとすると、期待したよりも早くサイト
+https://support.microsoft.com/ja-jp/topic/fix-%E3%82%A8%E3%83%A9%E3%83%BC-%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-http-error-401-1-%E6%A8%A9%E9%99%90%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93-%E3%81%8C%E7%84%A1%E5%8A%B9%E3%81%AA%E8%B3%87%E6%A0%BC%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6-iis-7-0-%E3%81%AE-web-%E3%81%AB%E3%83%AD%E3%82%B0%E3%82%AA%E3%83%B3%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E3%81%99%E3%82%8B%E3%81%A8-%E6%9C%9F%E5%BE%85%E3%81%97%E3%81%9F%E3%82%88%E3%82%8A%E3%82%82%E6%97%A9%E3%81%8F%E3%82%B5%E3%82%A4%E3%83%88-eb147831-8b5d-3e06-fe81-1f31df9e3d4d
+
+またもIIS、Windows環境でIISに外部PCからアクセスが繋がらない。
+https://ojorojoro.hateblo.jp/entry/2014/09/04/163144
+
+匿名認証がオフになっているときに Web サービスを呼び出すときにアクセスが拒否されました
+https://learn.microsoft.com/ja-jp/troubleshoot/developer/webapps/iis/www-authentication-authorization/access-denied-call-web-service
+
+IIS構成401エラー解決方法
+http://japan.windows10windows7.com/ruanjian/fwq/gyfwq/100361810.html
+
+IISのサイトでHTTPエラー401.3 Unauthorized
+https://tex2e.github.io/blog/windows/iis-401-3-unauthorized
+
+インターネット エクスプローラーでの Kerberos エラーのトラブルシューティング
+https://learn.microsoft.com/ja-jp/troubleshoot/developer/webapps/iis/www-authentication-authorization/troubleshoot-kerberos-failures-ie
+
+401エラー(Unauthorized)とは？概要や発生原因、対処方法、混同しやすいHTTPレスポンスステータスコードなども解説！
+https://ipeinc.jp/media/401-error/
+
+HTTP レスポンスステータスコード
+https://developer.mozilla.org/ja/docs/Web/HTTP/Status#%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%AC%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B9
