@@ -796,7 +796,7 @@ echo \ \ \ \ } >> $targetpath
 echo } >> $targetpath
 
 echo 「params」ファイルを作成
-targetpath=/home/ec2-user/containers/nginx/params
+targetpath=/home/ec2-user/containers/nginx/params/uwsgi_params
 echo makefile[$targetpath]
 
 echo uwsgi_param QUERY_STRING \$query_string\; > $targetpath
