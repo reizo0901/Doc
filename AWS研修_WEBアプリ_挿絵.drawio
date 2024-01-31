@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-31T06:30:51.976Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="s7c0AERGpJVo8s_e7Gad" version="23.0.2" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2024-01-31T08:02:25.865Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="G08YAivfDwpiae4EJTvd" version="23.0.2" type="github" pages="9">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="1196" dy="542" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3209,7 +3209,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="wxTfwdCOGfC9K3DvPjyl" name="SSHとは">
-    <mxGraphModel dx="659" dy="1543" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="819" dy="1627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3223,16 +3223,16 @@
           <mxGeometry x="250" y="-140" width="350" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-13" value="クライアントが SSH 接続を要求" style="text;whiteSpace=wrap;fontSize=10;align=left;fontStyle=1;container=0;rotation=0;" parent="1" vertex="1">
-          <mxGeometry x="320" y="19.38" width="240" height="20" as="geometry" />
+          <mxGeometry x="320" y="18.38" width="240" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-14" value="ランダムなメッセージを返信" style="text;whiteSpace=wrap;fontSize=10;align=right;fontStyle=1;container=0;rotation=0;" parent="1" vertex="1">
-          <mxGeometry x="319" y="39" width="240" height="20" as="geometry" />
+          <mxGeometry x="319" y="38" width="240" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-18" value="共通鍵に同意する" style="text;whiteSpace=wrap;fontSize=10;align=center;fontStyle=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="319" y="112.77" width="240" height="20" as="geometry" />
+          <mxGeometry x="319" y="113.77" width="240" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-19" value="暗号化された接続が確立されました" style="text;whiteSpace=wrap;fontSize=10;align=center;fontStyle=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="319" y="140" width="240" height="20" as="geometry" />
+          <mxGeometry x="319" y="138" width="240" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-20" value="" style="endArrow=oval;html=1;rounded=0;endFill=1;startArrow=async;startFill=1;fontSize=10;strokeWidth=3;strokeColor=#EA6B66;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -3288,11 +3288,11 @@
         <mxCell id="TSw2Bp_eQK-lMbhizJZs-35" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;&quot;#$!e@?&amp;gt;&quot;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=33;fillColor=#fff2cc;strokeColor=#d6b656;container=0;" parent="1" vertex="1">
           <mxGeometry x="645" y="116.60000000000001" width="79.34" height="14.8" as="geometry" />
         </mxCell>
-        <mxCell id="LY-W6TARsxPiD2AUaoXX-1" value="SSHクライアント" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;container=0;" parent="1" vertex="1">
-          <mxGeometry x="124.48999999999997" y="57.00000000000002" width="100" height="30" as="geometry" />
+        <mxCell id="LY-W6TARsxPiD2AUaoXX-1" value="SSHクライアント" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;container=0;" parent="1" vertex="1">
+          <mxGeometry x="270" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LY-W6TARsxPiD2AUaoXX-2" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer_with_Server.svg;imageBorder=none;opacity=40;container=0;" parent="1" vertex="1">
-          <mxGeometry x="300" y="-20.38" width="39.76" height="39.76" as="geometry" />
+          <mxGeometry x="300" y="-39.76" width="39.76" height="39.76" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-57" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;shadow=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="124.48999999999998" y="-99.75999999999999" width="67.7" height="60" as="geometry" />
@@ -3309,29 +3309,41 @@
         <mxCell id="TSw2Bp_eQK-lMbhizJZs-34" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;0をONする？" style="rounded=1;whiteSpace=wrap;html=1;arcSize=33;fillColor=#fff2cc;strokeColor=#d6b656;container=0;" parent="1" vertex="1">
           <mxGeometry x="692" y="93.38" width="79.34" height="14.8" as="geometry" />
         </mxCell>
-        <mxCell id="HiJa4c-fVSB_7BXZ9omu-2" value="SSHサーバ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;container=0;" parent="1" vertex="1">
-          <mxGeometry x="701.03" y="89.38" width="100" height="30" as="geometry" />
+        <mxCell id="HiJa4c-fVSB_7BXZ9omu-2" value="SSHサーバ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;container=0;" parent="1" vertex="1">
+          <mxGeometry x="507.04" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-1" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;textOpacity=50;opacity=40;container=0;" parent="1" vertex="1">
-          <mxGeometry x="537.12" y="-14.349999999999998" width="31.37" height="39.76" as="geometry" />
+          <mxGeometry x="543.12" y="-38.73" width="31.37" height="39.76" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-64" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.acute_triangle;dx=0.71;rotation=-150;fillColor=#000000;shadow=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="676.7499999999999" y="-60.559999999999995" width="24.66" height="70" as="geometry" />
+          <mxGeometry x="619.9999999999999" y="19.380000000000003" width="24.66" height="70" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-63" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;shadow=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="663.79" y="-74.35" width="67.7" height="60" as="geometry" />
+          <mxGeometry x="607.04" y="5.590000000000003" width="67.7" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-65" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#FF8000;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.security.key_permissions;rotation=25;fontColor=#FFFF00;container=0;" parent="1" vertex="1">
-          <mxGeometry x="693.05" y="-71.55" width="14.15" height="30" as="geometry" />
+          <mxGeometry x="636.3" y="8.39" width="14.15" height="30" as="geometry" />
         </mxCell>
         <mxCell id="HiJa4c-fVSB_7BXZ9omu-66" value="Public key&lt;br&gt;(秘密鍵)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF8000;container=0;" parent="1" vertex="1">
-          <mxGeometry x="656.75" y="-54.61000000000001" width="80" height="48.12" as="geometry" />
+          <mxGeometry x="600" y="25.32999999999999" width="80" height="48.12" as="geometry" />
         </mxCell>
-        <mxCell id="HiJa4c-fVSB_7BXZ9omu-15" value="メッセージを暗号化して返信" style="text;whiteSpace=wrap;fontSize=10;align=center;fontStyle=1;container=0;rotation=0;" parent="1" vertex="1">
-          <mxGeometry x="319" y="59" width="240" height="17" as="geometry" />
+        <mxCell id="HiJa4c-fVSB_7BXZ9omu-15" value="メッセージを公開鍵で暗号化して返信" style="text;whiteSpace=wrap;fontSize=10;align=left;fontStyle=1;container=0;rotation=0;" parent="1" vertex="1">
+          <mxGeometry x="319" y="58" width="240" height="17" as="geometry" />
         </mxCell>
-        <mxCell id="HiJa4c-fVSB_7BXZ9omu-17" value="公開鍵を使用してメッセージを復号化し、&#xa;　クライアントが認証される" style="text;whiteSpace=wrap;fontSize=10;align=center;fontStyle=1;container=0;rotation=0;" parent="1" vertex="1">
-          <mxGeometry x="319" y="75.99999999999997" width="240" height="32.24" as="geometry" />
+        <mxCell id="HiJa4c-fVSB_7BXZ9omu-17" value="メッセージを秘密鍵で復号化し、&#xa;内容がチェックされ認証される　" style="text;whiteSpace=wrap;fontSize=10;align=right;fontStyle=1;container=0;rotation=0;" parent="1" vertex="1">
+          <mxGeometry x="319" y="77.99999999999997" width="240" height="32.24" as="geometry" />
+        </mxCell>
+        <mxCell id="RQTUsSrE30-CNX7r8VnG-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="318.31" y="19.38" as="sourcePoint" />
+            <mxPoint x="318.31" y="179.38" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RQTUsSrE30-CNX7r8VnG-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="19.38" as="sourcePoint" />
+            <mxPoint x="560" y="179.38" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
