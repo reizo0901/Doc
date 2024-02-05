@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-02T02:34:03.418Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="zTIz2PKFukzyxdfLDt0l" version="23.1.0" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2024-02-05T02:09:04.690Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="Wt-OpUVufhYtrpsAj5I4" version="23.1.1" type="github" pages="8">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2498,7 +2498,7 @@
           <mxGeometry x="258.93" y="880" width="83" height="20" as="geometry" />
         </mxCell>
         <mxCell id="dT4wxs7EFxzTsVNW7hhz-2" value="docker run --name nginx -p 80:80 nginx" style="text;html=1;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;opacity=75;" parent="kNxPvKCZp8ak66DSuxOG-1" vertex="1">
-          <mxGeometry x="266" y="1080" width="237" height="20" as="geometry" />
+          <mxGeometry x="275.43" y="1080" width="237" height="20" as="geometry" />
         </mxCell>
         <mxCell id="dT4wxs7EFxzTsVNW7hhz-3" value="docker ps&lt;br&gt;docker ps -a&lt;br&gt;docker inspect nginx&lt;br&gt;docker logs nginx&lt;br&gt;docker start nginx&lt;br&gt;docker stop nginx&lt;br&gt;docker rm nginx" style="text;html=1;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;opacity=75;" parent="kNxPvKCZp8ak66DSuxOG-1" vertex="1">
           <mxGeometry x="453.93" y="1280" width="126.07" height="100" as="geometry" />
