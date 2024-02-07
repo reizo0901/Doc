@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-07T08:07:14.087Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="EDgIHbzaWN8VFLV2b-nP" version="23.1.1" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-02-07T08:08:29.952Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="LJ60S_EfT8CtlxFbuPj2" version="23.1.1" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3166,7 +3166,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Lm7XHA1ZopFRKfIwyhrt" name="viエディタ説明">
-    <mxGraphModel dx="819" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="678" dy="379" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3326,7 +3326,7 @@
         <mxCell id="VDUbevytTiBjqQQLrVhE-85" value="vi ,vim エディター&lt;br&gt;簡易操作マニュアル" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="80" y="15" width="130" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="VDUbevytTiBjqQQLrVhE-86" value="※ファイルが壊れてE325:ATTENTIONが&lt;br&gt;表示された場合は、保存せずviを閉じます。&lt;br&gt;コマンドラインから、[ls -la]を実行し、対象ファイル名の先頭に[.]と、拡張子に[.swap]が付与されているファイルを探します。&lt;br&gt;sudo rm [.対象のファイル名.swap]を削除すれば、保存が可能になります。" style="text;html=1;strokeColor=none;fillColor=#f8cecc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;fontColor=#FF3333;" vertex="1" parent="1">
+        <mxCell id="VDUbevytTiBjqQQLrVhE-86" value="※ファイルが壊れてE325:ATTENTIONが&lt;br&gt;表示された場合は、保存せずviを閉じます。&lt;br&gt;コマンドラインから、[ls -la]を実行し、対象ファイル名の先頭に[.]と、拡張子に[.swap]が付与されているファイルを探します。&lt;br&gt;sudo rm [.対象のファイル名.swap]を削除すれば、保存が可能になります。" style="text;html=1;strokeColor=#FF3333;fillColor=#f8cecc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;fontColor=#FF3333;strokeWidth=1;shadow=0;glass=0;" vertex="1" parent="1">
           <mxGeometry x="400" y="4" width="150" height="100" as="geometry" />
         </mxCell>
       </root>
