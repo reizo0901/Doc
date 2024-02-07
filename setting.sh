@@ -33,7 +33,7 @@ echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params/\; >> $targetpath
 echo \ \ \ \ } >> $targetpath
 echo } >> $targetpath
 
-targetpath=/home/ec2-user/containers/nginx/params
+targetpath=/home/ec2-user/containers/nginx/uwsgi_params
 echo makefile[$targetpath]
 
 echo uwsgi_param QUERY_STRING \$query_string\; > $targetpath
@@ -63,7 +63,7 @@ echo py-autoreload = 1 >> $targetpath
 targetpath=/home/ec2-user/containers/django/Dockerfile
 echo makefile[$targetpath]
 
-echo FROM python:2.23.3 > $targetpath
+echo FROM python:3 > $targetpath
 echo RUN apt-get update \&\& apt-get install -y tree vim >> $targetpath
 echo WORKDIR /django >> $targetpath
 echo COPY requirements.txt /django >> $targetpath
