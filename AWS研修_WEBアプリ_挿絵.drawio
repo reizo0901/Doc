@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-07T05:46:19.666Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="uqOj9vPJq8WPwNmJg81d" version="23.1.1" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-02-07T06:39:42.499Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="biR_G9dEuvsCEUhmKWlm" version="23.1.1" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3212,7 +3212,7 @@
         <mxCell id="VDUbevytTiBjqQQLrVhE-19" value="ノーマルモード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;align=center;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="240" y="70" width="120" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="VDUbevytTiBjqQQLrVhE-20" value="・保存、終了&lt;br&gt;・環境設定" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;strokeColor=#FF8000;" vertex="1" parent="1">
+        <mxCell id="VDUbevytTiBjqQQLrVhE-20" value="・保存、終了&lt;br&gt;・機能設定など" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;strokeColor=#FF8000;" vertex="1" parent="1">
           <mxGeometry x="80" y="165" width="120" height="35" as="geometry" />
         </mxCell>
         <mxCell id="VDUbevytTiBjqQQLrVhE-21" value="コマンドモード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF8000;fontColor=#FFFFFF;align=center;fontSize=9;strokeColor=#FF8000;" vertex="1" parent="1">
@@ -3251,10 +3251,10 @@
         <mxCell id="VDUbevytTiBjqQQLrVhE-48" value="ESC" style="labelPosition=center;verticalLabelPosition=middle;align=center;html=1;shape=mxgraph.basic.shaded_button;dx=2;fillColor=#666666;strokeColor=none;whiteSpace=wrap;fillOpacity=100;fontColor=#FFFFFF;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="80" y="73" width="29" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="VDUbevytTiBjqQQLrVhE-51" value="を押すと、" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+        <mxCell id="VDUbevytTiBjqQQLrVhE-51" value="を押すと、ノーマル" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="110" y="73" width="100" height="15" as="geometry" />
         </mxCell>
-        <mxCell id="VDUbevytTiBjqQQLrVhE-52" value="ノーマルモードに戻る" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+        <mxCell id="VDUbevytTiBjqQQLrVhE-52" value="モードに戻ります。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="80" y="87" width="100" height="13" as="geometry" />
         </mxCell>
       </root>
