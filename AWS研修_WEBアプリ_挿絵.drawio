@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-07T08:23:56.416Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="PJBPJspVpon2RQIIM7UL" version="23.1.1" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-02-07T08:31:43.177Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="PvIXTyojEu01L-XlCAVX" version="23.1.1" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2870,12 +2870,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ZSJV8b-fRQMwLcA5g7Qt" name="chmodとアクセス権">
-    <mxGraphModel dx="562" dy="314" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="678" dy="379" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="m7fBT6fERzURLFxAaBNP-1" value="種類とアクセス権の見方" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="40" y="130" width="300" height="20" as="geometry" />
+        <mxCell id="m7fBT6fERzURLFxAaBNP-1" value="種類とアクセス権の見方" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="117" width="300" height="20" as="geometry" />
         </mxCell>
         <mxCell id="UII9Yd8Gq9V9xgThXyXU-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="160" width="400" height="120" as="geometry" />
@@ -3164,6 +3164,12 @@
         </mxCell>
         <mxCell id="UII9Yd8Gq9V9xgThXyXU-54" value="変換" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
           <mxGeometry x="40" y="240" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="UII9Yd8Gq9V9xgThXyXU-56" value="※-(ハイフン)が入っているはビットなし(0)、それ以外はビットあり(1)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="40" y="147" width="400" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="UII9Yd8Gq9V9xgThXyXU-57" value="それぞれのアクセス権(所有者/グループ/その他)を3ビット単位で分割し、設定有無を計算しています。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="40" y="136" width="420" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
