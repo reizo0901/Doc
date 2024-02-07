@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-06T08:53:54.239Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="IfK-uoIpDBR4NvXLJvxJ" version="23.1.1" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2024-02-07T05:20:50.296Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="JN6zX75H4TPTC6yxYcx8" version="23.1.1" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3161,6 +3161,38 @@
             <mxPoint x="400" y="274" as="sourcePoint" />
             <mxPoint x="400" y="230" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Lm7XHA1ZopFRKfIwyhrt" name="viエディタ説明">
+    <mxGraphModel dx="819" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VDUbevytTiBjqQQLrVhE-2" value="・VI起動時のモード&lt;br&gt;・改行、行の削除・コピペ" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-19" value="ノーマルモード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-20" value="・保存、終了&lt;br&gt;・環境設定" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-21" value="コマンドモード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-22" value="・文字の入力、削除" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="240" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-23" value="インサートモード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="240" y="150" width="120" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-24" value="・矩形選択" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="400" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-25" value="ビジュアルモード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#FFFFFF;align=left;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="400" y="150" width="120" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
