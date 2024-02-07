@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-07T07:22:49.227Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="qiRqrFzf4Bwh2r5unwMw" version="23.1.1" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-02-07T07:46:15.638Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="FfuAVYSVIVOPaMeeuGOu" version="23.1.1" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="983" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -3170,6 +3170,30 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="VDUbevytTiBjqQQLrVhE-74" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="225" width="138" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-75" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="206" width="138" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-76" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="244" width="138" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-84" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="400" y="207" width="190" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-83" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="VDUbevytTiBjqQQLrVhE-84">
+          <mxGeometry x="-0.2041985452078543" y="46" width="133.69464440508045" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-80" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="VDUbevytTiBjqQQLrVhE-84">
+          <mxGeometry x="-0.2041985452078543" y="19" width="133.69464440508045" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-81" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="VDUbevytTiBjqQQLrVhE-84">
+          <mxGeometry width="133.69464440508045" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-63" value="文字単位選択モード&lt;br&gt;行単位選択モード&lt;br&gt;矩形選択モード" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="VDUbevytTiBjqQQLrVhE-84">
+          <mxGeometry x="57" y="-6" width="80" height="40" as="geometry" />
+        </mxCell>
         <mxCell id="VDUbevytTiBjqQQLrVhE-54" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#CCCCCC;" vertex="1" parent="1">
           <mxGeometry x="80" y="70" width="120" height="34" as="geometry" />
         </mxCell>
@@ -3275,9 +3299,6 @@
         <mxCell id="VDUbevytTiBjqQQLrVhE-61" value="[i]以外でもインサートモードに&lt;br&gt;入れるが、[i]だけ覚えていれば&lt;br&gt;操作には困りません。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
           <mxGeometry x="240" y="200" width="130" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="VDUbevytTiBjqQQLrVhE-63" value="文字単位選択モード&lt;br&gt;行単位選択モード&lt;br&gt;矩形選択モード" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="460" y="200" width="80" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="VDUbevytTiBjqQQLrVhE-64" value="[v]&lt;br&gt;[Shift]+[v]&lt;br&gt;[Ctrl]+[v]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
           <mxGeometry x="400" y="200" width="60" height="40" as="geometry" />
         </mxCell>
@@ -3292,6 +3313,12 @@
         </mxCell>
         <mxCell id="VDUbevytTiBjqQQLrVhE-68" value="コピーやカット後は、[p]で貼り付ける" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
           <mxGeometry x="400" y="271" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-71" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="224" y="26" width="168" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VDUbevytTiBjqQQLrVhE-73" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="223" y="45" width="168" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
