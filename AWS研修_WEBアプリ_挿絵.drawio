@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-07T10:53:08.506Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="WSm-pMnq8gzAWvl2UbFd" version="22.1.18" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-02-07T10:59:41.125Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="tB9R-W7YodTgtKHCfCB0" version="22.1.18" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="838" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -535,7 +535,7 @@
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-49" value="" style="curved=1;endArrow=classic;html=1;rounded=0;strokeColor=#E0D5B4;strokeWidth=4;startArrow=classic;startFill=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="580.34" y="561.5" as="sourcePoint" />
+            <mxPoint x="645" y="593" as="sourcePoint" />
             <mxPoint x="408.34" y="758.5" as="targetPoint" />
             <Array as="points">
               <mxPoint x="540.34" y="561.5" />
@@ -574,7 +574,7 @@
         <mxCell id="0ccPIg0OutjmOZlxM05i-58" value="Port:80&lt;br&gt;(HTTP)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="143.82999999999998" y="338" width="62" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-59" value="Port:21&lt;br&gt;(SSH)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+        <mxCell id="0ccPIg0OutjmOZlxM05i-59" value="Port:22&lt;br&gt;(SSH)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="692.53" y="337.45" width="58.6" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-60" value="※セキュリティグループでHTTPとSSHを許可する必要があります。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
