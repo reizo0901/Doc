@@ -830,21 +830,7 @@ viエディタで//で囲まれたシェルの内容を貼り付けて保存し�
 
 ※viエディタの簡単な使い方を説明
 
-  まずvi(vim)エディタには４つのモードが存在することを理解することが大事になります。
-  
-  ノーマルモード
-  コマンドモード
-  編集モード
-  ビジュアルモード
-
-
-
-
-
-
-
-
-
+  図で説明
 
 //↓ここから
 echo Make Directorys
@@ -1015,12 +1001,11 @@ treeコマンドはディレクトリ構造やファイルの配置を簡単に�
 
   2.1.WEBサーバのコンテナを作成する。
 
-//
-cd /home/ec2-user/containers
-vim docker-compose.yml
-//
+  以下のディレクトリにファイルが作成されていることを確認します。
 
-    以下の文章を張り付ける
+  cd /home/ec2-user/containers
+
+  cat docker-compose.yml
 
 //
 version: '2.23.3'
@@ -1066,15 +1051,13 @@ docker-compose down
 
 7.3層アーキテクチャを構築する。
 
-  1.nginx.conf を作成する。
+  1.nginx.conf を用意する。
     今回は upstream ディレクティブの記述にあるように django コンテナの8000番ポートへ通信を流す設定を行う。
 
-//
-cd /home/ec2-user/containers/nginx/conf
-vim nginx.conf
-//
+  以下のディレクトリにファイルが作成されていることを確認します。
 
-    以下の文章を貼り付ける。
+  cd /home/ec2-user/containers/nginx/conf
+  cat nginx.conf
 
 //
 upstream django {
@@ -1090,14 +1073,12 @@ server {
 }
 //
 
-  5.wsgiの通信で必要とされる uwsgi_params の作成を行う（参考）。
+  5.wsgiの通信で必要とされる uwsgi_params を用意する。
+  
+  以下のディレクトリにファイルが作成されていることを確認します。
 
-//
-cd /home/ec2-user/containers/nginx/
-vim uwsgi_params
-//
-
-    以下の文章を貼り付ける
+  cd /home/ec2-user/containers/nginx/
+  cat uwsgi_params
 
 //
 uwsgi_param QUERY_STRING $query_string;
@@ -1117,11 +1098,10 @@ uwsgi_param SERVER_NAME $server_name;
 
   6.djangoコンテナ側でnginxコンテナからの通信を受けられるように、uwsgi.ini の作成を行う。
 
-//
-cd /home/ec2-user/containers/django/uwsgi
-vim uwsgi.ini
-//
-    以下の文章を貼り付ける
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers/django/uwsgi
+  cat uwsgi.ini
 
 //
 [uwsgi]
@@ -1132,15 +1112,13 @@ logto = /wsgi/wsgi.log
 py-autoreload = 1
 //
 
-  7.djangoコンテナイメージの元となるDockerfileを作成する。
+  7.djangoコンテナイメージの元となるDockerfileを用意する。
   ※ここではpythonが設定されているイメージにdjangoの環境を構築しています。
 
-//
-cd /home/ec2-user/containers/django
-vim Dockerfile
-//
+  以下のディレクトリにファイルが作成されていることを確認します。
 
-    以下の文章を貼り付ける
+  cd /home/ec2-user/containers/django
+  cat Dockerfile
 
 //
 FROM python:3
@@ -1151,13 +1129,11 @@ RUN pip install -r requirements.txt
 COPY . /django
 //
 
-  8.djangoコンテナで必要とするPythonのモジュールのリストを作成する。
+  8.djangoコンテナで必要とするPythonのモジュールのリストを用意する。
 
-//
-vim requirements.txt
-//
+  同じディレクトリに以下のファイルが作成されていることを確認します。
 
-    以下の文章を貼り付ける
+   cat requirements.txt
 
 //
 django
@@ -1167,30 +1143,27 @@ django-bootstrap-datepicker-plus==5.0.3
 django-bootstrap4==22.3
 //
 
-  9.djangoコンテナ内で実行されるシェルスクリプト（startup.sh, setuser.sh）を作成する。
+  9.djangoコンテナ内で実行されるシェルスクリプト（startup.sh, setuser.sh）を用意する。
     userを作成し、uwsgi,ini を実行する。
 
-    9.1.startup.shを作成する。
+    9.1.startup.shを用意する。
+    
+  以下のディレクトリにファイルが作成されていることを確認します。
 
-//
-cd /home/ec2-user/containers/django/startup
-vim startup.sh
-//
-
-    以下の文章を貼り付ける
+  cd /home/ec2-user/containers/django/startup
+  cat startup.sh
 
 //
 source /startup/setuser.sh # setuser.sh を実行する
 uwsgi --ini /wsgi/uwsgi.ini # uwsgi.ini の設定をもとに uwsgi を実行する
 //
 
-    9.2.setuser.shを作成する。
+    9.2.setuser.shを用意する。
+    
+  同じディレクトリに以下のファイルが作成されていることを確認します。
 
-//
-vim setuser.sh
-//
 
-    以下の文章を貼り付ける
+  cat setuser.sh
 
 //
 #!/bin/bash -e
@@ -1217,7 +1190,7 @@ echo "[$SHELL_NAME] FINISH"
 //
 
 
-    9.3.startupディレクトリ配下の全てのファイルに実行権限を付与する。
+    9.3.startupディレクトリ配下の全てのファイルに実行権限が付与されていることを確認する。
 
 //
 sudo chmod +x -R *
