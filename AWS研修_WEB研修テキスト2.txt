@@ -535,7 +535,7 @@ icacls.exe %PEM_PATH% /inheritance:r
 
 5.ホスト側のソフトウェアのセットアップ
 
-5-1.パッケージの更新とTreeコマンドのインストール
+5-1.パッケージの更新とTreeコマンドのインストールとバージョンの確認をします。
 ※インストール済みパッケージの更新とディレクトリ階層の確認用のコマンドをインストールします。
 
 -うんちく-
@@ -549,13 +549,24 @@ yumコマンドはパッケージのバージョン管理を行っています�
 //
 sudo yum update
 sudo yum install -y tree
+tree --version
 //
 
-5-2.サーバのホスト側にdjangoをインストールします。
+-うんちく-
+インストールしたパッケージを調べるには？
+１つはそのパッケージ名にオプションで" --version"を付けて実行する。
+"tree --version"
+１つはyum list installedを実行すると、現在インストールされているパッケージの一覧が表示されます。
+詳細設計書などを作るときなどに実行することがあります。
+目的のパッケージだけを探したい場合は、先ほどのコマンドに続けて" | grep tree"と入力します。
+
+5-2.サーバのホスト側にdjangoをインストールとバージョンの確認をします。
 ホスト側からコンテナ型仮想化ソフトウェア(Docker)内にdjangoの環境を作成・設定するために必要となります。
+さきほどのyumコマンドとは違い、python用のパッケージのバージョン管理ツール(pip)によってインストールを行います。
 
 //
 python3 -m pip install django
+ptthon3 -m pip list
 //
 
 5-3.サーバのホスト側にコンテナ型仮想化ソフトウェアをインストールします。
@@ -574,6 +585,15 @@ docker --version
 sudo systemctl start docker
 systemctl status docker
 //
+
+-うんちく-
+systemctlコマンドとは
+Linuxシステム上で動作する各種サービスの管理を行うためのコマンドツールです。
+具体的には、以下のような操作が可能です。
+・サービスの起動・停止・再起動
+・サービスの状態確認
+・サービスの自動起動設定
+
   3.Dockerサービスの自動起動を有効化
 
 //  
@@ -581,7 +601,7 @@ sudo systemctl enable docker
 systemctl is-enabled docker
 //
 
-  4.ec2-userにdockerグループを追加
+  4.ec2-userセカンダリーグループにdockerグループを追加
   ※これによりsudoコマンドを利用しなくてもdockerコマンドが利用可能となります。
 
 //
@@ -589,6 +609,31 @@ grep docker /etc/group
 sudo usermod -a -G docker ec2-user
 cat /etc/group
 //
+
+-うんちく-
+特定のグループをセカンダリーグループに追加することで、同等の特権が付与されます。
+adm システム監視タスク用グループ
+systemd-journal ログ収集・保存サービス用グループ
+wheel UNIX時代にroot権限を付与するために利用されていたグループ名※昔の名残りで名前自体には意味はない。
+
+次のコマンドを叩いてみましょう。
+sudo cat /etc/sudoers
+
+次のような記述が表示されていると思います。
+何を記述しているかというと、
+
+## Allow root to run any commands anywhere
+root ALL=(ALL) ALL
+
+## Allows people in group wheel to run all commands
+%wheel ALL=(ALL) ALL
+
+構文はこんな感じでかかれています。
+誰が<tab>どこで<tab>誰として<tab>何をできる
+
+[whellが]、[全ての場所で]、[全てのユーザとして]、[全てのコマンドを実行できる]
+頭に%を付けるとグループ名として指定できます。
+
 
   5.再起動
 
@@ -604,11 +649,10 @@ sudo reboot
   7.dockerの状態確認
 
 //
-docker info
 systemctl status docker
 //
 
-    下のエラーは問題ない
+    下記のエラーは出力されても問題ありません。
     WARNING: bridge-nf-call-iptables is disabled
     WARNING: bridge-nf-call-ip6tables is disabled
 
@@ -740,6 +784,15 @@ sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-comp
 docker-compose --version
 //
 
+-うんちく-
+作成したシンボリックリンクはどのように見えるのでしょうか？気になりませんか？
+次のコマンドを叩いてみましょう！
+
+ls -la /usr/bin | grep docker-compose
+
+「/usr/bin/docker-compose」は「/usr/local/lib/docker/cli-plugins/docker-compose」からリンクされていることがわかります。
+
+
 ########################################################################################################################
 
 6.docker-composeの動作確認(nginxを起動するまで)
@@ -777,8 +830,24 @@ viエディタで//で囲まれたシェルの内容を貼り付けて保存し�
 
 ※viエディタの簡単な使い方を説明
 
+  まずvi(vim)エディタには４つのモードが存在することを理解することが大事になります。
+  
+  ノーマルモード
+  コマンドモード
+  編集モード
+  ビジュアルモード
+
+
+
+
+
+
+
+
+
+
 //↓ここから
-echo 各ディレクトリを作成
+echo Make Directorys
 
 mkdir /home/ec2-user/containers
 mkdir /home/ec2-user/containers/django
@@ -787,7 +856,6 @@ mkdir /home/ec2-user/containers/django/uwsgi
 mkdir /home/ec2-user/containers/nginx
 mkdir /home/ec2-user/containers/nginx/conf
 
-echo 「docker-compose.yml」ファイルを作成
 targetpath=/home/ec2-user/containers/docker-compose.yml
 echo make file[$targetpath]
 
@@ -799,7 +867,6 @@ echo \ \ \ \ \ \ \ \ image: nginx:latest >> $targetpath
 echo \ \ \ \ \ \ \ \ ports: >> $targetpath
 echo \ \ \ \ \ \ \ \ \ \ \ \ - 80:80 >> $targetpath
 
-echo 「nginx.conf」ファイルを作成
 targetpath=/home/ec2-user/containers/nginx/conf/nginx.conf
 echo makefile[$targetpath]
 
@@ -815,8 +882,7 @@ echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params/\; >> $targetpath
 echo \ \ \ \ } >> $targetpath
 echo } >> $targetpath
 
-echo 「params」ファイルを作成
-targetpath=/home/ec2-user/containers/nginx/params/uwsgi_params
+targetpath=/home/ec2-user/containers/nginx/uwsgi_params
 echo makefile[$targetpath]
 
 echo uwsgi_param QUERY_STRING \$query_string\; > $targetpath
@@ -833,7 +899,6 @@ echo uwsgi_param SERVER_ADDR \$server_addr\; >> $targetpath
 echo uwsgi_param SERVER_PORT \$server_port\; >> $targetpath
 echo uwsgi_param SERVER_NAME \$server_name\; >> $targetpath
 
-echo 「uwsgi.ini」ファイルを作成
 targetpath=/home/ec2-user/containers/django/uwsgi/uwsgi.ini
 echo makefile[$targetpath]
 
@@ -844,7 +909,6 @@ echo wsgi-file = /app/app/wsgi.py >> $targetpath
 echo logto = /wsgi/wsgi.log >> $targetpath
 echo py-autoreload = 1 >> $targetpath
 
-echo 「Dockerfile」ファイルを作成
 targetpath=/home/ec2-user/containers/django/Dockerfile
 echo makefile[$targetpath]
 
@@ -855,7 +919,6 @@ echo COPY requirements.txt /django >> $targetpath
 echo RUN pip install -r requirements.txt >> $targetpath
 echo COPY . /django >> $targetpath
 
-echo 「requirements.txt」ファイルを作成
 targetpath=/home/ec2-user/containers/django/requirements.txt
 echo makefile[$targetpath]
 
@@ -865,14 +928,12 @@ echo uwsgi >> $targetpath
 echo django-bootstrap-datepicker-plus==5.0.3 >> $targetpath
 echo django-bootstrap4==22.3 >> $targetpath
 
-echo 「startup.sh」ファイルを作成
 targetpath=/home/ec2-user/containers/django/startup/startup.sh
 echo makefile[$targetpath]
 
 echo source /startup/setuser.sh \# setuser.sh を実行する > $targetpath
 echo uwsgi --ini /wsgi/uwsgi.ini \# uwsgi.ini の設定をもとに uwsgi を実行する >> $targetpath
 
-echo 「setuser.sh」ファイルを作成
 targetpath=/home/ec2-user/containers/django/startup/setuser.sh
 echo makefile[$targetpath]
 
@@ -926,8 +987,31 @@ sudo chmod 775 setting.sh
   Linuxではこの3桁をビットに見立てて、計算します。
   rwx=111(2進数)=7(10進数)と解釈します。
   例えばr-xですと、101(2進数)=5(10進数)となります。
+
+  シェルファイルを実行します。
+  ./setting.sh
   
+  実行結果を確認しましょう。
+  tree
+
+-うんちく-
+treeコマンドはディレクトリ構造やファイルの配置を簡単に確認するためのコマンドになります。
+オプションを付けることで、もっと便利に使うことができます。
+-p 種類やアクセス権を表示
+-u ファイルの所有者を表示
+-g ファイルの所有グループを表示
+-D 作成日付を表示
+-h ファイルのサイズを表示
+※オプションの付与はほどほどに・・・。
+  
+  次のコマンドを実行すると・・・
+  tree -p -u -g
+  "ls -l"や"ll"コマンドと似た内容の表示がtree形式で表示されます。
+  アクセス権やディレクトリ、シンボリックリンクを探すのに役に立ちます。
+
   2.docker-composeファイルについて
+  dockerの練習で、イメージの取得からwebサーバの起動までを
+
 
   2.1.WEBサーバのコンテナを作成する。
 
