@@ -1,0 +1,72 @@
+@echo off
+
+rem ################################################################################
+rem イベントログのアーカイブファイルを共有ディスク(G:\)への移動
+rem 過去１年以上前のイベントログのアーカイブファイルを削除
+rem ################################################################################
+
+rem 環境変数
+set logfile=c:\tool\evtxdel.log
+set nuser=jptransport\jpit_admin
+set npass=P@ssw0rd123
+
+echo イベントログアーカイブファイル移動・削除処理[%date% %time%][%computername%]処理をかいししました > %logfile%
+
+echo Zドライブマウント処理[%date% %time%][%computername%]処理開始 >> %logfile%
+
+rem 自サーバに共有ディスクがマウントされているか確認し、コピー先サーバを選択する
+rem 自サーバに共有ディスクがマウントされている
+if not exist "G:\" (
+    rem 自サーバはpdn01
+    if "%computername%"=="PDN01" (
+        set trgsrv=192.168.2.172
+    ) else (
+        set trgsrv=192.168.2.171
+    )
+rem 自サーバに共有ディスクがマウントされていない
+) else (
+    rem 自サーバはpdn01
+    if "%computername%"=="PDN01" (
+        set trgsrv=192.168.2.171
+    ) else (
+        set trgsrv=192.168.2.172
+    )
+)
+echo Zドライブマウント処理[%date% %time%][%computername%]"アーカイブファイル移動先サーバ[%trgsrv%] >> %logfile%
+
+rem Zドライブがすでにマウントされている場合は再マウントする
+if exist "z:\" (
+    echo  Zドライブのアンマウント >> %logfile%
+    echo net use /d z: >> %logfile%
+    ping 127.0.0.1 -n 2 >> %logfile%
+    echo Zドライブのマウント >> %logfile%
+    net use z: \\%trgsrv%\g$\windowseventlog /user:%nuser% %npass% >> %logfile%
+    net use >> %logfile%
+) else (
+    echo  Zドライブのマウント >> %logfile%
+    net use z: "\\%trgsrv%\g$\windowseventlog" /user:%nuser% %npass% >> %logfile%
+    net use >> %logfile%
+)
+echo Zドライブマウント処理[%date% %time%][%computername%]処理終了 >> %logfile%
+
+if not exist "z:\" (
+    echo アーカイブファイル移動処理[%date% %time%][%computername%]Zドライブのマウントが失敗しているため処理を中断 >> %logfile%
+    goto batend
+)
+
+echo アーカイブファイル削除処理[%date% %time%][%computername%]処理開始 >> %logfile%
+forfiles /d -365 /M archive-*.evtx /c "cmd /c del -f -q @file&&echo アーカイブファイル削除処理[%date% %time%]削除 @file>>evtxdel.log"
+echo アーカイブファイル削除処理[%date% %time%][%computername%]処理終了 >> %logfile%
+
+echo アーカイブファイル移動処理[%date% %time%][%computername%]処理開始 >> %logfile%
+rem Zドライブがマウントされている場合はアーカイブファイルの移動を実施する開始
+rem 対象のフォルダのアーカイブファイルのみを選択し、処理を行う
+forfiles /P "c:\windows\system32\winevt\logs" /M "archive-*.evtx" /C "cmd /c move /y @path z:\%computername%\@fname && echo アーカイブファイル移動処理[%date% %time%][%computername%]移動[OK][@path] to [z:\%computername%\@fname] >> %logfile%" || echo アーカイブファイル移動処理[%date% %time%][%computername%]移動[NG][@path] >> %logfile%"
+net use /d z:
+net use >> %logfile%
+echo アーカイブファイル移動処理[%date% %time%][%computername%]処理終了 >> %logfile%
+
+echo イベントログアーカイブファイル移動・削除処理[%date% %time%][%computername%]処理を終了しました > %logfile%
+
+:BATEND
+exit
