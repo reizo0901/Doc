@@ -1,0 +1,168 @@
+rem ################################################################################
+rem 過去１年以上前のイベントログのアーカイブファイルを削除
+rem ################################################################################
+cd c:\windows\system32\winevt\logs\
+echo アーカイブファイル削除処理[%date% %time%]開始>>evtxdel.log
+forfiles /d -365 /M archive-*.evtx /c "cmd /c del -f -q @file&&echo アーカイブファイル削除処理[%date% %time%]削除 @file>>evtxdel.log"
+echo アーカイブファイル削除処理[%date% %time%]終了>>evtxdel.log
+exit
+
+rem ################################################################################
+rem PostgreSQLダンプ作成及び3世代より古いPostgreSQLダンプファイルの削除
+rem ################################################################################
+@echo off
+
+set APPDATA=C:\Users\Administrator\AppData\Roaming
+set USERPROFILE=C:\Users\Administrator
+set TIMESTAMP=%date:~0,4%%date:~5,2%%date:~8,2%
+
+if NOT EXIST G:\ goto exit_bat
+
+echo PostgreSQLダンプファイル作成処理[%date% %time%][%computername%]開始>>g:\pgdump\dumpdel.log
+cd "C:\Program Files\PostgreSQL\13\bin"
+pg_dump.exe -b -Fc -U postgres dneodb > c:\tmp\dneodb.pgdmp
+pg_dump.exe -b -Fc -U postgres dneoftsdb > c:\tmp\dneoftsdb.pgdmp
+pg_dump.exe -b -Fc -U postgres dneologdb > c:\tmp\dneologdb.pgdmp
+echo PostgreSQLダンプファイル作成処理[%date% %time%][%computername%]終了>>g:\pgdump\dumpdel.log
+
+echo PostgreSQLダンプファイル格納処理[%date% %time%][%computername%]開始>>g:\pgdump\dumpdel.log
+copy /y c:\tmp\dneodb.pgdmp g:\pgdump\dneodb_%TIMESTAMP%.pgdmp
+copy /y c:\tmp\dneoftsdb.pgdmp g:\pgdump\dneoftsdb_%TIMESTAMP%.pgdmp
+copy /y c:\tmp\dneologdb.pgdmp g:\pgdump\dneologdb_%TIMESTAMP%.pgdmp
+echo PostgreSQLダンプファイル格納処理[%date% %time%][%computername%]終了>>g:\pgdump\dumpdel.log
+
+echo PostgreSQLダンプファイル削除処理[%date% %time%][%computername%]開始>>g:\pgdump\dumpdel.log
+forfiles /P "g:\pgdump" /d -3 /M "*.pgdmp" /c "cmd /c del @path && echo PostgreSQLダンプファイル削除処理[%date% %time%][%computername%]削除 @path >>g:\pgdump\dumpdel.log"
+echo PostgreSQLダンプファイル削除処理[%date% %time%][%computername%]終了>>g:\pgdump\dumpdel.log
+
+EXIT /B
+
+:exit_bat
+
+EXIT /B
+
+rem################################################################################
+rem PostgreSQL/IIS自動起動
+rem################################################################################
+@ECHO OFF
+ set COUNT=1
+
+:PGCHECK
+  echo CHECK [postgresql-x64-13]
+  if %COUNT%.==10. goto PGABORT
+  net start | findstr "postgresql-x64-13" > NUL
+  if "%ERRORLEVEL%"=="1" goto PGSTART
+  echo ●RUNNING [postgresql-x64-13]
+  set COUNT=1
+  goto IISCHECK
+
+:PGSTART
+  echo 〇net start [postgresql-x64-13] try count %COUNT%
+  net start "postgresql-x64-13" > NUL
+  set /A COUNT=%COUNT% + 1
+  Ping 127.0.0.1 -n 10 > NUL
+  goto PGCHECK
+
+:PGABORT
+  eventcreate /id 999 /l application /t error /d "%computername% postgresql-x64-13起動エラー"
+  ×ERROR [postgresql-x64-13]起動エラー
+  EXIT /B 1
+
+:IISCHECK
+  echo CHECK [World Wide Web 発行サービス]
+  if %COUNT%.==10. goto IISABORT
+  net start | findstr /C:"World Wide Web 発行サービス" > NUL
+  if "%ERRORLEVEL%"=="1" goto IISSTART
+  echo ●RUNNING [World Wide Web 発行サービス]
+  goto BATEND
+
+:IISSTART
+  echo 〇net start [World Wide Web 発行サービス] try count %COUNT%
+  net start "World Wide Web 発行サービス" > NUL
+  set /A COUNT=%COUNT% + 1
+  Ping 127.0.0.1 -n 10 > NUL
+  goto IISCHECK
+
+:IISABORT
+  eventcreate /id 999 /l application /t error /d "%computername% World Wide Web 発行サービス起動エラー"
+  echo ×ERROR [World Wide Web 発行サービス]起動エラー
+  EXIT /B 1
+
+:BATEND
+  EXIT /B 0
+
+rem ################################################################################
+rem PostgreSQL/IIS自動停止
+rem ################################################################################
+@ECHO OFF
+ set COUNT=1
+
+:IISCHECK
+  echo CHECK [World Wide Web 発行サービス]
+  if %COUNT%.==10. goto IISABORT
+  net start | findstr /C:"World Wide Web 発行サービス" > NUL
+  if "%ERRORLEVEL%"=="0" goto IISSTOP
+  echo ●STOPPING [World Wide Web 発行サービス]
+  set COUNT=1
+  goto PGCHECK
+
+:IISSTOP
+  echo 〇NET STOP [World Wide Web 発行サービス] try count %COUNT%
+  net stop "W3SVC" > NUL
+  set /A COUNT=%COUNT% + 1
+  Ping 127.0.0.1 -n 10 > NUL
+  goto IISCHECK
+
+:IISABORT
+  eventcreate /id 999 /l application /t error /d "%computername% World Wide Web 発行サービス停止エラー"
+  echo ×ERROR [World Wide Web 発行サービス]停止エラー
+  EXIT /B 1
+
+:PGCHECK
+  echo CHECK [postgresql-x64-13]
+  if %COUNT%.==10. goto PGABORT
+  net start | findstr "postgresql-x64-13" > NUL
+  if "%ERRORLEVEL%"=="0" goto PGSTOP
+  echo ●STOPPING [postgresql-x64-13]
+  goto BATEND
+
+:PGSTOP
+  echo 〇NET STOP [postgresql-x64-13] try count %COUNT%
+  net stop "postgresql-x64-13" > NUL
+  set /A COUNT=%COUNT% + 1
+  Ping 127.0.0.1 -n 10 > NUL
+  goto PGCHECK
+
+:PGABORT
+  eventcreate /id 999 /l application /t error /d "%computername% postgresql-x64-13停止エラー"
+  echo ×ERROR [postgresql-x64-13]停止エラー
+  EXIT /B 1
+
+:BATEND
+  EXIT /B 0
+
+rem ################################################################################
+rem 過去1年以上前のIISログのファイルを削除
+rem ################################################################################
+
+if NOT EXIST G:\ goto exit_bat
+
+echo IISログファイル削除処理[%date% %time%][%computername%]開始 >> \\pdn00\g$\LogFiles\%computername%iisdel.log
+forfiles /P "g:\LogFiles\%computername%\W3SVC1" /d -365 /M u_ex*.log /c "cmd /c del -f -q @file&&echo IISログファイル削除処理[%date% %time%][%computername%]削除 @path >> \\pdn00\g$\LogFiles\%computername%iisdel.log"
+echo IISログファイル削除処理[%date% %time%][%computername%]終了 >> \\pdn00\g$\LogFiles\%computername%iisdel.log
+EXIT /B
+
+:exit_bat
+EXIT /B
+
+rem ################################################################################
+rem desknet's NEOメール索引最適化
+rem ################################################################################
+
+C:\Inetpub\Scripts\dneo\zbatwvacuumshare.exe -h "C:\Inetpub\Scripts\dneo" -l -a 
+C:\Inetpub\Scripts\dneo\zbatwvacuum.exe -h "C:\Inetpub\Scripts\dneo" -l -a 
+
+exit
+
+
+
