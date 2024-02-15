@@ -1,22 +1,22 @@
-# ãƒ†ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+# ƒeƒXƒgƒtƒ@ƒCƒ‹ì¬ƒXƒNƒŠƒvƒg
 
-# ä½¿ã„æ–¹
+# g‚¢•û
 # 
-# tabåŒºåˆ‡ã‚Šã®èª­ã¿è¾¼ã¿ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã€Œmakefiles.csvã€ã‚’ä½œæˆã—ã¾ã™ã€‚
-# 1è¡Œç›®ã«é …ç›®ã‚’ä½œæˆã—ã¾ã™ã€‚
+# tab‹æØ‚è‚Ì“Ç‚İ‚İ—pƒtƒ@ƒCƒ‹umakefiles.csvv‚ğì¬‚µ‚Ü‚·B
+# 1s–Ú‚É€–Ú‚ğì¬‚µ‚Ü‚·B
 # path<tab>filename<tab>size<tab>maketime<tab>updatetime<tab>accesstime
-# 2è¡Œç›®ã‹ã‚‰ã€ä½œæˆã«å¿…è¦ãªæƒ…å ±ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
+# 2s–Ú‚©‚çAì¬‚É•K—v‚Èî•ñ‚ğ“ü—Í‚µ‚Ü‚·B
 
-# path:ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹ãƒ‘ã‚¹â€»æœ«å°¾ã«\ã‚’ä»˜ã‘ãªã„ã“ã¨ã€‚
-# filename:ä½œæˆã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã®åç§°
-# size:ä½œæˆã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚µã‚¤ã‚º(Byte)
-# maketime:ä½œæˆæ—¥æ™‚
-# updatetime:æ›´æ–°æ—¥æ™‚
-# accesstime:ã‚¢ã‚¯ã‚»ã‚¹æ—¥æ™‚
+# path:ƒtƒ@ƒCƒ‹‚ğì¬‚·‚éƒpƒX¦––”ö‚É\‚ğ•t‚¯‚È‚¢‚±‚ÆB
+# filename:ì¬‚·‚éƒtƒ@ƒCƒ‹‚Ì–¼Ì
+# size:ì¬‚·‚éƒtƒ@ƒCƒ‹‚ÌƒTƒCƒY(Byte)
+# maketime:ì¬“ú
+# updatetime:XV“ú
+# accesstime:ƒAƒNƒZƒX“ú
 
-# æ•°å€¤ãƒã‚§ãƒƒã‚¯é–¢æ•°
+# ”’lƒ`ƒFƒbƒNŠÖ”
 function IsNumeric([string]$check_date)
-# å¼•æ•°ã‚’å€ç²¾åº¦æµ®å‹•å°æ•°ç‚¹æ•°å‹ã«å¤‰æ›ã—ã€æˆåŠŸã—ãŸå ´åˆã¯ã€ŒTrueã€ã‚’å¤±æ•—ã—ãŸå ´åˆã¯ã€ŒFalseã€ã‚’è¿”ã™ã€‚
+# ˆø”‚ğ”{¸“x•‚“®¬”“_”Œ^‚É•ÏŠ·‚µA¬Œ÷‚µ‚½ê‡‚ÍuTruev‚ğ¸”s‚µ‚½ê‡‚ÍuFalsev‚ğ•Ô‚·B
 {
     try
     {
@@ -31,8 +31,8 @@ function IsNumeric([string]$check_date)
 
 
 
-# æ—¥æ™‚ãƒã‚§ãƒƒã‚¯é–¢æ•°
-# å¼•æ•°ã‚’æ—¥ä»˜å‹ã«å¤‰æ›ã—ã€æˆåŠŸã—ãŸå ´åˆã¯ã€ŒTrueã€ã‚’å¤±æ•—ã—ãŸå ´åˆã¯ã€ŒFalseã€ã‚’è¿”ã™ã€‚
+# “úƒ`ƒFƒbƒNŠÖ”
+# ˆø”‚ğ“ú•tŒ^‚É•ÏŠ·‚µA¬Œ÷‚µ‚½ê‡‚ÍuTruev‚ğ¸”s‚µ‚½ê‡‚ÍuFalsev‚ğ•Ô‚·B
 function IsDate([string]$check_date)
 {
     try
@@ -46,80 +46,81 @@ function IsDate([string]$check_date)
     }
 }
 
-# å®Ÿè¡Œã‚¹ã‚¯ãƒªãƒ—ãƒˆã®ãƒ‘ã‚¹ã‚’å–å¾—
+# ÀsƒXƒNƒŠƒvƒg‚ÌƒpƒX‚ğæ“¾
 $Folder_Pass = Get-Location
-# ä½™è¨ˆãªæ–‡å­—åˆ—ã‚’å‰Šé™¤
+# —]Œv‚È•¶š—ñ‚ğíœ
 $Folder_Pass = $Folder_Pass -replace "Path`n---- "
-# ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®ãƒ‘ã‚¹ã‚’æ ¼ç´
+# ƒXƒNƒŠƒvƒg‚ÌƒpƒX‚ğŠi”[
 Set-Location $Folder_Pass
-# logãƒ•ã‚¡ã‚¤ãƒ«ã®å®šç¾©
+# logƒtƒ@ƒCƒ‹‚Ì’è‹`
 $log_time = Get-Date -Format "yyyyMMddHHmmss"
 $log_file = $Folder_Pass+"\makefiles_result_"+$log_time+".log"
-# csvãƒ•ã‚¡ã‚¤ãƒ«ã®å®šç¾©
+# csvƒtƒ@ƒCƒ‹‚Ì’è‹`
 $csv_file = $Folder_Pass+"\makefiles.csv"
-# csvãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
+# csvƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
 $csv_ary = Import-Csv $csv_file -Delimiter "`t" -Encoding Default
 
 
-# logãƒ•ã‚¡ã‚¤ãƒ«åˆæœŸåŒ–
-$omsg = "[é–‹å§‹æ—¥æ™‚"+[datetime]::Now+"]"
+# logƒtƒ@ƒCƒ‹‰Šú‰»
+$omsg = "[ŠJn“ú"+[datetime]::Now+"]"
 echo $omsg > $log_file
 
 
-# å¤‰æ•°åˆæœŸåŒ–
+# •Ï”‰Šú‰»
 $skip = 0
 $mdir = 0
 $cnt = 0
 $omsg = ""
 
-# ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰1è¡Œãšã¤ãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆãƒ‘ãƒ©ãƒ¼ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—
+# ƒtƒ@ƒCƒ‹‚©‚ç1s‚¸‚Âƒtƒ@ƒCƒ‹ì¬ƒpƒ‰[ƒ[ƒ^‚ğæ“¾
 foreach ($csv_line in $csv_ary){
     $cnt += 1
     $ocnt = ("00000" + $cnt).substring(("00000" + $cnt).length - 5)
     #write-host $ocnt:$csv_line[0].path $csv_line[0].filename $csv_line[0].size $csv_line[0].maketime $csv_line[0].updatetime $csv_line[0].accesstime
 
-    # ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã®æ•°å€¤ãƒã‚§ãƒƒã‚¯
+    # ƒtƒ@ƒCƒ‹ƒTƒCƒY‚Ì”’lƒ`ƒFƒbƒN
     if ($skip -eq 0)
     {
         if (-not(IsNumeric $csv_line[0].size))
         {
-            $omsg = ""+$ocnt+":[ERR]ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã«å•é¡ŒãŒã‚ã‚Šã¾ã™ã€‚"
+            $omsg = ""+$ocnt+":[ERR]ƒtƒ@ƒCƒ‹ƒTƒCƒY‚É–â‘è‚ª‚ ‚è‚Ü‚·B"
             $skip = 1
         }
     }
 
-    # ãƒ‰ãƒ©ã‚¤ãƒ–å­˜åœ¨ãƒã‚§ãƒƒã‚¯
+    # ƒhƒ‰ƒCƒu‘¶İƒ`ƒFƒbƒN
     if ($skip -eq 0)
     {
         $temp_drv = Split-Path -Qualifier $csv_line[0].path
         if (-not(Test-Path $temp_drv))
         {
-            $omsg = ""+$ocnt+":[ERR]æŒ‡å®šã•ã‚ŒãŸãƒ‘ã‚¹ã®ãƒ‰ãƒ©ã‚¤ãƒ–ã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚"
+            $omsg = ""+$ocnt+":[ERR]w’è‚³‚ê‚½ƒpƒX‚Ìƒhƒ‰ƒCƒu‚Í‘¶İ‚µ‚Ü‚¹‚ñB"
             $skip = 1
         }
     }
-    # ãƒ‡ã‚£ã‚¹ã‚¯ã®ç©ºãå®¹é‡ãƒã‚§ãƒƒã‚¯ã—ã€ç©ºãå®¹é‡ãŒ30%ä»¥ä¸‹ã®å ´åˆã¯å‡¦ç†ã—ãªã„ã€‚
-    # å‡¦ç†ãŒé…ã„ã®ã§ã€ä¸€åº¦ã®å®¹é‡å–å¾—ä»¥é™ã¯ã€è¨ˆç®—å¼ã®ã¿ã§å‡¦ç†ã™ã‚Œã°æ—©ããªã‚Šãã†...
-    if ($skip -eq 0)
+    # ƒfƒBƒXƒN‚Ì‹ó‚«—e—Êƒ`ƒFƒbƒN‚µA‹ó‚«—e—Ê‚ª30%ˆÈ‰º‚Ìê‡‚Íˆ—‚µ‚È‚¢B
+    # ˆ—‚ª’x‚¢‚Ì‚ÅAˆê“x‚Ì—e—Êæ“¾ˆÈ~‚ÍAŒvZ®‚Ì‚İ‚Åˆ—‚·‚ê‚Î‘‚­‚È‚è‚»‚¤...
+    #if ($skip -eq 0)
+    if (1 -eq 0)
     {
         $drive_letter = "c"
-        # ãƒ‰ãƒ©ã‚¤ãƒ–æƒ…å ±ã‚’å–å¾—ã™ã‚‹.
+        # ƒhƒ‰ƒCƒuî•ñ‚ğæ“¾‚·‚é.
         $drv = Get-PSDrive $drive_letter
-        # ãƒ‰ãƒ©ã‚¤ãƒ–ã®ç©ºãå®¹é‡ã¨ä½¿ç”¨é‡ã‚’åŠ ç®—ã—ã¦ç·å®¹é‡ã‚’çŸ¥ã‚‹.
+        # ƒhƒ‰ƒCƒu‚Ì‹ó‚«—e—Ê‚Æg—p—Ê‚ğ‰ÁZ‚µ‚Ä‘—e—Ê‚ğ’m‚é.
         $total = ( $drv.Free + $drv.Used )
-        # ä½œæˆèªã®ãƒ‰ãƒ©ã‚¤ãƒ–ã®ä½¿ç”¨é‡ã‚’è©¦ç®—
+        # ì¬Œê‚Ìƒhƒ‰ƒCƒu‚Ìg—p—Ê‚ğZ
         $temp_size = $drv.Used + $csv_line[0].size
-        # ä½¿ç”¨ç‡ã‚’è¨ˆç®—ã™ã‚‹.
+        # g—p—¦‚ğŒvZ‚·‚é.
         $rate =  $temp_size  / $total
-        # ç©ºãå®¹é‡ãŒ30%ä»¥ä¸‹ã®å ´åˆ
+        # ‹ó‚«—e—Ê‚ª30%ˆÈ‰º‚Ìê‡
         if ($rate -le 0.3 -or $rate -gt 1.0)
         {
-            $omsg = ""+$ocnt+":[ERR]ä½œæˆå¾Œã®ãƒ‰ãƒ©ã‚¤ãƒ–ã®ç©ºãå®¹é‡ãŒ30%ã‚’åˆ‡ã£ã¦ã„ã¾ã™ã€‚"
+            $omsg = ""+$ocnt+":[ERR]ì¬Œã‚Ìƒhƒ‰ƒCƒu‚Ì‹ó‚«—e—Ê‚ª30%‚ğØ‚Á‚Ä‚¢‚Ü‚·B"
             $skip = 1
         }
     }
     
-    # ãƒ‘ã‚¹ä½œæˆãƒã‚§ãƒƒã‚¯
+    # ƒpƒXì¬ƒ`ƒFƒbƒN
     if ($skip -eq 0)
     {
         if (Test-Path $csv_line[0].path)
@@ -131,7 +132,7 @@ foreach ($csv_line in $csv_ary){
             $mdir = 1
         }
     }
-    # ãƒ•ã‚¡ã‚¤ãƒ«å­˜åœ¨ãƒã‚§ãƒƒã‚¯
+    # ƒtƒ@ƒCƒ‹‘¶İƒ`ƒFƒbƒN
     # write-host $skip
     if ($skip -eq 0)
     {
@@ -139,85 +140,85 @@ foreach ($csv_line in $csv_ary){
         if (Test-Path $temp_path)
         {
             $skip = 1
-            $omsg = ""+$ocnt+":[WAR]ã™ã§ã«ãƒ•ã‚¡ã‚¤ãƒ«ãŒå­˜åœ¨ã—ã¦ã„ã¾ã™ã€‚"
+            $omsg = ""+$ocnt+":[WAR]‚·‚Å‚Éƒtƒ@ƒCƒ‹‚ª‘¶İ‚µ‚Ä‚¢‚Ü‚·B"
         }
     }
     
-    # ä½œæˆæ—¥æ™‚ãƒã‚§ãƒƒã‚¯
+    # ì¬“úƒ`ƒFƒbƒN
     if ($skip -eq 0)
     {
         if (IsDate $csv_line[0].maketime = $True)
         {
-            # æ—¥ä»˜å‹ã«å¤‰æ›
+            # “ú•tŒ^‚É•ÏŠ·
             $maketime = [Datetime]::Parse($csv_line[0].maketime)
         }
         else
         {
-            $omsg = ""+$ocnt+":[ERR]ã®ä½œæˆæ—¥æ™‚ã®è¨˜è¿°ã«èª¤ã‚ŠãŒã‚ã‚Šã¾ã™ã€‚"
+            $omsg = ""+$ocnt+":[ERR]‚Ìì¬“ú‚Ì‹Lq‚ÉŒë‚è‚ª‚ ‚è‚Ü‚·B"
             $skip = 1
         }
     }
-    # æ›´æ–°æ—¥æ™‚ãƒã‚§ãƒƒã‚¯
+    # XV“úƒ`ƒFƒbƒN
     if ($skip -eq 0)
     {
-        # èª­ã¿è¾¼ã‚“ã æ›´æ–°æ—¥æ™‚ãŒç©ºã®å ´åˆ
+        # “Ç‚İ‚ñ‚¾XV“ú‚ª‹ó‚Ìê‡
         if (($csv_line[0].updatetime).length -eq 0)
         {
-            # ä½œæˆæ—¥æ™‚ã‚’æ›´æ–°æ—¥æ™‚ã«
+            # ì¬“ú‚ğXV“ú‚É
             $updatetime = $maketime
         }
         else
         {
-            # æ›´æ–°æ—¥æ™‚ã®ã‚¨ãƒ©ãƒ¼ã‚’ãƒã‚§ãƒƒã‚¯
+            # XV“ú‚ÌƒGƒ‰[‚ğƒ`ƒFƒbƒN
             if (IsDate $csv_line[0].updatetime = $False)
             {
-                # æ—¥ä»˜å‹ã«å¤‰æ›
+                # “ú•tŒ^‚É•ÏŠ·
                 $updatetime = [Datetime]::Parse($csv_line[0].updatetime)
             }
             else
            {
-               $omsg = ""+$ocnt+":[ERR]ã®æ›´æ–°æ—¥æ™‚ã®è¨˜è¿°ã«èª¤ã‚ŠãŒã‚ã‚Šã¾ã™ã€‚"
+               $omsg = ""+$ocnt+":[ERR]‚ÌXV“ú‚Ì‹Lq‚ÉŒë‚è‚ª‚ ‚è‚Ü‚·B"
                $skip = 1
            }
         }
     }
-    # ã‚¢ã‚¯ã‚»ã‚¹æ—¥æ™‚ãƒã‚§ãƒƒã‚¯
+    # ƒAƒNƒZƒX“úƒ`ƒFƒbƒN
     if ($skip -eq 0)
     {
-        # èª­ã¿è¾¼ã‚“ã æ›´æ–°æ—¥æ™‚ãŒç©ºã®å ´åˆ
+        # “Ç‚İ‚ñ‚¾XV“ú‚ª‹ó‚Ìê‡
         if (($csv_line[0].accesstime.length) -eq 0)
         {
-            # ä½œæˆæ—¥æ™‚ã‚’æ›´æ–°æ—¥æ™‚ã«
+            # ì¬“ú‚ğXV“ú‚É
             $accesstime = $maketime
         }
         else
         {
-            # ã‚¢ã‚¯ã‚»ã‚¹æ—¥æ™‚ã®ã‚¨ãƒ©ãƒ¼ã‚’ãƒã‚§ãƒƒã‚¯
+            # ƒAƒNƒZƒX“ú‚ÌƒGƒ‰[‚ğƒ`ƒFƒbƒN
             if (IsDate $csv_line[0].accesstime = $False)
             {
-                # æ—¥ä»˜å‹ã«å¤‰æ›
+                # “ú•tŒ^‚É•ÏŠ·
                 $accesstime = [Datetime]::Parse($csv_line[0].accesstime)
             }
             else
            {
-               $omsg = ""+$ocnt+":[ERR]ã‚¢ã‚¯ã‚»ã‚¹æ—¥æ™‚ã®è¨˜è¿°ã«èª¤ã‚ŠãŒã‚ã‚Šã¾ã™ã€‚"
+               $omsg = ""+$ocnt+":[ERR]ƒAƒNƒZƒX“ú‚Ì‹Lq‚ÉŒë‚è‚ª‚ ‚è‚Ü‚·B"
                $skip = 1
            }
         }
     }
-    # å•é¡ŒãŒãªã‘ã‚Œã°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆ
+    # –â‘è‚ª‚È‚¯‚ê‚Îƒtƒ@ƒCƒ‹‚ğì¬
     if ($skip -eq 0)
     {
-        # ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆ
-        # æŒ‡å®šã®ãƒ•ã‚©ãƒ«ãƒ€ã¾ã§ã®ä¸­é–“ãƒ•ã‚©ãƒ«ãƒ€ã®æ—¥æ™‚ã‚‚å¤‰æ›´å‡ºæ¥ã‚‹ã¨æœ€é«˜ã§ã™ãŒ...
+        # ƒtƒHƒ‹ƒ_‚ğì¬
+        # w’è‚ÌƒtƒHƒ‹ƒ_‚Ü‚Å‚Ì’†ŠÔƒtƒHƒ‹ƒ_‚Ì“ú‚à•ÏXo—ˆ‚é‚ÆÅ‚‚Å‚·‚ª...
         if ($mdir -eq 1)
         {
-            # å­˜åœ¨ã—ãªã„è¤‡æ•°éšå±¤ã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã—ãªãŒã‚‰ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‚’å¤‰æ›´ã™ã‚‹ã€‚
+            # ‘¶İ‚µ‚È‚¢•¡”ŠK‘w‚ÌƒtƒHƒ‹ƒ_‚ğì¬‚µ‚È‚ª‚çƒ^ƒCƒ€ƒXƒ^ƒ“ƒv‚ğ•ÏX‚·‚éB
             for ($sel = 1;$sel -le ($csv_line[0].path).length;$sel++)
             {
                 if ((($csv_line[0].path).substring($sel - 1,1) -eq "\") -or ($sel -ge ($csv_line[0].path).length))
                 {
-                    # ãƒ•ã‚©ãƒ«ãƒ€ã®åŒºåˆ‡ã‚ŠãŒç™ºè¦‹å‡ºæ¥ãŸã®ã§ã€å­˜åœ¨ãƒã‚§ãƒƒã‚¯ã§è¦‹ã¤ã‹ã‚‰ãªã‘ã‚Œã°ãƒ•ã‚©ãƒ«ãƒ€ä½œæˆ
+                    # ƒtƒHƒ‹ƒ_‚Ì‹æØ‚è‚ª”­Œ©o—ˆ‚½‚Ì‚ÅA‘¶İƒ`ƒFƒbƒN‚ÅŒ©‚Â‚©‚ç‚È‚¯‚ê‚ÎƒtƒHƒ‹ƒ_ì¬
                     if (test-path ($csv_line[0].path).substring(0,$sel))
                     {
                     }
@@ -227,55 +228,30 @@ foreach ($csv_line in $csv_ary){
                         Set-Itemproperty ($csv_line[0].path).substring(0,$sel) -name CreationTime -value $maketime
                         Set-Itemproperty ($csv_line[0].path).substring(0,$sel) -name LastWriteTime -value $updatetime
                         Set-Itemproperty ($csv_line[0].path).substring(0,$sel) -name LastAccessTime -value $accesstime
-                        $omsg = $omsg+$ocnt+":[INF]["+($csv_line[0].path).substring(0,$sel)+"]ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã—ã¾ã—ãŸã€‚`n"
+                        $omsg = $omsg+$ocnt+":[INF]["+($csv_line[0].path).substring(0,$sel)+"]ƒtƒHƒ‹ƒ_‚ğì¬‚µ‚Ü‚µ‚½B`n"
                     }
                 }
             }
         }
-        # ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆ
+        # ƒtƒ@ƒCƒ‹‚ğì¬
         fsutil file createnew $temp_path $csv_line[0].size | out-null
         Set-Itemproperty $temp_path -name CreationTime -value $maketime
         Set-Itemproperty $temp_path -name LastWriteTime -value $updatetime
         Set-Itemproperty $temp_path -name LastAccessTime -value $accesstime
-        $omsg = $omsg+""+$ocnt+":[INF]["+$temp_path+"]ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ã¾ã—ãŸã€‚"
+        $omsg = $omsg+""+$ocnt+":[INF]["+$temp_path+"]ƒtƒ@ƒCƒ‹‚ğì¬‚µ‚Ü‚µ‚½B"
     }
-    # ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤º
+    # ƒƒbƒZ[ƒW‚ğ•\¦
     write-host $omsg
     echo $omsg >> $log_file
     write-host ""
-    # ãƒ«ãƒ¼ãƒ—å†…å¤‰æ•°åˆæœŸåŒ–
+    # ƒ‹[ƒv“à•Ï”‰Šú‰»
     $omsg = ""
     $temp_drv = ""
     $skip = 0
 }
 
-$omsg = "[çµ‚äº†æ—¥æ™‚"+[datetime]::Now+"]"
+$omsg = "[I—¹“ú"+[datetime]::Now+"]"
 echo $omsg >> $log_file
 
 
 
-path	filename	size	maketime	updatetime	accesstime
-c:\tmp\	dneodb.pgdmp	1200	2023/10/25 0:00		
-c:\tmp\	dneoftsdb.pgdmp	1200	2023/10/25 0:00		
-c:\tmp\	dneologdb.pgdmp	1200	2023/10/25 0:00		
-g:\pgdump\	dneodb_20231019.pgdmp	1393	2023/10/19 0:00		
-g:\pgdump\	dneodb_20231020.pgdmp	1394	2023/10/20 0:00		
-g:\pgdump\	dneodb_20231021.pgdmp	1395	2023/10/21 0:00		
-g:\pgdump\	dneodb_20231022.pgdmp	1396	2023/10/22 0:00		
-g:\pgdump\	dneodb_20231023.pgdmp	1397	2023/10/23 0:00		
-g:\pgdump\	dneodb_20231024.pgdmp	1398	2023/10/24 0:00		
-g:\pgdump\	dneodb_20231025.pgdmp	1399	2023/10/25 0:00		
-g:\pgdump\	dneoftsdb_20231019.pgdmp	1393	2023/10/19 0:00		
-g:\pgdump\	dneoftsdb_20231020.pgdmp	1394	2023/10/20 0:00		
-g:\pgdump\	dneoftsdb_20231021.pgdmp	1395	2023/10/21 0:00		
-g:\pgdump\	dneoftsdb_20231022.pgdmp	1396	2023/10/22 0:00		
-g:\pgdump\	dneoftsdb_20231023.pgdmp	1397	2023/10/23 0:00		
-g:\pgdump\	dneoftsdb_20231024.pgdmp	1398	2023/10/24 0:00		
-g:\pgdump\	dneoftsdb_20231025.pgdmp	1399	2023/10/25 0:00		
-g:\pgdump\	dneologdb_20231019.pgdmp	1393	2023/10/19 0:00		
-g:\pgdump\	dneologdb_20231020.pgdmp	1394	2023/10/20 0:00		
-g:\pgdump\	dneologdb_20231021.pgdmp	1395	2023/10/21 0:00		
-g:\pgdump\	dneologdb_20231022.pgdmp	1396	2023/10/22 0:00		
-g:\pgdump\	dneologdb_20231023.pgdmp	1397	2023/10/23 0:00		
-g:\pgdump\	dneologdb_20231024.pgdmp	1398	2023/10/24 0:00		
-g:\pgdump\	dneologdb_20231025.pgdmp	1399	2023/10/25 0:00		
