@@ -1,4 +1,6 @@
-	"ホスト型仮想化
+https://noauto-nolife.com/post/startup-django/
+
+"ホスト型仮想化
 (Virtual Box)"	"ハイパーバイザー型仮想化
 (VMWare/Hyper-V)"	"コンテナ型仮想化
 (Docker/Podman)"
