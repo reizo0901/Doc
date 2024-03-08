@@ -1,3 +1,10 @@
+
+
+
+ホスト用
+sed "s/PS1=.*/PS1=\"\\\\u@ec2-host:\\\\W]\\\\\\\\$ \"/" sedtest.txt
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
