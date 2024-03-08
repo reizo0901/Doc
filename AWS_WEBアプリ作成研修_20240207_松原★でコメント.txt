@@ -290,7 +290,7 @@ django-bootstarp4
     例:psb-giken
     [アベイラビリティーゾーン]
     ap-northeast-1a
-    [IPv4 CIDRブロック]★[IPv4 サブネットCIDRブロック]
+    [IPv4 サブネットCIDRブロック]
     10.0.0.0/24
 
 
@@ -319,6 +319,8 @@ django-bootstarp4
   1.左ペインから[ルートテーブル]をクリック
   2.[ルートテーブル]画面で[ルートテーブルを作成]をクリック
   3.[ルートテーブル]画面で、以下を設定し、[ルートテーブルを作成]をクリック ★以下の設定値
+
+  
 
 2-4-2.ルートテーブルを編集
   1.作成したルートテーブル[rtb-xxxxxxxxxxxxxxxxx]の画面下の[ルート]タブをクリックして、[ルートを編集]をクリック
@@ -503,7 +505,7 @@ Amazon　Linux2、Linuxディストリビュートについて ※図いる？
 //
 cd c:\work
 dir
-set PEM_PATH=c:\work\EC2-kpr-<※LastName>.pem ★キーペア作成時(kp-)とずれてる「EC2-kpr-<※LastName>.pem」→「kp-<※LastName>.pem」
+set PEM_PATH=c:\work\kpr-<※LastName>.pem
 icacls.exe %PEM_PATH% /reset
 icacls.exe %PEM_PATH% /GRANT:R "%USERNAME%":(R)
 icacls.exe %PEM_PATH% /inheritance:r
@@ -550,14 +552,10 @@ yumコマンドはパッケージのバージョン管理を行っています�
 必ず開発環境などで影響がないことを確認してから、本番環境でのアップデートを実施するようにしてください。
 
 //
-sudo yum update
+sudo yum update -y
 sudo yum install -y tree
 tree --version
 //
-
-★ダウンロード確認促される↓以下で「y」押下
-Total download size: 44 M
-Is this ok [y/d/N]: Is this ok [y/d/N]:
 
 -うんちく-
 インストールしたパッケージを調べるには？
@@ -699,7 +697,10 @@ Docker HUBには、公式のイメージを含め、ユーザが作成したイ�
 
   4.取得したイメージをコンテナ化し、実行する。
   docker run --name nginx -p 80:80 nginx
-  ※フォアグランドでデーモンが動作しているため、他のコマンド操作ができなくなります。  
+  ※実行中のdokcerのコンテナが動作しているため、コンソールの操作ができなくなります。
+  ※コンテナの実行中は、nginxのアクセスログやエラーログが画面に出力され続けます。
+  ※[CTRL]+[C]で停止することでホストのコンソールに戻ります。 
+  
 ★ログ(start worker process 29)が表示されたら5.に進んでOK
 
   5.WEBブラウザから、nginxが動作しているか確認する。
@@ -833,7 +834,7 @@ cd /home/ec2-user/
 
 viエディタでシェルファイルを作成します。
 
-vim settings.sh
+vim setting.sh
 
 viエディタで//で囲まれたシェルの内容を貼り付けて保存します。
 
@@ -962,7 +963,7 @@ sudo chmod +x -R /home/ec2-user/containers/django/startup/*
 
 //
 cd /home/ec2-user/
-sudo chmod 775 setting.sh ★sudo chmod 775 settings.sh(ファイル名のs抜けてる)
+sudo chmod 775 setting.sh
 //
 
 
@@ -985,10 +986,7 @@ sudo chmod 775 setting.sh ★sudo chmod 775 settings.sh(ファイル名のs抜�
   例えばr-xですと、101(2進数)=5(10進数)となります。
 
   シェルファイルを実行します。
-  ./setting.sh ★./settings.sh(sが抜けてる)
-  
-  実行結果を確認しましょう。
-  tree　★-bash: tree: command not foundが表示された場合「sudo yum install tree」を実行し、インストール
+  ./setting.sh
 
 -うんちく-
 treeコマンドはディレクトリ構造やファイルの配置を簡単に確認するためのコマンドになります。
@@ -1078,7 +1076,7 @@ server {
     listen 80;
     location / {
         uwsgi_pass django;
-        include /etc/nginx/uwsgi_params; ★「/home/ec2-user/containers/nginx/」ではない？
+        include /etc/nginx/uwsgi_params;
     }
 }
 //
@@ -1134,8 +1132,8 @@ py-autoreload = 1
 //
 FROM python:3
 RUN apt-get update && apt-get install -y tree vim
-WORKDIR /django
-COPY requirements.txt /django
+WORKDIR /app
+COPY requirements.txt /app
 RUN pip install -r requirements.txt
 COPY . /django
 //
@@ -1191,7 +1189,7 @@ fi
 
 # setup user
 if getent passwd "$USER_ID" > /dev/null 2>&1; then
-    echo "[$SHELL_NAME] USER_ID '$USER_ID' already exists." ★「echo "[\] USER_ID '$USER_ID' already exists."」で作成される
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' already exists."
 else
     echo "[$SHELL_NAME] USER_ID '$USER_ID' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME]."
     useradd -m -s /bin/bash -u $USER_ID -g $GROUP_ID $USER_NAME
@@ -1340,10 +1338,84 @@ TIME_ZONE = 'Asia/Tokyo'
   
     「インストールは成功しました！おめでとうございます！」のメッセージの画面が表示されていれば日本語化は成功です。
 
-
   16.データベースのマイグレート ※postgersqlを利用する場合は、settings.pyを編集する必要がある。
 
+
+PostgreSQLの設定を追加する。
+
+
 //
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下の行を修正する。
+
+//変更前
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+//
+
+修正方法
+
+DATABASES句の複製をします。
+①該当の行のDATABASESのDにカーソルを合わせた状態で、[Shift]+[v](行選択)を押下します。
+②カーソルキーの↓を押して行頭が{のところまで選択します。
+③[y](コピー:vimではヤンクと呼びます)を押下します。
+④続けてカーソルをDATABASESの上の空行のところに合わせて、[p](貼り付け)を押下します。
+
+元のDATABASES句をコメントアウトします。
+①複製されたDATABASESのDにカーソルを合わせた状態で、[Ctrl]+[v](矩形選択)を押下します。
+②カーソルキーの↓を押して行頭が{のところまで選択します。
+③[Shift]+[i](ビジュアルモードでの挿入モード)を押下します。
+④#を入力し、[ESC](挿入モードを終了)を押下します。
+※コメントを文字を外したいときは、③の操作を[x](1文字削除)押下にすると削除できます。
+
+コメントアウトされていないDATABASES句を修正します。
+[i]を押下して、挿入モードにして修正します。
+※教材テキストからコピペでもOKです。
+
+//変更後
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myappdb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'postgresql',
+        'PORT': '5432',
+    }
+}
+//
+Dockerコンテナ[django]にログインして作業をします。
+
+docker exec -it django /bin/bash
+
+ユーザをec2-userに切り替えます。※切り替えを行わないんと、
+データベースがroot権限で作成されてしまい
+
+su - ec2-user
+
+djangoのプロジェクトディレクトリに遷移します。
+
+cd /app
+
+データベースをマイグレーションします。
+※マイグレーションをすることにより、djangoが先ほど設定したPostgreSQLを利用できるようになります。
+
+python3 manage.py migrate
+//
+
+  17.djangoの管理者ユーザを作成する。
+//
+
+docker exec -it django /bin/bash
+su - ec2-user
+
 python3 manage.py migrate
 //
 
@@ -1371,8 +1443,118 @@ Password(again):
 
   19.CSSが適用されていないので修復する。
   
-  ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、
-  ちょっとテクが必要。
+//
+python3 manage.py createsuperuser
+//
+
+以下を入力
+Username:
+Email address: ←[Enter]でスキップ可能
+Password:
+Password(again):
+
+  18.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※管理者画面が表示される。
+
+  adminサイトにログインしてみよう。
+
+  先ほど入力した、UsernameとPasswordでログインします。
+
+  WEB画面上に「ようこそ●●.」と表示されていれば、ログインが正常にされています。
+
+dockerコンテナ(postgresql)に、以下のコマンド使ってログインする。
+
+docker exec -it postgresql /bin/bash
+
+rootのコンソールでpostgresユーザに切り替えるために、以下を入力し実行する。
+
+su - postgres
+
+postgreのコンソールでpostgreSQLに接続するために、以下を入力し実行する。
+
+psql
+
+psqlのコンソールでデータベース「myappdb」に接続するために、以下を入力し実行する。
+
+\c "myappdb"
+
+PostgreSQLに存在しているデータベースを確認してみましょう。
+
+次のコマンドを入力・実行し、DBの一覧を表示する。
+\l
+
+以下のDBが存在します。
+myappdb
+postgres
+template0
+template1
+
+※qを押すとコンソールに戻ります。
+
+テーブルの一覧を表示
+\d
+
+19個のtableが存在します。
+
+※qを押すとコンソールに戻ります。
+
+
+※djangoのテーブルが作成されていることを確認する。
+  「python3 manage.py migrate」を実行することにより、「settings.py」に記述した
+  DATABASE句の設定に従いDBならびにテーブルが作成されています。
+  
+先ほど登録した管理者情報が書き込まれているか確認してみましょう。
+
+psqlのコンソールで以下を入力
+
+select * from auth_user;
+
+どうですか？登録した管理者ユーザ名が入っていると思います。
+
+データベースの追加・削除が正しくされるか確認してみましょう！
+
+ブラウザにインスタンスのIPアドレスを入力する。
+http://<インスタンスのパブリック IPv4アドレス>/admin
+
+「Django管理サイト」が表示されるので、ユーザー名とパスワードを入力してログインしましょう。
+
+「認証と許可」タブの下に「ユーザー」と表示があるので、右側の「＋追加」をクリックする。
+
+「ユーザー名」「パスワード」「パスワード(確認用)」に入力をして、「保存」をクリックする。
+
+登録したユーザがテーブルに追加されているか確認してみましょう。
+
+psqlのコンソールで以下を入力
+
+select * from auth_user;
+
+データベースに先ほど登録したユーザのレコードが追加されていると思います。
+
+管理サイトはをクラスベースドビューによって作成されていて、DjangoでWebアプリケーションを構築した
+段階から利用することができます。
+作成したアプリケーションで利用するデータベースのデータの編集などもできるアプリケーションになります。
+
+qを押してpsqlコンソールに戻りましょう。
+\qを入力実行して、postgresコンソールに戻りましょう。
+exitを入力して、rootコンソールに戻りましょう。
+exitを入力実行して、postgresqlコンテナから出ます。
+
+
+  19.CSSが適用されていないので修復する。
+  ※adminサイトの表示が綺麗に表示されない理由として、静的コンテンツ要素のCSSやhtml、画像ファイルは
+    WEBサーバであるnginxからは参照ができずCSSが適用されていないためです。
+  ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、ちょっとテクが必要。
+
+  19.dockerコンテナをすべて停止します。
+  
+  ①現在コンテナにログインしているので、ログアウトします。
+  ②exit ←ec2-userからログアウト
+  ③exit ←rootならびにdockerコンテナからログアウトします。
+  ④docker-compose down
 
   20.静的コンテンツの設定を追加する。
 
@@ -1381,7 +1563,7 @@ cd /app/djangoapp/
 vim settings.py
 //
 
-  以下の行を追加
+  「STATIC_URL = '/STATIC'」の下に以下の行を追加
 
 //
 STATIC_ROOT = '/app/static/'
@@ -1665,3 +1847,21 @@ Host key for 18.176.30.149 has changed and you have requested strict checking.
 Host key verification failed.
 
 ssh-keygen -R 18.176.30.149
+
+export PS1="\u@django:\W]\\$ "
+export PS1="\u@nginx:\W]\\$ "
+export PS1="\u@postgresql:\W]\\$ "
+export PS1="\u@host:\W]\\$ "
+
+.bashrcファイルを修正する必要がある。
+
+#djangoコンテナのrootはここを修正
+/etc/bash.bashrc
+
+#djangoコンテナのec2-userはここを修正 コメントアウトでいけるかも
+/home/ec2-user/.bashrc
+
+#ホストはここを修正
+/etc/bashrc
+
+
