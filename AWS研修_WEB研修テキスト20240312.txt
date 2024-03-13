@@ -320,8 +320,6 @@ django-bootstarp4
   2.[ルートテーブル]画面で[ルートテーブルを作成]をクリック
   3.[ルートテーブル]画面で、以下を設定し、[ルートテーブルを作成]をクリック ★以下の設定値
 
-  
-
 2-4-2.ルートテーブルを編集
   1.作成したルートテーブル[rtb-xxxxxxxxxxxxxxxxx]の画面下の[ルート]タブをクリックして、[ルートを編集]をクリック
   2.[ルートを編集]画面で[ルートを追加]をクリック
@@ -759,6 +757,45 @@ Docker HUBには、公式のイメージを含め、ユーザが作成したイ�
   WEBブラウザから、nginxが動作しているか確認してみましょう。
 
   14.動作しているコンテナに接続してみましょう。
+  ※今回作成したコンテナのLinuxOSは「UBUNTU」となっているため、ホストOSとディストリビューションが異なるため、多少コマンドも異なります。
+
+  ＜豆知識＞
+  Linuxには大きく分けて３つのディストリビューションが存在しています。
+  ディストリビューションのことは、便宜上「種類」とでも思っておいてください。
+  Linuxはオープンソースのため、その開発体制は放任主義的であり、若干自由奔放です。
+  OSLinuxはオープンソースのため、その開発体制は放任主義的です。
+  Linuxはカーネル(OSの核となる部分)を指し、その他の部分はGNUが提供するOSSを使用し、融合させることに
+  よりOSとしての形を形成しています。
+  ディストリビューションによって、パッケージの管理や、システムの構成や設定などに違いがあるのはそのためです。
+  ディストリビューションは大きく分けて主に３系列になり、ほとんどのLinuxがこの３系列が派生したものになります。
+  ・RedHat系
+      <サーバ向き>
+        Amazon Linux2<RedHatから派生>
+        Amazon Linux2022<Fedoraから派生>
+        AlmaLinux<CentOSとバイナリーレベルで互換>
+        CentOS<残念ながら終了>
+        MIRACLE LINUX(日本サイバートラスト社)
+        Rocky Linux<バグを含めてCentOSを完全互換！>
+      <デスクトップ向き>
+        Fedora<ちょっとやんちゃ>
+  ・Debian系
+      <サーバ向き>
+        Debian
+        Ubuntu
+      <デスクトップ向き>
+        Linux mint(今一押しらしい！)
+        elementaryOS(Macライク)
+        ZorinOS(Windowsライク)
+        Deepin(中国産)
+        gLinux(Google社内向けデスクトップOS)
+      <小型シングルボードコンピュータ>
+        Raspberry Pi OS(ラズベリーパイOS)
+  ・Slackware系
+      <サーバ向き>
+      <デスクトップ向き>
+  ・その他
+    openSUSE
+    
   docker exec -it nginx /bin/bash
   
   15.nginxがブラウザに表示しているコンテンツを見てみましょう。
@@ -996,7 +1033,6 @@ sudo chmod +x -R /home/ec2-user/containers/django/startup/*
 cd /home/ec2-user/
 sudo chmod 775 setting.sh
 //
-
 
   chmod 775とは？
   "ls -l" もしくは "ll"コマンドを入力してみましょう。
@@ -1327,12 +1363,21 @@ ALLOWED_HOSTS = ['*']
 //
 docker-compose up -d
 //
+########################################################################################################################
+※「internal server error」が発生した場合。講師の説明で対応する
+確認箇所
+①settings.pyの*をシングルコーテーションで正しく囲っているか？
+  正しく囲っていない場合は、ALLOWED_HOSTが効かないため、NGINXからDJANGOへの接続が拒否されます。
+  /home/ec2-user/containers/django/uwsgi/uwsgi.logにエラーが出力されます。
+②「django-admin startproject djangoapp」を正しいディレクトリで実行したか？
+  treeコマンドを実行して、正しいディレクトリの構成なっているか確認する。
+  違うディレクトリに作成されている場合は、「sudo rm -rf djangoapp」で削除を実施し、正しいディレクトリで再度手順を実施する。
 
-※エラーが発生するかも・・・。講師の説明で対応する
 ★ここの対処はなんだっけ？
 　エラー：validating /home/ec2-user/containers/docker-compose.yml: (root) Additional property on is not allowed
 　対処：「dokcer-compose.yml」のversion 表記ができていない場合は修正する
 ★nginx が起動しない→statusがExited (1) 
+########################################################################################################################
 
   13.WEBサーバが起動したか確認してみる。
 
@@ -1374,9 +1419,9 @@ TIME_ZONE = 'Asia/Tokyo'
 
 PostgreSQLの設定を追加する。
 
-
 //
 cd /home/ec2-user/containers/django/djangoapp/djangoapp
+cp settings.py settings.bak
 vim settings.py
 //
 
@@ -1427,7 +1472,7 @@ Dockerコンテナ[django]にログインして作業をします。
 docker exec -it django /bin/bash
 
 ユーザをec2-userに切り替えます。※切り替えを行わないんと、
-データベースがroot権限で作成されてしまい
+データベースがroot権限で作成されてしまい正しく動作しなくなります。
 
 su - ec2-user
 
@@ -1443,17 +1488,6 @@ python3 manage.py migrate
 
   17.djangoの管理者ユーザを作成する。
 //
-
-docker exec -it django /bin/bash
-su - ec2-user
-
-python3 manage.py migrate
-//
-
-  ※同じディレクトリ内に、db.sqlite3というデータベース用のディレクトリが作成されます。
-  ※Djangoにはsqlite3というデータベースが組み込みされているため、特別に設定をしていない限り、sqlite3が利用されます。
-
-  17.djangoの管理者ユーザを作成する。
 
 //
 python3 manage.py createsuperuser
@@ -1472,30 +1506,18 @@ Password(again):
 
   ※管理者画面が表示される。
 
-  19.CSSが適用されていないので修復する。
-  
-//
-python3 manage.py createsuperuser
-//
-
-以下を入力
-Username:
-Email address: ←[Enter]でスキップ可能
-Password:
-Password(again):
-
-  18.adminサイトの確認
-
-  ブラウザにインスタンスのIPアドレスを入力する。
-  http://<インスタンスのパブリック IPv4アドレス>/admin
-
-  ※管理者画面が表示される。
-
   adminサイトにログインしてみよう。
 
   先ほど入力した、UsernameとPasswordでログインします。
 
   WEB画面上に「ようこそ●●.」と表示されていれば、ログインが正常にされています。
+
+  19.データベースにユーザが登録されていることを確認してみましょう
+
+  ※現在、djangoのコンテナに接続しているので、一度抜けます。
+  
+  ①exit ←ec2-userからログアウト
+  ②exit ←rootならびにdockerコンテナからログアウトします。
 
 dockerコンテナ(postgresql)に、以下のコマンド使ってログインする。
 
@@ -1509,10 +1531,6 @@ postgreのコンソールでpostgreSQLに接続するために、以下を入力
 
 psql
 
-psqlのコンソールでデータベース「myappdb」に接続するために、以下を入力し実行する。
-
-\c "myappdb"
-
 PostgreSQLに存在しているデータベースを確認してみましょう。
 
 次のコマンドを入力・実行し、DBの一覧を表示する。
@@ -1524,7 +1542,19 @@ postgres
 template0
 template1
 
+「myappdb」は「docker-compose.yml」ならびに「settings.py」で定義したdjango用のデータベース名になります。
+
 ※qを押すとコンソールに戻ります。
+
+それではdjangoで利用しているデータベース「myappdb」に接続してみましょう。
+
+\c myappdb
+
+以下のメッセージが表示されれば「myappdb」に接続がされています。
+You are now connected to database "myappdb" as user "postgres".
+
+現在接続されているデータベース名を確認してみましょう。
+select current_database();
 
 テーブルの一覧を表示
 \d
@@ -1565,29 +1595,35 @@ select * from auth_user;
 
 データベースに先ほど登録したユーザのレコードが追加されていると思います。
 
-管理サイトはをクラスベースドビューによって作成されていて、DjangoでWebアプリケーションを構築した
-段階から利用することができます。
-作成したアプリケーションで利用するデータベースのデータの編集などもできるアプリケーションになります。
+次に管理者ログも覗いてみましょう。
+select * from django_admin_log;
 
-qを押してpsqlコンソールに戻りましょう。
-\qを入力実行して、postgresコンソールに戻りましょう。
-exitを入力して、rootコンソールに戻りましょう。
-exitを入力実行して、postgresqlコンテナから出ます。
+先ほど、管理者権限でユーザを追加したので、こちらにログが出力されています。
 
+①qを押してpsqlコンソールに戻りましょう。
+②\qを入力実行して、postgresコンソールに戻りましょう。
+③exitを入力して、rootコンソールに戻りましょう。
+④exitを入力実行して、postgresqlコンテナから出ます。
 
   19.CSSが適用されていないので修復する。
   ※adminサイトの表示が綺麗に表示されない理由として、静的コンテンツ要素のCSSやhtml、画像ファイルは
     WEBサーバであるnginxからは参照ができずCSSが適用されていないためです。
   ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、ちょっとテクが必要。
 
-  19.dockerコンテナをすべて停止します。
-  
-  ①現在コンテナにログインしているので、ログアウトします。
-  ②exit ←ec2-userからログアウト
-  ③exit ←rootならびにdockerコンテナからログアウトします。
-  ④docker-compose down
-
   20.静的コンテンツの設定を追加する。
+
+Dockerコンテナ[django]にログインして作業をします。
+
+docker exec -it django /bin/bash
+
+ユーザをec2-userに切り替えます。※切り替えを行わないんと、
+データベースがroot権限で作成されてしまい正しく動作しなくなります。
+
+su - ec2-user
+
+djangoのプロジェクトディレクトリに遷移します。
+
+cd /app
 
 //
 cd /app/djangoapp/
@@ -1602,15 +1638,22 @@ STATIC_ROOT = '/app/static/'
 
   以下のコマンドを実行
 //
+cd /app
 python3 manage.py collectstatic
 //
 
+以下のメッセージが表示されれば正常に完了しています。
+125 static files copied to '/app/static'.
+
 ※/app/static/ディレクトリ配下に静的コンテンツが集められる。
 
+cd static
+tree
 
   21.Dockerコンテナからログアウトする。
 
 //
+exit
 exit
 //
 
@@ -1622,13 +1665,16 @@ vim docker-compose.yml
 //
 
   以下の文書をnginxのvolumes項目に追加する。
-  ※これにより、djangoにマウントされているstaticディレクトリをnginxにマウントします。
+  ※これにより、djangoで作成したstaticディレクトリをnginxにマウントします。
+  ※djangoで作成したstaticディレクトリは、ホスト側の「/home/ec2-user/containers/django/djangoapp」配下に作成されています。
+
+    「- ./nginx/uwsgi_params:/etc/nginx/uwsgi_params」の記述の下に以下の行を追加します。
 
 //
     - ./django/djangoapp/static:/static
 //
 
-  21.nginx.confに/staticにアクセスが来たら自サーバ内の/staticを参照するように修正する。
+  21.nginx.confに/staticへアクセスが来たら自サーバ内の/staticを参照するように修正する。
 
 //
 cd /home/ec2-user/containers/nginx/conf
@@ -1650,6 +1696,12 @@ docker-compose up -d --build
 
 //
 
+以下のエラーが出力された場合
+Error response from daemon: invalid volume specification: '/home/ec2-user/containers/django/djangoapp/static:static:rw': invalid mount config for type "bind": invalid mount path 'static' mount path must be absolute
+
+docker-compose.ymlのvolumeの記述が間違っている可能性があります。
+
+
   22.adminサイトの確認
 
   ブラウザにインスタンスのIPアドレスを入力する。
@@ -1659,19 +1711,18 @@ docker-compose up -d --build
 
   23.管理者画面はDjangoの中で、どのような仕組みで表示されているか
 
+  管理サイトはをクラスベースドビューによって作成されていて、DjangoでWebアプリケーションを構築した
+  段階から利用することができます。
+  作成したアプリケーションで利用するデータベースのデータの編集などもできるアプリケーションになります。
 
-########################################################################################################################
+  先ほど表示をCSSを修正した管理者画面がどのような仕組みで表示されているか確認してみましょう！
+  djangoのプロジェクトの設定ファイルが格納されている以下のパスに遷移し、「urls.py」ファイルを開きましょう。
 
-9.Helloworldを作成する。
-
-先ほど表示をCSSを修正した管理者画面がどのような仕組みで表示されているか確認してみましょう！
-djangoのプロジェクトの設定ファイルが格納されている以下のパスに遷移し、「urls.py」ファイルを開きましょう。
-
+//
 cd /home/ec2-user/containers/django/djangoapp/djangoapp
 vim urls.py
+//
 
-//
-//
 """djangoapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -1720,15 +1771,9 @@ urlpatterns = [
 9.1.「Hello world...」をMVCモデルを使って表示してみましょう。
 
   1.dockerコンテナ「django」にログインする。
-  ※今回作成したコンテナのベースOSは「UBUNTU」となっているため、ホストOSと多少コマンドが異なります。
-
-＜豆知識＞
-Linuxには大きく分けて３つのディストリビューションが存在しています。
-ディストリビューションのことは、便宜上「種類」とでも思っておいてください。
-Linuxはオープンソースのため、その開発体制は放任主義的であり、
 
 //
-docker exec -it django bash
+docker exec -it django /bin/bash
 //
 
   2.WEBアプリケーション用の環境を作成
@@ -1743,17 +1788,17 @@ su - ec2-user
 
 //
 cd /app
-python3 manage.py startapp todoapp
+python3 manage.py startapp boardapp
 //
 
-  ※同ディレクトリ内に、todoappというアプリケーション用のディレクトリが作成されます。
+  ※同ディレクトリ内に、boardappというアプリケーション用のディレクトリが作成されます。
 
-  2.3.todoapp ディレクトリ直下に urls.py を作成する。
-  ※/todoappのURLにアクセスした際に、何の処理をするか記述する。
+  2.3.boardapp ディレクトリ直下に urls.py を作成する。
+  ※/boardappのURLにアクセスした際に、何の処理をするか記述する。
   ※下の記述ではviews.pyのindexを処理させるようにしている。 
 
 //
-cd /app/todoapp
+cd /app/boardapp
 vim urls.py
 //
 
@@ -1768,7 +1813,7 @@ urlpatterns = [
 ]
 //
 
-  2.4.todoapp ディレクトリ直下の views.pyを修正する。
+  2.4.boardapp ディレクトリ直下の views.pyを修正する。
   ※urls.pyで指定してあるviews.pyのindex処理を記述する。
   ※下の記述ではHttpResponseオブジェクトを利用して、ブラウザにレスポンス返します。
 
@@ -1787,7 +1832,7 @@ def index(request):
 //
 
   2.5.djangoappディレクトリ直下のurls.pyを修正する。
-  ※プロジェクトのurls.pyに/todoapp/のURLの指定があった場合に、todoappのurlsに遷移するように
+  ※プロジェクトのurls.pyに/boardapp/のURLの指定があった場合に、boardappのurlsに遷移するように
     指示します。
 
 //
@@ -1798,13 +1843,32 @@ vim urls.py
   urlpatterns = [...]の中に、以下の行を追記する。
 
 //
-path('todoapp/', include('todoapp.urls')),
+path('boardapp/', include('boardapp.urls')),
+//
+
+
+Dockerコンテナからログアウトする。
+
+//
+exit
+exit
 //
 
   2.6.作成したサイトを確認する。
 
-http://[IP アドレス]/[app 名]にアクセスし、"Welcome to .."が確認できればOK。
+http://[IP アドレス]/boardappにアクセスし、"Welcome to .."が確認できればOK。
 
+########################################################################################################################
+「502 Bad Gateway」が表示された場合
+①uwsgiのログを確認します。
+cd /home/ec2-user/containers/django/uwsgi
+sudo cat wsgi.log
+
+errorになっている行を探します。
+sudo cat wsgi.log | grep -3 Error
+
+<うんちく>
+| grepを付けることで、検索対象の文字列がヒットした行だけ表示します。また-<数字>をオプションにつけことにより前後の行も表示します。
 ########################################################################################################################
 
 
@@ -1879,6 +1943,8 @@ Host key verification failed.
 
 ssh-keygen -R 18.176.30.149
 
+PS1="[\u@\h \W]\\$ "
+
 export PS1="\u@django:\W]\\$ "
 export PS1="\u@nginx:\W]\\$ "
 export PS1="\u@postgresql:\W]\\$ "
@@ -1894,4 +1960,9 @@ export PS1="\u@host:\W]\\$ "
 
 #ホストはここを修正
 /etc/bashrc
+
+
+プロンプト修正(ホスト)
+sudo sh -c 'echo "export NICKNAME=webserver" > /etc/profile.d/prompt.sh'
+sed "s/PS1=.*/PS1=\"\\\\u\@\$NICKNAME \\\\W]\\\\\\\\$/" bashrc.etc
 
