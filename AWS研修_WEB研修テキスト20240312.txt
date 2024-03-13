@@ -1964,5 +1964,5 @@ export PS1="\u@host:\W]\\$ "
 
 プロンプト修正(ホスト)
 sudo sh -c 'echo "export NICKNAME=webserver" > /etc/profile.d/prompt.sh'
-sed "s/PS1=.*/PS1=\"\\\\u\@\$NICKNAME \\\\W]\\\\\\\\$/" bashrc.etc
+sudo sed -i.bak "s/PS1=.*/PS1=\"\\\\u\@\$NICKNAME \\\\W]\\\\\\\\$ \"" /etc/bashrc
 
