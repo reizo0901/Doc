@@ -1,0 +1,385 @@
+アプリケーションのプロジェクトへの登録
+アプリケーションを作成したら、プロジェクトに登録しましょう。
+これをしないとプロジェクトからアプリケーションを認識出来ません。
+
+my_project/sample_app/apps.py を開いてみると、SampleAppConfig というクラスが定義されています。
+これを my_project/my_project/settings.py の INSTALLED_APPS に *'sample_app.apps.SampleAppConfig',*という文字列で追記します。
+
+my_project/my_project/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'sample_app.apps.SampleAppConfig', # Add
+]
+これでひとまずアプリケーションを作成できました。
+次から実際にアプリケーションの各所を作り込んでいきます。
+
+Modelの作成
+まず、**Model(データベース定義)**を作成しましょう。
+
+作成したいアプリケーションのデータモデルを my_project/sample_app/models.py に定義します。
+
+my_project/sample_app/models.py
+from django.db import models
+
+
+class Post(models.Model):
+    name = models.CharField('user name', max_length=15)
+    micropost = models.CharField('tweet', max_length=140, blank=True)
+
+    def __str__(self):
+        return self.name
+このように作成したいアプリケーションのデータ構造を定義することができます。
+ちなみに、user name や tweet は任意の文字列です。
+後から自分が何のデータのつもりで定義したかわかるような名前にしておきましょう。
+
+モデルの有効化
+モデルを作成したら、そのモデルを有効化する必要があります。
+
+以下のコマンドで my_project/sample_app/models.py の変更を反映するためのマイグレートファイルを作成します。
+
+$ python manage.py makemigrations sample_app
+Migrations for 'sample_app':
+  sample_app/migrations/0001_initial.py
+    - Create model Post
+これでマイグレートファイルができたので、以下のコマンドでデータベースに反映します。
+
+$ python manage.py migrate sample_app
+Operations to perform:
+  Apply all migrations: sample_app
+Running migrations:
+  Applying sample_app.0001_initial... OK
+以上で、Modelの作成は完了です。
+
+Viewの作成
+次に、**View（処理の定義）**を作成します。
+
+my_project/sample_app/views.py に「作成」「修正」「一覧」「削除」の各機能を関数で定義します。
+
+my_project/sample_app/views.py
+from django.shortcuts import render, get_object_or_404, redirect
+from django.forms import ModelForm
+
+from sample_app.models import Post
+
+
+def create_post(request):
+    """
+    新たなデータを作成する
+    """
+    # オブジェクトを新規作成する
+    post = Post()
+
+    # ページロード時
+    if request.method == 'GET':
+        # 新規作成オブジェクトにより form を作成
+        form = PostForm(instance=post)
+
+        # ページロード時は form を Template に渡す
+        return render(request,
+                      'sample_app/post_form.html',  # 呼び出す Template
+                      {'form': form})  # Template に渡すデータ
+
+    # 実行ボタン押下時
+    if request.method == 'POST':
+        # POST されたデータにより form を作成
+        form = PostForm(request.POST, instance=post)
+
+        # 入力されたデータのバリデーション
+        if form.is_valid():
+            # チェック結果に問題なければデータを作成する
+            post = form.save(commit=False)
+            post.save()
+
+        return redirect('sample_app:read_post')
+
+
+def read_post(request):
+    """
+    データの一覧を表示する
+    """
+    # 全オブジェクトを取得
+    posts = Post.objects.all().order_by('id')
+    return render(request,
+                  'sample_app/post_list.html',  # 呼び出す Template
+                  {'posts': posts})  # Template に渡すデータ
+
+
+def edit_post(request, post_id):
+    """
+    対象のデータを編集する
+    """
+    # IDを引数に、対象オブジェクトを取得
+    post = get_object_or_404(Post, pk=post_id)
+
+    # ページロード時
+    if request.method == 'GET':
+        # 対象オブジェクトにより form を作成
+        form = PostForm(instance=post)
+
+        # ページロード時は form とデータIDを Template に渡す
+        return render(request,
+                      'sample_app/post_form.html',  # 呼び出す Template
+                      {'form': form, 'post_id': post_id})  # Template に渡すデータ
+
+    # 実行ボタン押下時
+    elif request.method == 'POST':
+        # POST されたデータにより form を作成
+        form = PostForm(request.POST, instance=post)
+
+        # 入力されたデータのバリデーション
+        if form.is_valid():
+            # チェック結果に問題なければデータを更新する
+            post = form.save(commit=False)
+            post.save()
+
+        # 実行ボタン押下時は処理実行後、一覧画面にリダイレクトする
+        return redirect('sample_app:read_post')
+
+
+def delete_post(request, post_id):
+    # 対象のオブジェクトを取得
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()
+
+    # 削除リクエスト時は削除実行後、一覧表示画面へリダイレクトする
+    return redirect('sample_app:read_post')
+
+
+class PostForm(ModelForm):
+    """
+    フォーム定義
+    """
+    class Meta:
+        model = Post
+        # fields は models.py で定義している変数名
+        fields = ('name', 'micropost')
+軽く説明しておくと、以下のようになります。
+（コード見てわかる方はすっ飛ばしてもらって問題ないです）
+
+create_post()
+データ作成処理として呼ばれる関数です。
+ページロード時 or 実行ボタン押下時 の処理を request.method によって分岐させています。
+
+ページロード時は新たな Post オブジェクトによって、フォームを生成しています。
+フォーム定義は別途classで定義しています。
+Django標準の ModelForm を使うことで簡単にフォームを実装できます。
+
+実行ボタン押下時はフォームに入力された値を使って、Postオブジェクトを生成しています。
+これにより、新たにデータを作成しています。
+また、入力データのバリデーションも行っています。
+Django標準機能の form.is_valid を使うことでこれまた簡単に実装できます。
+
+作成処理後はデータ一覧画面に飛ばしています。
+
+read_post()
+データ一覧を表示する処理として呼ばれる関数です。
+やってることは、データベースから全データを取ってきて、それをそのままTemplateに渡すだけです。
+
+edit_post()
+データ編集処理として呼ばれる関数です。
+作成処理と似ていますが、こちらは引数で渡されたidによって、Post オブジェクトを取得し、フォームを生成します。
+
+関数内で使っている get_object_or_404 はとても便利なDjango標準機能です。
+objectを取得する機能ですが、対象のobjectがない場合は404Errorを送出してくれます。
+これにより不用意にServer Error (500)を出さずに済みます。
+
+実行ボタン押下時の処理はデータ作成処理と同じことをやっています。
+
+delete_post()
+データ削除処理として呼ばれる関数です。
+引数で渡されたidによって、 Post オブジェクトを取得し、対象オブジェクトを削除します。
+
+削除処理はTemplateにデータを渡すことはなく、処理実行後はデータ一覧画面にリダイレクトしています。
+
+このようにViewで各処理を定義することで、アプリケーション機能を実装することができます。
+
+Templateの作成
+次に、**Template（表示の定義）**を作成します。
+
+Templateでは画面表示を定義します。つまるところ、htmlファイルです。
+
+DjangoではTemplateの置き場所が決まっています。
+
+my_project/sample_app/ の配下に2階層ディレクトリを作成して
+my_project/sample_app/templates/sample_app/ というディレクトリを用意します。
+
+ここに、アプリケーションで使う Template を作成していきます。
+
+今回、必要なのは以下の2つの Template です。
+
+データの一覧画面
+データの入力フォーム画面
+データの一覧画面
+my_project/sample_app/templates/sample_app/post_list.html を作成します。
+
+post_list.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post lists</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <th>{{ post.id }}</th>
+        <td>{{ post.name }}</td>
+        <td>{{ post.micropost }}</td>
+        <td>
+          <a href="{% url 'sample_app:edit_post' post_id=post.id %}">修正</a>
+          <a href="{% url 'sample_app:delete_post' post_id=post.id %}">削除</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'sample_app:create_post' %}">作成</a>
+</body>
+</html>
+こちらのTemplate は View の read_post() から呼び出しています。
+
+大事なのは以下の部分です。
+
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <th>{{ post.id }}</th>
+        <td>{{ post.name }}</td>
+        <td>{{ post.micropost }}</td>
+        <td>
+          <a href="{% url 'sample_app:edit_post' post_id=post.id %}">修正</a>
+          <a href="{% url 'sample_app:delete_post' post_id=post.id %}">削除</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+ここで View から受け取った posts を使ってループを回しています。
+これにより、データの数分だけのテーブル行を表示しています。
+
+データの入力フォーム画面
+my_project/sample_app/templates/sample_app/post_form.html を作成します。
+
+post_form.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Form</title>
+</head>
+<body>
+    <h4>Post の編集</h4>
+    {% if post_id %}
+    <form action="{% url 'sample_app:edit_post' post_id=post_id %}" method="post">
+    {% else %}
+    <form action="{% url 'sample_app:create_post' %}" method="post">
+    {% endif %}
+      {% csrf_token %}
+      {{ form }}
+          <button type="submit">送信</button>
+    </form>
+    <a href="{% url 'sample_app:read_post' %}">戻る</a>
+</body>
+</html>
+こちらのTemplate は View の create_post() と edit_post() から呼び出しています。
+
+そのため、以下のように post_id の有無で form action を分岐させています。
+
+    {% if post_id %}
+    <form action="{% url 'sample_app:edit_post' post_id=post_id %}" method="post">
+    {% else %}
+    <form action="{% url 'sample_app:create_post' %}" method="post">
+    {% endif %}
+以上で、Template まで作成できました。
+
+あとはルーティングを定義してあげれば、アプリケーションとして動くはずです。
+
+ルーティング定義
+最後に、ルーティングを定義しましょう。
+
+ルーティングとは**「 URL と処理の紐付け」**です。
+
+つまり http://127.0.0.1:8000/sample_app/post/create/ にアクセスした時には、
+View の create_post() を呼び出す...みたいなのを定義してあげます。
+
+今回は以下のような紐付けにします。
+
+データ作成: http://127.0.0.1:8000/sample_app/post/create/
+データ編集: http://127.0.0.1:8000/sample_app/post/edit/1/
+データ一覧: http://127.0.0.1:8000/sample_app/post/
+データ削除: http://127.0.0.1:8000/sample_app/post/delete/1/
+では、作っていきましょう。
+
+my_project/sample_app/urls.py というファイルを新しく作ります。
+
+my_project/sample_app/urls.py
+from django.urls import path
+from sample_app import views
+
+
+app_name = 'sample_app'
+urlpatterns = [
+    path('post/create/', views.create_post, name='create_post'),  # 作成
+    path('post/edit/<int:post_id>/', views.edit_post, name='edit_post'),  # 修正
+    path('post/', views.read_post, name='read_post'),   # 一覧表示
+    path('post/delete/<int:post_id>/', views.delete_post, name='delete_post'),   # 削除
+]
+次に、作成した my_project/sample_app/urls.py をプロジェクト全体の my_project/urls.py で読み込みます。
+
+my_project/urls.py
+from django.contrib import admin
+from django.urls import path, include   # Add
+
+
+urlpatterns = [
+    path('sample_app/', include('sample_app.urls')),   # Add
+    path('admin/', admin.site.urls),
+]
+こうすることで、プロジェクトがアプリケーションURLを認識してくれるようになります。
+ちなみにname='XXX' は何でも良いです。（私は関数名と揃えるようにしていますが）
+
+完成
+ここまで実装できたら、アプリケーションとして動くはずです。
+
+もう一度、 python manage.py runserver を実行してみましょう。
+
+$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 20, 2020 - 09:12:49
+Django version 3.1.4, using settings 'my_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+この状態で、ブラウザから http://127.0.0.1:8000/sample_app/post/ にアクセスすると、データ一覧表示画面が表示されます。
+
+2.png
+
+作成ボタンや修正ボタンも用意しているので、データを作成したり、作成したデータを修正、削除することもできます。
+
+3.png
+
+4.png
+
+さいごに
+最後まで読んで下さり、ありがとうございます。
+いかがだったでしょうか。
+
+このようなアプリケーション機能を作成したら、
+cssでデザインを付けて、heroku にデプロイして、独自ドメインを取得すれば、Webサービスの完成です。
+
+なお、Webサービスの作成については以下の記事にまとめています。
