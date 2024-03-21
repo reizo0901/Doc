@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-21T02:16:28.931Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="LXI7iOaViG9OzdASmAuW" version="24.0.7" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-03-21T02:23:35.102Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="OcMuzSN6ZyG5zXU-cmvJ" version="24.0.7" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="1223" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -337,7 +337,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="UhBQMDP3PCFNMFY5FV0T" name="EC2イメージ">
-    <mxGraphModel dx="1156" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="819" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -363,16 +363,16 @@
           <mxGeometry x="66" y="450" width="374.34" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-14" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2496ed;" parent="1" vertex="1">
-          <mxGeometry x="80.34" y="500" width="340" height="151.5" as="geometry" />
+          <mxGeometry x="80.34" y="500" width="340" height="120" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-15" value="&amp;nbsp; 仮想コンテナ(nginx)" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="80.34" y="500" width="340" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-16" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2496ed;" parent="1" vertex="1">
-          <mxGeometry x="80.34" y="691.5" width="340" height="180" as="geometry" />
+          <mxGeometry x="80.34" y="662" width="340" height="180" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-17" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2496ed;" parent="1" vertex="1">
-          <mxGeometry x="80.34" y="912.5" width="340" height="97.5" as="geometry" />
+          <mxGeometry x="80.34" y="883" width="340" height="107" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-18" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#f8cecc;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="229.26000000000002" y="584.25" width="170" height="14" as="geometry" />
@@ -385,33 +385,33 @@
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="165.34" y="690.5" as="sourcePoint" />
-            <mxPoint x="165.34" y="650.5" as="targetPoint" />
+            <mxPoint x="165.34" y="661" as="sourcePoint" />
+            <mxPoint x="165.34" y="621" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-22" value="port:8000(NGINX⇔uWSGI)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="177.34" y="655.5" width="193" height="30" as="geometry" />
+          <mxGeometry x="177.34" y="626" width="193" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-23" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/etc/nginx/conf.d&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;/etc/nginx/uwsgi_params&lt;/div&gt;&lt;div&gt;/static&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
           <mxGeometry x="229.26000000000002" y="548.25" width="160" height="55" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-24" value="&amp;nbsp; 仮想コンテナ(Postgresql)" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="80.34" y="912.5" width="340" height="20" as="geometry" />
+          <mxGeometry x="80.34" y="883" width="340" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-25" value="&amp;nbsp; 仮想コンテナ(django)" style="text;html=1;strokeColor=none;fillColor=#2496ed;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=0;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="80.34" y="691.5" width="340" height="20" as="geometry" />
+          <mxGeometry x="80.34" y="662" width="340" height="20" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-26" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="165.34" y="911.5" as="sourcePoint" />
-            <mxPoint x="165.34" y="871.5" as="targetPoint" />
+            <mxPoint x="165.34" y="882" as="sourcePoint" />
+            <mxPoint x="165.34" y="842" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-27" value="port:5432(Django⇔PostgreSQL)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="177.34" y="877.5" width="233" height="30" as="geometry" />
+          <mxGeometry x="177.34" y="848" width="233" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-28" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="236" y="747.5" width="170" height="115" as="geometry" />
+          <mxGeometry x="236" y="718" width="170" height="115" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-29" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#d5e8d4;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-28" vertex="1">
           <mxGeometry x="1.0914093549372954" y="86" width="168.90859064506265" height="15" as="geometry" />
@@ -426,31 +426,31 @@
           <mxGeometry y="72.5" width="170" height="14" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-33" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/app&lt;/span&gt;&lt;br&gt;&lt;/div&gt;├/djangoapp&lt;br&gt;│├/db.sqllit3&lt;br&gt;│├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;│├/static&lt;br&gt;│└/todoapp&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;├/startup&lt;/span&gt;&lt;br&gt;└&lt;span style=&quot;background-color: initial;&quot;&gt;/wsgi&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
-          <mxGeometry x="236.83999999999997" y="741.5" width="130" height="140" as="geometry" />
+          <mxGeometry x="236.83999999999997" y="712" width="130" height="140" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-34" value="NGINX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4D4D4D;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="88.42000000000006" y="552.25" width="128.98359049718349" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-35" value="PostgreSQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4D4D4D;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="93.01640950281651" y="967.5" width="128.98359049718349" height="30" as="geometry" />
+          <mxGeometry x="93.01640950281651" y="938" width="128.98359049718349" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-36" value="Django" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#FFFFFF;strokeColor=none;fillColor=#4D4D4D;" parent="1" vertex="1">
-          <mxGeometry x="94.67640950281651" y="748.5" width="128.98359049718349" height="30" as="geometry" />
+          <mxGeometry x="94.67640950281651" y="719" width="128.98359049718349" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-37" value="uWSGI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4D4D4D;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="94.67640950281651" y="790.5" width="128.98359049718349" height="30" as="geometry" />
+          <mxGeometry x="94.67640950281651" y="761" width="128.98359049718349" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-38" value="python" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4D4D4D;fontColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="94.67640950281651" y="830.5" width="128.98359049718349" height="30" as="geometry" />
+          <mxGeometry x="94.67640950281651" y="801" width="128.98359049718349" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-39" value="WEBサーバとして動作します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="88.41999999999999" y="520" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-40" value="APサーバとして動作します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="88.41999999999999" y="711.5" width="250" height="30" as="geometry" />
+          <mxGeometry x="88.41999999999999" y="682" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-41" value="DBサーバとして動作します。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="88.41999999999999" y="931.5" width="250" height="30" as="geometry" />
+          <mxGeometry x="88.41999999999999" y="902" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-42" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#DBB8B6;strokeWidth=4;startArrow=classic;startFill=1;exitX=-0.026;exitY=0.468;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="0ccPIg0OutjmOZlxM05i-10">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -572,7 +572,7 @@
           <mxGeometry x="469.9964095028165" y="489.01" width="128.98359049718349" height="30" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-4" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="654.34" y="554.95" width="205.65999999999997" height="455" as="geometry" />
+          <mxGeometry x="654.34" y="554.95" width="205.65999999999997" height="475" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-5" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#bac8d3;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
           <mxGeometry y="401" width="170" height="16" as="geometry" />
@@ -586,6 +586,9 @@
         <mxCell id="0ccPIg0OutjmOZlxM05i-8" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#e1d5e7;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
           <mxGeometry y="301" width="170" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="pcOFfQmMTUq4hjRxJR2L-5" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#7EA6E0;strokeColor=none;" vertex="1" parent="0ccPIg0OutjmOZlxM05i-4">
+          <mxGeometry y="417" width="170" height="13" as="geometry" />
+        </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-10" value="&lt;div&gt;/containers&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/django&lt;/div&gt;&amp;nbsp;│├/djangoapp&lt;br&gt;&amp;nbsp;││├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├settins.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└wsgi.py&lt;br&gt;&amp;nbsp;││├/todoapp&lt;br&gt;&amp;nbsp;│││├admin.py&lt;br&gt;&amp;nbsp;│││├apps.py&lt;br&gt;&amp;nbsp;│││├/migrations&lt;br&gt;&amp;nbsp;│││├models.py&lt;br&gt;&amp;nbsp;│││├tests.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└views.py&lt;div&gt;&amp;nbsp;││&lt;span style=&quot;background-color: initial;&quot;&gt;└&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/static&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;││ └/admin&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; &amp;nbsp;├/css&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; &amp;nbsp;├/img&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; └/js&lt;br&gt;&lt;div&gt;&amp;nbsp;│├/startup&lt;/div&gt;&lt;div&gt;&amp;nbsp;││├setuser.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└startup.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/uwsgi&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└wusgi.ini&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├Dockerfile&lt;/div&gt;&lt;div&gt;&amp;nbsp;│└requirements.txt&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/nginx&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/conf&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└nginx.conf&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;│└uwsgi_params&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;├/pgdata&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;└docker-compose.yml&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
           <mxGeometry x="-4.340000000000032" y="-36" width="200" height="491" as="geometry" />
         </mxCell>
@@ -594,6 +597,12 @@
         </mxCell>
         <mxCell id="pcOFfQmMTUq4hjRxJR2L-2" value="SSH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4D4D4D;fontColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="659.9964095028165" y="451" width="128.98359049718349" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pcOFfQmMTUq4hjRxJR2L-4" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#7EA6E0;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="237.09" y="927" width="168.91" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="pcOFfQmMTUq4hjRxJR2L-3" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/var&lt;/span&gt;&lt;br&gt;&lt;/div&gt;└/lib&lt;br&gt;&amp;nbsp;└/postgresql&lt;br&gt;&amp;nbsp; └/data&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="240.34" y="920.5" width="130" height="68.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
