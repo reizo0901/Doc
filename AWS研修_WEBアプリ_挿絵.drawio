@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-21T02:04:44.361Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="KZ4puOembWIKKVt75-fd" version="24.0.7" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-03-21T02:07:11.073Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="nA6X9dBHD7xS126o9Uhe" version="24.0.7" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="1223" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -348,28 +348,10 @@
           <mxGeometry x="620" y="509.45" width="210" height="510" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-3" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#d5e8d4;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="654.34" y="828.95" width="170" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-4" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="654.34" y="554.95" width="170" height="430" as="geometry" />
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-5" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#bac8d3;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
-          <mxGeometry y="414" width="170" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-6" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#fff2cc;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
-          <mxGeometry width="170" height="274" as="geometry" />
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-7" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#dae8fc;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
-          <mxGeometry y="388" width="170" height="27" as="geometry" />
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-8" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#e1d5e7;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
-          <mxGeometry y="314" width="170" height="60" as="geometry" />
+          <mxGeometry x="654.34" y="815.95" width="170" height="40" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-9" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#f8cecc;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="654.34" y="753.95" width="169.66" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="0ccPIg0OutjmOZlxM05i-10" value="&lt;div&gt;/containers&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/django&lt;/div&gt;&amp;nbsp;│├/djangoapp&lt;br&gt;&amp;nbsp;││├/db.sqllit3&lt;br&gt;&amp;nbsp;││├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├settins.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└wsgi.py&lt;br&gt;&amp;nbsp;││├/todoapp&lt;br&gt;&amp;nbsp;│││├admin.py&lt;br&gt;&amp;nbsp;│││├apps.py&lt;br&gt;&amp;nbsp;│││├/migrations&lt;br&gt;&amp;nbsp;│││├models.py&lt;br&gt;&amp;nbsp;│││├tests.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└views.py&lt;div&gt;&amp;nbsp;││&lt;span style=&quot;background-color: initial;&quot;&gt;└&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/static&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;││ └/admin&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; &amp;nbsp;├/css&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; &amp;nbsp;├/img&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; └/js&lt;br&gt;&lt;div&gt;&amp;nbsp;│├/startup&lt;/div&gt;&lt;div&gt;&amp;nbsp;││├setuser.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└startup.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/uwsgi&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└wusgi.ini&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├Dockerfile&lt;/div&gt;&lt;div&gt;&amp;nbsp;│└requirements.txt&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/nginx&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/conf&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└nginx.conf&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;│└uwsgi_params&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;└docker-compose.yml&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
-          <mxGeometry x="630.34" y="518.95" width="200" height="491" as="geometry" />
+          <mxGeometry x="654.34" y="740.95" width="169.66" height="75" as="geometry" />
         </mxCell>
         <mxCell id="0ccPIg0OutjmOZlxM05i-11" value="&amp;nbsp;VPC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8c4fff;fontColor=#FFFFFF;fontSize=19;strokeColor=none;" parent="1" vertex="1">
           <mxGeometry x="39.44" y="270" width="820.56" height="50" as="geometry" />
@@ -594,6 +576,24 @@
         </mxCell>
         <mxCell id="xeOELyk1RdKVx3l3Ws-d-2" value="Django" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#FFFFFF;strokeColor=none;fillColor=#4D4D4D;" parent="1" vertex="1">
           <mxGeometry x="469.9964095028165" y="489.01" width="128.98359049718349" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0ccPIg0OutjmOZlxM05i-4" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="654.34" y="554.95" width="205.65999999999997" height="455" as="geometry" />
+        </mxCell>
+        <mxCell id="0ccPIg0OutjmOZlxM05i-5" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#bac8d3;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
+          <mxGeometry y="401" width="170" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="0ccPIg0OutjmOZlxM05i-6" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#fff2cc;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
+          <mxGeometry width="170" height="186" as="geometry" />
+        </mxCell>
+        <mxCell id="0ccPIg0OutjmOZlxM05i-7" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#dae8fc;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
+          <mxGeometry y="360" width="170" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="0ccPIg0OutjmOZlxM05i-8" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#CCE5FF;noLabel=1;fillColor=#e1d5e7;strokeColor=none;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
+          <mxGeometry y="301" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0ccPIg0OutjmOZlxM05i-10" value="&lt;div&gt;/containers&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/django&lt;/div&gt;&amp;nbsp;│├/djangoapp&lt;br&gt;&amp;nbsp;││├/djangoapp&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├settins.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└wsgi.py&lt;br&gt;&amp;nbsp;││├/todoapp&lt;br&gt;&amp;nbsp;│││├admin.py&lt;br&gt;&amp;nbsp;│││├apps.py&lt;br&gt;&amp;nbsp;│││├/migrations&lt;br&gt;&amp;nbsp;│││├models.py&lt;br&gt;&amp;nbsp;│││├tests.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││├urls.py&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;│││└views.py&lt;div&gt;&amp;nbsp;││&lt;span style=&quot;background-color: initial;&quot;&gt;└&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/static&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;││ └/admin&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; &amp;nbsp;├/css&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; &amp;nbsp;├/img&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;││&amp;nbsp; └/js&lt;br&gt;&lt;div&gt;&amp;nbsp;│├/startup&lt;/div&gt;&lt;div&gt;&amp;nbsp;││├setuser.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└startup.sh&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/uwsgi&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└wusgi.ini&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├Dockerfile&lt;/div&gt;&lt;div&gt;&amp;nbsp;│└requirements.txt&lt;/div&gt;&lt;div&gt;&amp;nbsp;├/nginx&lt;/div&gt;&lt;div&gt;&amp;nbsp;│├/conf&lt;/div&gt;&lt;div&gt;&amp;nbsp;││└nginx.conf&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;│└uwsgi_params&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;└docker-compose.yml&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="0ccPIg0OutjmOZlxM05i-4" vertex="1">
+          <mxGeometry x="-4.340000000000032" y="-36" width="200" height="491" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
