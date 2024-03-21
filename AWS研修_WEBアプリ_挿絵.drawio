@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-21T02:23:35.102Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="OcMuzSN6ZyG5zXU-cmvJ" version="24.0.7" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2024-03-21T02:24:40.634Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="Iu4IZQz7p5CJyTMy-h3l" version="24.0.7" type="github" pages="10">
   <diagram id="lcYI87hsc0yKyZDwQD96" name="説明範囲図">
     <mxGraphModel dx="1223" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -337,7 +337,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="UhBQMDP3PCFNMFY5FV0T" name="EC2イメージ">
-    <mxGraphModel dx="819" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1156" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -603,6 +603,15 @@
         </mxCell>
         <mxCell id="pcOFfQmMTUq4hjRxJR2L-3" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/var&lt;/span&gt;&lt;br&gt;&lt;/div&gt;└/lib&lt;br&gt;&amp;nbsp;└/postgresql&lt;br&gt;&amp;nbsp; └/data&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
           <mxGeometry x="240.34" y="920.5" width="130" height="68.5" as="geometry" />
+        </mxCell>
+        <mxCell id="pcOFfQmMTUq4hjRxJR2L-6" value="" style="curved=1;endArrow=classic;html=1;rounded=0;strokeColor=#7ea6e0;strokeWidth=4;startArrow=classic;startFill=1;exitX=-0.007;exitY=0.624;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.002;entryY=0.859;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="pcOFfQmMTUq4hjRxJR2L-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="651.66" y="978.67" as="sourcePoint" />
+            <mxPoint x="409" y="994.17" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="520" y="980" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
