@@ -1,0 +1,1968 @@
+●今回の研修のゴール
+
+AWS上でのネットワークとサーバの構築、ならびに動的WEBサイトを作成するまでについて学んでいきます。
+
+●研修で学習する内容は以下の通りとなります。
+
+・
+・AWSのネットワークと仮想サーバ構成と設定方法
+・Amazon Linuxへの接続と設定方法
+・仮想コンテナ(Docker)と複数のコンテナの定義や実行方法
+  ・NGINXの画面を表示させよう。
+・Pythonのフレームワーク(Django)について
+  ・MVCモデルやMVTモデルとは？
+  ・Djangoの画面を表示させよう。
+  ・プロジェクト作成について
+  ・プロジェクトの管理画面を表示させよう！
+    ・表示がおかしくなっている管理画面を直そう！
+
+・WEBアプリケーションを作成してみよう！
+・ファンクションベースドビューとクラスベースドビューについて
+・ファンクションベースドビューでHello Worldを表示しよう！
+  ・urls.pyに参照先を追加する。
+  ・views.pyにファンクションを登録する。
+・クラスベースドビューでHello Worldを表示しよう！
+  ・
+
+WEBの仕組みについて
+・そもそもWEBサイトってどういう仕組みで見えているの？ってところを動画で紹介します。
+～動画～
+
+構成図
+①今回の研修で作成するAWSの環境について ※図を入れる
+
+
+・AWSにインターネットからアクセス可能なネットワーク(VPN)を構築し、そのネットワーク内にLinux仮想マシン(EC2インスタンス)を１台構築します。
+  今回の研修で利用する環境を作成するためには、最低限以下のAWSのサービスや仕組みを利用する必要があります。
+    
+  ・region(リージョン)
+    リージョンとは、AWSは世界に均一なサービスを提供するために、地域を物理的なロケーションに分割してサービスを提供しています。
+    今回の研修では、「アジアパシフィック（東京）リージョン」というリージョンを利用します。
+    
+  ・Availability Zone(AZ/アベイラビリティーゾーン)
+    アベイラビリティーゾーンとは、冗長性・信頼性・可用性を確保した1つ以上のデータセンターで構成する単位を指し、1つのリージョンに複数存在します。
+    AWSでは利用者に、複数のアベイラビリティーゾーンに環境を構築して冗長化することを強く推奨しています。
+
+  ・Internet Gateway(インターネットゲートウェイ)
+    Internet Gatewayとは、インターネットとVPC間の通信を可能にするためのサービス
+
+  ・VPC(Virtual Private Cloud)
+    AWSの仮想ネットワークサービスで、AWS内のサービスの通信を制御するために使用します。
+    
+  ・サブネット
+    サブネットには、「プライベートサブネット」と「パブリックサブネット」の２つがあり、インターネットにできるものとできないものがあります。
+    今回の研修では、インターネットからアクセスが必要となるため、「パブリックサブネット」内にサーバを構築します。
+    
+  ・Security group(セキュリティグループ)
+    セキュリティグループとは、VPC内で(仮想サーバ)などのリソースに適用可能な仮想ファイアウォールのことを指します。
+    AWSのセキュリティは基本的にすべて遮断となっているため、必要なポートのみを開放する作業が必要となります。
+    今回の研修では、インターネット接続用に80番ポートとSSH接続用に22番ポートを開放します。
+
+  ・EC2インスタンス(Elastic Compute Cloud)
+    EC2インスタンスとは、AWSクラウド内に作成できる仮想サーバを指します。
+    今回の研修では、「Amazon Linux 2」というRedhat系のLinuxを使って環境構築を行います。
+  
+  ・Elastic IP
+    AWSが保有しているグローバルIPアドレスを利用するためのサービス
+    Elastic IPをEC2に付与することにより、インターネットから対象のEC2インスタンスにアクセスすることが可能になります。
+
+～構成図～
+
+・Linux仮想マシン内に、コンテナ仮想化技術(Docker)を使って、WEBサーバ、APサーバ、DBサーバの３つのコンテナを構築します。
+
+～構成図～
+
+仮想化とは
+・近年の本番環境や開発環境の構築において仮想化技術は切っても切れない関係になりつつあります。
+・ここでは代表的な３つの仮想化技術について簡単に紹介します。
+
+①ホストOS型仮想化
+  ホストOS上に仮想化ソフトウェアをインストールし、その上に仮想マシンを作成することができます。
+  ソフトウェア上で、仮想マシンを動かしているため動作も遅くソフト、ホストOSのシャットダウンや
+  再起動を行うと仮想マシンも停止します。
+
+  代表的なソフトウェア：Oracle VM VitrualBOX/MVware Workstation player/
+  
+②ハイパーバイザー型仮想化
+  ホストOSが不要でハイパーバイザーの上に仮想マシンを作成することができます。
+  ハイパーバイザーを管理するツールが動作するサーバが別途必要となります。
+  ホスト型仮想化よりも軽く、代表的な仮想化技術といえます。
+
+  代表的なソフトウェア：VMWare ESXi/Microsoft Hyper-V/Citrix Xen Server
+
+③コンテナ型仮想化
+  ホストOS上にコンテナというホストから隔離された名前空間を作成し、アプリケーションの実行環境を作成できます。
+  他の仮想化と仮想マシンという概念ではないためゲストOSをインストールするような作業がありません。
+  ホストOSのカーネルやリソースを間借りして利用しているため動作も早く今注目されている仮想化技術です。
+
+  代表的なソフトウェア：Docker/Podman/Kubernetes
+
+
+Dockerとは？
+
+  Dockerの歴史は長く、Linuxが誕生してから
+
+コンテナ型仮想化を実行するソフトウェアであり、ハイパーバイザー型やホスト型とは異なる仮想化技術が使われている。
+「コンテナ」はひとつのホストOS上で動作する「他のユーザやアプリケーションから隔離されたアプリケーションの実行環境」となります。
+
+「他のユーザやアプリケーションから隔離されたアプリケーション実行環境」という点では他の仮想化技術同じですが、
+ホスト型仮想化やハイパーバイザー型仮想化は、仮想サーバ毎にOSやメモリ、ハードディスクが必要となりリソース消費が非常に多く、
+コンテナ型仮想化はひとつのOS上で動作し、カーネルやリソースはホストと共有されているため、リソース消費は最小限となります。
+またのハードウェアやOSの差異はコンテナ管理ソフトウェアによって吸収されているため、他のサーバ移行も良いです。
+
+構築の時間においても、ホスト型やハイパーバイザー型は仮想サーバのハードウェア設定からアプリケーション構築までを行いますが、
+コンテナ型の場合はもとになるイメージファイルをダウンロードし利用するため、OSとアプリケーションに簡単な設定を行えば
+すぐに利用が可能となる。
+
+コンテナのメリット
+
+・起動、コピー、バックアップなどが速いため生産性向上に繋がる
+・複数環境の構築・管理・運用が楽になりコスト削減が期待できる
+・持ち運びしやすいためリリースにかかる時間を短縮できる
+
+??ソフトウェア一覧
+今回出てくるソフトウェアの表(分類、ソフトウェア名、何をするものか)
+
+コンテナ:Docker: コンテナ型の仮想環境を作成、配布、実行するためのソフトウェア
+WEBサーバー:nginx:〇〇
+APサーバー:〇〇:〇〇
+DBサーバー:postgresql:〇〇
+
+研修に登場するソフトウェアやコマンドについて ※チートシート作成
+
+<コマンド>
+sudo
+yum
+apt-get
+tree
+python
+python3
+docker
+  -詳細情報
+  inspect <コンテナ名>
+  -ステータス(CPU/MEM/NET/DISK)
+  stats
+  -Dockerの情報
+  info
+  -コンテナのログ確認
+  logs <コンテナ名>
+  -Dockerバージョン情報
+  version
+  -imageに対する捜査履歴
+  history
+  -Docker HUBからイメージの取得
+  pull イメージ名
+  -コンテナの削除
+  rm <コンテナ名>
+  -イメージの削除
+  rmi イメージ名
+  -コンテナの起動
+  start <コンテナ名>
+  -コンテナの停止
+  stop <コンテナ名>
+  -コンテナの再起動
+  restart <コンテナ名>
+
+  
+systemctl
+grep
+usermod
+cat
+reboot
+mkdir
+curl
+chmod
+ln
+docker-compose
+cd
+vim
+uwsgi
+bash
+django-admin
+
+<ソフトウェア>
+nginx
+  
+python
+  
+postgresql
+  
+django
+  
+uwsgi
+
+docker
+docker-compose
+
+
+psycopg2
+django-bootstrap-datepicker-plus
+django-bootstarp4
+
+⑥定義ファイル・設定ファイル、シェルについて ※図を入れる？
+
+・docker-compose.yml
+・nginx.conf
+・uwsgi-params
+・uwsgi.ini
+・Dockerfile
+・requirements.txt
+・setuser.sh
+・startup.sh
+・settings.py
+・urls.py
+・views.py
+・models.py
+
+
+########################################################################################################################
+########################################################################################################################
+
+
+1.AWSコンソールへサインイン
+
+  1.連携済みのURLからAWSに接続
+  2.[IAMユーザーとしてサインイン]画面で[ユーザー名]と[パスワード]を入力して[サインイン]をクリック
+  3.リージョンが[東京▼]以外になっている場合は、検索窓の右側にある[リージョン名▼]をクリックし、
+    [アジアパシフィック(東京) ap-northeast-1]を選択
+
+########################################################################################################################
+
+2.ネットワーク環境構築
+
+2-1.VPC作成
+  ここでは１つのVPC(Amazon Virtual Private Cloud)を作成します。
+  Amazon VPCとは、Amazon Virtual Private Cloudの略です。Amazon VPCにより仮想ネットワークを構築し、
+  IPアドレスおよびサブネットの管理・ルーティング・ゲートウェイの設定等一連の仮想ネットワークの制御を簡単に
+  実現することができます。
+
+  1.[AWSコンソール]画面上部の検索窓で"vpc"と入力し、検索結果の[VPC]をクリック
+
+  2.[AWS VPC]画面で[VPCを作成]をクリック
+
+  3.[VPCを作成]画面で以下を設定し、[VPCを作成]をクリック
+
+    [VPCの設定]
+    [作成するリソース]
+    ●VPCのみ ○VPCなど
+    [名前タグ - オプション]
+    Key Name
+    Value vpc-<※LastName>
+    例:vpc-giken
+    [IPv4 CIDRブロック]
+    ●IPv4 CIDRの手動入力
+    ○IPAM割り当てのIPv4 CIDRブロック
+    [IPv4 CIDR]
+    10.0.0.0/16
+    [IPv6 CIDRブロック]
+    ●IPv6 CIDRブロックなし
+    ○IPAM割り当てのIPv6 CIDRブロック
+    ○Amazon提供のIPv6 CIDRブロック
+    ○IPv6 CIDR所有(ユーザー所有)
+    [テナンシー]
+    デフォルト
+    [タグ]
+
+    ※[新しいタグを追加]をクリックして以下を追加
+    Key Author
+    Value <※FullName>
+    例:giken.tarou
+
+    ※VPC作成後の画面の詳細に以下のエラーが表示されますが、問題はありません。
+       研修用アカウントは権限が低いため、ルールの表示に失敗します。
+
+2-2.VPCにサブネットを作成
+  ここではVPCに対して1つのサブネットを作成します。
+  サブネットとは、IPネットワークを細分化することを指します。記述方法はCIDR（サイダー）表記で、IPアドレスの
+  プレフィックスとしてネットワークアドレスの後にスラッシュ（/）の後とネットワークアドレスビット数を記載します。
+  使用例は、”10.0.0.0/16”等が挙げられます。
+
+  1.左ペインから[サブネット]をクリック
+  2.[サブネット]画面で[サブネットを作成]をクリック
+  3.[サブネットを作成]画面で、以下を設定し、[サブネットを作成]をクリック
+
+    [VPC]
+    vpc-<※LastName>
+    ※2-1で作成したVPCを選択
+    サブネットの設定
+    [サブネット名]
+    psb-<※LastName>
+    例:psb-giken
+    [アベイラビリティーゾーン]
+    ap-northeast-1a
+    [IPv4 サブネットCIDRブロック]
+    10.0.0.0/24
+
+
+2-3.インターネットゲートウェイ作成、VPCに紐付け
+  ここではインターネットゲートウェイを作成し、VPCと紐付けることにより、インターネットを使う準備ができます。
+  サブネットをパブリックサブネットとすることで、インターネットアクセスが可能です。
+  送信先をIPv4の場合は、0.0.0.0/0とします。
+  ターゲットをインターネットゲートウェイIDである、igw-XXXXXXXXXとします。
+
+  1.左ペインから[インターネットゲートウェイ]をクリック
+  2.[インターネットゲートウェイ]画面で[インターネットゲートウェイの作成]をクリック
+  3.[インターネットゲートウェイの作成]画面で、以下を設定し、[インターネットゲートウェイの作成]をクリック
+  [名前タグ]
+  igw-<※LastName>
+  例：igw-giken
+
+  4.画面右上の[VPCへアタッチ]をクリック
+
+  5.[VPCにアタッチ]画面の[使用可能なVPC]で、作成したVPCを選択し、[インターネットゲートウェイのアタッチ]をクリック
+
+2-4.ルートテーブル作成
+  ここではルートテーブルを設定することによりインターネットと通信をできるようにします。
+  VPCルートテーブルでは、ルートの送信先ならびにターゲットを関連付けします。
+
+2-4-1.ルートテーブルの設定
+  1.左ペインから[ルートテーブル]をクリック
+  2.[ルートテーブル]画面で[ルートテーブルを作成]をクリック
+  3.[ルートテーブル]画面で、以下を設定し、[ルートテーブルを作成]をクリック ★以下の設定値
+
+2-4-2.ルートテーブルを編集
+  1.作成したルートテーブル[rtb-xxxxxxxxxxxxxxxxx]の画面下の[ルート]タブをクリックして、[ルートを編集]をクリック
+  2.[ルートを編集]画面で[ルートを追加]をクリック
+  3.追加表示された[ルートを編集]で、以下を設定し、[変更を保存]をクリック
+  [送信先]
+  0.0.0.0/0
+  [ターゲット]
+  igw-xxxxxxxxx～(igw-<※LastName>)
+  ※2-3で作成したインターネットゲートウェイを選択
+
+2-4-3.サブネットの関連付けを編集
+  1.[サブネットの関連付け]タブをクリックして、[サブネットの関連付けを編集]をクリック
+  2.[サブネットの関連付けを編集]画面で、2-3で作成した２つのサブネットにチェックを入れ、[関連付けを保存]をクリック
+
+########################################################################################################################
+
+3.Amazon EC2(a)(仮想サーバ)作成
+
+  ここでは２つのEC2(Amazon Elastic Compute Cloud)を作成します。
+  EC2とはAmazon Cloud上に作成可能なコンピュータであり、OSやスペック、台数などを容易に準備することができます。
+  EC2は停止している場合は料金が発生しないというメリットがあります。
+  ※ただし、EC2自体に紐付いているEBS（ストレージサービス）は継続して課金されます
+
+3-1.AWS EC2(インスタンス)起動
+  1.[AWSコンソール]画面上部の検索窓で"ec2"と入力し、検索結果の[EC2]をクリック
+  2.[AWS EC2]画面の[インスタンスを起動]枠の[インスタンスを起動]をクリック
+
+3-2.名前とタグの追加
+  1.[インスタンスを起動]画面で以下を設定
+
+    ※[Add additional tags]をクリックして、
+    タグの入力欄を表示
+    [Name and tags]
+    キー name
+    値 ec2-<※LastName>
+    例:ec2-giken
+    Resource types ※設定不要
+
+3-3.アプリケーションおよびOSイメージ(AMI)の指定
+  1.[クイックスタート]タブ >[Amazon Linux]の順でクリックし、[Amazon Linux 2 AMI…]を選択
+
+3-4.インスタンスタイプの指定
+  1.[インスタンスタイプ]の選択欄で[t2.micro]を選択
+
+3-5.キーペア(ログイン用の鍵)作成
+  キーペアとは、EC2インスタンスにアクセスするために必要となる「鍵」のことで、「公開鍵」と「秘密鍵」になります。
+  キーペアを作成し、ローカルの端末の[c:\work]などのフォルダを作成し、[公開鍵]をダウンロードします。
+  1.[キーペア(ログイン)]枠の[新しいキーペアの作成]をクリック
+  2.[キーペアを作成]画面で以下を設定し、[キーペアを作成]をクリック
+    [キーペア名]
+    kp-<※LastName>
+    例:kp-giken
+    [キーペアのタイプ]
+    ● RSA
+    ○ ED25519
+    [プライベートキーファイル形式]
+    ● .pem
+    ○ .ppk
+    
+    キーペアは研修を通して同じものを利用します。この研修が終わるまで絶対に削除をしないでください。
+    もし削除しまった場合は、EC2インスタンスとキーペアの再作成が必要があります。
+
+  3.ダウンロード用のダイアログが表示されたら、
+    [c:\work]フォルダに保存する。
+    ※事前にCドライブの直下に[work]フォルダを作成する。
+    この後の手順でキーペアに対するコマンドを発行するので、必ず指定したフォルダ配下に保存してください
+  4.ダウンロード後に元の画面に遷移するので、キーペア名の欄に作成したキーペアが設定されていることを確認
+
+3-6.ネットワーク設定
+  ここでは作成するEC2インスタンスが利用するネットワークの設定を行います。
+
+3-6-1.VPC、サブネット設定
+  1.[ネットワーク設定]枠の右側にある[編集]をクリック
+  2.[ネットワーク設定]枠に以下を設定
+
+    [VPC]の選択欄で2-1で作成したVPCを選択
+    例:vpc-xxxxxxxxxx～(vpc-giken)
+    [サブネット]
+    2-2で作成した[ap-northeast-1a]のサブネットを選択
+    例:subnet-xxxxxxx～(psb-giken)
+    [パブリックIPの自動割り当て]
+    無効化
+    [ファイアウォール(セキュリティグループ)]
+    ●セキュリティグループを作成する
+    ○既存のセキュリティグループを選択する
+    [セキュリティグループ名]
+    scg-<※LastName>
+    例:scg-giken
+    [説明]
+    scg-<※LastName>
+    例:sgc-giken
+    [インバウンドセキュリティグループのルール]
+    [セキュリティグループルール１]
+    タイプ ssh
+    ソースタイプ 任意の場所
+    説明 from home
+    ※[セキュリティグループルールを追加]をクリック
+    [セキュリティグループルール２]
+    タイプ HTTP
+    ソースタイプ 任意の場所
+    説明 from internet
+
+3-6-2.ストレージを設定
+
+  1.[ストレージを設定]枠で以下を設定
+    [容量(GiB)]
+    8 GiB
+    [ストレージタイプ]
+    gp3
+
+3-6-3.インスタンスを起動
+  1.[概要]枠のインスタンス数が"1"であることを確認し、[インスタンスを起動]をクリック
+    [インスタンス数]
+    1
+    ※必ず"1"になっていることを確認すること
+
+3-6.4. EC2(a)にElastic IP アドレス割り当てと関連付け
+  1.左ペインから[Elastic IP]をクリック
+  2.[Elastic IP アドレスを割り当てる]をクリック
+  3.[Elastic IPアドレスを割り当てる]画面で、以下を設定し、[割り当て]をクリック
+    [Elastic IP アドレスの設定]
+    [ネットワークボーダーグループ]
+    ap-northeast-1
+    [パブリック IPv4アドレスプール]
+    ●Amazon の IPv4アドレスプール
+    ○AWSアカウントで持ち込むパブリック…
+    ○顧客所有のIPv4アドレスのプール(顧客…
+    [グローバル静的IPアドレス]
+    ※設定不要
+    [タグ - オプション]
+    ※[新規タグを追加]をクリックする
+    [キー] Name
+    [値] eip-<※LastName>
+    例：eip-giken
+    ※[新規タグを追加]をクリックする
+    キー Author
+    値 <※FullName>
+    例:giken.tarou
+
+  4.[Elastic IP アドレス]画面右上の、[このElastic IPアドレスを関連付ける]をクリック
+    ※後続の手順で必要となるので、作成した「Elastic IP アドレス」の「割り当てられたIPv4 アドレス」をメモする
+
+  5.[Elastic IP アドレスの関連付け]画面で以下を設定し、[関連付ける]をクリック
+
+    [リソースタイプ]
+    ●インスタンス
+    ○ネットワークインターフェイス
+    [インスタンス]
+    [ec2-<※LastName>]
+    [プライベート IP アドレス]
+    ※入力しない
+    [再関連付け]
+    ※チェックなし
+
+########################################################################################################################
+
+4.Amazon EC2にSSH接続
+  ネットワークとサーバの準備が整いましたので、ローカル端末からAmazon EC2に接続してWEB開発環境を構築していきます。
+
+-うんちく-
+  SSHとは？※使っているけどそもそも何？ ※図を入れる
+
+  SSHとは「Secure Shell」の略で、安全に通信を行って、ネットワークに接続された機器を遠隔操作するための通信手段（プロトコル）の１つです。
+  SSHでの接続を行うには接続先には「SSHデーモン」もしくは「SSHサーバ」が必要となり、接続元には「SSHクライアント」が必要になります。
+  SSHの認証方式には２つの方式があり「パスワード認証方式」と「公開鍵認証方式」があります。
+  「パスワード認証方式」は、ユーザアカウントとパスワードによる認証で、接続する方式でセキュリティは低めです。
+  「公開鍵認証方式」は、公開鍵と秘密鍵による認証で接続する方式で、公開鍵がないと接続できないためセキュリティは高めです。
+  EC2インスタンスへのSSH接続は、「キーペア」という名称の公開鍵を取得して接続する手順をとります。
+
+-うんちく-
+Amazon　Linux2、Linuxディストリビュートについて ※図いる？
+・Redhat系とDebian系
+・パッケージやコマンドの違いについて
+
+4-1.キーペアのアクセス権の変更
+  EC2作成時にダウンロードしたキーペアのアクセス権を変更していきます。
+  1.[スタート]ボタンをクリック後、"cmd"と入力し、[Enter]を押下して「コマンドプロンプト」を起動
+  2.[コマンドプロンプト]で、以下のコマンドを実行
+
+  ※以下//と//の間の文を実行する。
+//
+cd c:\work
+dir
+set PEM_PATH=c:\work\kpr-<※LastName>.pem
+icacls.exe %PEM_PATH% /reset
+icacls.exe %PEM_PATH% /GRANT:R "%USERNAME%":(R)
+icacls.exe %PEM_PATH% /inheritance:r
+//
+
+
+※icacls.exeコマンドを実行すると、以下のメッセージが返されます。紛らわしいメッセージですが正常です。
+    「処理ファイル： ./kp-<※LastName>.pem」
+    「1個のファイルが正常に処理されました。0個のファイルを処理できませんでした」
+
+4-2.Amazon EC2にSSHで接続
+  SSHクライアントでEC2サーバに接続します。
+
+  1.[コマンドプロンプト]で、以下のコマンドを実行
+    ssh -i "kp-<※LastName>.pem" ec2-user@<パブリックIPアドレス>
+    例：ssh -i "kp-giken.pem" ec2-user@xxx.xxx.xxx.xxx
+    4.で作成した「Elastic IP アドレス」の「割り当てられたIPv4アドレス」がパブリックIPアドレスになります
+
+  2.以下のメッセージが表示されたら、"yes"と入力し[Enter]キーを押下
+    The authenticity of host 'xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)' can't be established.
+    ED25519 key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    SSHでの接続が成功すると以下のようなプロンプトの表示になります
+    [ec2-user@ip-10-0-0-x ~]$ _
+    SSHクライアントがインストールされていない場合は、sshコマンドがエラーになりますので、[Windows]の[設定]の
+    [オプション機能]から以下の２つのオプションを追加する必要があります。
+    ・OpenSSHクライアント
+    ・OpenSSHサーバ
+
+########################################################################################################################
+
+5.ホスト側のソフトウェアのセットアップ
+
+5-1.パッケージの更新とTreeコマンドのインストールとバージョンの確認をします。
+※インストール済みパッケージの更新とディレクトリ階層の確認用のコマンドをインストールします。
+
+-うんちく-
+yum updateで行われていることと注意点
+yumコマンドはパッケージのバージョン管理を行っています。yum updateを実行すると、インストールされているパッケージのバージョン
+がすべて最新のものに更新されます。アップデートすることにより、脆弱性や不便な使用に対しての改善版が提供されます。
+しかし、注意点もあり、パッケージがアップデートされてしまうことにより、現在動いている機能に不具合が出る可能性もあるため、
+本番環境でのアップデートには注意が必要です。
+必ず開発環境などで影響がないことを確認してから、本番環境でのアップデートを実施するようにしてください。
+
+//
+sudo yum update -y
+sudo yum install -y tree
+tree --version
+//
+
+-うんちく-
+インストールしたパッケージを調べるには？
+１つはそのパッケージ名にオプションで" --version"を付けて実行する。
+"tree --version"
+１つはyum list installedを実行すると、現在インストールされているパッケージの一覧が表示されます。
+詳細設計書などを作るときなどに実行することがあります。
+目的のパッケージだけを探したい場合は、先ほどのコマンドに続けて" | grep tree"と入力します。
+
+5-2.サーバのホスト側にdjangoをインストールとバージョンの確認をします。
+ホスト側からコンテナ型仮想化ソフトウェア(Docker)内にdjangoの環境を作成・設定するために必要となります。
+さきほどのyumコマンドとは違い、python用のパッケージのバージョン管理ツール(pip)によってインストールを行います。
+
+//
+python3 -m pip install django
+ptthon3 -m pip list
+//
+
+5-3.サーバのホスト側にコンテナ型仮想化ソフトウェアをインストールします。
+※コンテナ型仮想化ソフトウェアをインストールします。
+
+  1.Dockerインストールとバージョン確認
+
+//
+sudo yum install -y docker
+docker --version
+//
+
+  2.Dockerサービスの起動
+
+//
+sudo systemctl start docker
+systemctl status docker
+//
+
+-うんちく-
+systemctlコマンドとは
+Linuxシステム上で動作する各種サービスの管理を行うためのコマンドツールです。
+具体的には、以下のような操作が可能です。
+・サービスの起動・停止・再起動
+・サービスの状態確認
+・サービスの自動起動設定
+
+  3.Dockerサービスの自動起動を有効化
+
+//  
+sudo systemctl enable docker
+systemctl is-enabled docker
+//
+
+  4.ec2-userセカンダリーグループにdockerグループを追加
+  ※これによりsudoコマンドを利用しなくてもdockerコマンドが利用可能となります。
+
+//
+grep docker /etc/group
+sudo usermod -a -G docker ec2-user
+cat /etc/group
+//
+
+-うんちく-
+特定のグループをセカンダリーグループに追加することで、同等の特権が付与されます。
+adm システム監視タスク用グループ
+systemd-journal ログ収集・保存サービス用グループ
+wheel UNIX時代にroot権限を付与するために利用されていたグループ名※昔の名残りで名前自体には意味はない。
+
+次のコマンドを叩いてみましょう。
+sudo cat /etc/sudoers
+
+次のような記述が表示されていると思います。
+何を記述しているかというと、
+
+## Allow root to run any commands anywhere
+root ALL=(ALL) ALL
+
+## Allows people in group wheel to run all commands
+%wheel ALL=(ALL) ALL
+
+構文はこんな感じでかかれています。
+誰が<tab>どこで<tab>誰として<tab>何をできる
+
+[whellが]、[全ての場所で]、[全てのユーザとして]、[全てのコマンドを実行できる]
+頭に%を付けるとグループ名として指定できます。
+
+
+  5.再起動
+
+//
+sudo reboot
+//
+
+    ※SSHのセッションが切断されます。
+
+  6.SSH接続
+    コマンドプロンプトでカーソルの↑を押下して、[Enter]を押下する。
+
+  7.dockerの状態確認
+
+//
+systemctl status docker
+//
+
+    下記のエラーは出力されても問題ありません。
+    WARNING: bridge-nf-call-iptables is disabled
+    WARNING: bridge-nf-call-ip6tables is disabled
+
+########################################################################################################################
+
+5-4.コンテナ型仮想化ソフトウェア(Docker)を操作してみよう。
+
+Webサーバ(NGINX)のイメージを利用して、Dockerの構成や操作を学習していきます。
+
+
+Docker HUBには、公式のイメージを含め、ユーザが作成したイメージなど、多種多様なイメージが公開・共有されています。
+またGitHubのように共同作業を行ったりすることも可能です。
+
+
+※Dockerの説明の図を各手順毎に入れる。
+
+  1.Docker HUBサイトで、nginxの公式イメージファイルを検索する。
+
+    (1)ブラウザで「Docker HUB」を検索する。(https://hub.docker.com)
+    (2)「Docker HUB」のサイト内の検索欄に「nginx」と入力し、検索する。
+    (3)検索結果に「Official build of Nginx」と表示されている結果をクリックする。
+    (4)遷移先のページの右側に、Docker HUBからコマンドラインで取得するためのコマンドが表記されているので、コピーします。
+       ※同ページの内には、簡単な設定方法や、カスタマイズのヒントが記載されています。
+
+  2.Docker HUBから「nginx」のイメージを取得する。
+  docker pull nginx
+
+★以下が表示されることを確認する
+★Status: Downloaded newer image for nginx:latest
+★docker.io/library/nginx:latest
+
+  3.取得したイメージを確認する。
+  docker images
+
+  REPOSITORY   TAG       IMAGE ID      CREATED       SIZE
+  nginx        latest    xxxxxxxxxxxx  3 months ago  187MB
+
+  4.取得したイメージをコンテナ化し、実行する。
+  docker run --name nginx -p 80:80 nginx
+  ※実行中のdokcerのコンテナが動作しているため、コンソールの操作ができなくなります。
+  ※コンテナの実行中は、nginxのアクセスログやエラーログが画面に出力され続けます。
+  ※[CTRL]+[C]で停止することでホストのコンソールに戻ります。 
+  
+★ログ(start worker process 29)が表示されたら5.に進んでOK
+
+  5.WEBブラウザから、nginxが動作しているか確認する。
+  ※作成したWEBサーバに接続するには、AWS Management Consoleから作成したEC2インスタンスに設定されているPublic IPAddressを確認し、ブラウザに入力します。
+
+  ブラウザからアクセスすると、EC2のコマンドライン上に、アクセスのログが追加で表示されます。
+  余裕がある人は、スマホからも接続してみてください。PCと同様にアクセスログが追加で表示されます。
+
+  6.SSHコンソールで[CTRL]+[C]を押下して、デーモンを停止する。
+  ※WEBサーバが構成されたコンテナが停止されたため、ページに到達できなくなるはずです。
+
+  7.コンテナのプロセス状態を確認してみましょう。
+  docker ps
+  
+  ※何も表示されません。
+    これは、さきほどコンテナを停止したために、動作中のコンテナがいないことを表しています。
+  
+  8.停止しているコンテナも表示できるように以下のコマンドを実行してみましょう。
+  docker ps -a
+  
+  ※デーモンを停止しているため、「STATUS」が「Exited (0)」になっています。
+  
+  9.WEBブラウザから、nginxが停止しているか確認してみましょう。
+  
+
+  10.コンテナの詳細情報を確認してみましょう。
+  
+  docker inspect nginx
+  docker inspect nginx | more
+  
+  ※"|"(パイプ)は前のコマンドの結果を次のコマンドに渡す処理記号で、moreは1画面ずつ表示されるコマンドです。
+  Enterキーを押すと次の行が表示され、"q"を押すと終了します。
+  ※指定したコンテナの詳細な情報が表示されます。
+  コンテナ情報、コンテナ状態、起動オプション情報、ネットワーク情報などが出力されます。
+
+  11.コンテナ(nginx)のログを確認してみましょう。
+  docker logs nginx | more
+  
+  ※コンテナで行った作業(コンテナ作成～コンテナ停止まで)のログが出力されています。
+  コンテナ作成から起動後のログなどがすべて出力されます。
+  imageに内包されているsysログやアプリケーションログの出力先がdockerログに出力されるように設定されています。
+  ※コンテナで行った作業(コンテナ作成～コンテナ停止まで)のログが出力されています。
+  
+  12.今度はコンテナをバックグランドで動かしてみます。
+  docker start nginx
+  
+  ※今度はプロンプトが戻ってきているはずです。
+  ※先ほどはrunコマンドを使いましたが、runコマンドはイメージをcreateでコンテナ化し、
+    続けて実行するコマンドになります。
+    今回はすでにコンテナ化されているもの利用して起動を行っています。
+  
+  13.もう一度コンテナの状態を確認してみましょう。
+  docker ps -a
+  
+  ※今度は「STATUS」が「Up xx seconds」となっているはずです。
+  WEBブラウザから、nginxが動作しているか確認してみましょう。
+
+  14.動作しているコンテナに接続してみましょう。
+  ※今回作成したコンテナのLinuxOSは「UBUNTU」となっているため、ホストOSとディストリビューションが異なるため、多少コマンドも異なります。
+
+  ＜豆知識＞
+  Linuxには大きく分けて３つのディストリビューションが存在しています。
+  ディストリビューションのことは、便宜上「種類」とでも思っておいてください。
+  Linuxはオープンソースのため、その開発体制は放任主義的であり、若干自由奔放です。
+  OSLinuxはオープンソースのため、その開発体制は放任主義的です。
+  Linuxはカーネル(OSの核となる部分)を指し、その他の部分はGNUが提供するOSSを使用し、融合させることに
+  よりOSとしての形を形成しています。
+  ディストリビューションによって、パッケージの管理や、システムの構成や設定などに違いがあるのはそのためです。
+  ディストリビューションは大きく分けて主に３系列になり、ほとんどのLinuxがこの３系列が派生したものになります。
+  ・RedHat系
+      <サーバ向き>
+        Amazon Linux2<RedHatから派生>
+        Amazon Linux2022<Fedoraから派生>
+        AlmaLinux<CentOSとバイナリーレベルで互換>
+        CentOS<残念ながら終了>
+        MIRACLE LINUX(日本サイバートラスト社)
+        Rocky Linux<バグを含めてCentOSを完全互換！>
+      <デスクトップ向き>
+        Fedora<ちょっとやんちゃ>
+  ・Debian系
+      <サーバ向き>
+        Debian
+        Ubuntu
+      <デスクトップ向き>
+        Linux mint(今一押しらしい！)
+        elementaryOS(Macライク)
+        ZorinOS(Windowsライク)
+        Deepin(中国産)
+        gLinux(Google社内向けデスクトップOS)
+      <小型シングルボードコンピュータ>
+        Raspberry Pi OS(ラズベリーパイOS)
+  ・Slackware系
+      <サーバ向き>
+      <デスクトップ向き>
+  ・その他
+    openSUSE
+    
+  docker exec -it nginx /bin/bash
+  
+  15.nginxがブラウザに表示しているコンテンツを見てみましょう。
+  cd /usr/share/nginx/html
+  ls
+  cat index.html
+  ※現在、ブラウザに表示されているhtmlのソースファイルが表示されます。
+  
+  16.ブラウザに表示される「Welcom to nginx!」を「Welcome to mysite!」に変更してみましょう。
+  sed -i.back 's/to nginx/to mysite/' index.html
+  ※「sed」は入力ファイルに対して、文字列を処理するためのコマンドです。
+  viエディターなどを使わなくても、ファイル内の文字列の出力・削除・追加・置換などができます。
+  「-i.back」はファイル名の後ろに「.back」が付いたバックアップを作成します。
+  「s/to nginx/to mysite/」は正規表現で、置換処理を表す文字列です。
+  とても便利なコマンドですね。
+  
+  WEBブラウザで表示内容が変わったことを確認しましょう。
+  
+  17.コンテナから切断しましょう。
+  exit
+
+  18.コンテナを停止してみましょう。
+  docker stop nginx
+
+  19.コンテナを削除してから、消えたことを確認してみましょう。
+  docker rm nginx
+  docker ps -a
+  
+  20.次にイメージを削除してから、消えたことを確認してみましょう。
+  docker images
+  docker rmi nginx
+  docker images
+
+  コンテナ型仮想化(Docker)について、少しは理解の足しになれたのではないでしょうか。
+  このようにホストと切り離された名前空間の環境を即座に作成・廃棄ができ、ホスト環境を
+  いたずらに汚しません。この特性もあり、開発環境や検証環境の構築に適しています。
+
+########################################################################################################################
+
+5-5.複数のコンテナを操作しやすくするためのツール(docker-compose)をインストールします。
+  ※docker-composeとは複数の仮想コンテナを定義・共有・制御するために開発されたツールで、
+    今回のように複数の仮想コンテナを作成する場合に不可欠なツールとなります。
+
+
+  1.docker-composeファイルの格納フォルダ作成
+
+//
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
+//
+
+  2.docker-composeファイルダウンロード
+
+//
+VER=2.23.3
+sudo curl -L "https://github.com/docker/compose/releases/download/v${VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
+//
+
+  3.ダウンロードしたdocker-composeファイルを実行形式に変更し、シンボリックリンクを作成
+  ※シンボリックリンクを作成することによって、どのディレクトリからでもdocker-composeを実行することが可能になります。
+
+//
+sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+sudo ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/bin/docker-compose
+docker-compose --version
+//
+
+-うんちく-
+作成したシンボリックリンクはどのように見えるのでしょうか？気になりませんか？
+次のコマンドを叩いてみましょう！
+
+ls -la /usr/bin | grep docker-compose
+
+「/usr/bin/docker-compose」は「/usr/local/lib/docker/cli-plugins/docker-compose」からリンクされていることがわかります。
+
+
+########################################################################################################################
+
+6.docker-composeの動作確認(nginxを起動するまで)
+
+  1.フォルダ並びにスクリプト、設定ファイルの作成
+    今回の研修で必要となる以下のディレクトリとファイルを構成していきます。
+
+    ディレクトリとファイルの構造
+
+    /containers
+    　├ /django
+    　│　├ /startup
+    　│　│├setuser.sh
+    　│　│└startup.sh
+    　│　├ /uwsgi
+    　│　│└wusgi.ini
+    　│　├Dockerfile
+    　│　└requirements.txt
+    　├/nginx
+    　│├ /conf
+    　││└nginx.conf
+    　│└uwsgi_params
+    　└docker-compose.yml
+
+今回はディレクトリと設定ファイルの作成については、シェルで一気に作成します。
+以下のコマンドで対象のディレクトリに遷移ます。
+
+cd /home/ec2-user/
+
+viエディタでシェルファイルを作成します。
+
+vim setting.sh
+
+viエディタで//で囲まれたシェルの内容を貼り付けて保存します。
+
+※viエディタの簡単な使い方を説明
+
+  図で説明
+
+//↓ここから
+echo Make Directorys
+
+mkdir /home/ec2-user/containers
+mkdir /home/ec2-user/containers/django
+mkdir /home/ec2-user/containers/django/startup
+mkdir /home/ec2-user/containers/django/uwsgi
+mkdir /home/ec2-user/containers/nginx
+mkdir /home/ec2-user/containers/nginx/conf
+
+targetpath=/home/ec2-user/containers/docker-compose.yml
+echo make file[$targetpath]
+
+echo version: '2.23.3' > $targetpath
+echo services: >> $targetpath
+echo \ \ \ \ nginx: >> $targetpath
+echo \ \ \ \ \ \ \ \ container_name: nginx >> $targetpath
+echo \ \ \ \ \ \ \ \ image: nginx:latest >> $targetpath
+echo \ \ \ \ \ \ \ \ ports: >> $targetpath
+echo \ \ \ \ \ \ \ \ \ \ \ \ - 80:80 >> $targetpath
+
+targetpath=/home/ec2-user/containers/nginx/conf/nginx.conf
+echo makefile[$targetpath]
+
+echo upstream django { > $targetpath
+echo \ \ \ \ server django:8000\; >> $targetpath
+echo } >> $targetpath
+echo  >> $targetpath
+echo server { >> $targetpath
+echo \ \ \ \ listen 80\; >> $targetpath
+echo \ \ \ \ location / { >> $targetpath
+echo \ \ \ \ \ \ \ \ uwsgi_pass django/\; >> $targetpath
+echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params/\; >> $targetpath
+echo \ \ \ \ } >> $targetpath
+echo } >> $targetpath
+
+targetpath=/home/ec2-user/containers/nginx/uwsgi_params
+echo makefile[$targetpath]
+
+echo uwsgi_param QUERY_STRING \$query_string\; > $targetpath
+echo uwsgi_param REQUEST_METHOD \$request_method\; >> $targetpath
+echo uwsgi_param CONTENT_TYPE \$content_type\; >> $targetpath
+echo uwsgi_param CONTENT_LENGTH \$content_length\; >> $targetpath
+echo uwsgi_param REQUEST_URI \$request_uri\; >> $targetpath
+echo uwsgi_param PATH_INFO \$document_uri\; >> $targetpath
+echo uwsgi_param DOCUMENT_ROOT \$document_root\; >> $targetpath
+echo uwsgi_param SERVER_PROTOCOL \$server_protocol\; >> $targetpath
+echo uwsgi_param REMOTE_ADDR \$remote_addr\; >> $targetpath
+echo uwsgi_param REMOTE_PORT \$remote_port\; >> $targetpath
+echo uwsgi_param SERVER_ADDR \$server_addr\; >> $targetpath
+echo uwsgi_param SERVER_PORT \$server_port\; >> $targetpath
+echo uwsgi_param SERVER_NAME \$server_name\; >> $targetpath
+
+targetpath=/home/ec2-user/containers/django/uwsgi/uwsgi.ini
+echo makefile[$targetpath]
+
+echo [uwsgi] > $targetpath
+echo socket = :8000 >> $targetpath
+echo module = djangoapp.wsgi >> $targetpath
+echo wsgi-file = /app/app/wsgi.py >> $targetpath
+echo logto = /wsgi/wsgi.log >> $targetpath
+echo py-autoreload = 1 >> $targetpath
+
+targetpath=/home/ec2-user/containers/django/Dockerfile
+echo makefile[$targetpath]
+
+echo FROM python:3 > $targetpath
+echo RUN apt-get update \&\& apt-get install -y tree vim >> $targetpath
+echo WORKDIR /app >> $targetpath
+echo COPY requirements.txt /app >> $targetpath
+echo RUN pip install -r requirements.txt >> $targetpath
+echo COPY . /django >> $targetpath
+
+targetpath=/home/ec2-user/containers/django/requirements.txt
+echo makefile[$targetpath]
+
+echo django > $targetpath
+echo psycopg2 >> $targetpath
+echo uwsgi >> $targetpath
+echo django-bootstrap-datepicker-plus==5.0.3 >> $targetpath
+echo django-bootstrap4==22.3 >> $targetpath
+
+targetpath=/home/ec2-user/containers/django/startup/startup.sh
+echo makefile[$targetpath]
+
+echo source /startup/setuser.sh \# setuser.sh を実行する > $targetpath
+echo uwsgi --ini /wsgi/uwsgi.ini \# uwsgi.ini の設定をもとに uwsgi を実行する >> $targetpath
+
+targetpath=/home/ec2-user/containers/django/startup/setuser.sh
+echo makefile[$targetpath]
+
+echo \#!/bin/bash -e > $targetpath
+echo SHELL_NAME=\'setuser.sh\' >> $targetpath
+echo echo \"[\$SHELL_NAME] START\" >> $targetpath
+echo  >> $targetpath
+echo \# setup group >> $targetpath
+echo if getent group \"\$GROUP_ID\" \> /dev/null 2\>\&1\; then >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] GROUP_ID \'\$GROUP_ID\' already exists.\" >> $targetpath
+echo else >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] GROUP_ID \'\$GROUP_ID\' does NOT exist. So execute [groupadd -g \$GROUP_ID \$GROUP_NAME].\" >> $targetpath
+echo \ \ \ \ groupadd -g \$GROUP_ID \$GROUP_NAME >> $targetpath
+echo fi >> $targetpath
+echo  >> $targetpath
+echo \# setup user >> $targetpath
+echo if getent passwd \"\$USER_ID\" \> /dev/null 2\>\&1\; then >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] USER_ID \'\$USER_ID\' already exists.\" >> $targetpath
+echo else >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] USER_ID \'\$USER_ID\' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME].\" >> $targetpath
+echo \ \ \ \ useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME >> $targetpath
+echo fi >> $targetpath
+echo  >> $targetpath
+echo echo \"[\$SHELL_NAME] FINISH\" >> $targetpath
+
+echo file chmod[$targetpath]
+sudo chmod +x -R /home/ec2-user/containers/django/startup/*
+//↑ここまで
+
+  作成したシェルファイルに実行権限を付与します。
+
+//
+cd /home/ec2-user/
+sudo chmod 775 setting.sh
+//
+
+  chmod 775とは？
+  "ls -l" もしくは "ll"コマンドを入力してみましょう。
+  次のような内容が表示がされます。
+  -rwxrwxr-x 1 ec2-user ex2-user 4696 XXX 99 99:99 setting.sh
+  先頭になにやら"-rwxrwxr-x"と書かれていますが、これはアクセス権を記したものになります。
+  
+  1桁目：[-]ファイル/[d]ディレクトリ/[l]シンボリックリンクを表します。
+         ※シンボリックリンクはWindowsでいうところのショートカットみたいなものです。
+  2-4桁目：所有者のアクセス権で1桁毎に[r]読み取り/[w]書き込み/[x]実行可能が表示されています。
+           ※[-]が表示されている場合は、その権限がないことを指します。
+  5-7桁目：同様にグループのアクセス権を表します。
+  8-10桁目：同様にその他ユーザのアクセス権を表します。
+  
+  各アクセス権は3桁に分かれていることがわかりますね。
+  Linuxではこの3桁をビットに見立てて、計算します。
+  rwx=111(2進数)=7(10進数)と解釈します。
+  例えばr-xですと、101(2進数)=5(10進数)となります。
+
+  シェルファイルを実行します。
+  ./setting.sh
+
+-うんちく-
+treeコマンドはディレクトリ構造やファイルの配置を簡単に確認するためのコマンドになります。
+オプションを付けることで、もっと便利に使うことができます。
+-p 種類やアクセス権を表示
+-u ファイルの所有者を表示
+-g ファイルの所有グループを表示
+-D 作成日付を表示
+-h ファイルのサイズを表示
+※オプションの付与はほどほどに・・・。
+  
+  次のコマンドを実行すると・・・
+  tree -p -u -g
+  "ls -l"や"ll"コマンドと似た内容の表示がtree形式で表示されます。
+  アクセス権やディレクトリ、シンボリックリンクを探すのに役に立ちます。
+
+  2.docker-composeファイルについて
+  dockerの練習で、イメージの取得からwebサーバの起動までを
+
+
+  2.1.WEBサーバのコンテナを作成する。
+
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers
+
+  cat docker-compose.yml
+
+//
+version: '2.23.3'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        ports:
+            - 80:80
+//
+
+  2.2.WEBサーバを起動してみる。
+
+//
+docker-compose up -d
+//
+
+  2.3.WEBサーバが起動したか確認してみる。
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>
+
+※次のページが表示されれば正常にnginxが起動されています。
+  
+
+Welcome to nginx!
+If you see this page, the nginx web server is successfully installed and working. Further configuration is required.
+
+For online documentation and support please refer to nginx.org.
+Commercial support is available at nginx.com.
+
+Thank you for using nginx.
+
+
+  2.4.WEBサーバを停止する。
+  
+//
+docker-compose down
+//
+
+
+########################################################################################################################
+
+7.3層アーキテクチャを構築する。
+
+  1.nginx.conf を用意する。
+    今回は upstream ディレクティブの記述にあるように django コンテナの8000番ポートへ通信を流す設定を行う。
+
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers/nginx/conf
+  cat nginx.conf
+
+//
+upstream django {
+    server django:8000;
+}
+
+server {
+    listen 80;
+    location / {
+        uwsgi_pass django;
+        include /etc/nginx/uwsgi_params;
+    }
+}
+//
+
+
+  5.wsgiの通信で必要とされる uwsgi_params を用意する。
+  
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers/nginx/
+  cat uwsgi_params
+
+//
+uwsgi_param QUERY_STRING $query_string;
+uwsgi_param REQUEST_METHOD $request_method;
+uwsgi_param CONTENT_TYPE $content_type;
+uwsgi_param CONTENT_LENGTH $content_length;
+uwsgi_param REQUEST_URI $request_uri;
+uwsgi_param PATH_INFO $document_uri;
+uwsgi_param DOCUMENT_ROOT $document_root;
+uwsgi_param SERVER_PROTOCOL $server_protocol;
+uwsgi_param REMOTE_ADDR $remote_addr;
+uwsgi_param REMOTE_PORT $remote_port;
+uwsgi_param SERVER_ADDR $server_addr;
+uwsgi_param SERVER_PORT $server_port;
+uwsgi_param SERVER_NAME $server_name;
+//
+
+  6.djangoコンテナ側でnginxコンテナからの通信を受けられるように、uwsgi.ini の作成を行う。
+
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers/django/uwsgi
+  cat uwsgi.ini
+
+//
+[uwsgi]
+socket = :8000
+module = djangoapp.wsgi
+wsgi-file = /app/app/wsgi.py
+logto = /wsgi/wsgi.log
+py-autoreload = 1
+//
+
+  7.djangoコンテナイメージの元となるDockerfileを用意する。
+  ※ここではpythonが設定されているイメージにdjangoの環境を構築しています。
+
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers/django
+  cat Dockerfile
+
+//
+FROM python:3
+RUN apt-get update && apt-get install -y tree vim
+WORKDIR /app
+COPY requirements.txt /app
+RUN pip install -r requirements.txt
+COPY . /django
+//
+
+  8.djangoコンテナで必要とするPythonのモジュールのリストを用意する。
+
+  同じディレクトリに以下のファイルが作成されていることを確認します。
+
+   cat requirements.txt
+
+//
+django
+psycopg2
+uwsgi
+django-bootstrap-datepicker-plus==5.0.3
+django-bootstrap4==22.3
+//
+
+  9.djangoコンテナ内で実行されるシェルスクリプト（startup.sh, setuser.sh）を用意する。
+    userを作成し、uwsgi,ini を実行する。
+
+    9.1.startup.shを用意する。
+    
+  以下のディレクトリにファイルが作成されていることを確認します。
+
+  cd /home/ec2-user/containers/django/startup
+  cat startup.sh
+
+//
+source /startup/setuser.sh # setuser.sh を実行する
+uwsgi --ini /wsgi/uwsgi.ini # uwsgi.ini の設定をもとに uwsgi を実行する
+//
+
+    9.2.setuser.shを用意する。
+    
+  同じディレクトリに以下のファイルが作成されていることを確認します。
+
+
+  cat setuser.sh
+
+//
+#!/bin/bash -e
+SHELL_NAME='setuser.sh'
+echo "[$SHELL_NAME] START"
+
+# setup group
+if getent group "$GROUP_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' already exists."
+else
+    echo "[$SHELL_NAME] GROUP_ID '$GROUP_ID' does NOT exist. So execute [groupadd -g \$GROUP_ID \$GROUP_NAME]."
+    groupadd -g $GROUP_ID $GROUP_NAME
+fi
+
+# setup user
+if getent passwd "$USER_ID" > /dev/null 2>&1; then
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' already exists."
+else
+    echo "[$SHELL_NAME] USER_ID '$USER_ID' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME]."
+    useradd -m -s /bin/bash -u $USER_ID -g $GROUP_ID $USER_NAME
+fi
+
+echo "[$SHELL_NAME] FINISH"
+//
+
+    9.3.startupディレクトリ配下の全てのファイルに実行権限が付与されていることを確認する。
+
+    ls -la
+
+  ※実行権限がついていない場合は、以下のコマンドで実行権限を付与します。
+  sudo chmod 775 *
+
+  10.docker-composeファイルをバックアップし内容を修正します。
+  ※NGINXとDjango、PostgreSQLの設定を行う。
+
+  cd /home/ec2-user/containers
+  cp docker-compose.yml docker-compose.bak
+  vim docker-compose.yml
+
+    vimエディターを起動したら、ノーマルモードの状態で以下を入力し、[Enter]を押下します。
+    :%d
+    すべての内容がクリアされます。
+    
+    以下の文章を張り付けます。
+    うまく貼り付けができない場合は、ノーマルモードで以下を入力し、[Enter]を押下します。
+    画面左したに"Paste mode"と表示されます。
+
+//
+version: '2.23.3'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        volumes:
+            - ./nginx/conf:/etc/nginx/conf.d
+            - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+        ports:
+            - 80:80
+        depends_on: #依存関係を設定
+            - django
+
+    django:
+        container_name: django
+        build: ./django
+        command: bash -c /startup/startup.sh
+        volumes:
+            - ./django/uwsgi:/wsgi
+            - ./django/djangoapp:/app
+            - ./django/startup:/startup
+        ports:
+            - 8000:8000
+        environment:
+            - USER_ID=1000
+            - GROUP_ID=1000
+            - USER_NAME=ec2-user
+            - GROUP_NAME=ec2-user
+        depends_on:
+            - postgresql #依存関係を設定
+
+    postgresql:
+        image: postgres:latest
+        container_name: postgresql
+        environment:
+            - POSTGRES_DB=myappdb
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+        ports: # add
+            - 5432:5432
+//
+
+  10.django ディレクトリ内でdjango projectの作成を行う。
+    今回はプロジェクト名をdjangoappとする。
+
+//
+cd /home/ec2-user/containers/django
+django-admin startproject djangoapp
+//
+
+    プロジェクトを作成するとdjangoディレクトリ内にdjangoappディレクトリが作成される。
+    
+  11.コンテナ内のdjangoに外部からの接続を許可する。  
+    デフォルトでは外部からの通信は全て拒否されているため、settings.py の修正を行う。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下に該当する行を修正する。
+
+//
+ALLOWED_HOSTS = []
+  ↓
+ALLOWED_HOSTS = ['*']
+//
+
+  12.WEBサーバを起動してみる。
+
+//
+docker-compose up -d
+//
+########################################################################################################################
+※「internal server error」が発生した場合。講師の説明で対応する
+確認箇所
+①settings.pyの*をシングルコーテーションで正しく囲っているか？
+  正しく囲っていない場合は、ALLOWED_HOSTが効かないため、NGINXからDJANGOへの接続が拒否されます。
+  /home/ec2-user/containers/django/uwsgi/uwsgi.logにエラーが出力されます。
+②「django-admin startproject djangoapp」を正しいディレクトリで実行したか？
+  treeコマンドを実行して、正しいディレクトリの構成なっているか確認する。
+  違うディレクトリに作成されている場合は、「sudo rm -rf djangoapp」で削除を実施し、正しいディレクトリで再度手順を実施する。
+
+★ここの対処はなんだっけ？
+　エラー：validating /home/ec2-user/containers/docker-compose.yml: (root) Additional property on is not allowed
+　対処：「dokcer-compose.yml」のversion 表記ができていない場合は修正する
+★nginx が起動しない→statusがExited (1) 
+########################################################################################################################
+
+  13.WEBサーバが起動したか確認してみる。
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>
+   「The install worked successfully! Congratulations!」のメッセージの画面が表示されていればNGINXとuWSGI、Djangoの環境は正常に作成されています。
+
+    上のような django のテストページが見えていればOK。
+
+  14.Djangoの日本語化と日本ロケールに修正します。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim settings.py
+//
+
+    以下に該当する行を修正する。
+
+//
+LANGUAGE_CODE = 'en-us'
+  ↓
+LANGUAGE_CODE = 'ja'
+//
+
+//
+TIME_ZONE = 'UTC'
+  ↓
+TIME_ZONE = 'Asia/Tokyo'
+//
+
+  15.日本語されたか確認する。
+  
+  ブラウザを再読み込みする。
+  
+    「インストールは成功しました！おめでとうございます！」のメッセージの画面が表示されていれば日本語化は成功です。
+
+  16.データベースのマイグレート ※postgersqlを利用する場合は、settings.pyを編集する必要がある。
+
+
+PostgreSQLの設定を追加する。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+cp settings.py settings.bak
+vim settings.py
+//
+
+    以下の行を修正する。
+
+//変更前
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+//
+
+修正方法
+
+DATABASES句の複製をします。
+①該当の行のDATABASESのDにカーソルを合わせた状態で、[Shift]+[v](行選択)を押下します。
+②カーソルキーの↓を押して行頭が{のところまで選択します。
+③[y](コピー:vimではヤンクと呼びます)を押下します。
+④続けてカーソルをDATABASESの上の空行のところに合わせて、[p](貼り付け)を押下します。
+
+元のDATABASES句をコメントアウトします。
+①複製されたDATABASESのDにカーソルを合わせた状態で、[Ctrl]+[v](矩形選択)を押下します。
+②カーソルキーの↓を押して行頭が{のところまで選択します。
+③[Shift]+[i](ビジュアルモードでの挿入モード)を押下します。
+④#を入力し、[ESC](挿入モードを終了)を押下します。
+※コメントを文字を外したいときは、③の操作を[x](1文字削除)押下にすると削除できます。
+
+コメントアウトされていないDATABASES句を修正します。
+[i]を押下して、挿入モードにして修正します。
+※教材テキストからコピペでもOKです。
+
+//変更後
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myappdb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'postgresql',
+        'PORT': '5432',
+    }
+}
+//
+Dockerコンテナ[django]にログインして作業をします。
+
+docker exec -it django /bin/bash
+
+ユーザをec2-userに切り替えます。※切り替えを行わないんと、
+データベースがroot権限で作成されてしまい正しく動作しなくなります。
+
+su - ec2-user
+
+djangoのプロジェクトディレクトリに遷移します。
+
+cd /app
+
+データベースをマイグレーションします。
+※マイグレーションをすることにより、djangoが先ほど設定したPostgreSQLを利用できるようになります。
+
+python3 manage.py migrate
+//
+
+  17.djangoの管理者ユーザを作成する。
+//
+
+//
+python3 manage.py createsuperuser
+//
+
+以下を入力
+Username:
+Email address:
+Password:
+Password(again):
+
+  18.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※管理者画面が表示される。
+
+  adminサイトにログインしてみよう。
+
+  先ほど入力した、UsernameとPasswordでログインします。
+
+  WEB画面上に「ようこそ●●.」と表示されていれば、ログインが正常にされています。
+
+  19.データベースにユーザが登録されていることを確認してみましょう
+
+  ※現在、djangoのコンテナに接続しているので、一度抜けます。
+  
+  ①exit ←ec2-userからログアウト
+  ②exit ←rootならびにdockerコンテナからログアウトします。
+
+dockerコンテナ(postgresql)に、以下のコマンド使ってログインする。
+
+docker exec -it postgresql /bin/bash
+
+rootのコンソールでpostgresユーザに切り替えるために、以下を入力し実行する。
+
+su - postgres
+
+postgreのコンソールでpostgreSQLに接続するために、以下を入力し実行する。
+
+psql
+
+PostgreSQLに存在しているデータベースを確認してみましょう。
+
+次のコマンドを入力・実行し、DBの一覧を表示する。
+\l
+
+以下のDBが存在します。
+myappdb
+postgres
+template0
+template1
+
+「myappdb」は「docker-compose.yml」ならびに「settings.py」で定義したdjango用のデータベース名になります。
+
+※qを押すとコンソールに戻ります。
+
+それではdjangoで利用しているデータベース「myappdb」に接続してみましょう。
+
+\c myappdb
+
+以下のメッセージが表示されれば「myappdb」に接続がされています。
+You are now connected to database "myappdb" as user "postgres".
+
+現在接続されているデータベース名を確認してみましょう。
+select current_database();
+
+テーブルの一覧を表示
+\d
+
+19個のtableが存在します。
+
+※qを押すとコンソールに戻ります。
+
+
+※djangoのテーブルが作成されていることを確認する。
+  「python3 manage.py migrate」を実行することにより、「settings.py」に記述した
+  DATABASE句の設定に従いDBならびにテーブルが作成されています。
+  
+先ほど登録した管理者情報が書き込まれているか確認してみましょう。
+
+psqlのコンソールで以下を入力
+
+select * from auth_user;
+
+どうですか？登録した管理者ユーザ名が入っていると思います。
+
+データベースの追加・削除が正しくされるか確認してみましょう！
+
+ブラウザにインスタンスのIPアドレスを入力する。
+http://<インスタンスのパブリック IPv4アドレス>/admin
+
+「Django管理サイト」が表示されるので、ユーザー名とパスワードを入力してログインしましょう。
+
+「認証と許可」タブの下に「ユーザー」と表示があるので、右側の「＋追加」をクリックする。
+
+「ユーザー名」「パスワード」「パスワード(確認用)」に入力をして、「保存」をクリックする。
+
+登録したユーザがテーブルに追加されているか確認してみましょう。
+
+psqlのコンソールで以下を入力
+
+select * from auth_user;
+
+データベースに先ほど登録したユーザのレコードが追加されていると思います。
+
+次に管理者ログも覗いてみましょう。
+select * from django_admin_log;
+
+先ほど、管理者権限でユーザを追加したので、こちらにログが出力されています。
+
+①qを押してpsqlコンソールに戻りましょう。
+②\qを入力実行して、postgresコンソールに戻りましょう。
+③exitを入力して、rootコンソールに戻りましょう。
+④exitを入力実行して、postgresqlコンテナから出ます。
+
+  19.CSSが適用されていないので修復する。
+  ※adminサイトの表示が綺麗に表示されない理由として、静的コンテンツ要素のCSSやhtml、画像ファイルは
+    WEBサーバであるnginxからは参照ができずCSSが適用されていないためです。
+  ※nginxとdjangoが同一サーバであればディレクトリの指定が容易だが、別サーバ扱いなので、ちょっとテクが必要。
+
+  20.静的コンテンツの設定を追加する。
+
+Dockerコンテナ[django]にログインして作業をします。
+
+docker exec -it django /bin/bash
+
+ユーザをec2-userに切り替えます。※切り替えを行わないんと、
+データベースがroot権限で作成されてしまい正しく動作しなくなります。
+
+su - ec2-user
+
+djangoのプロジェクトディレクトリに遷移します。
+
+cd /app
+
+//
+cd /app/djangoapp/
+vim settings.py
+//
+
+  「STATIC_URL = '/STATIC'」の下に以下の行を追加
+
+//
+STATIC_ROOT = '/app/static/'
+//
+
+  以下のコマンドを実行
+//
+cd /app
+python3 manage.py collectstatic
+//
+
+以下のメッセージが表示されれば正常に完了しています。
+125 static files copied to '/app/static'.
+
+※/app/static/ディレクトリ配下に静的コンテンツが集められる。
+
+cd static
+tree
+
+  21.Dockerコンテナからログアウトする。
+
+//
+exit
+exit
+//
+
+  22.nginxから/app/static/が参照できるように、docker-compose.ymlを修正する。
+
+//
+cd /home/ec2-user/containers
+vim docker-compose.yml
+//
+
+  以下の文書をnginxのvolumes項目に追加する。
+  ※これにより、djangoで作成したstaticディレクトリをnginxにマウントします。
+  ※djangoで作成したstaticディレクトリは、ホスト側の「/home/ec2-user/containers/django/djangoapp」配下に作成されています。
+
+    「- ./nginx/uwsgi_params:/etc/nginx/uwsgi_params」の記述の下に以下の行を追加します。
+
+//
+    - ./django/djangoapp/static:/static
+//
+
+  21.nginx.confに/staticへアクセスが来たら自サーバ内の/staticを参照するように修正する。
+
+//
+cd /home/ec2-user/containers/nginx/conf
+vim nginx.conf
+//
+
+  以下の文書を追記する。
+
+//
+    location /static {
+        alias /static;
+    }
+//
+
+  22.仮想コンテナを再作成
+
+//
+docker-compose up -d --build
+
+//
+
+以下のエラーが出力された場合
+Error response from daemon: invalid volume specification: '/home/ec2-user/containers/django/djangoapp/static:static:rw': invalid mount config for type "bind": invalid mount path 'static' mount path must be absolute
+
+docker-compose.ymlのvolumeの記述が間違っている可能性があります。
+
+
+  22.adminサイトの確認
+
+  ブラウザにインスタンスのIPアドレスを入力する。
+  http://<インスタンスのパブリック IPv4アドレス>/admin
+
+  ※CSSが適用された管理者画面が表示される。
+
+  23.管理者画面はDjangoの中で、どのような仕組みで表示されているか
+
+  管理サイトはをクラスベースドビューによって作成されていて、DjangoでWebアプリケーションを構築した
+  段階から利用することができます。
+  作成したアプリケーションで利用するデータベースのデータの編集などもできるアプリケーションになります。
+
+  先ほど表示をCSSを修正した管理者画面がどのような仕組みで表示されているか確認してみましょう！
+  djangoのプロジェクトの設定ファイルが格納されている以下のパスに遷移し、「urls.py」ファイルを開きましょう。
+
+//
+cd /home/ec2-user/containers/django/djangoapp/djangoapp
+vim urls.py
+//
+
+"""djangoapp URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+//
+
+なにやら先頭に３種類の定義の例が記述してあります。
+
+・Function views
+  「ファンクションビュー」は作成したファンクション(関数)を呼び出して利用します。
+  こちらは自作した関数を使うため、オリジナリティの高いサイト作成することができます。
+  基本的な動作としては、HttpRequestオブジェクトを受け取って、HttpResponseオブジェクトを返すという単純なものです。
+  
+・Class-based views
+  「クラスベースドビュー」はDjangoで用意されているクラスや作成したクラスを呼ぶ出して利用します。
+  こちらのクラスを利用することにより、コードを再利用可能なコンポーネントとしてサイトを作成することができます。
+  ※クラスを自作する場合はオブジェクト指向の手法による設計とDjangoのクラスの理解が必要となるため、高い設計能力が必要となりますが、
+  簡単案
+  
+・Including another URLconf
+  「Including another URLconf」は現在のアプリケーションと他のアプリケーションのURLを組み合わせるために利用します。
+  ※Djangoでは、プロジェクトという大きな枠の中に、アプリケーションという機能単位を作り、プロジェクトはそれぞれのアプリケーションを呼び出して構成にできるため、大規模なプロジェクトでも小さい単位に分けて開発を進めることができます。
+
+
+9.WEBアプリ作成
+テストページが見れたので、ここからはページを作成していく。
+まずはホスト側でアプリケーションを作る。
+
+9.1.「Hello world...」をMVCモデルを使って表示してみましょう。
+
+  1.dockerコンテナ「django」にログインする。
+
+//
+docker exec -it django /bin/bash
+//
+
+  2.WEBアプリケーション用の環境を作成
+  
+  2.1.カレントユーザをec2-userに切り替える。
+  
+//
+su - ec2-user
+//
+
+  2.2.WEBアプリケーション環境を作成する。
+
+//
+cd /app
+python3 manage.py startapp boardapp
+//
+
+  ※同ディレクトリ内に、boardappというアプリケーション用のディレクトリが作成されます。
+
+  2.3.boardapp ディレクトリ直下に urls.py を作成する。
+  ※/boardappのURLにアクセスした際に、何の処理をするか記述する。
+  ※下の記述ではviews.pyのindexを処理させるようにしている。 
+
+//
+cd /app/boardapp
+vim urls.py
+//
+
+  下の文章を貼り付ける。
+
+//
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+//
+
+  2.4.boardapp ディレクトリ直下の views.pyを修正する。
+  ※urls.pyで指定してあるviews.pyのindex処理を記述する。
+  ※下の記述ではHttpResponseオブジェクトを利用して、ブラウザにレスポンス返します。
+
+//
+vim views.py
+//
+
+  下の文章を貼り付ける。
+
+//
+from django.http import HttpResponse
+
+def index(request):
+    returnobject = HttpResponse("Welcome to Hosoda's world.")
+    retrun returnobject
+//
+
+  2.5.djangoappディレクトリ直下のurls.pyを修正する。
+  ※プロジェクトのurls.pyに/boardapp/のURLの指定があった場合に、boardappのurlsに遷移するように
+    指示します。
+
+//
+cd /app/djangoapp
+vim urls.py
+//
+
+  urlpatterns = [...]の中に、以下の行を追記する。
+
+//
+path('boardapp/', include('boardapp.urls')),
+//
+
+
+Dockerコンテナからログアウトする。
+
+//
+exit
+exit
+//
+
+  2.6.作成したサイトを確認する。
+
+http://[IP アドレス]/boardappにアクセスし、"Welcome to .."が確認できればOK。
+
+########################################################################################################################
+「502 Bad Gateway」が表示された場合
+①uwsgiのログを確認します。
+cd /home/ec2-user/containers/django/uwsgi
+sudo cat wsgi.log
+
+errorになっている行を探します。
+sudo cat wsgi.log | grep -3 Error
+
+<うんちく>
+| grepを付けることで、検索対象の文字列がヒットした行だけ表示します。また-<数字>をオプションにつけことにより前後の行も表示します。
+########################################################################################################################
+
+
+【困ったときの手順】
+
+//
+docker-compose up -d ← -d デタッチモード 同一ターミナルでコンテナが起動して別の作業ができなくなることを回避する。
+docker-compose up --build ← --build 再度ビルド処理を行います。
+//
+
+エラーでた！
+Error response from daemon: Conflict. the container name "/nginx" is already in use by container "aaa". you have to remove (or rename) that container to be able to reuse that name.
+
+**********************************************************************
+
+コンテナ内でコマンドがない場合は以下のコマンドをroot権限で実行する。
+
+//
+apt-get update
+apt-get install vim
+//
+
+12-3. Amazon EC2(a)を終了
+
+1.左ペインから[インスタンス]をクリック
+2.[インスタンス]画面で、作成したインスタンスにチェックを入れる
+3.[インスタンスの状態] > [インスタンスを終了]をクリック
+4.[終了 インスタンス？]画面で、[終了]をクリック
+5.[インスタンスの状態]が「実行中」から「終了済み」になることを確認
+
+12-4. キーペアの削除
+
+1.左ペインで[キーペア]をクリック
+2.[キーペア]画面で、作成したキーペアにチェックを入れる
+3.[アクション] > [削除]をクリック
+4.[EC2-kpr-<※LastName>は１つ以上のインスタンスに関連付けることができます。]画面の入力欄に"削除"を入力し、[削除]をクリック
+5.作成したキーペアが削除されていることを確認
+6.ローカルにダウンロードしたキーペアも削除する
+
+12-5. セキュリティグループ削除
+
+1.左ペインで[セキュリティグループ]をクリック
+2.[セキュリティグループ]画面で、作成した２つのセキュリティグループにチェックを入れる
+3.[アクション] > [セキュリティグループを削除]をクリック
+4.[セキュリティグループを削除]画面の入力欄に、"削除"を入力し、[削除]をクリック
+5.作成したセキュリティグループが削除されたことを確認
+
+12-8. VPCを削除
+
+1.[AWSコンソール]画面上部の検索窓で"vpc"と入力し、検索結果の[VPC]をクリック
+2.[VPC]画面で、作成したVPCにチェックを入れる
+3.[アクション] > [VPCの削除]をクリック
+4.[VPCの削除]画面の同時削除対象で以下のリソースが表示されていることを確認
+5.[削除を確認するには、フィールドに削除と入力します。]の入力欄に、"削除"と入力し、[削除]をクリック
+6.作成したVPCが削除されていることを確認
+
+★★SSHの接続でエラーが出た場合の対処★★
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:GO9L0sxfMlNTW6dG/o5ot1gl/jsn2XvPxDcDT3q4fQg.
+Please contact your system administrator.
+Add correct host key in C:\\Users\\hlemo/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in C:\\Users\\hlemo/.ssh/known_hosts:28
+Host key for 18.176.30.149 has changed and you have requested strict checking.
+Host key verification failed.
+
+ssh-keygen -R 18.176.30.149
+
+PS1="[\u@\h \W]\\$ "
+
+export PS1="\u@django:\W]\\$ "
+export PS1="\u@nginx:\W]\\$ "
+export PS1="\u@postgresql:\W]\\$ "
+export PS1="\u@host:\W]\\$ "
+
+.bashrcファイルを修正する必要がある。
+
+#djangoコンテナのrootはここを修正
+/etc/bash.bashrc
+
+#djangoコンテナのec2-userはここを修正 コメントアウトでいけるかも
+/home/ec2-user/.bashrc
+
+#ホストはここを修正
+/etc/bashrc
+
+
+プロンプト修正(ホスト)
+sudo sh -c 'echo "export NICKNAME=EC2-HOST" > /etc/profile.d/prompt.sh'
+sudo sed -i.bak "s/PS1=.*/PS1=\"\\\\u\@\$NICKNAME \\\\W]\\\\\\\\$ \""/ /etc/bashrc
+
