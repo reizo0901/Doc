@@ -28,8 +28,8 @@ echo  >> $targetpath
 echo server { >> $targetpath
 echo \ \ \ \ listen 80\; >> $targetpath
 echo \ \ \ \ location / { >> $targetpath
-echo \ \ \ \ \ \ \ \ uwsgi_pass django/\; >> $targetpath
-echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params/\; >> $targetpath
+echo \ \ \ \ \ \ \ \ uwsgi_pass django\; >> $targetpath
+echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params\; >> $targetpath
 echo \ \ \ \ } >> $targetpath
 echo } >> $targetpath
 
@@ -56,7 +56,7 @@ echo makefile[$targetpath]
 echo [uwsgi] > $targetpath
 echo socket = :8000 >> $targetpath
 echo module = djangoapp.wsgi >> $targetpath
-echo wsgi-file = /app/app/wsgi.py >> $targetpath
+echo wsgi-file = /app/djangoapp/wsgi.py >> $targetpath
 echo logto = /wsgi/wsgi.log >> $targetpath
 echo py-autoreload = 1 >> $targetpath
 
@@ -65,8 +65,8 @@ echo makefile[$targetpath]
 
 echo FROM python:3 > $targetpath
 echo RUN apt-get update \&\& apt-get install -y tree vim >> $targetpath
-echo WORKDIR /django >> $targetpath
-echo COPY requirements.txt /django >> $targetpath
+echo WORKDIR /app >> $targetpath
+echo COPY requirements.txt /app >> $targetpath
 echo RUN pip install -r requirements.txt >> $targetpath
 echo COPY . /django >> $targetpath
 
@@ -102,7 +102,7 @@ echo fi >> $targetpath
 echo  >> $targetpath
 echo \# setup user >> $targetpath
 echo if getent passwd \"\$USER_ID\" \> /dev/null 2\>\&1\; then >> $targetpath
-echo \ \ \ \ echo \"[\\$SHELL_NAME] USER_ID \'\$USER_ID\' already exists.\" >> $targetpath
+echo \ \ \ \ echo \"[\$SHELL_NAME] USER_ID \'\$USER_ID\' already exists.\" >> $targetpath
 echo else >> $targetpath
 echo \ \ \ \ echo \"[\$SHELL_NAME] USER_ID \'\$USER_ID\' does NOT exist. So execute [useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME].\" >> $targetpath
 echo \ \ \ \ useradd -m -s /bin/bash -u \$USER_ID -g \$GROUP_ID \$USER_NAME >> $targetpath
