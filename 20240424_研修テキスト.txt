@@ -1774,6 +1774,7 @@ urlpatterns = [
 
 //
 docker exec -it django /bin/bash
+
 //
 
   2.WEBアプリケーション用の環境を作成
@@ -1870,6 +1871,287 @@ sudo cat wsgi.log | grep -3 Error
 <うんちく>
 | grepを付けることで、検索対象の文字列がヒットした行だけ表示します。また-<数字>をオプションにつけことにより前後の行も表示します。
 ########################################################################################################################
+
+9.2.つぶやき板を作成してみましょう。
+
+
+  1.dockerコンテナ「django」にログインする。
+
+//
+docker exec -it django /bin/bash
+
+//
+
+  2.WEBアプリケーション用の環境を作成
+  
+  3.カレントユーザをec2-userに切り替える。
+  
+//
+su - ec2-user
+//
+
+  4.WEBアプリケーション環境を作成する。
+
+//
+cd /app
+python3 manage.py startapp boardapp
+//
+
+  5.アプリケーションをプロジェクトへ登録します。
+
+cd /app/django
+vim settings.py
+
+INSTALLED_APPS = []のカッコ内に以下の文章を追加する。
+
+//
+INSTALLED_APPS = [
+  'boardapp.apps.BoardappConfig', ←追加
+]
+//
+  6.データベース定義を作成します。
+  
+cd /app/boardapp
+vim models.py
+
+以下の文章を貼り付けます。
+//
+from django.db import models
+
+
+class Post(models.Model):
+    name = models.CharField('user name', max_length=15)
+    micropost = models.CharField('tweet', max_length=140, blank=True)
+
+    def __str__(self):
+        return self.name
+//
+
+  7.定義したモデルを有効化します。
+
+cd /app
+python3 manage.py makemigrations boardapp
+
+  8.定義したモデルをデータベースに反映します。
+
+python3 manage.py migrate boardapp
+
+  9.Viewを作成します。
+
+cd /app/boardapp
+vim views.py
+
+以下の文章を貼り付ける
+//
+from django.shortcuts import render, get_object_or_404, redirect
+from django.forms import ModelForm
+
+from boardapp.models import Post
+
+
+def create_post(request):
+    """
+    新たなデータを作成する
+    """
+    # オブジェクトを新規作成する
+    post = Post()
+
+    # ページロード時
+    if request.method == 'GET':
+        # 新規作成オブジェクトにより form を作成
+        form = PostForm(instance=post)
+
+        # ページロード時は form を Template に渡す
+        return render(request,
+                      'boardapp/post_form.html',  # 呼び出す Template
+                      {'form': form})  # Template に渡すデータ
+
+    # 実行ボタン押下時
+    if request.method == 'POST':
+        # POST されたデータにより form を作成
+        form = PostForm(request.POST, instance=post)
+
+        # 入力されたデータのバリデーション
+        if form.is_valid():
+            # チェック結果に問題なければデータを作成する
+            post = form.save(commit=False)
+            post.save()
+
+        return redirect('boardapp:read_post')
+
+
+def read_post(request):
+    """
+    データの一覧を表示する
+    """
+    # 全オブジェクトを取得
+    posts = Post.objects.all().order_by('id')
+    return render(request,
+                  'boardapp/post_list.html',  # 呼び出す Template
+                  {'posts': posts})  # Template に渡すデータ
+
+
+def edit_post(request, post_id):
+    """
+    対象のデータを編集する
+    """
+    # IDを引数に、対象オブジェクトを取得
+    post = get_object_or_404(Post, pk=post_id)
+
+    # ページロード時
+    if request.method == 'GET':
+        # 対象オブジェクトにより form を作成
+        form = PostForm(instance=post)
+
+        # ページロード時は form とデータIDを Template に渡す
+        return render(request,
+                      'boardapp/post_form.html',  # 呼び出す Template
+                      {'form': form, 'post_id': post_id})  # Template に渡すデータ
+
+    # 実行ボタン押下時
+    elif request.method == 'POST':
+        # POST されたデータにより form を作成
+        form = PostForm(request.POST, instance=post)
+
+        # 入力されたデータのバリデーション
+        if form.is_valid():
+            # チェック結果に問題なければデータを更新する
+            post = form.save(commit=False)
+            post.save()
+
+        # 実行ボタン押下時は処理実行後、一覧画面にリダイレクトする
+        return redirect('boardapp:read_post')
+
+
+def delete_post(request, post_id):
+    # 対象のオブジェクトを取得
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()
+
+    # 削除リクエスト時は削除実行後、一覧表示画面へリダイレクトする
+    return redirect('boardapp:read_post')
+
+
+class PostForm(ModelForm):
+    """
+    フォーム定義
+    """
+    class Meta:
+        model = Post
+        # fields は models.py で定義している変数名
+        fields = ('name', 'micropost')
+//
+
+  10.データの一覧画面のためのテンプレートを作成します。
+
+mkdir templates
+mkdir boardapp
+cd /app/boardapp/templates/boardapp
+vim post_list.html
+
+以下の文章を貼り付ける
+//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post lists</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <th>{{ post.id }}</th>
+        <td>{{ post.name }}</td>
+        <td>{{ post.micropost }}</td>
+        <td>
+          <a href="{% url 'boardapp:edit_post' post_id=post.id %}">修正</a>
+          <a href="{% url 'boardapp:delete_post' post_id=post.id %}">削除</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'boardapp:create_post' %}">作成</a>
+</body>
+</html>
+//
+
+  11.データの入力画面のためのテンプレートを作成します。
+
+vim post_form.html
+
+以下の文章を貼り付ける
+//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Form</title>
+</head>
+<body>
+    <h4>Post の編集</h4>
+    {% if post_id %}
+    <form action="{% url 'boardapp:edit_post' post_id=post_id %}" method="post">
+    {% else %}
+    <form action="{% url 'boardapp:create_post' %}" method="post">
+    {% endif %}
+      {% csrf_token %}
+      {{ form }}
+          <button type="submit">送信</button>
+    </form>
+    <a href="{% url 'boardapp:read_post' %}">戻る</a>
+</body>
+</html>
+//
+
+  12.アプリ内のURLのルーティングを定義します。
+
+cd /app/boardapp
+vim urls.py
+
+以下の文章を貼り付ける
+
+//
+from django.urls import path
+from boardapp import views
+
+app_name = 'boardapp'
+urlpatterns = [
+    path('post/create/', views.create_post, name='create_post'),  # 作成
+    path('post/edit/<int:post_id>/', views.edit_post, name='edit_post'),  # 修正
+    path('post/', views.read_post, name='read_post'),   # 一覧表示
+    path('post/delete/<int:post_id>/', views.delete_post, name='delete_post'),   # 削除
+]
+//
+
+  13.プロジェクト内のURLのルーティングを定義します。
+
+cd /app/djangoapp
+vim urls.py
+
+以下の文章を貼り付ける
+//
+from django.contrib import admin
+from django.urls import path, include   # Add
+
+urlpatterns = [
+    path('boardapp/', include('boardapp.urls')),   # Add
+    path('admin/', admin.site.urls),
+]
+//
+
+  14.作成したサイトを確認する。
+
+http://[IP アドレス]/boardapp/postにアクセスし、"つぶやき板"が動作すればOK。
 
 
 【困ったときの手順】
