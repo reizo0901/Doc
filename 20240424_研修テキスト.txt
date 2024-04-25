@@ -336,7 +336,7 @@ django-bootstarp4
 
 ########################################################################################################################
 
-3.Amazon EC2(a)(仮想サーバ)作成
+3.Amazon EC2(仮想サーバ)作成
 
   ここでは１台のEC2(Amazon Elastic Compute Cloud)を作成します。
   EC2とはAmazon Cloud上に作成可能なコンピュータであり、OSやスペック、台数などを容易に準備することができます。
@@ -436,7 +436,7 @@ django-bootstarp4
     1
     ※必ず"1"になっていることを確認すること
 
-3-6.4. EC2(a)にElastic IP アドレス割り当てと関連付け
+3-6.4. EC2にElastic IP アドレス割り当てと関連付け
   1.左ペインから[Elastic IP]をクリック
   2.[Elastic IP アドレスを割り当てる]をクリック
   3.[Elastic IPアドレスを割り当てる]画面で、以下を設定し、[割り当て]をクリック
@@ -941,8 +941,8 @@ echo  >> $targetpath
 echo server { >> $targetpath
 echo \ \ \ \ listen 80\; >> $targetpath
 echo \ \ \ \ location / { >> $targetpath
-echo \ \ \ \ \ \ \ \ uwsgi_pass django/\; >> $targetpath
-echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params/\; >> $targetpath
+echo \ \ \ \ \ \ \ \ uwsgi_pass django\; >> $targetpath
+echo \ \ \ \ \ \ \ \ include /etc/nginx/uwsgi_params\; >> $targetpath
 echo \ \ \ \ } >> $targetpath
 echo } >> $targetpath
 
@@ -969,7 +969,7 @@ echo makefile[$targetpath]
 echo [uwsgi] > $targetpath
 echo socket = :8000 >> $targetpath
 echo module = djangoapp.wsgi >> $targetpath
-echo wsgi-file = /app/app/wsgi.py >> $targetpath
+echo wsgi-file = /app/djangoapp/wsgi.py >> $targetpath
 echo logto = /wsgi/wsgi.log >> $targetpath
 echo py-autoreload = 1 >> $targetpath
 
@@ -1932,9 +1932,23 @@ class Post(models.Model):
 cd /app
 python3 manage.py makemigrations boardapp
 
+以下のメッセージが表示されれば成功です。
+
+Migrations for 'boardapp':
+ boardapp/migrations/0001_initial.py
+  - Create model Post
+
   8.定義したモデルをデータベースに反映します。
 
 python3 manage.py migrate boardapp
+
+以下のメッセージが表示されれば成功です。
+
+Operations to perform:
+ Apply all migrations: boardapp
+Running migrations:
+ Applying boadapp.0001_initial... OK
+
 
   9.Viewを作成します。
 
@@ -2173,7 +2187,7 @@ apt-get update
 apt-get install vim
 //
 
-12-3. Amazon EC2(a)を終了
+12-3. Amazon EC2を終了
 
 1.左ペインから[インスタンス]をクリック
 2.[インスタンス]画面で、作成したインスタンスにチェックを入れる
