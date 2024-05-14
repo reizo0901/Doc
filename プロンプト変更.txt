@@ -1,0 +1,53 @@
+echo $LANG
+
+en-US.UTF-8
+
+LANG=ja_JP.UTF8
+
+# 文字コードを日本語に変更
+$ sudo sed -i "s/en_US\.UTF-8/ja_JP\.UTF-8/g" /etc/sysconfig/i18n
+
+$ date
+ 
+# ローカルタイムを【Japan】に変更
+$ sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime
+ 
+# ハードウェアクロックを【Japan】に変更
+$ sudo sed -i "s/\"UTC\"/\"Japan\"/g" /etc/sysconfig/clock
+ 
+# システム再起動
+$ sudo reboot
+ 
+# 現在の設定確認
+$ date
+
+
+UBUNTUの文字コード変更
+
+# apt-get update
+# apt-get install locales
+# echo "ja_JP UTF-8" > /etc/locale.gen
+# locale-gen
+
+UBUNTUの時刻修正
+cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+#dokcer-compose.ymlリファレンス
+https://qiita.com/ryome/items/35df47a01a7fe3ac70ee
+
+#Djangoサーバ プロンプト変更
+
+PS1="[\\u@Django-SV \\w]\\$ " >> /root/.bashrc
+
+PS1="[\\u@Django-SV \\w]\\$ " >> /home/ec2-user/.bashrc
+
+#PostgreSQLサーバ プロンプト変更
+
+PS1="[\\u@Django-SV \\w]\\$ " >> /root/.bashrc
+
+export PS1="[[\\u@PostgreSQL \\w]\\$ "
+
+
+
+
+
