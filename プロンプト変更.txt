@@ -47,6 +47,9 @@ PS1="[\\u@Django-SV \\w]\\$ " >> /root/.bashrc
 
 export PS1="[[\\u@PostgreSQL \\w]\\$ "
 
+#NGINXサーバ プロンプト変更
+
+PS1="[\\u@NGINX \\w]\\$ " >> /root/.bashrc
 
 
 
