@@ -51,6 +51,53 @@ export PS1="[[\\u@PostgreSQL \\w]\\$ "
 
 PS1="[\\u@NGINX \\w]\\$ " >> /root/.bashrc
 
+https://www.karakaram.com/changing-the-shell-prompt-of-your-amazon-linux-instance/#google_vignette
 
+Amazon Linux2 のシェルプロンプトは、初期状態では ip-192-168-63-91 のように IP アドレスをハイフンでつないだ文字列が表示されます。
+
+[ec2-user@ip-192-168-63-91 ~]$
+
+これを、以下の webserver のように任意の文字列に変更する方法を紹介します。インスタンスのホスト名を変更せずにシェルプロンプトのみ変更します。
+
+[ec2-user@webserver ~]$
+
+作業するサーバを間違えていないかシェルプロンプトを見て確認することができるため、本番環境で作業をするときに安心します。
+
+/etc/profile.d/prompt.sh に環境変数に設定する
+Amazon Linux インスタンスのホスト名に影響を与えずにシェルプロンプトを変更する - Amazon Elastic Compute Cloud を参考に進めます。
+
+NICKNAME という環境変数に、シェルプロンプトに表示させたい文字列を設定し /etc/profile.d/prompt.sh ファイルに保存します。
+
+sudo sh -c 'echo "export NICKNAME=webserver" > /etc/profile.d/prompt.sh'
+
+/etc/bashrc を変更する
+/etc/bashrc  ファイルを root 権限で開き、以下のように [ "$PS1" で始まる行を探します。
+
+  # Turn on checkwinsize
+  shopt -s checkwinsize
+  [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
+  # You might want to have e.g. tty in prompt (e.g. more virtual machines)
+  # and console windows
+
+見つけたら、その行の  \h を $NICKNAME に変更し保存します。\hは hostname を意味します。詳しくは デフォルトのシェルプロンプトを変更する - Red Hat Customer Portal が参考になります。
+
+ # Turn on checkwinsize
+  shopt -s checkwinsize
+  [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@$NICKNAME \W]\\$ "
+  # You might want to have e.g. tty in prompt (e.g. more virtual machines)
+  # and console windows
+
+再ログインで反映
+設定できたらログアウトしてから再度ログインし、シェルプロンプトが変更されていることを確認します。
+
+[ec2-user@webserver ~]$
+
+EC2 のユーザーデータで起動時に自動設定をする
+EC2 のユーザデータで以下のスクリプトを実行して、起動時に自動設定をすることができます。
+
+#!/bin/bash
+
+echo "export NICKNAME=webserver" >/etc/profile.d/prompt.sh
+sed -ie "s/\(\[ \"\$PS1\" = \".*\" \] && PS1=\"\[\\\u@\)\\\h \(.*\)/\1\$NICKNAME \2/g" /etc/bashrc
 
 
