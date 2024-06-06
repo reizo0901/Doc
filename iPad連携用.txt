@@ -1,1 +1,2 @@
 sed "s/PS1=.*/PS1=\"\\\\u\@\$NICKNAME \\\\W]\\\\\\\\$/" bashrc.etc
+https://chai-tabi.com/alipay
