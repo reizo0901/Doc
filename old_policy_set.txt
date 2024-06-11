@@ -1,0 +1,10 @@
+@echo off
+echo 古いポリシーを適用します。
+echo 新しいポリシーを適用します。
+pause
+rem 指定フォルダ配下のファイルとフォルダを削除する。
+for /D %%1 in (C:\Windows\SYSVOL\domain\policy\PolicyDefinitions\) do rmdir /s /q "%%1"
+xcopy /E /I /H c:\temp\1.yusou\PolicyDefinitions\ C:\Windows\SYSVOL\domain\policy\PolicyDefinitions\
+xcopy /E /I /H c:\temp\2.new\PolicyDefinitions\ C:\Windows\SYSVOL\domain\policy\PolicyDefinitions\
+echo コピーが完了しました。
+pause
