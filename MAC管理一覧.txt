@@ -14,8 +14,8 @@
 192.168.2.175 00:15:5D:F1:8B:05 Hyper-v outnic用:
 192.168.2.176 00:15:5D:F1:8B:06 Hyper-v outnic用:
 192.168.2.177 00:15:5D:F1:8B:07 Hyper-v outnic用:
-192.168.2.178 00:15:5D:F1:8B:08 Hyper-v outnic用:
-192.168.2.179 00:15:5D:F1:8B:09 Hyper-v outnic用:
+192.168.2.178 00:15:5D:F1:8B:08 Hyper-v outnic用:Windows10
+192.168.2.179 00:15:5D:F1:8B:09 Hyper-v outnic用:Windows11
 
 
 未設定
