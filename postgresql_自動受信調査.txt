@@ -1,0 +1,15 @@
+SELECT
+a.id as 登録ID,
+a.name as 名前,
+a.mail as メールアドレス,
+b.recvauto as 自動受信有無,
+b.timekind as 設定選択,
+CASE
+WHEN b.timekind='1' THEN '時間間隔で指定'
+WHEN b.timekind='2' THEN '時刻で指定'
+END as 選択内容,
+b.intervaltime as 時間間隔,
+b.times as 指定時刻
+FROM public.tm_user a LEFT JOIN public.tmpr_wml_autorecv b
+ON a.id = b.sid_user
+ORDER BY a.id;
