@@ -1,7 +1,6 @@
-SELECT
-a.id as 登録ID,
-a.name as 名前,
-a.mail as メールアドレス,
+COPY
+(
+SELECT a.id as 登録ID,a.name as 名前,a.mail as メールアドレス,
 b.recvauto as 自動受信有無,
 b.timekind as 設定選択,
 CASE
@@ -12,4 +11,11 @@ b.intervaltime as 時間間隔,
 b.times as 指定時刻
 FROM public.tm_user a LEFT JOIN public.tmpr_wml_autorecv b
 ON a.id = b.sid_user
-ORDER BY a.id;
+)
+TO 'c:\tools\result.csv' WITH CSV DELIMITER ',' FORCE QUOTE * NULL AS ' ' HEADER encoding 'UTF8';
+
+
+set PGPASSWORD=postgres
+cd C:\Program Files\PostgreSQL\13\bin
+psql -h 127.0.0.1 -p 5432 -d dneodb -U postgres -f C:\Tools\get_autorecv.sql
+cd c:\tools
