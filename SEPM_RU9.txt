@@ -1,0 +1,3 @@
+リモートプッシュ
+https://techdocs.broadcom.com/jp/ja/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/Managing-a-custom-installation/preparing-for-client-installation-v16742985-d21e7/preparing-windows-and-mac-computers-for-remote-dep-v16742999-d21e124.html
+
