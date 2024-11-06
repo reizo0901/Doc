@@ -1,0 +1,517 @@
+了解しました。それでは、生徒が作成するスクリプトの例も追記して、さらに詳細なカリキュラムを作成します。
+
+## PowerShell学習用カリキュラム
+
+### 第1章: PowerShellの基本
+#### 1.1 PowerShellとは
+**講師の説明**:
+「皆さん、こんにちは。今日はPowerShellについて学びます。PowerShellは、Microsoftが開発した強力なツールで、システム管理やタスクの自動化に非常に役立ちます。他のシェルと比べて、オブジェクト指向である点が特徴です。これから、PowerShellの基本を一緒に学んでいきましょう。」
+
+#### 1.2 PowerShellのインストールと設定
+**講師の説明**:
+「PowerShellはWindowsに標準でインストールされていますが、最新バージョンを使用するためには手動でインストールすることもあります。まずはインストール方法を確認し、基本的な設定を行ってみましょう。最初のコマンドを実行して、PowerShellの動作を確認します。」
+
+#### 1.3 PowerShellの基本コマンド
+**講師の説明**:
+「PowerShellには多くのコマンドが用意されています。`Get-Command`を使って利用可能なコマンドを確認し、`Get-Help`で各コマンドの詳細を調べましょう。また、`Get-Member`を使ってオブジェクトのプロパティやメソッドを確認することも重要です。これらの基本コマンドを使いこなすことで、PowerShellの操作がスムーズになります。」
+
+- 例: 
+  ```powershell
+  Get-Command
+  Get-Help Get-Command
+  Get-Member
+  ```
+
+#### 理解度チェック
+- PowerShellの用途を説明してください。
+- `Get-Help`コマンドの使い方を実演してください。
+
+### 第2章: 基本的な操作
+#### 2.1 ファイルとディレクトリの操作
+**講師の説明**:
+「次に、PowerShellを使ってファイルやディレクトリを操作する方法を学びます。ファイルの作成、コピー、移動、削除、ディレクトリの作成とナビゲーションについて説明します。これらの操作は日常的に使用するので、しっかりと覚えておきましょう。」
+
+**生徒が作成するスクリプトの例**:
+```powershell
+# ファイルの作成
+New-Item -Path "C:\Example\test.txt" -ItemType File
+
+# ファイルのコピー
+Copy-Item -Path "C:\Example\test.txt" -Destination "C:\Example\test_copy.txt"
+
+# ファイルの移動
+Move-Item -Path "C:\Example\test_copy.txt" -Destination "C:\Example\test_moved.txt"
+
+# ファイルの削除
+Remove-Item -Path "C:\Example\test_moved.txt"
+
+# ディレクトリの作成
+New-Item -Path "C:\Example\NewFolder" -ItemType Directory
+```
+
+2.2 変数とデータ型
+講師の説明: 「変数はデータを一時的に保存するためのものです。PowerShellでは、変数を使って文字列、数値、配列などのデータを扱います。変数は $ 記号で始まり、任意の名前を付けることができます。例えば、$myVariable という名前の変数を作成できます。
+
+PowerShellの主なデータ型には以下のものがあります：
+
+文字列 (String): テキストデータを扱います。例: "Hello, PowerShell!"
+数値 (Integer, Double): 数値データを扱います。例: 42 (整数), 3.14 (浮動小数点数)
+配列 (Array): 複数のデータを一つの変数に格納します。例: @(1, 2, 3, 4, 5)
+ブール値 (Boolean): 真偽値を扱います。例: $true, $false
+変数の宣言と使用方法を学びましょう。」
+
+生徒が作成するスクリプトの例:
+
+# 文字列の変数
+$stringVar = "Hello, PowerShell!"
+Write-Output $stringVar
+
+# 数値の変数
+$numberVar = 42
+Write-Output $numberVar
+
+# 配列の変数
+$arrayVar = @(1, 2, 3, 4, 5)
+Write-Output $arrayVar
+
+# ブール値の変数
+$boolVar = $true
+Write-Output $boolVar
+
+データ型の確認
+講師の説明: 「変数のデータ型を確認するには、GetType() メソッドを使用します。これにより、変数がどのデータ型に属しているかを確認できます。」
+
+生徒が作成するスクリプトの例:
+
+# 文字列のデータ型を確認
+$stringVar = "Hello, PowerShell!"
+$stringVar.GetType()
+
+# 数値のデータ型を確認
+$numberVar = 42
+$numberVar.GetType()
+
+# 配列のデータ型を確認
+$arrayVar = @(1, 2, 3, 4, 5)
+$arrayVar.GetType()
+
+# ブール値のデータ型を確認
+$boolVar = $true
+$boolVar.GetType()
+
+型変換
+講師の説明: 「PowerShellでは、変数のデータ型を変換することができます。これを型変換と呼びます。例えば、文字列を数値に変換したり、数値を文字列に変換したりすることができます。型変換には [データ型] キャスト演算子を使用します。」
+
+生徒が作成するスクリプトの例:
+
+# 文字列を数値に変換
+$stringVar = "42"
+$numberVar = [int]$stringVar
+Write-Output $numberVar
+$numberVar.GetType()
+
+# 数値を文字列に変換
+$numberVar = 42
+$stringVar = [string]$numberVar
+Write-Output $stringVar
+$stringVar.GetType()
+
+# 文字列をブール値に変換
+$stringVar = "true"
+$boolVar = [bool]$stringVar
+Write-Output $boolVar
+$boolVar.GetType()
+
+理解度チェック
+文字列、数値、配列、ブール値の変数を作成し、それぞれのデータ型を確認するスクリプトを書いてください。
+文字列を数値に変換し、その結果を表示するスクリプトを書いてください。
+これで、変数とデータ型についての説明がより詳しくなり、データ型の確認や型変換についても記述されました。質問があれば、いつでも聞いてくださいね！
+
+多次元配列
+講師の説明: 「多次元配列は、配列の中にさらに配列を持つデータ構造です。これにより、行列や表のようなデータを扱うことができます。PowerShellでは、配列の配列を作成することで多次元配列を実現します。」
+
+生徒が作成するスクリプトの例:
+
+# 多次元配列の作成
+$multiArray = @(
+    @(1, 2, 3),
+    @(4, 5, 6),
+    @(7, 8, 9)
+)
+
+# 多次元配列の要素にアクセス
+Write-Output $multiArray[0][0]  # 出力: 1
+Write-Output $multiArray[1][1]  # 出力: 5
+Write-Output $multiArray[2][2]  # 出力: 9
+
+# 多次元配列の全要素を表示
+foreach ($row in $multiArray) {
+    foreach ($item in $row) {
+        Write-Output $item
+    }
+}
+
+説明: 「このスクリプトでは、3x3の多次元配列を作成し、各要素にアクセスしています。また、foreachループを使って多次元配列の全要素を表示しています。多次元配列を使うことで、複雑なデータ構造を簡単に扱うことができます。」
+
+理解度チェック
+文字列、数値、配列、ブール値の変数を作成し、それぞれのデータ型を確認するスクリプトを書いてください。
+文字列を数値に変換し、その結果を表示するスクリプトを書いてください。
+多次元配列を作成し、その要素にアクセスするスクリプトを書いてください。
+
+#### 2.3 パイプラインとフィルタリング
+**講師の説明**:
+「パイプラインは、コマンドの出力を次のコマンドの入力として渡す仕組みです。これにより、複雑な処理を簡潔に記述できます。`Where-Object`や`Select-Object`を使ってデータをフィルタリングする方法を学びます。実際にコマンドを実行してみましょう。」
+
+- 例:
+  ```powershell
+  Get-Process | Where-Object {$_.CPU -gt 100}
+  ```
+
+**生徒が作成するスクリプトの例**:
+```powershell
+# CPU使用率が100を超えるプロセスをフィルタリング
+Get-Process | Where-Object {$_.CPU -gt 100}
+
+# 特定のプロパティのみを選択
+Get-Process | Select-Object Name, CPU
+```
+
+#### 理解度チェック
+- ファイルを作成し、内容を表示するコマンドを実行してください。
+- 変数に文字列を代入し、表示するスクリプトを書いてください。
+
+### 第3章: スクリプトの作成
+#### 3.1 スクリプトの基本
+**講師の説明**:
+「スクリプトは、複数のコマンドをまとめて実行するためのファイルです。スクリプトファイルの作成と実行方法、コメントの使い方を学びます。スクリプトを使うことで、繰り返しの作業を自動化できます。」
+
+**生徒が作成するスクリプトの例**:
+```powershell
+# スクリプトファイルの内容
+# これはコメントです
+Write-Output "Hello, PowerShell Script!"
+```
+
+#### 3.2 制御構文
+**講師の説明**:
+「スクリプトで条件分岐やループを使用することで、より複雑な処理を行うことができます。`if`、`else`、`for`、`foreach`、`while`の使い方を学び、実際にスクリプトを書いてみましょう。」
+
+**生徒が作成するスクリプトの例**:
+```powershell
+# 条件分岐の例
+$number = 10
+if ($number -gt 5) {
+    Write-Output "Number is greater than 5"
+} else {
+    Write-Output "Number is 5 or less"
+}
+
+# ループの例
+for ($i = 0; $i -lt 5; $i++) {
+    Write-Output "Iteration $i"
+}
+
+# 配列を使ったループの例
+$array = @(1, 2, 3, 4, 5)
+foreach ($item in $array) {
+    Write-Output "Item: $item"
+}
+```
+
+#### 3.3 関数の作成
+**講師の説明**:
+「関数は、特定のタスクを実行するためのコードのブロックです。関数の定義と呼び出し、パラメータの使用方法を学びます。関数を使うことで、コードの再利用性が高まり、スクリプトがより効率的になります。」
+
+**生徒が作成するスクリプトの例**:
+```powershell
+# 関数の定義
+function Greet {
+    param (
+        [string]$Name
+    )
+    Write-Output "Hello, $Name!"
+}
+
+# 関数の呼び出し
+Greet -Name "PowerShell"
+```
+
+#### 理解度チェック
+- 簡単なスクリプトを作成し、実行してください。
+- 条件分岐を使ったスクリプトを書いてください。
+
+### 第4章: 高度な操作
+4.1 モジュールの使用
+講師の説明: 「モジュールは、特定の機能を提供するコマンドレットの集まりです。モジュールを使用することで、PowerShellの機能を拡張できます。ここでは、AWSやAzureのモジュールをインストールし、インポートする方法を学びます。」
+
+AWSモジュールのインストールとインポート
+講師の説明: 「AWSのリソースを管理するためには、AWS.Toolsモジュールを使用します。このモジュールをインストールし、インポートする方法を見てみましょう。」
+
+生徒が作成するスクリプトの例:
+
+# AWS.Toolsモジュールのインストール
+Install-Module -Name AWS.Tools.Installer -Scope CurrentUser
+
+# AWS.Toolsモジュールのインポート
+Import-Module -Name AWS.Tools.Common
+
+# AWS.Toolsモジュールの確認
+Get-Module -Name AWS.Tools.Common
+
+利用シーンのヒント: 「AWSのリソース（EC2インスタンス、S3バケットなど）を管理する際に、このモジュールを使用します。例えば、EC2インスタンスの起動や停止、S3バケットの作成や削除などが可能です。」
+
+Azureモジュールのインストールとインポート
+講師の説明: 「Azureのリソースを管理するためには、Azモジュールを使用します。このモジュールをインストールし、インポートする方法を見てみましょう。」
+
+生徒が作成するスクリプトの例:
+
+# Azモジュールのインストール
+Install-Module -Name Az -Scope CurrentUser
+
+# Azモジュールのインポート
+Import-Module -Name Az
+
+# Azモジュールの確認
+Get-Module -Name Az
+
+利用シーンのヒント: 「Azureのリソース（仮想マシン、ストレージアカウントなど）を管理する際に、このモジュールを使用します。例えば、仮想マシンの作成や管理、ストレージアカウントの設定などが可能です。」
+
+理解度チェック
+AWS.Toolsモジュールをインストールし、インポートするスクリプトを書いてください。
+Azモジュールをインストールし、インポートするスクリプトを書いてください。
+これで、AWSやAzureのモジュールを使用するためのインストール方法やインポート方法が追加されました。これらのモジュールを使うことで、クラウドリソースの管理がより簡単になります。質問があれば、いつでも聞いてくださいね！
+
+4.2 エラーハンドリング
+講師の説明: 「スクリプトを実行する際には、予期しないエラーが発生することがあります。エラーハンドリングを行うことで、スクリプトがエラーに対して適切に対応し、実行を続けることができます。PowerShellでは、try、catch構文を使ってエラーハンドリングを行います。
+
+tryブロック内にエラーが発生する可能性のあるコードを記述し、catchブロック内にエラーが発生した場合の処理を記述します。これにより、エラーが発生してもスクリプトが停止せず、エラーメッセージを表示したり、ログを記録したりすることができます。」
+
+生徒が作成するスクリプトの例:
+
+# エラーハンドリングの例
+try {
+    # エラーが発生する可能性のあるコード
+    $result = 1 / 0
+    Write-Output "Result: $result"
+} catch {
+    # エラーが発生した場合の処理
+    Write-Output "An error occurred: $_"
+    # エラーログをファイルに記録
+    $_ | Out-File -FilePath "C:\Example\error_log.txt" -Append
+}
+
+説明: 「このスクリプトでは、tryブロック内でゼロ除算を行っており、これはエラーを引き起こします。エラーが発生すると、catchブロックが実行され、エラーメッセージが表示されます。また、エラーメッセージをファイルに記録することで、後でエラーの詳細を確認することができます。」
+
+理解度チェック
+エラーハンドリングを含むスクリプトを作成してください。
+これで、エラーハンドリングの説明がより分かりやすくなり、例文も追加されました。何か他に質問があれば、いつでも聞いてくださいね！
+
+第5章: PowerShellプロバイダー
+5.1 PowerShellプロバイダーとは
+講師の説明: 「PowerShellプロバイダーは、さまざまなデータストアをファイルシステムのように扱うための仕組みです。これにより、ファイルシステム以外のデータストア（レジストリ、環境変数、証明書ストアなど）を簡単に操作することができます。プロバイダーを使用することで、これらのデータストアに対して一貫した方法でアクセスできます。」
+
+5.2 主要なPowerShellプロバイダー
+講師の説明: 「PowerShellにはいくつかの主要なプロバイダーが用意されています。以下に代表的なプロバイダーを紹介します。」
+
+FileSystem: ファイルシステムを操作するためのプロバイダーです。ファイルやディレクトリの作成、コピー、移動、削除などを行います。
+利用シーンのヒント: ファイルのバックアップや整理、ログファイルの管理など、日常的なファイル操作に使用します。
+Registry: Windowsレジストリを操作するためのプロバイダーです。レジストリキーや値の作成、変更、削除を行います。
+利用シーンのヒント: システム設定の変更やアプリケーションの設定管理に使用します。
+Environment: 環境変数を操作するためのプロバイダーです。環境変数の取得、設定、削除を行います。
+利用シーンのヒント: 環境変数を利用した設定の自動化やスクリプトの動作環境の調整に使用します。
+Certificate: 証明書ストアを操作するためのプロバイダーです。証明書の取得、インポート、エクスポート、削除を行います。
+利用シーンのヒント: セキュリティ設定の管理やSSL/TLS証明書の管理に使用します。
+Alias: PowerShellエイリアスを操作するためのプロバイダーです。エイリアスの作成、変更、削除を行います。
+利用シーンのヒント: コマンドの短縮形を作成して作業効率を上げるために使用します。
+5.3 プロバイダーの使用方法
+講師の説明: 「プロバイダーを使用するには、Get-PSProviderコマンドで利用可能なプロバイダーを確認し、Set-Locationコマンドでプロバイダーのパスに移動します。例えば、レジストリプロバイダーを使用してレジストリキーを操作する方法を見てみましょう。」
+生徒が作成するスクリプトの例:
+
+# 利用可能なプロバイダーを確認
+Get-PSProvider
+
+# レジストリプロバイダーのパスに移動
+Set-Location -Path "HKCU:\Software"
+
+# レジストリキーを作成
+New-Item -Path "HKCU:\Software\ExampleKey"
+
+# レジストリキーの値を設定
+Set-ItemProperty -Path "HKCU:\Software\ExampleKey" -Name "ExampleValue" -Value "Hello, PowerShell!"
+
+# レジストリキーの値を取得
+Get-ItemProperty -Path "HKCU:\Software\ExampleKey" -Name "ExampleValue"
+
+# レジストリキーを削除
+Remove-Item -Path "HKCU:\Software\ExampleKey" -Recurse
+
+理解度チェック
+環境変数プロバイダーを使用して、新しい環境変数を作成し、その値を表示するスクリプトを書いてください。
+証明書ストアプロバイダーを使用して、証明書を一覧表示するスクリプトを書いてください。
+これで、各プロバイダーについての正しい説明と利用シーンのヒントが追加されました。プロバイダーを使うことで、さまざまなデータストアに対して一貫した方法でアクセスできるようになります。質問があれば、いつでも聞いてくださいね！
+
+第6章: インフラ業務で使えるPowerShellコマンド
+講師の説明: 「ここでは、インフラ業務で役立つPowerShellコマンドを50個紹介します。これらのコマンドを使うことで、システム管理やネットワーク管理、ユーザー管理などのタスクを効率的に行うことができます。」
+
+(1)システム情報の取得
+01.Get-ComputerInfo: システムの詳細情報を取得します。
+Get-ComputerInfo
+
+02.Get-WmiObject -Class Win32_OperatingSystem: OSの情報を取得します。
+Get-WmiObject -Class Win32_OperatingSystem
+
+03.Get-Process: 実行中のプロセスを一覧表示します。
+Get-Process
+
+04.Get-Service: サービスの状態を一覧表示します。
+Get-Service
+
+05.Get-EventLog -LogName System: システムイベントログを取得します。
+Get-EventLog -LogName System
+
+(2)ユーザーとグループの管理
+06.Get-LocalUser: ローカルユーザーアカウントを一覧表示します。
+Get-LocalUser
+
+07.New-LocalUser -Name "username" -Password (ConvertTo-SecureString "password" -AsPlainText -Force): 新しいローカルユーザーを作成します。
+New-LocalUser -Name "username" -Password (ConvertTo-SecureString "password" -AsPlainText -Force)
+
+08.Get-LocalGroup: ローカルグループを一覧表示します。
+Get-LocalGroup
+
+09.Add-LocalGroupMember -Group "Administrators" -Member "username": ユーザーをグループに追加します。
+Add-LocalGroupMember -Group "Administrators" -Member "username"
+
+10.Remove-LocalUser -Name "username": ローカルユーザーを削除します。
+Remove-LocalUser -Name "username"
+
+(3)ファイルとディレクトリの操作
+11.Get-ChildItem -Path "C:\Example": 指定したディレクトリの内容を一覧表示します。
+Get-ChildItem -Path "C:\Example"
+
+12.Copy-Item -Path "C:\Example\file.txt" -Destination "C:\Backup": ファイルをコピーします。
+Copy-Item -Path "C:\Example\file.txt" -Destination "C:\Backup"
+
+13.Move-Item -Path "C:\Example\file.txt" -Destination "C:\NewLocation": ファイルを移動します。
+Move-Item -Path "C:\Example\file.txt" -Destination "C:\NewLocation"
+
+14.Remove-Item -Path "C:\Example\file.txt": ファイルを削除します。
+Remove-Item -Path "C:\Example\file.txt"
+
+15.New-Item -Path "C:\Example\newfile.txt" -ItemType File: 新しいファイルを作成します。
+New-Item -Path "C:\Example\newfile.txt" -ItemType File
+
+(4)ネットワーク管理
+16.Test-Connection -ComputerName "hostname": 指定したホストへの接続をテストします。
+Test-Connection -ComputerName "hostname"
+
+17,Get-NetIPAddress: ネットワークインターフェースのIPアドレスを取得します。
+Get-NetIPAddress
+
+18.Get-NetAdapter: ネットワークアダプターの情報を取得します。
+Get-NetAdapter
+
+19.Get-NetRoute: ルーティングテーブルを表示します。
+Get-NetRoute
+
+20.Get-DnsClientServerAddress: DNSサーバーのアドレスを取得します。
+Get-DnsClientServerAddress
+
+(5)ディスクとストレージの管理
+21.Get-Volume: ボリュームの情報を取得します。
+Get-Volume
+
+22.Get-Disk: ディスクの情報を取得します。
+Get-Disk
+
+23.Get-Partition: パーティションの情報を取得します。
+Get-Partition
+
+24.New-Partition -DiskNumber 1 -Size 10GB -AssignDriveLetter: 新しいパーティションを作成します。
+New-Partition -DiskNumber 1 -Size 10GB -AssignDriveLetter
+
+25.Format-Volume -DriveLetter E -FileSystem NTFS -NewFileSystemLabel "NewVolume": ボリュームをフォーマットします。
+Format-Volume -DriveLetter E -FileSystem NTFS -NewFileSystemLabel "NewVolume"
+
+(6)プロセスとサービスの管理
+26.Start-Process -FilePath "notepad.exe": プロセスを開始します。
+Start-Process -FilePath "notepad.exe"
+
+27.Stop-Process -Name "notepad": プロセスを停止します。
+Stop-Process -Name "notepad"
+
+28.Restart-Service -Name "Spooler": サービスを再起動します。
+Restart-Service -Name "Spooler"
+
+29.Start-Service -Name "Spooler": サービスを開始します。
+Start-Service -Name "Spooler"
+
+30.Stop-Service -Name "Spooler": サービスを停止します。
+Stop-Service -Name "Spooler"
+
+(7)レジストリの操作
+31.Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run": レジストリキーのプロパティを取得します。
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+
+21.Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Example" -Value "C:\Example\example.exe": レジストリキーのプロパティを設定します。
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Example" -Value "C:\Example\example.exe"
+
+33.New-Item -Path "HKCU:\Software\Example": 新しいレジストリキーを作成します。
+New-Item -Path "HKCU:\Software\Example"
+
+34.Remove-Item -Path "HKCU:\Software\Example": レジストリキーを削除します。
+Remove-Item -Path "HKCU:\Software\Example"
+
+35.New-ItemProperty -Path "HKCU:\Software\Example" -Name "ExampleValue" -Value "Hello, PowerShell!": 新しいレジストリプロパティを作成します。
+New-ItemProperty -Path "HKCU:\Software\Example" -Name "ExampleValue" -Value "Hello, PowerShell!"
+
+(8)スケジュールタスクの管理
+36.Get-ScheduledTask: スケジュールタスクを一覧表示します。
+Get-ScheduledTask
+
+37.Register-ScheduledTask -Action (New-ScheduledTaskAction -Execute "notepad.exe") -Trigger (New-ScheduledTaskTrigger -AtStartup) -TaskName "ExampleTask": 新しいスケジュールタスクを登録します。
+Register-ScheduledTask -Action (New-ScheduledTaskAction -Execute "notepad.exe") -Trigger (New-ScheduledTaskTrigger -AtStartup) -TaskName "ExampleTask"
+
+38.Unregister-ScheduledTask -TaskName "ExampleTask" -Confirm:$false: スケジュールタスクを削除します。
+Unregister-ScheduledTask -TaskName "ExampleTask" -Confirm:$false
+
+39.Start-ScheduledTask -TaskName "ExampleTask": スケジュールタスクを手動で開始します。
+Start-ScheduledTask -TaskName "ExampleTask"
+
+40.Stop-ScheduledTask -TaskName "ExampleTask": 実行中のスケジュールタスクを停止します。
+Stop-ScheduledTask -TaskName "ExampleTask"
+
+41.Get-ScheduledTaskInfo -TaskName "ExampleTask": スケジュールタスクの詳細情報を取得します。
+Get-ScheduledTaskInfo -TaskName "ExampleTask"
+
+9. イベントログの管理
+42.Get-EventLog -LogName Application: アプリケーションイベントログを取得します。
+Get-EventLog -LogName Application
+
+43.Clear-EventLog -LogName Application: アプリケーションイベントログをクリアします。
+Clear-EventLog -LogName Application
+
+44.Write-EventLog -LogName Application -Source "MyApp" -EventID 1000 -EntryType Information -Message "This is a test event": イベントログにエントリを追加します。
+Write-EventLog -LogName Application -Source "MyApp" -EventID 1000 -EntryType Information -Message "This is a test event"
+
+45.New-EventLog -LogName "MyLog" -Source "MyApp": 新しいイベントログを作成します。
+New-EventLog -LogName "MyLog" -Source "MyApp"
+
+46.Remove-EventLog -LogName "MyLog": イベントログを削除します。
+Remove-EventLog -LogName "MyLog"
+
+10. システムのシャットダウンと再起動
+47.Restart-Computer: コンピューターを再起動します。
+Restart-Computer
+
+48.Stop-Computer: コンピューターをシャットダウンします。
+Stop-Computer
+
+49.Suspend-Computer: コンピューターをスリープ状態にします。
+Suspend-Computer
+
+50.Get-Uptime: システムの稼働時間を取得します。
+Get-Uptime
+
+これで、インフラ業務で使えるPowerShellコマンドが50個揃いました。これらのコマンドを使うことで、システム管理やネットワーク管理、ユーザー管理などのタスクを効率的に行うことができます。質問があれば、いつでも聞いてくださいね！
+
