@@ -1,0 +1,793 @@
+はじめに: サーバーレスのウェブアプリケーションを構築する
+ステップバイステップの指示に従って、ユーザーが Wild Rydes フリートからユニコーンライドをリクエストできるシンプルなサーバーレスウェブアプリケーションを作成する
+
+概要
+このチュートリアルでは、ユーザーが Wild Rydes フリートからユニコーンライドをリクエストできるシンプルなサーバーレスウェブアプリケーションを作成します。アプリケーションの HTML ベースのユーザーインターフェイスによって、ユーザーはライドする場所を指定できます。またアプリケーションでバックエンドの RESTful ウェブサービスとやり取りすることにより、リクエストを送信して近くのユニコーンを手配できます。アプリケーションはさらに、ユーザーがユニコーンライドをリクエストする前に、サービスに登録してログインするための機能を提供します。
+
+前提条件
+このチュートリアルを完了するには、AWS アカウント、インストールされている AWS CLI、アプリにマッピングを追加するための ArcGIS 登録アカウント、テキストエディタ、およびウェブブラウザが必要です。AWS アカウントをまだお持ちでない場合は、「AWS 環境の設定入門ガイド」に従って簡単な概要を確認してください。
+
+アプリケーションのアーキテクチャ
+アプリケーションのアーキテクチャは、AWS Lambda、Amazon API Gateway、Amazon DynamoDB、Amazon Cognito、および AWS Amplify コンソール を使用します。Amplify コンソールは、継続的デプロイと、HTML、CSS、JavaScript、およびユーザーのブラウザにロードされたイメージファイルなどを含む静的なウェブリソースのホストを提供します。ブラウザで実行される JavaScript は、Lambda と API Gateway を使用して構築されたパブリックバックエンド API からデータを送受信します。Amazon Cognito は、バックエンド API を保護するためのユーザー管理機能と認証機能を提供します。さらに、DynamoDB は API の Lambda 関数によってデータを格納できる永続レイヤーを提供します。
+
+
+
+静的ウェブホスティング
+
+AWS Amplify は、HTML、CSS、JavaScript、およびユーザーのブラウザに読み込まれたイメージファイルを含む静的なウェブリソースをホストします。
+
+
+ユーザー管理
+
+Amazon Cognito は、バックエンド API を保護するためのユーザー管理機能と認証機能を提供します。
+
+
+サーバーレスバックエンド
+
+Amazon DynamoDB は、API の Lambda 関数によってデータを格納できる永続レイヤーを提供します。
+
+
+RESTful API
+
+ブラウザで実行される JavaScript は、Lambda と API Gateway を使用して構築されたパブリックバックエンド API からデータを送受信します。
+
+ AWS エクスペリエンス
+初心者
+
+ 所要時間
+2 時間
+
+ 完了までにかかるコスト
+このアーキテクチャで使用される各サービスは、AWS 無料利用枠の対象となります。無料利用枠を利用できない場合、この学習過程を完了するための費用は 0.25 USD* 未満です。
+
+ 必要なもの
+使用するテクノロジー:
+
+AWS アカウント**
+AWS CLI
+アプリにマッピングを追加するための ArcGIS アカウント
+テキストエディタ
+推奨ブラウザ: Chrome の最新バージョン
+AWS Lambda
+Amazon API Gateway
+AWS Amplify
+Amazon DynamoDB
+Amazon Cognito
+
+*この見積もりでは、ユーザーがチュートリアル全体で推奨される構成に従い、24 時間以内にすべてのリソースを終了することを前提としています。
+**過去 24 時間以内に作成されたアカウントは、このチュートリアルに必要なリソースへのアクセス権がまだ付与されていない可能性があります。
+
+モジュール 1: 継続的デプロイを使用した静的ウェブホスティング
+はじめに、継続的デプロイのビルトインでウェブアプリケーションの静的リソースをホストするように AWS Amplify を設定します。
+
+概要
+このモジュールでは、継続的デプロイのビルトインでウェブアプリケーションの静的リソースをホストするように AWS Amplify を設定します。Amplify コンソールには、継続的デプロイと、フルスタックのウェブアプリをホストするための Git ベースのワークフローが用意されています。後続のモジュールでは、JavaScript を使用してこれらのページに動的機能を追加し、AWS Lambda と Amazon API Gateway で 構築されたリモート RESTful API を呼び出します。
+
+アーキテクチャの概要
+アーキテクチャの概要
+このモジュールのアーキテクチャは単純です。静的ウェブコンテンツ (例: HTML、CSS、JavaScript、イメージなどのファイル) はすべて、AWS Amplify コンソールで管理されます。その後、エンドユーザーは AWS Amplify コンソール によって公開されているパブリックウェブサイトの URL を使用してサイトにアクセスします。サイトを使用できるようにするため、ウェブサーバーを実行したり他のサービスを使用したりする必要はありません。
+
+最も現実に近いアプリケーションでは、サイトをホストするためにカスタムドメインがよく使用されます。独自ドメインの使用に関心がある場合は、「Amplify のカスタムドメインのセットアップの手順」を参照してください。
+
+●リージョンを選択する。
+
+このウェブアプリケーションは、このアプリケーションで使用されるサービス (AWS Amplify、AWS CodeCommit、Amazon Cognito、AWS Lambda、Amazon API Gateway、Amazon DynamoDB など) をすべてサポートするどの AWS リージョンでもデプロイできます。
+
+各リージョンでサポートされているサービスを確認するには、AWS リージョン別のサービス表を参照してください。サポートされているリージョンのうち、選択できるリージョンは以下のとおりです。
+
+米国東部 (バージニア北部)
+米国東部 (オハイオ)
+米国西部 (オレゴン)
+欧州 (フランクフルト)
+欧州 (アイルランド)
+欧州 (ロンドン)
+アジアパシフィック (東京)
+アジアパシフィック (ソウル)
+アジアパシフィック (シドニー)
+アジアパシフィック (ムンバイ)
+AWS マネジメントコンソールの右上隅にあるドロップダウンの一覧からリージョンを選択してください。
+
+●Gitリポジトリを作成する。
+
+このモジュールのソースコードを管理するには、AWS CodeCommit (AWS 無料利用枠を含む) または GitHub の 2 つのオプションがあります。このチュートリアルでは CodeCommit を使用してアプリケーションコードを保存しますが、GitHub でリポジトリを作成しても同じことができます。
+
+1.ローカルマシンで AWS CLI を設定したことがない場合は、ターミナルウィンドウを開いて AWS CLI をインストールします。インストール手順は、使用しているオペレーティングシステムによって異なります。既に AWS CLI をインストールして設定している場合は、ステップ 2 に進んでください。
+2.AWS CodeCommit コンソールを開きます。
+3.[リポジトリを作成] を選択します。
+4.[リポジトリ名] には「wildrydes-site」と入力します。
+5.[作成] を選択します。
+6.リポジトリが作成されたら、IAM コンソールで Git の認証情報を使用し IAM ユーザーをセットアップします。「AWS CodeCommit User Guide」の「Setup for HTTPS users using Git credentials」ページのステップ 1 からステップ 3 の手順に従います。 
+重要: IAM コンソールでユーザーを設定する場合、参照できるように認証情報を 2 セット設定して保存する必要があります。
+6-1.[IAM] > [セキュリティ認証情報] タブでアクセスキーを作成する必要があります。アクセスキーとシークレットアクセスキーの ID をダウンロードするか、コピーして安全な場所に保存します。
+6-2.また、AWS CodeCommit の HTTPS Git 認証情報を生成する必要があります。生成されたこれらの認証情報もダウンロードまたは保存してください。
+7.AWS CLI のインストールに使用したターミナルウィンドウで、コマンド「aws configure」を入力します。
+8.ステップ 6 で作成した AWS アクセスキー ID とシークレットアクセスキーを入力します。 
+9.デフォルトのリージョン名には、CodeCommit リポジトリを作成するために最初に選択したリージョンを入力します。
+10.デフォルトの出力形式を空白のままにして、Enter キーを押します。 
+次のコードブロックは、ターミナルウィンドウに表示される内容の例です。
+
+% aws configure
+AWS Access Key ID [****************]: #####################
+AWS Secret Access Key [****************]: ###################
+Default region name [us-east-1]: us-east-1
+Default output format [None]: 
+
+11.ターミナルウィンドウで git config 認証情報ヘルパーを設定します。
+
+Linux、macOS、または UNIX マシンを使用している場合は、「ステップ 3: 認証情報ヘルパーを設定する」で Linux、macOS、または UNIX 用の手順を参照してください。
+Windows マシンを使用している場合は、「ステップ 3: 認証情報ヘルパーを設定する」で Windows 用の手順を参照してください。
+git config --global credential.helper '!aws codecommit credential-helper $@'
+git config --global credential.UseHttpPath true
+
+12.AWS CodeCommit コンソールに戻り、wildrydes-site リポジトリを選択します。
+13.[URL のクローン] ドロップダウンから [HTTPS のクローン] を選択し、HTTPS URL をコピーします。 
+14.ターミナルウィンドウから git clone を実行し、リポジトリの HTTPS URL を貼り付けます。 
+
+次のコードブロックは、ターミナルウィンドウに表示される内容の例です。
+
+
+$ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
+Cloning into ‘wildrydes-site’...
+Username for ‘https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site’: Enter the HTTPS Git credentials for AWS CodeCommit username you generated in Step 6
+Password for ‘https://username@git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site’: Enter the HTTPS Git credentials for AWS CodeCommit password you generated in Step 6
+warning: You appear to have cloned an empty repository.
+
+コピー
+空のリポジトリを複製したようだという警告が表示されますが、これは予想通りです。 
+
+リポジトリのクローニング作成時にスローされるエラーの一般的な修正については、「Troubleshooting the credential helper and HTTPS connections to AWS CodeCommit」を参照してください。
+
+●Gitリポジトリを事前設定する。
+
+Git リポジトリの作成に AWS CodeCommit または GitHub.com のいずれかを使用し、ローカルでクローンを作成したら、このチュートリアルに関連付けられた一般がアクセスできる既存の S3 バケットからウェブサイトのコンテンツをコピーし、リポジトリにコンテンツを追加する必要があります。
+
+1.ディレクトリをリポジトリに変更し、次のコマンドを使用して S3 から静的ファイルをコピーします (必ず、次のコマンドでリージョンを変更して、ファイルを S3 バケットからこのチュートリアルの最初に選択したリージョンにコピーしてください)。
+cd wildrydes-site
+aws s3 cp s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website ./ --recursive
+2.git ファイルを追加、コミット、プッシュします。 
+
+次のコードブロックは、ターミナルウィンドウに表示される内容の例です。
+
+$ git add .
+$ git commit -m "new files"
+$ git push
+
+Counting objects: 95, done.
+Compressing objects: 100% (94/94), done.
+Writing objects: 100% (95/95), 9.44 MiB | 14.87 MiB/s, done.
+Total 95 (delta 2), reused 0 (delta 0)
+To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
+* [new branch] master -> master
+
+●AWS Amplifyコンソールでウェブでウェブホスティングを有効にする。
+
+次に AWS Amplify コンソールを使用して、先ほど Git にコミットしたウェブサイトをデプロイします。Amplify コンソールが静的ウェブアプリケーションコードを保存するための場所のセットアップ作業を実施し、アプリケーションのライフサイクルを簡略化すると共に、ベストプラクティスを有効にする便利な機能を多数提供します。
+
+1.AWS Amplify コンソールを起動します。 
+2.[開始] を選択します。 
+3.[Amplify ホスティング] の [ウェブアプリケーションをホスト] ヘッダーの下にある [開始] を選択します。 
+4.[Amplify ホスティングの開始方法] ページで、[AWS CodeCommit] を選択し、[続行] を選択します。
+5.[リポジトリブランチの追加] ステップで、[リポジトリの選択] ドロップダウンから [wildrydes-site] を選択します。
+6.GitHub を使用した場合、GitHub アカウントに AWS Amplify を認証する必要があります。
+7.[ブランチ] ドロップダウンで [マスター] を選択し、[次へ] を選択します。
+8.[ビルド設定] ページでは、すべてデフォルトのままにして、[AWS Amplify がプロジェクトのルートディレクトリにホストされているすべてのファイルを自動的にデプロイすることを許可する] を選択し、[次へ] を選択します。
+9.[確認] ページで、[保存とデプロイ] を選択します。
+10.Amplify コンソールで必要なリソースが作成され、コードをデプロイするため、このプロセスには数分かかります。
+
+完了したら、サイト画像またはサムネイルの下にあるリンクを選択して、Wild Rydes サイトを起動します。 [マスター] のリンクをクリックすると、ブランチに関連するビルドとデプロイの詳細が表示されます。 
+
+Amplify コンソール
+Wild Rydes サイト
+
+●サイトを変更する。
+
+AWS Amplify コンソールは接続されたリポジトリで変更が検出されると、アプリを再ビルドし、再デプロイします。このプロセスを確かめるためにメインページに変更を加えてみましょう。
+
+1.ローカルマシンで、wildrydes-site フォルダに移動し、任意のテキストエディタで index.html ファイルを開きます。 
+2.タイトル行を次のテキストで変更します: <title>Wild Rydes - Rydes of the Future!</title>
+3.ファイルを保存します。 
+4.ターミナルウィンドウで、変更を追加してコミットし、変更を Git リポジトリに再度プッシュします。 Amplify コンソールはリポジトリへの変更を検出するとすぐにサイトのビルドを開始します。これはすぐに起こります。 プロセスを確認するために AWS Amplify コンソールに戻ります。
+次のコードブロックは、ターミナルウィンドウに表示される内容の例です。 
+
+$ git add index.html 
+$ git commit -m "updated title"
+[master dfec2e5] updated title
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git push
+Counting objects: 3, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 315 bytes | 315.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: processing 
+To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
+   2e9f540..dfec2e5  master -> master
+
+5.Amplify が再デプロイを完了したら、Wild Rydes サイトを再度開いて、タブのタイトルが変更されていることを確認します。
+
+Wild Rydes サイトのタイトル変更
+
+●まとめ
+
+このモジュールでは Wild Rydes ビジネスのベースとなる静的ウェブサイトを作成しました。AWS Amplify コンソールを使用することで、継続的統合と配信モデルに沿って静的ウェブサイトをデプロイできるようになります。アプリケーションをベースにより複雑な JavaScript フレームワークを構築するための機能を備え、機能ブランチのデプロイ、簡単なカスタムドメインの設定、即席デプロイ、パスワード保護などの機能が備わっています。
+
+モジュール 2: ユーザーを管理する
+ユーザーのアカウントを管理するための Amazon Cognito ユーザープールを作成します。
+
+概要
+このモジュールでは、ユーザーのアカウントを管理するための Amazon Cognito ユーザープールを作成します。顧客が新しいユーザーとして登録し、自分の E メールアドレスを確認して、そしてサイトにサインインできるようにするページを配置します。​
+
+アーキテクチャの概要
+ユーザーがお客様のウェブサイトにアクセスすると、彼らは最初に新しいユーザーアカウントを登録します。​このワークショップの目的上、登録のために E メールアドレスとパスワードを提供するようにユーザーに要求するだけです。​ただし、独自のアプリケーションで追加の属性を要求するように Amazon Cognito を設定できます。
+
+ユーザーが登録を送信した後、Amazon Cognito は提供されたアドレスに確認コードを記載した確認メールを送信します。ユーザーのアカウントを確認するには、ユーザーはお客様のサイトに戻り、自分の E メールアドレスと受け取った確認コードを入力します。​Amazon Cognito コンソールとテスト用のダミーの E メールアドレスを使用してユーザーアカウントを確認することもできます。
+
+ユーザーが確認済みアカウントを取得した後 (コンソールでの E メール確認プロセスまたは手動確認のいずれかを使用)、サインインできるようになります。​ユーザーがサインインするときに、ユーザー名 (または E メール) とパスワードを入力します。その後、JavaScript 関数が Amazon Cognito と通信し、セキュアリモートパスワードプロトコル (SRP) を使用して認証して、一連の JSON ウェブトークン (JWT) を受け取ります。JWT にはユーザーの ID に関するクレームが含まれており、Amazon API Gateway で構築した RESTful API に対して認証するために次のモジュールで使用されます。
+
+ 所要時間
+30 分
+
+ 利用するサービス
+Amazon Cognito
+
+ CloudFormation テンプレート
+次のモジュールにスキップしたい場合は、モジュール 1 で使用したのと同じリージョンでこれらの AWS CloudFormation テンプレートのいずれかを起動できます。
+
+リージョン	CloudFormation テンプレート
+米国東部 (バージニア北部)	スタックを起動 >
+米国東部 (オハイオ)	スタックを起動 >
+米国西部 (オレゴン)	スタックを起動 >
+欧州 (フランクフルト)	スタックを起動 >
+欧州 (アイルランド)	スタックを起動 >
+欧州 (ロンドン)	スタックを起動 >
+アジアパシフィック (東京)	スタックを起動 >
+アジアパシフィック (ソウル)	スタックを起動 >
+アジアパシフィック (シドニー)	スタックを起動 >
+アジアパシフィック (ムンバイ)	スタックを起動 >
+
+実装
+
+Amazon Cognito ユーザープールを作成し、アプリをユーザープールと統合する。
+
+Amazon Cognito は、ユーザーを認証するための 2 つの異なるメカニズムを提供します。Cognito ユーザープールを使用してアプリケーションにサインアップおよびサインイン機能を追加するか、Cognito ID プールを使用して、Facebook、Twitter、Amazon などのソーシャル ID プロバイダー経由で、SAML ID ソリューションを使用し、または独自の ID システムを使用して、ユーザーを認証することもできます。このモジュールでは、提供された登録ページとサインインページのバックエンドとしてユーザープールを使用します。​
+
+1.Amazon Cognito コンソールで、[ユーザープールを作成] を選択します。
+2.[サインインエクスペリエンスを設定] ページの [Cognito ユーザープールのサインインオプション] セクションで、[ユーザー名]  を選択します。[プロバイダーのタイプ] など、他の設定はデフォルトのままにし、[ユーザー名の要件] は何も選択しないでください。[次へ] をクリックします。
+3.[セキュリティ要件を設定] ページで、[パスワードポリシーモード] を [Cognito のデフォルト] のままにします。多要素認証 (MFA) を設定するか、[MFA なし] を選択して他の設定をデフォルトのままにすることができます。[次へ] をクリックします。
+4.[サインアップエクスペリエンスを設定] ページで、すべてをデフォルトのままにします。[次へ] をクリックします。
+5.[メッセージ配信を設定] ページの [E メールプロバイダー] で、[Amazon SES で E メールを送信 - 推奨] が選択されていることを確認します。[送信元 E メールアドレス] フィールドで、「Amazon Simple Email Service Developer Guide」の「Verifying an email address identity」の手順に従って、Amazon SES で確認した E メールアドレスを選択します。
+注意: ドロップダウンに確認済みの E メールアドレスが表示されない場合は、チュートリアルの最初に選択したのと同じリージョンで確認済みの E メールアドレスを作成していることを確認してください。
+6.[アプリケーションを統合] ページで、ユーザープールに「WildRydes」という名前を付けます。 [最初のアプリケーションクライアント] で、アプリクライアントに「WildRydesWebApp」という名前を付け、他の設定はデフォルトのままにします。
+7.[確認と作成] ページで、[ユーザープールの作成] を選択します。
+8.[ユーザープール] ページでユーザープール名を選択すると、作成したユーザープールに関する詳細情報が表示されます。[ユーザープールの概要] セクションにあるユーザープール ID をコピーし、ローカルマシンの安全な場所に保存します。 
+9.[アプリの統合] タブを選択し、新しく作成したユーザープールの [アプリクライアントと分析] セクションでクライアント ID をコピーして保存します。
+
+●ウェブサイトの設定ファイルを更新する
+
+/js/config.js ファイルには、ユーザープール ID、アプリクライアント ID、およびリージョンの設定が含まれています。前のステップで作成したユーザープールとアプリの設定でこのファイルを更新し、ファイルをバケットにアップロードします。
+
+1.ローカルマシンで任意のテキストエディタを使用し、wildryde-site/js/config.js ファイルを開きます。
+2.ファイルの cognito セクションを、前のセクションのステップ 8 と 9 で保存した [ユーザープール ID] と [アプリクライアント ID] の正しい値に更新します。userPoolID は [ユーザープールの概要] セクションの [ユーザープール ID] であり、userPoolClientID は Amazon Cognito の [アプリの統合] > [アプリクライアントと分析] セクションにある [アプリクライアント ID] です。 
+3.region の値は、ユーザープールを作成した AWS リージョンのコードである必要があります。例えば、バージニア北部リージョンの場合 us-east-1 で、オレゴンリージョンの場合 us-west-2 です。使用するコードがわからない場合、[ユーザープールの概要] で [プール ARN] の値を調べることができます。リージョンコードは、arn:aws:cognito-idp: の直後にある ARN の部分です。
+更新された config.js ファイルは次のコードのようになります。ファイルの実際の値は異なることに注意してください。
+
+window._config = {
+    cognito: {
+        userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
+        userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
+        region: 'us-west-2' // e.g. us-east-2
+    },
+    api: {
+        invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod',
+    }
+};
+
+4.変更したファイルを保存します。
+5.ターミナルウィンドウでファイルを追加、コミット、Git リポジトリにプッシュすると、自動的に Amplify コンソールにデプロイされます。
+
+次のコードブロックは、ターミナルウィンドウに表示される内容の例です。
+
+$ git add .
+$ git commit -m "new_config"
+$ git push
+
+●実装を検証する
+
+1.Finder ウィンドウまたは Windows ファイルエクスプローラーで、モジュール 1 でローカルマシンにコピーした wildrydes-site フォルダに移動します。 
+2./register.html にアクセスするか、サイトのホームページ (index.html ページ) の [Giddy Up] ボタンをクリックします。
+3.登録フォームに入力して、[Let's Ryde] を選択します。自分の E メールを使うか、ダミーの E メールを入力することができます。少なくとも 1 つの大文字、数字、および特殊文字を含むパスワードを必ず選択してください。入力したパスワードを後で忘れることがないようにしてください。ユーザーが作成されたことを確認するアラートが表示されます。
+4.次の 2 つの方法のいずれかを使用して、新しいユーザーを確認します。
+4-1.自分が管理する電子メールアドレスを使用した場合は、自分のウェブサイトドメインにある /verify.html にアクセスし、電子メールで受け取った認証コードを入力して、アカウントの検証プロセスを完了できます。確認メールは、スパムメールフォルダに分類される可能性があります。実際のデプロイでは、ユーザープールを設定して Amazon Simple Email Service を使用して、自分が所有するドメインから E メールを送信することをお勧めします。
+4-2.ダミーの E メールアドレスを使用した場合は、Cognito コンソールから手動でユーザーを確認する必要があります。​
+4-2-1.Amazon Cognito コンソールで、[WildRydes] ユーザープールを選択します。
+4-2-2.[ユーザー] タブで、登録ページを通して送信した E メールアドレスに対応するユーザーを確認する必要があります。ユーザーの名前を選択して、[ユーザー詳細] ページを開きます。
+4-2-3.[アクション] ドロップダウンで [アカウントの確認] を選択し、アカウント作成プロセスを完了します。
+4-2-4.[ユーザーアカウントの確認] ポップアップで、[確認] を選択します。
+5./verify.html ページまたは Cognito コンソールを使用して新しいユーザーを確認した後、/signin.html にアクセスし、登録ステップで入力した E メールアドレスとパスワードを使用してログインします。
+6.成功した場合、/ride.html にリダイレクトされます。API が設定されていないという通知が表示されます。
+重要: 次のモジュールで Amazon Cognito ユーザープールオーソライザーを作成するために、認証トークンをコピーして保存してください。
+認証に成功しました!
+
+モジュール 3: サーバーレスサービスバックエンド
+AWS Lambda と Amazon DynamoDB を使用して、ウェブアプリケーションのリクエストを処理するためのバックエンドプロセスを構築します
+
+概要
+このモジュールでは、AWS Lambda と Amazon DynamoDB を使用して、ウェブアプリケーションのリクエストを処理するためのバックエンドプロセスを構築します。最初のモジュールにデプロイしたブラウザアプリケーションを使用すると、ユーザーはユニコーンを自分の好きな場所に送信するように要求できます。​これらのリクエストを満たすには、ブラウザで実行されている JavaScript がクラウドで実行されているサービスを呼び出す必要があります。​
+
+アーキテクチャの概要
+アーキテクチャの概要
+​ユーザーがユニコーンを要求するたびに呼び出される Lambda 関数を実装します。​この関数は、フリートからユニコーンを選択し、その要求を DynamoDB テーブルに記録してから、ディスパッチされているユニコーンに関する詳細を使用して、フロントエンドアプリケーションに応答します。
+
+この関数は、Amazon API Gateway を使用してブラウザから呼び出されます。次のモジュールでその接続を実装します。このモジュールで必要なのは、ご利用の関数を単独でテストすることだけです。​
+
+実装
+
+●Amazon DynamoDBテーブルを作成する
+
+Amazon DynamoDB コンソールを使用して、新しい DynamoDB テーブルを作成します。 
+
+Amazon DynamoDB コンソールで、[テーブルの作成] を選択します。
+[テーブル名] に「Rides」と入力します。 このフィールドでは、大文字と小文字が区別されます。
+[パーティションキー] に「RideId」と入力し、キータイプとして [文字列] を選択します。このフィールドでは、大文字と小文字が区別されます。
+[テーブル設定] セクションで、[デフォルト設定] が選択されていることを確認し、[テーブルの作成] を選択します。 
+[テーブル] ページで、テーブルの作成が完了するまで待ちます。完了すると、ステータスは [アクティブ] になります。テーブル名を選択します。
+新しいテーブルの [概要] タブ > [一般情報] セクションで、[追加情報] を選択します。ARN をコピーします。これは次のセクションで使用します。
+
+●Lambda関数のIAMロールを作成する。
+
+すべての Lambda 関数には、それに関連付けられた IAM ロールがあります。このロールは、その関数が他のどの AWS のサービスとやり取りできるかを定義します。このチュートリアルの目的のために、ログを Amazon CloudWatch Logs に書き込むアクセス許可と、項目を DynamoDB テーブルに書き込むアクセス許可を Lambda 関数に付与する IAM ロールを作成する必要があります。
+
+1.IAM コンソールの左側のナビゲーションペインで [ロール] を選択し、[ロールの作成] を選択します。
+2.[信頼されたエンティティタイプ] セクションで、[AWS サービス] を選択します。[ユースケース] で [Lambda] を選択し、[次へ] を選択します。 
+注: ロールタイプを選択すると、AWS のサービスがお客様に代わってこのロールを引き受けることを許可する、お客様のロールの信頼ポリシーが自動的に作成されます。CLI、AWS CloudFormation、またはその他のメカニズムを使用してこのロールを作成している場合は、信頼ポリシーを直接指定します。
+3.フィルターテキストボックスに「AWSLambdaBasicExecutionRole」と入力し、Enter キーを押します。 
+4.AWSLambdaBasicExecutionRole ポリシー名の横にあるチェックボックスをオンにして [次へ] を選択します。
+5.[ロール名] に「WildRydesLambda」と入力します。他のパラメータはデフォルト設定のままにします。
+6.[ロールの作成] を選択します。
+7.[ロール] ページのフィルターボックスに「WildRydesLambda」と入力し、先ほど作成したロールの名前を選択します。
+8.[アクセス許可] タブの [アクセス許可の追加] で [インラインポリシーを作成] を選択します。
+9.[サービスの選択] セクションで、検索バーに「DynamoDB」と入力し、表示されたら [DynamoDB] を選択します。
+10.[アクションの選択] を選択します。
+11.[許可されているアクション] セクションで、検索バーに「PutItem」と入力し、表示されたら [PutItem] の横にあるチェックボックスをオンにします。
+12.[リソース] セクションで、[特定] オプションが選択されている状態で [ARN を追加] リンクを選択します。
+13.[テキスト] タブを選択します。DynamoDB で作成したテーブルの ARN を貼り付け (前のセクションのステップ 6)、[ARN を追加] を選択します。
+14.[次へ] をクリックします。
+15.ポリシー名として「DynamoDBWriteAccess」と入力し、[ポリシーの作成] を選択します。
+
+●リクエスト処理のためにLambfa関数を作成する。
+
+AWS Lambda は、HTTP リクエストなどのイベントに応答してコードを実行します。このステップでは、ウェブアプリケーションからの API リクエストを処理してユニコーンをディスパッチするコア機能を構築します。次のモジュールでは、Amazon API Gateway を使用して、ユーザーのブラウザから呼び出すことができる HTTP エンドポイントを公開する RESTful API を作成します。その後、このステップで作成した Lambda 関数をその API に接続して、ウェブアプリケーション用の完全に機能的なバックエンドを作成します。​
+
+AWS Lambda コンソールを使用して、API リクエストを処理する RequestUnicorn という名前の新しい Lambda 関数を作成します。次の requestUnicorn.js 実装例を関数コードに使用してください。必要なのは、そのファイルから AWS Lambda コンソールのエディタにコピーして貼り付けることだけです。
+
+前のセクションで作成した WildRydesLambda IAM ロールを使用するように関数が設定されていることを確認します。
+
+1.AWS Lambda コンソールで、[関数の作成] をクリックします。
+2.デフォルトの [一から作成] カードを選択したままにします。
+3.[関数名] フィールドに「RequestUnicorn」と入力します。
+4.[ランタイム] には [Node.js 16.x] を選択します (新しいバージョンの Node.js はこのチュートリアルでは動作しません)。
+5.[デフォルトの実行ロールの変更] ドロップダウンから [既存のロールを使用する] を選択します。
+6.[既存のロール] ドロップダウンで [WildRydesLambda] を選択します。
+7.[関数を作成] をクリックします。
+8.[コードソース] セクションまでスクロールし、index.js コードエディタの既存のコードを requestUnicorn.js の内容に置き換えます。次のコードブロックは requestUnicorn.js ファイルを表示します。このコードをコピーして、コードエディタの [index.js] タブに貼り付けます。
+const randomBytes = require('crypto').randomBytes;
+const AWS = require('aws-sdk');
+const ddb = new AWS.DynamoDB.DocumentClient();
+
+const fleet = [
+    {
+        Name: 'Angel',
+        Color: 'White',
+        Gender: 'Female',
+    },
+    {
+        Name: 'Gil',
+        Color: 'White',
+        Gender: 'Male',
+    },
+    {
+        Name: 'Rocinante',
+        Color: 'Yellow',
+        Gender: 'Female',
+    },
+];
+
+exports.handler = (event, context, callback) => {
+    if (!event.requestContext.authorizer) {
+      errorResponse('Authorization not configured', context.awsRequestId, callback);
+      return;
+    }
+
+    const rideId = toUrlString(randomBytes(16));
+    console.log('Received event (', rideId, '): ', event);
+
+    // Because we're using a Cognito User Pools authorizer, all of the claims
+    // included in the authentication token are provided in the request context.
+    // This includes the username as well as other attributes.
+    const username = event.requestContext.authorizer.claims['cognito:username'];
+
+    // The body field of the event in a proxy integration is a raw string.
+    // In order to extract meaningful values, we need to first parse this string
+    // into an object. A more robust implementation might inspect the Content-Type
+    // header first and use a different parsing strategy based on that value.
+    const requestBody = JSON.parse(event.body);
+
+    const pickupLocation = requestBody.PickupLocation;
+
+    const unicorn = findUnicorn(pickupLocation);
+
+    recordRide(rideId, username, unicorn).then(() => {
+        // You can use the callback function to provide a return value from your Node.js
+        // Lambda functions. The first parameter is used for failed invocations. The
+        // second parameter specifies the result data of the invocation.
+
+        // Because this Lambda function is called by an API Gateway proxy integration
+        // the result object must use the following structure.
+        callback(null, {
+            statusCode: 201,
+            body: JSON.stringify({
+                RideId: rideId,
+                Unicorn: unicorn,
+                Eta: '30 seconds',
+                Rider: username,
+            }),
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            },
+        });
+    }).catch((err) => {
+        console.error(err);
+
+        // If there is an error during processing, catch it and return
+        // from the Lambda function successfully. Specify a 500 HTTP status
+        // code and provide an error message in the body. This will provide a
+        // more meaningful error response to the end client.
+        errorResponse(err.message, context.awsRequestId, callback)
+    });
+};
+
+// This is where you would implement logic to find the optimal unicorn for
+// this ride (possibly invoking another Lambda function as a microservice.)
+// For simplicity, we'll just pick a unicorn at random.
+function findUnicorn(pickupLocation) {
+    console.log('Finding unicorn for ', pickupLocation.Latitude, ', ', pickupLocation.Longitude);
+    return fleet[Math.floor(Math.random() * fleet.length)];
+}
+
+function recordRide(rideId, username, unicorn) {
+    return ddb.put({
+        TableName: 'Rides',
+        Item: {
+            RideId: rideId,
+            User: username,
+            Unicorn: unicorn,
+            RequestTime: new Date().toISOString(),
+        },
+    }).promise();
+}
+
+function toUrlString(buffer) {
+    return buffer.toString('base64')
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '');
+}
+
+function errorResponse(errorMessage, awsRequestId, callback) {
+  callback(null, {
+    statusCode: 500,
+    body: JSON.stringify({
+      Error: errorMessage,
+      Reference: awsRequestId,
+    }),
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  });
+}
+
+9.[デプロイ] を選択します。
+
+●実装を検証する。
+
+このモジュールでは、AWS Lambda コンソールを使用して構築した関数をテストします。次のモジュールでは、最初のモジュールでデプロイしたブラウザベースのアプリケーションから関数を呼び出せるようにするために、API Gateway を使用して REST API を追加します。
+
+1.前のセクションで作成した RequestUnicorn 関数の [コードソース] セクションで [テスト] を選択し、ドロップダウンから [テストイベントの設定] を選択します。
+2.[新しいイベントを作成] はデフォルトのままにします。
+3.[イベント名] フィールドに「TestRequestEvent」と入力します。
+4.次のテストイベントをコピーして、[イベント JSON] セクションに貼り付けます。
+{
+    "path": "/ride",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "Authorization": "eyJraWQiOiJLTzRVMWZs",
+        "content-type": "application/json; charset=UTF-8"
+    },
+    "queryStringParameters": null,
+    "pathParameters": null,
+    "requestContext": {
+        "authorizer": {
+            "claims": {
+                "cognito:username": "the_username"
+            }
+        }
+    },
+    "body": "{\"PickupLocation\":{\"Latitude\":47.6174755835663,\"Longitude\":-122.28837066650185}}"
+}
+
+5.[Save] を選択します。
+6.関数の [コードソース] セクションで [テスト] を選択し、ドロップダウンから [TestRequestEvent] を選択します。
+7.  [テスト] タブの [テスト] を選択します。
+8.表示される「関数の実行: 成功」メッセージで、[詳細] ドロップダウンを展開します。
+9.関数の結果が次のようになっていることを確認します。
+
+{
+    "statusCode": 201,
+    "body": "{\"RideId\":\"SvLnijIAtg6inAFUBRT+Fg==\",\"Unicorn\":{\"Name\":\"Rocinante\",\"Color\":\"Yellow\",\"Gender\":\"Female\"},\"Eta\":\"30 seconds\"}",
+    "headers": {
+        "Access-Control-Allow-Origin": "*"
+    }
+}
+
+モジュール 4: RESTful API をデプロイする
+Amazon API Gateway を使用して、前のモジュールで RESTful API として構築した Lambda 関数を公開します。
+
+概要
+このモジュールでは、Amazon API Gateway を使用して、前のモジュールで RESTful API として構築した Lambda 関数を公開します。この API はパブリックインターネットでアクセス可能になります。前のモジュールで作成した Amazon Cognito ユーザープールを使用して保護されます。次に、この設定を使用して、公開された API に対して AJAX 呼び出しを行うクライアント側 JavaScript を追加することにより、静的にホストされたウェブサイトを動的なウェブアプリケーションに変換します。
+
+アーキテクチャの概要
+
+上の図は、このモジュールで構築する API Gateway コンポーネントが、前に構築した既存のコンポーネントとどのように統合されるかを示しています。グレー表示された項目は、既に前のステップで実装したものです。
+
+最初のモジュールでデプロイした静的ウェブサイトには、このモジュールで構築する API と連携するように設定済みのページが既にあります。/ride.html のページには、ユニコーンに乗ることを要求するシンプルなマップベースのインターフェイスがあります。/signin.html ページを使用した認証後、ユーザーはマップ上のポイントをクリックし、右上隅の [Request Unicorn] ボタンを選択して、乗る場所を選択することができます。
+
+このモジュールでは、API のクラウドコンポーネントを構築するために必要なステップに注目しますが、この API を呼び出すブラウザコードの仕組みに関心がある場合は、ウェブサイトの ride.js ファイルを調べることができます。この場合、アプリケーションは jQuery の ajax() メソッドを使用してリモートリクエストを実行します。
+
+ 所要時間
+15 分
+
+ 利用するサービス
+Amazon API Gateway
+AWS Lambda
+
+実装
+
+●新しREST APIを作成する。
+
+1.Amazon API Gateway コンソールで、左側のナビゲーションペインにある [API] を選択します。 
+2.[REST API] で [ビルド] を選択します。
+3.[プロトコルを選択する] セクションで、[REST] を選択します。 
+4.[新しい API の作成] セクションで、[新しい API] を選択します。
+5.[設定] セクションで、[API 名] に「WildRydes」と入力し、[エンドポイントタイプ] ドロップダウンで [エッジ最適化] を選択します。
+注: インターネットからアクセスするパブリックサービスには、エッジ最適化エンドポイントタイプを使用してください。同一の AWS リージョン内から主にアクセスする API には一般にリージョンのエンドポイントが使用されます。
+6.[API の作成] を選択します。
+
+●オーソライザーを作成する。
+
+Amazon Cognito ユーザープールオーソライザーを作成する必要があります。Amazon API Gateway は、Amazon Cognito ユーザープール (モジュール 2 で作成) から返される JSON ウェブトークン (JWT) を使用して API 呼び出しを認証します。このセクションでは、ユーザープールを利用できるように、API のオーソライザーを作成します。
+
+以下の手順を使用して、Amazon API Gateway コンソールでオーソライザーを設定します。
+
+1.先ほど作成した WildRydes API の左側のナビゲーションペインで、「オーソライザー」を選択します。
+2.[新しいオーソライザーの作成] を選択します。 
+3.オーソライザーの [名前] フィールドに「WildRydes」と入力します。
+4.[タイプ] として [Cognito] を選択します。 
+5.Cognito ユーザープールの [リージョン] ドロップダウンで、チュートリアルの残りの部分で使用していたのと同じリージョンを選択します。Cognito ユーザープールの [名前] フィールドに「WildRydes」と入力します。
+6.[トークンのソース] に「Authorization」と入力します。 
+7.[作成] を選択します。
+8.オーソライザーの設定を確認するには、[テスト] を選択します。 
+9.モジュール 2 の実装の [検証] セクションにある ride.html ウェブページからコピーした認証トークンを [承認 (ヘッダー)] フィールドに貼り付け、HTTP ステータスの [レスポンスコード] が 200 であることを確認します。
+
+●新しいリソースとメソッドを作成する。
+
+このセクションでは、API 内に新しいリソースを作成します。その後、そのリソース用の POST メソッドを作成し、このモジュールの最初のステップで作成した RequestUnicorn 関数によってサポートされる Lambda プロキシ統合を使用するようにメソッドを設定します。
+
+1.WildRydes API の左側のナビゲーションペインで、[リソース] を選択します。
+2.[アクション] ドロップダウンから、[リソースの作成] を選択します。
+3.[リソース名] に「ride」と入力すると、リソースパス /ride が自動的に作成されます。
+4.[API Gateway CORS を有効にする] のチェックボックスをオンにします。
+5.[リソースの作成] を選択します。
+6.新しく作成した /ride リソースが選択された状態で、[アクション] ドロップダウンから [メソッドの作成] を選択します。
+7.[オプション] の下に表示される新しいドロップダウンから [POST] を選択し、チェックマークアイコンを選択します。
+8.統合タイプとして [Lambda 関数] を選択します。
+9.[Lambda プロキシ統合の使用] のチェックボックスをオンにします。
+10.Lambda リージョンのチュートリアル全体で使用していたのと同じリージョンを選択します。
+11.[Lambda 関数] に「RequestUnicorn」と入力します。
+12.[保存] を選択します。
+注: 関数が存在しないというエラーが表示された場合は、選択したリージョンが、前のモジュールで使用したリージョンに一致することを確認します。
+13.関数を呼び出すための許可を Amazon API Gateway に付与するように求められたら、[OK] を選択します。
+14.[メソッドリクエスト] カードを選択します。
+15.[認可] の横の鉛筆アイコンを選択します。
+16.ドロップダウンの一覧から WildRydes Cognito ユーザープールオーソライザーを選択し、チェックマークアイコンを選択します。
+
+●APIをデプロイする。
+
+このセクションでは、Amazon API Gateway コンソールから API をデプロイします。 
+
+1.[アクション] ドロップダウンリストで [API のデプロイ] を選択します。
+2.[デプロイステージ] ドロップダウンリストから [新しいステージ] を選択します。
+3.[ステージ名] に「prod」と入力します。
+4.[デプロイ] を選択します。
+5.[呼び出し URL] をコピーします。これらは次のセクションで使用します。
+
+●ウェブサイトの設定を更新する。
+
+このステップでは、ウェブサイトのデプロイで /js/config.js ファイルを更新し、作成したステージの呼び出し URL を含めます。呼び出し URL は、Amazon API Gateway コンソールのステージエディタページの上部から直接コピーし、サイトの config.js ファイルの invokeUrl キーに貼り付けます。設定ファイルには、前のモジュールで行った Amazon Cognito userPoolID、userPoolClientID、およびリージョンの更新が引き続き含まれています。
+
+1.ローカルマシンで js フォルダに移動し、任意のテキストエディタで config.js ファイルを開きます。
+2.前のセクションで Amazon API Gateway コンソールからコピーした呼び出し URL を config.js ファイルの invokeUrl 値に貼り付けます。 
+3.ファイルを保存します。
+次の完成した config.js ファイルの例を参照してください。ファイルの実際の値は異なることに注意してください。
+
+window._config = {
+
+    cognito: {
+
+        userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb         
+
+        userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
+
+        region: 'us-west-2' // e.g. us-east-2 
+
+    }, 
+
+    api: { 
+
+        invokeUrl: 'https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod, 
+
+    } 
+
+};
+
+
+4.更新した config.js ファイルを追加、コミット、Git リポジトリにプッシュすると、自動的に Amplify コンソールにデプロイされます。
+
+$ git add .
+$ git commit -m "new_configuration"
+$ git push
+
+●実装を検証する。
+
+注: S3 バケットの config.js ファイルの更新と、更新されたコンテンツがブラウザに表示される間に、遅延が発生する可能性があります。また、以下のステップを実行する前に、ブラウザのキャッシュをクリアしてください。
+
+1.ride.html ファイルの ArcGIS JS バージョンを 4.3 から 4.6 に次のように更新します (新しいバージョンはこのチュートリアルでは動作しません)。
+<script src="https://js.arcgis.com/4.6/"></script>
+ <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+
+コピー
+完全な ride.html ファイルの例を以下に示します。ファイルの一部の値が異なる場合があることに注意してください。
+
+<div id="noApiMessage" class="configMessage" style="display: none;">
+        <div class="backdrop"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Successfully Authenticated!</h3>
+            </div>
+            <div class="panel-body">
+                <p>This page is not functional yet because there is no API invoke URL configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 3.</p>
+                <p>In the meantime, if you'd like to test the Amazon Cognito user pool authorizer for your API, use the auth token below:</p>
+                <textarea class="authToken"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div id="noCognitoMessage" class="configMessage" style="display: none;">
+        <div class="backdrop"></div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">No Cognito User Pool Configured</h3>
+            </div>
+            <div class="panel-body">
+                <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="map">
+        </div>
+    </div>
+
+    <div id="authTokenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="authToken">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Your Auth Token</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea class="authToken"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/vendor/jquery-3.1.0.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="https://js.arcgis.com/4.6/"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cognito-auth.js"></script>
+    <script src="js/esri-map.js"></script>
+    <script src="js/ride.js"></script>
+</body>
+
+</html>
+
+2.変更したファイルを保存します。 ファイルを追加、コミット、Git リポジトリに git プッシュすると、AWS Amplify コンソールに自動的にデプロイされます。
+3.ウェブサイトドメインの下にある /ride.html にアクセスします。
+4.ArcGIS のサインインページにリダイレクトされた場合は、このチュートリアルの前提条件として、「はじめに」セクションで以前に作成したユーザー認証情報を使用してサインインします。
+5.マップがロードされたら、マップ上の任意の場所をクリックして、ピックアップ場所を設定します。
+6.[ユニコーンをリクエスト] を選択します。右のサイドバーの通知で、ユニコーンが向かっていることが表示され、続いてピックアップ場所にユニコーンのアイコンが移動します。
+
+モジュール 5: リソースのクリーンアップ
+この実験を終了するに際して、このチュートリアル全体で作成したすべてのリソースをクリーンアップするステップを演習します。
+
+リソースのクリーンアップ
+このモジュールでは、このチュートリアル全体で作成したすべてのリソースをクリーンアップするステップを演習します。削除するのは、AWS Amplify アプリ、Amazon Cognito ユーザープール、AWS Lambda 関数、IAM ロール、DynamoDB テーブル、REST API、および CloudWatch Log です。不要な課金を回避するため、使用していないリソースは削除することがベストプラクティスです。
+
+実装
+
+●アプリを削除する。
+
+Amplify アプリを削除します。
+
+1.AWS Amplify コンソールで、モジュール 1 で作成した wildrydes-site アプリを選択します。
+2.アプリのホームページで、[アクション] を選択し、[アプリの削除] を選択します。確認を求められたら「delete」と入力し、[削除] を選択します。
+
+●Amazon Cognitoユーザープールを削除する。
+
+用意された AWS CloudFormation テンプレートを使用してモジュール 2 を完了した場合は、AWS CloudFormation コンソールを使用してスタックを削除します。それ以外の場合は、モジュール 2 で作成した Amazon Cognito ユーザープールを削除します。
+
+1.Amazon Cognito コンソールで、[ユーザープール名] に WildRydes を選択します。
+2.[ユーザープールの削除] を選択します。
+3,[削除保護を非アクティブ化] の横にあるチェックボックスをオンにします。
+4.「WildRydes」と入力して削除を確認し、[削除] を選択します。
+
+●サーバーレスバックエンドを削除する。
+
+モジュール 3 で作成した AWS Lambda 関数、IAM ロール、および Amazon DynamoDB テーブルを削除します。
+
+AWS Lambda 関数
+
+1.AWS Lambda コンソールの [関数] ページで、モジュール 3 で作成した RequestUnicorn 関数を選択します。
+2.[アクション] ドロップダウンから、[関数の削除] を選択します。
+
+IAM ロール
+
+1.IAM コンソールの左のナビゲーションペインから [ロール] を選択します。
+2.フィルターボックスに「WildRydesLambda」と入力します。
+3.モジュール 3 で作成したロール [WildRydesLambda] の横にあるチェックボックスをオンにし、[削除] を選択します。
+4.削除を確定するには、テキスト入力フィールドに「WildRydesLambda」と入力します。[削除] を選択します。 
+
+Amazon DynamoDB テーブル
+
+1.Amazon DynamoDB コンソールの左ナビゲーションペインで [テーブル] を選択します。
+2.モジュール 3 で作成した [Rides] テーブルの横にあるチェックボックスをオンにします。
+3.[削除] を選択します。
+4,[Rides の CloudWatch アラームをすべて削除] の横にあるチェックボックスをオンにし、テキスト入力フィールドに「confirm」と入力して、[削除] を選択します。
+5.[テーブル] ページの [ステータス] フィールドが [削除中] に変わり、テーブルが正常に削除されると、テーブルはテーブルリストから消えます。 
+
+●REST APIを削除する。
+
+モジュール 4 で作成した REST API を削除します。 
+
+1.Amazon API Gateway コンソールで、モジュール 4 で作成した WildRydes API を選択します。
+2.[アクション] ドロップダウンで、[削除] を選択します。
+3.[API の削除] 確認画面で [削除] を選択します。
+
+●CloudWatch Logを削除する。
+
+AWS Lambda は、Amazon CloudWatch Logs で関数ごとに新しいロググループを自動的に作成し、関数が呼び出されたときにロググループにログを書き込みます。RequestUnicorn 関数のロググループは削除する必要があります。また、CloudFormation スタックを起動した場合、それらのスタックに、削除する必要があるカスタムリソースに関連付けられたロググループがある可能性があります。
+
+1.Amazon CloudWatch コンソールの左ナビゲーションペインで [ログ] を展開し、[ロググループ] を選択します。
+2./aws/lambda/RequestUnicorn ロググループの横にあるチェックボックスをオンにします。アカウントに数多くのロググループがある場合は、[フィルター] テキストボックスに「/aws/lambda/RequestUnicorn」と入力して、ロググループを見つけることができます。
+3.[アクション] ドロップダウンから [ロググループの削除] を選択します。
+4.確認を求められたら [削除] を選択します。
+5.モジュールを完了するために CloudFormation テンプレートを起動した場合は、/aws/lambda/wildrydes-webapp で始まるロググループに対してステップ 2～4 を繰り返します。
