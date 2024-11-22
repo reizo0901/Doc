@@ -1,0 +1,116 @@
+日時：2024/11/21 19:00～20:20
+参加者：村上、細田、今村、阿部、松原
+
+★：宿題・課題事項
+☆：決定事項
+--------------------------------------
+
+	1. 宿題のお披露目
+【Azure】
+
+・AVD環境の作成
+サクッと検証用Azure Virtual Desktopを構築 #AVD - Qiita
+
+・Azureのコラム
+iDATEN(韋駄天)｜ 担当者コラム
+
+・OpenAI
+Azure OpenAI Service 入門ハンズオンラボ - HOME
+まだOpenAI使ったことないの？この記事で全員ハンズオンさせてやんよ！
+まだOpenAI使ったことないの？この記事で全員ハンズオンさせてやんよ！ #TypeScript - Qiita
+【今更聞けない!?】✨ Azure OpenAIとLangChainで始める！RAG入門!AIチャットボット構築ハンズオン 🚀
+
+
+・6時間でAzure の基本をマスター 「Azure の始め方 6 回シリーズ」 動画公開!
+6時間でAzure の基本をマスター 「Azure の始め方 6 回シリーズ」 動画公開! | Microsoft Base
+
+・カスタムログを収集してアラートを出す
+【Azureハンズオン】カスタムログを収集してアラートを出す #PowerShell - Qiita
+
+・仮想マシンを作成してリモートデスクトップで接続してみよう
+【初心者向け】仮想マシンを作成してリモートデスクトップで接続してみよう（ハンズオン）｜AZ START | Azure入門ブログ
+
+・ iOSアプリを5分で作ろう！ Azureモバイルサービスで簡単開発
+iOSアプリを5分で作ろう！ Azureモバイルサービスで簡単開発［Objective-C］ - Build Insider
+
+【AWS】
+
+細田
+・[AWS Lambda 開発者ガイド]
+https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/welcome.html
+
+・AWS Lambda入門
+https://www.udemy.com/course/aws-lambda-api/?srsltid=AfmBOooi8pdNN7YyTH49jIbnL-eFRIfLGNN_3CiSbPJQ_lUyGmZTQdr2
+
+<おまけ>
+データサイエンス研究所
+https://www.youtube.com/@dken
+
+--今村--
+・AWS生成AI体験ワークショップ（前回少し話したやつ）
+https://catalog.workshops.aws/generative-ai-use-cases-jp/ja-JP/overview/architecture
+
+・AWSの生成AI最新機能ハンズオン！BedrockのKnowledge BaseとAgentsに入門しよう
+https://qiita.com/minorun365/items/86a3667290a8e5657f65#knowledge-base-for-amazon-bedrock%E3%81%A8%E3%81%AF
+
+
+・【AWSハンズオン】Bedrockエージェントにプレゼン資料を作らせよう！（Googleスライド編）
+https://qiita.com/minorun365/items/9b4ae4d50a93123dd8c2#lambda%E9%96%A2%E6%95%B0%E3%81%AE%E8%A8%AD%E5%AE%9A
+
+
+・Amazon Bedrock を利用して、画像生成アプリケーションを開発してみた！
+https://aws.amazon.com/jp/builders-flash/202402/bedrock-image-generation/
+
+----
+--阿部--
+・サーバーレスのウェブアプリケーションを構築する
+https://aws.amazon.com/jp/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/
+
+
+吉住
+・リモートワーク環境の構築
+https://aws.amazon.com/jp/builders-flash/202311/build-secure-remote-work-system/
+
+
+村上
+・コラム
+iDATEN(韋駄天)｜ 担当者コラム
+
+
+２．今後の進め方
+
+・複数同時並行して準備しても良いのでは
+・研修資料の内容に追加してプラスの課題を思いつけば追加したい。
+
+[研修時期]
+2025年1月～2月
+
+[研修対象]
+・メインクエスト(メイン研修)
+AWS Lambda、Amazon API Gateway、AWS Amplify、Amazon DynamoDB、および Amazon Cognito を使用してサーバーレスウェブアプリケーションを構築する
+★各々上記の環境構築を試す(今村以外)
+
+・サブクエスト(追加課題)
+AWS Lambdaの無料チュートリアル - AWS Lambda入門 | Udemy
+　→個人アカウントで登録してもらう
+
+・今村クエスト(Googleスライド)
+https://qiita.com/minorun365/items/9b4ae4d50a93123dd8c2#lambda%E9%96%A2%E6%95%B0%E3%81%AE%E8%A8%AD%E5%AE%9A
+★環境構築試す(今村)
+
+[仮スケジュール]
+12月前半：テーマ決定
+12月～1月前半：研修準備、環境準備、研修募集
+1月後半～2月頭：研修実施
+
+３．その他
+・Azure見離されてる
+・AzureないしはM365の認証をAWSに連携したりとかで活用できないか
+・AzureからAWSに環境移行するとか
+
+★AWSアカウントを配布する(松原)
+
+
+４．次回日程
+第一候補：12/13(金)
+第二候補：12/19(木)
