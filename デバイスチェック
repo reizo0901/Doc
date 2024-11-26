@@ -1,0 +1,57 @@
+デバイスのバージョンをチェックする。
+
+コメント付きのPowerShellコード
+
+param (
+    [string]$DeviceName,     # デバイス名を指定する引数
+    [string]$DriverVersion   # 確認するドライバーバージョンを指定する引数
+)
+
+# 関数: Check-DriverVersion
+# 指定されたデバイス名とドライバーバージョンを比較し、結果を返します。
+function Check-DriverVersion {
+    param (
+        [string]$DeviceName,     # デバイス名
+        [string]$DriverVersion   # 確認するドライバーバージョン
+    )
+
+    # Win32_PnPSignedDriverクラスを使用してデバイス情報を取得
+    # 指定されたデバイス名と一致するものをフィルタリング
+    $devices = Get-WmiObject Win32_PnPSignedDriver | Where-Object { $_.DeviceName -eq $DeviceName }
+
+    # デバイスが存在する場合
+    if ($devices) {
+        foreach ($device in $devices) {
+            # ドライバーバージョンが一致する場合はtrueを返す
+            if ($device.DriverVersion -eq $DriverVersion) {
+                return $true
+            }
+        }
+    }
+
+    # デバイスが存在しない、またはバージョンが一致しない場合はfalseを返す
+    return $false
+}
+
+# 関数を呼び出して結果を出力
+# 引数として受け取ったデバイス名とドライバーバージョンを使用
+Check-DriverVersion -DeviceName $DeviceName -DriverVersion $DriverVersion
+
+使用方法
+
+	1.	このスクリプトをファイル（例: CheckDriver.ps1）に保存します。
+	2.	PowerShellターミナルでスクリプトを実行します。
+
+コマンド例:
+
+.\CheckDriver.ps1 -DeviceName "Intel(R) Ethernet Connection" -DriverVersion "12.17.10.7"
+
+コメントの説明
+
+	•	param セクションでは、スクリプトに渡される引数（デバイス名とドライバーバージョン）を定義しています。
+	•	Get-WmiObject コマンドレットを使い、指定されたデバイス名のドライバー情報を取得しています。
+	•	Where-Object を使い、デバイス名で絞り込みを行っています。
+	•	foreach ループで一致するデバイスを確認し、ドライバーバージョンを比較しています。
+	•	結果に応じて true または false を返します。
+
+これで、スクリプトの仕組みや目的が明確になるはずです。
