@@ -1,0 +1,143 @@
+●requestsを使った解決方法
+
+import json
+import requests
+from bs4 import BeautifulSoup
+
+# メインのLambda関数
+def lambda_handler(event, context):
+    # イベントパラメータから検索クエリを取得
+    query = next(
+        (item["value"] for item in event["parameters"] if item["name"] == "query"), ""
+    )
+
+    # DuckDuckGoを使用して検索を実行
+    url = f"https://duckduckgo.com/html/?q={query}"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # 検索結果を解析
+    results = []
+    for result in soup.find_all('div', class_='result'):
+        title = result.find('a', class_='result__a').text
+        body = result.find('a', class_='result__snippet').text
+        results.append({'title': title, 'body': body})
+
+    # 検索結果をフォーマット
+    summary = "\n\n".join(
+        [f"タイトル: {result['title']}\n要約: {result['body']}" for result in results]
+    )
+
+    # レスポンスの作成と返却
+    return {
+        "messageVersion": "1.0",
+        "response": {
+            "actionGroup": event["actionGroup"],
+            "function": event["function"],
+            "functionResponse": {
+                "responseBody": {
+                    "TEXT": {
+                        "body": json.dumps({"summary": summary}, ensure_ascii=False)
+                    }
+                }
+            },
+        },
+    }
+
+
+requestsモジュールを使用するためのLambdaレイヤーを作成する手順を以下に示します。
+
+手順1: レイヤー用のディレクトリを作成
+まず、レイヤー用のディレクトリを作成します。
+
+mkdir python
+手順2: 必要なライブラリをインストール
+次に、requestsモジュールを含む必要なライブラリをインストールします。
+
+pip install -t python requests boto3 google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+手順3: インストールしたライブラリをZIP圧縮
+インストールしたライブラリを含むディレクトリをZIPファイルに圧縮します。
+
+zip -r layer.zip python
+手順4: レイヤーの作成
+AWS Lambdaコンソールを使用してレイヤーを作成します。
+
+AWS Lambdaコンソールを開きます。
+左側のナビゲーションペインで「レイヤー」を選択します。
+「レイヤーの作成」をクリックします。
+レイヤーの名前を入力します（例: my-python-requests-layer）。
+先ほど作成したZIPファイル（layer.zip）をアップロードします。
+対応するランタイム（例: Python 3.12）を選択します。
+「作成」をクリックします。
+手順5: レイヤーをLambda関数に追加
+最後に、作成したレイヤーをLambda関数に追加します。
+
+AWS Lambdaコンソールで対象のLambda関数を開きます。
+「レイヤー」セクションまでスクロールします。
+「レイヤーの追加」をクリックします。
+「カスタムレイヤー」を選択し、先ほど作成したレイヤーを選択します。
+「追加」をクリックします。
+これで、Lambda関数でrequestsモジュールを使用できるようになります。何か他にお手伝いできることがあれば教えてください！
+
+
+●duckduckpyを使った解決方法
+
+import json
+from duckduckpy import query
+
+# メインのLambda関数
+def lambda_handler(event, context):
+    # イベントパラメータから検索クエリを取得
+    query_text = next(
+        (item["value"] for item in event["parameters"] if item["name"] == "query"), ""
+    )
+
+    # DuckDuckPyを使用して検索を実行
+    results = query(query_text)
+
+    # 検索結果をフォーマット
+    summary = "\n\n".join(
+        [f"タイトル: {result['title']}\n要約: {result['text']}" for result in results]
+    )
+
+    # レスポンスの作成と返却
+    return {
+        "messageVersion": "1.0",
+        "response": {
+            "actionGroup": event["actionGroup"],
+            "function": event["function"],
+            "functionResponse": {
+                "responseBody": {
+                    "TEXT": {
+                        "body": json.dumps({"summary": summary}, ensure_ascii=False)
+                    }
+                }
+            },
+        },
+    }
+
+
+
+手順1: レイヤー用のディレクトリを作成
+mkdir python
+手順2: 必要なライブラリをインストール
+pip install -t python boto3 duckduckpy google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+手順3: インストールしたライブラリをZIP圧縮
+zip -r layer.zip python
+これで、DuckDuckPyを含むレイヤーが作成されます。次に、このレイヤーをAWS Lambdaに追加する手順を行います。
+
+手順4: レイヤーの作成
+AWS Lambdaコンソールを開きます。
+左側のナビゲーションペインで「レイヤー」を選択します。
+「レイヤーの作成」をクリックします。
+レイヤーの名前を入力します（例: my-python-duckduckpy-layer）。
+先ほど作成したZIPファイル（layer.zip）をアップロードします。
+対応するランタイム（例: Python 3.12）を選択します。
+「作成」をクリックします。
+手順5: レイヤーをLambda関数に追加
+AWS Lambdaコンソールで対象のLambda関数を開きます。
+「レイヤー」セクションまでスクロールします。
+「レイヤーの追加」をクリックします。
+「カスタムレイヤー」を選択し、先ほど作成したレイヤーを選択します。
+「追加」をクリックします。
+これで、Lambda関数でDuckDuckPyを使用できるようになります。何か他にお手伝いできることがあれば教えてください！
