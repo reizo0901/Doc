@@ -1,0 +1,72 @@
+システム	CPU	メモリ	ディスク	OS
+1	4vCPU	16GB	1125GB	Windows Server
+2	4vCPU	16GB	1125GB	Windows Server
+3	4vCPU	8GB	1125GB	Windows Server
+4	4vCPU	8GB	13125GB	Windows Server
+5	4vCPU	64GB	23125GB	Windows Server
+6	4vCPU	12GB	625GB	Windows Server
+7	8vCPU	16GB	1125GB	Windows Server
+8	4vCPU	12GB	625GB	Windows Server
+9	4vCPU	16GB	5625GB	Windows Server
+10	4vCPU	12GB	625GB	Windows Server
+11	8vCPU	16GB	1125GB	Windows Server
+12	4vCPU	12GB	625GB	Windows Server
+13	4vCPU	16GB	5625GB	Windows Server
+14	8vCPU	36GB	1125GB	Windows Server
+15	4vCPU	24GB	1125GB	Windows Server
+16	2vCPU	24GB	625GB	Windows Server
+17	4vCPU	24GB	4625GB	Windows Server
+18	2vCPU	8GB	1125GB	Windows Server
+19	2vCPU	8GB	1125GB	Windows Server
+20	2vCPU	8GB	1125GB	Windows Server
+21	2vCPU	12GB	625GB	Windows Server
+22	2vCPU	16GB	4125GB	Windows Server
+23	8vCPU	36GB	1125GB	Windows Server
+24	2vCPU	8GB	1125GB	Windows Server
+25	2vCPU	12GB	625GB	Windows Server
+26	4vCPU	12GB	1625GB	Linux
+27	4vCPU	12GB	1625GB	Windows Server
+28	4vCPU	12GB	1625GB	Linux
+29	4vCPU	12GB	1625GB	Windows Server
+30	8vCPU	32GB	2125GB	Windows Server
+31	4vCPU	16GB	625GB	Windows Server
+32	2vCPU	8GB	1125GB	Windows Server
+33	8vCPU	32GB	4625GB	Windows Server
+34	4vCPU	16GB	125GB	Windows Server
+35	4vCPU	12GB	1125GB	Windows Server
+36	4vCPU	24GB	625GB	Windows Server
+37	7vCPU	28GB	625GB	Linux
+38	7vCPU	28GB	625GB	Linux
+39	7vCPU	28GB	625GB	Linux
+40	15vCPU	48GB	625GB	Windows Server
+41	15vCPU	48GB	625GB	Windows Server
+42	36vCPU	96GB	1625GB	Linux
+43	36vCPU	96GB	1625GB	Linux
+44	11vCPU	48GB	625GB	Linux
+45	11vCPU	48GB	625GB	Linux
+46	11vCPU	48GB	625GB	Linux
+47	6vCPU	12GB	1625GB	Linux
+48	6vCPU	12GB	1625GB	Linux
+49	10vCPU	28GB	1625GB	Windows Server
+50	10vCPU	28GB	1625GB	Windows Server
+51	2vCPU	8GB	1125GB	Windows Server
+52	2vCPU	16GB	2125GB	Windows Server
+53	2vCPU	8GB	1625GB	Windows Server
+54	1vCPU	8GB	625GB	Windows Server
+55	4vCPU	32GB	625GB	Windows Server
+56	8vCPU	32GB	8325GB	Linux
+57	4vCPU	16GB	1125GB	Linux
+58	4vCPU	16GB	1125GB	Linux
+59	4vCPU	16GB	625GB	Linux
+60	4vCPU	16GB	625GB	Linux
+61	4vCPU	16GB	625GB	Linux
+62	4vCPU	8GB	625GB	Windows Server
+63	4vCPU	16GB	625GB	Windows Server
+64	4vCPU	8GB	62GB	Windows Server
+65	4vCPU	8GB	1125GB	Windows Server
+66	3vCPU	12GB	425GB	Windows Server
+67	2vCPU	8GB	625GB	Windows Server
+68	3vCPU	12GB	125GB	Windows Server
+69	2vCPU	8GB	125GB	Windows Server
+70	3vCPU	12GB	125GB	Windows Server
+71	2vCPU	8GB	125GB	Windows Server
