@@ -1,3 +1,5 @@
+PowerShellをマスターして楽をしよう！ 第１章 コマンド編
+
 ●PowerShellとは？
 
 PowerShellは、Microsoftが開発した強力なタスク自動化および構成管理フレームワークで、.NET Framework上に構成されています。
@@ -7,13 +9,9 @@ PowerShellは、Microsoftが開発した強力なタスク自動化および構�
 以下の特徴があります：
 
 コマンドラインシェル：従来のコマンドプロンプトに代わるもので、より高度な操作が可能です。
-
 スクリプト言語：複雑なタスクを自動化するためのスクリプトを簡単に作成できます。
-
 オブジェクト指向：コマンドの出力がテキストではなくオブジェクトとして扱われるため、データの操作を直感的に行うことができます。
-
 クロスプラットフォーム：Windowsだけでなく、macOSやLinuxでも動作します。
-
 クラウド操作：「Azure PowerShellモジュール」や「AWS Tools for Powershell」をインストールすることにより、AzureやAWSなどのクラウドサービスの管理や操作も簡単に行えるようになります。
 
 以上のように色々なことができるPowerShellですが、書き方には少し癖があるところもあるので、使いこなせるように頑張りましょう！
@@ -40,33 +38,55 @@ PowerShellで実行可能な命令として以下の３つの要素がありま�
 ここからは実際にコマンドレットを実行してPowerShellに慣れていきましょう。
 まずは実行結果に違いが出ないように、チュートリアル用として以下のフォルダとファイルを作成します。
 
-<フォルダ>
-c:\ps_test
-<ファイル>
-c:\ps_test\test1.txt
-c:\ps_test\test2.txt
-c:\ps_test\test3.dat
-c:\ps_test\test4.dat
-c:\ps_test\test5.log
-c:\ps_test\test6.log
+C:\PS_TEST
+│  test1.txt
+│  test2.txt
+│  test3.dat
+│  test4.dat
+│  test5.log
+│  test6.log
+│
+├─subfolder1
+│      aaaaa.txt
+│      bbbbb.txt
+│
+└─subfolder2
+        ccccc.txt
+        ddddd.txt
 
 PowerShellを起動してみましょう！
 
 ・「Windows + R」キーを押して「ファイル名を指定して実行」ダイアログを開き、「powershell」と入力してEnterキーを押します。
+作業ウインドウの区別がつくように次のコマンドも実行しておいてください。
+
+$host.UI.RawUI.WindowTitle = "PowerShellチュートリアル用"
+開いたウインドウに名前が付きます。
 
 コマンドプロンプトとの動作の違いも確認するので、コマンドプロンプトも起動しておきましょう！
 
 ・「Windows + R」キーを押して「ファイル名を指定して実行」ダイアログを開き、「cmd」と入力してEnterキーを押します。
+同じように次のコマンドを実行して、ウインドウに名前を付けましょう。
+
+title コマンドプロンプトチュートリアル用
+
+それぞれのウインドウに名前が付いたと思います。
+Windows11を使っている場合は、どちらのウインドウ内の色が黒になっていますので、これでわかりやすくなります。
 
 PowerShellの画面で以下のコマンド実行すると、上記のフォルダとファイルが作成され、「c:\ps_test」に遷移します。
 
 mkdir c:\ps_test
+mkdir c:\ps_test\subfolder1
+mkdir c:\ps_test\subfolder2
 echo test1テキスト > c:\ps_test\test1.txt
 echo test2テキスト > c:\ps_test\test2.txt
 echo test3データ > c:\ps_test\test3.dat
 echo test4データ > c:\ps_test\test4.dat
 echo test5ログ > c:\ps_test\test5.log
 echo test6ログ > c:\ps_test\test6.log
+echo aaaaa > c:\ps_test\subfolder1\aaaaa.txt
+echo bbbbb > c:\ps_test\subfolder1\bbbbb.txt
+echo ccccc > c:\ps_test\subfolder2\ccccc.txt
+echo ddddd > c:\ps_test\subfolder2\ddddd.txt
 cd c:\ps_test
 
 コマンドプロンプトの画面でも「c:\ps_test」に遷移しておきましょう。
@@ -122,27 +142,37 @@ get-help <説明を見たいコマンドレット名> または -? オプショ�
 
 コマンドレット(cmdlet)と一部のファンクションのコマンド名は「動詞-名詞」の形で命名されています。
 
-<コマンドの一例>
+<コマンドレット一覧>
 
-Get-Commnad コマンドの一覧をゲットする。
-Set-Location ロケーションをセットする。
-Start-Service サービスを開始する。
-
-Select-Object オブジェクトを選択する。
-New-EventLog イベントログを作成する。
+Set-Location ロケーションをセットする。(コマンドプロンプトのcdと同じ機能)
+Get-childItem フォルダやファイルの一覧を取得する。(コマンドプロンプトのdirと同じ機能)
+Move-Item アイテムを移動する。(コマンドプロンプトのmvと同じ機能)
+Copy-Item アイテムを複製する。(コマンドプロンプトのcopyと同じ機能)
+Rename-Item アイテムの名前を変更する。(コマンドプロンプトのrenと同じ機能)
+Remove-Item アイテムを削除する。(コマンドプロンプトのdelやrm、rmdirと同じ機能)
+Clear-Host 画面をクリアする。(コマンドプロンプトのclsと同じ機能)
+Write-Host 指定の文字を画面に表示する。(コマンドプロンプトのechoと同じ機能)
+Get-Content ファイルの内容を表示する。(コマンドプロンプトのtypeと同じ機能)
+Select-String 文字を検索する。(コマンドプロンプトのfindと同じ機能)
+Get-computerinfo システム情報を取得する。(コマンドプロンプトのsysteminfoと同じ機能)
+Start-Service サービスを開始する。(コマンドプロンプトのnet startと同じ機能)
+Get-ScheduledTask タスクスケジュールの設定を表示する。(コマンドプロンプトのschtasksと同じ機能)
+New-EventLog イベントログを作成する。(コマンドプロンプトのwevtutilと同じ機能)
+Select-Object オブジェクトを選択する。(コマンドプロンプトに該当するコマンドはありません)
+Where-Object オブジェクトの条件を指定する。(コマンドプロンプトに該当するコマンドはありません)
 
 ●コマンドレットを使ってみよう
 
 例として、次のコマンドでファイルの一覧を出力してみましょう。
 
-(1)コマンドプロンプト風コマンド
+(1)PowerShell用のコマンド
+> get-childitem
+
+(2)コマンドプロンプト風コマンド
 > dir
 
-(2)linuxコンソール風コマンド
+(3)linuxコンソール風コマンド
 > ls
-
-(3)PowerShell用のコマンド
-> get-childitem
 
 (4)PowerShell用の短縮されたコマンド
 > gci
@@ -162,22 +192,37 @@ PowerShellでは、DOSコマンドやLinuxと同じようなコマンドで入�
 dirコマンドの元になっているコマンドレットを、次のコマンドで見てみましょう。
 
 > Get-Alias dir
+> Get-Alias ls
+> Get-Alias gci
 
 <実行結果>
 
-dirコマンドはGet-ChildItemのエイリアス(別名)ということがわかります。
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           dir -> Get-ChildItem
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           ls -> Get-ChildItem
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           gci -> Get-ChildItem
+
+
+それぞれのコマンドはGet-ChildItemのエイリアス(別名)ということがわかります。
 
 「Get-Alias」は引数を入れないで実行すると、設定されているすべてのエイリアスが表示されます。
+
+<実行結果>
 
 結構な量のエイリアスが割り当てられていますね。
 「Set-Alias」を使って自分で割り当てることも出来ます。
 
-「Get-Help」を使ってコマンドの説明を表示する時も、エイリアス名で検索をすることができますが、説明自体は元のコマンドレットの名前で表示されるので、注意が必要です。
-
 ●PowerShellが返してくるオブジェクトを理解しよう
 
 PowerShellの大きな特徴として、コマンドレットの実行結果はオブジェクト形式で返ってきます。
-コマンドプロンプトでコマンドを実行して返ってくる結果はテキスト形式で返ってきます。
+ちなみにコマンドプロンプトでの実行結果はすべてテキスト形式で返ってきます。
 
 難しそうですが、理解できればPowerShellを有効に使うことができるようになります。
 逆にここを理解しないと、PowerShellを使いこなすことができないとも言えます。
@@ -185,7 +230,6 @@ PowerShellの大きな特徴として、コマンドレットの実行結果は�
 簡単にDirコマンドを実行した際に引き渡されるデータを見てみましょう。
 作成したチュートリアル用のフォルダに遷移します。
 
-cd c:\ps_test
 [コマンドプロンプトで操作]
 
 c:\ps_test>dir test1.txt
@@ -241,7 +285,7 @@ c:\ps_test のディレクトリ
 
 [PowerShellで操作]
 
-foreach($a in dir test1.txt| select *){write-host $a}
+foreach($a in dir test1.txt| select-object *){write-host $a}
 説明：
 dir(Get-ChildItem)コマンドレットでtest1.txtファイルの検索指定で実行した際に、返ってきているオブジェクト内容のすべてを画面に表示しています。
 
@@ -264,8 +308,7 @@ Language:
 
 test1.txtファイルの情報が詳しく出力されていることがわかります。
 
-このようにPowerShellのコマンドレットが返してくる値は、文字列ではなく複数の情報を持ったオブジェクトとして
-構成されています。
+このようにPowerShellのコマンドレットが返してくる値は、文字列ではなく複数の情報を持ったオブジェクトとして構成されています。
 
 ●パイプラインとフィルタリングについて
 
@@ -273,16 +316,13 @@ test1.txtファイルの情報が詳しく出力されていることがわか�
 
 パイプラインとは
 コマンドの出力を次のコマンドの入力として渡す仕組みです。これにより、複雑な処理を簡潔に記述できます。
-PowerShellでは出力されたオブジェクトを元データとして次のコマンドで処理を行うことができます。
+PowerShellでは出力されたオブジェクトを次のコマンドにそのまま渡して処理を行うことができます。
+※コマンドプロンプトにもパイプラインの処理はありますが、出力されている文字列に対して処理がされます。
 
 フィルタリングとは
 パイプラインと組み合わせて、コマンドの出力結果から必要なものだけを取り出すことができます。
 
-次からパイプとフィルタリングを使って理解を深めていきましょう。
-
-「Get-ChildItem」を実行するとカレントプロンプトにあるフォルダやファイルの一覧が表示されます。
-
-●Where-Object 条件を設定する。
+●Where-Objectを使って抽出を設定する。
 
 フィルタを使って拡張子が「.txt」のものだけを取得したい場合は、以下の様に記述します。
 
@@ -304,29 +344,44 @@ Get-ChildItem *.txt
 
 ●Select-Object 出力される内容を選択する。
 
-画面に出力される項目を選択してみましょう。
-ファイル名、フルパス、フォルダ名、最終更新日時、ファイルサイズを選択してみましょう。
+次のコマンドでファイル名、フルパス、フォルダ名、最終更新日時、ファイルサイズを選択して表示してみましょう。
 
 Get-ChildItem | Select-Object name,fullname,directoryname,lastwritetime,length | Where-Object Name -Like '*.txt'
 
-引き渡されたオブジェクトに対して、Select-Objectを使うことで項目を選択することができます。
+出力結果：
+
+Name          : test1.txt
+FullName      : C:\ps_test\test1.txt
+DirectoryName : C:\ps_test
+LastWriteTime : 2025/02/09 20:15:30
+Length        : 24
+
+Name          : test2.txt
+FullName      : C:\ps_test\test2.txt
+DirectoryName : C:\ps_test
+LastWriteTime : 2025/02/09 20:15:30
+Length        : 24
+
+c:\ps_testフォルダ内の２つのファイルの指定した表示項目で出力されましたね。
+オブジェクトに対して、Select-Objectを使うことで表示する項目を選択することができます。
 
 ●format 画面出力の形式を変える。
 
 先ほどの出力結果と表示方法が変わってしまっていますね。
 画面出力の書式を設定してみましょう。
 
-Get-ChildItem | Select name,fullname,directoryname,lastwritetime,length | format-table
+Get-ChildItem | Select name,fullname,directoryname,lastwritetime,length | Where-Object Name -Like '*.txt' | format-table
 
-横一列に表示されましたね。
+テーブル形式で表示されましたね。
+用途にあわせて、画面出力する書式を変更することができます。
 
-画面表示で利用されるFormatコマンドは以下の５通りがあります。
+画面出力で利用されるFormatコマンドは以下の５通りがあります。
 
-Format-Table：テーブル形式でオブジェクトを表示します。項目の下にそれぞれの値が表示されます。
-Format-List：リストの形式でオブジェクトを表示します。各プロパティはラベル付けされ、別々の行に表示されます。
-Format-Wide：単一項目形式
-Format-Hex：16進数でオブジェクトを表示します。元のデータによっては表示ができない場合があります。
-Format-Custom：カスタマイズした形式でオブジェクトを表示します。事前にカスタムビューを作成する必要があります。
+Format-Table(エイリアス:ft)：テーブル形式でオブジェクトを表示します。項目の下にそれぞれの値が表示されます。
+Format-List(エイリアス:fl)：リストの形式でオブジェクトを表示します。各プロパティはラベル付けされ、別々の行に表示されます。
+Format-Wide(エイリアス:fw)：単一項目形式
+Format-Hex(エイリアス:fhx)：16進数でオブジェクトを表示します。元のデータによっては表示ができない場合があります。
+Format-Custom(エイリアス:fc)：カスタマイズした形式でオブジェクトを表示します。事前にカスタムビューを作成する必要があります。
 
 「Format-Table」「Format-List」の２つだけ覚えておけば普段使いには困りません。
 
@@ -335,11 +390,9 @@ Format-Custom：カスタマイズした形式でオブジェクトを表示し�
 結果を画面上で確認する場合は項目単位でソートされているほうが何かと都合がよい時があります。
 画面に出力される情報を指定した項目でソートしてみましょう。
 
+●抽出したオブジェクトをファイルに出力する。
 
-
-●抽出したオブジェクトをファイルやクリップボードに出力する。
-
-Formatコマンドで画面への出力を設定していましたが、ファイルやクリップボードへの出力についても練習してみましょう。
+Formatコマンドで画面への出力を設定していましたが、ファイルへの出力についても練習してみましょう。
 
 ○テキストファイルとして出力してみよう。
 
@@ -358,6 +411,13 @@ Export-CliXml -Path <出力ファイル名>
 
 ●クリップボードを使ってPowerShellをもっと便利に
 
+クリップボードに格納する場合は、Set-Clipboardコマンドレットを使用します。
+
+次のコマンドレットを実行して、ファイルの一覧情報をクリップボードに格納してみましょう。
+
+クリップボードに格納する場合は、Set-Clipboardコマンドレットを使用します。
+
+Get-ChildItem "C:\path\to\folder" |  ConvertTo-Csv -NoTypeInformation -Delimiter "'t" | Set-Clipboard
 
 
 
@@ -367,6 +427,146 @@ Export-CliXml -Path <出力ファイル名>
 
 
 
+
+
+################################################################################
+
+●PowerShellではプロバイダーにアクセスすることで様々な情報を操作することができます。
+※この仕組みはPowerShellから実装された機能のひとつで、使い方を理解しておくともっと便利にPowerShellを使うことができるようになります。
+
+PowerShellでいうプロバイダーとは、特定のデータストア（例えばファイルシステム、レジストリ、環境変数など）に
+アクセスし、操作するための仕組みです。プロバイダーを使うと、これらのデータストアをファイルシステムのように扱うことができます。
+
+それでは、次のコマンドレットを使って、どのようなプロバイダーがあるか確認してみましょう。
+
+Get-PsDrive
+
+利用可能なプロバイダの一覧が表示されます。
+この一覧の「Provider」項目に出力されている内容が、Providerの種類になっています。
+
+以下のような出力がされていると
+
+Name           Used (GB)     Free (GB) Provider      Root                                               CurrentLocation
+----           ---------     --------- --------      ----                                               ---------------
+Alias                                  Alias
+C                 385.54         75.16 FileSystem    C:\                                                    Users\giken
+Cert                                   Certificate   \
+D                                      FileSystem    D:\
+Env                                    Environment
+Function                               Function
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+Variable                               Variable
+WSMan                                  WSMan
+
+以下に、代表的なプロバイダーの種類とその内容を説明します。
+
+1. FileSystem
+　ファイルシステムプロバイダーは、ローカルおよびネットワーク上のファイルシステムドライブを扱います。
+　※これはコマンドプロンプトで扱えていたWindowsFileSystemと同じものになります。例：cd c:
+2. Registry
+　レジストリプロバイダーは、Windowsレジストリのキーと値をドライブとして扱います。
+　レジストリプロバイダーはHKCUとHKLMの２つにアクセスできるようになっています。例：cd HKCU
+3. Certificate
+　証明書プロバイダーは、証明書ストアをドライブとして扱います。例：cd Cert:
+4. Environment
+　環境変数プロバイダーは、環境変数をドライブとして扱います。例：cd Env:
+5. Function
+　関数プロバイダーは、PowerShell関数をドライブとして扱います。例：cd Function:
+6. Alias
+　エイリアスプロバイダーは、PowerShellエイリアスをドライブとして扱います。例：cd Alias:
+7. Variable
+　変数プロバイダーは、PowerShell変数をドライブとして扱います。例：cd Variable:
+8. WSMan
+　WSManプロバイダーは、WS-Management（Windowsリモート管理）設定をドライブとして扱います。例：cd WSMan:
+
+次のコマンドレットを実行し、利用可能なプロバイダを調べてみましょう。
+
+Get-PsDrive
+
+利用可能なプロバイダの一覧が表示されます。
+この一覧の「Provider」項目に出力されている内容が、Providerの種類になっています。
+
+以下のような出力がされていると
+
+Name           Used (GB)     Free (GB) Provider      Root                                               CurrentLocation
+----           ---------     --------- --------      ----                                               ---------------
+Alias                                  Alias
+C                 385.54         75.16 FileSystem    C:\                                                    Users\giken
+Cert                                   Certificate   \
+D                                      FileSystem    D:\
+Env                                    Environment
+Function                               Function
+HKCU                                   Registry      HKEY_CURRENT_USER
+HKLM                                   Registry      HKEY_LOCAL_MACHINE
+Variable                               Variable
+WSMan                                  WSMan
+
+例えば、FileSystemのものだけを表示したい場合は以下のように記述します。
+
+Get-PsDrive -PSProvider 'FileSystem'
+もしくは
+Get-PsDrive | Where-Object Provider -like 'Microsoft.PowerShell.Core\FileSystem'
+
+FileSystemで扱えるドライブだけが表示されました。
+
+
+証明書ストアを覗いてみましょう。
+
+cd cert:
+
+Get-ChildItem
+または
+dir
+または
+ls
+
+これで証明書ストアに入れました。簡単ですね。
+ルート証明書のストアに遷移してみましょう。
+
+cd Root
+
+Get-ChildItem
+または
+dir
+または
+ls
+
+ルート証明書ストアに遷移されました。
+詳しい情報を確認した場合は、そうです！ | format-listをつけるだけです。
+
+Get-ChildItem | format-list
+または
+dir | format-list
+または
+ls | fl
+
+各証明書の詳細情報が出力されます。
+
+せっかくなので、情報をcsvで出力してみましょう。
+
+Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation
+
+これでCSV形式で「c:\work\certcsv.csv」に出力されます。
+エクセルやメモ帳で内容を確認してみましょう。
+
+一部文字化けしているところがありますね。←環境によっては発生しない。
+
+次の様に直して再度実行してみましょう。
+
+Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation -Encoding UTF8
+
+今度は正しく出力されていますね。
+詳細設計書にパラメータを載せる時は、ほぼ編集がいらないため間違いもなく便利です。
+
+│文字化けの原因としては、PowerShellのExport-CSVはデフォルトでUTF-8エンコーディングが使用されます。
+│しかし、特定の環境やアプリケーション(EXCELなど)ではUTF-8を正しく認識できことがあるため、違う文字コード
+│として認識し、画面表示を行うため文字化けが発生します。
+│またシステムのデフォルトエンコーディングとExport-CSVで使用されるエンコーディングがあっていない場合も
+│同様の現象が発生します。
+│Export-CSVのオプションで「-encoding UTF8」を明示することにより、この事象を回避することができます。
+
+################################################################################
 
 ●オブジェクトの画面標準出力の項目とカスタムプロパティについて
 
@@ -469,47 +669,7 @@ Name='ProductVersion' ← プロパティに名前を付けています。ここ
 
 オブジェクトに入っている情報は、正しく記述することで簡単に取り出すことができます。
 
-●PowerShellでは様々な情報にアクセスし操作することができます。
-※この仕組みはPowerShellから実装された機能のひとつで、使い方を理解しておくと色々と役に立ちます。
-
-↑プロバイダー？何言ってるのってなると思います。構えないでください。分かり易く説明します。
-PowerShellでいうプロバイダーとは、特定のデータストア（例えばファイルシステム、レジストリ、環境変数など）に
-アクセスし、操作するための仕組みです。プロバイダーを使うと、これらのデータストアをファイルシステムのように扱うことができます。
-
-以下に、代表的なプロバイダーの種類とその内容を説明します。
-
-1. FileSystem
-　ファイルシステムプロバイダーは、ローカルおよびネットワーク上のファイルシステムドライブを扱います。
-　※これはコマンドプロンプトで扱えていたWindowsFileSystemと同じものになります。
-2. Registry
-　レジストリプロバイダーは、Windowsレジストリのキーと値をドライブとして扱います。
-3. Certificate
-　証明書プロバイダーは、証明書ストアをドライブとして扱います。例：Cert:\
-4. Environment
-　環境変数プロバイダーは、環境変数をドライブとして扱います。例：Env:\
-5. Function
-　関数プロバイダーは、PowerShell関数をドライブとして扱います。例：Function:\
-6. Alias
-　エイリアスプロバイダーは、PowerShellエイリアスをドライブとして扱います。例：Alias:\
-7. Variable
-　変数プロバイダーは、PowerShell変数をドライブとして扱います。例：Variable:\
-8. WSMan
-　WSManプロバイダーは、WS-Management（Windowsリモート管理）設定をドライブとして扱います。例：WSMan:\
-
-次のコマンドレットを実行し、利用可能なプロバイダを調べてみましょう。
-
-Get-PsDrive
-
-利用可能なプロバイダの一覧が表示されます。
-この一覧の「Provider」項目に出力されている内容が、Providerの種類になっています。
-
-例えば、FileSystemのものだけを表示したい場合は以下のように記述します。
-
-Get-PsDrive -PSProvider 'FileSystem'
-もしくは
-Get-PsDrive | Where-Object Provider -like 'Microsoft.PowerShell.Core\FileSystem'
-
-FileSystemで扱えるドライブだけが表示されました。
+################################################################################
 
 先ほども「●PowerShellのGet系のコマンドレットを理解しよう。」で触れましたが、
 
@@ -574,60 +734,8 @@ Get-ChildItemでよく使われるオプション
 検索対象をシステムファイルとフォルダにします。
 -System
 
-証明書ストアを覗いてみましょう。
+################################################################################
 
-cd cert:
-
-Get-ChildItem
-または
-dir
-または
-ls
-
-これで証明書ストアに入れました。簡単ですね。
-ルート証明書のストアに遷移してみましょう。
-
-cd Root
-
-Get-ChildItem
-または
-dir
-または
-ls
-
-ルート証明書ストアに遷移されました。
-詳しい情報を確認した場合は、そうです！ | format-listをつけるだけです。
-
-Get-ChildItem | format-list
-または
-dir | format-list
-または
-ls | fl
-
-各証明書の詳細情報が出力されます。
-
-せっかくなので、情報をcsvで出力してみましょう。
-
-Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation
-
-これでCSV形式で「c:\work\certcsv.csv」に出力されます。
-エクセルやメモ帳で内容を確認してみましょう。
-
-一部文字化けしているところがありますね。←環境によっては発生しない。
-
-次の様に直して再度実行してみましょう。
-
-Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation -Encoding UTF8
-
-今度は正しく出力されていますね。
-詳細設計書にパラメータを載せる時は、ほぼ編集がいらないため間違いもなく便利です。
-
-│文字化けの原因としては、PowerShellのExport-CSVはデフォルトでUTF-8エンコーディングが使用されます。
-│しかし、特定の環境やアプリケーション(EXCELなど)ではUTF-8を正しく認識できことがあるため、違う文字コード
-│として認識し、画面表示を行うため文字化けが発生します。
-│またシステムのデフォルトエンコーディングとExport-CSVで使用されるエンコーディングがあっていない場合も
-│同様の現象が発生します。
-│Export-CSVのオプションで「-encoding UTF8」を明示することにより、この事象を回避することができます。
 
 ●よく使うコマンドレット一覧と使い方
 お待たせしました。よく使うコマンドレット一覧を紹介します。
@@ -690,7 +798,8 @@ CSVファイルの内容を配列に格納
 
 ・パブリッククラウド系でよく使うコマンドレット一覧(Azure編)
 
-●PowerShellでプログラミングしてみよう。
+
+●PowerShellでプログラミングしてみよう。２章
 
 PowerShellは上から下へ、左から右へ処理が行われます。
 なに言ってるの？って思うかもしれませんが、PowerShellでプログラムを実行した時に
@@ -719,10 +828,6 @@ PowerShellは変数や配列のアドレスを関数に引き渡したりでき�
 普通の言語にはあるけどPowerShellに存在しない関数
 
 業務で使いやすい便利なコマンド一覧
-
-
-
-
 
 
 ※※※これより下はプログラムの管轄なので記載するか検討する。
@@ -838,4 +943,3 @@ PowerShellの添え字は0から始まるため、実際に配列に格納され
 構造体変数とは？
 
 構造体配列とは？
-
