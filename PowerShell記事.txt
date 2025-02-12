@@ -1,0 +1,1203 @@
+PowerShellで楽しようよ！
+
+細田 禮造
+Professional
+PowerShellとは？
+PowerShellは、Microsoftが開発した強力なタスク自動化および構成管理フレームワークで、.NET Framework上に構成されています。
+
+これにより、PowerShellは.NET Frameworkの豊富なライブラリや機能を直接的に利用することができます。
+
+PowerShellを使って、定例作業を自動化したり、複雑な作業をツール化することにより、作業効率を上げたり作業ミスを減らすことが簡単にできます。
+コマンド単体でも使いやすいものが多いので、使用頻度が高いものについては便利な使い方の紹介をしていきます。
+
+ 
+
+PowerShellは以下の特徴を持っています。
+
+ 
+
+特徴
+
+説明
+
+コマンドラインシェル	従来のコマンドプロンプトに代わるもので、より高度な操作が可能です
+スクリプト言語	複雑なタスクを自動化するためのスクリプトを簡単に作成できます。
+オブジェクト指向	コマンドの出力がテキストではなくオブジェクトとして扱われるため、データの操作を直感的に行うことができます。
+クロスプラットフォーム	Windowsだけでなく、macOSやLinuxでも動作します。
+クラウド操作	Azure PowerShellモジュールやAWS Tools for Powershellをインストールすることにより、AzureやAWSなどのクラウドサービスの管理や操作も簡単に行えるようになります。
+ 
+
+以上のように色々なことができるPowerShellですが、書き方には少し癖があるところもあるので、使いこなせるように頑張りましょう！
+
+ 
+
+Windows環境なら標準で開発環境も用意されているため、すぐに学習をスタートすることができます。
+
+また開発言語寄りのコーティングもできるため、バッチファイルの学習で挫折した方や、プログラム言語を学習したい人にもおすすめな言語と言えます。
+
+チュートリアルの準備
+ここからは実際にコマンドレットを実行してPowerShellに慣れましょう。
+チュートリアル用として以下のフォルダとファイルを作成していきます。
+
+C:\PS_TEST
+│  test1.txt
+│  test2.txt
+│  test3.dat
+│  test4.dat
+│  test5.log
+│  test6.log
+│
+├─subfolder1
+│      aaaaa.txt
+│      bbbbb.txt
+│
+└─subfolder2
+       ccccc.txt
+       ddddd.txt
+
+(1)それではPowerShellを起動してみましょう！
+
+・「Windows + R」キーを押して「ファイル名を指定して実行」ダイアログを開き、「powershell」と入力してEnterキーを押します。
+
+
+(2)作業ウインドウの区別がつくように次のコマンドも実行しておいてください。
+
+$host.UI.RawUI.WindowTitle = "PowerShellチュートリアル用"
+開いているPowerShellのウインドウに名前が付きます。
+
+(3)コマンドプロンプトとの動作の違いも確認したいので、コマンドプロンプトも起動しておきましょう！
+
+・「Windows + R」キーを押して「ファイル名を指定して実行」ダイアログを開き、「cmd」と入力してEnterキーを押します。
+
+(4)同じように次のコマンドを実行して、作業ウインドウに名前を付けましょう。
+
+title コマンドプロンプトチュートリアル用
+コマンドプロンプトのウインドウにも名前が付いたと思います。
+
+Windows11を使っている場合は、どちらのウインドウ内の色が黒になっていますので、これでわかりやすくなります。
+
+(5)次のコマンドをPowerShellの画面で実行してください。
+　先に記載したフォルダとファイルが作成され、「c:\ps_test」に遷移します。
+
+mkdir c:\ps_test
+mkdir c:\ps_test\subfolder1
+mkdir c:\ps_test\subfolder2
+echo test1テキスト > c:\ps_test\test1.txt
+echo test2テキスト > c:\ps_test\test2.txt
+echo test3データ > c:\ps_test\test3.dat
+echo test4データ > c:\ps_test\test4.dat
+echo test5ログ > c:\ps_test\test5.log
+echo test6ログ > c:\ps_test\test6.log
+echo aaaaa > c:\ps_test\subfolder1\aaaaa.txt
+echo bbbbb > c:\ps_test\subfolder1\bbbbb.txt
+echo ccccc > c:\ps_test\subfolder2\ccccc.txt
+echo ddddd > c:\ps_test\subfolder2\ddddd.txt
+cd c:\ps_test
+(6)コマンドプロンプトの画面でも「c:\ps_test」に遷移しておきましょう。
+
+cd c:\ps_test
+これで学習の準備が整いました。
+
+PowerShellを構成する要素
+PowerShellで実行可能な命令として以下の３つの要素があります。
+
+ 
+
+要素
+
+説明
+
+コマンドレット(cmdlet)	PowerShellのベースとなるコマンド群で、特定のタスクを実行するための小さなプログラム。
+ファンクション(function)	カスタムコマンドで、複数のcmdletや他の関数を組み合わせて使用します。
+エイリアス(alias)	Cmdletや関数の短縮名で、入力を簡略化するために使用。
+次のコマンドを入力して要素の一覧を確認してみましょう。
+
+get-command
+コマンドレット、ファンクション、エイリアスの一覧が表示されましたね。
+
+☞コマンドレットの説明を見るには？
+
+ 
+
+get-help <説明を見たいコマンドレット名> または -? オプションをつけます。
+
+get-help get-command
+または、
+
+get-command -?
+もっと詳しい説明を見たい場合は、「-detailed」を最後に引数で渡します。
+
+get-help get-command -detailed
+使い他の例を見たい場合は、「-examples」を最後に引数で渡します。
+
+get-help get-command -examples
+☞「コマンド」と「コマンドレット」の表記の違いは何ですか？
+
+ 
+
+ 
+
+コマンドレットとは？
+
+コマンドとは？
+
+定義
+
+PowerShellのコマンドレットは、PowerShellの環境で実行される特定のコマンドを指します。Windowsの管理やスクリプト処理を行うために設計された機能です。	コマンドは、Windowsのコマンドライン環境（CMD）で実行される特定の命令を指します。これらは、オペレーティングシステムの操作やファイル管理などを行うために設計されています。
+形式
+
+PowerShellのコマンドレットは、一貫した命名規則に従っており、「動詞-名詞」の形式 で命名されます。この命名規則により、コマンドの目的が明確になり、直感的に理解しやすくなっています。	コマンドは、通常 短い英単語または略語 で命名されます（例：dir、copy、rmdir）。シンプルな命名形式により、素早く入力できる設計になっています。
+実行ファイル
+
+コマンドレットは、実行可能ファイルではなく、.NETクラスのインスタンスとして実装されています。
+一部のコマンド（ipconfig や notepad などの .exe）は外部プログラムとして動作し、PowerShell からも実行させりことが可能です。	
+コマンドには 内部コマンド と 外部コマンド があります。
+【内部コマンド】
+
+( dir、cd、echoなど) は cmd.exe の一部として組み込まれており、単体の実行ファイルではありません。
+【外部コマンド】
+
+( notepad.exe ping.exe など) は、Windowsの C:\Windows\System32 などにある スタンドアロンの実行可能ファイル（.exe） です。
+
+機能
+
+PowerShellのコマンドレットは、オブジェクト指向のパイプライン処理 をサポートしており、オブジェクト（データの構造を持つ情報）を他のコマンドレットに渡すことができます。
+
+また、PowerShellのコマンドレットは、実行時に 自動的にエラー処理や出力の書式設定 が行われ、標準出力だけでなく、詳細ログやデバッグ情報も利用できます。
+
+コマンドは、シェル環境（CMD）によって解析され、結果が標準出力に表示されます。リダイレクト（ > 、 | ）を使用して出力をファイルに保存したり、別のコマンドへ渡したりすることができます。ただし、PowerShell のようなオブジェクト指向のパイプライン処理はできず、基本的には テキストベースのデータ処理 になります。
+ 
+
+コマンドレットはPowerShell特有の呼び方となっています。
+
+コマンドレット(cmdlet)や一部のファンクションの命名規則について
+コマンドレット(cmdlet)と一部のファンクションのコマンド名は「動詞-名詞」の形で命名されています。
+
+
+<コマンドの一例>
+PowerShellのコマンドレットとコマンドプロンプトで実行可能なコマンドと説明を記載
+ 
+
+コマンドレット	コマンド	説明
+Set-Location	cd	ロケーションをセットする。
+Get-childItem	dir	フォルダやファイルの一覧を取得する。
+Move-Item	move	アイテムを移動する。
+Copy-Item	copy	アイテムを複製する。
+Rename-Item	ren	アイテムの名前を変更する。
+Remove-Item	del,rm,rmdir	アイテムを削除する。
+Clear-Host	cls	画面をクリアする。
+Write-Host	echo	指定の文字を画面に表示する。
+Get-Content	type	ファイルの内容を表示する。
+Select-String	find,findstr	文字を検索する。
+Get-computerinfo	systeminfo	システム情報を取得する。
+Start-Service	net start	サービスを開始する。
+Get-ScheduledTask	schtasks	タスクスケジュールの設定を表示する。
+New-EventLog	wevtutil	イベントログを作成する。
+Select-Object	※該当コマンドなし	オブジェクトを選択する。
+Where-Object	※該当コマンドなし	オブジェクトの条件を指定する。
+コマンドレットとエイリアスを理解しよう
+例として、次のコマンドでファイルの一覧を出力してみましょう。
+
+ 
+
+(1)PowerShell用のコマンドレット
+
+Get-ChildItem
+(2)PowerShell用の短縮されたコマンド
+
+gci
+(3)コマンドプロンプト風コマンド
+
+dir
+(4)linuxコンソール風コマンド
+
+ls
+<実行結果>
+
+    ディレクトリ: C:\ps_test
+​
+​
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2025/02/09     20:15                subfolder1
+d-----        2025/02/09     20:15                subfolder2
+-a----        2025/02/09     20:15             24 test1.txt
+-a----        2025/02/09     20:15             24 test2.txt
+-a----        2025/02/09     20:15             22 test3.dat
+-a----        2025/02/09     20:15             22 test4.dat
+-a----        2025/02/09     20:15             20 test5.log
+-a----        2025/02/09     20:15             20 test6.log
+どのコマンドを実行しても同じ結果が出力されていますね。
+
+
+PowerShellでは、DOSコマンドやLinuxと同じようなコマンドで入力できるようにエイリアスが設定されています。
+
+☞エイリアスとは？
+
+ 
+
+エイリアスとは簡単に言うとPowerShellコマンドを別名で実行できるようにする仕組みやコマンドそのものになります。
+
+これによりコマンドを簡素化して実行することができます。
+
+
+参考サイトなどでは、サンプルのコマンドやソースがエイリアスで記載されている場合あります。
+
+ 
+
+dirコマンドの元になっているコマンドレットを、次のコマンドで見てみましょう。
+
+get-alias dir
+<実行結果>
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           dir -> Get-ChildItem
+dirコマンドはGet-ChildItemのエイリアス(別名)ということがわかります。
+
+ 
+
+「Get-Alias」は引数を入れないで実行すると、設定されているすべてのエイリアスが表示されます。
+
+結構な量のエイリアスが割り当てられていますね。
+「Set-Alias」を使って自分で割り当てることも出来ます。
+
+ 
+
+「Get-Help」を使ってコマンドの説明を表示する時も、エイリアス名で検索をすることができますが、説明自体は元のコマンドレットの名前で表示されるので、注意が必要です。dirコマンドはGet-ChildItemのエイリアス(別名)ということがわかります。
+
+ 
+
+「Get-Alias」は引数を入れないで実行すると、設定されているすべてのエイリアスが表示されます。
+
+結構な量のエイリアスが割り当てられていますね。
+「Set-Alias」を使って自分で割り当てることも出来ます。
+
+ 
+
+「Get-Help」を使ってコマンドの説明を表示する時も、エイリアス名で検索をすることができますが、説明自体は元のコマンドレットの名前で表示されるので、注意が必要です。
+
+オブジェクトを理解しよう
+Get-やShow-系のコマンドレットを実行すると、オブジェクトとして結果が返ってきます。
+
+イメージとしては以下の図のように、コマンドプロンプトで出力されている内容は文字列になり、PowerShellで出力されている内容はオブジェクトになります。
+
+
+難しそうですが、理解できればPowerShellを有効に使うことができるようになります。
+オブジェクトの理解はPowerShellの肝になりますので、しっかりと理解していきましょう！
+
+簡単にDirコマンドを実行した際に引き渡されるデータを見てみましょう。
+作成したチュートリアル用のフォルダに遷移します。
+ 
+
+[コマンドプロンプトで操作]
+
+dir test1.txt
+<実行結果>
+
+ ドライブ C のボリューム ラベルは Windows です
+ ボリューム シリアル番号は 649E-34EA です
+​
+ c:\ps_test のディレクトリ
+​
+2025/02/09  20:15                24 test1.txt
+               1 個のファイル                  24 バイト
+               0 個のディレクトリ  73,207,418,880 バイトの空き領域
+上のような内容が表示されます。
+
+これはコマンドプロンプトで実行したコマンドが文字列を返してきたものが画面に表示されています。
+
+[PowerShellで操作]
+
+dir test1.txt
+<実行結果>
+
+   ディレクトリ: C:\ps_test
+​
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2025/01/08     16:48             24 test1.txt
+上のような内容が表示されます。
+
+これはPowerShellで実行したコマンドレットがオブジェクトを返してきたものが画面に表示されています。
+
+コマンドプロンプトの出力結果とは少し異なるものが出力されていますね。
+
+そこまで大きな違いが無いように見えますが、それぞれが返してきている値を確認するために以下のコマンドとコマンドレットを実行してみましょう。
+ 
+
+[コマンドプロンプトで操作]
+
+@echo off
+for /f "usebackq tokens=*" %i in (`dir test1.txt`) do echo %i
+@echo on
+説明：
+dirコマンドでtest1.txtファイルの検索指定で実行した際に、返ってきている値を１行ずつ画面に表示しています。
+
+<実行結果>
+
+ドライブ C のボリューム ラベルは Windows です
+ボリューム シリアル番号は 649E-34EA です
+c:\ps_test のディレクトリ
+2025/02/09  20:15                24 test1.txt
+1 個のファイル                  24 バイト
+0 個のディレクトリ  73,207,848,960 バイトの空き領域
+コマンドを実行したときと同じ内容が表示されています。
+
+[PowerShellで操作]
+
+foreach($a in dir test1.txt| select-object *){write-host $a}
+説明：
+dir(Get-ChildItem)コマンドレットでtest1.txtファイルの検索指定で実行した際に、返ってきているオブジェクト内容のすべてを画面に表示しています。
+
+<実行結果>
+
+@{PSPath=Microsoft.PowerShell.Core\FileSystem::C:\ps_test\test1.txt; PSParentPath=Microsoft.PowerShell.Core\FileSystem::C:\ps_test; PSChildName=test1.txt; PSDrive=C; PSProvider=Microsoft.PowerShell.Core\FileSystem; PSIsContainer=False; Mode=-a----; VersionInfo=File:             C:\ps_test\test1.txt
+InternalName:
+OriginalFilename:
+FileVersion:
+FileDescription:
+Product:
+ProductVersion:
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:
+; BaseName=test1; Target=System.Collections.Generic.List`1[System.String]; LinkType=; Name=test1.txt; Length=24; DirectoryName=C:\ps_test; Directory=C:\ps_test; IsReadOnly=False; Exists=True; FullName=C:\ps_test\test1.txt; Extension=.txt; CreationTime=2025/02/09 20:15:30; CreationTimeUtc=2025/02/09 11:15:30; LastAccessTime=2025/02/09 20:15:30; LastAccessTimeUtc=2025/02/09 11:15:30; LastWriteTime=2025/02/09 20:15:30; LastWriteTimeUtc=2025/02/09 11:15:30; Attributes=Archive}
+test1.txtファイルの情報が詳しく出力されていることがわかります。
+
+このようにPowerShellのコマンドレットが返してくる値は、文字列ではなく複数の情報を持ったオブジェクトとして構成されています。
+
+パイプラインとフィルタリングについて
+コマンドレットのオブジェクトを最大限利用するにはパイプラインとフィルタリングの理解が必須となります。
+ 
+
+パイプラインとは
+コマンドの出力を次のコマンドの入力として渡す仕組みです。これにより、複雑な処理を簡潔に記述できます。
+PowerShellでは出力されたオブジェクトを次のコマンドにそのまま渡して処理を行うことができます。
+※コマンドプロンプトにもパイプラインの処理はありますが、出力されている文字列に対して処理がされます。
+ 
+
+フィルタリングとは
+パイプラインと組み合わせて、コマンドの出力結果から必要なものだけを取り出すことができます。
+ 
+
+オブジェクトをフィルタリングをしてみよう！
+ 
+
+Where-Objectを使って抽出する条件を設定してみましょう。
+
+フィルタを使って拡張子が「.txt」のものだけを取得したい場合は、以下の様に記述します。
+
+[PowerShellで操作]
+
+Get-ChildItem | Where-Object Name -Like '*.txt'
+<実行結果>
+
+    ディレクトリ: C:\ps_test
+​
+​
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2025/02/09     20:15             24 test1.txt
+-a----        2025/02/09     20:15             24 test2.txt
+.txtの拡張子のファイルだけが表示されましたね。
+他の拡張子のファイルも抽出できるか条件を変更して実行してみてください。
+
+*.dat
+*.log
+
+フィルタ以外にもパイプラインを使った便利な使い方があるので練習してみましょう。
+ 
+出力されるオブジェクトの項目を選択しよう！
+ 
+
+Select-Objectを使って出力される項目を選択してみましょう。
+
+ファイル名、フルパス、フォルダ名、拡張子、最終更新日時、ファイルサイズの項目を表示したい場合は、以下のように記述します。
+
+Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Where-Object Name -Like '*.txt'
+<実行結果>
+
+Name          : test1.txt
+FullName      : C:\ps_test\test1.txt
+DirectoryName : C:\ps_test
+Extension     : .txt
+LastWriteTime : 2025/02/09 20:15:30
+Length        : 24
+​
+Name          : test2.txt
+FullName      : C:\ps_test\test2.txt
+DirectoryName : C:\ps_test
+Extension     : .txt
+LastWriteTime : 2025/02/09 20:15:30
+Length        : 24
+c:\ps_testフォルダ内の２つのファイルの指定した表示項目で出力されましたね。
+オブジェクトに対して、Select-Objectを使うことで表示する項目を選択することができます。
+
+出力結果がさっきと違う形式で出力されていますね。
+これはPowerShellが自動的に画面に収まる形式にしてしまっているために起こっています。
+
+出力形式を設定しよう！
+
+先ほどと同じ形式で表示できるように出力形式を指定してみましょう。
+
+[PowerShellで操作]
+
+Get-ChildItem | Select-object name,fullname,directoryname,Extension,lastwritetime,length | Where-Object Name -Like '*.txt' | format-table
+<実行結果>
+
+Name      FullName             DirectoryName Extension LastWriteTime       Length
+----      --------             ------------- --------- -------------       ------
+test1.txt C:\ps_test\test1.txt C:\ps_test    .txt      2025/02/09 20:15:30     24
+test2.txt C:\ps_test\test2.txt C:\ps_test    .txt      2025/02/09 20:15:30     24
+テーブル形式で表示されましたね。
+用途にあわせて、画面出力する書式を変更することができます。
+
+画面出力で利用されるFormatコマンドは以下の５通りがあります。
+ 
+
+コマンドレット
+
+エイリアス
+
+説明
+
+Format-Table	ft	テーブル形式でオブジェクトを表示します。項目の下にそれぞれの値が表示されます。
+Format-List	fl	リストの形式でオブジェクトを表示します。各プロパティはラベル付けされ、別々の行に表示されます。
+Format-Wide	fw	単一項目形式
+Format-Hex	fhx	16進数でオブジェクトを表示します。元のデータによっては表示ができない場合があります。
+Format-Custom	fc	カスタマイズした形式でオブジェクトを表示します。事前にカスタムビューを作成する必要があります。
+
+「Format-Table」「Format-List」の２つだけ覚えておけば普段使いには困りません。
+ 
+出力結果の並び替えをしよう！
+
+sort-objectを利用することで、指定した項目で並び替えを行うことができます。
+結果を画面上で確認する場合は項目単位でソートされているほうが何かと都合がよい時があります。
+出力されるデータを指定した項目で並び替えをしてみましょう。
+
+lengthを並び替えの項目として指定してみましょう。
+
+[PowerShellで操作]
+
+Get-ChildItem | Select-object name,fullname,directoryname,Extension,lastwritetime,length | sort-object length| format-table
+<実行結果>
+
+Name       FullName              directoryname Extension LastWriteTime       length
+----       --------              ------------- --------- -------------       ------
+subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
+subfolder1 C:\ps_test\subfolder1                         2025/02/09 20:15:30
+test5.log  C:\ps_test\test5.log  C:\ps_test    .log      2025/02/09 20:15:30 20
+test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30 20
+test4.dat  C:\ps_test\test4.dat  C:\ps_test    .dat      2025/02/09 20:15:30 22
+test3.dat  C:\ps_test\test3.dat  C:\ps_test    .dat      2025/02/09 20:15:30 22
+test2.txt  C:\ps_test\test2.txt  C:\ps_test    .txt      2025/02/09 20:15:30 24
+test1.txt  C:\ps_test\test1.txt  C:\ps_test    .txt      2025/02/09 20:15:30 24
+lengthの項目が昇順で並び替えされていますね。
+逆に降順にしたい場合は以下のように -Descendingのオプションを付けることで逆順になります。
+
+Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending | format-table
+<実行結果>
+
+Name       FullName              DirectoryName Extension LastWriteTime       Length
+----       --------              ------------- --------- -------------       ------
+test1.txt  C:\ps_test\test1.txt  C:\ps_test    .txt      2025/02/09 20:15:30     24
+test2.txt  C:\ps_test\test2.txt  C:\ps_test    .txt      2025/02/09 20:15:30     24
+test4.dat  C:\ps_test\test4.dat  C:\ps_test    .dat      2025/02/09 20:15:30     22
+test3.dat  C:\ps_test\test3.dat  C:\ps_test    .dat      2025/02/09 20:15:30     22
+test5.log  C:\ps_test\test5.log  C:\ps_test    .log      2025/02/09 20:15:30     20
+test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30     20
+subfolder1 C:\ps_test\subfolder1                         2025/02/09 20:15:30
+subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
+逆順のオプション長いですね。実は -des でも、 -d でも機能します。
+オプションはどこまで短縮できるのかは明記されていないので、よく使うオプションは色々と試してみるのもよいかもしれません。
+単語が被っているオプションが無ければ短くできるのかもしれませんね。
+
+それぞれの項目を昇順にしたり、降順にしたりするにはカスタムプロパティを利用する必要があります。
+記事の後半で説明しています。
+
+PowerShellの変数にオブジェクトを格納してみましょう。
+PowerShellの変数は変数名の先頭に$(ドルマーク)を付けることにより宣言できます。
+変数名にはスペースや一部の記号を使うことができません。
+
+
+基本的にはアルファベット、数字、アンダースコアを使用して名前を付けることが推奨されています。
+先ほどのコマンドの結果を変数に格納してみましょう。
+
+[PowerShellで操作]
+
+$hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending | format-table
+格納した変数の中身を見てみましょう。
+
+Write-Output $hensu
+<実行結果>
+
+Name       FullName              DirectoryName Extension LastWriteTime       Length
+----       --------              ------------- --------- -------------       ------
+test1.txt  C:\ps_test\test1.txt  C:\ps_test    .txt      2025/02/09 20:15:30     24
+test2.txt  C:\ps_test\test2.txt  C:\ps_test    .txt      2025/02/09 20:15:30     24
+test4.dat  C:\ps_test\test4.dat  C:\ps_test    .dat      2025/02/09 20:15:30     22
+test3.dat  C:\ps_test\test3.dat  C:\ps_test    .dat      2025/02/09 20:15:30     22
+test5.log  C:\ps_test\test5.log  C:\ps_test    .log      2025/02/09 20:15:30     20
+test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30     20
+subfolder1 C:\ps_test\subfolder1                         2025/02/09 20:15:30
+subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
+コマンドを実行したときと同じ内容が出力されていますね。
+これは変数に結果がそのまま格納されているため、出力も同じになります。
+
+勘の良い人は気づいてしまったかもしれませんが、オブジェクトが格納されている変数に対してもフィルターやパイプを使うことができます。
+変数に対して、ファイル名での並び替えをしてみましょう。
+ 
+
+[PowerShellで操作]
+
+Write-Output $hensu | Sort-Object name
+<実行結果>
+
+out-lineoutput : 型 "Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData" のオブジェクトが無効であるか、または正
+しいシーケンスではありません。ユーザーによって指定された "format-*" コマンドが既定の書式と競合している可能性があります。
+    + CategoryInfo          : InvalidData: (:) [out-lineoutput]、InvalidOperationException
+    + FullyQualifiedErrorId : ConsoleLineOutputOutOfSequencePacket,Microsoft.PowerShell.Commands.OutLineOutputCommand
+なにやらエラーが出てきて動きませんね・・・。
+これはPowerShellの決まり事を守っていない状態が発生しているようです。
+
+PowerShellでエラーになってしまいやすい原因には次のようなものがあります。
+ 
+
+エラーの原因
+
+解決策
+
+Format-*の後に Sort-Object や Where-Object を使っている。
+
+Format-Table などの Format-* コマンドは出力を文字列に変換するので、オブジェクトとしての構造が失われているためエラーとなります。
+
+Format-*は最後に適用する。
+Select-Objectで必要なプロパティを削除。
+
+後続のコマンドで必要となる項目をSelect-Objectなどで選択から外してしまうと、コマンドが処理できずエラーになる。
+
+後続の処理で必要な項目を削除しない。 
+Out-Stringの後に Where-Objectを使う。
+Out-String はオブジェクトを単なるテキストに変換するため、Where-Object でのフィルタリングが機能しなくなる。	Out-Stringを最後に適用する。
+ForEach-Objectで配列を返す。
+
+ForEach-Object でカンマ区切りで値を返すと、配列になり期待通りに動作しない。
+
+[PSCustomObject]を使って、再度オブジェクト化する。
+ConvertTo-Jsonの後にオブジェクト処理。
+ConvertTo-Json は JSON 文字列に変換するため、オブジェクトのプロパティにアクセスできなくなる。	JSON 化は最後に適用する。
+Measure-Objectの後にオブジェクト処理。
+Measure-Object は統計データを返すが、元のオブジェクトは失われるため、後続の Sort-Object などが使えなくなる。	Measure-Objectは最後に適用する。
+Export-Csvの後にオブジェクト処理。
+Export-Csv はファイルを作成するコマンドであり、出力は $null になるため、後続の処理ができなくなる。	Sort-Objectなどの処理を先にする。
+Read-Hostの入力を数値比較。
+Read-Hostで入力した値は文字列になっているため数値比較をするとエラーになります。
+ 	数値に変換してから比較する。
+
+PowerShellのパイプ処理の優先順位のおすすめ
+ 
+
+順番
+
+処理の種類
+
+理由
+
+１
+
+Where-Object(フィルタリング)	不要なデータをふるいにかけて、後続の処理の負荷を軽減する。
+２
+
+Sort-Object(並び替え)	フィルタリング後にソートをすると無駄な計算を減らせる。
+３
+
+Select-Object(項目選択)	必要な情報だけを残すことで、処理を高速化する。
+４
+
+Measure-Object,Group-Object(データ加工)	データ量が減った後に計算することで、負荷を軽減する。
+５
+
+Format-*,Out-*(出力)	フォーマットやファイル出力は最後に適用する。
+
+では、変数にオブジェクトを格納するにはどうすればいいでしょうか？
+
+| format-* を外して変数に格納してみましょう。
+
+<PowerShellで操作>
+
+$hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending
+続けてnameの項目で並び替えをしてからテーブル形式で出力してみましょう。
+
+Write-Output $hensu | sort name | format-table
+<実行結果>
+
+Name       FullName              directoryname Extension LastWriteTime       length
+----       --------              ------------- --------- -------------       ------
+subfolder1 C:\ps_test\subfolder1                         2025/02/09 20:15:30
+subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
+test1.txt  C:\ps_test\test1.txt  C:\ps_test    .txt      2025/02/09 20:15:30 24
+test2.txt  C:\ps_test\test2.txt  C:\ps_test    .txt      2025/02/09 20:15:30 24
+test3.dat  C:\ps_test\test3.dat  C:\ps_test    .dat      2025/02/09 20:15:30 22
+test4.dat  C:\ps_test\test4.dat  C:\ps_test    .dat      2025/02/09 20:15:30 22
+test5.log  C:\ps_test\test5.log  C:\ps_test    .log      2025/02/09 20:15:30 20
+test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30 20
+オブジェクトが変数 $hensu に正しく格納されていたので、並び替えや出力形式の指定ができました。
+これは結構やりがちなミスなので経験してもらいました。
+
+このように正しく変数に格納することによって、後からでもフィルターやパイプによる操作が可能となります。
+
+変数に入っているファイル名の一覧を使って、ファイルの内容を出力してみましょう。
+
+<PowerShellで操作>
+
+foreach ($h in $hensu.name){
+  write-output "FileName[$h]"
+  get-content $h
+  write-output `n
+}
+<説明>
+
+変数$hensuの中にはファイルやフォルダのリストをオブジェクトとして格納されています。
+foreachを使って$hensu内のnameの項目を変数$hに一つずつ取り出しています。
+※変数に入っているオブジェクトの項目を指定する場合は、(.)ピリオドで区切って項目名を書きます。
+foreachは条件を満たすまで処理を繰り返します。ここでは$hensuからすべてのファイル名を取り出すまでとなります。
+{}の間に繰り返す処理として、ファイル名の出力とファイルの内容を出力するためのGet-Contentに$hを渡しています。
+これにより、$hensuの中にあるすべてのファイルを内容を画面に出力する結果となります。
+
+<実行結果>
+
+FileName[test1.txt]
+test1テキスト
+​
+​
+FileName[test2.txt]
+test2テキスト
+​
+​
+FileName[test4.dat]
+test4データ
+​
+​
+FileName[test3.dat]
+test3データ
+​
+​
+FileName[test5.log]
+test5ログ
+​
+​
+FileName[test6.log]
+test6ログ
+​
+​
+FileName[subfolder1]
+get-content : パス 'C:\ps_test\subfolder1' へのアクセスが拒否されました。
+発生場所 行:3 文字:3
++   get-content $h
++   ~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\ps_test\subfolder1:String) [Get-Content], UnauthorizedAccessException
+    + FullyQualifiedErrorId : GetContentReaderUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetContentCommand
+​
+​
+​
+FileName[subfolder2]
+get-content : パス 'C:\ps_test\subfolder2' へのアクセスが拒否されました。
+発生場所 行:3 文字:3
++   get-content $h
++   ~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\ps_test\subfolder2:String) [Get-Content], UnauthorizedAccessException
+    + FullyQualifiedErrorId : GetContentReaderUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetContentCommand
+ファイル名とファイルの内容が出力されました。
+
+またエラーが出力されていますね。
+エラーをよく見てみると SubFolder1 と SubFolder2 が問題になっていますね。
+Get-Content はファイルの内容を表示するためのコマンドなので、フォルダに対して実行するとエラーになります。
+
+このエラーの対処としては、以下の３点があげられます。
+１．変数 $hensu にオブジェクトを入れる段階でファイルだけを格納する。
+２．ForEachでファイルだけに限定する。
+３．エラーを無視する。( Try  - Catch を利用する)
+
+ 
+
+例えば、「Get-ChildItem」を実行するとカレントプロンプトにあるフォルダやファイルの一覧が表示されます。
+
+拡張子が「.txt」のものだけを取得したい場合は、以下の様に記述します。
+
+
+> Get-ChildItem | Where Name -Like '*.txt'
+
+ 
+
+Get-ChildItemを実行した結果として、「Mode」「LastWriteTime」「Length」「Name」が表示されます。
+
+通常のDirコマンドやlsコマンドを実行した際に取得される内容と似ています。
+オブジェクトには、この4項目以外の情報も取得されていますが、デフォルトの表示は4項目のみとなっています。
+
+☞デフォルトの出力項目はどうやって決まっているの？
+
+ 
+
+コマンドレットによってことなりますが、Get-ChildItemの場合は、FileSystemを利用しているコマンドレットなので、FileSystemを扱うための定義ファイルで設定されています。
+
+ 
+
+確認する方法は
+
+(1)PowerShellのインストールディレクトリを確認
+
+ 
+
+> $PSHome
+
+ 
+
+(2)定義ファイルを開く
+
+※内容を書き換えないように気を付けてください。
+
+ 
+
+> notepad.exe “$PSHome\FileSystem.format.ps1xml”
+
+ 
+
+FileSystem.format.ps1xmlというファイルのVIEW DEFINITIONSセクションにデフォルトの出力項目が設定されています。
+
+※4項目以外の情報についても記述されていますが、次のからの手順で深堀りしていきます。
+
+4項目以外にも、どんな情報が含まれているのか確認してみましょう。
+
+ 
+
+<コマンドレットの記述>
+
+> Get-ChildItem -path c:\windows\system32 | Where-Object Name -Like 'wsock32.dll' | Format-List
+
+ 
+
+<エイリアスを使った記述>
+
+> dir -path c:\windows\system32 | Where Name -Like 'wsock32.dll' | fl
+
+ 
+
+エクスプローラーで確認できる内容がオブジェクトとして返されていることがわかります。
+
+ 
+
+上記のコマンドレットは以下の様な処理が行われ結果を出力しています。
+
+ 
+
+「Get-ChildItem」に-pathオプションで「c:\windows\system32」フォルダを参照するように指示しています。
+
+「|」(パイプ)の後ろに(1)で渡されたオブジェクトに対して「Name」が「wsock32.dll」のものを抽出するようにフィルタで指示しています。
+
+「|」(パイプ)の後ろに(2)で渡された情報の詳細表示をするように指示しています。
+
+ 
+
+左のほうから右に向けて、情報を絞っていっていることがわかります。
+
+ 
+
+次に「Name」と「CreationTime」と「ProductVersion」だけが出力されるように記述してみましょう。
+
+ 
+
+> Get-ChildItem -path “c:\windows\system32” | Select-Object Name,CreationTime,ProductVersion | Where-Object Name -like 'wsock32.dll'
+
+ 
+
+「ProductVersion」の欄が空白になってしまっていますんね。
+
+
+これは「ProductVersion」という項目は存在していなくて、「VersionInfo」の中に配列として格納されているために直接取得はできません。
+
+Select-Objectとしての指定した場合に、「ProductVersion」という項目が存在しないためNullとして空欄が表示されます。
+
+
+カスタムプロパティを利用することによって取得することが可能になります。
+
+ 
+
+次のコマンドで「VersionInfo」内の「ProductVersion」を取得できるようにしてみましょう。
+
+ 
+
+> Get-ChildItem -path c:\windows\system32 | Select-Object Name,CreationTime,@{Name='ProductVersion';Expression={$_.VersionInfo.ProductVersion}} | Where-Object Name -like 'wsock32.dll'
+
+ 
+
+上手く取得できましたね。ではカスタムプロパティの記述について説明します。
+
+ 
+
+カスタムプロパティは以下のように記述します。
+@{Name='ProductVersion';Expression={$_.VersionInfo.ProductVersion}}
+
+ 
+
+@{} ← カスタムプロパティの外枠
+
+Name='ProductVersion' ← プロパティに名前を付けています。ここではProductVersionとしていますが、どんな名前でも大丈夫です。
+
+;Expression={$_.VersionInfo.ProductVersion} ← Expressionは式のこと。「$_」は、直前に実行された実行結果(オブジェクト)を取得できます。オブジェクトから「.VersionInfo.ProductVersion」の内容を抽出します。
+
+ 
+
+少し難しいですが、オブジェクトをきっちんと理解するのに必要となります。
+
+ 
+
+(1)まず「wsock32.dll」を対象に「Name」「CreationTime」「VersionInfo」の情報を抽出し、変数($temp)に格納します。
+
+ 
+
+> $temp = Get-ChildItem -path c:\windows\system32 | select Name,CreationTime,VersionInfo | where Name -like 'wsock32.dll'
+ 
+
+(2)変数($temp)に格納したオブジェクトの中身を確認してみましょう。
+
+ 
+
+> write-host $temp
+ 
+
+@{}の中に「Name」「CreationTime」「VersionInfo」の情報が格納されていることがわかります。
+
+また「VersionInfo」の中には、「File」~「Language」の各項目と内容が格納されています。
+
+ 
+
+(3)変数の中から「Name」の項目だけを出力してみましょう。
+
+ 
+
+> Write-Host $temp.Name
+ピリオドで区切って表記することで、オブジェクトの中から「Name」の情報を取得することができました。
+
+ 
+
+(4)ProductVersionの内容を出力してみましょう。
+
+ 
+
+> Write-Host $temp.VersionInfo.ProductVersion
+オブジェクトの中の「VersionInfo」の中の「ProductVerion」の情報を取得することができました。
+
+ 
+
+オブジェクトに入っている情報は、正しく記述することで簡単に取り出すことができます。
+
+PowerShellでは様々な情報にアクセスし操作することができます。
+※この仕組みはPowerShellから実装された機能のひとつで、使い方を理解しておくと色々と役に立ちます。
+
+↑プロバイダー？何言ってるのってなると思います。構えないでください。分かり易く説明します。
+PowerShellでいうプロバイダーとは、特定のデータストア（例えばファイルシステム、レジストリ、環境変数など）に
+アクセスし、操作するための仕組みです。プロバイダーを使うと、これらのデータストアをファイルシステムのように扱うことができます。
+
+以下に、代表的なプロバイダーの種類とその内容を説明します。
+
+1. FileSystem
+　ファイルシステムプロバイダーは、ローカルおよびネットワーク上のファイルシステムドライブを扱います。
+　※これはコマンドプロンプトで扱えていたWindowsFileSystemと同じものになります。
+2. Registry
+　レジストリプロバイダーは、Windowsレジストリのキーと値をドライブとして扱います。
+3. Certificate
+　証明書プロバイダーは、証明書ストアをドライブとして扱います。例：Cert:\
+4. Environment
+　環境変数プロバイダーは、環境変数をドライブとして扱います。例：Env:\
+5. Function
+　関数プロバイダーは、PowerShell関数をドライブとして扱います。例：Function:\
+6. Alias
+　エイリアスプロバイダーは、PowerShellエイリアスをドライブとして扱います。例：Alias:\
+7. Variable
+　変数プロバイダーは、PowerShell変数をドライブとして扱います。例：Variable:\
+8. WSMan
+　WSManプロバイダーは、WS-Management（Windowsリモート管理）設定をドライブとして扱います。例：WSMan:\
+
+次のコマンドレットを実行し、利用可能なプロバイダを調べてみましょう。
+
+Get-PsDrive
+
+利用可能なプロバイダの一覧が表示されます。
+この一覧の「Provider」項目に出力されている内容が、Providerの種類になっています。
+
+例えば、FileSystemのものだけを表示したい場合は以下のように記述します。
+
+Get-PsDrive -PSProvider 'FileSystem'
+もしくは
+Get-PsDrive | Where-Object Provider -like 'Microsoft.PowerShell.Core\FileSystem'
+
+FileSystemで扱えるドライブだけが表示されました。
+
+先ほども「●PowerShellのGet系のコマンドレットを理解しよう。」で触れましたが、
+
+Get-ChildItemはよく使うコマンドなので、ちょっと使い方を深堀りしていきます。
+
+Get-ChildItemでよく使われるオプション
+
+対象コンテンツ（ファイル、フォルダ等）へのパスを指定します。
+-Path
+
+|例1：対象フォルダを指定する場合
+|Get-ChildItem -Path c:\windows\system32
+|または
+|ls -Path c:\windows\system32
+|
+|例2：対象ファイルを指定する場合(ワイルドカード指定可能)
+|Get-ChildItem -Path c:\windows\system32\*.dll
+|または
+|ls -Path c:\windows\system32\*.dll
+
+ファイル名だけを表示します。
+-Name または -N
+
+指定した名前のコンテンツを対象とします。
+-Include または -I
+
+|例：特定の拡張子のファイルを対象とする場合
+|Get-ChildItem -Path c:\windows\system32 -Recurse -Include *.exe,*txt
+|ls -
+|※-includeと-Excludeオプションは-Recurseオプションと一緒に使わないと機能しません。
+
+指定した名前以外のコンテンツを対象とします。
+-Exclude または -E
+
+指定された場所にある項目と、その場所のすべての子項目にある項目を取得します。
+-Recurse または -S
+
+取得するサブディレクトリの階層の深さを指定します。
+-Depth また -D
+|例：3つ下の階層までのフォルダ一覧を取得する場合
+|Get-ChildItem -Depth 3 -Directory
+|または
+|ls -d 3 -ad
+
+|※-includeと-Excludeオプションは-Recurseオプションと一緒に使わないと機能しません。
+
+
+指定した属性のファイルとフォルダーを取得します。
+-Attributes または -A
+
+検索対象をフォルダにします。
+-Directory
+
+検索対象をファイルとします。
+-File
+
+検索対象を非表示項目とします。
+-Hidden
+
+検索対象を読み取り専用とします。
+-ReadOnly
+
+検索対象をシステムファイルとフォルダにします。
+-System
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+証明書ストアを覗いてみましょう。
+
+cd cert:
+
+Get-ChildItem
+または
+dir
+または
+ls
+
+これで証明書ストアに入れました。簡単ですね。
+ルート証明書のストアに遷移してみましょう。
+
+cd Root
+
+Get-ChildItem
+または
+dir
+または
+ls
+
+ルート証明書ストアに遷移されました。
+詳しい情報を確認した場合は、そうです！ | format-listをつけるだけです。
+
+Get-ChildItem | format-list
+または
+dir | format-list
+または
+ls | fl
+
+各証明書の詳細情報が出力されます。
+
+せっかくなので、情報をcsvで出力してみましょう。
+
+Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation
+
+ 
+
+これでCSV形式で「c:\work\certcsv.csv」に出力されます。
+エクセルやメモ帳で内容を確認してみましょう。
+
+一部文字化けしているところがありますね。←環境によっては発生しない。
+
+次の様に直して再度実行してみましょう。
+
+Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation -Encoding UTF8
+
+今度は正しく出力されていますね。
+詳細設計書にパラメータを載せる時は、ほぼ編集がいらないため間違いもなく便利です。
+
+│文字化けの原因としては、PowerShellのExport-CSVはデフォルトでUTF-8エンコーディングが使用されます。
+│しかし、特定の環境やアプリケーション(EXCELなど)ではUTF-8を正しく認識できことがあるため、違う文字コード
+│として認識し、画面表示を行うため文字化けが発生します。
+│またシステムのデフォルトエンコーディングとExport-CSVで使用されるエンコーディングがあっていない場合も
+│同様の現象が発生します。
+│Export-CSVのオプションで「-encoding UTF8」を明示することにより、この事象を回避することができます。
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+●よく使うコマンドレット一覧と使い方
+お待たせしました。よく使うコマンドレット一覧を紹介します。
+※あくまでも個人的なおすすめなので、いやこれもよく使うよってものがあれば教えてください。
+
+
+・便利なコマンドレット一覧
+
+PowerShellで参照可能なドライブ情報などを取得する。
+このコマンドは
+
+get-psdrive
+
+出力結果の「Provider」項目にAlias,FileSystem,Certificate,Environment,Function,Registry,Variable,WSMANの種類があります。
+PowerShellではFileSystem以外の情報も簡単に参照することができるようになっているため、補足で説明をします。
+
+<Provider>
+Alias:セッション状態で保存されたエイリアスのビューが格納されるドライブ
+FileSystem:Windowsファイルシステムのドライブ
+Certificate:X509 証明書プロバイダー
+Environment:処理の環境変数ビューが格納されるドライブ
+Function:セッション状態に保存された関数のビューが格納されるドライブ
+Registry:レジストリ
+Variable:セッション状態で保存された変数のビューが格納されるドライブ
+WSMAN:WsMan 構成保管のルートです。
+
+ 
+
+
+詳細なドライブ情報を取得する。
+get-psdrive | format-list
+
+ 
+
+ 
+
+ 
+
+ファイルの一覧を取得(単一フォルダ/サブフォルダ/階層指定)
+取得した情報をCSVファイルとして出力
+取得した情報をクリップボードに出力
+CSVファイルの内容を配列に格納
+クリップボードの内容を配列に格納
+配列の内容でループさせる
+全てファイル名を一括変更
+ファイル名の頭に付与、拡張子の前に付与、拡張子の後ろに付与
+ファイルの一部を抽出する
+ファイルをグレップして抽出する。
+各ドライブの空き容量を取得する。
+
+・ファイルの書式変更
+・ファイルの一覧とある程度の詳細情報も併せて取得したい。
+・ネットワーク情報を取得・変更したい。
+・外部の実行ファイルやバッチファイルを実行して、リターンコードを取得したい。
+・特定のレジストリを参照・修正・削除したい。
+・特定のサービスの状態を取得・変更したい。
+・条件を指定してイベントログを抽出したい。
+・OSのバージョンを判定するには
+・Windows Updateの状態をチェックする。
+・プロセスごとのCPU使用率をソートして抽出
+
+・サーバ保守系でよく使うコマンドレット一覧
+
+ 
+
+
+・サーバ構築系でよく使うコマンドレット一覧
+
+ 
+
+
+・クライアントキッティングでよく使うコマンドレット一覧
+
+ 
+
+
+・パブリッククラウド系でよく使うコマンドレット一覧(AWS編)
+
+ 
+
+
+・パブリッククラウド系でよく使うコマンドレット一覧(Azure編)
+
+ 
+
+
+●PowerShellでプログラミングしてみよう。
+
+PowerShellは上から下へ、左から右へ処理が行われます。
+なに言ってるの？って思うかもしれませんが、PowerShellでプログラムを実行した時に
+予期しない結果になることがあります。
+
+PowerShellは特殊な書き方が可能な言語であるため、このルールを理解しないで記述すると
+正しく動作しないことがあります。
+
+例えば、定数は一番上に記述する。
+関数をメインプログラムよりも先に記述するなど・・・。
+
+後は関数を作成したいけど、引数を渡すのがメンドイっていう人には、特別な記述のしかたもあります。
+※おすすめはしませんが、スコープを変更することによって、扱える範囲を広くすることができます。
+
+PowerShellは変数や配列のアドレスを関数に引き渡したりできないため、同一サイズのメモリの消費がされる想定なので、
+サイズの大きい配列を渡す場合は、スコープにしてあげてメモリの消費を抑えるのも手段の一つと考えます。
+
+ 
+
+通常のコマンドの書き方
+
+特殊なフィルタなどをかける場合の書き方
+
+取得した結果や配列の内容に対して繰り返して同じ処理をしたい場合の書き方
+
+こんな作業で困ったことないですか？
+
+普通の言語にはあるけどPowerShellに存在しない関数
+
+業務で使いやすい便利なコマンド一覧
