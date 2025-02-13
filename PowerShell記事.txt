@@ -684,7 +684,7 @@ get-content : パス 'C:\ps_test\subfolder2' へのアクセスが拒否され�
 エラーをよく見てみると SubFolder1 と SubFolder2 が問題になっていますね。
 Get-Content はファイルの内容を表示するためのコマンドなので、フォルダに対して実行するとエラーになります。
 
-このエラーの対処を３つほど用意しましたので、
+このエラーの対処を３つほど用意しましたので、一つずつ理解しながら対処していきましょう。
 
 対処１
 
@@ -749,7 +749,9 @@ Write-Output $hensu | Format-Table
 
 <PowerShellで操作>
 
-ForEach-object ($h in $hensu | Where-Object { $_.Length -ne $Null}){
+$hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending
+​
+ForEach ($h in $hensu | Where-Object { $_.Length -ne $Null}){
   Write-Output "FileName[$($h.name)]"
   Get-Content $h.name
   Write-Output ""
