@@ -1,8 +1,7 @@
 PowerShellで楽しようよ！
 
-細田 禮造
-Professional
-PowerShellとは？
+●PowerShellとは？
+
 PowerShellは、Microsoftが開発した強力なタスク自動化および構成管理フレームワークで、.NET Framework上に構成されています。
 
 これにより、PowerShellは.NET Frameworkの豊富なライブラリや機能を直接的に利用することができます。
@@ -10,11 +9,7 @@ PowerShellは、Microsoftが開発した強力なタスク自動化および構�
 PowerShellを使って、定例作業を自動化したり、複雑な作業をツール化することにより、作業効率を上げたり作業ミスを減らすことが簡単にできます。
 コマンド単体でも使いやすいものが多いので、使用頻度が高いものについては便利な使い方の紹介をしていきます。
 
- 
-
 PowerShellは以下の特徴を持っています。
-
- 
 
 特徴
 
@@ -25,17 +20,15 @@ PowerShellは以下の特徴を持っています。
 オブジェクト指向	コマンドの出力がテキストではなくオブジェクトとして扱われるため、データの操作を直感的に行うことができます。
 クロスプラットフォーム	Windowsだけでなく、macOSやLinuxでも動作します。
 クラウド操作	Azure PowerShellモジュールやAWS Tools for Powershellをインストールすることにより、AzureやAWSなどのクラウドサービスの管理や操作も簡単に行えるようになります。
- 
 
 以上のように色々なことができるPowerShellですが、書き方には少し癖があるところもあるので、使いこなせるように頑張りましょう！
-
- 
 
 Windows環境なら標準で開発環境も用意されているため、すぐに学習をスタートすることができます。
 
 また開発言語寄りのコーティングもできるため、バッチファイルの学習で挫折した方や、プログラム言語を学習したい人にもおすすめな言語と言えます。
 
-チュートリアルの準備
+●チュートリアルの準備
+
 ここからは実際にコマンドレットを実行してPowerShellに慣れましょう。
 チュートリアル用として以下のフォルダとファイルを作成していきます。
 
@@ -58,8 +51,6 @@ C:\PS_TEST
 (1)それではPowerShellを起動してみましょう！
 
 ・「Windows + R」キーを押して「ファイル名を指定して実行」ダイアログを開き、「powershell」と入力してEnterキーを押します。
-
-
 (2)作業ウインドウの区別がつくように次のコマンドも実行しておいてください。
 
 $host.UI.RawUI.WindowTitle = "PowerShellチュートリアル用"
@@ -98,10 +89,9 @@ cd c:\ps_test
 cd c:\ps_test
 これで学習の準備が整いました。
 
-PowerShellを構成する要素
-PowerShellで実行可能な命令として以下の３つの要素があります。
+●PowerShellを構成する要素
 
- 
+PowerShellで実行可能な命令として以下の３つの要素があります。
 
 要素
 
@@ -117,8 +107,6 @@ get-command
 
 ☞コマンドレットの説明を見るには？
 
- 
-
 get-help <説明を見たいコマンドレット名> または -? オプションをつけます。
 
 get-help get-command
@@ -132,10 +120,6 @@ get-help get-command -detailed
 
 get-help get-command -examples
 ☞「コマンド」と「コマンドレット」の表記の違いは何ですか？
-
- 
-
- 
 
 コマンドレットとは？
 
@@ -166,17 +150,15 @@ PowerShellのコマンドレットは、オブジェクト指向のパイプラ�
 また、PowerShellのコマンドレットは、実行時に 自動的にエラー処理や出力の書式設定 が行われ、標準出力だけでなく、詳細ログやデバッグ情報も利用できます。
 
 コマンドは、シェル環境（CMD）によって解析され、結果が標準出力に表示されます。リダイレクト（ > 、 | ）を使用して出力をファイルに保存したり、別のコマンドへ渡したりすることができます。ただし、PowerShell のようなオブジェクト指向のパイプライン処理はできず、基本的には テキストベースのデータ処理 になります。
- 
 
 コマンドレットはPowerShell特有の呼び方となっています。
 
-コマンドレット(cmdlet)や一部のファンクションの命名規則について
-コマンドレット(cmdlet)と一部のファンクションのコマンド名は「動詞-名詞」の形で命名されています。
+●コマンドレット(cmdlet)や一部のファンクションの命名規則について
 
+コマンドレット(cmdlet)と一部のファンクションのコマンド名は「動詞-名詞」の形で命名されています。
 
 <コマンドの一例>
 PowerShellのコマンドレットとコマンドプロンプトで実行可能なコマンドと説明を記載
- 
 
 コマンドレット	コマンド	説明
 Set-Location	cd	ロケーションをセットする。
@@ -195,10 +177,10 @@ Get-ScheduledTask	schtasks	タスクスケジュールの設定を表示する�
 New-EventLog	wevtutil	イベントログを作成する。
 Select-Object	※該当コマンドなし	オブジェクトを選択する。
 Where-Object	※該当コマンドなし	オブジェクトの条件を指定する。
-コマンドレットとエイリアスを理解しよう
-例として、次のコマンドでファイルの一覧を出力してみましょう。
 
- 
+●コマンドレットとエイリアスを理解しよう
+
+例として、次のコマンドでファイルの一覧を出力してみましょう。
 
 (1)PowerShell用のコマンドレット
 
@@ -216,7 +198,6 @@ ls
 
     ディレクトリ: C:\ps_test
 ​
-​
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
 d-----        2025/02/09     20:15                subfolder1
@@ -229,12 +210,9 @@ d-----        2025/02/09     20:15                subfolder2
 -a----        2025/02/09     20:15             20 test6.log
 どのコマンドを実行しても同じ結果が出力されていますね。
 
-
 PowerShellでは、DOSコマンドやLinuxと同じようなコマンドで入力できるようにエイリアスが設定されています。
 
 ☞エイリアスとは？
-
- 
 
 エイリアスとは簡単に言うとPowerShellコマンドを別名で実行できるようにする仕組みやコマンドそのものになります。
 
@@ -242,8 +220,6 @@ PowerShellでは、DOSコマンドやLinuxと同じようなコマンドで入�
 
 
 参考サイトなどでは、サンプルのコマンドやソースがエイリアスで記載されている場合あります。
-
- 
 
 dirコマンドの元になっているコマンドレットを、次のコマンドで見てみましょう。
 
@@ -255,29 +231,22 @@ CommandType     Name                                               Version    So
 Alias           dir -> Get-ChildItem
 dirコマンドはGet-ChildItemのエイリアス(別名)ということがわかります。
 
- 
-
 「Get-Alias」は引数を入れないで実行すると、設定されているすべてのエイリアスが表示されます。
 
 結構な量のエイリアスが割り当てられていますね。
 「Set-Alias」を使って自分で割り当てることも出来ます。
-
- 
 
 「Get-Help」を使ってコマンドの説明を表示する時も、エイリアス名で検索をすることができますが、説明自体は元のコマンドレットの名前で表示されるので、注意が必要です。dirコマンドはGet-ChildItemのエイリアス(別名)ということがわかります。
 
- 
-
 「Get-Alias」は引数を入れないで実行すると、設定されているすべてのエイリアスが表示されます。
 
 結構な量のエイリアスが割り当てられていますね。
 「Set-Alias」を使って自分で割り当てることも出来ます。
 
- 
-
 「Get-Help」を使ってコマンドの説明を表示する時も、エイリアス名で検索をすることができますが、説明自体は元のコマンドレットの名前で表示されるので、注意が必要です。
 
-オブジェクトを理解しよう
+●オブジェクトを理解しよう
+
 Get-やShow-系のコマンドレットを実行すると、オブジェクトとして結果が返ってきます。
 
 イメージとしては以下の図のように、コマンドプロンプトで出力されている内容は文字列になり、PowerShellで出力されている内容はオブジェクトになります。
@@ -370,7 +339,8 @@ test1.txtファイルの情報が詳しく出力されていることがわか�
 
 このようにPowerShellのコマンドレットが返してくる値は、文字列ではなく複数の情報を持ったオブジェクトとして構成されています。
 
-パイプラインとフィルタリングについて
+●パイプラインとフィルタリングについて
+
 コマンドレットのオブジェクトを最大限利用するにはパイプラインとフィルタリングの理解が必須となります。
  
 
@@ -512,17 +482,17 @@ test5.log  C:\ps_test\test5.log  C:\ps_test    .log      2025/02/09 20:15:30    
 test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30     20
 subfolder1 C:\ps_test\subfolder1                         2025/02/09 20:15:30
 subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
+
 逆順のオプション長いですね。実は -des でも、 -d でも機能します。
 オプションはどこまで短縮できるのかは明記されていないので、よく使うオプションは色々と試してみるのもよいかもしれません。
 単語が被っているオプションが無ければ短くできるのかもしれませんね。
 
-それぞれの項目を昇順にしたり、降順にしたりするにはカスタムプロパティを利用する必要があります。
-記事の後半で説明しています。
+それぞれの項目を昇順にしたり、降順にしたりするにはカスタムオブジェクトを利用する必要があります。
+※カスタムオブジェクトについては、後半の記事で説明しています。
 
 PowerShellの変数にオブジェクトを格納してみましょう。
 PowerShellの変数は変数名の先頭に$(ドルマーク)を付けることにより宣言できます。
 変数名にはスペースや一部の記号を使うことができません。
-
 
 基本的にはアルファベット、数字、アンダースコアを使用して名前を付けることが推奨されています。
 先ほどのコマンドの結果を変数に格納してみましょう。
@@ -550,7 +520,6 @@ subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
 
 勘の良い人は気づいてしまったかもしれませんが、オブジェクトが格納されている変数に対してもフィルターやパイプを使うことができます。
 変数に対して、ファイル名での並び替えをしてみましょう。
- 
 
 [PowerShellで操作]
 
@@ -565,7 +534,6 @@ out-lineoutput : 型 "Microsoft.PowerShell.Commands.Internal.Format.FormatEntryD
 これはPowerShellの決まり事を守っていない状態が発生しているようです。
 
 PowerShellでエラーになってしまいやすい原因には次のようなものがあります。
- 
 
 エラーの原因
 
@@ -598,8 +566,9 @@ Read-Hostの入力を数値比較。
 Read-Hostで入力した値は文字列になっているため数値比較をするとエラーになります。
  	数値に変換してから比較する。
 
+Get-ChildItemの結果を変数 $hensu に格納するときに、Format-Tableを使っているため、文字列として格納されていることがエラーの原因になっているようです。
+次にパイプ処理の優先順位を表にしていますので、エラーの原因一覧と合わせて覚えておくと不要なエラーを避けることができます。
 PowerShellのパイプ処理の優先順位のおすすめ
- 
 
 順番
 
@@ -630,6 +599,7 @@ Format-*,Out-*(出力)	フォーマットやファイル出力は最後に適用
 <PowerShellで操作>
 
 $hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending
+
 続けてnameの項目で並び替えをしてからテーブル形式で出力してみましょう。
 
 Write-Output $hensu | sort name | format-table
@@ -645,6 +615,7 @@ test3.dat  C:\ps_test\test3.dat  C:\ps_test    .dat      2025/02/09 20:15:30 22
 test4.dat  C:\ps_test\test4.dat  C:\ps_test    .dat      2025/02/09 20:15:30 22
 test5.log  C:\ps_test\test5.log  C:\ps_test    .log      2025/02/09 20:15:30 20
 test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30 20
+
 オブジェクトが変数 $hensu に正しく格納されていたので、並び替えや出力形式の指定ができました。
 これは結構やりがちなミスなので経験してもらいました。
 
@@ -657,44 +628,40 @@ test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30 20
 foreach ($h in $hensu.name){
   write-output "FileName[$h]"
   get-content $h
-  write-output `n
+  write-output ""
 }
+
 <説明>
 
-変数$hensuの中にはファイルやフォルダのリストをオブジェクトとして格納されています。
-foreachを使って$hensu内のnameの項目を変数$hに一つずつ取り出しています。
-※変数に入っているオブジェクトの項目を指定する場合は、(.)ピリオドで区切って項目名を書きます。
-foreachは条件を満たすまで処理を繰り返します。ここでは$hensuからすべてのファイル名を取り出すまでとなります。
-{}の間に繰り返す処理として、ファイル名の出力とファイルの内容を出力するためのGet-Contentに$hを渡しています。
-これにより、$hensuの中にあるすべてのファイルを内容を画面に出力する結果となります。
+1.変数$hensuの中はファイルやフォルダのリストがオブジェクトとして格納されています。
+2.foreachを使って$hensu内のnameの項目を変数$hに一つずつ取り出しています。
+  ※変数に入っているオブジェクトの項目を指定する場合は、(.)ピリオドで区切って項目名を書きます。
+3.foreachは条件を満たすまで処理を繰り返します。ここでは$hensuからすべてのファイル名を取り出すまでとなります。
+4,{}の間に繰り返す処理として、ファイル名の出力とファイルの内容を出力するためのGet-Contentに$hを渡しています。
+5,これにより、$hensuの中にあるすべてのファイルを内容を画面に出力する結果となります。
 
 <実行結果>
 
 FileName[test1.txt]
 test1テキスト
 ​
-​
 FileName[test2.txt]
 test2テキスト
-​
 ​
 FileName[test4.dat]
 test4データ
 ​
-​
 FileName[test3.dat]
 test3データ
-​
 ​
 FileName[test5.log]
 test5ログ
 ​
-​
 FileName[test6.log]
 test6ログ
 ​
-​
 FileName[subfolder1]
+
 get-content : パス 'C:\ps_test\subfolder1' へのアクセスが拒否されました。
 発生場所 行:3 文字:3
 +   get-content $h
@@ -717,21 +684,193 @@ get-content : パス 'C:\ps_test\subfolder2' へのアクセスが拒否され�
 エラーをよく見てみると SubFolder1 と SubFolder2 が問題になっていますね。
 Get-Content はファイルの内容を表示するためのコマンドなので、フォルダに対して実行するとエラーになります。
 
-このエラーの対処としては、以下の３点があげられます。
-１．変数 $hensu にオブジェクトを入れる段階でファイルだけを格納する。
-２．ForEachでファイルだけに限定する。
-３．エラーを無視する。( Try  - Catch を利用する)
+このエラーの対処を３つほど用意しましたので、
 
- 
+対処１
+
+変数 $hensu に、Get-ChildItemのオプションでファイルだけを格納させます。
+これは処理するリストを正しく用意するという意味では、一般的な対処方法になります。
+
+<PowerShellで操作>
+
+$hensu = Get-ChildItem -file | Where-Object { -not $_.PSIsContainer } | Select-Object name,fullname,directoryname,Extension,lastwritetime,length
+Write-Output $hensu | Format-Table
+
+<説明>
+1.Get-ChildItemのオプションで -file を指定することでファイルのみが出力されます。
+  ちなみに -directory を指定するとフォルダのみが出力されます。
+2.Get-ChaidItemは複数の便利なオプションが存在しているので、のちほど詳しく解説していきます。
+
+<実行結果>
+
+Name      FullName             DirectoryName Extension LastWriteTime       Length
+----      --------             ------------- --------- -------------       ------
+test2.txt C:\ps_test\test2.txt C:\ps_test    .txt      2025/01/08 16:48:13     24
+test1.txt C:\ps_test\test1.txt C:\ps_test    .txt      2025/01/08 16:48:13     24
+test4.dat C:\ps_test\test4.dat C:\ps_test    .dat      2025/01/08 16:48:13     22
+test3.dat C:\ps_test\test3.dat C:\ps_test    .dat      2025/01/08 16:48:13     22
+test6.log C:\ps_test\test6.log C:\ps_test    .log      2025/01/08 16:48:15     20
+test5.log C:\ps_test\test5.log C:\ps_test    .log      2025/01/08 16:48:13     20
+
+ファイルだけがオブジェクトとして変数 $hensu に格納されています。
+それでは変数に入っているファイル名の一覧を使って、ファイルの内容を出力してみましょう。
+
+<PowerShellで操作>
+
+foreach ($h in $hensu.name){
+  write-output "FileName[$h]"
+  get-content $h
+  write-output ""
+}
+
+正しく表示されていますね。
+
+対処２
+
+Get-ChildIemからWhere-Objectを使ってファイルだけを格納します。
+こちらも対処１と似ていますが、オブジェクトに対してフィルターをかけています。
+
+<PowerShellで操作>
+
+$hensu = Get-ChildItem -file | Where-Object { -not $_.PSIsContainer } | Select-Object name,fullname,directoryname,Extension,lastwritetime,length
+Write-Output $hensu | Format-Table
+
+<説明>
+1.Get-ChildItemで出力されたオブジェクトに対して、 Where-Object でフィルター処理することでファイルのみが出力されています。
+2.この方法はGet-ChildItem以外のコマンドレットが出力するオブジェクトに有効な方法になります。
+
+※実行結果は 対処１ と同様の結果になるので省略します。
+
+対処３
+
+こちらは ForEach に渡す内容にフィルタをかける対処方法になります。
+
+(1)ForEachに渡している変数 $hensu に対して Where-Object でフィルター処理をしてファイルだけを処理させます。
+
+<PowerShellで操作>
+
+ForEach-object ($h in $hensu | Where-Object { $_.Length -ne $Null}){
+  Write-Output "FileName[$($h.name)]"
+  Get-Content $h.name
+  Write-Output ""
+}
+
+<説明>
+
+
+1.変数 $hensu に対して Where-Object で Length が$Null(ヌル：何もない)ではないものを条件指定します。
+2.先ほどはForEach ($h in $hensu.name)と記述していたため、 name だけが$hに格納されていましたが、今回は 変数 $h にオブジェ3.クトが格納されている状態になっています。
+4,PowerShellでは$()の中に変数や式を入れることで、その値を文字列内に埋め込むことができるようになります。
+5,Get-Content の引数も $h.name に変更して、ファイル名だけを渡しています。
+
+※実行結果は 対処１ と同様の結果になるので省略します。
+
+どの方法でも、結果が同じになるように対処できていますね。
+
+その他の対処方法について
+
+実は PowerShell は「Try - Catch」が利用できるので、エラーが発生した場合にプログラムを停止させずに継続させることができます。
+しかしながら Get-Content でフォルダを読み込ませて発生するエラーについては、Try-Catchの仕組みが正しく動作しないことがあります。
+
+※Try-Catch構文については、スクリプト作成編にて解説する予定です。
+
+●パイプ間のオブジェクトの引き渡しについて
+
+先頭のコマンドレットで取得した内容で、後続のコマンドレットを実行するための書き方について
+
+次のコマンド実行してみましょう。
+
+<PowerShellで操作>
+
+Get-ChildItem -File | ForEach-Object { (Get-Content $_.FullName)}
+
+<説明>
+
+カレントフォルダに格納されているすべてのファイルの内容を出力しています。
+
+1.Get-ChildItemでファイルを取得しています。
+2.Get-ChildItemで取得したオブジェクトをパイプの後ろで読み込んでいます。
+　$_ はパイプラインを通じてオブジェクトを渡すことができる特別な変数になります。
+3.ForEach-Objectは渡されたオブジェクトを先頭から順番に処理していきます。
+4.Get-Content で引き渡されたオブジェクトの FullName に該当するファイルを開きます。
+
+ForEachとForEach-Objectは違うもの？
+
+ForEachはPowerShellのキーワードで配列やコレクションの各要素に対してループ処理が行えます。
+ForEach-ObjectはPowerShellのコマンドレットで、パイプラインを通じて渡される各オブジェクトに対して処理を行います。
+どちらもループ処理に使われますが、実は異なるものなのです。
+
+このように、先頭のコマンドレットで取得したオブジェクトに対して、パイプの後ろのForEach-Objectで処理をする時は $_ を使います。
+
+その他にも$_を利用しなくても使えるパターンのものもあります。
+
+Get-Service -Name "wuauserv" | Set-Service -StartupType Manual
+
+Get系のコマンドレットは色々と使うことが多いので、理解が深いほうが便利に使うことができます。
+
+●カスタムオブジェクトを利用する
+  カスタムオブジェクトは管理者モードでないと利用することができません。
+
+
+●カスタムプロパティを利用する。
+
+
+ファイルの拡張子ごとのカウントを表示
+Get-ChildItem -Path "C:\Your\Directory\Path" | Group-Object Extension | Select-Object Name, Count, @{Name="Extension"; Expression={ $_.Name }}
+
+ファイルサイズをキロバイト単位で表示
+Get-ChildItem | Select-Object Name, Length, @{Name="SizeInKB"; Expression={ $_.Length / 1KB }}
+
+ファイルが作成されてからの日数を表示
+Get-ChildItem | Select-Object Name, CreationTime, LastWriteTime, @{Name="AgeInDays"; Expression={ ((Get-Date) - $_.CreationTime).Days }}
+
+####################################
+
+カスタムプロパティを有効に使うことで、PowerShellスクリプトの柔軟性と表現力を高めることができます。以下に、カスタムプロパティを活用した10個の例を紹介します。
+
+ファイルサイズをキロバイト単位で表示
+
+Get-ChildItem -Path "C:\Your\Directory\Path" | Select-Object Name, Length, @{Name="SizeInKB"; Expression={ $_.Length / 1KB }}
+ファイルの作成日と更新日を表示
+
+Get-ChildItem -Path "C:\Your\Directory\Path" | Select-Object Name, CreationTime, LastWriteTime, @{Name="AgeInDays"; Expression={ (Get-Date) - $_.CreationTime).Days }}
+プロセスのメモリ使用量をMB単位で表示
+
+Get-Process | Select-Object Name, Id, @{Name="MemoryUsageMB"; Expression={ $_.WorkingSet64 / 1MB }}
+ネットワークアダプターのリンク速度をMbps単位で表示
+
+Get-NetAdapter | Select-Object Name, Status, @{Name="LinkSpeedMbps"; Expression={ $_.LinkSpeed / 1Mbps }}
+ユーザーアカウントの有効期限を表示
+
+Get-LocalUser | Select-Object Name, Enabled, @{Name="PasswordExpires"; Expression={ $_.PasswordLastSet.AddDays($_.PasswordExpiresInDays) }}
+イベントログのエントリをカスタムフォーマットで表示
+
+Get-EventLog -LogName Application -Newest 10 | Select-Object EntryType, TimeGenerated, Source, @{Name="MessageSummary"; Expression={ $_.Message.Substring(0, 50) + "..." }}
+ディスクの空き容量をパーセンテージで表示
+
+Get-PSDrive -PSProvider FileSystem | Select-Object Name, @{Name="FreeSpacePercentage"; Expression={ ($_.Free / $_.Used) * 100 }}
+サービスの起動時間を表示
+
+Get-Service | Select-Object Name, Status, @{Name="StartTime"; Expression={ (Get-Date) - $_.StartType }}
+プロセスのCPU使用率を表示
+
+Get-Process | Select-Object Name, Id, @{Name="CPUUsage"; Expression={ $_.CPU / (Get-Date - $_.StartTime).TotalSeconds * 100 }}
+ファイルの拡張子ごとのカウントを表示
+
+Get-ChildItem -Path "C:\Your\Directory\Path" | Group-Object Extension | Select-Object Name, Count, @{Name="Extension"; Expression={ $_.Name }}
+これらの例は、カスタムプロパティを使用してデータをより見やすく、理解しやすくする方法を示しています。カスタムプロパティを活用することで、PowerShellスクリプトの表現力が大幅に向上します。他に質問があれば、どうぞお知らせください！😊
+
+####################################
+
+
+
+●コマンドレットのデフォルトの画面出力設定を確認する
 
 例えば、「Get-ChildItem」を実行するとカレントプロンプトにあるフォルダやファイルの一覧が表示されます。
 
 拡張子が「.txt」のものだけを取得したい場合は、以下の様に記述します。
 
-
 > Get-ChildItem | Where Name -Like '*.txt'
-
- 
 
 Get-ChildItemを実行した結果として、「Mode」「LastWriteTime」「Length」「Name」が表示されます。
 
@@ -740,59 +879,39 @@ Get-ChildItemを実行した結果として、「Mode」「LastWriteTime」「Le
 
 ☞デフォルトの出力項目はどうやって決まっているの？
 
- 
-
 コマンドレットによってことなりますが、Get-ChildItemの場合は、FileSystemを利用しているコマンドレットなので、FileSystemを扱うための定義ファイルで設定されています。
-
- 
 
 確認する方法は
 
 (1)PowerShellのインストールディレクトリを確認
 
- 
-
 > $PSHome
-
- 
 
 (2)定義ファイルを開く
 
 ※内容を書き換えないように気を付けてください。
 
- 
-
 > notepad.exe “$PSHome\FileSystem.format.ps1xml”
 
- 
-
 FileSystem.format.ps1xmlというファイルのVIEW DEFINITIONSセクションにデフォルトの出力項目が設定されています。
+
+●カスタムプロパティを利用する
 
 ※4項目以外の情報についても記述されていますが、次のからの手順で深堀りしていきます。
 
 4項目以外にも、どんな情報が含まれているのか確認してみましょう。
 
- 
-
 <コマンドレットの記述>
 
 > Get-ChildItem -path c:\windows\system32 | Where-Object Name -Like 'wsock32.dll' | Format-List
-
- 
 
 <エイリアスを使った記述>
 
 > dir -path c:\windows\system32 | Where Name -Like 'wsock32.dll' | fl
 
- 
-
 エクスプローラーで確認できる内容がオブジェクトとして返されていることがわかります。
 
- 
-
 上記のコマンドレットは以下の様な処理が行われ結果を出力しています。
-
- 
 
 「Get-ChildItem」に-pathオプションで「c:\windows\system32」フォルダを参照するように指示しています。
 
@@ -800,39 +919,24 @@ FileSystem.format.ps1xmlというファイルのVIEW DEFINITIONSセクション�
 
 「|」(パイプ)の後ろに(2)で渡された情報の詳細表示をするように指示しています。
 
- 
-
 左のほうから右に向けて、情報を絞っていっていることがわかります。
-
- 
 
 次に「Name」と「CreationTime」と「ProductVersion」だけが出力されるように記述してみましょう。
 
- 
-
 > Get-ChildItem -path “c:\windows\system32” | Select-Object Name,CreationTime,ProductVersion | Where-Object Name -like 'wsock32.dll'
 
- 
-
 「ProductVersion」の欄が空白になってしまっていますんね。
-
 
 これは「ProductVersion」という項目は存在していなくて、「VersionInfo」の中に配列として格納されているために直接取得はできません。
 
 Select-Objectとしての指定した場合に、「ProductVersion」という項目が存在しないためNullとして空欄が表示されます。
 
-
 カスタムプロパティを利用することによって取得することが可能になります。
-
- 
 
 次のコマンドで「VersionInfo」内の「ProductVersion」を取得できるようにしてみましょう。
 
- 
-
 > Get-ChildItem -path c:\windows\system32 | Select-Object Name,CreationTime,@{Name='ProductVersion';Expression={$_.VersionInfo.ProductVersion}} | Where-Object Name -like 'wsock32.dll'
 
- 
 
 上手く取得できましたね。ではカスタムプロパティの記述について説明します。
 
