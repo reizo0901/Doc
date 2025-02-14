@@ -784,16 +784,16 @@ ForEach ($h in $hensu | Where-Object { $_.Length -ne $Null}){
 
 <PowerShellで操作>
 
-Get-ChildItem -File | ForEach-Object { (Get-Content $_.FullName)}
+Get-ChildItem -File | ForEach-Object { (Get-Content $_.FullName)} | set-clipboard
 
 <説明>
 
 カレントフォルダに格納されているすべてのファイルの内容を出力しています。
 
 1.Get-ChildItemでファイルを取得しています。
-2.Get-ChildItemで取得したオブジェクトをパイプの後ろで読み込んでいます。
-　$_ はパイプラインを通じてオブジェクトを渡すことができる特別な変数になります。
-3.ForEach-Objectは渡されたオブジェクトを先頭から順番に処理していきます。
+2.Get-ChildItemで取得したオブジェクトをパイプの後ろの$_で読み込んでいます。
+　$_ はスクリプトブロック内で使用される自動変数で、現在のパイプラインオブジェクトが格納されています。
+3.ForEach-Objectは渡されたオブジェクト内のFullNameの値を先頭から順番に処理していきます。
 4.Get-Content で引き渡されたオブジェクトの FullName に該当するファイルを開きます。
 
 ForEachとForEach-Objectは違うもの？
@@ -804,17 +804,169 @@ ForEach-ObjectはPowerShellのコマンドレットで、パイプラインを�
 
 このように、先頭のコマンドレットで取得したオブジェクトに対して、パイプの後ろのForEach-Objectで処理をする時は $_ を使います。
 
-その他にも$_を利用しなくても使えるパターンのものもあります。
-
-Get-Service -Name "wuauserv" | Set-Service -StartupType Manual
-
 Get系のコマンドレットは色々と使うことが多いので、理解が深いほうが便利に使うことができます。
 
-●カスタムオブジェクトを利用する
-  カスタムオブジェクトは管理者モードでないと利用することができません。
+●クリップボードを活用しよう
 
+クリップボードに格納してみましょう！
+
+画面に出力された結果を、マウスで選択してコピーして貼り付けなんて作業をしたことがあると思います。
+PowerShellは画面に出力できる幅などに限界があるため、省略された表示(...)になっている場合などがあります。
+クリップボードに出力する場合は、省略されずに取得できる利点もあるので活用できるようになりましょう。
+
+[PowerShellで操作]
+
+Get-ChildItem | ConvertTo-CSV | Set-ClipBoard
+
+画面には何も表示されませんが、オブジェクトがCSV形式に変換されて、クリップボードに格納されます。
+メモ帳などに貼り付けてみましょう。
+
+エクセルに貼り付けをしたい場合は、以下のようにConvertTo-CSVにオプションを追加します。
+
+[PowerShellで操作]
+
+$objects | ConvertTo-Csv -Delimiter "`t" -NoTypeInformation | Set-Clipboard
+
+エクセルに貼り付けしてみましょう。
+
+※オブジェクトは直接クリップボードに貼り付けることができないため、ConvertTo-CSVで変換する必要があります。
+
+クリップボードの内容を変数に格納してみましょう！
+
+以下の文字をメモ帳に入力して、コピーします。
+
+C:\ps_test\test1.txt
+C:\ps_test\test2.txt
+C:\ps_test\test3.dat
+C:\ps_test\test4.dat
+C:\ps_test\test5.log
+C:\ps_test\test6.log
+
+[PowerShellで操作]
+
+#変数 $cliptext にクリップボードの
+$cliptext = Get-ClipBoard
+#変数 $cliptext の内容を出力
+Write-Output $cliptext
+#変数 $cliptext のパスを利用してファイルの内容を出力
+foreach ($c in $cliptext){Get-Content $h}
+
+※エラーが出力された場合は、クリップボードに空の行が含まれている可能性があります。
+
+空の行を処理しないようにするには以下のように修正します。
+
+[PowerShellで操作]
+
+foreach ($c in $cliptext | Where-Object {$_ -ne ""}){Get-Content $h}
+
+Where-Objectで空の行を処理しないように条件を追加しています。
+
+●ファイルを活用しよう。
+
+コマンドレットで取得した情報をファイルに出力したり、外部ファイルを利用する方法を学んで行きましょう。
+
+ファイルに出力してみましょう！
+
+ファイルへの出力へは以下のコマンドレットが用意されています。
+
+Out-File:
+
+コマンドの出力をファイルに書き込むための基本的なコマンドレットです。
+Get-ChildItem | Out-File -FilePath "output.txt"
+
+Set-Content:
+
+ファイルに内容を書き込むためのコマンドレットです。既存のファイルがある場合は上書きされます。
+"Hello, World!" | Set-Content -Path "output.txt"
+
+Add-Content:
+
+ファイルに内容を追加するためのコマンドレットです。既存のファイルに追記します。
+"Additional line" | Add-Content -Path "output.txt"
+
+Export-Csv:
+
+オブジェクトをCSV形式でエクスポートするためのコマンドレットです。
+Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
+
+Export-Tsv:
+
+Get-ChildItem | Export-Csv -Path "output.tsv" -Delimiter "`t" -NoTypeInformation
+
+Export-Clixml:
+
+オブジェクトをXML形式でエクスポートするためのコマンドレットです。
+Get-Process | Export-Clixml -Path "processes.xml"
+
+Export-Json:
+
+オブジェクトをJSON形式でエクスポートするためのコマンドレットです。
+Get-Process | ConvertTo-Json | Set-Content -Path "processes.json"
+
+Out-String:
+
+オブジェクトを文字列に変換し、ファイルに書き込む方法です。
+Get-ChildItem | Out-String | Set-Content -Path "output.txt"
+
+Out-GridView:
+
+GUIでデータを表示し、選択したデータをファイルに出力する方法です。
+Get-Process | Out-GridView -PassThru | Export-Csv -Path "selected_processes.csv" -NoTypeInformation
+
+リダイレクト:
+
+上書き
+Get-ChildItem > output.txt
+追記
+Get-ChildItem >> output.txt
+
+ファイルから入力してみましょう！
+
+Get-Content:
+
+ファイルの内容を読み取るための基本的なコマンドレットです。
+$content = Get-Content -Path "input.txt"
+Import-Csv:
+
+CSVファイルを読み取り、オブジェクトとしてインポートするためのコマンドレットです。
+$csvData = Import-Csv -Path "data.csv"
+Import-Clixml:
+
+XMLファイルを読み取り、オブジェクトとしてインポートするためのコマンドレットです。
+$xmlData = Import-Clixml -Path "data.xml"
+ConvertFrom-Json:
+
+JSONファイルを読み取り、オブジェクトとしてインポートするためのコマンドレットです。
+$jsonData = Get-Content -Path "data.json" | ConvertFrom-Json
+Read-Host:
+
+ユーザーからの入力を受け取るためのコマンドレットです。ファイルからの入力ではありませんが、ユーザー入力をファイルに保存することができます。
+$userInput = Read-Host "Enter some text"
+$userInput | Set-Content -Path "userInput.txt"
+[System.IO.File]::ReadAllText():
+
+.NETのメソッドを使用してファイルの内容を読み取る方法です。
+$content = [System.IO.File]::ReadAllText("input.txt")
+[System.IO.File]::ReadAllLines():
+
+.NETのメソッドを使用してファイルの各行を配列として読み取る方法です。
+$lines = [System.IO.File]::ReadAllLines("input.txt")
+[System.IO.File]::ReadLines():
+
+.NETのメソッドを使用してファイルの各行を逐次読み取る方法です。
+$lines = [System.IO.File]::ReadLines("input.txt")
 
 ●カスタムプロパティを利用する。
+
+カスタムプロパティは、PowerShellオブジェクトに追加の情報を付加するためのプロパティです。
+これにより、既存のオブジェクトに新しいデータを追加したり、既存のプロパティを変換したりすることができます。
+カスタムプロパティは、Select-Objectコマンドレットの-Propertyパラメーターを使用して作成されます。
+
+カスタムプロパティを使えば以下のような出力をしたりできます。
+
+Get-ChildItem | Select-Object Name, CreationTime, @{Name="DaysSinceCreation"; Expression={((Get-Date) - ($_.CreationTime)).days}}
+
+ファイル毎の作成日から今日までの日数の表示がされていると思います。
 
 
 ファイルの拡張子ごとのカウントを表示
@@ -863,8 +1015,6 @@ Get-ChildItem -Path "C:\Your\Directory\Path" | Group-Object Extension | Select-O
 これらの例は、カスタムプロパティを使用してデータをより見やすく、理解しやすくする方法を示しています。カスタムプロパティを活用することで、PowerShellスクリプトの表現力が大幅に向上します。他に質問があれば、どうぞお知らせください！😊
 
 ####################################
-
-
 
 ●コマンドレットのデフォルトの画面出力設定を確認する
 
