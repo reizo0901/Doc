@@ -342,20 +342,16 @@ test1.txtファイルの情報が詳しく出力されていることがわか�
 ●パイプラインとフィルタリングについて
 
 コマンドレットのオブジェクトを最大限利用するにはパイプラインとフィルタリングの理解が必須となります。
- 
 
 パイプラインとは
 コマンドの出力を次のコマンドの入力として渡す仕組みです。これにより、複雑な処理を簡潔に記述できます。
 PowerShellでは出力されたオブジェクトを次のコマンドにそのまま渡して処理を行うことができます。
 ※コマンドプロンプトにもパイプラインの処理はありますが、出力されている文字列に対して処理がされます。
- 
 
 フィルタリングとは
 パイプラインと組み合わせて、コマンドの出力結果から必要なものだけを取り出すことができます。
- 
 
 ●オブジェクトをフィルタリングをしてみよう！
- 
 
 Where-Objectを使って抽出する条件を設定してみましょう。
 
@@ -379,14 +375,44 @@ Mode                 LastWriteTime         Length Name
 *.dat
 *.log
 
+Where-Objectで使える比較演算子には以下のものがあります。
+
+比較演算子一覧
+
+演算子	読み方	比較可能データ型	説明	使用例
+-eq	Equal	数値、文字列、日付、ブール値	等しい場合に真を返します	$_ -eq 5
+-ne	Not Equal	数値、文字列、日付、ブール値	等しくない場合に真を返します	$_ -ne 5
+-gt	Greater Than	数値、文字列、日付	より大きい場合に真を返します	$_ -gt 5
+-ge	Greater Than Or Equal	数値、文字列、日付	以上の場合に真を返します	$_ -ge 5
+-lt	Less Than	数値、文字列、日付	より小さい場合に真を返します	$_ -lt 5
+-le	Less Than Or Equal	数値、文字列、日付	以下の場合に真を返します	$_ -le 5
+-like	Like	文字列	ワイルドカードを使用した比較を行います	$_ -like "test*"
+-notlike	Not Like	文字列	ワイルドカードを使用した比較で一致しない場合に真を返します	$_ -notlike "test*"
+-match	Match	文字列	正規表現を使用した比較を行います	$_ -match "^test"
+-notmatch	Not Match	文字列	正規表現を使用した比較で一致しない場合に真を返します	$_ -notmatch "^test"
+-in	In	数値、文字列、日付、ブール値	値が指定されたコレクションに含まれている場合に真を返します	$_ -in @(1, 2, 3, 4, 5)
+-notin	Not In	数値、文字列、日付、ブール値	値が指定されたコレクションに含まれていない場合に真を返します	$_ -notin @(1, 2, 3, 4, 5)
+
+データ型とは？
+※コマンドベースで使うものだけを抜粋して説明しています。
+
+データ型	説明	型名	例	扱えるデータの範囲
+整数型	整数値を表します	[int]	1, -42, 1000	-2,147,483,648 ～ 2,147,483,647
+浮動小数点数型	小数点を含む数値を表します	[float], [double]	3.14, -0.001, 2.718	±1.5 x 10^-45 ～ ±3.4 x 10^38
+文字列型	文字の列を表します	[string]	"Hello, World!", "PowerShell"	最大2GBの文字列
+ブール型	真 (True) または偽 (False) の値を表します	[bool]	$true, $false	True または False
+日付型	日付と時刻を表します	[datetime]	Get-Date, [datetime]::Now	0001/01/01 00:00:00 ～ 9999/12/31 23:59:59
+配列型	複数の値を格納するコレクションを表します	[array]	@(1, 2, 3), @("a", "b", "c")	任意のデータ型のコレクショ
+
+※日付型はシリアル値で記録されていますが、Excelなどに直接貼ると基準日が異なるためほかの日付になってしまいます。
+
 フィルタ以外にもパイプラインを使った便利な使い方があるので練習してみましょう。
  
-●出力されるオブジェクトの項目を選択しよう！
- 
+●オブジェクトの項目を選択しよう！
 
-Select-Objectを使って出力される項目を選択してみましょう。
+Select-Objectを使ってオブジェクトの項目を選択してみましょう。
 
-ファイル名、フルパス、フォルダ名、拡張子、最終更新日時、ファイルサイズの項目を表示したい場合は、以下のように記述します。
+ファイル名、フルパス、フォルダ名、拡張子、最終更新日時、ファイルサイズの項目を表示したい場合は、以下のように記述します
 
 Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Where-Object Name -Like '*.txt'
 <実行結果>
@@ -412,7 +438,7 @@ c:\ps_testフォルダ内の２つのファイルの指定した表示項目で�
 
 ●出力形式を設定しよう！
 
-先ほどと同じ形式で表示できるように出力形式を指定してみましょう。
+最初と同じ形式で表示できるように出力形式を指定してみましょう。
 
 [PowerShellで操作]
 
@@ -453,7 +479,7 @@ lengthを並び替えの項目として指定してみましょう。
 
 [PowerShellで操作]
 
-Get-ChildItem | Select-object name,fullname,directoryname,Extension,lastwritetime,length | sort-object length| format-table
+Get-ChildItem | Select-Object Name,FullName,DirectoryName,Extension,LastWriteTime,Length | Sort-Object Length| Format-Table
 <実行結果>
 
 Name       FullName              directoryname Extension LastWriteTime       length
@@ -470,7 +496,7 @@ test1.txt  C:\ps_test\test1.txt  C:\ps_test    .txt      2025/02/09 20:15:30 24
 lengthの項目が昇順で並び替えされていますね。
 逆に降順にしたい場合は以下のように -Descendingのオプションを付けることで逆順になります。
 
-Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending | format-table
+Get-ChildItem | Select-Object Name,FullName,DirectoryName,Extension,LastWriteTime,Length | Sort-Object Length -Descending | Format-Table
 <実行結果>
 
 Name       FullName              DirectoryName Extension LastWriteTime       Length
@@ -488,9 +514,6 @@ subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
 オプションはどこまで短縮できるのかは明記されていないので、よく使うオプションは色々と試してみるのもよいかもしれません。
 単語が被っているオプションが無ければ短くできるのかもしれませんね。
 
-それぞれの項目を昇順にしたり、降順にしたりするにはカスタムオブジェクトを利用する必要があります。
-※カスタムオブジェクトについては、後半の記事で説明しています。
-
 PowerShellの変数にオブジェクトを格納してみましょう。
 PowerShellの変数は変数名の先頭に$(ドルマーク)を付けることにより宣言できます。
 変数名にはスペースや一部の記号を使うことができません。
@@ -500,7 +523,8 @@ PowerShellの変数は変数名の先頭に$(ドルマーク)を付けること�
 
 [PowerShellで操作]
 
-$hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending | format-table
+$hensu = Get-ChildItem | Select-Object Name,fullName,DirectoryName,Extension,LastWriteTime,Length | Sort-Object Length -Descending | Format-Table
+
 格納した変数の中身を見てみましょう。
 
 Write-Output $hensu
@@ -531,6 +555,7 @@ out-lineoutput : 型 "Microsoft.PowerShell.Commands.Internal.Format.FormatEntryD
 しいシーケンスではありません。ユーザーによって指定された "format-*" コマンドが既定の書式と競合している可能性があります。
     + CategoryInfo          : InvalidData: (:) [out-lineoutput]、InvalidOperationException
     + FullyQualifiedErrorId : ConsoleLineOutputOutOfSequencePacket,Microsoft.PowerShell.Commands.OutLineOutputCommand
+    
 なにやらエラーが出てきて動きませんね・・・。
 これはPowerShellの決まり事を守っていない状態が発生しているようです。
 
@@ -592,6 +617,48 @@ Measure-Object,Group-Object(データ加工)	データ量が減った後に計�
 ５
 
 Format-*,Out-*(出力)	フォーマットやファイル出力は最後に適用する。
+
+Export-Csv
+
+説明: オブジェクトをCSV形式の文字列に変換し、ファイルにエクスポートします。
+例: Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
+Format-Table
+
+説明: オブジェクトを表形式で表示します。出力は文字列として表示されます。
+例: Get-Process | Format-Table -Property Name, CPU
+Out-String
+
+説明: オブジェクトを文字列に変換します。通常、パイプラインの最後に使用されます。
+例: Get-Process | Out-String
+ConvertTo-Csv
+
+説明: オブジェクトをCSV形式の文字列に変換します。ファイルには保存されません。
+例: Get-Process | ConvertTo-Csv -NoTypeInformation
+ConvertTo-Json
+
+説明: オブジェクトをJSON形式の文字列に変換します。
+例: Get-Process | ConvertTo-Json
+ConvertTo-Xml
+
+説明: オブジェクトをXML形式の文字列に変換します。
+例: Get-Process | ConvertTo-Xml
+Out-File
+
+説明: オブジェクトを文字列に変換し、ファイルに書き込みます。
+例: Get-Process | Out-File -FilePath "processes.txt"
+Out-Host
+
+説明: オブジェクトを文字列に変換し、ホストに表示します。通常、デフォルトで使用されます。
+例: Get-Process | Out-Host
+Out-GridView
+
+説明: オブジェクトを文字列に変換し、グリッドビューで表示します。
+例: Get-Process | Out-GridView
+Out-Printer
+
+説明: オブジェクトを文字列に変換し、プリンターに送信します。
+例: Get-Process | Out-Printer
+
 
 では、変数にオブジェクトを格納するにはどうすればいいでしょうか？
 
@@ -793,7 +860,7 @@ ForEach ($h in $hensu | Where-Object { $h.Length -ne $Null}){
 
 <PowerShellで操作>
 
-Get-ChildItem -File | ForEach-Object { (Get-Content $_.FullName)} | set-clipboard
+Get-ChildItem -File | ForEach-Object { (Get-Content $_.FullName)}
 
 <説明>
 
@@ -816,15 +883,29 @@ Get系のコマンドレットは色々と使うことが多いので、理解�
 
 ●出力結果をグループ化してみましょう！
 
-group-objectを利用することで、指定した１つの項目でグループ化することができます。
+Group-Objectを利用することで、指定した１つの項目でグループ化することができます。
 簡単な集計などをするときに役に立つので練習してみましょう。
 
-Get-ChildItem -file | Group-Object -Property Extension | Select-Object Name,Count
+フォルダ内のファイルの一覧を取得して、拡張子別のファイル数をカウントしようと思います。
+Get-ChildItem -fileを使って、ファイルの一覧を取得します。
+次にGroup-ObjectでExtensionを指定することで、拡張子単位でまとめることができます。
+※Group-Objectでグループ化できる項目は１つだけになります。
+※カスタムプロパティを利用すれば、複数の項目をまとめることも可能です。
+最後にSelect-Objectで出力する内容を指定します。
+Group-Objectの指定以降に記述するSelect-Objectは、以下のルールによりグループ化されている項目が割り当てられます。
 
-Get-ChildItem -file -Recurse  | Select-Object @{Name='拡張子パス'; Expression={ "$($_.directoryname)`\$($_.Extension)"}} | Group-Object -Property 拡張子パス | select name,count
+項目名	内容
+Name	グループ化に使用されたプロパティの値
+Count	グループ内のオブジェクトの数
+Group	グループ内のオブジェクトの配列
 
-Get-ChildItem -file -Recurse  | Select-Object @{Name='拡張子パス'; Expression={ "$($_.directoryname)`\$($_.Extension)"}} | Group-Object -Property 拡張子パス | select @{Name='拡張子パス';Expression={$_.name}},count
+[PowerShellで操作]
 
+Get-ChildItem -file | Group-Object Extension | Select-Object name,count
+
+<実行結果>
+
+拡張子でグループ化されて、それぞれの数がカウントが出力されています。
 
 ●クリップボードを活用しよう
 
@@ -976,7 +1057,6 @@ $lines = [System.IO.File]::ReadAllLines("input.txt")
 .NETのメソッドを使用してファイルの各行を逐次読み取る方法です。
 $lines = [System.IO.File]::ReadLines("input.txt")
 
-●●●●●●●●
 ●カスタムプロパティを利用する。
 
 カスタムプロパティは、PowerShellオブジェクトに追加の情報を付加するためのプロパティです。
