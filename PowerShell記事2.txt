@@ -549,6 +549,7 @@ subfolder2 C:\ps_test\subfolder2                         2025/02/09 20:15:30
 [PowerShellで操作]
 
 Write-Output $hensu | Sort-Object name
+
 <実行結果>
 
 out-lineoutput : 型 "Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData" のオブジェクトが無効であるか、または正
@@ -557,7 +558,8 @@ out-lineoutput : 型 "Microsoft.PowerShell.Commands.Internal.Format.FormatEntryD
     + FullyQualifiedErrorId : ConsoleLineOutputOutOfSequencePacket,Microsoft.PowerShell.Commands.OutLineOutputCommand
     
 なにやらエラーが出てきて動きませんね・・・。
-これはPowerShellの決まり事を守っていない状態が発生しているようです。
+オブジェクトが無効と言っていますね。
+これはPowerShellの決まり事を守っていないためエラーが発生しているようです。
 
 PowerShellでエラーになってしまいやすい原因には次のようなものがあります。
 
@@ -589,11 +591,13 @@ Measure-Object は統計データを返すが、元のオブジェクトは失�
 Export-Csvの後にオブジェクト処理。
 Export-Csv はファイルを作成するコマンドであり、出力は $null になるため、後続の処理ができなくなる。	Sort-Objectなどの処理を先にする。
 Read-Hostの入力を数値比較。
-Read-Hostで入力した値は文字列になっているため数値比較をするとエラーになります。
- 	数値に変換してから比較する。
+Read-Hostで入力した値は文字列になっているため数値比較をするとエラーになります。	数値に変換してから比較する。
 
 Get-ChildItemの結果を変数 $hensu に格納するときに、Format-Tableを使っているため、文字列として格納されていることがエラーの原因になっているようです。
 次にパイプ処理の優先順位を表にしていますので、エラーの原因一覧と合わせて覚えておくと不要なエラーを避けることができます。
+
+●ここに画像を挿入する。
+
 PowerShellのパイプ処理の優先順位のおすすめ
 
 順番
@@ -693,6 +697,11 @@ test6.log  C:\ps_test\test6.log  C:\ps_test    .log      2025/02/09 20:15:30 20
 
 <PowerShellで操作>
 
+foreach ($h in $hensu.name){write-output "FileName[$h]";get-content $h;write-output ""}
+
+上記のコマンドは以下のスクリプトを１行で記述したものになります。
+１行で連続して実行するコマンドを記述する場合はセミコロン(;)で区切る必要があります。
+
 foreach ($h in $hensu.name){
   write-output "FileName[$h]"
   get-content $h
@@ -705,7 +714,8 @@ foreach ($h in $hensu.name){
 2.foreachを使って$hensu内のnameの項目を変数$hに一つずつ取り出しています。
   ※変数に入っているオブジェクトの項目を指定する場合は、(.)ピリオドで区切って項目名を書きます。
 3.foreachは条件を満たすまで処理を繰り返します。ここでは$hensuからすべてのファイル名を取り出すまでとなります。
-4,{}の間に繰り返す処理として、ファイル名の出力とファイルの内容を出力するためのGet-Contentに$hを渡しています。
+4.{}の間に繰り返す処理として、ファイル名の出力とファイルの内容を出力するためのGet-Contentに$hを渡しています。
+5.次のデータの出力の前に、空白行を入れるためにWrite-Output ""を実行しています。
 5,これにより、$hensuの中にあるすべてのファイルを内容を画面に出力する結果となります。
 
 <実行結果>
@@ -752,7 +762,7 @@ get-content : パス 'C:\ps_test\subfolder2' へのアクセスが拒否され�
 エラーをよく見てみると SubFolder1 と SubFolder2 が問題になっていますね。
 Get-Content はファイルの内容を表示するためのコマンドなので、フォルダに対して実行するとエラーになります。
 
-このエラーの対処を３つほど用意しましたので、一つずつ理解しながら対処していきましょう。
+このエラーの対処を２つほど用意しましたので、一つずつ理解しながら対処していきましょう。
 
 対処１
 
@@ -817,32 +827,6 @@ Write-Output $hensu | Format-Table
 
 ※実行結果は 対処１ と同様の結果になるので省略します。
 
-対処３
-
-こちらは ForEach に渡す内容にフィルタをかける対処方法になります。
-
-(1)ForEachに渡している変数 $hensu に対して Where-Object でフィルター処理をしてファイルだけを処理させます。
-
-<PowerShellで操作>
-
-$hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,lastwritetime,length | Sort-Object length -Descending
-​
-ForEach ($h in $hensu | Where-Object { $h.Length -ne $Null}){
-  Write-Output "FileName[$($h.name)]"
-  Get-Content $h.name
-  Write-Output ""
-}
-
-<説明>
-
-1.変数 $hensu から取り出された $h に対して Where-Object で Length が$Null(ヌル：何もない)ではないものを条件指定します。
-　$h.Length は $_.Length にしても同じ動作をします。
-2.先ほどはForEach ($h in $hensu.name)と記述していたため、 name だけが$hに格納されていましたが、今回は 変数 $h にすべてのオブジェクトが格納されている状態になっています。
-4,PowerShellでは$()の中に変数や式を入れることで、その値を文字列内に埋め込むことができるようになります。
-5,Get-Content の引数も $h.name に変更して、ファイル名だけを渡しています。
-
-※実行結果は 対処１ と同様の結果になるので省略します。
-
 どの方法でも、結果が同じになるように対処できていますね。
 
 その他の対処方法について
@@ -871,11 +855,15 @@ Get-ChildItem -File | ForEach-Object { (Get-Content $_.FullName)}
 3.ForEach-Objectは渡されたオブジェクト内のFullNameの値を先頭から順番に処理していきます。
 4.Get-Content で引き渡されたオブジェクトの FullName に該当するファイルを開きます。
 
+●ややこしいForEachとForEach-Objectの違いについて
+
 ForEachとForEach-Objectは違うもの？
 
-ForEachはPowerShellのキーワードで配列やコレクションの各要素に対してループ処理が行えます。
-ForEach-ObjectはPowerShellのコマンドレットで、パイプラインを通じて渡される各オブジェクトに対して処理を行います。
-どちらもループ処理に使われますが、実は異なるものなのです。
+ForEachはキーワード(制御文)で、設定したリストに対してすべて処理するようなループ処理が行えます。※リストにオブジェクトを設定することも可能です。
+
+ForEach-Objectはコマンドレットで、パイプラインを通じて渡される各オブジェクトに対してすべて処理するようなループ処理が行えます。
+
+どちらもループ処理に使われますが、処理する対象がことなります。
 
 このように、先頭のコマンドレットで取得したオブジェクトに対して、パイプの後ろのForEach-Objectで処理をする時は $_ を使います。
 
@@ -1068,6 +1056,37 @@ $lines = [System.IO.File]::ReadLines("input.txt")
 Select-Object -Property @{Name='プロパティ名'; Expression={スクリプトブロック}}
 Nameにはプロパティ名を入力して、Expressionには出力したデータまたはデータを作成する式を記述します。
 
+現在のフォルダのファイル一覧を取得して、フルパスの長さを取得するカスタムプロパティを実行してみましょう。
+
+Get-ChildItem | Select-Object FullName,@{Name="フルパスの長さ";Expression={$_.FullName.Length}}
+
+<説明>
+1.Get-ChildItemでファイルの一覧を取得します。
+2.Select-ObjectにFullNameとカスタムプロパティを設定します。
+3.カスタムプロパティの名前は「フルパスの長さ」にしています。
+4.スクリプトブロックにはフルパスの名前の入った$_.FullNameに.Lengthメソッドを使って文字列の長さを取得しています。
+
+<実行結果>
+
+FullName              フルパスの長さ
+--------              --------------
+C:\ps_test\subfolder1         21
+C:\ps_test\subfolder2         21
+C:\ps_test\test1.txt          20
+C:\ps_test\test2.txt          20
+C:\ps_test\test3.dat          20
+C:\ps_test\test4.dat          20
+C:\ps_test\test5.log          20
+C:\ps_test\test6.log          20
+
+フルパスの文字列の長さが表示されましたね。
+このようにオブジェクトに持っていないデータをカスタムして作成してオブジェクトに追加することができます。
+作成したカスタムプロパティは並び替えやフィルタをかけることできます。
+
+新しくメソッドというものが出てきましたが、PowerShellのメソッドは、オブジェクトが持つ機能や動作を実行するための関数です。
+メソッドは、特定のオブジェクトに関連付けられており、そのオブジェクトのプロパティやデータに対して操作を行います。
+詳しくは別の章で説明しますので、データに対して何かしら加工を行うものと覚えておいてください
+
 各ファイルの作成日から今日までの日数を表示するカスタムプロパティを作ってみましょう。
 
 Get-ChildItem | Select-Object Name, CreationTime, @{Name="経過日数"; Expression={(((Get-Date) - ($_.CreationTime)).days).tostring() + "日"}}
@@ -1096,10 +1115,6 @@ test5.log  2025/01/08 16:48:13 40日
 test6.log  2025/01/08 16:48:15 40日
 
 各ファイルの作成日から今日までの日数の表示がされていると思います。
-
-新しくメソッドというものが出てきましたが、PowerShellのメソッドは、オブジェクトが持つ機能や動作を実行するための関数です。
-メソッドは、特定のオブジェクトに関連付けられており、そのオブジェクトのプロパティやデータに対して操作を行います。
-詳しくは別の章で説明しますので、データに対して何かしら加工を行うものと覚えておいてください
 
 カスタムプロパティを使う問題を２つほど解いてみましょう。
 
@@ -1520,11 +1535,6 @@ Get-ChildItem | export-csv -path c:\work\certcsv.csv -notypeinformation -Encodin
 │同様の現象が発生します。
 │Export-CSVのオプションで「-encoding UTF8」を明示することにより、この事象を回避することができます。
 
- 
-
- 
-
- 
 ●コマンドレットのデフォルトの画面出力設定を確認する
 
 例えば、「Get-ChildItem」を実行するとカレントプロンプトにあるフォルダやファイルの一覧が表示されます。
@@ -1555,14 +1565,6 @@ Get-ChildItemを実行した結果として、「Mode」「LastWriteTime」「Le
 > notepad.exe “$PSHome\FileSystem.format.ps1xml”
 
 FileSystem.format.ps1xmlというファイルのVIEW DEFINITIONSセクションにデフォルトの出力項目が設定されています。
- 
-
- 
-
- 
-
- 
-
 
 ●よく使うコマンドレット一覧と使い方
 お待たせしました。よく使うコマンドレット一覧を紹介します。
@@ -1589,17 +1591,8 @@ Registry:レジストリ
 Variable:セッション状態で保存された変数のビューが格納されるドライブ
 WSMAN:WsMan 構成保管のルートです。
 
- 
-
-
 詳細なドライブ情報を取得する。
 get-psdrive | format-list
-
- 
-
- 
-
- 
 
 ファイルの一覧を取得(単一フォルダ/サブフォルダ/階層指定)
 取得した情報をCSVファイルとして出力
