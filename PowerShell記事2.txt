@@ -663,7 +663,6 @@ Out-Printer
 説明: オブジェクトを文字列に変換し、プリンターに送信します。
 例: Get-Process | Out-Printer
 
-
 では、変数にオブジェクトを格納するにはどうすればいいでしょうか？
 
 | format-* を外して変数に格納してみましょう。
@@ -675,6 +674,7 @@ $hensu = Get-ChildItem | Select-Object name,fullname,directoryname,Extension,las
 続けてnameの項目で並び替えをしてからテーブル形式で出力してみましょう。
 
 Write-Output $hensu | sort name | format-table
+
 <実行結果>
 
 Name       FullName              directoryname Extension LastWriteTime       length
@@ -750,7 +750,6 @@ get-content : パス 'C:\ps_test\subfolder1' へのアクセスが拒否され�
     + FullyQualifiedErrorId : GetContentReaderUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetContentCommand
 ​
 ​
-​
 FileName[subfolder2]
 get-content : パス 'C:\ps_test\subfolder2' へのアクセスが拒否されました。
 発生場所 行:3 文字:3
@@ -758,6 +757,8 @@ get-content : パス 'C:\ps_test\subfolder2' へのアクセスが拒否され�
 +   ~~~~~~~~~~~~~~
     + CategoryInfo          : PermissionDenied: (C:\ps_test\subfolder2:String) [Get-Content], UnauthorizedAccessException
     + FullyQualifiedErrorId : GetContentReaderUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetContentCommand
+
+
 ファイル名とファイルの内容が出力されました。
 
 またエラーが出力されていますね。
@@ -958,6 +959,17 @@ Where-Objectで空の行を処理しないように条件を追加していま�
 
 ファイルに出力してみましょう！
 
+
+
+
+
+
+
+
+
+
+
+
 ファイルへの出力へは以下のコマンドレットが用意されています。
 
 Out-File:
@@ -1117,6 +1129,7 @@ test5.log  2025/01/08 16:48:13 40日
 test6.log  2025/01/08 16:48:15 40日
 
 各ファイルの作成日から今日までの日数の表示がされていると思います。
+カスタムプロパティを利用すると
 
 カスタムプロパティを使う問題を２つほど解いてみましょう。
 
