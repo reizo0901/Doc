@@ -278,14 +278,6 @@ Measure-Command { Get-Process }
 Get-Volume | Select-Object DriveLetter,SizeRemaining,Size
 ```
 
----
-
-これらを組み合わせたりアレンジしたりして、日々の業務を効率化してください！
-
-さらに業務効率化に役立つPowerShellの簡単なコマンド・パイプラインの例を50個追加します。
-
----
-
 ## 【レジストリ操作】
 
 51. **レジストリキー一覧を表示**
@@ -588,14 +580,6 @@ Get-WmiObject Win32_SystemDriver
 ```powershell
 shutdown /s /t 3600
 ```
-
----
-
-ぜひ実際の業務に役立ててください！
-
-さらに業務効率化や運用保守に役立つ、PowerShellの便利なコマンドやパイプライン例を追加で50個紹介します。
-
----
 
 ## 【システム情報】
 
@@ -921,12 +905,6 @@ Get-CimInstance Win32_Processor
 Start-Job -ScriptBlock { Backup-Script.ps1 }
 ```
 
-これらを活用し、PowerShellの可能性をさらに広げてみてください！
-
-さらに業務効率化に役立つPowerShellのコマンドやパイプラインのサンプルを50個ご紹介します。これらのスクリプトを活用して、日々の作業をより効率的に進めてください。
-
----
-
 ## 【ファイル操作】
 
 1. **特定の拡張子を持つファイルを削除**
@@ -1119,13 +1097,6 @@ Start-Job -ScriptBlock { Backup-Script.ps1 }
     ```powershell
     Get-NetAdapterStatistics
     ```
-
-38. **ネットワークインターフェースのパケット受信エラー数を表示**
-    ```powershell 
-    
-続きを出力します。（前回の続きで、番号は138から始めます。）
-
----
 
 ## 【ネットワーク関連（続き）】
 
@@ -1381,7 +1352,3 @@ ssh-keygen
 ```powershell
 mstsc /v:PC01
 ```
-
----
-
-ぜひ日々の運用・保守作業に役立ててください！
