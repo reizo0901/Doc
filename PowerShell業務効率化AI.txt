@@ -1,0 +1,1387 @@
+PowerShellを使って業務効率化を進めるために役立つ、基本的でシンプルなコマンドとパイプラインの具体例を50個紹介します。
+
+## 【ファイル操作】
+
+1. **カレントディレクトリのファイル一覧表示**
+```powershell
+Get-ChildItem
+```
+
+2. **テキストファイルの内容表示**
+```powershell
+Get-Content log.txt
+```
+
+3. **ファイル内の特定キーワード検索**
+```powershell
+Select-String "エラー" *.log
+```
+
+4. **ファイル名の絞り込み（拡張子指定）**
+```powershell
+Get-ChildItem *.csv
+```
+
+5. **ファイルのサイズ順に並べる**
+```powershell
+Get-ChildItem | Sort-Object Length -Descending
+```
+
+6. **特定のサイズ以上のファイルだけ表示**
+```powershell
+Get-ChildItem | Where-Object { $_.Length -gt 1MB }
+```
+
+7. **空フォルダを見つける**
+```powershell
+Get-ChildItem -Directory | Where-Object { (Get-ChildItem $_.FullName).Count -eq 0 }
+```
+
+8. **ファイル名を一括で変更**
+```powershell
+Get-ChildItem *.txt | Rename-Item -NewName { "backup_" + $_.Name }
+```
+
+9. **更新日付の古いファイルを削除**
+```powershell
+Get-ChildItem | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item
+```
+
+10. **重複ファイルを探す**
+```powershell
+Get-ChildItem -Recurse | Group-Object Length | Where-Object { $_.Count -gt 1 }
+```
+
+## 【プロセス管理】
+
+11. **実行中のプロセスを一覧表示**
+```powershell
+Get-Process
+```
+
+12. **特定プロセスを停止**
+```powershell
+Get-Process chrome | Stop-Process
+```
+
+13. **メモリ使用量が多いプロセスの上位5つを表示**
+```powershell
+Get-Process | Sort-Object WS -Descending | Select-Object -First 5
+```
+
+14. **特定のプロセスが起動しているか確認**
+```powershell
+Get-Process notepad -ErrorAction SilentlyContinue
+```
+
+## 【システム情報取得】
+
+15. **システムの稼働時間を表示**
+```powershell
+Get-CimInstance Win32_OperatingSystem | Select-Object LastBootUpTime
+```
+
+16. **コンピュータ名を表示**
+```powershell
+$env:COMPUTERNAME
+```
+
+17. **ディスク容量を確認**
+```powershell
+Get-PSDrive -PSProvider FileSystem
+```
+
+18. **メモリ使用状況を確認**
+```powershell
+Get-CimInstance Win32_OperatingSystem | Select-Object TotalVisibleMemorySize,FreePhysicalMemory
+```
+
+19. **Windowsのバージョン確認**
+```powershell
+Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version
+```
+
+## 【ネットワーク関連】
+
+20. **IPアドレスの確認**
+```powershell
+Get-NetIPAddress
+```
+
+21. **ネットワークインターフェースの状態確認**
+```powershell
+Get-NetAdapter | Select-Object Name,Status,MacAddress
+```
+
+22. **特定のポートが使用中かどうか確認**
+```powershell
+Get-NetTCPConnection -LocalPort 80
+```
+
+23. **Webサイトの接続確認**
+```powershell
+Test-NetConnection google.com -Port 443
+```
+
+24. **ローカルポートを使用しているプロセスを調べる**
+```powershell
+Get-NetTCPConnection -LocalPort 8080 | Select-Object OwningProcess | Get-Process
+```
+
+## 【CSVファイル処理】
+
+25. **CSVを読み込み、特定カラムだけ表示**
+```powershell
+Import-Csv data.csv | Select-Object Name,Email
+```
+
+26. **CSVをフィルタして保存**
+```powershell
+Import-Csv data.csv | Where-Object { $_.Status -eq "有効" } | Export-Csv active.csv
+```
+
+27. **重複行を削除してCSV保存**
+```powershell
+Import-Csv data.csv | Sort-Object Name -Unique | Export-Csv unique.csv
+```
+
+## 【ユーザー管理】
+
+28. **ローカルユーザー一覧**
+```powershell
+Get-LocalUser
+```
+
+29. **特定のアカウントを有効化**
+```powershell
+Enable-LocalUser -Name "guest"
+```
+
+30. **アカウントを無効化**
+```powershell
+Disable-LocalUser -Name "guest"
+```
+
+## 【イベントログ管理】
+
+31. **直近のエラーを表示**
+```powershell
+Get-EventLog -LogName System -EntryType Error -Newest 10
+```
+
+32. **ログを特定期間で絞り込む**
+```powershell
+Get-EventLog -LogName Application -After (Get-Date).AddDays(-1)
+```
+
+33. **ログの件数をカウント**
+```powershell
+Get-EventLog -LogName System | Measure-Object
+```
+
+## 【サービス管理】
+
+34. **サービス一覧を表示**
+```powershell
+Get-Service
+```
+
+35. **特定サービスを再起動**
+```powershell
+Restart-Service -Name "Spooler"
+```
+
+36. **停止しているサービスをすべて表示**
+```powershell
+Get-Service | Where-Object { $_.Status -eq 'Stopped' }
+```
+
+37. **自動起動設定なのに停止しているサービスを調べる**
+```powershell
+Get-Service | Where-Object { $_.StartType -eq 'Automatic' -and $_.Status -eq 'Stopped' }
+```
+
+## 【JSON/XML処理】
+
+38. **JSONの読み込み**
+```powershell
+Get-Content data.json | ConvertFrom-Json
+```
+
+39. **データをJSONに変換して保存**
+```powershell
+Get-Service | ConvertTo-Json | Set-Content services.json
+```
+
+40. **XMLファイルの特定要素抽出**
+```powershell
+[xml](Get-Content data.xml) | Select-Xml "//item"
+```
+
+## 【日付処理】
+
+41. **日付フォーマット**
+```powershell
+Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+```
+
+42. **現在から30日後の日付を表示**
+```powershell
+(Get-Date).AddDays(30)
+```
+
+## 【ファイル圧縮と解凍】
+
+43. **フォルダをZIP圧縮**
+```powershell
+Compress-Archive -Path logs\* -DestinationPath logs.zip
+```
+
+44. **ZIPを解凍**
+```powershell
+Expand-Archive logs.zip -DestinationPath .\logs
+```
+
+## 【クリップボード活用】
+
+45. **テキストをクリップボードにコピー**
+```powershell
+Get-Service | Clip
+```
+
+46. **クリップボード内容を取得**
+```powershell
+Get-Clipboard
+```
+
+## 【履歴管理】
+
+47. **実行履歴表示**
+```powershell
+Get-History
+```
+
+48. **特定履歴コマンドを再実行**
+```powershell
+Invoke-History -Id 5
+```
+
+## 【計測・性能】
+
+49. **コマンドの実行時間計測**
+```powershell
+Measure-Command { Get-Process }
+```
+
+50. **ディスク使用量の確認**
+```powershell
+Get-Volume | Select-Object DriveLetter,SizeRemaining,Size
+```
+
+---
+
+これらを組み合わせたりアレンジしたりして、日々の業務を効率化してください！
+
+さらに業務効率化に役立つPowerShellの簡単なコマンド・パイプラインの例を50個追加します。
+
+---
+
+## 【レジストリ操作】
+
+51. **レジストリキー一覧を表示**
+```powershell
+Get-ChildItem HKCU:\Software
+```
+
+52. **特定のレジストリ値を取得**
+```powershell
+Get-ItemProperty "HKCU:\Control Panel\Desktop" -Name Wallpaper
+```
+
+53. **レジストリ値を書き込み**
+```powershell
+Set-ItemProperty "HKCU:\Control Panel\Desktop" -Name Wallpaper -Value "C:\image.jpg"
+```
+
+## 【環境変数】
+
+54. **すべての環境変数を表示**
+```powershell
+Get-ChildItem Env:
+```
+
+55. **特定の環境変数の値を取得**
+```powershell
+$Env:Path
+```
+
+56. **環境変数を追加**
+```powershell
+[Environment]::SetEnvironmentVariable("MyVar","Value","User")
+```
+
+## 【文字列操作】
+
+57. **テキストを大文字に変換**
+```powershell
+"test string".ToUpper()
+```
+
+58. **テキスト置換**
+```powershell
+"2025/03/11" -replace "/", "-"
+```
+
+59. **文字列の分割**
+```powershell
+"apple,banana,orange".Split(",")
+```
+
+60. **文字列の結合**
+```powershell
+"apple","banana","orange" -join ";"
+```
+
+## 【配列操作】
+
+61. **配列の重複を除去**
+```powershell
+@(1,2,2,3,4,4) | Select-Object -Unique
+```
+
+62. **配列のソート**
+```powershell
+@(3,1,4,2) | Sort-Object
+```
+
+63. **配列の最大値を取得**
+```powershell
+@(1,3,5,7) | Measure-Object -Maximum
+```
+
+## 【ユーザー入力処理】
+
+64. **入力プロンプト表示**
+```powershell
+Read-Host "Enter your name"
+```
+
+65. **パスワードの安全な入力**
+```powershell
+Read-Host "Password" -AsSecureString
+```
+
+## 【クリップボード拡張】
+
+66. **ファイル内容をクリップボードへ**
+```powershell
+Get-Content file.txt | Set-Clipboard
+```
+
+## 【日時計算】
+
+67. **2つの日付の差を計算**
+```powershell
+(New-TimeSpan -Start "2025/01/01" -End (Get-Date)).Days
+```
+
+68. **先月末日を求める**
+```powershell
+(Get-Date -Day 1).AddDays(-1).ToShortDateString()
+```
+
+## 【ジョブ（バックグラウンド処理）】
+
+69. **バックグラウンドジョブの開始**
+```powershell
+Start-Job -ScriptBlock {Get-Process}
+```
+
+70. **ジョブの状態確認**
+```powershell
+Get-Job
+```
+
+71. **ジョブの結果を取得**
+```powershell
+Receive-Job -Id 1
+```
+
+72. **完了済ジョブの削除**
+```powershell
+Get-Job | Remove-Job
+```
+
+## 【コマンドレット情報取得】
+
+73. **コマンドレットの使い方表示**
+```powershell
+Get-Help Get-Process
+```
+
+74. **特定機能を持つコマンドレット検索**
+```powershell
+Get-Command -Verb Export
+```
+
+## 【プロファイル管理】
+
+75. **プロファイルの編集**
+```powershell
+notepad $PROFILE
+```
+
+76. **プロファイルの場所を表示**
+```powershell
+$PROFILE
+```
+
+## 【HTTPリクエスト】
+
+77. **Webからコンテンツをダウンロード**
+```powershell
+Invoke-WebRequest -Uri "http://example.com" -OutFile "index.html"
+```
+
+78. **JSON APIの取得**
+```powershell
+Invoke-RestMethod "https://api.example.com/data"
+```
+
+## 【セキュリティ・証明書】
+
+79. **証明書の一覧表示**
+```powershell
+Get-ChildItem Cert:\CurrentUser\My
+```
+
+80. **期限切れ間近の証明書を探す**
+```powershell
+Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.NotAfter -lt (Get-Date).AddDays(30) }
+```
+
+## 【ファイル監視】
+
+81. **フォルダ内の変更を監視**
+```powershell
+Get-ChildItem | Get-FileHash
+```
+
+82. **変更をリアルタイム通知**
+```powershell
+Get-ChildItem .\logs -Recurse | Watch-FileSystem
+```
+※要自作関数または専用モジュール利用。
+
+## 【JSONデータ操作】
+
+83. **JSONをCSVへ変換**
+```powershell
+Get-Content data.json | ConvertFrom-Json | Export-Csv data.csv
+```
+
+## 【XMLデータ操作】
+
+84. **XMLの特定属性抽出**
+```powershell
+([xml](Get-Content data.xml)).SelectNodes("//user[@status='active']")
+```
+
+## 【数値計算】
+
+85. **数値の合計を求める**
+```powershell
+(1..100 | Measure-Object -Sum).Sum
+```
+
+## 【ログオン情報取得】
+
+86. **現在ログオン中のユーザーを取得**
+```powershell
+query user
+```
+
+## 【システム性能モニタリング】
+
+87. **CPU使用率を表示**
+```powershell
+Get-Counter '\Processor(_Total)\% Processor Time'
+```
+
+88. **リアルタイムでのCPU使用率監視**
+```powershell
+Get-Counter '\Processor(_Total)\% Processor Time' -Continuous
+```
+
+## 【Windows Update関連】
+
+89. **更新履歴を表示**
+```powershell
+Get-HotFix
+```
+
+## 【リモート管理】
+
+90. **リモートPCのプロセスを確認**
+```powershell
+Invoke-Command -ComputerName PC01 -ScriptBlock {Get-Process}
+```
+
+91. **リモートPCを再起動**
+```powershell
+Restart-Computer -ComputerName PC01
+```
+
+## 【ファイルの差分比較】
+
+92. **2つのファイルの差分表示**
+```powershell
+Compare-Object (Get-Content file1.txt) (Get-Content file2.txt)
+```
+
+## 【タスクスケジューラ管理】
+
+93. **タスク一覧取得**
+```powershell
+Get-ScheduledTask
+```
+
+94. **タスクの状態を確認**
+```powershell
+Get-ScheduledTask | Get-ScheduledTaskInfo
+```
+
+## 【エイリアス管理】
+
+95. **エイリアス一覧表示**
+```powershell
+Get-Alias
+```
+
+96. **新しいエイリアス設定**
+```powershell
+Set-Alias ll Get-ChildItem
+```
+
+## 【ランダムデータ生成】
+
+97. **ランダムパスワード生成**
+```powershell
+-join ((48..122) | Get-Random -Count 10 | % {[char]$_})
+```
+
+## 【デバイス管理】
+
+98. **接続中のUSBデバイスを表示**
+```powershell
+Get-PnpDevice -FriendlyName "*USB*"
+```
+
+99. **ドライバの一覧表示**
+```powershell
+Get-WmiObject Win32_SystemDriver
+```
+
+## 【シャットダウン操作】
+
+100. **指定時間後にシャットダウン**
+```powershell
+shutdown /s /t 3600
+```
+
+---
+
+ぜひ実際の業務に役立ててください！
+
+さらに業務効率化や運用保守に役立つ、PowerShellの便利なコマンドやパイプライン例を追加で50個紹介します。
+
+---
+
+## 【システム情報】
+
+101. **BIOS情報を取得**
+```powershell
+Get-CimInstance Win32_BIOS
+```
+
+102. **シリアルナンバーを取得**
+```powershell
+Get-CimInstance Win32_BIOS | Select-Object SerialNumber
+```
+
+103. **マザーボード情報を取得**
+```powershell
+Get-CimInstance Win32_BaseBoard
+```
+
+104. **インストールされているソフトウェア一覧**
+```powershell
+Get-Package
+```
+
+105. **Windowsライセンス情報を表示**
+```powershell
+slmgr /dlv
+```
+
+## 【イベントログ応用】
+
+106. **直近1時間のログ取得**
+```powershell
+Get-WinEvent -FilterHashtable @{LogName="System"; StartTime=(Get-Date).AddHours(-1)}
+```
+
+107. **イベントIDで絞り込み**
+```powershell
+Get-WinEvent -FilterHashtable @{LogName="Application"; ID=1000}
+```
+
+## 【ファイル属性操作】
+
+108. **ファイルを読み取り専用に設定**
+```powershell
+Set-ItemProperty file.txt -Name IsReadOnly -Value $true
+```
+
+109. **隠しファイルのみ表示**
+```powershell
+Get-ChildItem -Hidden
+```
+
+110. **隠しファイル属性を解除**
+```powershell
+Get-ChildItem -Hidden | Set-ItemProperty -Name Attributes -Value 'Normal'
+```
+
+## 【パフォーマンス分析】
+
+111. **メモリ使用率取得**
+```powershell
+Get-Counter "\Memory\% Committed Bytes In Use"
+```
+
+112. **ディスクI/Oのリアルタイム表示**
+```powershell
+Get-Counter "\PhysicalDisk(_Total)\Disk Transfers/sec" -Continuous
+```
+
+113. **ネットワーク帯域使用量表示**
+```powershell
+Get-Counter "\Network Interface(*)\Bytes Total/sec"
+```
+
+## 【グループポリシー関連】
+
+114. **グループポリシーの適用状況を確認**
+```powershell
+gpresult /r
+```
+
+115. **ローカルポリシーの更新**
+```powershell
+gpupdate /force
+```
+
+## 【ユーザーセッション管理】
+
+116. **ログオフしているユーザーセッション一覧**
+```powershell
+qwinsta | Select-String "Disc"
+```
+
+117. **ユーザーセッションを強制ログオフ**
+```powershell
+logoff セッションID /server:コンピュータ名
+```
+
+## 【ファイルの内容比較・重複処理】
+
+118. **2つのフォルダ間の差分表示**
+```powershell
+Compare-Object (Get-ChildItem folder1) (Get-ChildItem folder2) -Property Name
+```
+
+119. **複数ファイルを連結して1ファイルに出力**
+```powershell
+Get-Content *.log | Out-File all.log
+```
+
+120. **空白行を除去してファイル保存**
+```powershell
+Get-Content file.txt | Where-Object {$_ -ne ""} | Out-File file2.txt
+```
+
+## 【データ変換処理】
+
+121. **XMLをJSONに変換**
+```powershell
+[xml]$xml = Get-Content data.xml; $xml | ConvertTo-Json
+```
+
+122. **CSVをJSONに変換**
+```powershell
+Import-Csv data.csv | ConvertTo-Json
+```
+
+123. **Base64エンコード**
+```powershell
+[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("test"))
+```
+
+124. **Base64デコード**
+```powershell
+[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("dGVzdA=="))
+```
+
+## 【セキュリティ関連】
+
+125. **実行ポリシーを確認**
+```powershell
+Get-ExecutionPolicy
+```
+
+126. **スクリプト実行ポリシーを設定**
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+## 【Windows Defender関連】
+
+127. **マルウェアスキャンの実行**
+```powershell
+Start-MpScan -ScanType QuickScan
+```
+
+128. **Defenderの定義更新**
+```powershell
+Update-MpSignature
+```
+
+## 【Hyper-V 仮想化】
+
+129. **仮想マシンの一覧表示**
+```powershell
+Get-VM
+```
+
+130. **仮想マシンを開始**
+```powershell
+Start-VM -Name "VM01"
+```
+
+131. **仮想マシンを停止**
+```powershell
+Stop-VM -Name "VM01" -Force
+```
+
+## 【Active Directory (AD)関連】
+
+132. **ADユーザーの一覧取得**
+```powershell
+Get-ADUser -Filter *
+```
+
+133. **ADグループの一覧取得**
+```powershell
+Get-ADGroup -Filter *
+```
+
+134. **パスワード期限切れ間近のユーザーを探す**
+```powershell
+Search-ADAccount -UsersOnly -AccountExpiring -TimeSpan 7
+```
+
+## 【クリップボード応用】
+
+135. **クリップボード内容をファイルに出力**
+```powershell
+Get-Clipboard | Out-File clip.txt
+```
+
+136. **現在の日付をクリップボードにコピー**
+```powershell
+Get-Date | Set-Clipboard
+```
+
+## 【システム診断・ログ収集】
+
+137. **システム情報を取得して保存**
+```powershell
+systeminfo > sysinfo.txt
+```
+
+138. **DirectX診断情報収集**
+```powershell
+dxdiag /t diag.txt
+```
+
+## 【印刷ジョブの管理】
+
+138. **印刷ジョブを表示**
+```powershell
+Get-PrintJob
+```
+
+139. **印刷ジョブをすべてキャンセル**
+```powershell
+Get-PrintJob | Remove-PrintJob
+```
+
+## 【Windowsサービスの設定変更】
+
+140. **サービスを自動起動に変更**
+```powershell
+Set-Service -Name "Spooler" -StartupType Automatic
+```
+
+## 【PowerShellモジュール管理】
+
+141. **インストール済みモジュールの確認**
+```powershell
+Get-Module -ListAvailable
+```
+
+142. **モジュールのロード**
+```powershell
+Import-Module ActiveDirectory
+```
+
+## 【ZIP内ファイルの確認】
+
+143. **ZIP内のファイルリストを表示**
+```powershell
+Expand-Archive -Path file.zip -DestinationPath temp -PassThru | Get-ChildItem temp
+```
+
+## 【フォルダサイズの確認】
+
+144. **フォルダサイズ合計表示**
+```powershell
+(Get-ChildItem -Recurse | Measure-Object -Property Length -Sum).Sum /1MB
+```
+
+## 【PowerShellプロンプト】
+
+145. **プロンプトのカスタマイズ**
+```powershell
+function prompt {"$(Get-Date) PS> "}
+```
+
+## 【OneDrive連携】
+
+145. **OneDriveの同期状況表示**
+```powershell
+Get-Process onedrive
+```
+
+## 【リソース監視】
+
+146. **システム負荷をリアルタイム監視**
+```powershell
+Get-Counter "\Processor(_Total)\% Processor Time" -Continuous
+```
+
+147. **特定ポートを使用中のプロセス表示**
+```powershell
+netstat -ano | Select-String ":443"
+```
+
+## 【システム再起動予約のキャンセル】
+
+147. **シャットダウンのキャンセル**
+```powershell
+shutdown /a
+```
+
+## 【コマンド実行のスケジュール設定】
+
+148. **定期的に実行するタスクを登録**
+```powershell
+Register-ScheduledTask
+```
+
+## 【ドライブのビットロッカー状況】
+
+149. **BitLocker状況表示**
+```powershell
+Get-BitLockerVolume
+```
+
+## 【CPU情報取得】
+
+149. **CPU情報取得**
+```powershell
+Get-CimInstance Win32_Processor
+```
+
+## 【バックグラウンドジョブ登録】
+
+150. **非同期でスクリプトを実行**
+```powershell
+Start-Job -ScriptBlock { Backup-Script.ps1 }
+```
+
+これらを活用し、PowerShellの可能性をさらに広げてみてください！
+
+さらに業務効率化に役立つPowerShellのコマンドやパイプラインのサンプルを50個ご紹介します。これらのスクリプトを活用して、日々の作業をより効率的に進めてください。
+
+---
+
+## 【ファイル操作】
+
+1. **特定の拡張子を持つファイルを削除**
+   ```powershell
+   Remove-Item *.bak
+   ```
+
+2. **ファイルのコピーと上書き確認**
+   ```powershell
+   Copy-Item source.txt destination.txt -Confirm
+   ```
+
+3. **ファイルの存在確認**
+   ```powershell
+   Test-Path file.txt
+   ```
+
+4. **ファイルの属性を取得**
+   ```powershell
+   Get-ItemProperty file.txt
+   ```
+
+5. **ファイルの読み取り専用属性を設定**
+   ```powershell
+   Set-ItemProperty file.txt -Name IsReadOnly -Value $true
+   ```
+
+6. **ファイルの読み取り専用属性を解除**
+   ```powershell
+   Set-ItemProperty file.txt -Name IsReadOnly -Value $false
+   ```
+
+7. **ファイルの作成日時を変更**
+   ```powershell
+   (Get-Item file.txt).CreationTime = Get-Date "2025-03-01"
+   ```
+
+8. **ファイルの拡張子を一括変更**
+   ```powershell
+   Get-ChildItem *.txt | Rename-Item -NewName { $_.Name -replace '\.txt$', '.md' }
+   ```
+
+9. **フォルダ内のファイル数をカウント**
+   ```powershell
+   (Get-ChildItem -File).Count
+   ```
+
+10. **フォルダ内のサブフォルダ数をカウント**
+    ```powershell
+    (Get-ChildItem -Directory).Count
+    ```
+
+## 【テキスト操作】
+
+11. **テキストファイルの行数を取得**
+    ```powershell
+    (Get-Content file.txt).Count
+    ```
+
+12. **テキストファイルの特定行を表示**
+    ```powershell
+    Get-Content file.txt | Select-Object -Index 4
+    ```
+
+13. **テキストファイルの特定行を削除**
+    ```powershell
+    (Get-Content file.txt) | Where-Object { $_ -ne "削除する行の内容" } | Set-Content file.txt
+    ```
+
+14. **テキストファイルの特定文字列を置換**
+    ```powershell
+    (Get-Content file.txt) -replace "旧文字列", "新文字列" | Set-Content file.txt
+    ```
+
+15. **複数のテキストファイルを結合**
+    ```powershell
+    Get-Content *.txt | Set-Content combined.txt
+    ```
+
+16. **テキストファイルの空白行を削除**
+    ```powershell
+    Get-Content file.txt | Where-Object { $_.Trim() -ne "" } | Set-Content file.txt
+    ```
+
+17. **テキストファイルの重複行を削除**
+    ```powershell
+    Get-Content file.txt | Sort-Object -Unique | Set-Content file.txt
+    ```
+
+18. **テキストファイルの行を逆順に並べ替え**
+    ```powershell
+    Get-Content file.txt | Sort-Object {$_} -Descending | Set-Content file.txt
+    ```
+
+19. **テキストファイルの特定パターンを含む行を抽出**
+    ```powershell
+    Select-String -Pattern "エラー" file.txt
+    ```
+
+20. **テキストファイルの文字コードを変換（UTF-8からShift_JISへ）**
+    ```powershell
+    Get-Content utf8file.txt | Set-Content -Encoding Shift_JIS sjisfile.txt
+    ```
+
+## 【システム情報取得】
+
+21. **システムの稼働時間を表示**
+    ```powershell
+    (Get-CimInstance Win32_OperatingSystem).LastBootUpTime
+    ```
+
+22. **インストールされているフォント一覧を表示**
+    ```powershell
+    Get-ChildItem "C:\Windows\Fonts"
+    ```
+
+23. **システムの環境変数一覧を表示**
+    ```powershell
+    Get-ChildItem Env:
+    ```
+
+24. **特定の環境変数の値を取得**
+    ```powershell
+    $Env:PATH
+    ```
+
+25. **システムのタイムゾーンを表示**
+    ```powershell
+    Get-TimeZone
+    ```
+
+26. **システムのタイムゾーンを変更**
+    ```powershell
+    Set-TimeZone -Id "Tokyo Standard Time"
+    ```
+
+27. **システムの言語設定を表示**
+    ```powershell
+    Get-WinSystemLocale
+    ```
+
+28. **システムの言語設定を変更**
+    ```powershell
+    Set-WinSystemLocale ja-JP
+    ```
+
+29. **システムの地域設定を表示**
+    ```powershell
+    Get-WinUILanguageList
+    ```
+
+30. **システムの地域設定を変更**
+    ```powershell
+    Set-WinUILanguageOverride ja-JP
+    ```
+
+## 【ネットワーク関連】
+
+31. **ネットワーク接続の一覧を表示**
+    ```powershell
+    Get-NetConnectionProfile
+    ```
+
+32. **ネットワーク接続のプロファイル名を変更**
+    ```powershell
+    Set-NetConnectionProfile -Name "旧プロファイル名" -NewName "新プロファイル名"
+    ```
+
+33. **ネットワークインターフェースの詳細情報を表示**
+    ```powershell
+    Get-NetAdapterAdvancedProperty
+    ```
+
+34. **ネットワークインターフェースのMACアドレスを変更**
+    ```powershell
+    Set-NetAdapterAdvancedProperty -Name "イーサネット" -DisplayName "Network Address" -DisplayValue "新しいMACアドレス"
+    ```
+
+35. **ネットワークインターフェースのMTUサイズを変更**
+    ```powershell
+    Set-NetAdapterAdvancedProperty -Name "イーサネット" -DisplayName "Jumbo Packet" -DisplayValue "9014 Bytes"
+    ```
+
+36. **ネットワークインターフェースの速度と状態を表示**
+    ```powershell
+    Get-NetAdapter | Select-Object Name, LinkSpeed, Status
+    ```
+
+37. **ネットワークインターフェースの統計情報を表示**
+    ```powershell
+    Get-NetAdapterStatistics
+    ```
+
+38. **ネットワークインターフェースのパケット受信エラー数を表示**
+    ```powershell 
+    
+続きを出力します。（前回の続きで、番号は138から始めます。）
+
+---
+
+## 【ネットワーク関連（続き）】
+
+138. **DNSキャッシュを表示**
+```powershell
+Get-DnsClientCache
+```
+
+139. **DNSキャッシュをクリア**
+```powershell
+Clear-DnsClientCache
+```
+
+139. **IPアドレスをDHCPに変更**
+```powershell
+Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
+```
+
+140. **静的IPアドレスの設定**
+```powershell
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress "192.168.1.10" -PrefixLength 24 -DefaultGateway "192.168.1.1"
+```
+
+## 【リソース監視（続き）】
+
+139. **メモリ使用率のリアルタイム監視**
+```powershell
+Get-Counter "\Memory\Available MBytes" -Continuous
+```
+
+140. **特定プロセスのCPU使用率を監視**
+```powershell
+Get-Process chrome | Select-Object CPU
+```
+
+## 【サービスの依存関係確認】
+
+141. **サービスの依存関係を表示**
+```powershell
+Get-Service "Spooler" -DependentServices
+```
+
+## 【データ圧縮と展開（応用編）】
+
+142. **圧縮ファイル内の特定ファイルのみ展開**
+```powershell
+Expand-Archive -Path archive.zip -DestinationPath output -Include "*.log"
+```
+
+143. **圧縮ファイルを特定のフォルダに上書き展開**
+```powershell
+Expand-Archive archive.zip -DestinationPath .\folder -Force
+```
+
+## 【Excel操作（要モジュール）】
+
+143. **CSVをExcel形式に変換**
+```powershell
+Import-Csv data.csv | Export-Excel data.xlsx
+```
+※`ImportExcel`モジュールが必要。
+
+## 【タスク管理（応用編）】
+
+144. **タスクスケジューラで指定タスクを無効化**
+```powershell
+Disable-ScheduledTask -TaskName "MyTask"
+```
+
+144. **タスクを即時実行**
+```powershell
+Start-ScheduledTask -TaskName "Backup"
+```
+
+## 【ファイル・フォルダ同期】
+
+145. **Robocopyを利用した差分バックアップ**
+```powershell
+robocopy C:\source D:\backup /MIR /R:1 /W:1
+```
+
+## 【スケジュール処理・タイマー】
+
+146. **処理を指定時間待機**
+```powershell
+Start-Sleep -Seconds 60
+```
+
+147. **一定間隔でコマンドを実行**
+```powershell
+while ($true) { Get-Date; Start-Sleep -Seconds 10 }
+```
+
+## 【レポート作成】
+
+146. **HTMLレポートを作成**
+```powershell
+Get-Process | ConvertTo-Html | Out-File report.html
+```
+
+147. **ファイルの容量をHTMLで一覧表示**
+```powershell
+Get-ChildItem | Select Name,Length | ConvertTo-Html | Out-File sizes.html
+```
+
+## 【パス操作】
+
+148. **フルパスからファイル名のみ取得**
+```powershell
+Split-Path "C:\folder\file.txt" -Leaf
+```
+
+149. **拡張子を除いたファイル名取得**
+```powershell
+[System.IO.Path]::GetFileNameWithoutExtension("report.docx")
+```
+
+## 【ドライブ操作】
+
+150. **マッピング済みのネットワークドライブを一覧表示**
+```powershell
+Get-PSDrive -PSProvider FileSystem | Where-Object { $_.DisplayRoot -like "\\*" }
+```
+
+151. **ネットワークドライブを新規マッピング**
+```powershell
+New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\Server\Share"
+```
+
+151. **ネットワークドライブのマッピングを解除**
+```powershell
+Remove-PSDrive -Name Z
+```
+
+## 【Windows Defenderの状態確認】
+
+152. **Defenderのリアルタイム保護状態を確認**
+```powershell
+Get-MpComputerStatus | Select-Object RealTimeProtectionEnabled
+```
+
+## 【バッテリー状態表示（ノートPC用）】
+
+153. **バッテリー情報表示**
+```powershell
+Get-CimInstance Win32_Battery
+```
+
+154. **バッテリー残量を表示**
+```powershell
+(Get-CimInstance Win32_Battery).EstimatedChargeRemaining
+```
+
+## 【タスクマネージャと同様の情報取得】
+
+155. **CPU使用率トップ10プロセス表示**
+```powershell
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
+```
+
+156. **メモリ使用量トップ10プロセス表示**
+```powershell
+Get-Process | Sort-Object WS -Descending | Select-Object -First 10
+```
+
+## 【Windows Firewallの設定確認】
+
+156. **Firewallルールを確認**
+```powershell
+Get-NetFirewallRule
+```
+
+157. **特定のアプリ許可状況を確認**
+```powershell
+Get-NetFirewallApplicationFilter | Where-Object { $_.Program -like "*chrome*" }
+```
+
+## 【ネットワーク共有フォルダ管理】
+
+158. **ネットワーク共有一覧を表示**
+```powershell
+Get-SmbShare
+```
+
+159. **新しい共有フォルダを作成**
+```powershell
+New-SmbShare -Name "ShareFolder" -Path "C:\Shared" -FullAccess "Everyone"
+```
+
+159. **共有フォルダを削除**
+```powershell
+Remove-SmbShare -Name "ShareFolder"
+```
+
+## 【プロダクトキー取得】
+
+159. **Windowsのプロダクトキー確認**
+```powershell
+(Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
+```
+
+## 【システム診断レポート】
+
+160. **システム健全性レポートを作成**
+```powershell
+perfmon /report
+```
+
+161. **バッテリーレポートをHTML出力**
+```powershell
+powercfg /batteryreport
+```
+
+## 【ファイル所有者の確認と変更】
+
+162. **ファイルの所有者を確認**
+```powershell
+Get-Acl file.txt | Select-Object Owner
+```
+
+163. **ファイルの所有者を変更**
+```powershell
+$acl = Get-Acl file.txt; $acl.SetOwner([System.Security.Principal.NTAccount]"user01"); Set-Acl file.txt $acl
+```
+
+## 【ハードウェア情報】
+
+164. **GPU情報取得**
+```powershell
+Get-CimInstance Win32_VideoController
+```
+
+165. **オーディオデバイス一覧**
+```powershell
+Get-CimInstance Win32_SoundDevice
+```
+
+## 【SSH接続（PowerShell7以上）】
+
+166. **リモートサーバへSSH接続**
+```powershell
+ssh user@192.168.1.50
+```
+
+167. **SSH公開鍵生成**
+```powershell
+ssh-keygen
+```
+
+## 【リモートデスクトップ操作】
+
+167. **リモートデスクトップ接続を実行**
+```powershell
+mstsc /v:PC01
+```
+
+---
+
+ぜひ日々の運用・保守作業に役立ててください！
