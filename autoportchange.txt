@@ -1,0 +1,37 @@
+# ネットワークアダプターごとのRDPポート番号設定
+$adapterPortMapping = @{
+    "Intel(R) Ethernet Connection (10) I219-V"       = 99999    # 有線LAN
+    "Intel(R) Wi-Fi 6 AX201 160MHz"          = 99998   # 無線LAN①
+    "TP-Link Wireless USB Adapter"        = 99997   # 無線LAN②
+}
+
+# 現在アクティブなアダプターの判別
+$activeAdapters = Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
+
+# デフォルトポート
+$selectedPort = 58494
+
+foreach ($adapter in $activeAdapters) {
+    if ($adapterPortMapping.ContainsKey($adapter.InterfaceDescription)){
+        Write-Output $adapter.InterfaceDescription  
+        $selectedPort = $adapterPortMapping[$adapter.InterfaceDescription]
+        break
+    }
+}
+# レジストリのポート変更
+$RDPRegPath = "HKLM:SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"
+# 現在の設定されているポート取得
+$currentPort = (Get-ItemProperty -Path $RDPRegPath -Name "PortNumber").PortNumber
+
+if ($currentPort -ne $selectedPort) {
+    #レジストリ変更
+    Set-ItemProperty -Path $RDPRegPath -Name "PortNumber" -Value $selectedPort
+
+    # RDPサービス再起動
+    Write-Output "RDPのポートを $selectedPort に変更しました。RDPサービスを再起動します。"
+    Restart-Service TermService -Force
+}
+else {
+    Write-Output "RDPのポートはすでに $selectedPort に設定されています。変更は不要です。"
+}
+Exit
