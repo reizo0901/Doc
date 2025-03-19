@@ -993,3 +993,391 @@ Stop-TranScript
 
 foreach ($i in dir -file -Recurse){write-host $i.fullname;$renname = (Split-Path -Path $i.directoryname -Leaf);$outfilename =  $renname + "_" + [string]$i.name;ren $i.fullname $outfilename;}
 
+カテゴリ	No	内容	採用	追加モジュール	コマンド
+Active Directory (AD)関連	132	ADユーザーの一覧取得	1	ActiveDirectory	Get-ADUser -Filter *
+Active Directory (AD)関連	133	ADグループの一覧取得	1	ActiveDirectory	Get-ADGroup -Filter *
+Active Directory (AD)関連	134	パスワード期限切れ間近のユーザーを探す	1	ActiveDirectory	Search-ADAccount -UsersOnly -AccountExpiring -TimeSpan 7
+CPU情報取得	149	CPU情報取得	1	※不要	Get-CimInstance Win32_Processor
+CSVファイル処理	25	CSVを読み込み、特定カラムだけ表示	1	※不要	Import-Csv data.csv | Select-Object Name,Email
+CSVファイル処理	26	CSVをフィルタして保存	1	※不要	Import-Csv data.csv | Where-Object { $_.Status -eq "有効" } | Export-Csv active.csv
+CSVファイル処理	27	重複行を削除してCSV保存	1	※不要	Import-Csv data.csv | Sort-Object Name -Unique | Export-Csv unique.csv
+Excel操作	143	CSVをExcel形式に変換	0	ImportExcel	Import-Csv data.csv | Export-Excel data.xlsx
+HTTPリクエスト	77	Webからコンテンツをダウンロード	1	※不要	Invoke-WebRequest -Uri "http://example.com" -OutFile "index.html"
+HTTPリクエスト	78	JSON APIの取得	1	※不要	Invoke-RestMethod "https://api.example.com/data"
+Hyper-V 仮想化	129	仮想マシンの一覧表示	0	Hyper-V	Get-VM
+Hyper-V 仮想化	130	仮想マシンを開始	0	Hyper-V	Start-VM -Name "VM01"
+Hyper-V 仮想化	131	仮想マシンを停止	0	Hyper-V	Stop-VM -Name "VM01" -Force
+JSON/XML処理	38	JSONの読み込み	0	※不要	Get-Content data.json | ConvertFrom-Json
+JSON/XML処理	39	データをJSONに変換して保存	0	※不要	Get-Service | ConvertTo-Json | Set-Content services.json
+JSON/XML処理	40	XMLファイルの特定要素抽出	0	※不要	[xml](Get-Content data.xml) | Select-Xml "//item"
+JSONデータ操作	83	JSONをCSVへ変換	0	※不要	Get-Content data.json | ConvertFrom-Json | Export-Csv data.csv
+OneDrive連携	145	OneDriveの同期状況表示	0	※不要	Get-Process onedrive
+PowerShellプロンプト	145	プロンプトのカスタマイズ	1	※不要	function prompt {"$(Get-Date) PS> "}
+PowerShellモジュール管理	141	インストール済みモジュールの確認	1	※不要	Get-Module -ListAvailable
+PowerShellモジュール管理	142	モジュールのロード	1	※不要	Import-Module ActiveDirectory
+SSH接続（PowerShell7以上）	166	リモートサーバへSSH接続	0	※不要(PowerShell7以上)	ssh user@192.168.1.50
+SSH接続（PowerShell7以上）	167	SSH公開鍵生成	0	※不要(PowerShell7以上)	ssh-keygen
+Windows Defenderの状態確認	152	Defenderのリアルタイム保護状態を確認	1	※不要	Get-MpComputerStatus | Select-Object RealTimeProtectionEnabled
+Windows Defender関連	127	マルウェアスキャンの実行	1	※不要	Start-MpScan -ScanType QuickScan
+Windows Defender関連	128	Defenderの定義更新	1	※不要	Update-MpSignature
+Windows Firewallの設定確認	156	Firewallルールを確認	1	※不要	Get-NetFirewallRule
+Windows Firewallの設定確認	157	特定のアプリ許可状況を確認	1	※不要	Get-NetFirewallApplicationFilter | Where-Object { $_.Program -like "*chrome*" }
+Windows Update関連	89	更新履歴を表示	1	※不要	Get-HotFix
+Windowsサービスの設定変更	140	サービスを自動起動に変更	1	※不要	Set-Service -Name "Spooler" -StartupType Automatic
+XMLデータ操作	84	XMLの特定属性抽出	0	※不要	([xml](Get-Content data.xml)).SelectNodes("//user[@status='active']")
+ZIP内ファイルの確認	143	ZIP内のファイルリストを表示	1	※不要	Expand-Archive -Path file.zip -DestinationPath temp -PassThru | Get-ChildItem temp
+イベントログ応用	106	直近1時間のログ取得	1	※不要	Get-WinEvent -FilterHashtable @{LogName="System"; StartTime=(Get-Date).AddHours(-1)}
+イベントログ応用	107	イベントIDで絞り込み	1	※不要	Get-WinEvent -FilterHashtable @{LogName="Application"; ID=1000}
+イベントログ管理	31	直近のエラーを表示	1	※不要	Get-EventLog -LogName System -EntryType Error -Newest 10
+イベントログ管理	32	ログを特定期間で絞り込む	1	※不要	Get-EventLog -LogName Application -After (Get-Date).AddDays(-1)
+イベントログ管理	33	ログの件数をカウント	1	※不要	Get-EventLog -LogName System | Measure-Object
+エイリアス管理	95	エイリアス一覧表示	0	※不要	Get-Alias
+エイリアス管理	96	新しいエイリアス設定	0	※不要	Set-Alias ll Get-ChildItem
+クリップボード応用	135	クリップボード内容をファイルに出力	0	※不要	Get-Clipboard | Out-File clip.txt
+クリップボード応用	136	現在の日付をクリップボードにコピー	0	※不要	Get-Date | Set-Clipboard
+クリップボード拡張	66	ファイル内容をクリップボードへ	0	※不要	Get-Content file.txt | Set-Clipboard
+クリップボード活用	45	テキストをクリップボードにコピー	0	※不要	Get-Service | Clip
+クリップボード活用	46	クリップボード内容を取得	0	※不要	Get-Clipboard
+コマンドレット情報取得	73	コマンドレットの使い方表示	0	※不要	Get-Help Get-Process
+コマンドレット情報取得	74	特定機能を持つコマンドレット検索	0	※不要	Get-Command -Verb Export
+コマンド実行のスケジュール設定	148	定期的に実行するタスクを登録	0	※不要	Register-ScheduledTask
+サービスの依存関係確認	141	サービスの依存関係を表示	1	※不要	Get-Service "Spooler" -DependentServices
+サービス管理	34	サービス一覧を表示	1	※不要	Get-Service
+サービス管理	35	特定サービスを再起動	1	※不要	Restart-Service -Name "Spooler"
+サービス管理	36	停止しているサービスをすべて表示	1	※不要	Get-Service | Where-Object { $_.Status -eq 'Stopped' }
+サービス管理	37	自動起動設定なのに停止しているサービスを調べる	1	※不要	Get-Service | Where-Object { $_.StartType -eq 'Automatic' -and $_.Status -eq 'Stopped' }
+システム情報	25	システムのタイムゾーンを表示	1	※不要	Get-TimeZone
+システム情報	26	システムのタイムゾーンを変更	1	※不要	Set-TimeZone -Id "Tokyo Standard Time"
+システム情報	27	システムの言語設定を表示	1	※不要	Get-WinSystemLocale
+システム情報	28	システムの言語設定を変更	1	※不要	Set-WinSystemLocale ja-JP
+システム情報	29	システムの地域設定を表示	1	※不要	Get-WinUILanguageList
+システム情報	30	システムの地域設定を変更	1	※不要	Set-WinUILanguageOverride ja-JP
+システム情報	101	BIOS情報を取得	0	※不要	Get-CimInstance Win32_BIOS
+システム情報	102	シリアルナンバーを取得	0	※不要	Get-CimInstance Win32_BIOS | Select-Object SerialNumber
+システム情報	103	マザーボード情報を取得	0	※不要	Get-CimInstance Win32_BaseBoard
+システム情報	104	インストールされているソフトウェア一覧	0	※不要	Get-Package
+システム情報取得	15	システムの稼働時間を表示	1	※不要	Get-CimInstance Win32_OperatingSystem | Select-Object LastBootUpTime
+システム情報取得	16	コンピュータ名を表示	1	※不要	$env:COMPUTERNAME
+システム情報取得	17	ディスク容量を確認	1	※不要	Get-PSDrive -PSProvider FileSystem
+システム情報取得	18	メモリ使用状況を確認	1	※不要	Get-CimInstance Win32_OperatingSystem | Select-Object TotalVisibleMemorySize,FreePhysicalMemory
+システム情報取得	19	Windowsのバージョン確認	1	※不要	Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version
+システム情報取得	21	システムの稼働時間を表示	1	※不要	(Get-CimInstance Win32_OperatingSystem).LastBootUpTime
+システム情報取得	22	インストールされているフォント一覧を表示	0	※不要	Get-ChildItem "C:\Windows\Fonts"
+システム情報取得	23	システムの環境変数一覧を表示	1	※不要	Get-ChildItem Env:
+システム情報取得	24	特定の環境変数の値を取得	0	※不要	$Env:PATH
+システム性能モニタリング	87	CPU使用率を表示	0	※不要	Get-Counter '\Processor(_Total)\% Processor Time'
+システム性能モニタリング	88	リアルタイムでのCPU使用率監視	0	※不要	Get-Counter '\Processor(_Total)\% Processor Time' -Continuous
+ジョブ（バックグラウンド処理）	69	バックグラウンドジョブの開始	0	※不要	Start-Job -ScriptBlock {Get-Process}
+ジョブ（バックグラウンド処理）	70	ジョブの状態確認	0	※不要	Get-Job
+ジョブ（バックグラウンド処理）	71	ジョブの結果を取得	0	※不要	Receive-Job -Id 1
+ジョブ（バックグラウンド処理）	72	完了済ジョブの削除	0	※不要	Get-Job | Remove-Job
+スケジュール処理・タイマー	146	処理を指定時間待機	0	※不要	Start-Sleep -Seconds 60
+スケジュール処理・タイマー	147	一定間隔でコマンドを実行	0	※不要	while ($true) { Get-Date; Start-Sleep -Seconds 10 }
+セキュリティ・証明書	79	証明書の一覧表示	0	※不要	Get-ChildItem Cert:\CurrentUser\My
+セキュリティ・証明書	80	期限切れ間近の証明書を探す	0	※不要	Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.NotAfter -lt (Get-Date).AddDays(30) }
+セキュリティ関連	125	実行ポリシーを確認	0	※不要	Get-ExecutionPolicy
+セキュリティ関連	126	スクリプト実行ポリシーを設定	0	※不要	Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+タスクスケジューラ管理	93	タスク一覧取得	0	※不要	Get-ScheduledTask
+タスクスケジューラ管理	94	タスクの状態を確認	0	※不要	Get-ScheduledTask | Get-ScheduledTaskInfo
+タスクマネージャと同様の情報取得	155	CPU使用率トップ10プロセス表示	0	※不要	Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
+タスクマネージャと同様の情報取得	156	メモリ使用量トップ10プロセス表示	0	※不要	Get-Process | Sort-Object WS -Descending | Select-Object -First 10
+タスク管理（応用編）	144	タスクスケジューラで指定タスクを無効化	0	※不要	Disable-ScheduledTask -TaskName "MyTask"
+タスク管理（応用編）	144	タスクを即時実行	0	※不要	Start-ScheduledTask -TaskName "Backup"
+データ圧縮と展開（応用編）	142	圧縮ファイル内の特定ファイルのみ展開	0	※不要	Expand-Archive -Path archive.zip -DestinationPath output -Include "*.log"
+データ圧縮と展開（応用編）	143	圧縮ファイルを特定のフォルダに上書き展開	0	※不要	Expand-Archive archive.zip -DestinationPath .\folder -Force
+データ変換処理	121	XMLをJSONに変換	0	※不要	[xml]$xml = Get-Content data.xml; $xml | ConvertTo-Json
+データ変換処理	122	CSVをJSONに変換	0	※不要	Import-Csv data.csv | ConvertTo-Json
+データ変換処理	123	Base64エンコード	0	※不要	[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("test"))
+データ変換処理	124	Base64デコード	0	※不要	[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("dGVzdA=="))
+テキスト操作	11	テキストファイルの行数を取得	0	※不要	(Get-Content file.txt).Count
+テキスト操作	12	テキストファイルの特定行を表示	0	※不要	Get-Content file.txt | Select-Object -Index 4
+テキスト操作	13	テキストファイルの特定行を削除	0	※不要	(Get-Content file.txt) | Where-Object { $_ -ne "削除する行の内容" } | Set-Content file.txt
+テキスト操作	14	テキストファイルの特定文字列を置換	0	※不要	(Get-Content file.txt) -replace "旧文字列", "新文字列" | Set-Content file.txt
+テキスト操作	15	複数のテキストファイルを結合	0	※不要	Get-Content *.txt | Set-Content combined.txt
+テキスト操作	16	テキストファイルの空白行を削除	0	※不要	Get-Content file.txt | Where-Object { $_.Trim() -ne "" } | Set-Content file.txt
+テキスト操作	17	テキストファイルの重複行を削除	0	※不要	Get-Content file.txt | Sort-Object -Unique | Set-Content file.txt
+テキスト操作	18	テキストファイルの行を逆順に並べ替え	0	※不要	Get-Content file.txt | Sort-Object {$_} -Descending | Set-Content file.txt
+テキスト操作	19	テキストファイルの特定パターンを含む行を抽出	0	※不要	Select-String -Pattern "エラー" file.txt
+テキスト操作	20	テキストファイルの文字コードを変換（UTF-8からShift_JISへ）	0	※不要	Get-Content utf8file.txt | Set-Content -Encoding Shift_JIS sjisfile.txt
+デバイス管理	98	接続中のUSBデバイスを表示	0	※不要	Get-PnpDevice -FriendlyName "*USB*"
+デバイス管理	99	ドライバの一覧表示	0	※不要	Get-WmiObject Win32_SystemDriver
+ドライブのビットロッカー状況	149	BitLocker状況表示	0	※不要	Get-BitLockerVolume
+ドライブ操作	150	マッピング済みのネットワークドライブを一覧表示	0	※不要	Get-PSDrive -PSProvider FileSystem | Where-Object { $_.DisplayRoot -like "\\*" }
+ドライブ操作	151	ネットワークドライブを新規マッピング	0	※不要	New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\Server\Share"
+ドライブ操作	151	ネットワークドライブのマッピングを解除	0	※不要	Remove-PSDrive -Name Z
+ネットワーク関連	20	IPアドレスの確認	0	※不要	Get-NetIPAddress
+ネットワーク関連	21	ネットワークインターフェースの状態確認	0	※不要	Get-NetAdapter | Select-Object Name,Status,MacAddress
+ネットワーク関連	22	特定のポートが使用中かどうか確認	0	※不要	Get-NetTCPConnection -LocalPort 80
+ネットワーク関連	23	Webサイトの接続確認	0	※不要	Test-NetConnection google.com -Port 443
+ネットワーク関連	24	ローカルポートを使用しているプロセスを調べる	0	※不要	Get-NetTCPConnection -LocalPort 8080 | Select-Object OwningProcess | Get-Process
+ネットワーク関連	31	ネットワーク接続の一覧を表示	0	※不要	Get-NetConnectionProfile
+ネットワーク関連	32	ネットワーク接続のプロファイル名を変更	0	※不要	Set-NetConnectionProfile -Name "旧プロファイル名" -NewName "新プロファイル名"
+ネットワーク関連	33	ネットワークインターフェースの詳細情報を表示	0	※不要	Get-NetAdapterAdvancedProperty
+ネットワーク関連	34	ネットワークインターフェースのMACアドレスを変更	0	※不要	Set-NetAdapterAdvancedProperty -Name "イーサネット" -DisplayName "Network Address" -DisplayValue "新しいMACアドレス"
+ネットワーク関連	35	ネットワークインターフェースのMTUサイズを変更	0	※不要	Set-NetAdapterAdvancedProperty -Name "イーサネット" -DisplayName "Jumbo Packet" -DisplayValue "9014 Bytes"
+ネットワーク関連	36	ネットワークインターフェースの速度と状態を表示	0	※不要	Get-NetAdapter | Select-Object Name, LinkSpeed, Status
+ネットワーク関連	37	ネットワークインターフェースの統計情報を表示	0	※不要	Get-NetAdapterStatistics
+ネットワーク関連	138	DNSキャッシュを表示	0	※不要	Get-DnsClientCache
+ネットワーク関連	139	DNSキャッシュをクリア	0	※不要	Clear-DnsClientCache
+ネットワーク関連	139	IPアドレスをDHCPに変更	0	※不要	Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
+ネットワーク関連	140	静的IPアドレスの設定	0	※不要	New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress "192.168.1.10" -PrefixLength 24 -DefaultGateway "192.168.1.1"
+ネットワーク共有フォルダ管理	158	ネットワーク共有一覧を表示	0	※不要	Get-SmbShare
+ネットワーク共有フォルダ管理	159	新しい共有フォルダを作成	0	※不要	New-SmbShare -Name "ShareFolder" -Path "C:\Shared" -FullAccess "Everyone"
+ネットワーク共有フォルダ管理	159	共有フォルダを削除	0	※不要	Remove-SmbShare -Name "ShareFolder"
+ハードウェア情報	164	GPU情報取得	0	※不要	Get-CimInstance Win32_VideoController
+ハードウェア情報	165	オーディオデバイス一覧	0	※不要	Get-CimInstance Win32_SoundDevice
+パス操作	148	フルパスからファイル名のみ取得	0	※不要	Split-Path "C:\folder\file.txt" -Leaf
+パス操作	149	拡張子を除いたファイル名取得	0	※不要	[System.IO.Path]::GetFileNameWithoutExtension("report.docx")
+バックグラウンドジョブ登録	150	非同期でスクリプトを実行	0	※不要	Start-Job -ScriptBlock { Backup-Script.ps1 }
+バッテリー状態表示（ノートPC用）	153	バッテリー情報表示	0	※不要	Get-CimInstance Win32_Battery
+バッテリー状態表示（ノートPC用）	154	バッテリー残量を表示	0	※不要	(Get-CimInstance Win32_Battery).EstimatedChargeRemaining
+パフォーマンス分析	111	メモリ使用率取得	0	※不要	Get-Counter "\Memory\% Committed Bytes In Use"
+パフォーマンス分析	112	ディスクI/Oのリアルタイム表示	0	※不要	Get-Counter "\PhysicalDisk(_Total)\Disk Transfers/sec" -Continuous
+パフォーマンス分析	113	ネットワーク帯域使用量表示	0	※不要	Get-Counter "\Network Interface(*)\Bytes Total/sec"
+ファイル・フォルダ同期	145	Robocopyを利用した差分バックアップ	0	※不要	robocopy C:\source D:\backup /MIR /R:1 /W:1
+ファイルの差分比較	92	2つのファイルの差分表示	0	※不要	Compare-Object (Get-Content file1.txt) (Get-Content file2.txt)
+ファイルの内容比較・重複処理	118	2つのフォルダ間の差分表示	0	※不要	Compare-Object (Get-ChildItem folder1) (Get-ChildItem folder2) -Property Name
+ファイルの内容比較・重複処理	119	複数ファイルを連結して1ファイルに出力	0	※不要	Get-Content *.log | Out-File all.log
+ファイルの内容比較・重複処理	120	空白行を除去してファイル保存	0	※不要	Get-Content file.txt | Where-Object {$_ -ne ""} | Out-File file2.txt
+ファイル圧縮と解凍	43	フォルダをZIP圧縮	0	※不要	Compress-Archive -Path logs\* -DestinationPath logs.zip
+ファイル圧縮と解凍	44	ZIPを解凍	0	※不要	Expand-Archive logs.zip -DestinationPath .\logs
+ファイル監視	81	フォルダ内の変更を監視	0	※不要	Get-ChildItem | Get-FileHash
+ファイル監視	82	変更をリアルタイム通知	0	※不要	Get-ChildItem .\logs -Recurse | Watch-FileSystem
+ファイル所有者の確認と変更	162	ファイルの所有者を確認	0	※不要	Get-Acl file.txt | Select-Object Owner
+ファイル所有者の確認と変更	163	ファイルの所有者を変更	0	※不要	$acl = Get-Acl file.txt; $acl.SetOwner([System.Security.Principal.NTAccount]"user01"); Set-Acl file.txt $acl
+ファイル操作	1	カレントディレクトリのファイル一覧表示	0	※不要	Get-ChildItem
+ファイル操作	1	特定の拡張子を持つファイルを削除	0	※不要	Remove-Item *.bak
+ファイル操作	2	テキストファイルの内容表示	0	※不要	Get-Content log.txt
+ファイル操作	2	ファイルのコピーと上書き確認	0	※不要	Copy-Item source.txt destination.txt -Confirm
+ファイル操作	3	ファイル内の特定キーワード検索	0	※不要	Select-String "エラー" *.log
+ファイル操作	3	ファイルの存在確認	0	※不要	Test-Path file.txt
+ファイル操作	4	ファイル名の絞り込み（拡張子指定）	0	※不要	Get-ChildItem *.csv
+ファイル操作	4	ファイルの属性を取得	0	※不要	Get-ItemProperty file.txt
+ファイル操作	5	ファイルのサイズ順に並べる	0	※不要	Get-ChildItem | Sort-Object Length -Descending
+ファイル操作	5	ファイルの読み取り専用属性を設定	0	※不要	Set-ItemProperty file.txt -Name IsReadOnly -Value $true
+ファイル操作	6	特定のサイズ以上のファイルだけ表示	0	※不要	Get-ChildItem | Where-Object { $_.Length -gt 1MB }
+ファイル操作	6	ファイルの読み取り専用属性を解除	0	※不要	Set-ItemProperty file.txt -Name IsReadOnly -Value $false
+ファイル操作	7	空フォルダを見つける	0	※不要	Get-ChildItem -Directory | Where-Object { (Get-ChildItem $_.FullName).Count -eq 0 }
+ファイル操作	7	ファイルの作成日時を変更	0	※不要	(Get-Item file.txt).CreationTime = Get-Date "2025-03-01"
+ファイル操作	8	ファイル名を一括で変更	0	※不要	Get-ChildItem *.txt | Rename-Item -NewName { "backup_" + $_.Name }
+ファイル操作	8	ファイルの拡張子を一括変更	0	※不要	Get-ChildItem *.txt | Rename-Item -NewName { $_.Name -replace '\.txt$', '.md' }
+ファイル操作	9	更新日付の古いファイルを削除	0	※不要	Get-ChildItem | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item
+ファイル操作	9	フォルダ内のファイル数をカウント	0	※不要	Get-ChildItem -File).Count
+ファイル操作	10	重複ファイルを探す	0	※不要	Get-ChildItem -Recurse | Group-Object Length | Where-Object { $_.Count -gt 1 }
+ファイル操作	10	フォルダ内のサブフォルダ数をカウント	0	※不要	(Get-ChildItem -Directory).Count
+ファイル属性操作	108	ファイルを読み取り専用に設定	0	※不要	Set-ItemProperty file.txt -Name IsReadOnly -Value $true
+ファイル属性操作	109	隠しファイルのみ表示	0	※不要	Get-ChildItem -Hidden
+ファイル属性操作	110	隠しファイル属性を解除	0	※不要	Get-ChildItem -Hidden | Set-ItemProperty -Name Attributes -Value 'Normal'
+フォルダサイズの確認	144	フォルダサイズ合計表示	0	※不要	(Get-ChildItem -Recurse | Measure-Object -Property Length -Sum).Sum /1MB
+プロセス管理	11	実行中のプロセスを一覧表示	0	※不要	Get-Process
+プロセス管理	12	特定プロセスを停止	0	※不要	Get-Process chrome | Stop-Process
+プロセス管理	13	メモリ使用量が多いプロセスの上位5つを表示	0	※不要	Get-Process | Sort-Object WS -Descending | Select-Object -First 5
+プロセス管理	14	特定のプロセスが起動しているか確認	0	※不要	Get-Process notepad -ErrorAction SilentlyContinue
+プロダクトキー取得	159	Windowsのプロダクトキー確認	0	※不要	(Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
+プロファイル管理	75	プロファイルの編集	0	※不要	notepad $PROFILE
+プロファイル管理	76	プロファイルの場所を表示	0	※不要	$PROFILE
+ユーザーセッション管理	116	ログオフしているユーザーセッション一覧	0	※不要	qwinsta | Select-String "Disc"
+ユーザーセッション管理	117	ユーザーセッションを強制ログオフ	0	※不要	logoff セッションID /server:コンピュータ名
+ユーザー管理	28	ローカルユーザー一覧	0	※不要	Get-LocalUser
+ユーザー管理	29	特定のアカウントを有効化	0	※不要	Enable-LocalUser -Name "guest"
+ユーザー管理	30	アカウントを無効化	0	※不要	Disable-LocalUser -Name "guest"
+ユーザー入力処理	64	入力プロンプト表示	0	※不要	Read-Host "Enter your name"
+ユーザー入力処理	65	パスワードの安全な入力	0	※不要	Read-Host "Password" -AsSecureString
+ランダムデータ生成	97	ランダムパスワード生成	0	※不要	-join ((48..122) | Get-Random -Count 10 | % {[char]$_})
+リソース監視（続き）	139	メモリ使用率のリアルタイム監視	0	※不要	Get-Counter "\Memory\Available MBytes" -Continuous
+リソース監視（続き）	140	特定プロセスのCPU使用率を監視	0	※不要	Get-Process chrome | Select-Object CPU
+リソース監視	146	システム負荷をリアルタイム監視	0	※不要	Get-Counter "\Processor(_Total)\% Processor Time" -Continuous
+リソース監視	147	特定ポートを使用中のプロセス表示	0	※不要	netstat -ano | Select-String ":443"
+リモートデスクトップ操作	167	リモートデスクトップ接続を実行	0	※不要	mstsc /v:PC01
+リモート管理	90	リモートPCのプロセスを確認	0	※不要	Invoke-Command -ComputerName PC01 -ScriptBlock {Get-Process}
+リモート管理	91	リモートPCを再起動	0	※不要	Restart-Computer -ComputerName PC01
+レジストリ操作	51	レジストリキー一覧を表示	0	※不要	Get-ChildItem HKCU:\Software
+レジストリ操作	52	特定のレジストリ値を取得	0	※不要	Get-ItemProperty "HKCU:\Control Panel\Desktop" -Name Wallpaper
+レジストリ操作	53	レジストリ値を書き込み	0	※不要	Set-ItemProperty "HKCU:\Control Panel\Desktop" -Name Wallpaper -Value "C:\image.jpg"
+レポート作成	146	HTMLレポートを作成	0	※不要	Get-Process | ConvertTo-Html | Out-File report.html
+レポート作成	147	ファイルの容量をHTMLで一覧表示	0	※不要	Get-ChildItem | Select Name,Length | ConvertTo-Html | Out-File sizes.html
+ログオン情報取得	86	現在ログオン中のユーザーを取得	0	※不要	query user
+印刷ジョブの管理	138	印刷ジョブを表示	0	※不要	Get-PrintJob
+印刷ジョブの管理	139	印刷ジョブをすべてキャンセル	0	※不要	Get-PrintJob | Remove-PrintJob
+環境変数	54	すべての環境変数を表示	0	※不要	Get-ChildItem Env:
+環境変数	55	特定の環境変数の値を取得	0	※不要	$Env:Path
+環境変数	56	環境変数を追加	0	※不要	[Environment]::SetEnvironmentVariable("MyVar","Value","User")
+計測・性能	49	コマンドの実行時間計測	0	※不要	Measure-Command { Get-Process }
+計測・性能	50	ディスク使用量の確認	0	※不要	Get-Volume | Select-Object DriveLetter,SizeRemaining,Size
+数値計算	85	数値の合計を求める	0	※不要	(1..100 | Measure-Object -Sum).Sum
+日時計算	67	2つの日付の差を計算	0	※不要	(New-TimeSpan -Start "2025/01/01" -End (Get-Date)).Days
+日時計算	68	先月末日を求める	0	※不要	(Get-Date -Day 1).AddDays(-1).ToShortDateString()
+日付処理	41	日付フォーマット	0	※不要	Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+日付処理	42	現在から30日後の日付を表示	0	※不要	(Get-Date).AddDays(30)
+配列操作	61	配列の重複を除去	0	※不要	@(1,2,2,3,4,4) | Select-Object -Unique
+配列操作	62	配列のソート	0	※不要	@(3,1,4,2) | Sort-Object
+配列操作	63	配列の最大値を取得	0	※不要	@(1,3,5,7) | Measure-Object -Maximum
+文字列操作	57	テキストを大文字に変換	0	※不要	test string.ToUpper()
+文字列操作	58	テキスト置換	0	※不要	2025/03/11 -replace "/", "-"
+文字列操作	59	文字列の分割	0	※不要	apple,banana,orange.Split(",")
+文字列操作	60	文字列の結合	0	※不要	apple,"banana","orange" -join ";"
+履歴管理	47	実行履歴表示	0	※不要	Get-History
+履歴管理	48	特定履歴コマンドを再実行	0	※不要	Invoke-History -Id 5
+
+
+No	エイリアス	コマンド	説明	必要	
+3	ac	Add-Content	ファイルに内容を追加します	1	
+4	asnp	Add-PSSnapin	PowerShellスナップインを追加します	0	
+9	clc	Clear-Content	ファイルの内容をクリアします	1	
+11	clhy	Clear-History	コマンド履歴をクリアします	0	
+10	clear	Clear-Host	コンソール画面をクリアします	1	Linux
+14	cls	Clear-Host	コンソール画面をクリアします	1	DOS
+12	cli	Clear-Item	Clear-Item コマンドレットは、アイテムの内容をクリアするために使用されます。具体的には、ファイルやレジストリキーなどの内容を削除する際に役立ちます。	0	
+13	clp	Clear-ItemProperty	アイテムのプロパティをクリアします	0	
+15	clv	Clear-Variable	変数の値をクリアします	0	
+17	compare	Compare-Object	2つのオブジェクトを比較します	1	Linux
+26	diff	Compare-Object	2つのオブジェクトを比較します	1	DOS
+16	cnsn	Connect-PSSession	リモートセッションに接続します	0	
+7	CFS	ConvertFrom-String	文字列をオブジェクトに変換します	0	
+23	cvpa	Convert-Path	パスを標準パスに変換します	0	
+18	copy	Copy-Item	アイテムをコピーします	1	DOS
+19	cp	Copy-Item	アイテムをコピーします	1	Linux
+20	cpi	Copy-Item	アイテムをコピーします	0	
+21	cpp	Copy-ItemProperty	アイテムのプロパティをコピーします	0	
+24	dbp	Disable-PSBreakpoint	ブレークポイントを無効にします	0	
+28	dnsn	Disconnect-PSSession	リモートセッションを切断します	0	
+29	ebp	Enable-PSBreakpoint	ブレークポイントを有効にします	0	
+35	etsn	Enter-PSSession	リモートセッションに入ります	1	
+36	exsn	Exit-PSSession	リモートセッションを終了します	1	
+31	epal	Export-alias		0	
+32	epcsv	Export-Csv	オブジェクトをCSVファイルにエクスポートします	0	
+33	epsn	Export-PSSession	リモートセッションのコマンドをエクスポートします	1	
+1	%	ForEach-Object	各オブジェクトに対してスクリプトブロックを実行します	1	
+40	foreach	ForEach-Object	各オブジェクトに対してスクリプトブロックを実行します	0	
+37	fc	Format-Custom	カスタム形式でオブジェクトを表示します	0	
+38	fhx	Format-Hex	オブジェクトを16進数形式で表示します	0	
+39	fl	Format-List	オブジェクトをリスト形式で表示します	1	
+41	ft	Format-Table	オブジェクトをテーブル形式で表示します	1	
+42	fw	Format-Wide	オブジェクトをワイド形式で表示します	1	
+43	gal	Get-alias	定義されているエイリアスを取得します	0	
+27	dir	Get-ChildItem	指定されたパスのアイテムを取得します	1	DOS
+47	gci	Get-ChildItem	指定されたパスのアイテムを取得します	0	
+86	ls	Get-ChildItem	指定されたパスのアイテムを取得します	0	Linux
+46	gcb	Get-Clipboard	クリップボードの内容を取得します	1	
+48	gcm	Get-Command	利用可能なコマンドを取得します	0	
+53	gin	Get-ComputerInfo	コンピュータの情報を取得します	0	
+5	cat	Get-Content	ファイルの内容を取得します	1	Linux
+45	gc	Get-Content	ファイルの内容を取得します	0	
+156	type	Get-Content	ファイルの内容を取得します	1	DOS
+51	ghy	Get-History	コマンド履歴を取得します	0	
+70	h	Get-History	コマンド履歴を取得します	1	
+71	history	Get-History	コマンド履歴を取得します	1	DOS/UNIX
+52	gi	Get-Item	指定されたパスのアイテムを取得します	0	
+59	gp	Get-ItemProperty	アイテムのプロパティを取得します	0	
+61	gpv	Get-ItemPropertyValue	アイテムのプロパティの値を取得します	0	
+55	gjb	Get-Job	実行中のジョブを取得します	0	
+56	gl	Get-Location	現在のディレクトリを取得します	0	
+107	pwd	Get-Location	現在のディレクトリを取得します	1	Linux
+57	gm	Get-Member	オブジェクトのプロパティとメソッドを取得します	1	
+58	gmo	Get-Module	ロードされているモジュールを取得します	0	
+54	gip	Get-NetIPConfiguration	ネットワークインターフェースのIP構成を取得します	0	
+60	gps	Get-Process	実行中のプロセスを取得します	0	
+105	ps	Get-Process	実行中のプロセスを取得します	1	Linux
+44	gbp	Get-PSBreakpoint	設定されているブレークポイントを取得します	0	
+49	gcs	Get-PSCallStack	現在のコールスタックを取得します	0	
+50	gdr	Get-PSDrive	定義されているPSドライブを取得します	0	
+63	gsn	Get-PSSession	リモートセッションを取得します	0	
+64	gsnp	Get-PSSnapin	ロードされているスナップインを取得します	0	
+65	gsv	Get-Service	サービスの状態を取得します	0	
+66	gtz	Get-TimeZone	タイムゾーン情報を取得します	0	
+67	gu	Get-Unique	一意のオブジェクトを取得します	0	
+68	gv	Get-Variable	定義されている変数を取得します	0	
+69	gwmi	Get-WmiObject	WMIオブジェクトを取得します	0	
+62	group	Group-Object	オブジェクトをグループ化します	1	
+87	man	help	コマンドのヘルプを表示します	1	Linux
+76	ipal	Import-Alias		0	
+77	ipcsv	Import-Csv	CSVファイルをインポートします	0	
+78	ipmo	Import-Module	モジュールをインポートします	0	
+79	ipsn	Import-PSSession	リモートセッションのコマンドをインポートします	0	
+72	icm	Invoke-Command	コマンドをリモートで実行します	0	
+73	iex	Invoke-Expression	文字列をコマンドとして実行します	0	
+74	ihy	Invoke-History	コマンド履歴を実行します	0	
+108	r	Invoke-History	コマンド履歴を実行します	1	
+75	ii	Invoke-Item	アイテムを実行します	0	
+80	irm	Invoke-RestMethod	REST APIを呼び出します	0	
+22	curl	Invoke-WebRequest	Webリクエストを実行します	1	Linux
+83	iwr	Invoke-WebRequest	Webリクエストを実行します	0	
+157	wget	Invoke-WebRequest	Webリクエストを実行します	0	
+82	iwmi	Invoke-WmiMethod	WMIメソッドを呼び出します	0	
+89	measure	Measure-Object	オブジェクトのプロパティを測定します	0	
+88	md	mkdir	新しいディレクトリを作成します	1	Linux
+90	mi	Move-Item	アイテムを移動します	0	
+92	move	Move-Item	アイテムを移動します	1	DOS
+94	mv	Move-Item	アイテムを移動します	1	Linux
+93	mp	Move-ItemProperty	アイテムのプロパティを移動します	0	
+95	nal	New-Alias		0	
+97	ni	New-Item	新しいアイテムを作成します	0	
+98	nmo	New-Module	新しいモジュールを作成します	0	
+91	mount	New-PSDrive	新しいPSドライブを作成します	0	
+96	ndr	New-PSDrive	新しいPSドライブを作成します	0	
+100	nsn	New-PSSession	新しいリモートセッションを作成します	1	
+99	npssc	New-PSSessionConfigurationFile	新しいセッション構成ファイルを作成します	0	
+101	nv	New-Variable	新しい変数を作成します	0	
+102	ogv	Out-GridView	グリッドビューに出力します	0	
+103	oh	Out-Host	ホストに出力します	1	
+85	lp	Out-Printer	プリンターに出力します	0	
+104	popd	Pop-Location	以前の場所に戻ります	0	
+81	ise	powershell_ise.exe		0	
+106	pushd	Push-Location	現在の場所をスタックに保存します	0	
+110	rcjb	Receive-Job	ジョブの結果を受信します	0	
+111	rcsn	Receive-PSSession	リモートセッションの結果を受信します	1	
+25	del	Remove-Item	アイテムを削除します	1	DOS
+34	erase	Remove-Item	アイテムを削除します	0	
+112	rd	Remove-Item	アイテムを削除します	1	Linux
+115	ri	Remove-Item	アイテムを削除します	0	
+117	rm	Remove-Item	アイテムを削除します	1	Linux
+118	rmdir	Remove-Item	アイテムを削除します	0	
+122	rp	Remove-ItemProperty	アイテムのプロパティを削除します	0	
+116	rjb	Remove-Job	ジョブを削除します	0	
+119	rmo	Remove-Module	モジュールを削除します	0	
+109	rbp	Remove-PSBreakpoint	ブレークポイントを削除します	0	
+113	rdr	Remove-PSDrive	PSドライブを削除します	1	
+123	rsn	Remove-PSSession	リモートセッションを削除します	1	
+124	rsnp	Remove-PSSnapin	スナップインを削除します	0	
+126	rv	Remove-Variable	変数を削除します	0	
+128	rwmi	Remove-WmiObject	WMIオブジェクトを削除します	0	
+114	ren	Rename-Item	アイテムの名前を変更します	1	DOS
+120	rni	Rename-Item	アイテムの名前を変更します	0	
+121	rnp	Rename-ItemProperty	アイテムのプロパティの名前を変更します	0	
+127	rvpa	Resolve-Path	パスを解決します	0	
+125	rujb	Resume-Job	ジョブを再開します	0	
+136	select	Select-Object	オブジェクトのプロパティを選択します	1	
+142	sls	Select-String	文字列を検索します	0	
+130	sal	Set-Alias	エイリアスを設定します	0	
+135	scb	Set-Clipboard	クリップボードに内容を設定します	1	
+134	sc	Set-Content	ファイルに内容を設定します	1	
+139	si	Set-Item	アイテムの値を設定します	0	
+144	sp	Set-ItemProperty	アイテムのプロパティを設定します	0	
+6	cd	Set-Location	現在のディレクトリを変更します	1	DOS
+8	chdir	Set-Location	現在のディレクトリを変更します	1	Linux
+140	sl	Set-Location	現在のディレクトリを変更します	0	
+133	sbp	Set-PSBreakpoint	ブレークポイントを設定します	0	
+149	stz	Set-TimeZone	タイムゾーンを設定します	0	
+137	set	Set-Variable	変数の値を設定します	0	
+151	sv	Set-Variable	変数の値を設定します	0	
+152	swmi	Set-WmiInstance	WMIインスタンスのプロパティを設定します	0	
+138	shcm	Show-Command	コマンドのGUIを表示します	0	
+143	sort	Sort-Object	オブジェクトをソートします	1	
+129	sajb	Start-Job	新しいジョブを開始します	0	
+131	saps	Start-Process	新しいプロセスを開始します	0	
+148	start	Start-Process	新しいプロセスを開始します	0	
+132	sasv	Start-Service	サービスを開始します	1	
+141	sleep	Start-Sleep	指定した時間だけスリープします	1	DOS
+145	spjb	Stop-Job	ジョブを停止します	0	
+84	kill	Stop-Process	プロセスを停止します	1	Linux
+146	spps	Stop-Process	プロセスを停止します	0	
+147	spsv	Stop-Service	サービスを停止します	0	
+150	sujb	Suspend-Job	ジョブを一時停止します	0	
+153	tee	Tee-Object	出力をファイルに保存しつつパイプラインに渡します	1	
+154	TNC	Test-NetConnection	ネットワーク接続をテストします	0	
+155	trcm	Trace-Command	コマンドの実行をトレースします	0	
+159	wjb	Wait-Job	ジョブの完了を待ちます	0	
+2	?	Where-Object	オブジェクトをフィルタリングします	1	
+158	where	Where-Object	オブジェクトをフィルタリングします	1	
+30	echo	Write-Output	出力を表示します	1	DOS
+160	write	Write-Output	出力を表示します	0	
