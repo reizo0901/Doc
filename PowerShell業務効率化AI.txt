@@ -1,1354 +1,995 @@
-PowerShellを使って業務効率化を進めるために役立つ、基本的でシンプルなコマンドとパイプラインの具体例を50個紹介します。
-
-## 【ファイル操作】
-
-1. **カレントディレクトリのファイル一覧表示**
-```powershell
-Get-ChildItem
-```
-
-2. **テキストファイルの内容表示**
-```powershell
-Get-Content log.txt
-```
-
-3. **ファイル内の特定キーワード検索**
-```powershell
-Select-String "エラー" *.log
-```
-
-4. **ファイル名の絞り込み（拡張子指定）**
-```powershell
-Get-ChildItem *.csv
-```
-
-5. **ファイルのサイズ順に並べる**
-```powershell
-Get-ChildItem | Sort-Object Length -Descending
-```
-
-6. **特定のサイズ以上のファイルだけ表示**
-```powershell
-Get-ChildItem | Where-Object { $_.Length -gt 1MB }
-```
-
-7. **空フォルダを見つける**
-```powershell
-Get-ChildItem -Directory | Where-Object { (Get-ChildItem $_.FullName).Count -eq 0 }
-```
-
-8. **ファイル名を一括で変更**
-```powershell
-Get-ChildItem *.txt | Rename-Item -NewName { "backup_" + $_.Name }
-```
-
-9. **更新日付の古いファイルを削除**
-```powershell
-Get-ChildItem | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item
-```
-
-10. **重複ファイルを探す**
-```powershell
-Get-ChildItem -Recurse | Group-Object Length | Where-Object { $_.Count -gt 1 }
-```
-
-## 【プロセス管理】
-
-11. **実行中のプロセスを一覧表示**
-```powershell
-Get-Process
-```
-
-12. **特定プロセスを停止**
-```powershell
-Get-Process chrome | Stop-Process
-```
-
-13. **メモリ使用量が多いプロセスの上位5つを表示**
-```powershell
-Get-Process | Sort-Object WS -Descending | Select-Object -First 5
-```
-
-14. **特定のプロセスが起動しているか確認**
-```powershell
-Get-Process notepad -ErrorAction SilentlyContinue
-```
-
-## 【システム情報取得】
-
-15. **システムの稼働時間を表示**
-```powershell
-Get-CimInstance Win32_OperatingSystem | Select-Object LastBootUpTime
-```
-
-16. **コンピュータ名を表示**
-```powershell
-$env:COMPUTERNAME
-```
-
-17. **ディスク容量を確認**
-```powershell
-Get-PSDrive -PSProvider FileSystem
-```
-
-18. **メモリ使用状況を確認**
-```powershell
-Get-CimInstance Win32_OperatingSystem | Select-Object TotalVisibleMemorySize,FreePhysicalMemory
-```
-
-19. **Windowsのバージョン確認**
-```powershell
-Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version
-```
-
-## 【ネットワーク関連】
-
-20. **IPアドレスの確認**
-```powershell
-Get-NetIPAddress
-```
-
-21. **ネットワークインターフェースの状態確認**
-```powershell
-Get-NetAdapter | Select-Object Name,Status,MacAddress
-```
-
-22. **特定のポートが使用中かどうか確認**
-```powershell
-Get-NetTCPConnection -LocalPort 80
-```
-
-23. **Webサイトの接続確認**
-```powershell
-Test-NetConnection google.com -Port 443
-```
-
-24. **ローカルポートを使用しているプロセスを調べる**
-```powershell
-Get-NetTCPConnection -LocalPort 8080 | Select-Object OwningProcess | Get-Process
-```
-
-## 【CSVファイル処理】
-
-25. **CSVを読み込み、特定カラムだけ表示**
-```powershell
-Import-Csv data.csv | Select-Object Name,Email
-```
-
-26. **CSVをフィルタして保存**
-```powershell
-Import-Csv data.csv | Where-Object { $_.Status -eq "有効" } | Export-Csv active.csv
-```
-
-27. **重複行を削除してCSV保存**
-```powershell
-Import-Csv data.csv | Sort-Object Name -Unique | Export-Csv unique.csv
-```
-
-## 【ユーザー管理】
-
-28. **ローカルユーザー一覧**
-```powershell
-Get-LocalUser
-```
-
-29. **特定のアカウントを有効化**
-```powershell
-Enable-LocalUser -Name "guest"
-```
-
-30. **アカウントを無効化**
-```powershell
-Disable-LocalUser -Name "guest"
-```
-
-## 【イベントログ管理】
-
-31. **直近のエラーを表示**
-```powershell
-Get-EventLog -LogName System -EntryType Error -Newest 10
-```
-
-32. **ログを特定期間で絞り込む**
-```powershell
-Get-EventLog -LogName Application -After (Get-Date).AddDays(-1)
-```
-
-33. **ログの件数をカウント**
-```powershell
-Get-EventLog -LogName System | Measure-Object
-```
-
-## 【サービス管理】
-
-34. **サービス一覧を表示**
-```powershell
-Get-Service
-```
-
-35. **特定サービスを再起動**
-```powershell
-Restart-Service -Name "Spooler"
-```
-
-36. **停止しているサービスをすべて表示**
-```powershell
-Get-Service | Where-Object { $_.Status -eq 'Stopped' }
-```
-
-37. **自動起動設定なのに停止しているサービスを調べる**
-```powershell
-Get-Service | Where-Object { $_.StartType -eq 'Automatic' -and $_.Status -eq 'Stopped' }
-```
-
-## 【JSON/XML処理】
-
-38. **JSONの読み込み**
-```powershell
-Get-Content data.json | ConvertFrom-Json
-```
-
-39. **データをJSONに変換して保存**
-```powershell
-Get-Service | ConvertTo-Json | Set-Content services.json
-```
-
-40. **XMLファイルの特定要素抽出**
-```powershell
-[xml](Get-Content data.xml) | Select-Xml "//item"
-```
-
-## 【日付処理】
-
-41. **日付フォーマット**
-```powershell
-Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-```
-
-42. **現在から30日後の日付を表示**
-```powershell
-(Get-Date).AddDays(30)
-```
-
-## 【ファイル圧縮と解凍】
-
-43. **フォルダをZIP圧縮**
-```powershell
-Compress-Archive -Path logs\* -DestinationPath logs.zip
-```
-
-44. **ZIPを解凍**
-```powershell
-Expand-Archive logs.zip -DestinationPath .\logs
-```
-
-## 【クリップボード活用】
-
-45. **テキストをクリップボードにコピー**
-```powershell
-Get-Service | Clip
-```
-
-46. **クリップボード内容を取得**
-```powershell
-Get-Clipboard
-```
-
-## 【履歴管理】
-
-47. **実行履歴表示**
-```powershell
-Get-History
-```
-
-48. **特定履歴コマンドを再実行**
-```powershell
-Invoke-History -Id 5
-```
-
-## 【計測・性能】
-
-49. **コマンドの実行時間計測**
-```powershell
-Measure-Command { Get-Process }
-```
-
-50. **ディスク使用量の確認**
-```powershell
-Get-Volume | Select-Object DriveLetter,SizeRemaining,Size
-```
-
-## 【レジストリ操作】
-
-51. **レジストリキー一覧を表示**
-```powershell
-Get-ChildItem HKCU:\Software
-```
-
-52. **特定のレジストリ値を取得**
-```powershell
-Get-ItemProperty "HKCU:\Control Panel\Desktop" -Name Wallpaper
-```
-
-53. **レジストリ値を書き込み**
-```powershell
-Set-ItemProperty "HKCU:\Control Panel\Desktop" -Name Wallpaper -Value "C:\image.jpg"
-```
-
-## 【環境変数】
-
-54. **すべての環境変数を表示**
-```powershell
-Get-ChildItem Env:
-```
-
-55. **特定の環境変数の値を取得**
-```powershell
-$Env:Path
-```
-
-56. **環境変数を追加**
-```powershell
-[Environment]::SetEnvironmentVariable("MyVar","Value","User")
-```
-
-## 【文字列操作】
-
-57. **テキストを大文字に変換**
-```powershell
-"test string".ToUpper()
-```
-
-58. **テキスト置換**
-```powershell
-"2025/03/11" -replace "/", "-"
-```
-
-59. **文字列の分割**
-```powershell
-"apple,banana,orange".Split(",")
-```
-
-60. **文字列の結合**
-```powershell
-"apple","banana","orange" -join ";"
-```
-
-## 【配列操作】
-
-61. **配列の重複を除去**
-```powershell
-@(1,2,2,3,4,4) | Select-Object -Unique
-```
-
-62. **配列のソート**
-```powershell
-@(3,1,4,2) | Sort-Object
-```
-
-63. **配列の最大値を取得**
-```powershell
-@(1,3,5,7) | Measure-Object -Maximum
-```
-
-## 【ユーザー入力処理】
-
-64. **入力プロンプト表示**
-```powershell
-Read-Host "Enter your name"
-```
-
-65. **パスワードの安全な入力**
-```powershell
-Read-Host "Password" -AsSecureString
-```
-
-## 【クリップボード拡張】
-
-66. **ファイル内容をクリップボードへ**
-```powershell
-Get-Content file.txt | Set-Clipboard
-```
-
-## 【日時計算】
-
-67. **2つの日付の差を計算**
-```powershell
-(New-TimeSpan -Start "2025/01/01" -End (Get-Date)).Days
-```
-
-68. **先月末日を求める**
-```powershell
-(Get-Date -Day 1).AddDays(-1).ToShortDateString()
-```
-
-## 【ジョブ（バックグラウンド処理）】
-
-69. **バックグラウンドジョブの開始**
-```powershell
-Start-Job -ScriptBlock {Get-Process}
-```
-
-70. **ジョブの状態確認**
-```powershell
-Get-Job
-```
-
-71. **ジョブの結果を取得**
-```powershell
-Receive-Job -Id 1
-```
-
-72. **完了済ジョブの削除**
-```powershell
-Get-Job | Remove-Job
-```
-
-## 【コマンドレット情報取得】
-
-73. **コマンドレットの使い方表示**
-```powershell
-Get-Help Get-Process
-```
-
-74. **特定機能を持つコマンドレット検索**
-```powershell
-Get-Command -Verb Export
-```
-
-## 【プロファイル管理】
-
-75. **プロファイルの編集**
-```powershell
-notepad $PROFILE
-```
-
-76. **プロファイルの場所を表示**
-```powershell
-$PROFILE
-```
-
-## 【HTTPリクエスト】
-
-77. **Webからコンテンツをダウンロード**
-```powershell
-Invoke-WebRequest -Uri "http://example.com" -OutFile "index.html"
-```
-
-78. **JSON APIの取得**
-```powershell
-Invoke-RestMethod "https://api.example.com/data"
-```
-
-## 【セキュリティ・証明書】
-
-79. **証明書の一覧表示**
-```powershell
-Get-ChildItem Cert:\CurrentUser\My
-```
-
-80. **期限切れ間近の証明書を探す**
-```powershell
-Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.NotAfter -lt (Get-Date).AddDays(30) }
-```
-
-## 【ファイル監視】
-
-81. **フォルダ内の変更を監視**
-```powershell
-Get-ChildItem | Get-FileHash
-```
-
-82. **変更をリアルタイム通知**
-```powershell
-Get-ChildItem .\logs -Recurse | Watch-FileSystem
-```
-※要自作関数または専用モジュール利用。
-
-## 【JSONデータ操作】
-
-83. **JSONをCSVへ変換**
-```powershell
-Get-Content data.json | ConvertFrom-Json | Export-Csv data.csv
-```
-
-## 【XMLデータ操作】
-
-84. **XMLの特定属性抽出**
-```powershell
-([xml](Get-Content data.xml)).SelectNodes("//user[@status='active']")
-```
-
-## 【数値計算】
-
-85. **数値の合計を求める**
-```powershell
-(1..100 | Measure-Object -Sum).Sum
-```
-
-## 【ログオン情報取得】
-
-86. **現在ログオン中のユーザーを取得**
-```powershell
-query user
-```
-
-## 【システム性能モニタリング】
-
-87. **CPU使用率を表示**
-```powershell
-Get-Counter '\Processor(_Total)\% Processor Time'
-```
-
-88. **リアルタイムでのCPU使用率監視**
-```powershell
-Get-Counter '\Processor(_Total)\% Processor Time' -Continuous
-```
-
-## 【Windows Update関連】
-
-89. **更新履歴を表示**
-```powershell
-Get-HotFix
-```
-
-## 【リモート管理】
-
-90. **リモートPCのプロセスを確認**
-```powershell
-Invoke-Command -ComputerName PC01 -ScriptBlock {Get-Process}
-```
-
-91. **リモートPCを再起動**
-```powershell
-Restart-Computer -ComputerName PC01
-```
-
-## 【ファイルの差分比較】
-
-92. **2つのファイルの差分表示**
-```powershell
-Compare-Object (Get-Content file1.txt) (Get-Content file2.txt)
-```
-
-## 【タスクスケジューラ管理】
-
-93. **タスク一覧取得**
-```powershell
-Get-ScheduledTask
-```
-
-94. **タスクの状態を確認**
-```powershell
-Get-ScheduledTask | Get-ScheduledTaskInfo
-```
-
-## 【エイリアス管理】
-
-95. **エイリアス一覧表示**
-```powershell
+PowerShellで楽しようよ！<業務効率化編>
+
+
+業務効率化が求められている理由
+
+・単金の低価格化(同業種の増加や、)
+→市場競争の激化やコスト削減のプレッシャーにより、企業は単価を下げる必要に迫られています。特に製造業やサービス業では、競争力を維持するために価格を抑えることが求められます。その結果、利益率が低下し、効率的な業務運営が必要となります。
+
+・スケジュールに合わない業務への要望(IT投資への渋り、要員の少なさなど)
+→顧客の多様なニーズや市場の変化に迅速に対応するため、スケジュールに合わない業務への要望が増加しています。特にプロジェクトベースの業務では、急な変更や追加の要求が発生しやすく、これが業務効率化の課題となります。
+
+・品質向上のための時間の確保の難度(納期の短さや、業務の多さなど)
+→高品質な製品やサービスを提供するためには、十分な時間を確保する必要がありますが、コスト削減や納期の短縮が求められる現代では、品質向上のための時間を確保することが難しくなっています。これにより、効率的な業務プロセスの構築が求められます。
+
+・多様な働き方(テレワークや時短勤務など)
+→働き方改革やテクノロジーの進化により、リモートワークやフレックスタイムなど多様な働き方が普及しています。これにより、従業員の働きやすさが向上する一方で、業務の調整やコミュニケーションの効率化が必要となります。
+
+業務効率化とは、業務の工程から3M(ムリ/ムダ/ムラ)はトヨタ生産計画(TPS)における重要な基本思想の一つでもあり、製造業の根幹を支える考え方と言われています。
+この3M(ムリ/ムダ/ムラ)を洗い出して、非効率な業務を改善することができます。
+
+・「ムリ」業務スケジュール面において、社員の負担が大き過ぎる状態。
+　ムリ（無理）とは、作業者や設備にとって過剰な負担がかかっている状態を指します。能力以上の作業を強いたり、不適切な作業環境で作業をさせたりすることを意味します。
+　例えば、重すぎる荷物の運搬、長時間労働、複雑すぎる作業手順、危険な作業環境などが挙げられます。ムリは作業者の心身の疲労や故障、設備の故障、品質低下などを引き起こす要因となります。
+
+・「ムダ」人材、時間、資金等の「リソース」を必要以上に導入している状態。
+　ムダ（無駄）とは、付加価値を生まない作業や資源の浪費を指します。工程における不要な作業、手待ち時間、運搬、在庫、動作、不良品の発生などが該当します。
+　例えば、製造業における重要課題のひとつである「ヒューマンエラー」は、ムダを生み出す要因にもなり得ます。「作業手順の誤りによるエラー」「確認不足によるエラー」といったミスは作業の手戻りを引き起こし、工場全体の生産性を低下させます。
+
+・「ムラ」仕事の品質が安定していない状態。
+　ムラ（斑）とは、作業や品質のばらつきを指します。作業者ごとのスキル差、機械の個体差、材料の品質のばらつきなどが原因で発生します。
+　例えば、製品の寸法誤差、作業時間のばらつき、品質の不安定性などが挙げられます。ムラは品質の低下や顧客からの信頼失墜につながる可能性があります。
+　「ムラ」の例として、工作機械や産業機械の製造販売を手掛ける「新日本工機株式会社」の事例が挙げられます。同社では当時、作業者や管理者ごとに作業手順の認識が異なっており、まさしく「作業手順が標準化されていない」ことが大きな経営課題でした。そこから生まれる製造品質のばらつきや顧客満足度の低下を予防すべく、ムラの改善を推進したのです。
+
+人に関するチェック項目
+「ムリ」チェック
+□人間が少なすぎないか
+□もっと楽にできないか
+□人の配置は良いか
+□姿勢、環境、取り扱いなどに無理はないか
+「ムダ」チェック
+□仕事量と人員のバランスが取れているか
+□手待ち、余裕は多すぎないか
+□適材適所に配置されているか
+□ムダな動きはないか
+□仕事の与えかたにムダはないか
+□計画、段取りが悪いためにムダが発生していないか
+「ムラ」チェック
+□個人差、人による差はないか
+□バラつきは大きくないか
+□作業量、作業時間は人によって違っていないか
+□人と人の連携動作は良いか
+□一方が作業中のとき、一方が作業待ちになっていないか
+□熟練者の配置は適切か
+□忙しすぎたりヒマになったりしないか
+□作業訓練は平均して行われているか
+設備に関するチェック項目
+「ムリ」チェック
+□機械の能力は十分か
+□保全、点検、修理、交換などは正しく行われているか
+□計測は正しく行われているか
+「ムダ」チェック
+□機械能力（品質、生産性）は適切に生かされているか
+□機械工具の利用はよいか
+□治工具はよく使われているか
+□自動化、機械化、省力化はよいか
+□標準時間は適切に定められているか
+「ムラ」チェック
+□生産能力は平均しているか
+□生産能力のバランスはよくとられているか
+□工程負荷は適切か
+□待ち時間、空き時間はないか
+資材に関するチェック項目
+「ムリ」チェック
+□品質、強度、性能にムリはないか
+□納期にムリはないか
+□設計によるムリはないか
+「ムダ」チェック
+□歩留まりはよいか
+□使えるものを捨てていないか
+□もっと安い材料や資材が使えないか
+□VE（価値分析）はよくできているか
+□作り直し、手直しなど余計な手をかけていないか
+「ムラ」チェック
+□品質にバラつきはないか
+□性能、形状、寸法、仕上がり、材質などにムラはないか
+□ロットごとに均一か
+このチェックリストで現場や職場をチェックしてムリ、ムラ、ムダを発見し改善していきましょう。
+
+3M(ムリ/ムダ/ムラ)を自分の業務に当てはめてみる。
+粒度が高い
+
+
+
+
+
+
+製造業における3Mの業務改善手順
+製造業における3Mの業務改善は「ダラリの順番で進めていくこと」が重要です。この順番は「ムダ」「ムラ」「ムリ」の頭文字を取ったものです。
+
+ダラリの順番で改善を進めることで、ムダを削減することで生まれた余力を、ムラやムリの解消に向けることができます。
+
+最初にムダをなくす
+製造業における3Mの業務改善では、最初にムダの削減に取り組むことが重要なポイントです。ムダを徹底的に排除することで業務の効率化やコスト削減を図れて、ムラやムリの解消に注力できます。
+
+製造現場でのムダ削減の具体例としては、以下のようなものが挙げられます。
+
+在庫の適正化
+
+動線の最適化
+
+段取り時間の短縮
+
+在庫を最適化し付加価値を生まない作業を特定して撤廃することで、作業効率が高まります。また工場内のレイアウトを見直し、材料や製品の移動距離を最小限に抑えることで輸送のムダを削減できます。ほかにも段取り作業を標準化して必要な工具や材料を事前に準備しておけば、段取り時間を大幅に短縮可能です。
+
+ムダ削減の取り組みは、現場の作業者の意見を取り入れながら進めていくことが重要です。日々の業務の中でムダに気づき改善のアイデアを出し合うことで、職場全体の改善につなげることが可能になります。このようにムダをなくして生まれた余力を、ムラやムリの解消に振り向けることが3M削減の第一歩です。
+
+次にムラをなくす
+ムダの削減が進んだら、次はムラの解消に取り組みましょう。ムラを減らすことで、品質の安定性や生産性の向上を実現できます。
+
+ムラ解消の具体例としては、以下のような項目があります。
+
+作業手順の標準化
+
+設備のメンテナンス強化
+
+作業者のスキル平準化
+
+作業手順のムラ解消に向けては、全ての作業者が同じ手順で作業をおこなえるように作業手順を明確にしましょう。また定期的な設備のメンテナンスや予防保全を実施しておけば、設備由来のムラを防ぐことにつながります。作業者のスキルのムラに関しては、訓練プログラムの充実や熟練作業者によるOJTを通じて、作業者のスキルを平準化することが大切です。
+
+ムラ解消の取り組みもムダの削減と同様に、現場の作業者の考えをもとに進めていくことが重要です。日々の業務の中で起こっているムラに一番気づきやすいのは作業者なので、小さな変化でも良いので感じていることを話し合いましょう。ムダとムラをなくすことで、より効率的で品質の高い製品を生産できるようになります。
+
+最後にムリをなくす
+ムダとムラが解消できてきたら、最後にムリの解消に取り組んでいきましょう。ムリをなくすことで従業員の健康と安全を守り、持続可能な生産体制を構築できます。
+
+ムリ解消の具体例としては、以下のようなものがあります。
+
+適切な人員配置
+
+無理のない生産計画
+
+作業環境の改善
+
+生産量や作業内容に応じて適切な人数の従業員を配置できているかは、ムリが生じないためにも重要なポイントです。定期的に人員配置を見直して最適化を図りましょう。また受注量や納期に基づいて現実的な生産計画を立てることで、ムリな残業や休日出勤を防ぐことも大切です。そのほかにも現場の温度や湿度、騒音などの環境要因は従業員の作業効率に影響を与えるので、計画的な設備投資で安全な環境を整えておきましょう。
+
+これらの改善活動を通じてムリを解消することで、従業員の働きがいの向上と持続可能な生産体制が構築可能です。ムダ、ムラ、ムリを順番に解消していき、品質や生産性の向上を図りましょう。
+
+
+
+1. 導入
+目的と概要: PowerShellの基本的な説明と、業務効率化の重要性について。
+対象読者: 初心者から中級者を対象にすることを明記。
+
+2. PowerShellの基礎
+PowerShellの基本コマンド: よく使うコマンドレット（cmdlet）の紹介。
+スクリプトの書き方: 基本的なスクリプトの構造と書き方。
+
+3. 業務の洗い出し
+効率化が可能な作業の特定: 日常業務の中で繰り返し行われる作業をリストアップ。
+優先順位の設定: 効率化の効果が高い作業から取り組む方法。
+
+業務効率化をするにあたって、大きく２つの目的に分けて説明します。
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+業務の洗い出しは、効率化の第一歩として非常に重要です。以下に詳しい考え方や手法を説明します。
+
+### 1. **現状分析**
+まず、現在の業務プロセスを詳細に分析します。以下のポイントに注目してください。
+- **業務の種類**: どのような業務があるかをリストアップします。
+- **業務の頻度**: 各業務がどれくらいの頻度で行われているかを確認します。
+- **業務の時間**: 各業務にどれくらいの時間がかかっているかを測定します。
+
+### 2. **業務の分類**
+次に、業務を以下のように分類します。
+- **定型業務**: 毎日、毎週、毎月など定期的に行われる業務。
+- **非定型業務**: 不定期に発生する業務。
+- **重要業務**: 会社の目標達成に直結する重要な業務。
+- **非重要業務**: 重要度が低い業務。
+
+### 3. **効率化の可能性の評価**
+各業務について、効率化の可能性を評価します。
+- **繰り返し作業**: 同じ作業を何度も行っている場合、効率化の余地が大きいです。
+- **手動作業**: 手動で行っている作業は自動化の対象となります。
+- **時間のかかる作業**: 時間がかかる作業は、効率化によって大きな効果が期待できます。
+
+### 4. **優先順位の設定**
+効率化の効果が高い業務から取り組むために、優先順位を設定します。
+- **インパクトの大きさ**: 効率化によって得られる効果の大きさを評価します。
+- **実現可能性**: 効率化がどれくらい容易に実現できるかを評価します。
+
+### 5. **具体的な効率化手法の検討**
+効率化が可能な業務について、具体的な手法を検討します。
+- **スクリプトの作成**: PowerShellスクリプトを使って自動化する方法を考えます。
+- **ツールの導入**: 効率化に役立つツールやソフトウェアの導入を検討します。
+- **プロセスの見直し**: 業務プロセス自体を見直し、効率化できる部分を改善します。
+
+### 6. **実行と評価**
+効率化手法を実行し、その効果を評価します。
+- **効果測定**: 効率化前後の業務時間や成果を比較します。
+- **フィードバックの収集**: 実際に業務を行う人からのフィードバックを収集し、改善点を探ります。
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+4. 実際の効率化プロセス
+スクリプトの作成: 実際に業務を効率化するためのスクリプト例。
+自動化の実装: タスクスケジューラなどを使った自動化の方法。
+
+インパクトの大きさ: 効率化によって得られる効果の大きさを評価します。
+実現可能性: 効率化がどれくらい容易に実現できるかを評価します。
+
+5. 実際の効率化プロセス
+スクリプトの作成: 実際に業務を効率化するためのスクリプト例。
+自動化の実装: タスクスケジューラなどを使った自動化の方法。
+
+5. 応用編
+高度なスクリプト: より複雑な業務を効率化するためのスクリプト例。
+モジュールの作成と利用: 自作モジュールの作成方法と利用方法。
+
+6. トラブルシューティング
+よくあるエラーとその対処法: スクリプト実行時に発生しやすいエラーの解決方法。
+デバッグの方法: 効率的なデバッグのテクニック。
+
+7. まとめ
+学んだことの振り返り: 各章の要点を再確認。
+次のステップ: さらなる学習リソースやコミュニティの紹介。
+
+●PowerShellで業務の効率化しよう。
+
+PowerShellのモジュールについて
+
+PowerShellは、機能を拡張するためのモジュールをサポートしています。
+特定のアプリケーションやサービスに対する管理機能を追加して利用することができます。
+
+PowerShellモジュールにはいくつかの種類があり、それぞれ異なる方法で機能します。以下に、バイナリモジュール、マニフェストモジュール、スクリプトモジュールの違いを説明します。
+
+バイナリモジュール (Binary Module)
+内容: .NETアセンブリ（通常は.dllファイル）で構成されており、C#などのプログラミング言語で記述されたコマンドレットを含みます。
+特徴: 高速で効率的な処理が可能。複雑なロジックやパフォーマンスが重要なシナリオに適しています。
+例: Add-Type -Path "C:\path\to\module.dll"
+マニフェストモジュール (Manifest Module)
+内容: モジュールに関するメタデータを含む.psd1ファイル（マニフェストファイル）で構成されます。マニフェストファイルには、モジュールのバージョン、依存関係、エクスポートするコマンドなどの情報が含まれます。
+特徴: モジュールの構成や管理が容易になり、複数のスクリプトやバイナリをまとめて管理できます。
+例: New-ModuleManifest -Path "C:\path\to\module.psd1"
+スクリプトモジュール (Script Module)
+内容: PowerShellスクリプトファイル（.psm1ファイル）で構成され、PowerShellで記述された関数やコマンドレットを含みます。
+特徴: 簡単に作成・編集が可能で、PowerShellのスクリプト言語を使用して柔軟に機能を追加できます。
+例: Import-Module -Name "C:\path\to\module.psm1"
+これらのモジュールタイプは、それぞれ異なる用途やシナリオに適しています。バイナリモジュールはパフォーマンスが重要な場合に、スクリプトモジュールは簡単なカスタマイズやスクリプトの共有に、マニフェストモジュールは複数のコンポーネントをまとめて管理する場合に便利です123。
+
+業務効率化にするにあたってよく使うコマンドレットを覚えておきましょう。
+Get-Help <コマンドレット>
 Get-Alias
-```
-
-96. **新しいエイリアス設定**
-```powershell
-Set-Alias ll Get-ChildItem
-```
-
-## 【ランダムデータ生成】
+Get-Member
+Set-ClipBoard
+Get-ClipBoard
+Get-Content
+Set-Content
+Add-Content
+Clear-Content
+Clear-Host
+Write-Host
+Write-Output
+Format-List
+Format-Table
+Get-ChildItem
+Copy-Item
+Set-Location
+Get-Location
+Move-Item
+Remove-Item
+Start-Sleep
+Tee-Object
+Out-String
+
+ファイル操作
+Get-Content：ファイルの内容を取得します。
+Set-Content：ファイルに内容を書き込みます。
+Add-Content：ファイルに内容を追加します。
+Clear-Content：ファイルの内容をクリアします。
+Copy-Item：ファイルをコピーします。
+Move-Item：ファイルを移動します。
+Remove-Item：ファイルを削除します。
+Rename-Item：ファイルの名前を変更します。
+New-Item：新しいファイルを作成します。
+フォルダ操作
+Get-ChildItem：フォルダの内容を一覧表示します。
+New-Item：新しいフォルダを作成します。
+Remove-Item：フォルダを削除します。
+Rename-Item：フォルダの名前を変更します。
+Copy-Item：フォルダをコピーします。
+Move-Item：フォルダを移動します。
+その他
+Test-Path：ファイルやフォルダの存在を確認します。
+Get-Item：ファイルやフォルダのプロパティを取得します。
+Set-Item：ファイルやフォルダのプロパティを設定します。
+
+オブジェクトの変換
+ConvertTo-Json：オブジェクトをJSON形式に変換します。
+ConvertFrom-Json：JSON形式の文字列をオブジェクトに変換します。
+ConvertTo-Xml：オブジェクトをXML形式に変換します。
+ConvertFrom-Xml：XML形式の文字列をオブジェクトに変換します。
+ConvertTo-Html：オブジェクトをHTML形式に変換します。
+ConvertTo-Csv：オブジェクトをCSV形式に変換します。
+ConvertFrom-Csv：CSV形式の文字列をオブジェクトに変換します。
+ConvertTo-SecureString：文字列をセキュアな文字列（SecureString）に変換します。
+ConvertFrom-SecureString：セキュアな文字列を通常の文字列に変換します。
+Out-String：オブジェクトを文字列に変換します。
+Out-File：オブジェクトをファイルに出力します。
+
+ファイル入力系のコマンドレット
+Get-Content：ファイルの内容を取得します。
+Import-Csv：CSVファイルをインポートしてオブジェクトに変換します。
+Import-Clixml：XMLファイルをインポートしてオブジェクトに変換します。
+Select-String：ファイルの内容を検索し、マッチする行を取得します。
+ファイル出力系のコマンドレット
+Out-File：オブジェクトをファイルに出力します。
+Set-Content：ファイルに内容を書き込みます。
+Add-Content：ファイルに内容を追加します。
+Export-Csv：オブジェクトをCSVファイルにエクスポートします。
+Export-Clixml：オブジェクトをXMLファイルにエクスポートします。
+Out-Printer：オブジェクトをプリンターに出力します。
+
+クリップボード入出力系のコマンドレット
+Get-Clipboard：クリップボードの内容を取得します。
+Set-Clipboard：クリップボードに内容を書き込みます。
+
+日付操作系のコマンドレット
+Get-Date：現在の日付と時刻を取得します。また、特定の日付や時刻を取得するためのオプションもあります。
+Set-Date：システムの日付と時刻を設定します。
+Add-Date：日付に特定の時間を追加します（例：日、時間、分など）。
+New-TimeSpan：2つの日付の間の時間間隔を計算します。
+
+文字列操作系のコマンドレット
+Select-String：文字列の中から特定のパターンを検索します。
+ConvertTo-Json：オブジェクトをJSON形式の文字列に変換します。
+ConvertFrom-Json：JSON形式の文字列をオブジェクトに変換します。
+ConvertTo-Xml：オブジェクトをXML形式の文字列に変換します。
+ConvertFrom-Xml：XML形式の文字列をオブジェクトに変換します。
+Out-String：オブジェクトを文字列に変換します。
+
+文字列操作のためのメソッド
+-replace：文字列の置換を行います。
+-split：文字列を分割します。
+-join：文字列を結合します。
+.ToUpper()：文字列を大文字に変換します。
+.ToLower()：文字列を小文字に変換します。
+.Trim()：文字列の先頭と末尾の空白を削除します。
+.Substring()：文字列の一部を取得します。
+.Contains()：文字列が特定の部分文字列を含むかどうかを確認します。
+
+システム情報取得系のコマンドレット
+Get-ComputerInfo：コンピューターの詳細な情報を取得します。
+Get-WmiObject：WMI（Windows Management Instrumentation）を使用してシステム情報を取得します。
+Get-CimInstance：CIM（Common Information Model）を使用してシステム情報を取得します。
+Get-Process：現在実行中のプロセス情報を取得します。
+Get-Service：システム上のサービス情報を取得します。
+Get-EventLog：イベントログの情報を取得します。
+Get-Event：イベント情報を取得します。
+Get-Job：バックグラウンドジョブの情報を取得します。
+Get-Module：インストールされているモジュールの情報を取得します。
+Get-HotFix：インストールされているホットフィックス（更新プログラム）の情報を取得します。
+Get-PSDrive：PowerShellドライブの情報を取得します。
+Get-PSProvider：PowerShellプロバイダーの情報を取得します。
+Get-Host：PowerShellホストの情報を取得します。
+Get-Command：利用可能なコマンドの情報を取得します。
+Get-Help：コマンドレットのヘルプ情報を取得します。
+
+ネットワーク情報取得系のコマンドレット
+Get-NetIPAddress：ネットワークインターフェースのIPアドレス情報を取得します。
+Get-NetIPConfiguration：ネットワークインターフェースのIP構成情報を取得します。
+Get-NetAdapter：ネットワークアダプターの情報を取得します。
+Get-NetAdapterStatistics：ネットワークアダプターの統計情報を取得します。
+Get-NetRoute：ルーティングテーブルの情報を取得します。
+Get-NetNeighbor：ネットワークの近隣情報を取得します。
+Get-NetTCPConnection：TCP接続の情報を取得します。
+Get-NetUDPEndpoint：UDPエンドポイントの情報を取得します。
+Get-DnsClient：DNSクライアントの設定情報を取得します。
+Get-DnsClientServerAddress：DNSクライアントのサーバーアドレス情報を取得します。
+Get-NetFirewallProfile：ファイアウォールプロファイルの情報を取得します。
+Get-NetFirewallRule：ファイアウォールルールの情報を取得します。
+Test-Connection：ネットワーク接続をテストします（Pingコマンドのような動作をします）。
+Resolve-DnsName：DNS名を解決します。
+
+主なWMIクラスと取得可能な情報
+Win32_OperatingSystem：OSの詳細情報（例：名前、バージョン、ビルド番号、インストール日、起動時間など）
+Win32_ComputerSystem：コンピューターシステムの情報（例：メーカー、モデル、システムタイプ、物理メモリなど）
+Win32_Process：実行中のプロセス情報（例：プロセスID、名前、メモリ使用量など）
+Win32_Service：システム上のサービス情報（例：サービス名、状態、スタートモードなど）
+Win32_NetworkAdapter：ネットワークアダプターの情報（例：アダプター名、MACアドレス、速度など）
+Win32_NetworkAdapterConfiguration：ネットワークアダプターの設定情報（例：IPアドレス、サブネットマスク、デフォルトゲートウェイなど）
+Win32_BIOS：BIOSの情報（例：メーカー、バージョン、リリース日など）
+Win32_DiskDrive：ディスクドライブの情報（例：モデル、シリアル番号、サイズなど）
+Win32_LogicalDisk：論理ディスクの情報（例：ドライブレター、ファイルシステム、空き容量など）
+Win32_PhysicalMemory：物理メモリの情報（例：容量、速度、メーカーなど）
+Win32_Environment：環境変数の情報（例：変数名、値など）
+
+使用例
+以下は、いくつかのWMIクラスを使用して情報を取得する例です：
+
+# OSの詳細情報を取得
+Get-WmiObject -Class Win32_OperatingSystem
+
+# コンピューターシステムの情報を取得
+Get-WmiObject -Class Win32_ComputerSystem
+
+# 実行中のプロセス情報を取得
+Get-WmiObject -Class Win32_Process
+
+# ネットワークアダプターの設定情報を取得
+Get-WmiObject -Class Win32_NetworkAdapterConfiguration
+
+主なWin32クラス
+Win32_OperatingSystem：OSの詳細情報
+Win32_ComputerSystem：コンピューターシステムの情報
+Win32_Process：実行中のプロセス情報
+Win32_Service：システム上のサービス情報
+Win32_NetworkAdapter：ネットワークアダプターの情報
+Win32_NetworkAdapterConfiguration：ネットワークアダプターの設定情報
+Win32_BIOS：BIOSの情報
+Win32_DiskDrive：ディスクドライブの情報
+Win32_LogicalDisk：論理ディスクの情報
+Win32_PhysicalMemory：物理メモリの情報
+Win32_Environment：環境変数の情報
+Win32_PnPEntity：プラグアンドプレイデバイスの情報
+Win32_QuickFixEngineering：インストールされているホットフィックスの情報
+Win32_UserAccount：ユーザーアカウントの情報
+Win32_Group：グループの情報
+Win32_LoggedOnUser：ログオンしているユーザーの情報
+Win32_Share：共有フォルダの情報
+Win32_Printer：プリンターの情報
+Win32_PrintJob：プリントジョブの情報
+
+業務を効率化するにあたって長いコマンドを入力するのも効率が悪いので、よく使うコマンドレットのエイリアスを覚えましょう。
+
+以下のコマンドレットは非常によく使いますが、コマンドが長いので
+
+カンマ区切りのファイル(csv)を配列に格納して利用する
+
+タブ区切りのファイル(tsv)を配列に格納して利用する。
+
+●Excel自動化編
+
+●テストデータ作成編
+
+●サーバ構築編
+　サーバログローテーション
+　タスクスケジュール設定
+　
+●サーバ運用・保守編
+
+●クライアント構築編
+
+●クライアント運用・保守編
+
+ファイルの一覧をファイルに保存する。
+ファイルの一覧を指定の階層までの深さまでファイルに保存する。
+
+作成日時が指定の日数より前のファイルを取得する。
+更新日時が指定の日数より前のファイルを取得する。
+
+PowerShellで楽しようよ！<基礎編>
+
+
+ちょっとした調べものに便利なコマンド
+
+Get-ChildItem -Path "C:\ps_test" -File -Recurse | Group-Object -Property Directory | ForEach-Object {
+    write-host $_.Name"`t" $_.Count"`t"($_.Group | Measure-Object -Property Length -Sum).Sum
+} | Format-Table -AutoSize
+
+#指定したディレクトリ配下のファイル数とサイズ数の合計をディレクトリ単位で取得する。
+Get-ChildItem -Path "C:\ps_test" -File -Recurse | Group-Object -Property Directory | ForEach-Object {
+    write-host $_.Name"`t" $_.Count"`t"($_.Group | Measure-Object -Property Length -Sum).Sum
+} | Format-Table -AutoSize
+
+こういったことはPowerShellのコマンドにやらせないほうが良い内容。
+入力ソースが多いデータの処理のグループ化や集計処理はサーバなどでは実行しないほうが良い。
+←まずコマンドが返ってこないので心配、CPUの使用率が高くなりすぎる。
+　意図しないデータを取得した場合にやり直しに時間がかかるといったことが挙げられます。
+
+お勧めとしては単純にデータを取得し、ファイルへ書き出す。
+ファイルからオブジェクトに格納して、それに対して処理を行う。
+
+母数が10000を超えるデータ数に対してグループ化や集計処理を行うと時間がかかります。
+対象が少ない場合は有効です。
+
+#サーバ名、ドライブ名、使用量、空き容量を取得する。サーバの名前をカスタムプロパティで取得して、タブ区切りのデータとしてクリップボードに格納。
+
+<コマンド>
+gdr -p "filesystem" | select @{name="server";Expression={$env:computername}},name,Used,Free | convertto-csv -d "`t" -NoTypeInformation | scb
+出力に項目名が不要な場合
+gdr -p "filesystem" | select @{name="server";Expression={$env:computername}},name,Used,Free | convertto-csv -d "`t" -NoTypeInformation | select -skip 1 | scb
+
+<実行結果>
+"server"	"Name"	"Used"	"Free"
+"PCN19S100"	"C"	"157591552000"	"96735309824"
+
+#指定したフォルダ配下のファイル数とサイズの合計を取得する。
+
+<コマンド>
+Get-ChildItem -Path "C:\ps_test" -File -Recurse | Group-Object -Property Directory | ForEach-Object {
+    write-host $_.Name"`t" $_.Count"`t"($_.Group | Measure-Object -Property Length -Sum).Sum
+} | Format-Table -AutoSize
+
+<実行結果>
+C:\ps_test       7       56846
+C:\ps_test\subfolder1    2       32
+C:\ps_test\subfolder2    2       32
+
+#指定したフォルダ配下のファイルのタイムスタンプを書き換える。
+
+<コマンド>
+# ファイルパスを指定
+$path = "C:\path\to\your\file.txt"
+
+# 新しいタイムスタンプを指定
+$newDate = Get-Date "2025-03-11 12:00:00"
+
+# タイムスタンプを変更
+(Get-Item $path).CreationTime = $newDate
+(Get-Item $path).LastWriteTime = $newDate
+(Get-Item $path).LastAccessTime = $newDate
+
+#指定したフォルダ配下のファイル名を書き換える。
+
+<コマンド>
+$files = Get-ChildItem -Path "C:\Your\Directory\Path"
+foreach ($file in $files) {
+    $newName = "Prefix_" + $file.Name
+    Rename-Item -Path $file.FullName -NewName $newName
+}
+
+#linuxのTailコマンドを再現
+
+# ファイル選択ダイアログを表示して、監視するテキストファイルを選択
+Add-Type -AssemblyName System.Windows.Forms
+$OpenFileDialog = New-Object System.Windows.Forms.OpenFileDialog
+$OpenFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
+$OpenFileDialog.Title = "監視するテキストファイルを選択してください"
+
+$DialogResult = $OpenFileDialog.ShowDialog()
+if ($DialogResult -eq [System.Windows.Forms.DialogResult]::OK) {
+    $FilePath = $OpenFileDialog.FileName
+
+    # ファイルの変更をリアルタイムで監視
+    Write-Host "ファイルの変更をリアルタイムで監視しています: $FilePath"
+    Get-Content -Path $FilePath -Wait
+} else {
+    Write-Host "ファイルが選択されませんでした。"
+}
+
+#Pingを継続的に時間表示付きで出力させる。疎通時は緑色表示、非疎通時は赤色表示させる。
+# 引数取得
+param (
+	[string]$TargetHost
+)
+
+# 引数がない場合はユーザーに入力を求める
+if (-not $TargetHost) {
+	$TargetHost = Read-Host "対象のコンピュータ名またはIPアドレスを入力してください"
+}
+
+# Pingの間隔（ミリ秒）を指定
+$interval = 1000
+
+# Pingを継続的に実行
+while ($true) {
+	# 現在の日時を取得
+	$timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+	# Pingを実行
+	$pingResult = Test-Connection -ComputerName $TargetHost -Count 1 -ErrorAction SilentlyContinue
+
+	# 引数がコンピュータ名の場合は、結果にIPアドレスも表示させる
+	if ($pingResult.Address -ne $pingResult.ProtocolAddress){
+		$TargetStr = $pingResult.Address + "[" + $pingResult.ProtocolAddress + "]"
+	} else {
+		$TargetStr = $pingResult.Address
+	}
+
+	# Pingの疎通確認結果
+	if ($pingResult) {
+		# Pingのレスポンス時間を格納
+		$pingTime = $pingResult.ResponseTime
+		# 日時とPingの結果を緑色の文字で出力
+		Write-Host "$timestamp - Ping to $TargetStr succeeded: Time=$pingTime ms" -ForegroundColor White -BackgroundColor Green
+	} else {
+		# 日時とPingの結果を赤色の文字で出力
+		Write-Host "$timestamp - Ping to $TargetStr failed." -ForegroundColor White -BackgroundColor Red
+	}
+	# 次のPingの発行まで処理を停止する
+	Start-Sleep -Milliseconds $interval
+}
+
+#テスト用のダミーフォルダやファイルを作成する。
+
+
+
+
+#適当なサイズのファイルサイズのファイルを作成する。
+
+<コマンド>
+# ファイルパスとサイズを指定
+$path = "C:\path\to\your\file.txt"
+$size = 10MB
+
+# ファイルを作成し、指定したサイズに設定
+$fs = [System.IO.File]::Create($path)
+$fs.SetLength($size)
+$fs.Close()
+
+#IPconfig  /allと同じような内容を取得
+
+<コマンド>
+Get-WmiObject -Class Win32_NetworkAdapterConfiguration | Select-Object DNSHostName,DNSDomain,Description,MACAddress,IPAddress,IPSubnet,DHCPLeaseExpires,DefaultIPGateway,DHCPServer,TcpipNetbiosOptions | Where-Object IPAddress -ne $Null
+
+#Windows Serverの役割と機能を取得する。
+
+<コマンド>
+get-windowsfeature | export-csv "ここにフォルダパスを記載\windowsfeature.csv" -encording default
+
+#サービスの一覧を取得してCSVファイルに出力する。
+
+<コマンド>
+Get-Service | Select-Object Name, DisplayName, Status | Export-Csv -Path "C:\path\to\output\ServicesList.csv" -NoTypeInformation
+
+#ローカルユーザの一覧を取得してCSVファイルに出力する。
+<コマンド>
+Get-LocalUser | Select-Object Name, Enabled, LastLogon | Export-Csv -Path "C:\path\to\output\LocalUsersList.csv" -NoTypeInformation
+
+#ローカルグループの一覧を取得してCSVファイルに出力する。
+
+<コマンド>
+Get-LocalGroup | Select-Object Name, Description | Export-Csv -Path "C:\path\to\output\LocalGroupsList.csv" -NoTypeInformation
+
+# ローカルユーザとそのグループを取得
+
+#hostsファイル取得
+
+Get-Content “C:\Windows\System32\drivers\etc\hosts”
+
+#インストールされているアプリケーションの情報が含まれるレジストリを抽出する。
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*" | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | Sort-Object DisplayName | Export-Csv -Path "C:\path\to\output\InstalledApps.csv" -NoTypeInformation
+
+#環境変数をcsvファイルで出力する。
+
+<コマンド>
+Get-ChildItem Env: | Select-Object Name, Value | Export-Csv -Path "C:\path\to\output\EnvironmentVariables.csv" -NoTypeInformation
+
+#タスクスケジューラの設定をxml形式で出力する。
+
+# タスクスケジューラのタスクを取得
+$tasks = Get-ScheduledTask
+# 出力ディレクトリを指定
+$outputDir = "C:\path\to\output\directory"
+# 出力ディレクトリが存在しない場合は作成
+if (-not (Test-Path -Path $outputDir)) {
+    New-Item -ItemType Directory -Path $outputDir
+}
+# 各タスクをXMLファイルとして保存
+foreach ($task in $tasks) {
+    $taskName = $task.TaskName -replace '\\', '_'
+    $xmlPath = Join-Path -Path $outputDir -ChildPath "$taskName.xml"
+    $task | Export-ScheduledTask -TaskPath $task.TaskPath -TaskName $task.TaskName -Xml -OutputFile $xmlPath
+}
+ファイルのサイズがxx以上のファイルだけをファイルサイズが多い順に並べて表示する。
+指定の日数が経った特定の拡張子のファイルを削除する。
+Get-ChildItem -Path "C:\path\to\your\directory" -Filter *.tmp | Where-Object { $_.CreationTime -lt (Get-Date).AddMonths(-1) } | Remove-Item -Force
+
+次のように記述したほうが、処理は気持ち早くなります。
+※理由として、(GetD-Date).AddMonths(-1)の処理を対象のファイルの数だけ実行されるためです。
+　過去の日付をあらかじめ用意すれば、そのしょりは１回だけになります。
+　総ファイル数が少ないのであれば特に問題はないでしょう。
+
+# 特定のパスを指定
+$path = "C:\path\to\your\directory"
+# 現在の日付から1ヶ月前の日付を計算
+$thresholdDate = (Get-Date).AddMonths(-1)
+# 指定されたパス内の.tmpファイルを検索し、条件に合うものを削除
+Get-ChildItem -Path $path -Filter *.tmp | Where-Object { $_.CreationTime -lt $thresholdDate } | Remove-Item -Force
+
+#有効なNICデバイスが変わった場合に、RDPの接続用ポートを自動的に変更する。
+# ネットワークアダプターごとのRDPポート番号設定
+$adapterPortMapping = @{
+    "Intel(R) Ethernet Connection (10) I219-V"       = 99999    # 有線LAN
+    "Intel(R) Wi-Fi 6 AX201 160MHz"          = 99998   # 無線LAN①
+    "TP-Link Wireless USB Adapter"        = 99997   # 無線LAN②
+}
+
+# 現在アクティブなアダプターの判別
+$activeAdapters = Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
+
+# デフォルトポート
+$selectedPort = 58494
+
+foreach ($adapter in $activeAdapters) {
+    if ($adapterPortMapping.ContainsKey($adapter.InterfaceDescription)){
+        Write-Output $adapter.InterfaceDescription  
+        $selectedPort = $adapterPortMapping[$adapter.InterfaceDescription]
+        break
+    }
+}
+# レジストリのポート変更
+$RDPRegPath = "HKLM:SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"
+# 現在の設定されているポート取得
+$currentPort = (Get-ItemProperty -Path $RDPRegPath -Name "PortNumber").PortNumber
+
+if ($currentPort -ne $selectedPort) {
+    #レジストリ変更
+    Set-ItemProperty -Path $RDPRegPath -Name "PortNumber" -Value $selectedPort
+
+    # RDPサービス再起動
+    Write-Output "RDPのポートを $selectedPort に変更しました。RDPサービスを再起動します。"
+    Restart-Service TermService -Force
+}
+else {
+    Write-Output "RDPのポートはすでに $selectedPort に設定されています。変更は不要です。"
+}
+Exit
+
+端末のネットワークの設定を変更する。
+
+# 設定内容を定義
+$networkSettings = @(
+    @{
+        Name = "設定1"
+        IPAddress = "192.168.1.100"
+        SubnetMask = "255.255.255.0"
+        DNS = @("8.8.8.8", "8.8.4.4")
+        DHCP = $false
+    },
+    @{
+        Name = "設定2"
+        IPAddress = "192.168.1.101"
+        SubnetMask = "255.255.255.0"
+        DNS = @("1.1.1.1", "1.0.0.1")
+        DHCP = $false
+    },
+    @{
+        Name = "DHCP設定"
+        IPAddress = ""
+        SubnetMask = ""
+        DNS = @()
+        DHCP = $true
+    }
+)
+
+# ネットワークアダプタの一覧を取得
+$adapters = Get-NetAdapter | Where-Object { $_.Status -eq 'Up' }
+
+# 現在のネットワーク設定を表示
+Write-Host "現在のネットワーク設定:"
+foreach ($adapter in $adapters) {
+    $ipConfig = Get-NetIPAddress -InterfaceAlias $adapter.Name
+    $dnsConfig = Get-DnsClientServerAddress -InterfaceAlias $adapter.Name
+    $dhcpConfig = Get-NetIPInterface -InterfaceAlias $adapter.Name
+
+    Write-Host "アダプタ: $($adapter.Name)"
+    Write-Host "  IPアドレス: $($ipConfig.IPAddress)"
+    Write-Host "  サブネットマスク: $($ipConfig.PrefixLength)"
+    Write-Host "  DNSサーバー: $($dnsConfig.ServerAddresses -join ', ')"
+    Write-Host "  DHCP: $($dhcpConfig.Dhcp)"
+    Write-Host ""
+}
+
+# 設定内容を表示
+Write-Host "利用可能なネットワーク設定:"
+for ($i = 0; $i -lt $networkSettings.Count; $i++) {
+    Write-Host "$($i + 1): $($networkSettings[$i].Name)"
+}
+
+try {
+    # ユーザーに設定を選択させる
+    $selection = Read-Host "適用する設定の番号を入力してください"
+    if ($selection -lt 1 -or $selection -gt $networkSettings.Count) {
+        throw [System.Exception] "無効な選択です。"
+    }
+
+    # 選択された設定を取得
+    $selectedSetting = $networkSettings[$selection - 1]
+
+    # 利用可能なアダプタを表示
+    Write-Host "利用可能なネットワークアダプタ:"
+    for ($i = 0; $i -lt $adapters.Count; $i++) {
+        Write-Host "$($i + 1): $($adapters[$i].Name)"
+    }
+
+    # ユーザーにアダプタを選択させる
+    $adapterSelection = Read-Host "設定を変更するアダプタの番号を入力してください"
+    if ($adapterSelection -lt 1 -or $adapterSelection -gt $adapters.Count) {
+        throw [System.Exception] "無効な選択です。"
+    }
+
+    # 選択されたアダプタを取得
+    $selectedAdapter = $adapters[$adapterSelection - 1].Name
+
+    # 設定を適用
+    if ($selectedSetting.DHCP) {
+        # DHCPを有効にする
+        Set-NetIPInterface -InterfaceAlias $selectedAdapter -Dhcp Enabled
+        Write-Host "DHCPが有効になりました。"
+    } else {
+        # 静的IPアドレスを設定
+        New-NetIPAddress -InterfaceAlias $selectedAdapter -IPAddress $selectedSetting.IPAddress -PrefixLength $selectedSetting.SubnetMask
+        Set-DnsClientServerAddress -InterfaceAlias $selectedAdapter -ServerAddresses $selectedSetting.DNS
+        Write-Host "IPアドレス、サブネットマスク、DNSサーバーが設定されました。"
+    }
+} catch {
+    Write-Host "エラーが発生しました: $_"
+}
+
+画面がスリープにならないようにマウスを自動的に動かす。
+
+# マウスふるふる(PowerShell版) ver.2.0  (C)2020 INASOFT/T.Yabuki
+# 50秒おきに、マウスを微妙に左右に揺らし、スクリーン セーバー等への移行の阻止を試みます。
+# Ctrl+C を押すか、[×]ボタンを押すと終了。
+
+# .NETのCursorクラスを利用するためにSystem.Windows.Formsをロード
+add-type -AssemblyName System.Windows.Forms
+
+# mouse_event APIを利用するための準備
+$signature=@' 
+      [DllImport("user32.dll",CharSet=CharSet.Auto, CallingConvention=CallingConvention.StdCall)]
+      public static extern void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
+'@
+
+$SendMouseEvent = Add-Type -memberDefinition $signature -name "Win32MouseEventNew" -namespace Win32Functions -passThru
+
+echo "Ctrl+Cで終了します。"
+
+# マウス移動
+$MOUSEEVENTF_MOVE = 0x00000001
+
+# スリープ秒数
+$SleepSec = 10
+
+# マウスの振れ幅
+# ・マウスの移動イベント生成用の振れ幅
+$MoveMouseDistance = 1
+# ・マウスの座標を左右にずらす用の振れ幅
+$MoveMouseDistanceX = 1
+
+# 偶数回数目は左へ、奇数回数目で右へずらすためのフラグ
+$Flag = $true
+
+# 永久ループ
+while ($true) {
+    # スリープ
+    Start-Sleep $SleepSec
+
+    # 現在のマウスのX,Y座標を取得
+    $x = [System.Windows.Forms.Cursor]::Position.X
+    $y = [System.Windows.Forms.Cursor]::Position.Y
+
+    # マウス座標を少しずらす（マウスイベントを監視するOS(スクリーンセーバー、スリープ)対策）
+    $SendMouseEvent::mouse_event($MOUSEEVENTF_MOVE, -$MoveMouseDistance, 0, 0, 0)
+
+    # マウス座標を少し右にずらす（マウスイベントを監視するOS(スクリーンセーバー、スリープ)対策）
+    $SendMouseEvent::mouse_event($MOUSEEVENTF_MOVE, $MoveMouseDistance, 0, 0, 0)
+
+    # 座標を監視するアプリ対策(座標を左か右に1ピクセル分ずらすだけにする)
+    if ($Flag) {
+        $x += $MoveMouseDistanceX
+        $Flag = $false;
+    }
+    else {
+        $x -= $MoveMouseDistanceX
+        $Flag = $true
+    }
+    [System.Windows.Forms.Cursor]::Position = new-object System.Drawing.Point($x, $y)
+    $x = [System.Windows.Forms.Cursor]::Position.X
+    $y = [System.Windows.Forms.Cursor]::Position.Y
+}
+
+特定のサービスが停止していた場合、そのサービスを起動する。
+
+レジストリの値を取得し、内容を表示する。
+
+特定の期間のイベントログを抽出する。
+
+# パラメータを設定
+$daysAgo = 7  # 例: 7日前から本日まで
+$eventSource = "YourEventSource"  # イベントソースを指定
+$outputFile = "C:\path\to\output\EventLogs.csv"  # 出力ファイルパスを指定
+# 日付範囲を計算
+$startDate = (Get-Date).AddDays(-$daysAgo)
+$endDate = Get-Date
+# イベントログを取得し、CSVファイルに出力
+Get-WinEvent -FilterHashtable @{LogName='Application'; ProviderName=$eventSource; StartTime=$startDate; EndTime=$endDate} | 
+Select-Object TimeCreated, Id, LevelDisplayName, Message | 
+Export-Csv -Path $outputFile -NoTypeInformation
+
+文字コードを判定し、特定の文字コードに変換する。
+
+# 文字列のサンプル（ここに受け取った文字列を入力）
+$inputString = "こんにちは、世界！"
+
+# 文字コードの候補リスト
+$encodings = [System.Text.Encoding]::GetEncodings()
+
+# 文字コードを自動判別する関数
+function Detect-Encoding {
+    param (
+        [string]$string
+    )
+    foreach ($encodingInfo in $encodings) {
+        $encoding = $encodingInfo.GetEncoding()
+        try {
+            $bytes = [System.Text.Encoding]::Default.GetBytes($string)
+            $decodedString = $encoding.GetString($bytes)
+            if ($decodedString -eq $string) {
+                return $encoding
+            }
+        } catch {
+            continue
+        }
+    }
+    return $null
+}
+
+# 文字コードを判別
+$detectedEncoding = Detect-Encoding -string $inputString
+if ($detectedEncoding -ne $null) {
+    Write-Host "判別された文字コード: $($detectedEncoding.EncodingName)"
+} else {
+    Write-Host "文字コードの判別に失敗しました。"
+}
+
+# 別の文字コードに変換して表示
+$targetEncoding = [System.Text.Encoding]::UTF8
+$bytes = $detectedEncoding.GetBytes($inputString)
+$convertedString = $targetEncoding.GetString($bytes)
+Write-Host "変換後の文字列（UTF-8）: $convertedString"
+
+#test-netconnectionコマンドの理解
+
+Test-NetConnectionは、ネットワーク接続のトラブルシューティングや診断に非常に便利なPowerShellコマンドレットです。以下にいくつかの便利なテクニックを紹介します：
+
+1. 基本的な接続テスト
+特定のホストへの接続をテストするには、以下のコマンドを使用します：
+
+Test-NetConnection -ComputerName www.example.com
+これにより、指定したホストへの接続が成功するかどうかを確認できます。
+
+2. 特定のポートのテスト
+特定のポートが開いているかどうかを確認するには、以下のコマンドを使用します：
+
+Test-NetConnection -ComputerName www.example.com -Port 80
+これにより、指定したホストの特定のポートへの接続が成功するかどうかを確認できます。
+
+3. トレースルートの実行
+ネットワーク経路を追跡するには、以下のコマンドを使用します：
+
+Test-NetConnection -ComputerName www.example.com -TraceRoute
+これにより、指定したホストへの経路を表示し、ネットワークの遅延や問題のあるポイントを特定できます。
+
+4. ICMPエコー要求（Ping）の送信
+ホストが応答するかどうかを確認するには、以下のコマンドを使用します：
+
+Test-NetConnection -ComputerName www.example.com -InformationLevel Detailed
+これにより、Pingの詳細な結果が表示されます。
+
+5. ローカルネットワークインターフェースの情報取得
+ローカルネットワークインターフェースの情報を取得するには、以下のコマンドを使用します：
+
+Test-NetConnection -InformationLevel "Detailed"
+これにより、ローカルネットワークインターフェースの詳細情報が表示されます。
+
+●スクリプトのパーツとして使えるコマンドの記述
+
+   DHCPv6 IAID  183247333
+   DHCPv6 クライアント DUID     00-01-00-01-2E-D9-AD-DC-EC-21-E5-3C-EF-50
+   DNS サーバー 172.16.13.101
+                                          172.16.250.101
+   NetBIOS over TCP/IP  有効
+
+#ipconfig /allの結果を成形する。
+
+$ipconfig = cmd /c ipconfig /all
+($ipconfig).replace(". ","").replace(".: ","`t").replace("                                          ","`t").replace("   ","") | scb
+
+実行しているコマンドの結果を画面とファイルに同時に出力する。
+
+例えば、検証作業や本番作業を行う場合に、画面に出力された内容をエビデンスとして保存したい時があります。
+その時はPowerShellのコンソールで、PowerShellのコマンドレットやコマンドプロンプトのコマンドを実行すれば証跡をとることが簡単にできます。
+
+記録開始時に以下のコマンドを実行する。
+Start-TranScript ファイルパス
+
+記録終了時に以下のコマンドを実行する。
+Stop-TranScript
+※Stop-TranScriptは入力しなくてもPowerShellのコンソールを閉じれば記録は終了しますが、できれば打ち込んだほうが良いです。
+
+このスクリプト中にコマンドプロンプトのコマンドを実行するときは、「cmd /c コマンド」の形で実行しましょう。
+※cmd /cを入力することによって、コマンドプロンプトの実行モードでコマンドを実行するため、PowerShellの
+
+foreach ($i in dir -file -Recurse){write-host $i.fullname;$renname = (Split-Path -Path $i.directoryname -Leaf);$outfilename =  $renname + "_" + [string]$i.name;ren $i.fullname $outfilename;}
 
-97. **ランダムパスワード生成**
-```powershell
--join ((48..122) | Get-Random -Count 10 | % {[char]$_})
-```
-
-## 【デバイス管理】
-
-98. **接続中のUSBデバイスを表示**
-```powershell
-Get-PnpDevice -FriendlyName "*USB*"
-```
-
-99. **ドライバの一覧表示**
-```powershell
-Get-WmiObject Win32_SystemDriver
-```
-
-## 【シャットダウン操作】
-
-100. **指定時間後にシャットダウン**
-```powershell
-shutdown /s /t 3600
-```
-
-## 【システム情報】
-
-101. **BIOS情報を取得**
-```powershell
-Get-CimInstance Win32_BIOS
-```
-
-102. **シリアルナンバーを取得**
-```powershell
-Get-CimInstance Win32_BIOS | Select-Object SerialNumber
-```
-
-103. **マザーボード情報を取得**
-```powershell
-Get-CimInstance Win32_BaseBoard
-```
-
-104. **インストールされているソフトウェア一覧**
-```powershell
-Get-Package
-```
-
-105. **Windowsライセンス情報を表示**
-```powershell
-slmgr /dlv
-```
-
-## 【イベントログ応用】
-
-106. **直近1時間のログ取得**
-```powershell
-Get-WinEvent -FilterHashtable @{LogName="System"; StartTime=(Get-Date).AddHours(-1)}
-```
-
-107. **イベントIDで絞り込み**
-```powershell
-Get-WinEvent -FilterHashtable @{LogName="Application"; ID=1000}
-```
-
-## 【ファイル属性操作】
-
-108. **ファイルを読み取り専用に設定**
-```powershell
-Set-ItemProperty file.txt -Name IsReadOnly -Value $true
-```
-
-109. **隠しファイルのみ表示**
-```powershell
-Get-ChildItem -Hidden
-```
-
-110. **隠しファイル属性を解除**
-```powershell
-Get-ChildItem -Hidden | Set-ItemProperty -Name Attributes -Value 'Normal'
-```
-
-## 【パフォーマンス分析】
-
-111. **メモリ使用率取得**
-```powershell
-Get-Counter "\Memory\% Committed Bytes In Use"
-```
-
-112. **ディスクI/Oのリアルタイム表示**
-```powershell
-Get-Counter "\PhysicalDisk(_Total)\Disk Transfers/sec" -Continuous
-```
-
-113. **ネットワーク帯域使用量表示**
-```powershell
-Get-Counter "\Network Interface(*)\Bytes Total/sec"
-```
-
-## 【グループポリシー関連】
-
-114. **グループポリシーの適用状況を確認**
-```powershell
-gpresult /r
-```
-
-115. **ローカルポリシーの更新**
-```powershell
-gpupdate /force
-```
-
-## 【ユーザーセッション管理】
-
-116. **ログオフしているユーザーセッション一覧**
-```powershell
-qwinsta | Select-String "Disc"
-```
-
-117. **ユーザーセッションを強制ログオフ**
-```powershell
-logoff セッションID /server:コンピュータ名
-```
-
-## 【ファイルの内容比較・重複処理】
-
-118. **2つのフォルダ間の差分表示**
-```powershell
-Compare-Object (Get-ChildItem folder1) (Get-ChildItem folder2) -Property Name
-```
-
-119. **複数ファイルを連結して1ファイルに出力**
-```powershell
-Get-Content *.log | Out-File all.log
-```
-
-120. **空白行を除去してファイル保存**
-```powershell
-Get-Content file.txt | Where-Object {$_ -ne ""} | Out-File file2.txt
-```
-
-## 【データ変換処理】
-
-121. **XMLをJSONに変換**
-```powershell
-[xml]$xml = Get-Content data.xml; $xml | ConvertTo-Json
-```
-
-122. **CSVをJSONに変換**
-```powershell
-Import-Csv data.csv | ConvertTo-Json
-```
-
-123. **Base64エンコード**
-```powershell
-[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("test"))
-```
-
-124. **Base64デコード**
-```powershell
-[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String("dGVzdA=="))
-```
-
-## 【セキュリティ関連】
-
-125. **実行ポリシーを確認**
-```powershell
-Get-ExecutionPolicy
-```
-
-126. **スクリプト実行ポリシーを設定**
-```powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-## 【Windows Defender関連】
-
-127. **マルウェアスキャンの実行**
-```powershell
-Start-MpScan -ScanType QuickScan
-```
-
-128. **Defenderの定義更新**
-```powershell
-Update-MpSignature
-```
-
-## 【Hyper-V 仮想化】
-
-129. **仮想マシンの一覧表示**
-```powershell
-Get-VM
-```
-
-130. **仮想マシンを開始**
-```powershell
-Start-VM -Name "VM01"
-```
-
-131. **仮想マシンを停止**
-```powershell
-Stop-VM -Name "VM01" -Force
-```
-
-## 【Active Directory (AD)関連】
-
-132. **ADユーザーの一覧取得**
-```powershell
-Get-ADUser -Filter *
-```
-
-133. **ADグループの一覧取得**
-```powershell
-Get-ADGroup -Filter *
-```
-
-134. **パスワード期限切れ間近のユーザーを探す**
-```powershell
-Search-ADAccount -UsersOnly -AccountExpiring -TimeSpan 7
-```
-
-## 【クリップボード応用】
-
-135. **クリップボード内容をファイルに出力**
-```powershell
-Get-Clipboard | Out-File clip.txt
-```
-
-136. **現在の日付をクリップボードにコピー**
-```powershell
-Get-Date | Set-Clipboard
-```
-
-## 【システム診断・ログ収集】
-
-137. **システム情報を取得して保存**
-```powershell
-systeminfo > sysinfo.txt
-```
-
-138. **DirectX診断情報収集**
-```powershell
-dxdiag /t diag.txt
-```
-
-## 【印刷ジョブの管理】
-
-138. **印刷ジョブを表示**
-```powershell
-Get-PrintJob
-```
-
-139. **印刷ジョブをすべてキャンセル**
-```powershell
-Get-PrintJob | Remove-PrintJob
-```
-
-## 【Windowsサービスの設定変更】
-
-140. **サービスを自動起動に変更**
-```powershell
-Set-Service -Name "Spooler" -StartupType Automatic
-```
-
-## 【PowerShellモジュール管理】
-
-141. **インストール済みモジュールの確認**
-```powershell
-Get-Module -ListAvailable
-```
-
-142. **モジュールのロード**
-```powershell
-Import-Module ActiveDirectory
-```
-
-## 【ZIP内ファイルの確認】
-
-143. **ZIP内のファイルリストを表示**
-```powershell
-Expand-Archive -Path file.zip -DestinationPath temp -PassThru | Get-ChildItem temp
-```
-
-## 【フォルダサイズの確認】
-
-144. **フォルダサイズ合計表示**
-```powershell
-(Get-ChildItem -Recurse | Measure-Object -Property Length -Sum).Sum /1MB
-```
-
-## 【PowerShellプロンプト】
-
-145. **プロンプトのカスタマイズ**
-```powershell
-function prompt {"$(Get-Date) PS> "}
-```
-
-## 【OneDrive連携】
-
-145. **OneDriveの同期状況表示**
-```powershell
-Get-Process onedrive
-```
-
-## 【リソース監視】
-
-146. **システム負荷をリアルタイム監視**
-```powershell
-Get-Counter "\Processor(_Total)\% Processor Time" -Continuous
-```
-
-147. **特定ポートを使用中のプロセス表示**
-```powershell
-netstat -ano | Select-String ":443"
-```
-
-## 【システム再起動予約のキャンセル】
-
-147. **シャットダウンのキャンセル**
-```powershell
-shutdown /a
-```
-
-## 【コマンド実行のスケジュール設定】
-
-148. **定期的に実行するタスクを登録**
-```powershell
-Register-ScheduledTask
-```
-
-## 【ドライブのビットロッカー状況】
-
-149. **BitLocker状況表示**
-```powershell
-Get-BitLockerVolume
-```
-
-## 【CPU情報取得】
-
-149. **CPU情報取得**
-```powershell
-Get-CimInstance Win32_Processor
-```
-
-## 【バックグラウンドジョブ登録】
-
-150. **非同期でスクリプトを実行**
-```powershell
-Start-Job -ScriptBlock { Backup-Script.ps1 }
-```
-
-## 【ファイル操作】
-
-1. **特定の拡張子を持つファイルを削除**
-   ```powershell
-   Remove-Item *.bak
-   ```
-
-2. **ファイルのコピーと上書き確認**
-   ```powershell
-   Copy-Item source.txt destination.txt -Confirm
-   ```
-
-3. **ファイルの存在確認**
-   ```powershell
-   Test-Path file.txt
-   ```
-
-4. **ファイルの属性を取得**
-   ```powershell
-   Get-ItemProperty file.txt
-   ```
-
-5. **ファイルの読み取り専用属性を設定**
-   ```powershell
-   Set-ItemProperty file.txt -Name IsReadOnly -Value $true
-   ```
-
-6. **ファイルの読み取り専用属性を解除**
-   ```powershell
-   Set-ItemProperty file.txt -Name IsReadOnly -Value $false
-   ```
-
-7. **ファイルの作成日時を変更**
-   ```powershell
-   (Get-Item file.txt).CreationTime = Get-Date "2025-03-01"
-   ```
-
-8. **ファイルの拡張子を一括変更**
-   ```powershell
-   Get-ChildItem *.txt | Rename-Item -NewName { $_.Name -replace '\.txt$', '.md' }
-   ```
-
-9. **フォルダ内のファイル数をカウント**
-   ```powershell
-   (Get-ChildItem -File).Count
-   ```
-
-10. **フォルダ内のサブフォルダ数をカウント**
-    ```powershell
-    (Get-ChildItem -Directory).Count
-    ```
-
-## 【テキスト操作】
-
-11. **テキストファイルの行数を取得**
-    ```powershell
-    (Get-Content file.txt).Count
-    ```
-
-12. **テキストファイルの特定行を表示**
-    ```powershell
-    Get-Content file.txt | Select-Object -Index 4
-    ```
-
-13. **テキストファイルの特定行を削除**
-    ```powershell
-    (Get-Content file.txt) | Where-Object { $_ -ne "削除する行の内容" } | Set-Content file.txt
-    ```
-
-14. **テキストファイルの特定文字列を置換**
-    ```powershell
-    (Get-Content file.txt) -replace "旧文字列", "新文字列" | Set-Content file.txt
-    ```
-
-15. **複数のテキストファイルを結合**
-    ```powershell
-    Get-Content *.txt | Set-Content combined.txt
-    ```
-
-16. **テキストファイルの空白行を削除**
-    ```powershell
-    Get-Content file.txt | Where-Object { $_.Trim() -ne "" } | Set-Content file.txt
-    ```
-
-17. **テキストファイルの重複行を削除**
-    ```powershell
-    Get-Content file.txt | Sort-Object -Unique | Set-Content file.txt
-    ```
-
-18. **テキストファイルの行を逆順に並べ替え**
-    ```powershell
-    Get-Content file.txt | Sort-Object {$_} -Descending | Set-Content file.txt
-    ```
-
-19. **テキストファイルの特定パターンを含む行を抽出**
-    ```powershell
-    Select-String -Pattern "エラー" file.txt
-    ```
-
-20. **テキストファイルの文字コードを変換（UTF-8からShift_JISへ）**
-    ```powershell
-    Get-Content utf8file.txt | Set-Content -Encoding Shift_JIS sjisfile.txt
-    ```
-
-## 【システム情報取得】
-
-21. **システムの稼働時間を表示**
-    ```powershell
-    (Get-CimInstance Win32_OperatingSystem).LastBootUpTime
-    ```
-
-22. **インストールされているフォント一覧を表示**
-    ```powershell
-    Get-ChildItem "C:\Windows\Fonts"
-    ```
-
-23. **システムの環境変数一覧を表示**
-    ```powershell
-    Get-ChildItem Env:
-    ```
-
-24. **特定の環境変数の値を取得**
-    ```powershell
-    $Env:PATH
-    ```
-
-25. **システムのタイムゾーンを表示**
-    ```powershell
-    Get-TimeZone
-    ```
-
-26. **システムのタイムゾーンを変更**
-    ```powershell
-    Set-TimeZone -Id "Tokyo Standard Time"
-    ```
-
-27. **システムの言語設定を表示**
-    ```powershell
-    Get-WinSystemLocale
-    ```
-
-28. **システムの言語設定を変更**
-    ```powershell
-    Set-WinSystemLocale ja-JP
-    ```
-
-29. **システムの地域設定を表示**
-    ```powershell
-    Get-WinUILanguageList
-    ```
-
-30. **システムの地域設定を変更**
-    ```powershell
-    Set-WinUILanguageOverride ja-JP
-    ```
-
-## 【ネットワーク関連】
-
-31. **ネットワーク接続の一覧を表示**
-    ```powershell
-    Get-NetConnectionProfile
-    ```
-
-32. **ネットワーク接続のプロファイル名を変更**
-    ```powershell
-    Set-NetConnectionProfile -Name "旧プロファイル名" -NewName "新プロファイル名"
-    ```
-
-33. **ネットワークインターフェースの詳細情報を表示**
-    ```powershell
-    Get-NetAdapterAdvancedProperty
-    ```
-
-34. **ネットワークインターフェースのMACアドレスを変更**
-    ```powershell
-    Set-NetAdapterAdvancedProperty -Name "イーサネット" -DisplayName "Network Address" -DisplayValue "新しいMACアドレス"
-    ```
-
-35. **ネットワークインターフェースのMTUサイズを変更**
-    ```powershell
-    Set-NetAdapterAdvancedProperty -Name "イーサネット" -DisplayName "Jumbo Packet" -DisplayValue "9014 Bytes"
-    ```
-
-36. **ネットワークインターフェースの速度と状態を表示**
-    ```powershell
-    Get-NetAdapter | Select-Object Name, LinkSpeed, Status
-    ```
-
-37. **ネットワークインターフェースの統計情報を表示**
-    ```powershell
-    Get-NetAdapterStatistics
-    ```
-
-## 【ネットワーク関連（続き）】
-
-138. **DNSキャッシュを表示**
-```powershell
-Get-DnsClientCache
-```
-
-139. **DNSキャッシュをクリア**
-```powershell
-Clear-DnsClientCache
-```
-
-139. **IPアドレスをDHCPに変更**
-```powershell
-Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
-```
-
-140. **静的IPアドレスの設定**
-```powershell
-New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress "192.168.1.10" -PrefixLength 24 -DefaultGateway "192.168.1.1"
-```
-
-## 【リソース監視（続き）】
-
-139. **メモリ使用率のリアルタイム監視**
-```powershell
-Get-Counter "\Memory\Available MBytes" -Continuous
-```
-
-140. **特定プロセスのCPU使用率を監視**
-```powershell
-Get-Process chrome | Select-Object CPU
-```
-
-## 【サービスの依存関係確認】
-
-141. **サービスの依存関係を表示**
-```powershell
-Get-Service "Spooler" -DependentServices
-```
-
-## 【データ圧縮と展開（応用編）】
-
-142. **圧縮ファイル内の特定ファイルのみ展開**
-```powershell
-Expand-Archive -Path archive.zip -DestinationPath output -Include "*.log"
-```
-
-143. **圧縮ファイルを特定のフォルダに上書き展開**
-```powershell
-Expand-Archive archive.zip -DestinationPath .\folder -Force
-```
-
-## 【Excel操作（要モジュール）】
-
-143. **CSVをExcel形式に変換**
-```powershell
-Import-Csv data.csv | Export-Excel data.xlsx
-```
-※`ImportExcel`モジュールが必要。
-
-## 【タスク管理（応用編）】
-
-144. **タスクスケジューラで指定タスクを無効化**
-```powershell
-Disable-ScheduledTask -TaskName "MyTask"
-```
-
-144. **タスクを即時実行**
-```powershell
-Start-ScheduledTask -TaskName "Backup"
-```
-
-## 【ファイル・フォルダ同期】
-
-145. **Robocopyを利用した差分バックアップ**
-```powershell
-robocopy C:\source D:\backup /MIR /R:1 /W:1
-```
-
-## 【スケジュール処理・タイマー】
-
-146. **処理を指定時間待機**
-```powershell
-Start-Sleep -Seconds 60
-```
-
-147. **一定間隔でコマンドを実行**
-```powershell
-while ($true) { Get-Date; Start-Sleep -Seconds 10 }
-```
-
-## 【レポート作成】
-
-146. **HTMLレポートを作成**
-```powershell
-Get-Process | ConvertTo-Html | Out-File report.html
-```
-
-147. **ファイルの容量をHTMLで一覧表示**
-```powershell
-Get-ChildItem | Select Name,Length | ConvertTo-Html | Out-File sizes.html
-```
-
-## 【パス操作】
-
-148. **フルパスからファイル名のみ取得**
-```powershell
-Split-Path "C:\folder\file.txt" -Leaf
-```
-
-149. **拡張子を除いたファイル名取得**
-```powershell
-[System.IO.Path]::GetFileNameWithoutExtension("report.docx")
-```
-
-## 【ドライブ操作】
-
-150. **マッピング済みのネットワークドライブを一覧表示**
-```powershell
-Get-PSDrive -PSProvider FileSystem | Where-Object { $_.DisplayRoot -like "\\*" }
-```
-
-151. **ネットワークドライブを新規マッピング**
-```powershell
-New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\Server\Share"
-```
-
-151. **ネットワークドライブのマッピングを解除**
-```powershell
-Remove-PSDrive -Name Z
-```
-
-## 【Windows Defenderの状態確認】
-
-152. **Defenderのリアルタイム保護状態を確認**
-```powershell
-Get-MpComputerStatus | Select-Object RealTimeProtectionEnabled
-```
-
-## 【バッテリー状態表示（ノートPC用）】
-
-153. **バッテリー情報表示**
-```powershell
-Get-CimInstance Win32_Battery
-```
-
-154. **バッテリー残量を表示**
-```powershell
-(Get-CimInstance Win32_Battery).EstimatedChargeRemaining
-```
-
-## 【タスクマネージャと同様の情報取得】
-
-155. **CPU使用率トップ10プロセス表示**
-```powershell
-Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
-```
-
-156. **メモリ使用量トップ10プロセス表示**
-```powershell
-Get-Process | Sort-Object WS -Descending | Select-Object -First 10
-```
-
-## 【Windows Firewallの設定確認】
-
-156. **Firewallルールを確認**
-```powershell
-Get-NetFirewallRule
-```
-
-157. **特定のアプリ許可状況を確認**
-```powershell
-Get-NetFirewallApplicationFilter | Where-Object { $_.Program -like "*chrome*" }
-```
-
-## 【ネットワーク共有フォルダ管理】
-
-158. **ネットワーク共有一覧を表示**
-```powershell
-Get-SmbShare
-```
-
-159. **新しい共有フォルダを作成**
-```powershell
-New-SmbShare -Name "ShareFolder" -Path "C:\Shared" -FullAccess "Everyone"
-```
-
-159. **共有フォルダを削除**
-```powershell
-Remove-SmbShare -Name "ShareFolder"
-```
-
-## 【プロダクトキー取得】
-
-159. **Windowsのプロダクトキー確認**
-```powershell
-(Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
-```
-
-## 【システム診断レポート】
-
-160. **システム健全性レポートを作成**
-```powershell
-perfmon /report
-```
-
-161. **バッテリーレポートをHTML出力**
-```powershell
-powercfg /batteryreport
-```
-
-## 【ファイル所有者の確認と変更】
-
-162. **ファイルの所有者を確認**
-```powershell
-Get-Acl file.txt | Select-Object Owner
-```
-
-163. **ファイルの所有者を変更**
-```powershell
-$acl = Get-Acl file.txt; $acl.SetOwner([System.Security.Principal.NTAccount]"user01"); Set-Acl file.txt $acl
-```
-
-## 【ハードウェア情報】
-
-164. **GPU情報取得**
-```powershell
-Get-CimInstance Win32_VideoController
-```
-
-165. **オーディオデバイス一覧**
-```powershell
-Get-CimInstance Win32_SoundDevice
-```
-
-## 【SSH接続（PowerShell7以上）】
-
-166. **リモートサーバへSSH接続**
-```powershell
-ssh user@192.168.1.50
-```
-
-167. **SSH公開鍵生成**
-```powershell
-ssh-keygen
-```
-
-## 【リモートデスクトップ操作】
-
-167. **リモートデスクトップ接続を実行**
-```powershell
-mstsc /v:PC01
-```
