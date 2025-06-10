@@ -5,3 +5,5 @@
 ④Transit Gatewayはインターネット経由で一つのVPCにしか接続しない想定の為、利用しません。
 ⑤NATゲートウェイはパブリックサブネットにあるのが正しいと思います。
 ⑥VPCの境界にインターネットゲートウェイを配置してください。
+
+https://answers.microsoft.com/ja-jp/windows/forum/all/microsoftアカウン/261896c9-d13c-4fea-ae32-025f58f63826
