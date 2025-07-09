@@ -1,0 +1,956 @@
+Name,API Name,Instance Memory,vCPUs,Physical Processor,Instance Storage,Network Performance,On Demand,RHEL On Demand cost,RHEL Reserved cost,Windows On Demand cost,Windows Reserved cost
+R6IDN 12xlarge,r6idn.12xlarge,384 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$5.7002 hourly,$6.8906 hourly,$4.7816 hourly,$7.9082 hourly,$5.7992 hourly
+C5N 18xlarge,c5n.18xlarge,192 GiB,72 vCPUs,Intel Xeon Platinum 8124M,EBS only,100 Gigabit,$4.8960 hourly,$5.6740 hourly,$3.8620 hourly,$8.2080 hourly,$6.3960 hourly
+R6ID Eight Extra Large,r6id.8xlarge,256 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),1900 GB NVMe SSD,12.5 Gigabit,$2.9232 hourly,$3.2688 hourly,$2.1872 hourly,$4.3952 hourly,$3.3136 hourly
+I3EN 12xlarge,i3en.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8175,30000 GB (4×7500 GB NVMe SSD),50 Gigabit,$6.3840 hourly,$6.9020 hourly,$4.8760 hourly,$8.5920 hourly,$6.5660 hourly
+M6IN Extra Large,m6in.xlarge,16 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 30 Gigabit,$0.3580 hourly,$0.4856 hourly,$0.3532 hourly,$0.5420 hourly,$0.4096 hourly
+X2IEDN 32xlarge,x2iedn.32xlarge,4096 GiB,128 vCPUs,Intel Xeon Scalable (Icelake),3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$38.6820 hourly,$39.9108 hourly,$25.0298 hourly,$44.5700 hourly,$29.6890 hourly
+C5 High-CPU 18xlarge,c5.18xlarge,144 GiB,72 vCPUs,Intel Xeon Platinum 8124M,EBS only,25 Gigabit,$3.8520 hourly,$5.6380 hourly,$4.2120 hourly,$7.1640 hourly,$5.7390 hourly
+C6IN Metal,c6in.metal,256 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,200 Gigabit,$9.1392 hourly,$10.3680 hourly,$6.9865 hourly,$15.0272 hourly,$11.6457 hourly
+C7A Eight Extra Large,c7a.8xlarge,64 GiB,32 vCPUs,AMD EPYC 9R14 Processor,EBS only,12.5 Gigabit,$2.0672 hourly,$2.8608 hourly,$2.1568 hourly,$3.5392 hourly,$2.8352 hourly
+C5N 9xlarge,c5n.9xlarge,96 GiB,36 vCPUs,Intel Xeon Platinum 8124M,EBS only,50 Gigabit,$2.4480 hourly,$3.3410 hourly,$2.4350 hourly,$4.1040 hourly,$3.1980 hourly
+X1E 16xlarge,x1e.16xlarge,1952 GiB,64 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),1920 GB SSD,10 Gigabit,$19.3440 hourly,$20.0350 hourly,$12.6110 hourly,$22.2880 hourly,$14.8630 hourly
+R7IZ Eight Extra Large,r7iz.8xlarge,256 GiB,32 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,12.5 Gigabit,$3.6320 hourly,$4.4256 hourly,$3.0818 hourly,$5.1040 hourly,$3.7602 hourly
+R6IDN Metal,r6idn.metal,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$15.2006 hourly,$16.4294 hourly,$10.8052 hourly,$21.0886 hourly,$15.4644 hourly
+R4 High-Memory Quadruple Extra Large,r4.4xlarge,122 GiB,16 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,Up to 10 Gigabit,$1.2800 hourly,$1.6768 hourly,$1.2032 hourly,$2.0160 hourly,$1.5424 hourly
+M6ID Double Extra Large,m6id.2xlarge,32 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),474 GB NVMe SSD,Up to 12.5 Gigabit,$0.6132 hourly,$0.8684 hourly,$0.6415 hourly,$0.9812 hourly,$0.7543 hourly
+M5 General Purpose Eight Extra Large,m5d.8xlarge,128 GiB,32 vCPUs,Intel Xeon Platinum 8175,1200 GB (2×600 GB NVMe SSD),10 Gigabit,$2.3360 hourly,$3.1300 hourly,$2.2650 hourly,$3.8080 hourly,$2.9440 hourly
+X2IDN Metal,x2idn.metal,2048 GiB,128 vCPUs,Intel Xeon Scalable (Icelake),3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$19.3410 hourly,$20.5698 hourly,$13.1293 hourly,$25.2290 hourly,$17.7885 hourly
+M8G Eight Extra Large,m8g.8xlarge,128 GiB,32 vCPUs,AWS Graviton4 Processor,EBS only,15 Gigabit,$1.8550 hourly,$2.6486 hourly,$2.0227 hourly,unavailable,unavailable
+C5 High-CPU 24xlarge,c5d.24xlarge,192 GiB,96 vCPUs,Intel Xeon Platinum 8275L,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$8.2370 hourly,$6.0700 hourly,$10.2720 hourly,$8.1050 hourly
+C5 High-CPU Metal,c5d.metal,192 GiB,96 vCPUs,Intel Xeon Platinum 8275L,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$6.8930 hourly,$4.7260 hourly,$10.2720 hourly,$8.1050 hourly
+M5 General Purpose 12xlarge,m5.12xlarge,192 GiB,48 vCPUs,Intel Xeon Platinum 8175,EBS only,12 Gigabit,$2.9760 hourly,$4.1660 hourly,$3.0650 hourly,$5.1840 hourly,$4.0830 hourly
+I7I 24xlarge,i7i.24xlarge,768 GiB,96 vCPUs,Intel Xeon Scalable (Emerald Rapids),22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R4 High-Memory Double Extra Large,r4.2xlarge,61 GiB,8 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,Up to 10 Gigabit,$0.6400 hourly,$0.8952 hourly,$0.6584 hourly,$1.0080 hourly,$0.7712 hourly
+C5N Metal,c5n.metal,192 GiB,72 vCPUs,Intel Xeon Platinum 8124M,EBS only,100 Gigabit,$4.8960 hourly,$6.6820 hourly,$4.8700 hourly,$8.2080 hourly,$6.3960 hourly
+R7GD Metal,r7gd.metal,512 GiB,64 vCPUs,AWS Graviton3 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$5.2618 hourly,$6.8490 hourly,$4.9021 hourly,unavailable,unavailable
+R7IZ 12xlarge,r7iz.12xlarge,384 GiB,48 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,25 Gigabit,$5.4480 hourly,$6.6384 hourly,$4.6226 hourly,$7.6560 hourly,$5.6402 hourly
+R5N Metal,r5n.metal,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,100 Gigabit,$8.6880 hourly,$9.7250 hourly,$6.5100 hourly,$13.1040 hourly,$9.8890 hourly
+I3EN Large,i3en.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8175,1250 GB NVMe SSD,Up to 25 Gigabit,$0.2660 hourly,$0.2950 hourly,$0.2100 hourly,$0.3580 hourly,$0.2740 hourly
+C8G Metal-48xl,c8g.metal-48xl,384 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,$9.6058 hourly,$11.4490 hourly,$8.1772 hourly,unavailable,unavailable
+M7I 16xlarge,m7i.16xlarge,256 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,25 Gigabit,$4.1664 hourly,$5.7536 hourly,$4.3479 hourly,$7.1104 hourly,$5.7047 hourly
+M6I Eight Extra Large,m6i.8xlarge,128 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,12.5 Gigabit,$1.9840 hourly,$2.3296 hourly,$1.6602 hourly,$3.4560 hourly,$2.7866 hourly
+R5 Double Extra Large,r5.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.6080 hourly,$0.7230 hourly,$0.4980 hourly,$0.9760 hourly,$0.7510 hourly
+M5A Extra Large,m5a.xlarge,16 GiB,4 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.2240 hourly,$0.2820 hourly,$0.1990 hourly,$0.4080 hourly,$0.3250 hourly
+C5 High-CPU 9xlarge,c5d.9xlarge,72 GiB,36 vCPUs,Intel Xeon Platinum 8124M,900 GB NVMe SSD,12 Gigabit,$2.1960 hourly,$3.0890 hourly,$2.2760 hourly,$3.8520 hourly,$3.0390 hourly
+I7IE 24xlarge,i7ie.24xlarge,768 GiB,96 vCPUs,Intel Xeon Scalable (Emerald Rapids),60000 GB (8×7500 GB NVMe SSD),Up to 100 Gigabit,$14.6832 hourly,$15.7200 hourly,unavailable,$19.0992 hourly,unavailable
+M7I Extra Large,m7i.xlarge,16 GiB,4 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.2604 hourly,$0.3180 hourly,$0.2301 hourly,$0.4444 hourly,$0.3565 hourly
+M8G 16xlarge,m8g.16xlarge,256 GiB,64 vCPUs,AWS Graviton4 Processor,EBS only,30 Gigabit,$3.7101 hourly,$4.4013 hourly,$3.1493 hourly,unavailable,unavailable
+R6ID 16xlarge,r6id.16xlarge,512 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$5.8464 hourly,$6.5376 hourly,$4.3744 hourly,$8.7904 hourly,$6.6272 hourly
+M7A Eight Extra Large,m7a.8xlarge,128 GiB,32 vCPUs,AMD EPYC 9R14 Processor,EBS only,12.5 Gigabit,$2.3957 hourly,$2.7413 hourly,$1.9330 hourly,$3.8677 hourly,$3.0594 hourly
+I4I Double Extra Large,i4i.2xlarge,64 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),1875 GB NVMe SSD,Up to 12 Gigabit,$0.8050 hourly,$1.0600 hourly,$0.7800 hourly,$1.1730 hourly,$0.8930 hourly
+R5D 24xlarge,r5d.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8175,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$8.3520 hourly,$9.3890 hourly,$6.2990 hourly,$12.7680 hourly,$9.6780 hourly
+M5AD 16xlarge,m5ad.16xlarge,256 GiB,64 vCPUs,AMD EPYC 7571,2400 GB (4×600 GB NVMe SSD),12 Gigabit,$4.2880 hourly,$5.8750 hourly,$4.2890 hourly,$7.2320 hourly,$5.6450 hourly
+G6e Graphics and Machine Learning GPU Double Extra Large,g6e.2xlarge,64 GiB,8 vCPUs,AMD EPYC 7R13 Processor,450 GB NVMe SSD,Up to 20 Gigabit,$3.2517 hourly,$3.5069 hourly,$2.3038 hourly,$3.6197 hourly,$2.4166 hourly
+C6ID 12xlarge,c6id.12xlarge,96 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),2850 GB (2×1425 GB NVMe SSD),18.75 Gigabit,$3.0744 hourly,$3.5928 hourly,$2.5426 hourly,$5.2824 hourly,$4.2322 hourly
+M6ID 32xlarge,m6id.32xlarge,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$9.8112 hourly,$11.0400 hourly,$7.4099 hourly,$15.6992 hourly,$12.0691 hourly
+M7A Extra Large,m7a.xlarge,16 GiB,4 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.2995 hourly,$0.4271 hourly,$0.3260 hourly,$0.4835 hourly,$0.3824 hourly
+R7I Extra Large,r7i.xlarge,32 GiB,4 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.3192 hourly,$0.3768 hourly,$0.2687 hourly,$0.5032 hourly,$0.3952 hourly
+M6ID 12xlarge,m6id.12xlarge,192 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),2850 GB (2×1425 GB NVMe SSD),18.75 Gigabit,$3.6792 hourly,$4.1976 hourly,$2.8363 hourly,$5.8872 hourly,$4.5259 hourly
+R6A 24xlarge,r6a.24xlarge,768 GiB,96 vCPUs,AMD EPYC 7R13 Processor,EBS only,37.5 Gigabit,$6.5664 hourly,$8.9472 hourly,$6.7245 hourly,$10.9824 hourly,$8.7597 hourly
+C7G Eight Extra Large,c7g.8xlarge,64 GiB,32 vCPUs,AWS Graviton3 Processor,EBS only,15 Gigabit,$1.4554 hourly,$2.2490 hourly,$1.7533 hourly,unavailable,unavailable
+M5 General Purpose Eight Extra Large,m5.8xlarge,128 GiB,32 vCPUs,Intel Xeon Platinum 8175,EBS only,10 Gigabit,$1.9840 hourly,$2.3300 hourly,$1.5960 hourly,$3.4560 hourly,$2.7220 hourly
+I4I Extra Large,i4i.xlarge,32 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),937 GB NVMe SSD,Up to 10 Gigabit,$0.4030 hourly,$0.4600 hourly,$0.3200 hourly,$0.5870 hourly,$0.4460 hourly
+C6ID 32xlarge,c6id.32xlarge,256 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$8.1984 hourly,$10.7712 hourly,$7.9706 hourly,$14.0864 hourly,$11.2858 hourly
+R5D 16xlarge,r5d.16xlarge,512 GiB,64 vCPUs,Intel Xeon Platinum 8175,2400 GB (4×600 GB NVMe SSD),20 Gigabit,$5.5680 hourly,$6.2590 hourly,$4.1990 hourly,$8.5120 hourly,$6.4520 hourly
+M5 General Purpose Double Extra Large,m5d.2xlarge,32 GiB,8 vCPUs,Intel Xeon Platinum 8175,300 GB NVMe SSD,Up to 10 Gigabit,$0.5840 hourly,$0.6990 hourly,$0.4830 hourly,$0.9520 hourly,$0.7360 hourly
+G6e Graphics and Machine Learning GPU 12xlarge,g6e.12xlarge,384 GiB,48 vCPUs,AMD EPYC 7R13 Processor,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$15.2174 hourly,$16.4078 hourly,$10.7774 hourly,$17.4254 hourly,$11.7950 hourly
+M8G Extra Large,m8g.xlarge,16 GiB,4 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.2319 hourly,$0.3595 hourly,$0.2812 hourly,unavailable,unavailable
+Z1D Double Extra Large,z1d.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8151,300 GB NVMe SSD,Up to 10 Gigabit,$0.9080 hourly,$1.0230 hourly,$0.6870 hourly,$1.2760 hourly,$0.9400 hourly
+M5 General Purpose 24xlarge,m5d.24xlarge,384 GiB,96 vCPUs,Intel Xeon Platinum 8175,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$7.0080 hourly,$8.0450 hourly,$5.4520 hourly,$11.4240 hourly,$8.8310 hourly
+R5AD Quadruple Extra Large,r5ad.4xlarge,128 GiB,16 vCPUs,AMD EPYC 7571,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.2720 hourly,$1.6690 hourly,$1.1980 hourly,$2.0080 hourly,$1.5370 hourly
+M5 General Purpose Quadruple Extra Large,m5.4xlarge,64 GiB,16 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.9920 hourly,$1.3890 hourly,$1.0220 hourly,$1.7280 hourly,$1.3610 hourly
+M5DN 24xlarge,m5dn.24xlarge,384 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),3600 GB (4×900 GB NVMe SSD),100 Gigabit,$8.4000 hourly,$10.7810 hourly,$7.6730 hourly,$12.8160 hourly,$9.7080 hourly
+M5DN 16xlarge,m5dn.16xlarge,256 GiB,64 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),2400 GB (4×600 GB NVMe SSD),75 Gigabit,$5.6000 hourly,$6.2910 hourly,$4.2190 hourly,$8.5440 hourly,$6.4720 hourly
+R5DN Eight Extra Large,r5dn.8xlarge,256 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),1200 GB (2×600 GB NVMe SSD),25 Gigabit,$3.2480 hourly,$4.0416 hourly,$2.8398 hourly,$4.7200 hourly,$3.5180 hourly
+C6I Large,c6i.large,4 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.1070 hourly,$0.1358 hourly,$0.0994 hourly,$0.1990 hourly,$0.1626 hourly
+R6IDN Eight Extra Large,r6idn.8xlarge,256 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),1900 GB NVMe SSD,50 Gigabit,$3.8002 hourly,$4.1458 hourly,$2.7397 hourly,$5.2722 hourly,$3.8661 hourly
+R6IDN Quadruple Extra Large,r6idn.4xlarge,128 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),950 GB NVMe SSD,Up to 50 Gigabit,$1.9001 hourly,$2.2969 hourly,$1.5938 hourly,$2.6361 hourly,$1.9330 hourly
+C6IN Double Extra Large,c6in.2xlarge,16 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 40 Gigabit,$0.5712 hourly,$0.6864 hourly,$0.4751 hourly,$0.9392 hourly,$0.7279 hourly
+M5DN Eight Extra Large,m5dn.8xlarge,128 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),1200 GB (2×600 GB NVMe SSD),25 Gigabit,$2.8000 hourly,$3.1460 hourly,$2.1100 hourly,$4.2720 hourly,$3.2360 hourly
+D3 Extra Large,d3.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),5940 GB (3×1980 GB NVMe HDD),Up to 15 Gigabit,$0.7240 hourly,$0.8520 hourly,$0.5840 hourly,$0.9080 hourly,$0.6400 hourly
+C4 High-CPU Extra Large,c4.xlarge,7.5 GiB,4 vCPUs,Intel Xeon E5-2666 v3 (Haswell),EBS only,High,$0.2520 hourly,$0.3100 hourly,$0.2380 hourly,$0.4360 hourly,$0.3650 hourly
+P6-B200 High Performance and Machine Learning GPU 48xlarge,p6-b200.48xlarge,2048 GiB,192 vCPUs,Intel Xeon Scalable (Emerald Rapids),EBS only,3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+Z1D Large,z1d.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8151,75 GB NVMe SSD,Up to 10 Gigabit,$0.2270 hourly,$0.2560 hourly,$0.1720 hourly,$0.3190 hourly,$0.2350 hourly
+R5A Eight Extra Large,r5a.8xlarge,256 GiB,32 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$2.1920 hourly,$2.9860 hourly,$2.1720 hourly,$3.6640 hourly,$2.8510 hourly
+M5ZN 3xlarge,m5zn.3xlarge,48 GiB,12 vCPUs,Intel Xeon Platinum 8252,EBS only,Up to 25 Gigabit,$1.2801 hourly,$1.4097 hourly,$0.9309 hourly,$1.8321 hourly,$1.3533 hourly
+R7GD Large,r7gd.large,16 GiB,2 vCPUs,AWS Graviton3 Processor,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1644 hourly,$0.1932 hourly,$0.1324 hourly,unavailable,unavailable
+R6ID 32xlarge,r6id.32xlarge,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$11.6928 hourly,$14.2656 hourly,$9.9393 hourly,$17.5808 hourly,$13.2545 hourly
+C6I 16xlarge,c6i.16xlarge,128 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,25 Gigabit,$3.4240 hourly,$5.0112 hourly,$3.8451 hourly,$6.3680 hourly,$5.2019 hourly
+X1E 32xlarge,x1e.32xlarge,3904 GiB,128 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),3840 GB (2×1920 GB SSD),25 Gigabit,$38.6880 hourly,$41.2610 hourly,$26.4110 hourly,$44.5760 hourly,$29.7270 hourly
+I3EN 24xlarge,i3en.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8175,60000 GB (8×7500 GB NVMe SSD),100 Gigabit,$12.7680 hourly,$13.8050 hourly,$9.7530 hourly,$17.1840 hourly,$13.1320 hourly
+R5AD Double Extra Large,r5ad.2xlarge,64 GiB,8 vCPUs,AMD EPYC 7571,300 GB NVMe SSD,Up to 10 Gigabit,$0.6360 hourly,$0.8910 hourly,$0.6560 hourly,$1.0040 hourly,$0.7690 hourly
+G5 Graphics and Machine Learning GPU Eight Extra Large,g5.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7R32,900 GB NVMe SSD,25 Gigabit,$3.5503 hourly,$4.3439 hourly,$3.0303 hourly,$5.0223 hourly,$3.7087 hourly
+T4G Large,t4g.large,8 GiB,2 vCPUs (7h 12m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.0864 hourly,$0.1152 hourly,$0.0832 hourly,unavailable,unavailable
+R5B 12xlarge,r5b.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,12 Gigabit,$4.3440 hourly,$5.5344 hourly,$3.9271 hourly,$6.5520 hourly,$4.9447 hourly
+R8GD 12xlarge,r8gd.12xlarge,384 GiB,48 vCPUs,AWS Graviton4 Processor,2850 GB (3×950 GB NVMe SSD),22.5 Gigabit,$4.2619 hourly,$4.7803 hourly,unavailable,unavailable,unavailable
+INF1 Double Extra Large,inf1.2xlarge,16 GiB,8 vCPUs,Intel Xeon Platinum 8275CL (Cascade Lake),EBS only,Up to 25 Gigabit,$0.4890 hourly,$0.7440 hourly,$0.5630 hourly,unavailable,unavailable
+C5A 24xlarge,c5a.24xlarge,192 GiB,96 vCPUs,AMD EPYC 7R32,EBS only,20 Gigabit,$4.6080 hourly,$5.6450 hourly,$3.9400 hourly,$9.0240 hourly,$7.3190 hourly
+C5AD Large,c5ad.large,4 GiB,2 vCPUs,AMD EPYC 7R32,75 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6ID 16xlarge,m6id.16xlarge,256 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.9056 hourly,$5.5968 hourly,$3.7817 hourly,$7.8496 hourly,$6.0345 hourly
+R5A Extra Large,r5a.xlarge,32 GiB,4 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.2740 hourly,$0.4020 hourly,$0.3000 hourly,$0.4580 hourly,$0.3560 hourly
+X2IEDN 16xlarge,x2iedn.16xlarge,2048 GiB,64 vCPUs,Intel Xeon Scalable (Icelake),1900 GB NVMe SSD,50 Gigabit,$19.3410 hourly,$20.0322 hourly,$12.5917 hourly,$22.2850 hourly,$14.8445 hourly
+M6GD Extra Large,m6gd.xlarge,16 GiB,4 vCPUs,AWS Graviton2 Processor,237 GB NVMe SSD,Up to 10 Gigabit,$0.2340 hourly,$0.3616 hourly,$0.2746 hourly,unavailable,unavailable
+C6ID Metal,c6id.metal,256 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$8.1984 hourly,$9.4272 hourly,$6.6266 hourly,$14.0864 hourly,$11.2858 hourly
+R7A 12xlarge,r7a.12xlarge,384 GiB,48 vCPUs,AMD EPYC 9R14 Processor,EBS only,18.75 Gigabit,$4.4050 hourly,$4.9234 hourly,$3.4323 hourly,$6.6130 hourly,$5.1219 hourly
+R5B Large,r5b.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 10 Gigabit,$0.1810 hourly,$0.2098 hourly,$0.1428 hourly,$0.2730 hourly,$0.2060 hourly
+C7I Metal-24xl,c7i.metal-24xl,192 GiB,96 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,37.5 Gigabit,$5.3928 hourly,$7.7736 hourly,$5.9370 hourly,$9.8088 hourly,$7.9722 hourly
+R5A 24xlarge,r5a.24xlarge,768 GiB,96 vCPUs,AMD EPYC 7571,EBS only,20 Gigabit,$6.5760 hourly,$7.6130 hourly,$5.1730 hourly,$10.9920 hourly,$8.5520 hourly
+T3 Extra Large,t3.xlarge,16 GiB,4 vCPUs (9h 36m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.2176 hourly,$0.3452 hourly,$0.2647 hourly,$0.2912 hourly,$0.2107 hourly
+I4I 12xlarge,i4i.12xlarge,384 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),11250 GB (3×3750 GB NVMe SSD),28.12 Gigabit,$4.8310 hourly,$5.3500 hourly,$3.6660 hourly,$7.0390 hourly,$5.3550 hourly
+I3EN 6xlarge,i3en.6xlarge,192 GiB,24 vCPUs,Intel Xeon Platinum 8175,15000 GB (2×7500 GB NVMe SSD),25 Gigabit,$3.1920 hourly,$3.4510 hourly,$2.4380 hourly,$4.2960 hourly,$3.2830 hourly
+T4G Micro,t4g.micro,1 GiB,2 vCPUs (2h 24m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.0108 hourly,$0.0396 hourly,$0.0356 hourly,unavailable,unavailable
+M5DN 12xlarge,m5dn.12xlarge,192 GiB,48 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),1800 GB (2×900 GB NVMe SSD),50 Gigabit,$4.2000 hourly,$4.7180 hourly,$3.1640 hourly,$6.4080 hourly,$4.8540 hourly
+U-6TB1 112xlarge,u-6tb1.112xlarge,6144 GiB,448 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,$65.8670 hourly,$74.8718 hourly,$49.5950 hourly,$86.4750 hourly,$61.1982 hourly
+M6I 12xlarge,m6i.12xlarge,192 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,18.75 Gigabit,$2.9760 hourly,$4.1664 hourly,$3.1623 hourly,$5.1840 hourly,$4.1799 hourly
+R6A Quadruple Extra Large,r6a.4xlarge,128 GiB,16 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$1.0944 hourly,$1.4912 hourly,$1.1207 hourly,$1.8304 hourly,$1.4600 hourly
+R6A Double Extra Large,r6a.2xlarge,64 GiB,8 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.5472 hourly,$0.8024 hourly,$0.6172 hourly,$0.9152 hourly,$0.7300 hourly
+M5 General Purpose Extra Large,m5.xlarge,16 GiB,4 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.2480 hourly,$0.3760 hourly,$0.2840 hourly,$0.4320 hourly,$0.3400 hourly
+R5AD 16xlarge,r5ad.16xlarge,512 GiB,64 vCPUs,AMD EPYC 7571,2400 GB (4×600 GB NVMe SSD),12 Gigabit,$5.0880 hourly,$5.7790 hourly,$3.8970 hourly,$8.0320 hourly,$6.1490 hourly
+U-6TB1 56xlarge,u-6tb1.56xlarge,6144 GiB,224 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,$55.9796 hourly,$60.4820 hourly,$38.9995 hourly,$66.2836 hourly,$44.8011 hourly
+R6A Extra Large,r6a.xlarge,32 GiB,4 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.2736 hourly,$0.4012 hourly,$0.3086 hourly,$0.4576 hourly,$0.3650 hourly
+M6IN Metal,m6in.metal,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,200 Gigabit,$11.4566 hourly,$14.0294 hourly,$9.7905 hourly,$17.3446 hourly,$13.1057 hourly
+R6ID Metal,r6id.metal,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$11.6928 hourly,$14.2656 hourly,$9.9393 hourly,$17.5808 hourly,$13.2545 hourly
+M6IN 16xlarge,m6in.16xlarge,256 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,100 Gigabit,$5.7283 hourly,$7.3155 hourly,$5.1960 hourly,$8.6723 hourly,$6.5528 hourly
+IM4GN Quadruple Extra Large,im4gn.4xlarge,64 GiB,16 vCPUs,AWS Graviton2 Processor,7500 GB NVMe SSD,25 Gigabit,$1.7070 hourly,$2.1038 hourly,$1.4959 hourly,unavailable,unavailable
+R3 High-Memory Eight Extra Large,r3.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),640 GB (2×320 GB SSD),10 Gigabit,$3.1920 hourly,$3.5460 hourly,$2.5330 hourly,$4.2500 hourly,$2.6740 hourly
+R3 High-Memory Large,r3.large,15.25 GiB,2 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),32 GB SSD,Moderate,$0.2000 hourly,$0.2640 hourly,$0.2010 hourly,$0.3000 hourly,$0.2530 hourly
+C7I-FLEX 12xlarge,c7i-flex.12xlarge,96 GiB,48 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 18.75 Gigabit,$2.5616 hourly,$3.7520 hourly,$2.8796 hourly,$4.7696 hourly,$3.8972 hourly
+C7A Metal-48xl,c7a.metal-48xl,384 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$12.4032 hourly,$16.2624 hourly,$12.0384 hourly,$21.2352 hourly,$17.0112 hourly
+C7I 12xlarge,c7i.12xlarge,96 GiB,48 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,18.75 Gigabit,$2.6964 hourly,$3.2148 hourly,$2.2965 hourly,$4.9044 hourly,$3.9861 hourly
+INF1 Extra Large,inf1.xlarge,8 GiB,4 vCPUs,Intel Xeon Platinum 8275CL (Cascade Lake),EBS only,Up to 25 Gigabit,$0.3080 hourly,$0.3660 hourly,$0.2520 hourly,unavailable,unavailable
+R5N Large,r5n.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$0.1810 hourly,$0.2450 hourly,$0.1780 hourly,$0.2730 hourly,$0.2060 hourly
+C5 High-CPU Extra Large,c5.xlarge,8 GiB,4 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 10 Gigabit,$0.2140 hourly,$0.3420 hourly,$0.2620 hourly,$0.3980 hourly,$0.3190 hourly
+M4 General Purpose Deca Extra Large,m4.10xlarge,160 GiB,40 vCPUs,Intel Xeon E5-2676 v3 (Haswell),EBS only,10 Gigabit,$2.5800 hourly,$3.5720 hourly,$2.7350 hourly,$4.4200 hourly,$3.5830 hourly
+C5 High-CPU Metal,c5.metal,192 GiB,96 vCPUs,Intel Xeon Platinum 8275L,EBS only,25 Gigabit,$5.1360 hourly,$7.5170 hourly,$5.6160 hourly,$9.5520 hourly,$7.6520 hourly
+M5N 12xlarge,m5n.12xlarge,192 GiB,48 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,50 Gigabit,$3.6720 hourly,$4.1900 hourly,$2.8320 hourly,$5.8800 hourly,$4.5210 hourly
+T3A Double Extra Large,t3a.2xlarge,32 GiB,8 vCPUs (9h 36m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.3917 hourly,$0.5069 hourly,$0.3620 hourly,$0.5389 hourly,$0.3940 hourly
+X2IEDN 24xlarge,x2iedn.24xlarge,3072 GiB,96 vCPUs,Intel Xeon Scalable (Icelake),2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$29.0115 hourly,$30.0483 hourly,$18.8876 hourly,$33.4275 hourly,$22.2668 hourly
+R6IN Metal,r6in.metal,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,200 Gigabit,$13.5533 hourly,$14.7821 hourly,$9.7674 hourly,$19.4413 hourly,$14.4266 hourly
+M6ID Extra Large,m6id.xlarge,16 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3066 hourly,$0.4342 hourly,$0.3208 hourly,$0.4906 hourly,$0.3772 hourly
+M7A 16xlarge,m7a.16xlarge,256 GiB,64 vCPUs,AMD EPYC 9R14 Processor,EBS only,25 Gigabit,$4.7914 hourly,$5.4826 hourly,$3.8660 hourly,$7.7354 hourly,$6.1188 hourly
+M6IDN Metal,m6idn.metal,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$13.1040 hourly,$15.6768 hourly,$10.8283 hourly,$18.9920 hourly,$14.1435 hourly
+X2IEDN Extra Large,x2iedn.xlarge,128 GiB,4 vCPUs,Intel Xeon Scalable (Icelake),118 GB NVMe SSD,Up to 25 Gigabit,$1.2088 hourly,$1.3364 hourly,$0.8714 hourly,$1.3928 hourly,$0.9278 hourly
+T3A Small,t3a.small,2 GiB,2 vCPUs (4h 48m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.0245 hourly,$0.0533 hourly,$0.0442 hourly,$0.0429 hourly,$0.0338 hourly
+M7GD 16xlarge,m7gd.16xlarge,256 GiB,64 vCPUs,AWS Graviton3 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$4.4150 hourly,$6.0022 hourly,$4.3687 hourly,unavailable,unavailable
+R6ID Double Extra Large,r6id.2xlarge,64 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),474 GB NVMe SSD,Up to 12.5 Gigabit,$0.7308 hourly,$0.8460 hourly,$0.5756 hourly,$1.0988 hourly,$0.8284 hourly
+T3A Extra Large,t3a.xlarge,16 GiB,4 vCPUs (9h 36m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.1958 hourly,$0.3234 hourly,$0.2510 hourly,$0.2694 hourly,$0.1970 hourly
+R5N Extra Large,r5n.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$0.3620 hourly,$0.4200 hourly,$0.2860 hourly,$0.5460 hourly,$0.4120 hourly
+M7GD Medium,m7gd.medium,4 GiB,1 vCPUs,AWS Graviton3 Processor,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0690 hourly,$0.1009 hourly,$0.0754 hourly,unavailable,unavailable
+C7A Medium,c7a.medium,2 GiB,1 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.0646 hourly,$0.0965 hourly,$0.0745 hourly,$0.1106 hourly,$0.0886 hourly
+R6ID 24xlarge,r6id.24xlarge,768 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),5700 GB (4×1425 GB NVMe SSD),37.5 Gigabit,$8.7696 hourly,$11.1504 hourly,$7.9056 hourly,$13.1856 hourly,$9.9408 hourly
+M6I Double Extra Large,m6i.2xlarge,32 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.4960 hourly,$0.7512 hourly,$0.5838 hourly,$0.8640 hourly,$0.6966 hourly
+R8GD 16xlarge,r8gd.16xlarge,512 GiB,64 vCPUs,AWS Graviton4 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$5.6826 hourly,$6.3738 hourly,unavailable,unavailable,unavailable
+R7I 16xlarge,r7i.16xlarge,512 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,25 Gigabit,$5.1072 hourly,$5.7984 hourly,$4.0696 hourly,$8.0512 hourly,$6.3224 hourly
+C5 High-CPU 9xlarge,c5.9xlarge,72 GiB,36 vCPUs,Intel Xeon Platinum 8124M,EBS only,12 Gigabit,$1.9260 hourly,$2.8190 hourly,$2.1060 hourly,$3.5820 hourly,$2.8690 hourly
+R5DN Large,r5dn.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),75 GB NVMe SSD,Up to 25 Gigabit,$0.2030 hourly,$0.2318 hourly,$0.1567 hourly,$0.2950 hourly,$0.2200 hourly
+M5A 16xlarge,m5a.16xlarge,256 GiB,64 vCPUs,AMD EPYC 7571,EBS only,12 Gigabit,$3.5840 hourly,$5.1710 hourly,$3.8450 hourly,$6.5280 hourly,$5.2020 hourly
+C6A 32xlarge,c6a.32xlarge,256 GiB,128 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$6.1632 hourly,$7.3920 hourly,$5.2931 hourly,$12.0512 hourly,$9.9522 hourly
+M7I Metal-48xl,m7i.metal-48xl,768 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$12.4992 hourly,$16.3584 hourly,$12.1412 hourly,$21.3312 hourly,$17.1140 hourly
+M5 General Purpose Metal,m5d.metal,384 GiB,96 vCPUs,Intel Xeon Platinum 8175,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$7.0080 hourly,$9.3890 hourly,$6.7960 hourly,$11.4240 hourly,$8.8310 hourly
+R6G Medium,r6g.medium,8 GiB,1 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.0608 hourly,$0.0752 hourly,$0.0527 hourly,unavailable,unavailable
+C7GN Extra Large,c7gn.xlarge,8 GiB,4 vCPUs,AWS Graviton3 Processor,EBS only,Up to 40 Gigabit,$0.3148 hourly,$0.3724 hourly,$0.2543 hourly,unavailable,unavailable
+C6A Large,c6a.large,4 GiB,2 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.0963 hourly,$0.1251 hourly,$0.0923 hourly,$0.1883 hourly,$0.1555 hourly
+I7IE 12xlarge,i7ie.12xlarge,384 GiB,48 vCPUs,Intel Xeon Scalable (Emerald Rapids),30000 GB (4×7500 GB NVMe SSD),Up to 50 Gigabit,$7.3416 hourly,$8.5320 hourly,unavailable,$9.5496 hourly,unavailable
+R5AD 24xlarge,r5ad.24xlarge,768 GiB,96 vCPUs,AMD EPYC 7571,3600 GB (4×900 GB NVMe SSD),20 Gigabit,$7.6320 hourly,$8.6690 hourly,$5.8450 hourly,$12.0480 hourly,$9.2240 hourly
+R5D 12xlarge,r5d.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8175,1800 GB (2×900 GB NVMe SSD),12 Gigabit,$4.1760 hourly,$4.6940 hourly,$3.1490 hourly,$6.3840 hourly,$4.8390 hourly
+R7A Medium,r7a.medium,8 GiB,1 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.0918 hourly,$0.1237 hourly,$0.0926 hourly,$0.1378 hourly,$0.1067 hourly
+R6IN 24xlarge,r6in.24xlarge,768 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,150 Gigabit,$10.1650 hourly,$11.2018 hourly,$7.4407 hourly,$14.5810 hourly,$10.8199 hourly
+R7A Double Extra Large,r7a.2xlarge,64 GiB,8 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.7342 hourly,$0.8494 hourly,$0.6008 hourly,$1.1022 hourly,$0.8537 hourly
+C5AD Eight Extra Large,c5ad.8xlarge,64 GiB,32 vCPUs,AMD EPYC 7R32,1200 GB (2×600 GB NVMe SSD),10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R5N Eight Extra Large,r5n.8xlarge,256 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,25 Gigabit,$2.8960 hourly,$3.6900 hourly,$2.6180 hourly,$4.3680 hourly,$3.2960 hourly
+M5A Eight Extra Large,m5a.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$1.7920 hourly,$2.1380 hourly,$1.4750 hourly,$3.2640 hourly,$2.6010 hourly
+C6I Extra Large,c6i.xlarge,8 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.2140 hourly,$0.3416 hourly,$0.2687 hourly,$0.3980 hourly,$0.3251 hourly
+C5 High-CPU Double Extra Large,c5.2xlarge,16 GiB,8 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 10 Gigabit,$0.4280 hourly,$0.6830 hourly,$0.5250 hourly,$0.7960 hourly,$0.6380 hourly
+R6G 16xlarge,r6g.16xlarge,512 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$3.8912 hourly,$4.5824 hourly,$3.1427 hourly,unavailable,unavailable
+T4G Medium,t4g.medium,4 GiB,2 vCPUs (4h 48m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.0432 hourly,$0.1070 hourly,$0.0910 hourly,unavailable,unavailable
+M5DN Double Extra Large,m5dn.2xlarge,32 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),300 GB NVMe SSD,Up to 25 Gigabit,$0.7000 hourly,$0.9550 hourly,$0.6960 hourly,$1.0680 hourly,$0.8090 hourly
+R5A Large,r5a.large,16 GiB,2 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.1370 hourly,$0.1660 hourly,$0.1150 hourly,$0.2290 hourly,$0.1780 hourly
+R5B Eight Extra Large,r5b.8xlarge,256 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,10 Gigabit,$2.8960 hourly,$3.2416 hourly,$2.1701 hourly,$4.3680 hourly,$3.2965 hourly
+M6A 24xlarge,m6a.24xlarge,384 GiB,96 vCPUs,AMD EPYC 7R13 Processor,EBS only,37.5 Gigabit,$5.3568 hourly,$7.7376 hourly,$5.9302 hourly,$9.7728 hourly,$7.9654 hourly
+C6ID Large,c6id.large,4 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1281 hourly,$0.1919 hourly,$0.1481 hourly,$0.2201 hourly,$0.1763 hourly
+M6IN 32xlarge,m6in.32xlarge,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,200 Gigabit,$11.4566 hourly,$14.0294 hourly,$9.7905 hourly,$17.3446 hourly,$13.1057 hourly
+R5D Eight Extra Large,r5d.8xlarge,256 GiB,32 vCPUs,Intel Xeon Platinum 8175,1200 GB (2×600 GB NVMe SSD),10 Gigabit,$2.7840 hourly,$3.1300 hourly,$2.1000 hourly,$4.2560 hourly,$3.2260 hourly
+T3 Nano,t3.nano,0.5 GiB,2 vCPUs (1h 12m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.0068 hourly,unavailable,unavailable,$0.0114 hourly,$0.0089 hourly
+M6A Double Extra Large,m6a.2xlarge,32 GiB,8 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.4464 hourly,$0.5616 hourly,$0.4110 hourly,$0.8144 hourly,$0.6638 hourly
+R7I Metal-24xl,r7i.metal-24xl,768 GiB,96 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,37.5 Gigabit,$7.6608 hourly,$8.6976 hourly,$6.1044 hourly,$12.0768 hourly,$9.4836 hourly
+R5B Double Extra Large,r5b.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 10 Gigabit,$0.7240 hourly,$0.9792 hourly,$0.7113 hourly,$1.0920 hourly,$0.8241 hourly
+R8G Metal-48xl,r8g.metal-48xl,1536 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,$13.6435 hourly,$17.5027 hourly,$12.8844 hourly,unavailable,unavailable
+X2IEDN Metal,x2iedn.metal,4096 GiB,128 vCPUs,Intel Xeon Scalable (Icelake),3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$38.6820 hourly,$39.9108 hourly,$25.0298 hourly,$44.5700 hourly,$29.6890 hourly
+M6ID Metal,m6id.metal,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$9.8112 hourly,$12.3840 hourly,$8.7539 hourly,$15.6992 hourly,$12.0691 hourly
+R3 High-Memory Quadruple Extra Large,r3.4xlarge,122 GiB,16 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),320 GB SSD,High,$1.5960 hourly,$1.7730 hourly,$1.2660 hourly,$2.2760 hourly,$1.7150 hourly
+C7A 32xlarge,c7a.32xlarge,256 GiB,128 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$8.2688 hourly,$9.4976 hourly,$6.6816 hourly,$14.1568 hourly,$11.3408 hourly
+Z1D 12xlarge,z1d.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8151,1800 GB (2×900 GB NVMe SSD),25 Gigabit,$5.4480 hourly,$6.6380 hourly,$4.6230 hourly,$7.6560 hourly,$5.6400 hourly
+T3 Large,t3.large,8 GiB,2 vCPUs (7h 12m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.1088 hourly,$0.1376 hourly,$0.0973 hourly,$0.1364 hourly,$0.0961 hourly
+G5 Graphics and Machine Learning GPU 48xlarge,g5.48xlarge,768 GiB,192 vCPUs,AMD EPYC 7R32,7600 GB (2×3800 GB NVMe SSD),100 Gigabit,$23.6225 hourly,$25.4657 hourly,$16.7253 hourly,$32.4545 hourly,$23.7142 hourly
+M7A 12xlarge,m7a.12xlarge,192 GiB,48 vCPUs,AMD EPYC 9R14 Processor,EBS only,18.75 Gigabit,$3.5935 hourly,$4.7839 hourly,$3.5715 hourly,$5.8015 hourly,$4.5891 hourly
+M6A Large,m6a.large,8 GiB,2 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.1116 hourly,$0.1754 hourly,$0.1378 hourly,$0.2036 hourly,$0.1659 hourly
+G5 Graphics and Machine Learning GPU 12xlarge,g5.12xlarge,192 GiB,48 vCPUs,AMD EPYC 7R32,3800 GB NVMe SSD,40 Gigabit,$8.2261 hourly,$9.4165 hourly,$6.3728 hourly,$10.4341 hourly,$7.3904 hourly
+C6ID Quadruple Extra Large,c6id.4xlarge,32 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),950 GB NVMe SSD,Up to 12.5 Gigabit,$1.0248 hourly,$1.4216 hourly,$1.0715 hourly,$1.7608 hourly,$1.4107 hourly
+P2 General Purpose GPU Eight Extra Large,p2.8xlarge,488 GiB,32 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,10 Gigabit,$12.3360 hourly,$12.6820 hourly,unavailable,$13.8080 hourly,unavailable
+C5N Double Extra Large,c5n.2xlarge,21 GiB,8 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 25 Gigabit,$0.5440 hourly,$0.7990 hourly,$0.5980 hourly,$0.9120 hourly,$0.7110 hourly
+M6ID 24xlarge,m6id.24xlarge,384 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),5700 GB (4×1425 GB NVMe SSD),37.5 Gigabit,$7.3584 hourly,$9.7392 hourly,$7.0166 hourly,$11.7744 hourly,$9.0518 hourly
+M5ZN Metal,m5zn.metal,192 GiB,48 vCPUs,Intel Xeon Platinum 8252,EBS only,100 Gigabit,$5.1204 hourly,$6.3108 hourly,$4.3957 hourly,$7.3284 hourly,$5.4133 hourly
+C5N Extra Large,c5n.xlarge,10.5 GiB,4 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 25 Gigabit,$0.2720 hourly,$0.3300 hourly,$0.2290 hourly,$0.4560 hourly,$0.3550 hourly
+I2 Double Extra Large,i2.2xlarge,61 GiB,8 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),1600 GB (2×800 GB SSD),High,$2.0010 hourly,$2.2570 hourly,$1.3740 hourly,$2.2260 hourly,$1.6600 hourly
+R6A 32xlarge,r6a.32xlarge,1024 GiB,128 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$8.7552 hourly,$11.3280 hourly,$8.3644 hourly,$14.6432 hourly,$11.6796 hourly
+M6IN 12xlarge,m6in.12xlarge,192 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,75 Gigabit,$4.2962 hourly,$5.4866 hourly,$3.8970 hourly,$6.5042 hourly,$4.9146 hourly
+R7A Eight Extra Large,r7a.8xlarge,256 GiB,32 vCPUs,AMD EPYC 9R14 Processor,EBS only,12.5 Gigabit,$2.9366 hourly,$3.2822 hourly,$2.2882 hourly,$4.4086 hourly,$3.4146 hourly
+M6I Large,m6i.large,8 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.1240 hourly,$0.1878 hourly,$0.1460 hourly,$0.2160 hourly,$0.1742 hourly
+M4 General Purpose Double Extra Large,m4.2xlarge,32 GiB,8 vCPUs,Intel Xeon E5-2676 v3 (Haswell),EBS only,High,$0.5160 hourly,$0.7712 hourly,$0.6038 hourly,$0.8840 hourly,$0.7166 hourly
+M6I 32xlarge,m6i.32xlarge,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$7.9360 hourly,$10.5088 hourly,$7.8312 hourly,$13.8240 hourly,$11.1464 hourly
+R5D Quadruple Extra Large,r5d.4xlarge,128 GiB,16 vCPUs,Intel Xeon Platinum 8175,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.3920 hourly,$1.5650 hourly,$1.0500 hourly,$2.1280 hourly,$1.6130 hourly
+M7A 32xlarge,m7a.32xlarge,512 GiB,128 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$9.5827 hourly,$12.1555 hourly,$8.9223 hourly,$15.4707 hourly,$12.2375 hourly
+I4I Quadruple Extra Large,i4i.4xlarge,128 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),3750 GB NVMe SSD,Up to 25 Gigabit,$1.6100 hourly,$1.7830 hourly,$1.2220 hourly,$2.3460 hourly,$1.7850 hourly
+M7I Large,m7i.large,8 GiB,2 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.1302 hourly,$0.1590 hourly,$0.1151 hourly,$0.2222 hourly,$0.1783 hourly
+R6IN Quadruple Extra Large,r6in.4xlarge,128 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 50 Gigabit,$1.6942 hourly,$1.8670 hourly,$1.2401 hourly,$2.4302 hourly,$1.8033 hourly
+R6IDN 16xlarge,r6idn.16xlarge,512 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$7.6003 hourly,$9.1875 hourly,$6.3754 hourly,$10.5443 hourly,$7.7322 hourly
+R6I Double Extra Large,r6i.2xlarge,64 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.6080 hourly,$0.7232 hourly,$0.5174 hourly,$0.9760 hourly,$0.7702 hourly
+R7I Eight Extra Large,r7i.8xlarge,256 GiB,32 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,12.5 Gigabit,$2.5536 hourly,$3.3472 hourly,$2.4828 hourly,$4.0256 hourly,$3.1612 hourly
+R6IDN 32xlarge,r6idn.32xlarge,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$15.2006 hourly,$16.4294 hourly,$10.8052 hourly,$21.0886 hourly,$15.4644 hourly
+IM4GN Large,im4gn.large,8 GiB,2 vCPUs,AWS Graviton2 Processor,937 GB NVMe SSD,Up to 25 Gigabit,$0.2134 hourly,$0.2772 hourly,$0.2012 hourly,unavailable,unavailable
+R7A 16xlarge,r7a.16xlarge,512 GiB,64 vCPUs,AMD EPYC 9R14 Processor,EBS only,25 Gigabit,$5.8733 hourly,$7.4605 hourly,$5.4724 hourly,$8.8173 hourly,$6.8292 hourly
+HPC7A 96xlarge,hpc7a.96xlarge,768 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R6I Metal,r6i.metal,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$9.7280 hourly,$12.3008 hourly,$9.0079 hourly,$15.6160 hourly,$12.3231 hourly
+R7G Extra Large,r7g.xlarge,32 GiB,4 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.2584 hourly,$0.3160 hourly,$0.2285 hourly,unavailable,unavailable
+M7I Eight Extra Large,m7i.8xlarge,128 GiB,32 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,12.5 Gigabit,$2.0832 hourly,$2.4288 hourly,$1.7259 hourly,$3.5552 hourly,$2.8523 hourly
+M6IDN Extra Large,m6idn.xlarge,16 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),237 GB NVMe SSD,Up to 30 Gigabit,$0.4095 hourly,$0.4671 hourly,$0.3156 hourly,$0.5935 hourly,$0.4420 hourly
+I7I Double Extra Large,i7i.2xlarge,64 GiB,8 vCPUs,Intel Xeon Scalable (Emerald Rapids),1875 GB NVMe SSD,Up to 12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+D3 Double Extra Large,d3.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),11880 GB (6×1980 GB NVMe HDD),Up to 15 Gigabit,$1.4480 hourly,$1.7040 hourly,$1.1680 hourly,$1.8160 hourly,$1.2800 hourly
+C7I-FLEX Double Extra Large,c7i-flex.2xlarge,16 GiB,8 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.4269 hourly,$0.6821 hourly,$0.5367 hourly,$0.7765 hourly,$0.6311 hourly
+M5ZN 6xlarge,m5zn.6xlarge,96 GiB,24 vCPUs,Intel Xeon Platinum 8252,EBS only,50 Gigabit,$2.5602 hourly,$3.1554 hourly,$2.1979 hourly,$3.6642 hourly,$2.7067 hourly
+C7GD Extra Large,c7gd.xlarge,8 GiB,4 vCPUs,AWS Graviton3 Processor,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2306 hourly,$0.2882 hourly,$0.2094 hourly,unavailable,unavailable
+R7A Extra Large,r7a.xlarge,32 GiB,4 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.3671 hourly,$0.4247 hourly,$0.3004 hourly,$0.5511 hourly,$0.4268 hourly
+H1 Quadruple Extra Large,h1.4xlarge,64 GiB,16 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),4000 GB (2×2000 GB HDD),Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R8G 12xlarge,r8g.12xlarge,384 GiB,48 vCPUs,AWS Graviton4 Processor,EBS only,22.5 Gigabit,$3.4109 hourly,$3.9293 hourly,$2.7747 hourly,unavailable,unavailable
+C7I Extra Large,c7i.xlarge,8 GiB,4 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.2247 hourly,$0.2823 hourly,$0.2058 hourly,$0.4087 hourly,$0.3322 hourly
+M8GD Quadruple Extra Large,m8gd.4xlarge,64 GiB,16 vCPUs,AWS Graviton4 Processor,950 GB NVMe SSD,Up to 15 Gigabit,$1.1920 hourly,$1.5888 hourly,unavailable,unavailable,unavailable
+R6I Large,r6i.large,16 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.1520 hourly,$0.2158 hourly,$0.1643 hourly,$0.2440 hourly,$0.1925 hourly
+M6A Eight Extra Large,m6a.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7R13 Processor,EBS only,12.5 Gigabit,$1.7856 hourly,$2.1312 hourly,$1.5287 hourly,$3.2576 hourly,$2.6551 hourly
+M5N Large,m5n.large,8 GiB,2 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$0.1530 hourly,$0.2170 hourly,$0.1600 hourly,$0.2450 hourly,$0.1880 hourly
+C5 High-CPU Large,c5d.large,4 GiB,2 vCPUs,Intel Xeon Platinum 8124M,50 GB NVMe SSD,Up to 10 Gigabit,$0.1220 hourly,$0.1510 hourly,$0.1060 hourly,$0.2140 hourly,$0.1690 hourly
+R5 16xlarge,r5.16xlarge,512 GiB,64 vCPUs,Intel Xeon Platinum 8175,EBS only,20 Gigabit,$4.8640 hourly,$6.4510 hourly,$4.6520 hourly,$7.8080 hourly,$6.0080 hourly
+R6GD Quadruple Extra Large,r6gd.4xlarge,128 GiB,16 vCPUs,AWS Graviton2 Processor,950 GB NVMe SSD,Up to 10 Gigabit,$1.1120 hourly,$1.2848 hourly,$0.8784 hourly,unavailable,unavailable
+R6A Large,r6a.large,16 GiB,2 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.1368 hourly,$0.2006 hourly,$0.1543 hourly,$0.2288 hourly,$0.1825 hourly
+A1 Medium,a1.medium,2 GiB,1 vCPUs,AWS Graviton Processor,EBS only,Up to 10 Gigabit,$0.0321 hourly,$0.0640 hourly,$0.0521 hourly,unavailable,unavailable
+I3EN Double Extra Large,i3en.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8175,5000 GB (2×2500 GB NVMe SSD),Up to 25 Gigabit,$1.0640 hourly,$1.1790 hourly,$0.8420 hourly,$1.4320 hourly,$1.0940 hourly
+C6I 24xlarge,c6i.24xlarge,192 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,37.5 Gigabit,$5.1360 hourly,$6.1728 hourly,$4.4237 hourly,$9.5520 hourly,$7.8029 hourly
+C5 High-CPU Quadruple Extra Large,c5.4xlarge,32 GiB,16 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 10 Gigabit,$0.8560 hourly,$1.2530 hourly,$0.9360 hourly,$1.5920 hourly,$1.2750 hourly
+R3 High-Memory Double Extra Large,r3.2xlarge,61 GiB,8 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),160 GB SSD,High,$0.7980 hourly,$1.0550 hourly,$0.8020 hourly,$1.1770 hourly,$0.9650 hourly
+R8G Medium,r8g.medium,8 GiB,1 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.0711 hourly,$0.0855 hourly,$0.0614 hourly,unavailable,unavailable
+R5 Metal,r5.metal,768 GiB,96 vCPUs,Intel Xeon Platinum 8175,EBS only,25 Gigabit,$7.2960 hourly,$9.6770 hourly,$6.9770 hourly,$11.7120 hourly,$9.0120 hourly
+C8G 12xlarge,c8g.12xlarge,96 GiB,48 vCPUs,AWS Graviton4 Processor,EBS only,22.5 Gigabit,$2.4014 hourly,$3.5918 hourly,$2.7739 hourly,unavailable,unavailable
+R8GD 48xlarge,r8gd.48xlarge,1536 GiB,192 vCPUs,AWS Graviton4 Processor,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$17.0477 hourly,$18.8909 hourly,unavailable,unavailable,unavailable
+C5A 12xlarge,c5a.12xlarge,96 GiB,48 vCPUs,AMD EPYC 7R32,EBS only,12 Gigabit,$2.3040 hourly,$2.8220 hourly,$1.9700 hourly,$4.5120 hourly,$3.6600 hourly
+R6A 16xlarge,r6a.16xlarge,512 GiB,64 vCPUs,AMD EPYC 7R13 Processor,EBS only,25 Gigabit,$4.3776 hourly,$5.0688 hourly,$3.5870 hourly,$7.3216 hourly,$5.8398 hourly
+M6I 16xlarge,m6i.16xlarge,256 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,25 Gigabit,$3.9680 hourly,$5.5552 hourly,$4.2164 hourly,$6.9120 hourly,$5.5732 hourly
+C8G Extra Large,c8g.xlarge,8 GiB,4 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.2001 hourly,$0.3277 hourly,$0.2596 hourly,unavailable,unavailable
+G6 Graphics and Machine Learning GPU Extra Large,g6.xlarge,16 GiB,4 vCPUs,AMD EPYC 7R13 Processor,250 GB NVMe SSD,Up to 10 Gigabit,$1.1672 hourly,$1.2948 hourly,$0.8874 hourly,$1.3512 hourly,$0.9438 hourly
+I4I Metal,i4i.metal,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),30000 GB (8×3750 GB NVMe SSD),75 Gigabit,$12.8830 hourly,$14.1120 hourly,$9.6220 hourly,$18.7710 hourly,$14.2810 hourly
+I7IE Large,i7ie.large,16 GiB,2 vCPUs,Intel Xeon Scalable (Emerald Rapids),1250 GB NVMe SSD,Up to 25 Gigabit,$0.3059 hourly,$0.3347 hourly,unavailable,$0.3979 hourly,unavailable
+T2 Micro,t2.micro,1 GiB,1 vCPUs (2h 24m burst),Intel Xeon Family,EBS only,Low to Moderate,$0.0152 hourly,$0.0471 hourly,$0.0422 hourly,$0.0198 hourly,$0.0149 hourly
+R5AD Extra Large,r5ad.xlarge,32 GiB,4 vCPUs,AMD EPYC 7571,150 GB NVMe SSD,Up to 10 Gigabit,$0.3180 hourly,$0.3760 hourly,$0.2580 hourly,$0.5020 hourly,$0.3840 hourly
+C6IN Large,c6in.large,4 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 25 Gigabit,$0.1428 hourly,$0.2066 hourly,$0.1538 hourly,$0.2348 hourly,$0.1820 hourly
+M8GD 16xlarge,m8gd.16xlarge,256 GiB,64 vCPUs,AWS Graviton4 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$4.7680 hourly,$5.4592 hourly,unavailable,unavailable,unavailable
+C6ID 24xlarge,c6id.24xlarge,192 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),5700 GB (4×1425 GB NVMe SSD),37.5 Gigabit,$6.1488 hourly,$7.1856 hourly,$5.0852 hourly,$10.5648 hourly,$8.4644 hourly
+C6I Metal,c6i.metal,256 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$6.8480 hourly,$8.0768 hourly,$5.7446 hourly,$12.7360 hourly,$10.4038 hourly
+C6ID Double Extra Large,c6id.2xlarge,16 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),474 GB NVMe SSD,Up to 12.5 Gigabit,$0.5124 hourly,$0.6276 hourly,$0.4526 hourly,$0.8804 hourly,$0.7054 hourly
+R7A Quadruple Extra Large,r7a.4xlarge,128 GiB,16 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$1.4683 hourly,$1.6411 hourly,$1.1441 hourly,$2.2043 hourly,$1.7073 hourly
+C6GN 12xlarge,c6gn.12xlarge,96 GiB,48 vCPUs,AWS Graviton2 Processor,EBS only,75 Gigabit,$2.6160 hourly,$3.8064 hourly,$2.8283 hourly,unavailable,unavailable
+C7GD Large,c7gd.large,4 GiB,2 vCPUs,AWS Graviton3 Processor,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1153 hourly,$0.1791 hourly,$0.1397 hourly,unavailable,unavailable
+U-18TB1 112xlarge,u-18tb1.112xlarge,18432 GiB,448 vCPUs,Intel Xeon Platinum 8280L (Cascade Lake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G6e Graphics and Machine Learning GPU Eight Extra Large,g6e.8xlarge,256 GiB,32 vCPUs,AMD EPYC 7R13 Processor,900 GB (2×450 GB NVMe SSD),25 Gigabit,$6.5678 hourly,$6.9134 hourly,$4.4833 hourly,$8.0397 hourly,$5.6097 hourly
+M6ID Eight Extra Large,m6id.8xlarge,128 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),1900 GB NVMe SSD,12.5 Gigabit,$2.4528 hourly,$2.7984 hourly,$1.8909 hourly,$3.9248 hourly,$3.0173 hourly
+G6e Graphics and Machine Learning GPU Extra Large,g6e.xlarge,32 GiB,4 vCPUs,AMD EPYC 7R13 Processor,250 GB NVMe SSD,Up to 20 Gigabit,$2.6990 hourly,$2.8266 hourly,$1.8280 hourly,$2.8830 hourly,$1.8844 hourly
+M5 General Purpose Large,m5.large,8 GiB,2 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.1240 hourly,$0.1530 hourly,$0.1070 hourly,$0.2160 hourly,$0.1700 hourly
+C6A 16xlarge,c6a.16xlarge,128 GiB,64 vCPUs,AMD EPYC 7R13 Processor,EBS only,25 Gigabit,$3.0816 hourly,$4.6688 hourly,$3.6193 hourly,$6.0256 hourly,$4.9761 hourly
+M5AD Eight Extra Large,m5ad.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7571,1200 GB (2×600 GB NVMe SSD),Up to 10 Gigabit,$2.1440 hourly,$2.4900 hourly,$1.6960 hourly,$3.6160 hourly,$2.8230 hourly
+R7I 48xlarge,r7i.48xlarge,1536 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$15.3216 hourly,$19.1808 hourly,$13.9944 hourly,$24.1536 hourly,$18.9672 hourly
+R7I Quadruple Extra Large,r7i.4xlarge,128 GiB,16 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$1.2768 hourly,$1.4496 hourly,$1.0174 hourly,$2.0128 hourly,$1.5806 hourly
+R5AD Eight Extra Large,r5ad.8xlarge,256 GiB,32 vCPUs,AMD EPYC 7571,1200 GB (2×600 GB NVMe SSD),Up to 10 Gigabit,$2.5440 hourly,$2.8900 hourly,$1.9480 hourly,$4.0160 hourly,$3.0750 hourly
+M7A 48xlarge,m7a.48xlarge,768 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$14.3741 hourly,$16.2173 hourly,$11.3675 hourly,$23.2061 hourly,$18.3563 hourly
+C5 High-CPU 18xlarge,c5d.18xlarge,144 GiB,72 vCPUs,Intel Xeon Platinum 8124M,1800 GB (2×900 GB NVMe SSD),25 Gigabit,$4.3920 hourly,$6.1780 hourly,$4.5530 hourly,$7.7040 hourly,$6.0790 hourly
+C6GN Large,c6gn.large,4 GiB,2 vCPUs,AWS Graviton2 Processor,EBS only,Up to 25 Gigabit,$0.1090 hourly,$0.1378 hourly,$0.0970 hourly,unavailable,unavailable
+C7A Large,c7a.large,4 GiB,2 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.1292 hourly,$0.1930 hourly,$0.1490 hourly,$0.2212 hourly,$0.1772 hourly
+C6A Extra Large,c6a.xlarge,8 GiB,4 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.1926 hourly,$0.2502 hourly,$0.1846 hourly,$0.3766 hourly,$0.3110 hourly
+C4 High-CPU Quadruple Extra Large,c4.4xlarge,30 GiB,16 vCPUs,Intel Xeon E5-2666 v3 (Haswell),EBS only,High,$1.0080 hourly,$1.1810 hourly,$0.8950 hourly,$1.7440 hourly,$1.4580 hourly
+P4D Highest Performance GPU 24xlarge,p4d.24xlarge,1152 GiB,96 vCPUs,Intel Xeon Platinum 8275L,8000 GB (8×1000 GB NVMe SSD),4x 100 Gigabit,$30.0978 hourly,$32.4786 hourly,$21.9605 hourly,unavailable,unavailable
+C7GN Large,c7gn.large,4 GiB,2 vCPUs,AWS Graviton3 Processor,EBS only,Up to 30 Gigabit,$0.1574 hourly,$0.1862 hourly,$0.1271 hourly,unavailable,unavailable
+C7A Quadruple Extra Large,c7a.4xlarge,32 GiB,16 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$1.0336 hourly,$1.2064 hourly,$0.8544 hourly,$1.7696 hourly,$1.4176 hourly
+I7IE Extra Large,i7ie.xlarge,32 GiB,4 vCPUs,Intel Xeon Scalable (Emerald Rapids),2500 GB NVMe SSD,Up to 25 Gigabit,$0.6118 hourly,$0.6694 hourly,unavailable,$0.7958 hourly,unavailable
+R6ID Quadruple Extra Large,r6id.4xlarge,128 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),950 GB NVMe SSD,Up to 12.5 Gigabit,$1.4616 hourly,$1.8584 hourly,$1.3176 hourly,$2.1976 hourly,$1.6568 hourly
+C7A 24xlarge,c7a.24xlarge,192 GiB,96 vCPUs,AMD EPYC 9R14 Processor,EBS only,37.5 Gigabit,$6.2016 hourly,$8.5824 hourly,$6.4704 hourly,$10.6176 hourly,$8.5056 hourly
+M5N 16xlarge,m5n.16xlarge,256 GiB,64 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,75 Gigabit,$4.8960 hourly,$6.4830 hourly,$4.6720 hourly,$7.8400 hourly,$6.0280 hourly
+T3A Medium,t3a.medium,4 GiB,2 vCPUs (4h 48m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.0490 hourly,$0.1128 hourly,$0.0946 hourly,$0.0674 hourly,$0.0492 hourly
+C6GN Quadruple Extra Large,c6gn.4xlarge,32 GiB,16 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$0.8720 hourly,$1.2688 hourly,$0.9428 hourly,unavailable,unavailable
+M5A Large,m5a.large,8 GiB,2 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.1120 hourly,$0.1760 hourly,$0.1340 hourly,$0.2040 hourly,$0.1630 hourly
+M6A 48xlarge,m6a.48xlarge,768 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$10.7136 hourly,$12.5568 hourly,$8.9420 hourly,$19.5456 hourly,$15.9308 hourly
+I4I 16xlarge,i4i.16xlarge,512 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),15000 GB (4×3750 GB NVMe SSD),37.5 Gigabit,$6.4420 hourly,$7.1330 hourly,$4.8880 hourly,$9.3860 hourly,$7.1410 hourly
+M7I 48xlarge,m7i.48xlarge,768 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$12.4992 hourly,$14.3424 hourly,$10.1252 hourly,$21.3312 hourly,$17.1140 hourly
+G4DN Eight Extra Large,g4dn.8xlarge,128 GiB,32 vCPUs,Intel Xeon Family,900 GB NVMe SSD,50 Gigabit,$2.9380 hourly,$3.7310 hourly,$2.7990 hourly,$4.4100 hourly,$3.4770 hourly
+M5AD Large,m5ad.large,8 GiB,2 vCPUs,AMD EPYC 7571,75 GB NVMe SSD,Up to 10 Gigabit,$0.1340 hourly,$0.1980 hourly,$0.1480 hourly,$0.2260 hourly,$0.1760 hourly
+R5 Quadruple Extra Large,r5.4xlarge,128 GiB,16 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$1.2160 hourly,$1.6130 hourly,$1.1630 hourly,$1.9520 hourly,$1.5020 hourly
+R7IZ 16xlarge,r7iz.16xlarge,512 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,25 Gigabit,$7.2640 hourly,$8.8512 hourly,$6.1635 hourly,$10.2080 hourly,$7.5203 hourly
+C7I Eight Extra Large,c7i.8xlarge,64 GiB,32 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,12.5 Gigabit,$1.7976 hourly,$2.5912 hourly,$1.9790 hourly,$3.2696 hourly,$2.6574 hourly
+I7I Eight Extra Large,i7i.8xlarge,256 GiB,32 vCPUs,Intel Xeon Scalable (Emerald Rapids),7500 GB (2×3750 GB NVMe SSD),Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M5ZN Large,m5zn.large,8 GiB,2 vCPUs,Intel Xeon Platinum 8252,EBS only,Up to 25 Gigabit,$0.2134 hourly,$0.2772 hourly,$0.1974 hourly,$0.3054 hourly,$0.2256 hourly
+M7I-FLEX Eight Extra Large,m7i-flex.8xlarge,128 GiB,32 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$1.9790 hourly,$2.7726 hourly,$2.1049 hourly,$3.3774 hourly,$2.7097 hourly
+C8G 48xlarge,c8g.48xlarge,384 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,$9.6058 hourly,$11.4490 hourly,$8.1772 hourly,unavailable,unavailable
+M6I 24xlarge,m6i.24xlarge,384 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,37.5 Gigabit,$5.9520 hourly,$6.9888 hourly,$4.9806 hourly,$10.3680 hourly,$8.3598 hourly
+C6IN Quadruple Extra Large,c6in.4xlarge,32 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 50 Gigabit,$1.1424 hourly,$1.5392 hourly,$1.1165 hourly,$1.8784 hourly,$1.4557 hourly
+I7I Quadruple Extra Large,i7i.4xlarge,128 GiB,16 vCPUs,Intel Xeon Scalable (Emerald Rapids),3750 GB NVMe SSD,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R5B Metal,r5b.metal,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,25 Gigabit,$8.6880 hourly,$11.0688 hourly,$7.8542 hourly,$13.1040 hourly,$9.8894 hourly
+M7G Metal,m7g.metal,256 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,30 Gigabit,$3.3728 hourly,$4.0640 hourly,$2.9258 hourly,unavailable,unavailable
+X2IEDN Double Extra Large,x2iedn.2xlarge,256 GiB,8 vCPUs,Intel Xeon Scalable (Icelake),237 GB NVMe SSD,Up to 25 Gigabit,$2.4176 hourly,$2.6728 hourly,$1.7428 hourly,$2.7856 hourly,$1.8556 hourly
+C6A Eight Extra Large,c6a.8xlarge,64 GiB,32 vCPUs,AMD EPYC 7R13 Processor,EBS only,12.5 Gigabit,$1.5408 hourly,$1.8864 hourly,$1.3617 hourly,$3.0128 hourly,$2.4881 hourly
+M6IN Large,m6in.large,8 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 25 Gigabit,$0.1790 hourly,$0.2078 hourly,$0.1416 hourly,$0.2710 hourly,$0.2048 hourly
+C6I Double Extra Large,c6i.2xlarge,16 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.4280 hourly,$0.5432 hourly,$0.3974 hourly,$0.7960 hourly,$0.6502 hourly
+R6IDN 24xlarge,r6idn.24xlarge,768 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),5700 GB (4×1425 GB NVMe SSD),150 Gigabit,$11.4005 hourly,$13.7813 hourly,$9.5631 hourly,$15.8165 hourly,$11.5983 hourly
+C7I Double Extra Large,c7i.2xlarge,16 GiB,8 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.4494 hourly,$0.7046 hourly,$0.5515 hourly,$0.8174 hourly,$0.6643 hourly
+R7IZ Extra Large,r7iz.xlarge,32 GiB,4 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.4540 hourly,$0.5816 hourly,$0.4136 hourly,$0.6380 hourly,$0.4700 hourly
+R6ID Large,r6id.large,16 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1827 hourly,$0.2465 hourly,$0.1789 hourly,$0.2747 hourly,$0.2071 hourly
+R6A 12xlarge,r6a.12xlarge,384 GiB,48 vCPUs,AMD EPYC 7R13 Processor,EBS only,18.75 Gigabit,$3.2832 hourly,$4.4736 hourly,$3.3622 hourly,$5.4912 hourly,$4.3798 hourly
+P3 High Performance GPU Double Extra Large,p3.2xlarge,61 GiB,8 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,Up to 10 Gigabit,$4.1940 hourly,$4.4490 hourly,unavailable,$4.5620 hourly,unavailable
+M5 General Purpose 16xlarge,m5d.16xlarge,256 GiB,64 vCPUs,Intel Xeon Platinum 8175,2400 GB (4×600 GB NVMe SSD),20 Gigabit,$4.6720 hourly,$5.3630 hourly,$3.6350 hourly,$7.6160 hourly,$5.8870 hourly
+D2 Quadruple Extra Large,d2.4xlarge,122 GiB,16 vCPUs,Intel Xeon E5-2676 v3 (Haswell),24576 GB (12×2048 GB HDD),High,$3.3760 hourly,$3.5490 hourly,$2.0870 hourly,$3.6780 hourly,$2.1960 hourly
+C5 High-CPU Double Extra Large,c5d.2xlarge,16 GiB,8 vCPUs,Intel Xeon Platinum 8124M,200 GB NVMe SSD,Up to 10 Gigabit,$0.4880 hourly,$0.6030 hourly,$0.4230 hourly,$0.8560 hourly,$0.6750 hourly
+Z1D 3xlarge,z1d.3xlarge,96 GiB,12 vCPUs,Intel Xeon Platinum 8151,450 GB NVMe SSD,Up to 10 Gigabit,$1.3620 hourly,$1.4920 hourly,$0.9880 hourly,$1.9140 hourly,$1.4100 hourly
+M5A 24xlarge,m5a.24xlarge,384 GiB,96 vCPUs,AMD EPYC 7571,EBS only,20 Gigabit,$5.3760 hourly,$7.7570 hourly,$5.7680 hourly,$9.7920 hourly,$7.8030 hourly
+M6IN Double Extra Large,m6in.2xlarge,32 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 40 Gigabit,$0.7160 hourly,$0.8312 hourly,$0.5663 hourly,$1.0840 hourly,$0.8191 hourly
+M7I-FLEX Extra Large,m7i-flex.xlarge,16 GiB,4 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.2474 hourly,$0.3750 hourly,$0.2915 hourly,$0.4222 hourly,$0.3387 hourly
+R6IN 12xlarge,r6in.12xlarge,384 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,75 Gigabit,$5.0825 hourly,$5.6009 hourly,$3.7204 hourly,$7.2905 hourly,$5.4100 hourly
+M6ID Large,m6id.large,8 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1533 hourly,$0.2171 hourly,$0.1604 hourly,$0.2453 hourly,$0.1886 hourly
+I3 High I/O Eight Extra Large,i3.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),7600 GB (4×1900 GB NVMe SSD),10 Gigabit,$2.9280 hourly,$3.2740 hourly,$2.3280 hourly,$4.4000 hourly,$3.4540 hourly
+C7I 16xlarge,c7i.16xlarge,128 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,25 Gigabit,$3.5952 hourly,$5.1824 hourly,$3.9580 hourly,$6.5392 hourly,$5.3148 hourly
+C5A Extra Large,c5a.xlarge,8 GiB,4 vCPUs,AMD EPYC 7R32,EBS only,Up to 10 Gigabit,$0.1920 hourly,$0.3200 hourly,$0.2490 hourly,$0.3760 hourly,$0.3050 hourly
+C6IN 12xlarge,c6in.12xlarge,96 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,75 Gigabit,$3.4272 hourly,$4.6176 hourly,$3.3495 hourly,$5.6352 hourly,$4.3671 hourly
+M5 General Purpose 24xlarge,m5.24xlarge,384 GiB,96 vCPUs,Intel Xeon Platinum 8175,EBS only,25 Gigabit,$5.9520 hourly,$8.3330 hourly,$6.1310 hourly,$10.3680 hourly,$8.1660 hourly
+H1 16xlarge,h1.16xlarge,256 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),16000 GB (8×2000 GB HDD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6GD Medium,m6gd.medium,4 GiB,1 vCPUs,AWS Graviton2 Processor,59 GB NVMe SSD,Up to 10 Gigabit,$0.0585 hourly,$0.0729 hourly,$0.0512 hourly,unavailable,unavailable
+I4G Quadruple Extra Large,i4g.4xlarge,128 GiB,16 vCPUs,AWS Graviton2 Processor,3750 GB NVMe SSD,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M5N 24xlarge,m5n.24xlarge,384 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,100 Gigabit,$7.3440 hourly,$9.7250 hourly,$7.0080 hourly,$11.7600 hourly,$9.0430 hourly
+C6I Eight Extra Large,c6i.8xlarge,64 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,12.5 Gigabit,$1.7120 hourly,$2.0576 hourly,$1.4746 hourly,$3.1840 hourly,$2.6010 hourly
+R5 24xlarge,r5.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8175,EBS only,25 Gigabit,$7.2960 hourly,$9.6770 hourly,$6.9770 hourly,$11.7120 hourly,$9.0120 hourly
+M8GD Metal-48xl,m8gd.metal-48xl,768 GiB,192 vCPUs,AWS Graviton4 Processor,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$14.3040 hourly,$18.1632 hourly,unavailable,unavailable,unavailable
+I7I Metal-24xl,i7i.metal-24xl,768 GiB,96 vCPUs,Intel Xeon Scalable (Emerald Rapids),22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6ID Extra Large,c6id.xlarge,8 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2562 hourly,$0.3138 hourly,$0.2263 hourly,$0.4402 hourly,$0.3527 hourly
+D2 Extra Large,d2.xlarge,30.5 GiB,4 vCPUs,Intel Xeon E5-2676 v3 (Haswell),6144 GB (3×2048 GB HDD),Moderate,$0.8440 hourly,$0.9020 hourly,$0.5360 hourly,$0.9750 hourly,$0.5990 hourly
+R5B Quadruple Extra Large,r5b.4xlarge,128 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 10 Gigabit,$1.4480 hourly,$1.6208 hourly,$1.0850 hourly,$2.1840 hourly,$1.6482 hourly
+C6I 12xlarge,c6i.12xlarge,96 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,18.75 Gigabit,$2.5680 hourly,$3.0864 hourly,$2.2118 hourly,$4.7760 hourly,$3.9014 hourly
+C6A 48xlarge,c6a.48xlarge,384 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$9.2448 hourly,$11.0880 hourly,$7.9396 hourly,$18.0768 hourly,$14.9284 hourly
+R6IN 16xlarge,r6in.16xlarge,512 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,100 Gigabit,$6.7766 hourly,$7.4678 hourly,$4.9605 hourly,$9.7206 hourly,$7.2133 hourly
+R5DN Extra Large,r5dn.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),150 GB NVMe SSD,Up to 25 Gigabit,$0.4060 hourly,$0.5336 hourly,$0.3834 hourly,$0.5900 hourly,$0.4400 hourly
+M8G Medium,m8g.medium,4 GiB,1 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.0580 hourly,$0.0724 hourly,$0.0528 hourly,unavailable,unavailable
+R7I Large,r7i.large,16 GiB,2 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.1596 hourly,$0.1884 hourly,$0.1344 hourly,$0.2516 hourly,$0.1976 hourly
+M5DN Extra Large,m5dn.xlarge,16 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),150 GB NVMe SSD,Up to 25 Gigabit,$0.3500 hourly,$0.4780 hourly,$0.3480 hourly,$0.5340 hourly,$0.4050 hourly
+R5DN 16xlarge,r5dn.16xlarge,512 GiB,64 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),2400 GB (4×600 GB NVMe SSD),75 Gigabit,$6.4960 hourly,$8.0832 hourly,$5.6797 hourly,$9.4400 hourly,$7.0360 hourly
+I3EN Extra Large,i3en.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8175,2500 GB NVMe SSD,Up to 25 Gigabit,$0.5320 hourly,$0.5900 hourly,$0.4210 hourly,$0.7160 hourly,$0.5470 hourly
+C6A Quadruple Extra Large,c6a.4xlarge,32 GiB,16 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.7704 hourly,$0.9432 hourly,$0.6808 hourly,$1.5064 hourly,$1.2440 hourly
+C7GD Quadruple Extra Large,c7gd.4xlarge,32 GiB,16 vCPUs,AWS Graviton3 Processor,950 GB NVMe SSD,Up to 15 Gigabit,$0.9224 hourly,$1.0952 hourly,$0.7801 hourly,unavailable,unavailable
+C8GD Medium,c8gd.medium,2 GiB,1 vCPUs,AWS Graviton4 Processor,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0623 hourly,$0.0767 hourly,unavailable,unavailable,unavailable
+C7A 12xlarge,c7a.12xlarge,96 GiB,48 vCPUs,AMD EPYC 9R14 Processor,EBS only,18.75 Gigabit,$3.1008 hourly,$4.2912 hourly,$3.2352 hourly,$5.3088 hourly,$4.2528 hourly
+M7I Quadruple Extra Large,m7i.4xlarge,64 GiB,16 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$1.0416 hourly,$1.4384 hourly,$1.0870 hourly,$1.7776 hourly,$1.4262 hourly
+C6G Extra Large,c6g.xlarge,8 GiB,4 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.1712 hourly,$0.2988 hourly,$0.2355 hourly,unavailable,unavailable
+R6ID Extra Large,r6id.xlarge,32 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3654 hourly,$0.4930 hourly,$0.3578 hourly,$0.5494 hourly,$0.4142 hourly
+R5A 16xlarge,r5a.16xlarge,512 GiB,64 vCPUs,AMD EPYC 7571,EBS only,12 Gigabit,$4.3840 hourly,$5.0750 hourly,$3.4490 hourly,$7.3280 hourly,$5.7010 hourly
+R6I Extra Large,r6i.xlarge,32 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.3040 hourly,$0.4316 hourly,$0.3287 hourly,$0.4880 hourly,$0.3851 hourly
+X2GD Metal,x2gd.metal,1024 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R8GD Quadruple Extra Large,r8gd.4xlarge,128 GiB,16 vCPUs,AWS Graviton4 Processor,950 GB NVMe SSD,Up to 15 Gigabit,$1.4206 hourly,$1.8174 hourly,unavailable,unavailable,unavailable
+R7IZ Quadruple Extra Large,r7iz.4xlarge,128 GiB,16 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$1.8160 hourly,$1.9888 hourly,$1.3169 hourly,$2.5520 hourly,$1.8801 hourly
+M5N Double Extra Large,m5n.2xlarge,32 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$0.6120 hourly,$0.7270 hourly,$0.5010 hourly,$0.9800 hourly,$0.7540 hourly
+R6G Extra Large,r6g.xlarge,32 GiB,4 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.2432 hourly,$0.3008 hourly,$0.2108 hourly,unavailable,unavailable
+C5AD Quadruple Extra Large,c5ad.4xlarge,32 GiB,16 vCPUs,AMD EPYC 7R32,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6IDN 24xlarge,m6idn.24xlarge,384 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),5700 GB (4×1425 GB NVMe SSD),150 Gigabit,$9.8280 hourly,$10.8648 hourly,$7.2284 hourly,$14.2440 hourly,$10.6076 hourly
+C5N Large,c5n.large,5.25 GiB,2 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 25 Gigabit,$0.1360 hourly,$0.1650 hourly,$0.1140 hourly,$0.2280 hourly,$0.1780 hourly
+I3 High I/O Double Extra Large,i3.2xlarge,61 GiB,8 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),1900 GB NVMe SSD,Up to 10 Gigabit,$0.7320 hourly,$0.9870 hourly,$0.7510 hourly,$1.1000 hourly,$0.8640 hourly
+C6A Metal,c6a.metal,384 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$9.2448 hourly,$11.0880 hourly,$7.9396 hourly,$18.0768 hourly,$14.9284 hourly
+I3EN 3xlarge,i3en.3xlarge,96 GiB,12 vCPUs,Intel Xeon Platinum 8175,7500 GB NVMe SSD,Up to 25 Gigabit,$1.5960 hourly,$1.8940 hourly,$1.3870 hourly,$2.1480 hourly,$1.6420 hourly
+M6ID Quadruple Extra Large,m6id.4xlarge,64 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),950 GB NVMe SSD,Up to 12.5 Gigabit,$1.2264 hourly,$1.3992 hourly,$0.9454 hourly,$1.9624 hourly,$1.5086 hourly
+G3 Graphics GPU Eight Extra Large,g3.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,10 Gigabit,$3.1600 hourly,$3.5056 hourly,unavailable,$4.6320 hourly,unavailable
+C5AD Double Extra Large,c5ad.2xlarge,16 GiB,8 vCPUs,AMD EPYC 7R32,300 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M5A Double Extra Large,m5a.2xlarge,32 GiB,8 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.4480 hourly,$0.7030 hourly,$0.5370 hourly,$0.8160 hourly,$0.6500 hourly
+I7IE Metal-48xl,i7ie.metal-48xl,1536 GiB,192 vCPUs,Intel Xeon Scalable (Emerald Rapids),120000 GB (16×7500 GB NVMe SSD),100 Gigabit,$29.3664 hourly,$33.2256 hourly,unavailable,$38.1984 hourly,unavailable
+M5 General Purpose Double Extra Large,m5.2xlarge,32 GiB,8 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.4960 hourly,$0.6110 hourly,$0.4280 hourly,$0.8640 hourly,$0.6800 hourly
+C7I 48xlarge,c7i.48xlarge,384 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$10.7856 hourly,$12.6288 hourly,$8.9557 hourly,$19.6176 hourly,$15.9445 hourly
+R6IDN Large,r6idn.large,16 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),118 GB NVMe SSD,Up to 25 Gigabit,$0.2375 hourly,$0.2663 hourly,$0.1784 hourly,$0.3295 hourly,$0.2416 hourly
+M7I-FLEX Large,m7i-flex.large,8 GiB,2 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.1237 hourly,$0.1875 hourly,$0.1457 hourly,$0.2111 hourly,$0.1694 hourly
+R5N 16xlarge,r5n.16xlarge,512 GiB,64 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,75 Gigabit,$5.7920 hourly,$7.3790 hourly,$5.2360 hourly,$8.7360 hourly,$6.5930 hourly
+M7A Metal-48xl,m7a.metal-48xl,768 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$14.3741 hourly,$16.2173 hourly,$11.3675 hourly,$23.2061 hourly,$18.3563 hourly
+M7A Large,m7a.large,8 GiB,2 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.1497 hourly,$0.1785 hourly,$0.1280 hourly,$0.2417 hourly,$0.1912 hourly
+M6IDN Double Extra Large,m6idn.2xlarge,32 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),474 GB NVMe SSD,Up to 40 Gigabit,$0.8190 hourly,$0.9342 hourly,$0.6312 hourly,$1.1870 hourly,$0.8840 hourly
+M6GD 16xlarge,m6gd.16xlarge,256 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.7440 hourly,$4.4352 hourly,$3.0432 hourly,unavailable,unavailable
+R7A 48xlarge,r7a.48xlarge,1536 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$17.6198 hourly,$19.4630 hourly,$13.4987 hourly,$26.4518 hourly,$20.4875 hourly
+M7A Quadruple Extra Large,m7a.4xlarge,64 GiB,16 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$1.1978 hourly,$1.5946 hourly,$1.1905 hourly,$1.9338 hourly,$1.5297 hourly
+G5 Graphics and Machine Learning GPU Quadruple Extra Large,g5.4xlarge,64 GiB,16 vCPUs,AMD EPYC 7R32,600 GB NVMe SSD,Up to 25 Gigabit,$2.3553 hourly,$2.7521 hourly,$1.8806 hourly,$3.0913 hourly,$2.2198 hourly
+I7I 16xlarge,i7i.16xlarge,512 GiB,64 vCPUs,Intel Xeon Scalable (Emerald Rapids),15000 GB (4×3750 GB NVMe SSD),Up to 37.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6GD 12xlarge,m6gd.12xlarge,192 GiB,48 vCPUs,AWS Graviton2 Processor,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,$2.8080 hourly,$3.9984 hourly,$2.9544 hourly,unavailable,unavailable
+X1E Extra Large,x1e.xlarge,122 GiB,4 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),120 GB SSD,Up to 10 Gigabit,$1.2090 hourly,$1.2670 hourly,$0.8030 hourly,$1.3930 hourly,$0.9290 hourly
+T3 Double Extra Large,t3.2xlarge,32 GiB,8 vCPUs (9h 36m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.4352 hourly,$0.5504 hourly,$0.3894 hourly,$0.5824 hourly,$0.4214 hourly
+R6G Quadruple Extra Large,r6g.4xlarge,128 GiB,16 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.9728 hourly,$1.1456 hourly,$0.7857 hourly,unavailable,unavailable
+H1 Double Extra Large,h1.2xlarge,32 GiB,8 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),2000 GB HDD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6A Extra Large,m6a.xlarge,16 GiB,4 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.2232 hourly,$0.3508 hourly,$0.2755 hourly,$0.4072 hourly,$0.3319 hourly
+C6IN 24xlarge,c6in.24xlarge,192 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,150 Gigabit,$6.8544 hourly,$7.8912 hourly,$5.3551 hourly,$11.2704 hourly,$8.7343 hourly
+I7I 12xlarge,i7i.12xlarge,384 GiB,48 vCPUs,Intel Xeon Scalable (Emerald Rapids),11250 GB (3×3750 GB NVMe SSD),Up to 28 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R5DN 12xlarge,r5dn.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),1800 GB (2×900 GB NVMe SSD),50 Gigabit,$4.8720 hourly,$6.0624 hourly,$4.2598 hourly,$7.0800 hourly,$5.2770 hourly
+C5 High-CPU 12xlarge,c5.12xlarge,96 GiB,48 vCPUs,Intel Xeon Platinum 8275L,EBS only,12 Gigabit,$2.5680 hourly,$3.0860 hourly,$2.1360 hourly,$4.7760 hourly,$3.8260 hourly
+D2 Double Extra Large,d2.2xlarge,61 GiB,8 vCPUs,Intel Xeon E5-2676 v3 (Haswell),12288 GB (6×2048 GB HDD),High,$1.6880 hourly,$1.8030 hourly,$1.0720 hourly,$1.9090 hourly,$1.1380 hourly
+M5N Metal,m5n.metal,384 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,100 Gigabit,$7.3440 hourly,$8.3810 hourly,$5.6640 hourly,$11.7600 hourly,$9.0430 hourly
+M7I Metal-24xl,m7i.metal-24xl,384 GiB,96 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,37.5 Gigabit,$6.2496 hourly,$8.6304 hourly,$6.5218 hourly,$10.6656 hourly,$8.5570 hourly
+C7I-FLEX Eight Extra Large,c7i-flex.8xlarge,64 GiB,32 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$1.7077 hourly,$2.0533 hourly,$1.4717 hourly,$3.1061 hourly,$2.5245 hourly
+M6IDN 32xlarge,m6idn.32xlarge,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$13.1040 hourly,$15.6768 hourly,$10.8283 hourly,$18.9920 hourly,$14.1435 hourly
+M7I 24xlarge,m7i.24xlarge,384 GiB,96 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,37.5 Gigabit,$6.2496 hourly,$7.2864 hourly,$5.1778 hourly,$10.6656 hourly,$8.5570 hourly
+I7I 48xlarge,i7i.48xlarge,1536 GiB,192 vCPUs,Intel Xeon Scalable (Emerald Rapids),45000 GB (12×3750 GB NVMe SSD),Up to 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M5 General Purpose Large,m5d.large,8 GiB,2 vCPUs,Intel Xeon Platinum 8175,75 GB NVMe SSD,Up to 10 Gigabit,$0.1460 hourly,$0.2100 hourly,$0.1560 hourly,$0.2380 hourly,$0.1840 hourly
+R6I 24xlarge,r6i.24xlarge,768 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,37.5 Gigabit,$7.2960 hourly,$9.6768 hourly,$7.2071 hourly,$11.7120 hourly,$9.2423 hourly
+X2IDN 16xlarge,x2idn.16xlarge,1024 GiB,64 vCPUs,Intel Xeon Scalable (Icelake),1900 GB NVMe SSD,50 Gigabit,$9.6705 hourly,$10.3617 hourly,$6.6415 hourly,$12.6145 hourly,$8.8943 hourly
+C6IN Eight Extra Large,c6in.8xlarge,64 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$2.2848 hourly,$3.0784 hourly,$2.2330 hourly,$3.7568 hourly,$2.9114 hourly
+M6G Large,m6g.large,8 GiB,2 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.0990 hourly,$0.1278 hourly,$0.0918 hourly,unavailable,unavailable
+X1E Double Extra Large,x1e.2xlarge,244 GiB,8 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),240 GB SSD,Up to 10 Gigabit,$2.4180 hourly,$2.5330 hourly,$1.6050 hourly,$2.7860 hourly,$1.8580 hourly
+I2 Quadruple Extra Large,i2.4xlarge,122 GiB,16 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),3200 GB (4×800 GB SSD),High,$4.0020 hourly,$4.4010 hourly,$2.6350 hourly,$4.4510 hourly,$3.3160 hourly
+I4I Eight Extra Large,i4i.8xlarge,256 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),7500 GB (2×3750 GB NVMe SSD),18.75 Gigabit,$3.2210 hourly,$3.5660 hourly,$2.4440 hourly,$4.6930 hourly,$3.5700 hourly
+M5AD Extra Large,m5ad.xlarge,16 GiB,4 vCPUs,AMD EPYC 7571,150 GB NVMe SSD,Up to 10 Gigabit,$0.2680 hourly,$0.3260 hourly,$0.2260 hourly,$0.4520 hourly,$0.3530 hourly
+C6IN 16xlarge,c6in.16xlarge,128 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,100 Gigabit,$4.5696 hourly,$5.2608 hourly,$3.5701 hourly,$7.5136 hourly,$5.8228 hourly
+I7IE 3xlarge,i7ie.3xlarge,96 GiB,12 vCPUs,Intel Xeon Scalable (Emerald Rapids),7500 GB NVMe SSD,Up to 25 Gigabit,$1.8354 hourly,$2.1330 hourly,unavailable,$2.3874 hourly,unavailable
+R7G Quadruple Extra Large,r7g.4xlarge,128 GiB,16 vCPUs,AWS Graviton3 Processor,EBS only,Up to 15 Gigabit,$1.0336 hourly,$1.2064 hourly,$0.8565 hourly,unavailable,unavailable
+I7I Large,i7i.large,16 GiB,2 vCPUs,Intel Xeon Scalable (Emerald Rapids),468 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6GN Eight Extra Large,c6gn.8xlarge,64 GiB,32 vCPUs,AWS Graviton2 Processor,EBS only,50 Gigabit,$1.7440 hourly,$2.5376 hourly,$1.8855 hourly,unavailable,unavailable
+R5D Large,r5d.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8175,75 GB NVMe SSD,Up to 10 Gigabit,$0.1740 hourly,$0.2030 hourly,$0.1380 hourly,$0.2660 hourly,$0.2020 hourly
+C5 High-CPU Large,c5.large,4 GiB,2 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 10 Gigabit,$0.1070 hourly,$0.1710 hourly,$0.1310 hourly,$0.1990 hourly,$0.1590 hourly
+R5AD Large,r5ad.large,16 GiB,2 vCPUs,AMD EPYC 7571,75 GB NVMe SSD,Up to 10 Gigabit,$0.1590 hourly,$0.2230 hourly,$0.1640 hourly,$0.2510 hourly,$0.1920 hourly
+M6GD Quadruple Extra Large,m6gd.4xlarge,64 GiB,16 vCPUs,AWS Graviton2 Processor,950 GB NVMe SSD,Up to 10 Gigabit,$0.9360 hourly,$1.1088 hourly,$0.7608 hourly,unavailable,unavailable
+C6ID Eight Extra Large,c6id.8xlarge,64 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),1900 GB NVMe SSD,12.5 Gigabit,$2.0496 hourly,$2.8432 hourly,$2.1431 hourly,$3.5216 hourly,$2.8215 hourly
+P5 48xlarge,p5.48xlarge,2048 GiB,192 vCPUs,AMD EPYC 7R13 Processor,30400 GB (8×3800 GB NVMe SSD),3200 Gigabit,$68.8000 hourly,$72.6592 hourly,unavailable,unavailable,unavailable
+G4DN Double Extra Large,g4dn.2xlarge,32 GiB,8 vCPUs,Intel Xeon Family,225 GB NVMe SSD,Up to 25 Gigabit,$1.0150 hourly,$1.2700 hourly,$0.9480 hourly,$1.3830 hourly,$1.0610 hourly
+R5DN 24xlarge,r5dn.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),3600 GB (4×900 GB NVMe SSD),100 Gigabit,$9.7440 hourly,$10.7808 hourly,$7.1755 hourly,$14.1600 hourly,$10.5550 hourly
+M7GD Large,m7gd.large,8 GiB,2 vCPUs,AWS Graviton3 Processor,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1380 hourly,$0.1668 hourly,$0.1157 hourly,unavailable,unavailable
+M6I Extra Large,m6i.xlarge,16 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.2480 hourly,$0.3056 hourly,$0.2219 hourly,$0.4320 hourly,$0.3483 hourly
+G6 Graphics and Machine Learning GPU Quadruple Extra Large,g6.4xlarge,64 GiB,16 vCPUs,AMD EPYC 7R13 Processor,600 GB NVMe SSD,Up to 25 Gigabit,$1.9190 hourly,$2.3158 hourly,$1.6461 hourly,$2.6550 hourly,$1.9853 hourly
+R7A 24xlarge,r7a.24xlarge,768 GiB,96 vCPUs,AMD EPYC 9R14 Processor,EBS only,37.5 Gigabit,$8.8099 hourly,$11.1907 hourly,$8.2086 hourly,$13.2259 hourly,$10.2438 hourly
+R4 High-Memory Eight Extra Large,r4.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,10 Gigabit,$2.5600 hourly,$2.9056 hourly,$1.9584 hourly,$4.0320 hourly,$3.0848 hourly
+I7IE 6xlarge,i7ie.6xlarge,192 GiB,24 vCPUs,Intel Xeon Scalable (Emerald Rapids),15000 GB (2×7500 GB NVMe SSD),Up to 25 Gigabit,$3.6708 hourly,$3.9300 hourly,unavailable,$4.7748 hourly,unavailable
+R7IZ 32xlarge,r7iz.32xlarge,1024 GiB,128 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$14.5280 hourly,$17.1008 hourly,$11.7254 hourly,$20.4160 hourly,$15.0406 hourly
+M5A 12xlarge,m5a.12xlarge,192 GiB,48 vCPUs,AMD EPYC 7571,EBS only,10 Gigabit,$2.6880 hourly,$3.8780 hourly,$2.8840 hourly,$4.8960 hourly,$3.9010 hourly
+R5A Quadruple Extra Large,r5a.4xlarge,128 GiB,16 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$1.0960 hourly,$1.2690 hourly,$0.8620 hourly,$1.8320 hourly,$1.4250 hourly
+C8GD Large,c8gd.large,4 GiB,2 vCPUs,AWS Graviton4 Processor,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1245 hourly,$0.1883 hourly,unavailable,unavailable,unavailable
+R4 High-Memory 16xlarge,r4.16xlarge,488 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,25 Gigabit,$5.1200 hourly,$5.8112 hourly,$3.9168 hourly,$8.0640 hourly,$6.1696 hourly
+M5AD 24xlarge,m5ad.24xlarge,384 GiB,96 vCPUs,AMD EPYC 7571,3600 GB (4×900 GB NVMe SSD),20 Gigabit,$6.4320 hourly,$7.4690 hourly,$5.0890 hourly,$10.8480 hourly,$8.4680 hourly
+M5DN Quadruple Extra Large,m5dn.4xlarge,64 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),600 GB (2×300 GB NVMe SSD),Up to 25 Gigabit,$1.4000 hourly,$1.5730 hourly,$1.0550 hourly,$2.1360 hourly,$1.6180 hourly
+M7A Double Extra Large,m7a.2xlarge,32 GiB,8 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.5989 hourly,$0.8541 hourly,$0.6521 hourly,$0.9669 hourly,$0.7649 hourly
+R6IN Double Extra Large,r6in.2xlarge,64 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 40 Gigabit,$0.8471 hourly,$0.9623 hourly,$0.6489 hourly,$1.2151 hourly,$0.9017 hourly
+C5AD 24xlarge,c5ad.24xlarge,192 GiB,96 vCPUs,AMD EPYC 7R32,3800 GB (2×1900 GB NVMe SSD),20 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6ID 16xlarge,c6id.16xlarge,128 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.0992 hourly,$5.6864 hourly,$4.2861 hourly,$7.0432 hourly,$5.6429 hourly
+U-3TB1 56xlarge,u-3tb1.56xlarge,3072 GiB,224 vCPUs,Intel Xeon Scalable (Skylake),EBS only,50 Gigabit,$32.9333 hourly,$35.0837 hourly,$22.4454 hourly,$43.2373 hourly,$30.5990 hourly
+M5ZN 12xlarge,m5zn.12xlarge,192 GiB,48 vCPUs,Intel Xeon Platinum 8252,EBS only,100 Gigabit,$5.1204 hourly,$6.3108 hourly,$4.3957 hourly,$7.3284 hourly,$5.4133 hourly
+M6G Extra Large,m6g.xlarge,16 GiB,4 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.1980 hourly,$0.2556 hourly,$0.1836 hourly,unavailable,unavailable
+G6 Graphics and Machine Learning GPU Double Extra Large,g6.2xlarge,32 GiB,8 vCPUs,AMD EPYC 7R13 Processor,450 GB NVMe SSD,Up to 10 Gigabit,$1.4178 hourly,$1.6730 hourly,$1.1782 hourly,$1.7858 hourly,$1.2910 hourly
+M7GD Metal,m7gd.metal,256 GiB,64 vCPUs,AWS Graviton3 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$4.4150 hourly,$6.0022 hourly,$4.3687 hourly,unavailable,unavailable
+R8GD 24xlarge,r8gd.24xlarge,768 GiB,96 vCPUs,AWS Graviton4 Processor,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$8.5238 hourly,$10.9046 hourly,unavailable,unavailable,unavailable
+C5 High-CPU Quadruple Extra Large,c5d.4xlarge,32 GiB,16 vCPUs,Intel Xeon Platinum 8124M,400 GB NVMe SSD,Up to 10 Gigabit,$0.9760 hourly,$1.1490 hourly,$0.7880 hourly,$1.7120 hourly,$1.3510 hourly
+C8GD Metal-24xl,c8gd.metal-24xl,192 GiB,96 vCPUs,AWS Graviton4 Processor,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$5.9770 hourly,$8.3578 hourly,unavailable,unavailable,unavailable
+R7G Metal,r7g.metal,512 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,30 Gigabit,$4.1344 hourly,$4.8256 hourly,$3.4261 hourly,unavailable,unavailable
+I4G Large,i4g.large,16 GiB,2 vCPUs,AWS Graviton2 Processor,468 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6IDN Quadruple Extra Large,m6idn.4xlarge,64 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),950 GB NVMe SSD,Up to 50 Gigabit,$1.6380 hourly,$2.0348 hourly,$1.4287 hourly,$2.3740 hourly,$1.7679 hourly
+M8G Metal-48xl,m8g.metal-48xl,768 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,$11.1302 hourly,$14.9894 hourly,$11.2335 hourly,unavailable,unavailable
+M6IDN 12xlarge,m6idn.12xlarge,192 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$4.9140 hourly,$6.1044 hourly,$4.2862 hourly,$7.1220 hourly,$5.3038 hourly
+M6G Double Extra Large,m6g.2xlarge,32 GiB,8 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.3960 hourly,$0.5112 hourly,$0.3672 hourly,unavailable,unavailable
+C6I 32xlarge,c6i.32xlarge,256 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$6.8480 hourly,$8.0768 hourly,$5.7446 hourly,$12.7360 hourly,$10.4038 hourly
+T2 Double Extra Large,t2.2xlarge,32 GiB,8 vCPUs (4h 4.799999999999983m burst),Intel Xeon Family,EBS only,Moderate,$0.4864 hourly,$0.7416 hourly,$0.5838 hourly,$0.5484 hourly,$0.3906 hourly
+R6A 48xlarge,r6a.48xlarge,1536 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$13.1328 hourly,$16.9920 hourly,$12.5465 hourly,$21.9648 hourly,$17.5193 hourly
+X1E Eight Extra Large,x1e.8xlarge,976 GiB,32 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),960 GB SSD,Up to 10 Gigabit,$9.6720 hourly,$10.0180 hourly,$6.3050 hourly,$11.1440 hourly,$7.4320 hourly
+R5N Double Extra Large,r5n.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$0.7240 hourly,$0.8390 hourly,$0.5710 hourly,$1.0920 hourly,$0.8240 hourly
+I3 High I/O 16xlarge,i3.16xlarge,488 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),15200 GB (8×1900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$6.5470 hourly,$4.6560 hourly,$8.8000 hourly,$6.9090 hourly
+R5 Eight Extra Large,r5.8xlarge,256 GiB,32 vCPUs,Intel Xeon Platinum 8175,EBS only,10 Gigabit,$2.4320 hourly,$2.7780 hourly,$1.8780 hourly,$3.9040 hourly,$3.0040 hourly
+I3EN Metal,i3en.metal,768 GiB,96 vCPUs,Intel Xeon Platinum 8175,60000 GB (8×7500 GB NVMe SSD),100 Gigabit,$12.7680 hourly,$13.8050 hourly,$9.7530 hourly,$17.1840 hourly,$13.1320 hourly
+G4AD Extra Large,g4ad.xlarge,16 GiB,4 vCPUs,AMD EPYC 7R32,150 GB NVMe SSD,Up to 10 Gigabit,$0.5108 hourly,$0.5684 hourly,$0.4063 hourly,$0.6948 hourly,$0.5327 hourly
+M6A 32xlarge,m6a.32xlarge,512 GiB,128 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$7.1424 hourly,$8.3712 hourly,$5.9614 hourly,$13.0304 hourly,$10.6206 hourly
+R6I 12xlarge,r6i.12xlarge,384 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,18.75 Gigabit,$3.6480 hourly,$4.1664 hourly,$2.9316 hourly,$5.8560 hourly,$4.6212 hourly
+R7IZ Double Extra Large,r7iz.2xlarge,64 GiB,8 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.9080 hourly,$1.0232 hourly,$0.6872 hourly,$1.2760 hourly,$0.9400 hourly
+I2 Eight Extra Large,i2.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),6400 GB (8×800 GB SSD),10 Gigabit,$8.0040 hourly,$8.3540 hourly,$4.8210 hourly,$8.9030 hourly,$6.6310 hourly
+D3 Quadruple Extra Large,d3.4xlarge,128 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),23760 GB (12×1980 GB NVMe HDD),Up to 15 Gigabit,$2.8970 hourly,$3.2940 hourly,$2.2220 hourly,$3.6330 hourly,$2.5610 hourly
+C5AD Extra Large,c5ad.xlarge,8 GiB,4 vCPUs,AMD EPYC 7R32,150 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-24TB1 112xlarge,u-24tb1.112xlarge,24576 GiB,448 vCPUs,Intel Xeon Platinum 8280L (Cascade Lake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R5 Large,r5.large,16 GiB,2 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.1520 hourly,$0.2160 hourly,$0.1600 hourly,$0.2440 hourly,$0.1880 hourly
+I7IE Double Extra Large,i7ie.2xlarge,64 GiB,8 vCPUs,Intel Xeon Scalable (Emerald Rapids),5000 GB (2×2500 GB NVMe SSD),Up to 25 Gigabit,$1.2236 hourly,$1.3388 hourly,unavailable,$1.5916 hourly,unavailable
+C7G Quadruple Extra Large,c7g.4xlarge,32 GiB,16 vCPUs,AWS Graviton3 Processor,EBS only,Up to 15 Gigabit,$0.7277 hourly,$1.1245 hourly,$0.8766 hourly,unavailable,unavailable
+R5N 12xlarge,r5n.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,50 Gigabit,$4.3440 hourly,$5.5340 hourly,$3.9270 hourly,$6.5520 hourly,$4.9450 hourly
+M7GD Double Extra Large,m7gd.2xlarge,32 GiB,8 vCPUs,AWS Graviton3 Processor,474 GB NVMe SSD,Up to 15 Gigabit,$0.5519 hourly,$0.6671 hourly,$0.4629 hourly,unavailable,unavailable
+I7IE Metal-24xl,i7ie.metal-24xl,768 GiB,96 vCPUs,Intel Xeon Scalable (Emerald Rapids),60000 GB (8×7500 GB NVMe SSD),Up to 100 Gigabit,$14.6832 hourly,$15.7200 hourly,unavailable,$19.0992 hourly,unavailable
+M5 General Purpose Quadruple Extra Large,m5d.4xlarge,64 GiB,16 vCPUs,Intel Xeon Platinum 8175,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.1680 hourly,$1.5650 hourly,$1.1330 hourly,$1.9040 hourly,$1.4720 hourly
+M5 General Purpose 12xlarge,m5d.12xlarge,192 GiB,48 vCPUs,Intel Xeon Platinum 8175,1800 GB (2×900 GB NVMe SSD),12 Gigabit,$3.5040 hourly,$4.0220 hourly,$2.7260 hourly,$5.7120 hourly,$4.4160 hourly
+G6e Graphics and Machine Learning GPU Quadruple Extra Large,g6e.4xlarge,128 GiB,16 vCPUs,AMD EPYC 7R13 Processor,600 GB NVMe SSD,20 Gigabit,$4.3570 hourly,$4.7538 hourly,$3.1417 hourly,$5.0930 hourly,$3.4809 hourly
+C7GD 12xlarge,c7gd.12xlarge,96 GiB,48 vCPUs,AWS Graviton3 Processor,2850 GB (2×1425 GB NVMe SSD),22.5 Gigabit,$2.7672 hourly,$3.9576 hourly,$3.0122 hourly,unavailable,unavailable
+M6GD Metal,m6gd.metal,256 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.7440 hourly,$5.3312 hourly,$3.9392 hourly,unavailable,unavailable
+G4DN 12xlarge,g4dn.12xlarge,192 GiB,48 vCPUs,Intel Xeon Family,900 GB NVMe SSD,50 Gigabit,$5.2810 hourly,$6.4720 hourly,$4.7950 hourly,$7.4890 hourly,$5.8120 hourly
+M4 General Purpose Extra Large,m4.xlarge,16 GiB,4 vCPUs,Intel Xeon E5-2676 v3 (Haswell),EBS only,High,$0.2580 hourly,$0.3856 hourly,$0.3019 hourly,$0.4420 hourly,$0.3583 hourly
+M6IDN Large,m6idn.large,8 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),118 GB NVMe SSD,Up to 25 Gigabit,$0.2047 hourly,$0.2686 hourly,$0.1928 hourly,$0.2968 hourly,$0.2210 hourly
+M5A Quadruple Extra Large,m5a.4xlarge,64 GiB,16 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.8960 hourly,$1.0690 hourly,$0.7370 hourly,$1.6320 hourly,$1.3000 hourly
+C7I Quadruple Extra Large,c7i.4xlarge,32 GiB,16 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.8988 hourly,$1.0716 hourly,$0.7655 hourly,$1.6348 hourly,$1.3287 hourly
+INF1 6xlarge,inf1.6xlarge,48 GiB,24 vCPUs,Intel Xeon Platinum 8275CL (Cascade Lake),EBS only,25 Gigabit,$1.5940 hourly,$1.8530 hourly,$1.2630 hourly,unavailable,unavailable
+M5AD Double Extra Large,m5ad.2xlarge,32 GiB,8 vCPUs,AMD EPYC 7571,300 GB NVMe SSD,Up to 10 Gigabit,$0.5360 hourly,$0.7910 hourly,$0.5930 hourly,$0.9040 hourly,$0.7060 hourly
+G3S Extra Large,g3s.xlarge,30.5 GiB,4 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,10 Gigabit,$1.0400 hourly,$1.0980 hourly,unavailable,$1.2240 hourly,unavailable
+M6G Quadruple Extra Large,m6g.4xlarge,64 GiB,16 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.7920 hourly,$0.9648 hourly,$0.6767 hourly,unavailable,unavailable
+R7I Metal-48xl,r7i.metal-48xl,1536 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$15.3216 hourly,$19.1808 hourly,$13.9944 hourly,$24.1536 hourly,$18.9672 hourly
+X2IDN 24xlarge,x2idn.24xlarge,1536 GiB,96 vCPUs,Intel Xeon Scalable (Icelake),2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$14.5058 hourly,$16.8865 hourly,$11.3062 hourly,$18.9217 hourly,$13.3414 hourly
+R6ID 12xlarge,r6id.12xlarge,384 GiB,48 vCPUs,Intel Xeon 8375C (Ice Lake),2850 GB (2×1425 GB NVMe SSD),18.75 Gigabit,$4.3848 hourly,$5.5752 hourly,$3.9528 hourly,$6.5928 hourly,$4.9704 hourly
+G6 Graphics and Machine Learning GPU 12xlarge,g6.12xlarge,192 GiB,48 vCPUs,AMD EPYC 7R13 Processor,3760 GB (4×940 GB NVMe SSD),40 Gigabit,$6.6737 hourly,$7.8641 hourly,$5.5350 hourly,$8.8817 hourly,$6.5526 hourly
+X2IEDN Quadruple Extra Large,x2iedn.4xlarge,512 GiB,16 vCPUs,Intel Xeon Scalable (Icelake),475 GB NVMe SSD,Up to 25 Gigabit,$4.8353 hourly,$5.0080 hourly,$3.1479 hourly,$5.5713 hourly,$3.7111 hourly
+Z1D 6xlarge,z1d.6xlarge,192 GiB,24 vCPUs,Intel Xeon Platinum 8151,900 GB NVMe SSD,12 Gigabit,$2.7240 hourly,$2.9830 hourly,$1.9750 hourly,$3.8280 hourly,$2.8200 hourly
+R8GD Eight Extra Large,r8gd.8xlarge,256 GiB,32 vCPUs,AWS Graviton4 Processor,1900 GB NVMe SSD,15 Gigabit,$2.8413 hourly,$3.6349 hourly,unavailable,unavailable,unavailable
+M6I Metal,m6i.metal,512 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$7.9360 hourly,$10.5088 hourly,$7.8312 hourly,$13.8240 hourly,$11.1464 hourly
+T3 Small,t3.small,2 GiB,2 vCPUs (4h 48m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.0272 hourly,$0.0910 hourly,$0.0809 hourly,$0.0456 hourly,$0.0355 hourly
+C7GD Double Extra Large,c7gd.2xlarge,16 GiB,8 vCPUs,AWS Graviton3 Processor,474 GB NVMe SSD,Up to 15 Gigabit,$0.4612 hourly,$0.7164 hourly,$0.5588 hourly,unavailable,unavailable
+T4G Small,t4g.small,2 GiB,2 vCPUs (4h 48m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.0216 hourly,$0.0504 hourly,$0.0424 hourly,unavailable,unavailable
+C5 High-CPU 12xlarge,c5d.12xlarge,96 GiB,48 vCPUs,Intel Xeon Platinum 8275L,1800 GB (2×900 GB NVMe SSD),12 Gigabit,$2.9280 hourly,$4.1180 hourly,$3.0350 hourly,$5.1360 hourly,$4.0530 hourly
+C4 High-CPU Double Extra Large,c4.2xlarge,15 GiB,8 vCPUs,Intel Xeon E5-2666 v3 (Haswell),EBS only,High,$0.5040 hourly,$0.7590 hourly,$0.6160 hourly,$0.8720 hourly,$0.7290 hourly
+C7GD Metal,c7gd.metal,128 GiB,64 vCPUs,AWS Graviton3 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$3.6896 hourly,$5.2768 hourly,$4.0163 hourly,unavailable,unavailable
+R7A Metal-48xl,r7a.metal-48xl,1536 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$17.6198 hourly,$19.4630 hourly,$13.4987 hourly,$26.4518 hourly,$20.4875 hourly
+R5N 24xlarge,r5n.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,100 Gigabit,$8.6880 hourly,$11.0690 hourly,$7.8540 hourly,$13.1040 hourly,$9.8890 hourly
+G5 Graphics and Machine Learning GPU 16xlarge,g5.16xlarge,256 GiB,64 vCPUs,AMD EPYC 7R32,1900 GB NVMe SSD,25 Gigabit,$5.9404 hourly,$7.5276 hourly,$5.3297 hourly,$8.8844 hourly,$6.6865 hourly
+T3 Medium,t3.medium,4 GiB,2 vCPUs (4h 48m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.0544 hourly,$0.0832 hourly,$0.0631 hourly,$0.0728 hourly,$0.0527 hourly
+C6IN Extra Large,c6in.xlarge,8 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 30 Gigabit,$0.2856 hourly,$0.3432 hourly,$0.2375 hourly,$0.4696 hourly,$0.3639 hourly
+R6IN 32xlarge,r6in.32xlarge,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,200 Gigabit,$13.5533 hourly,$14.7821 hourly,$9.7674 hourly,$19.4413 hourly,$14.4266 hourly
+T4G Double Extra Large,t4g.2xlarge,32 GiB,8 vCPUs (9h 36m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.3456 hourly,$0.6008 hourly,$0.4728 hourly,unavailable,unavailable
+Gr6 Graphics and Machine Learning GPU High RAM ratio Eight Extra Large,gr6.8xlarge,256 GiB,32 vCPUs,AMD EPYC 7R32,900 GB (2×450 GB NVMe SSD),25 Gigabit,$3.5480 hourly,$4.3416 hourly,$3.1034 hourly,$5.0200 hourly,$3.7818 hourly
+C6G Medium,c6g.medium,2 GiB,1 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.0428 hourly,$0.0747 hourly,$0.0589 hourly,unavailable,unavailable
+T3A Large,t3a.large,8 GiB,2 vCPUs (7h 12m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.0979 hourly,$0.1267 hourly,$0.0905 hourly,$0.1255 hourly,$0.0893 hourly
+T3A Micro,t3a.micro,1 GiB,2 vCPUs (2h 24m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.0122 hourly,$0.0410 hourly,$0.0365 hourly,$0.0214 hourly,$0.0169 hourly
+R6GD 12xlarge,r6gd.12xlarge,384 GiB,48 vCPUs,AWS Graviton2 Processor,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,$3.3360 hourly,$4.5264 hourly,$3.3071 hourly,unavailable,unavailable
+M4 General Purpose Quadruple Extra Large,m4.4xlarge,64 GiB,16 vCPUs,Intel Xeon E5-2676 v3 (Haswell),EBS only,High,$1.0320 hourly,$1.2048 hourly,$0.8700 hourly,$1.7680 hourly,$1.4332 hourly
+C5A Eight Extra Large,c5a.8xlarge,64 GiB,32 vCPUs,AMD EPYC 7R32,EBS only,10 Gigabit,$1.5360 hourly,$2.3300 hourly,$1.7610 hourly,$3.0080 hourly,$2.4400 hourly
+D3 Eight Extra Large,d3.8xlarge,256 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),47520 GB (24×1980 GB NVMe HDD),25 Gigabit,$5.7934 hourly,$6.5870 hourly,$4.4435 hourly,$7.2654 hourly,$5.1219 hourly
+C5A Double Extra Large,c5a.2xlarge,16 GiB,8 vCPUs,AMD EPYC 7R32,EBS only,Up to 10 Gigabit,$0.3840 hourly,$0.4990 hourly,$0.3570 hourly,$0.7520 hourly,$0.6100 hourly
+C6GD Extra Large,c6gd.xlarge,8 GiB,4 vCPUs,AWS Graviton2 Processor,237 GB NVMe SSD,Up to 10 Gigabit,$0.1960 hourly,$0.2536 hourly,$0.1815 hourly,unavailable,unavailable
+R7GD Double Extra Large,r7gd.2xlarge,64 GiB,8 vCPUs,AWS Graviton3 Processor,474 GB NVMe SSD,Up to 15 Gigabit,$0.6577 hourly,$0.7729 hourly,$0.5296 hourly,unavailable,unavailable
+R5DN Double Extra Large,r5dn.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),300 GB NVMe SSD,Up to 25 Gigabit,$0.8120 hourly,$0.9272 hourly,$0.6268 hourly,$1.1800 hourly,$0.8800 hourly
+R7IZ Large,r7iz.large,16 GiB,2 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.2270 hourly,$0.2558 hourly,$0.1718 hourly,$0.3190 hourly,$0.2350 hourly
+R7GD 16xlarge,r7gd.16xlarge,512 GiB,64 vCPUs,AWS Graviton3 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$5.2618 hourly,$6.8490 hourly,$4.9021 hourly,unavailable,unavailable
+I3 High I/O Extra Large,i3.xlarge,30.5 GiB,4 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),950 GB NVMe SSD,Up to 10 Gigabit,$0.3660 hourly,$0.4240 hourly,$0.3050 hourly,$0.5500 hourly,$0.4320 hourly
+M5ZN Double Extra Large,m5zn.2xlarge,32 GiB,8 vCPUs,Intel Xeon Platinum 8252,EBS only,Up to 25 Gigabit,$0.8534 hourly,$0.9686 hourly,$0.6494 hourly,$1.2214 hourly,$0.9022 hourly
+M6IN Eight Extra Large,m6in.8xlarge,128 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$2.8642 hourly,$3.2098 hourly,$2.1500 hourly,$4.3362 hourly,$3.2764 hourly
+M6IN 24xlarge,m6in.24xlarge,384 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,150 Gigabit,$8.5925 hourly,$9.6293 hourly,$6.4501 hourly,$13.0085 hourly,$9.8293 hourly
+R5DN Metal,r5dn.metal,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),3600 GB (4×900 GB NVMe SSD),100 Gigabit,$9.7440 hourly,$12.1248 hourly,$8.5195 hourly,$14.1600 hourly,$10.5550 hourly
+I4I 32xlarge,i4i.32xlarge,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),30000 GB (8×3750 GB NVMe SSD),75 Gigabit,$12.8832 hourly,$15.4560 hourly,$10.9659 hourly,$18.7712 hourly,$14.2811 hourly
+C5AD 12xlarge,c5ad.12xlarge,96 GiB,48 vCPUs,AMD EPYC 7R32,1800 GB (2×900 GB NVMe SSD),12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R7IZ Metal-32xl,r7iz.metal-32xl,1024 GiB,128 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$14.5280 hourly,$17.1008 hourly,$11.7254 hourly,$20.4160 hourly,$15.0406 hourly
+M5DN Metal,m5dn.metal,384 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),3600 GB (4×900 GB NVMe SSD),100 Gigabit,$8.4000 hourly,$9.4370 hourly,$6.3290 hourly,$12.8160 hourly,$9.7080 hourly
+R6GD Eight Extra Large,r6gd.8xlarge,256 GiB,32 vCPUs,AWS Graviton2 Processor,1900 GB NVMe SSD,12 Gigabit,$2.2240 hourly,$2.5696 hourly,$1.7568 hourly,unavailable,unavailable
+M5 General Purpose Metal,m5.metal,384 GiB,96 vCPUs,Intel Xeon Platinum 8175,EBS only,25 Gigabit,$5.9520 hourly,$8.3330 hourly,$6.1310 hourly,$10.3680 hourly,$8.1660 hourly
+C4 High-CPU Eight Extra Large,c4.8xlarge,60 GiB,36 vCPUs,Intel Xeon E5-2666 v3 (Haswell),EBS only,10 Gigabit,$2.0160 hourly,$2.9090 hourly,$2.3380 hourly,$3.6720 hourly,$3.1010 hourly
+C7I 24xlarge,c7i.24xlarge,192 GiB,96 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,37.5 Gigabit,$5.3928 hourly,$7.7736 hourly,$5.9370 hourly,$9.8088 hourly,$7.9722 hourly
+M6IDN 16xlarge,m6idn.16xlarge,256 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$6.5520 hourly,$7.2432 hourly,$4.8190 hourly,$9.4960 hourly,$7.0718 hourly
+C5AD 16xlarge,c5ad.16xlarge,128 GiB,64 vCPUs,AMD EPYC 7R32,2400 GB (2×1200 GB NVMe SSD),20 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-9TB1 112xlarge,u-9tb1.112xlarge,9216 GiB,448 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,$98.8000 hourly,$107.8048 hourly,unavailable,$119.4080 hourly,unavailable
+M5N Extra Large,m5n.xlarge,16 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$0.3060 hourly,$0.3640 hourly,$0.2500 hourly,$0.4900 hourly,$0.3770 hourly
+X1E Quadruple Extra Large,x1e.4xlarge,488 GiB,16 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),480 GB SSD,Up to 10 Gigabit,$4.8360 hourly,$5.0090 hourly,$3.1530 hourly,$5.5720 hourly,$3.7160 hourly
+C6I Quadruple Extra Large,c6i.4xlarge,32 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.8560 hourly,$1.2528 hourly,$0.9613 hourly,$1.5920 hourly,$1.3005 hourly
+C6A Double Extra Large,c6a.2xlarge,16 GiB,8 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.3852 hourly,$0.5004 hourly,$0.3692 hourly,$0.7532 hourly,$0.6220 hourly
+R7GD 12xlarge,r7gd.12xlarge,384 GiB,48 vCPUs,AWS Graviton3 Processor,2850 GB (2×1425 GB NVMe SSD),22.5 Gigabit,$3.9463 hourly,$4.4647 hourly,$3.0046 hourly,unavailable,unavailable
+C5 High-CPU Extra Large,c5d.xlarge,8 GiB,4 vCPUs,Intel Xeon Platinum 8124M,100 GB NVMe SSD,Up to 10 Gigabit,$0.2440 hourly,$0.3020 hourly,$0.2110 hourly,$0.4280 hourly,$0.3380 hourly
+M6GD Eight Extra Large,m6gd.8xlarge,128 GiB,32 vCPUs,AWS Graviton2 Processor,1900 GB NVMe SSD,12 Gigabit,$1.8720 hourly,$2.6656 hourly,$1.9696 hourly,unavailable,unavailable
+TRN1 32xlarge,trn1.32xlarge,512 GiB,128 vCPUs,Intel Xeon Scalable (Icelake),7600 GB (4×1900 GB NVMe SSD),8x 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X1 Extra High-Memory 32xlarge,x1.32xlarge,1952 GiB,128 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),3840 GB (2×1920 GB SSD),25 Gigabit,$19.3410 hourly,$20.5710 hourly,$13.1460 hourly,$25.2290 hourly,$17.8060 hourly
+G4DN Extra Large,g4dn.xlarge,16 GiB,4 vCPUs,Intel Xeon Family,125 GB NVMe SSD,Up to 25 Gigabit,$0.7100 hourly,$0.8380 hourly,$0.6120 hourly,$0.8940 hourly,$0.6690 hourly
+G3 Graphics GPU 16xlarge,g3.16xlarge,488 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,20 Gigabit,$6.3200 hourly,$7.0112 hourly,unavailable,$9.2640 hourly,unavailable
+C7A 48xlarge,c7a.48xlarge,384 GiB,192 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$12.4032 hourly,$14.2464 hourly,$10.0224 hourly,$21.2352 hourly,$17.0112 hourly
+M7I Double Extra Large,m7i.2xlarge,32 GiB,8 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.5208 hourly,$0.7760 hourly,$0.6003 hourly,$0.8888 hourly,$0.7131 hourly
+R5D Metal,r5d.metal,768 GiB,96 vCPUs,Intel Xeon Platinum 8175,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$8.3520 hourly,$9.3890 hourly,$6.2990 hourly,$12.7680 hourly,$9.6780 hourly
+R8G 16xlarge,r8g.16xlarge,512 GiB,64 vCPUs,AWS Graviton4 Processor,EBS only,30 Gigabit,$4.5478 hourly,$6.1350 hourly,$4.5956 hourly,unavailable,unavailable
+C7GD 16xlarge,c7gd.16xlarge,128 GiB,64 vCPUs,AWS Graviton3 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$3.6896 hourly,$4.3808 hourly,$3.1203 hourly,unavailable,unavailable
+R6G Large,r6g.large,16 GiB,2 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.1216 hourly,$0.1504 hourly,$0.1054 hourly,unavailable,unavailable
+R8GD Large,r8gd.large,16 GiB,2 vCPUs,AWS Graviton4 Processor,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1776 hourly,$0.2414 hourly,unavailable,unavailable,unavailable
+A1 Quadruple Extra Large,a1.4xlarge,32 GiB,16 vCPUs,AWS Graviton Processor,EBS only,Up to 10 Gigabit,$0.5136 hourly,$0.9104 hourly,$0.7204 hourly,unavailable,unavailable
+R7IZ Metal-16xl,r7iz.metal-16xl,512 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,25 Gigabit,$7.2640 hourly,$7.9552 hourly,$5.2675 hourly,$10.2080 hourly,$7.5203 hourly
+IM4GN 16xlarge,im4gn.16xlarge,256 GiB,64 vCPUs,AWS Graviton2 Processor,30000 GB (4×7500 GB NVMe SSD),100 Gigabit,$6.8281 hourly,$7.5193 hourly,$5.0876 hourly,unavailable,unavailable
+R6IN Eight Extra Large,r6in.8xlarge,256 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$3.3883 hourly,$3.7339 hourly,$2.4802 hourly,$4.8603 hourly,$3.6066 hourly
+G6e Graphics and Machine Learning GPU 24xlarge,g6e.24xlarge,768 GiB,96 vCPUs,AMD EPYC 7R13 Processor,3800 GB (2×1900 GB NVMe SSD),200 Gigabit,$21.8496 hourly,$22.8864 hourly,$14.8020 hourly,$26.2656 hourly,$18.1812 hourly
+C6A 12xlarge,c6a.12xlarge,96 GiB,48 vCPUs,AMD EPYC 7R13 Processor,EBS only,18.75 Gigabit,$2.3112 hourly,$2.8296 hourly,$2.0425 hourly,$4.5192 hourly,$3.7321 hourly
+R7I Double Extra Large,r7i.2xlarge,64 GiB,8 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.6384 hourly,$0.7536 hourly,$0.5375 hourly,$1.0064 hourly,$0.7903 hourly
+M6A 16xlarge,m6a.16xlarge,256 GiB,64 vCPUs,AMD EPYC 7R13 Processor,EBS only,25 Gigabit,$3.5712 hourly,$4.2624 hourly,$3.0575 hourly,$6.5152 hourly,$5.3103 hourly
+R6A Eight Extra Large,r6a.8xlarge,256 GiB,32 vCPUs,AMD EPYC 7R13 Processor,EBS only,12.5 Gigabit,$2.1888 hourly,$2.5344 hourly,$1.7935 hourly,$3.6608 hourly,$2.9199 hourly
+I7I Metal-48xl,i7i.metal-48xl,1536 GiB,192 vCPUs,Intel Xeon Scalable (Emerald Rapids),45000 GB (12×3750 GB NVMe SSD),Up to 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R8GD Medium,r8gd.medium,8 GiB,1 vCPUs,AWS Graviton4 Processor,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0888 hourly,$0.1032 hourly,unavailable,unavailable,unavailable
+R6I Eight Extra Large,r6i.8xlarge,256 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,12.5 Gigabit,$2.4320 hourly,$2.7776 hourly,$1.9544 hourly,$3.9040 hourly,$3.0808 hourly
+C7I Metal-48xl,c7i.metal-48xl,384 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,50 Gigabit,$10.7856 hourly,$14.6448 hourly,$10.9717 hourly,$19.6176 hourly,$15.9445 hourly
+G4DN 16xlarge,g4dn.16xlarge,256 GiB,64 vCPUs,Intel Xeon Family,900 GB NVMe SSD,50 Gigabit,$5.8750 hourly,$7.4620 hourly,$5.5970 hourly,$8.8190 hourly,$6.9540 hourly
+X2GD Double Extra Large,x2gd.2xlarge,128 GiB,8 vCPUs,AWS Graviton2 Processor,475 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8G Quadruple Extra Large,c8g.4xlarge,32 GiB,16 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,$0.8005 hourly,$1.1973 hourly,$0.9246 hourly,unavailable,unavailable
+I7IE 18xlarge,i7ie.18xlarge,576 GiB,72 vCPUs,Intel Xeon Scalable (Emerald Rapids),45000 GB (6×7500 GB NVMe SSD),Up to 75 Gigabit,$11.0124 hourly,$12.7980 hourly,unavailable,$14.3244 hourly,unavailable
+R7A Large,r7a.large,16 GiB,2 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.1835 hourly,$0.2123 hourly,$0.1502 hourly,$0.2755 hourly,$0.2134 hourly
+M5 General Purpose Extra Large,m5d.xlarge,16 GiB,4 vCPUs,Intel Xeon Platinum 8175,150 GB NVMe SSD,Up to 10 Gigabit,$0.2920 hourly,$0.4200 hourly,$0.3120 hourly,$0.4760 hourly,$0.3680 hourly
+C8G Double Extra Large,c8g.2xlarge,16 GiB,8 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,$0.4002 hourly,$0.6554 hourly,$0.5191 hourly,unavailable,unavailable
+T4G Nano,t4g.nano,0.5 GiB,2 vCPUs (1h 12m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.0054 hourly,unavailable,unavailable,unavailable,unavailable
+C7GN Metal,c7gn.metal,128 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,200 Gigabit,$5.0368 hourly,$6.6240 hourly,$4.7339 hourly,unavailable,unavailable
+M5N Eight Extra Large,m5n.8xlarge,128 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,25 Gigabit,$2.4480 hourly,$3.2420 hourly,$2.3360 hourly,$3.9200 hourly,$3.0140 hourly
+R6I 16xlarge,r6i.16xlarge,512 GiB,64 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,25 Gigabit,$4.8640 hourly,$5.5552 hourly,$3.9087 hourly,$7.8080 hourly,$6.1615 hourly
+M8G 24xlarge,m8g.24xlarge,384 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,$5.5651 hourly,$6.6019 hourly,$4.7240 hourly,unavailable,unavailable
+R3 High-Memory Extra Large,r3.xlarge,30.5 GiB,4 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),80 GB SSD,Moderate,$0.3990 hourly,$0.5280 hourly,$0.4010 hourly,$0.5990 hourly,$0.4890 hourly
+X1 Extra High-Memory 16xlarge,x1.16xlarge,976 GiB,64 vCPUs,High Frequency Intel Xeon E7-8880 v3 (Haswell),1920 GB SSD,10 Gigabit,$9.6710 hourly,$10.3620 hourly,$6.6500 hourly,$12.6150 hourly,$8.9030 hourly
+C7GN Double Extra Large,c7gn.2xlarge,16 GiB,8 vCPUs,AWS Graviton3 Processor,EBS only,Up to 50 Gigabit,$0.6296 hourly,$0.7448 hourly,$0.5085 hourly,unavailable,unavailable
+HPC7A 24xlarge,hpc7a.24xlarge,768 GiB,48 vCPUs,AMD EPYC 9R14 Processor,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6A 24xlarge,c6a.24xlarge,192 GiB,96 vCPUs,AMD EPYC 7R13 Processor,EBS only,37.5 Gigabit,$4.6224 hourly,$5.6592 hourly,$4.0850 hourly,$9.0384 hourly,$7.4642 hourly
+C5A Large,c5a.large,4 GiB,2 vCPUs,AMD EPYC 7R32,EBS only,Up to 10 Gigabit,$0.0960 hourly,$0.1250 hourly,$0.0890 hourly,$0.1880 hourly,$0.1520 hourly
+C6G 12xlarge,c6g.12xlarge,96 GiB,48 vCPUs,AWS Graviton2 Processor,EBS only,20 Gigabit,$2.0544 hourly,$2.5728 hourly,$1.8127 hourly,unavailable,unavailable
+P3 High Performance GPU 16xlarge,p3.16xlarge,488 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,25 Gigabit,$33.5520 hourly,$34.2430 hourly,unavailable,$36.4960 hourly,unavailable
+R5B 24xlarge,r5b.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,25 Gigabit,$8.6880 hourly,$11.0688 hourly,$7.8542 hourly,$13.1040 hourly,$9.8894 hourly
+R8GD Metal-24xl,r8gd.metal-24xl,768 GiB,96 vCPUs,AWS Graviton4 Processor,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$8.5238 hourly,$10.9046 hourly,unavailable,unavailable,unavailable
+C7A Double Extra Large,c7a.2xlarge,16 GiB,8 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.5168 hourly,$0.7720 hourly,$0.5960 hourly,$0.8848 hourly,$0.7088 hourly
+M8G Large,m8g.large,8 GiB,2 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.1159 hourly,$0.1447 hourly,$0.1056 hourly,unavailable,unavailable
+M6A 12xlarge,m6a.12xlarge,192 GiB,48 vCPUs,AMD EPYC 7R13 Processor,EBS only,18.75 Gigabit,$2.6784 hourly,$3.1968 hourly,$2.2931 hourly,$4.8864 hourly,$3.9827 hourly
+C7GN Medium,c7gn.medium,2 GiB,1 vCPUs,AWS Graviton3 Processor,EBS only,Up to 25 Gigabit,$0.0787 hourly,$0.1106 hourly,$0.0811 hourly,unavailable,unavailable
+R7GD Quadruple Extra Large,r7gd.4xlarge,128 GiB,16 vCPUs,AWS Graviton3 Processor,950 GB NVMe SSD,Up to 15 Gigabit,$1.3154 hourly,$1.4882 hourly,$1.0015 hourly,unavailable,unavailable
+M6IN Quadruple Extra Large,m6in.4xlarge,64 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 50 Gigabit,$1.4321 hourly,$1.6049 hourly,$1.0750 hourly,$2.1681 hourly,$1.6382 hourly
+M6A Quadruple Extra Large,m6a.4xlarge,64 GiB,16 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 12.5 Gigabit,$0.8928 hourly,$1.0656 hourly,$0.7644 hourly,$1.6288 hourly,$1.3276 hourly
+R6I Quadruple Extra Large,r6i.4xlarge,128 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$1.2160 hourly,$1.3888 hourly,$0.9772 hourly,$1.9520 hourly,$1.5404 hourly
+R5 12xlarge,r5.12xlarge,384 GiB,48 vCPUs,Intel Xeon Platinum 8175,EBS only,12 Gigabit,$3.6480 hourly,$4.8380 hourly,$3.4890 hourly,$5.8560 hourly,$4.5060 hourly
+R5D Double Extra Large,r5d.2xlarge,64 GiB,8 vCPUs,Intel Xeon Platinum 8175,300 GB NVMe SSD,Up to 10 Gigabit,$0.6960 hourly,$0.8110 hourly,$0.5540 hourly,$1.0640 hourly,$0.8060 hourly
+INF1 24xlarge,inf1.24xlarge,192 GiB,96 vCPUs,Intel Xeon Platinum 8275CL (Cascade Lake),EBS only,100 Gigabit,$6.3760 hourly,$7.4130 hourly,$5.0540 hourly,unavailable,unavailable
+R7A 32xlarge,r7a.32xlarge,1024 GiB,128 vCPUs,AMD EPYC 9R14 Processor,EBS only,50 Gigabit,$11.7466 hourly,$12.9754 hourly,$8.9992 hourly,$17.6346 hourly,$13.6584 hourly
+C7A 16xlarge,c7a.16xlarge,128 GiB,64 vCPUs,AMD EPYC 9R14 Processor,EBS only,25 Gigabit,$4.1344 hourly,$4.8256 hourly,$3.4176 hourly,$7.0784 hourly,$5.6704 hourly
+C8GD Metal-48xl,c8gd.metal-48xl,384 GiB,192 vCPUs,AWS Graviton4 Processor,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$11.9539 hourly,$13.7971 hourly,unavailable,unavailable,unavailable
+C6GD Large,c6gd.large,4 GiB,2 vCPUs,AWS Graviton2 Processor,118 GB NVMe SSD,Up to 10 Gigabit,$0.0980 hourly,$0.1268 hourly,$0.0907 hourly,unavailable,unavailable
+C5 High-CPU 24xlarge,c5.24xlarge,192 GiB,96 vCPUs,Intel Xeon Platinum 8275L,EBS only,25 Gigabit,$5.1360 hourly,$6.1730 hourly,$4.2720 hourly,$9.5520 hourly,$7.6520 hourly
+M5ZN Extra Large,m5zn.xlarge,16 GiB,4 vCPUs,Intel Xeon Platinum 8252,EBS only,Up to 25 Gigabit,$0.4267 hourly,$0.4843 hourly,$0.3247 hourly,$0.6107 hourly,$0.4511 hourly
+C7GN 16xlarge,c7gn.16xlarge,128 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,200 Gigabit,$5.0368 hourly,$5.7280 hourly,$3.8379 hourly,unavailable,unavailable
+C5A 16xlarge,c5a.16xlarge,128 GiB,64 vCPUs,AMD EPYC 7R32,EBS only,20 Gigabit,$3.0720 hourly,$3.7630 hourly,$2.6270 hourly,$6.0160 hourly,$4.8790 hourly
+M7I 12xlarge,m7i.12xlarge,192 GiB,48 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,18.75 Gigabit,$3.1248 hourly,$3.6432 hourly,$2.5889 hourly,$5.3328 hourly,$4.2785 hourly
+H1 Eight Extra Large,h1.8xlarge,128 GiB,32 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),8000 GB (4×2000 GB HDD),10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+P2 General Purpose GPU Extra Large,p2.xlarge,61 GiB,4 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,High,$1.5420 hourly,$1.6000 hourly,unavailable,$1.7260 hourly,unavailable
+C7G Medium,c7g.medium,2 GiB,1 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.0455 hourly,$0.0774 hourly,$0.0619 hourly,unavailable,unavailable
+U-12TB1 112xlarge,u-12tb1.112xlarge,12288 GiB,448 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,$131.7330 hourly,$136.0338 hourly,unavailable,$152.3410 hourly,unavailable
+R8GD Extra Large,r8gd.xlarge,32 GiB,4 vCPUs,AWS Graviton4 Processor,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3552 hourly,$0.4128 hourly,unavailable,unavailable,unavailable
+R5 Extra Large,r5.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8175,EBS only,Up to 10 Gigabit,$0.3040 hourly,$0.3620 hourly,$0.2490 hourly,$0.4880 hourly,$0.3760 hourly
+G4DN Metal,g4dn.metal,384 GiB,96 vCPUs,Intel Xeon Family,1800 GB (2×900 GB NVMe SSD),100 Gigabit,$10.5620 hourly,$12.9430 hourly,$9.5900 hourly,$14.9780 hourly,$11.6250 hourly
+C7GN 12xlarge,c7gn.12xlarge,96 GiB,48 vCPUs,AWS Graviton3 Processor,EBS only,150 Gigabit,$3.7776 hourly,$4.2960 hourly,$2.8785 hourly,unavailable,unavailable
+M8G Double Extra Large,m8g.2xlarge,32 GiB,8 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,$0.4638 hourly,$0.7190 hourly,$0.5625 hourly,unavailable,unavailable
+P5e High Performance Computing GPU 48xlarge,p5e.48xlarge,2048 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C7I Large,c7i.large,4 GiB,2 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.1124 hourly,$0.1762 hourly,$0.1379 hourly,$0.2044 hourly,$0.1661 hourly
+R7GD Extra Large,r7gd.xlarge,32 GiB,4 vCPUs,AWS Graviton3 Processor,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3289 hourly,$0.4565 hourly,$0.3348 hourly,unavailable,unavailable
+R6I 32xlarge,r6i.32xlarge,1024 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,50 Gigabit,$9.7280 hourly,$12.3008 hourly,$9.0079 hourly,$15.6160 hourly,$12.3231 hourly
+M7G Medium,m7g.medium,4 GiB,1 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.0527 hourly,$0.0846 hourly,$0.0668 hourly,unavailable,unavailable
+T2 Extra Large,t2.xlarge,16 GiB,4 vCPUs (5h 24m burst),Intel Xeon Family,EBS only,Moderate,$0.2432 hourly,$0.3708 hourly,$0.2919 hourly,$0.2842 hourly,$0.2053 hourly
+C4 High-CPU Large,c4.large,3.75 GiB,2 vCPUs,Intel Xeon E5-2666 v3 (Haswell),EBS only,Moderate,$0.1260 hourly,$0.1900 hourly,$0.1540 hourly,$0.2180 hourly,$0.1820 hourly
+P5en High Performance Computing GPU 48xlarge,p5en.48xlarge,2048 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),30400 GB (8×3800 GB NVMe SSD),3200 Gigabit,unavailable,$80.9632 hourly,unavailable,unavailable,unavailable
+M7GD Extra Large,m7gd.xlarge,16 GiB,4 vCPUs,AWS Graviton3 Processor,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2759 hourly,$0.4035 hourly,$0.3014 hourly,unavailable,unavailable
+C5N Quadruple Extra Large,c5n.4xlarge,42 GiB,16 vCPUs,Intel Xeon Platinum 8124M,EBS only,Up to 25 Gigabit,$1.0880 hourly,$1.2610 hourly,$0.8580 hourly,$1.8240 hourly,$1.4210 hourly
+M6I Quadruple Extra Large,m6i.4xlarge,64 GiB,16 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 12.5 Gigabit,$0.9920 hourly,$1.3888 hourly,$1.0541 hourly,$1.7280 hourly,$1.3933 hourly
+R5A Double Extra Large,r5a.2xlarge,64 GiB,8 vCPUs,AMD EPYC 7571,EBS only,Up to 10 Gigabit,$0.5480 hourly,$0.8030 hourly,$0.6000 hourly,$0.9160 hourly,$0.7130 hourly
+R8G Double Extra Large,r8g.2xlarge,64 GiB,8 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,$0.5685 hourly,$0.8237 hourly,$0.6312 hourly,unavailable,unavailable
+C8GD 24xlarge,c8gd.24xlarge,192 GiB,96 vCPUs,AWS Graviton4 Processor,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$5.9770 hourly,$7.0138 hourly,unavailable,unavailable,unavailable
+M7I-FLEX 16xlarge,m7i-flex.16xlarge,256 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 25 Gigabit,$3.9581 hourly,$4.6493 hourly,$3.3138 hourly,$6.9021 hourly,$5.5666 hourly
+R5N Quadruple Extra Large,r5n.4xlarge,128 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$1.4480 hourly,$1.6210 hourly,$1.0850 hourly,$2.1840 hourly,$1.6480 hourly
+T2 Medium,t2.medium,4 GiB,2 vCPUs (4h 48m burst),Intel Xeon Family,EBS only,Low to Moderate,$0.0608 hourly,$0.0896 hourly,$0.0699 hourly,$0.0788 hourly,$0.0591 hourly
+R6IN Extra Large,r6in.xlarge,32 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 30 Gigabit,$0.4235 hourly,$0.5511 hourly,$0.3944 hourly,$0.6075 hourly,$0.4508 hourly
+M5AD Quadruple Extra Large,m5ad.4xlarge,64 GiB,16 vCPUs,AMD EPYC 7571,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.0720 hourly,$1.2450 hourly,$0.8480 hourly,$1.8080 hourly,$1.4110 hourly
+M7A Medium,m7a.medium,4 GiB,1 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.0749 hourly,$0.0893 hourly,$0.0640 hourly,$0.1209 hourly,$0.0956 hourly
+C6GD 16xlarge,c6gd.16xlarge,128 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.1360 hourly,$4.7232 hourly,$3.5695 hourly,unavailable,unavailable
+R7GD Medium,r7gd.medium,8 GiB,1 vCPUs,AWS Graviton3 Processor,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0822 hourly,$0.1141 hourly,$0.0837 hourly,unavailable,unavailable
+R7I 12xlarge,r7i.12xlarge,384 GiB,48 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,18.75 Gigabit,$3.8304 hourly,$5.0208 hourly,$3.7242 hourly,$6.0384 hourly,$4.7418 hourly
+M7I-FLEX Double Extra Large,m7i-flex.2xlarge,32 GiB,8 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.4948 hourly,$0.6100 hourly,$0.4430 hourly,$0.8444 hourly,$0.6774 hourly
+M5AD 12xlarge,m5ad.12xlarge,192 GiB,48 vCPUs,AMD EPYC 7571,1800 GB (2×900 GB NVMe SSD),10 Gigabit,$3.2160 hourly,$4.4060 hourly,$3.2160 hourly,$5.4240 hourly,$4.2340 hourly
+R6GD Double Extra Large,r6gd.2xlarge,64 GiB,8 vCPUs,AWS Graviton2 Processor,474 GB NVMe SSD,Up to 10 Gigabit,$0.5560 hourly,$0.8112 hourly,$0.6080 hourly,unavailable,unavailable
+M6A Metal,m6a.metal,768 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$10.7136 hourly,$12.5568 hourly,$8.9420 hourly,$19.5456 hourly,$15.9308 hourly
+T2 Large,t2.large,8 GiB,2 vCPUs (7h 12m burst),Intel Xeon Family,EBS only,Low to Moderate,$0.1216 hourly,$0.1854 hourly,$0.1460 hourly,$0.1496 hourly,$0.1102 hourly
+X2IDN 32xlarge,x2idn.32xlarge,2048 GiB,128 vCPUs,Intel Xeon Scalable (Icelake),3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$19.3410 hourly,$21.9138 hourly,$14.4733 hourly,$25.2290 hourly,$17.7885 hourly
+C6GD Eight Extra Large,c6gd.8xlarge,64 GiB,32 vCPUs,AWS Graviton2 Processor,1900 GB NVMe SSD,12 Gigabit,$1.5680 hourly,$2.3616 hourly,$1.7847 hourly,unavailable,unavailable
+C7A Extra Large,c7a.xlarge,8 GiB,4 vCPUs,AMD EPYC 9R14 Processor,EBS only,Up to 12.5 Gigabit,$0.2584 hourly,$0.3860 hourly,$0.2980 hourly,$0.4424 hourly,$0.3544 hourly
+I7I Extra Large,i7i.xlarge,32 GiB,4 vCPUs,Intel Xeon Scalable (Emerald Rapids),937 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G5 Graphics and Machine Learning GPU 24xlarge,g5.24xlarge,384 GiB,96 vCPUs,AMD EPYC 7R32,3800 GB NVMe SSD,50 Gigabit,$11.8112 hourly,$12.8480 hourly,$8.4779 hourly,$16.2272 hourly,$11.8571 hourly
+M7G Extra Large,m7g.xlarge,16 GiB,4 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.2108 hourly,$0.2684 hourly,$0.1973 hourly,unavailable,unavailable
+C5A Quadruple Extra Large,c5a.4xlarge,32 GiB,16 vCPUs,AMD EPYC 7R32,EBS only,Up to 10 Gigabit,$0.7680 hourly,$0.9410 hourly,$0.6570 hourly,$1.5040 hourly,$1.2200 hourly
+M7G Quadruple Extra Large,m7g.4xlarge,64 GiB,16 vCPUs,AWS Graviton3 Processor,EBS only,Up to 15 Gigabit,$0.8432 hourly,$1.0160 hourly,$0.7315 hourly,unavailable,unavailable
+M6GD Double Extra Large,m6gd.2xlarge,32 GiB,8 vCPUs,AWS Graviton2 Processor,474 GB NVMe SSD,Up to 10 Gigabit,$0.4680 hourly,$0.7232 hourly,$0.5492 hourly,unavailable,unavailable
+I3 High I/O Quadruple Extra Large,i3.4xlarge,122 GiB,16 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),3800 GB (2×1900 GB NVMe SSD),Up to 10 Gigabit,$1.4640 hourly,$1.6370 hourly,$1.1640 hourly,$2.2000 hourly,$1.7270 hourly
+M6G Medium,m6g.medium,4 GiB,1 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.0495 hourly,$0.0814 hourly,$0.0634 hourly,unavailable,unavailable
+M6IDN Eight Extra Large,m6idn.8xlarge,128 GiB,32 vCPUs,Intel Xeon 8375C (Ice Lake),1900 GB NVMe SSD,50 Gigabit,$3.2760 hourly,$3.6216 hourly,$2.4095 hourly,$4.7480 hourly,$3.5359 hourly
+R5DN Quadruple Extra Large,r5dn.4xlarge,128 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),600 GB (2×300 GB NVMe SSD),Up to 25 Gigabit,$1.6240 hourly,$2.0208 hourly,$1.4199 hourly,$2.3600 hourly,$1.7590 hourly
+M7G 16xlarge,m7g.16xlarge,256 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,30 Gigabit,$3.3728 hourly,$4.0640 hourly,$2.9258 hourly,unavailable,unavailable
+M5 General Purpose 16xlarge,m5.16xlarge,256 GiB,64 vCPUs,Intel Xeon Platinum 8175,EBS only,20 Gigabit,$3.9680 hourly,$4.6590 hourly,$3.1910 hourly,$6.9120 hourly,$5.4440 hourly
+R7G Medium,r7g.medium,8 GiB,1 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.0646 hourly,$0.0790 hourly,$0.0571 hourly,unavailable,unavailable
+C8G Medium,c8g.medium,2 GiB,1 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.0500 hourly,$0.0644 hourly,$0.0474 hourly,unavailable,unavailable
+R5D Extra Large,r5d.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8175,150 GB NVMe SSD,Up to 10 Gigabit,$0.3480 hourly,$0.4060 hourly,$0.2770 hourly,$0.5320 hourly,$0.4030 hourly
+R8G Metal-24xl,r8g.metal-24xl,768 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,$6.8218 hourly,$9.2026 hourly,$6.8934 hourly,unavailable,unavailable
+R5A 12xlarge,r5a.12xlarge,384 GiB,48 vCPUs,AMD EPYC 7571,EBS only,10 Gigabit,$3.2880 hourly,$4.4780 hourly,$3.2580 hourly,$5.4960 hourly,$4.2760 hourly
+M7A 24xlarge,m7a.24xlarge,384 GiB,96 vCPUs,AMD EPYC 9R14 Processor,EBS only,37.5 Gigabit,$7.1870 hourly,$8.2238 hourly,$5.7989 hourly,$11.6030 hourly,$9.1782 hourly
+M4 General Purpose Large,m4.large,8 GiB,2 vCPUs,Intel Xeon E5-2676 v3 (Haswell),EBS only,Moderate,$0.1290 hourly,$0.1578 hourly,$0.1159 hourly,$0.2210 hourly,$0.1791 hourly
+R8GD Metal-48xl,r8gd.metal-48xl,1536 GiB,192 vCPUs,AWS Graviton4 Processor,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$17.0477 hourly,$20.9069 hourly,unavailable,unavailable,unavailable
+C8G 16xlarge,c8g.16xlarge,128 GiB,64 vCPUs,AWS Graviton4 Processor,EBS only,30 Gigabit,$3.2019 hourly,$3.8931 hourly,$2.8026 hourly,unavailable,unavailable
+C8GD 16xlarge,c8gd.16xlarge,128 GiB,64 vCPUs,AWS Graviton4 Processor,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$3.9846 hourly,$5.5718 hourly,unavailable,unavailable,unavailable
+C8GD Eight Extra Large,c8gd.8xlarge,64 GiB,32 vCPUs,AWS Graviton4 Processor,1900 GB NVMe SSD,15 Gigabit,$1.9923 hourly,$2.7859 hourly,unavailable,unavailable,unavailable
+R7I 24xlarge,r7i.24xlarge,768 GiB,96 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,37.5 Gigabit,$7.6608 hourly,$8.6976 hourly,$6.1044 hourly,$12.0768 hourly,$9.4836 hourly
+U-12TB1 Metal,u-12tb1.metal,12288 GiB,448 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R4 High-Memory Large,r4.large,15.25 GiB,2 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,Up to 10 Gigabit,$0.1600 hourly,$0.1888 hourly,$0.1296 hourly,$0.2520 hourly,$0.1928 hourly
+I4I Large,i4i.large,16 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),468 GB NVMe SSD,Up to 10 Gigabit,$0.2010 hourly,$0.2300 hourly,$0.1600 hourly,$0.2930 hourly,$0.2230 hourly
+X2GD Large,x2gd.large,32 GiB,2 vCPUs,AWS Graviton2 Processor,118 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M8GD 48xlarge,m8gd.48xlarge,768 GiB,192 vCPUs,AWS Graviton4 Processor,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$14.3040 hourly,$16.1472 hourly,unavailable,unavailable,unavailable
+C8GD Extra Large,c8gd.xlarge,8 GiB,4 vCPUs,AWS Graviton4 Processor,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2490 hourly,$0.3066 hourly,unavailable,unavailable,unavailable
+R7G 16xlarge,r7g.16xlarge,512 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,30 Gigabit,$4.1344 hourly,$4.8256 hourly,$3.4261 hourly,unavailable,unavailable
+R5B 16xlarge,r5b.16xlarge,512 GiB,64 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,20 Gigabit,$5.7920 hourly,$6.4832 hourly,$4.3402 hourly,$8.7360 hourly,$6.5930 hourly
+R5AD 12xlarge,r5ad.12xlarge,384 GiB,48 vCPUs,AMD EPYC 7571,1800 GB (2×900 GB NVMe SSD),10 Gigabit,$3.8160 hourly,$5.0060 hourly,$3.5940 hourly,$6.0240 hourly,$4.6120 hourly
+G6 Graphics and Machine Learning GPU 24xlarge,g6.24xlarge,384 GiB,96 vCPUs,AMD EPYC 7R13 Processor,3760 GB (4×940 GB NVMe SSD),50 Gigabit,$9.6810 hourly,$12.0618 hourly,$8.6831 hourly,$14.0970 hourly,$10.7183 hourly
+G6 Graphics and Machine Learning GPU Eight Extra Large,g6.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7R13 Processor,900 GB (2×450 GB NVMe SSD),25 Gigabit,$2.9215 hourly,$3.7151 hourly,$2.6955 hourly,$4.3935 hourly,$3.3739 hourly
+C6GD Double Extra Large,c6gd.2xlarge,16 GiB,8 vCPUs,AWS Graviton2 Processor,474 GB NVMe SSD,Up to 10 Gigabit,$0.3920 hourly,$0.5072 hourly,$0.3630 hourly,unavailable,unavailable
+C7G 12xlarge,c7g.12xlarge,96 GiB,48 vCPUs,AWS Graviton3 Processor,EBS only,22.5 Gigabit,$2.1830 hourly,$3.3734 hourly,$2.6299 hourly,unavailable,unavailable
+G4AD Double Extra Large,g4ad.2xlarge,32 GiB,8 vCPUs,AMD EPYC 7R32,300 GB NVMe SSD,Up to 10 Gigabit,$0.7303 hourly,$0.8455 hourly,$0.6137 hourly,$1.0983 hourly,$0.8665 hourly
+M7G Large,m7g.large,8 GiB,2 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.1054 hourly,$0.1342 hourly,$0.0986 hourly,unavailable,unavailable
+C6IN 32xlarge,c6in.32xlarge,256 GiB,128 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,200 Gigabit,$9.1392 hourly,$11.7120 hourly,$8.3305 hourly,$15.0272 hourly,$11.6457 hourly
+T2 Small,t2.small,2 GiB,1 vCPUs (4h 48m burst),Intel Xeon Family,EBS only,Low to Moderate,$0.0304 hourly,$0.0448 hourly,$0.0349 hourly,$0.0396 hourly,$0.0297 hourly
+R8G Large,r8g.large,16 GiB,2 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.1421 hourly,$0.2059 hourly,$0.1578 hourly,unavailable,unavailable
+C6G Eight Extra Large,c6g.8xlarge,64 GiB,32 vCPUs,AWS Graviton2 Processor,EBS only,12 Gigabit,$1.3696 hourly,$2.1632 hourly,$1.6564 hourly,unavailable,unavailable
+X2GD Eight Extra Large,x2gd.8xlarge,512 GiB,32 vCPUs,AWS Graviton2 Processor,1900 GB NVMe SSD,12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C7I-FLEX Large,c7i-flex.large,4 GiB,2 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.1067 hourly,$0.1355 hourly,$0.0992 hourly,$0.1941 hourly,$0.1578 hourly
+R6IDN Double Extra Large,r6idn.2xlarge,64 GiB,8 vCPUs,Intel Xeon 8375C (Ice Lake),474 GB NVMe SSD,Up to 40 Gigabit,$0.9500 hourly,$1.2052 hourly,$0.8537 hourly,$1.3180 hourly,$0.9665 hourly
+C6GD 12xlarge,c6gd.12xlarge,96 GiB,48 vCPUs,AWS Graviton2 Processor,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,$2.3520 hourly,$2.8704 hourly,$2.0051 hourly,unavailable,unavailable
+IM4GN Extra Large,im4gn.xlarge,16 GiB,4 vCPUs,AWS Graviton2 Processor,1875 GB NVMe SSD,Up to 25 Gigabit,$0.4268 hourly,$0.4844 hourly,$0.3324 hourly,unavailable,unavailable
+G4AD 16xlarge,g4ad.16xlarge,256 GiB,64 vCPUs,AMD EPYC 7R32,2400 GB (2×1200 GB NVMe SSD),25 Gigabit,$4.6800 hourly,$5.3712 hourly,$3.8855 hourly,$7.6240 hourly,$6.1383 hourly
+M5DN Large,m5dn.large,8 GiB,2 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),75 GB NVMe SSD,Up to 25 Gigabit,$0.1750 hourly,$0.2390 hourly,$0.1740 hourly,$0.2670 hourly,$0.2020 hourly
+C7GN Eight Extra Large,c7gn.8xlarge,64 GiB,32 vCPUs,AWS Graviton3 Processor,EBS only,100 Gigabit,$2.5184 hourly,$3.3120 hourly,$2.3670 hourly,unavailable,unavailable
+R6A Metal,r6a.metal,1536 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$13.1328 hourly,$14.9760 hourly,$10.5305 hourly,$21.9648 hourly,$17.5193 hourly
+A1 Double Extra Large,a1.2xlarge,16 GiB,8 vCPUs,AWS Graviton Processor,EBS only,Up to 10 Gigabit,$0.2568 hourly,$0.5120 hourly,$0.4170 hourly,unavailable,unavailable
+HPC6ID 32xlarge,hpc6id.32xlarge,1024 GiB,64 vCPUs,Intel Xeon Scalable (Icelake),EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R5B Extra Large,r5b.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 10 Gigabit,$0.3620 hourly,$0.4196 hourly,$0.2857 hourly,$0.5460 hourly,$0.4121 hourly
+M6G 12xlarge,m6g.12xlarge,192 GiB,48 vCPUs,AWS Graviton2 Processor,EBS only,20 Gigabit,$2.3760 hourly,$3.5664 hourly,$2.7022 hourly,unavailable,unavailable
+C7I-FLEX Quadruple Extra Large,c7i-flex.4xlarge,32 GiB,16 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.8539 hourly,$1.0267 hourly,$0.7359 hourly,$1.5531 hourly,$1.2623 hourly
+P3 High Performance GPU Eight Extra Large,p3.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,10 Gigabit,$16.7760 hourly,$17.5700 hourly,unavailable,$18.2480 hourly,unavailable
+G3 Graphics GPU Quadruple Extra Large,g3.4xlarge,122 GiB,16 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,Up to 10 Gigabit,$1.5800 hourly,$1.9768 hourly,unavailable,$2.3160 hourly,unavailable
+G4DN Quadruple Extra Large,g4dn.4xlarge,64 GiB,16 vCPUs,Intel Xeon Family,225 GB NVMe SSD,Up to 25 Gigabit,$1.6250 hourly,$1.7980 hourly,$1.2820 hourly,$2.3610 hourly,$1.8450 hourly
+M8G Quadruple Extra Large,m8g.4xlarge,64 GiB,16 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,$0.9275 hourly,$1.3243 hourly,$1.0113 hourly,unavailable,unavailable
+HPC7A 12xlarge,hpc7a.12xlarge,768 GiB,24 vCPUs,AMD EPYC 9R14 Processor,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R7G 12xlarge,r7g.12xlarge,384 GiB,48 vCPUs,AWS Graviton3 Processor,EBS only,22.5 Gigabit,$3.1008 hourly,$3.6192 hourly,$2.5696 hourly,unavailable,unavailable
+I3 High I/O Metal,i3.metal,512 GiB,72 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),15200 GB (8×1900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$6.6340 hourly,$4.7420 hourly,$8.8000 hourly,$6.9090 hourly
+R6GD Extra Large,r6gd.xlarge,32 GiB,4 vCPUs,AWS Graviton2 Processor,237 GB NVMe SSD,Up to 10 Gigabit,$0.2780 hourly,$0.3356 hourly,$0.2340 hourly,unavailable,unavailable
+R6IDN Extra Large,r6idn.xlarge,32 GiB,4 vCPUs,Intel Xeon 8375C (Ice Lake),237 GB NVMe SSD,Up to 30 Gigabit,$0.4750 hourly,$0.5326 hourly,$0.3569 hourly,$0.6590 hourly,$0.4833 hourly
+M7GD 12xlarge,m7gd.12xlarge,192 GiB,48 vCPUs,AWS Graviton3 Processor,2850 GB (2×1425 GB NVMe SSD),22.5 Gigabit,$3.3113 hourly,$3.8297 hourly,$2.6045 hourly,unavailable,unavailable
+C7I-FLEX 16xlarge,c7i-flex.16xlarge,128 GiB,64 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 25 Gigabit,$3.4154 hourly,$5.0026 hourly,$3.8394 hourly,$6.3594 hourly,$5.1963 hourly
+C8GD Double Extra Large,c8gd.2xlarge,16 GiB,8 vCPUs,AWS Graviton4 Processor,474 GB NVMe SSD,Up to 15 Gigabit,$0.4981 hourly,$0.6133 hourly,unavailable,unavailable,unavailable
+C6GN Medium,c6gn.medium,2 GiB,1 vCPUs,AWS Graviton2 Processor,EBS only,Up to 16 Gigabit,$0.0545 hourly,$0.0864 hourly,$0.0660 hourly,unavailable,unavailable
+T3 Micro,t3.micro,1 GiB,2 vCPUs (2h 24m burst),Intel Skylake E5 2686 v5,EBS only,Up to 5 Gigabit,$0.0136 hourly,$0.0424 hourly,$0.0374 hourly,$0.0228 hourly,$0.0178 hourly
+Z1D Metal,z1d.metal,384 GiB,48 vCPUs,Intel Xeon Platinum 8151,1800 GB (2×900 GB NVMe SSD),25 Gigabit,$5.4480 hourly,$5.9660 hourly,$3.9510 hourly,$7.6560 hourly,$5.6400 hourly
+X2GD 16xlarge,x2gd.16xlarge,1024 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8G Eight Extra Large,c8g.8xlarge,64 GiB,32 vCPUs,AWS Graviton4 Processor,EBS only,15 Gigabit,$1.6010 hourly,$1.9466 hourly,$1.4013 hourly,unavailable,unavailable
+R6GD 16xlarge,r6gd.16xlarge,512 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.4480 hourly,$5.1392 hourly,$3.5135 hourly,unavailable,unavailable
+M5N Quadruple Extra Large,m5n.4xlarge,64 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,Up to 25 Gigabit,$1.2240 hourly,$1.3970 hourly,$0.9440 hourly,$1.9600 hourly,$1.5070 hourly
+G6 Graphics and Machine Learning GPU 16xlarge,g6.16xlarge,256 GiB,64 vCPUs,AMD EPYC 7R13 Processor,1880 GB (2×940 GB NVMe SSD),25 Gigabit,$4.9264 hourly,$5.6176 hourly,$3.8983 hourly,$7.8704 hourly,$6.1511 hourly
+M8G 12xlarge,m8g.12xlarge,192 GiB,48 vCPUs,AWS Graviton4 Processor,EBS only,22.5 Gigabit,$2.7826 hourly,$3.3010 hourly,$2.3620 hourly,unavailable,unavailable
+M8G 48xlarge,m8g.48xlarge,768 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,$11.1302 hourly,$14.9894 hourly,$11.2335 hourly,unavailable,unavailable
+M8GD Extra Large,m8gd.xlarge,16 GiB,4 vCPUs,AWS Graviton4 Processor,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2980 hourly,$0.4256 hourly,unavailable,unavailable,unavailable
+D2 Eight Extra Large,d2.8xlarge,244 GiB,36 vCPUs,Intel Xeon E5-2676 v3 (Haswell),49152 GB (24×2048 GB HDD),10 Gigabit,$6.7520 hourly,$7.6450 hourly,$4.7210 hourly,$7.4300 hourly,$4.3110 hourly
+M7I-FLEX Quadruple Extra Large,m7i-flex.4xlarge,64 GiB,16 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.9895 hourly,$1.3863 hourly,$1.0524 hourly,$1.6887 hourly,$1.3548 hourly
+C6G 16xlarge,c6g.16xlarge,128 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$2.7392 hourly,$4.3264 hourly,$3.3129 hourly,unavailable,unavailable
+I2 Extra Large,i2.xlarge,30.5 GiB,4 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),800 GB SSD,Moderate,$1.0010 hourly,$1.0590 hourly,$0.6170 hourly,$1.1130 hourly,$0.8290 hourly
+R7GD Eight Extra Large,r7gd.8xlarge,256 GiB,32 vCPUs,AWS Graviton3 Processor,1900 GB NVMe SSD,15 Gigabit,$2.6309 hourly,$3.4245 hourly,$2.4511 hourly,unavailable,unavailable
+M7I-FLEX 12xlarge,m7i-flex.12xlarge,192 GiB,48 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 18.75 Gigabit,$2.9686 hourly,$4.1590 hourly,$3.1573 hourly,$5.1766 hourly,$4.1749 hourly
+I4G Extra Large,i4g.xlarge,32 GiB,4 vCPUs,AWS Graviton2 Processor,937 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8G Large,c8g.large,4 GiB,2 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.1001 hourly,$0.1289 hourly,$0.0948 hourly,unavailable,unavailable
+C8G 24xlarge,c8g.24xlarge,192 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,$4.8029 hourly,$7.1837 hourly,$5.5478 hourly,unavailable,unavailable
+M7G Eight Extra Large,m7g.8xlarge,128 GiB,32 vCPUs,AWS Graviton3 Processor,EBS only,15 Gigabit,$1.6864 hourly,$2.0320 hourly,$1.4629 hourly,unavailable,unavailable
+A1 Extra Large,a1.xlarge,8 GiB,4 vCPUs,AWS Graviton Processor,EBS only,Up to 10 Gigabit,$0.1284 hourly,$0.2560 hourly,$0.2085 hourly,unavailable,unavailable
+M8GD Large,m8gd.large,8 GiB,2 vCPUs,AWS Graviton4 Processor,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1490 hourly,$0.2128 hourly,unavailable,unavailable,unavailable
+I4I 24xlarge,i4i.24xlarge,768 GiB,96 vCPUs,Intel Xeon 8375C (Ice Lake),22500 GB (6×3750 GB NVMe SSD),56.25 Gigabit,$9.6624 hourly,$12.0432 hourly,$8.6756 hourly,$14.0784 hourly,$10.7108 hourly
+C7G Large,c7g.large,4 GiB,2 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.0910 hourly,$0.1198 hourly,$0.0888 hourly,unavailable,unavailable
+X2IEDN Eight Extra Large,x2iedn.8xlarge,1024 GiB,32 vCPUs,Intel Xeon Scalable (Icelake),950 GB NVMe SSD,25 Gigabit,$9.6705 hourly,$10.4641 hourly,$6.7439 hourly,$11.1425 hourly,$7.4223 hourly
+G4AD Eight Extra Large,g4ad.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7R32,1200 GB NVMe SSD,15 Gigabit,$2.3400 hourly,$2.6856 hourly,$1.9427 hourly,$3.8120 hourly,$3.0692 hourly
+INF2 Eight Extra Large,inf2.8xlarge,128 GiB,32 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 25 Gigabit,$2.9518 hourly,$3.2974 hourly,$2.2052 hourly,unavailable,unavailable
+M4 General Purpose 16xlarge,m4.16xlarge,256 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,25 Gigabit,$4.1280 hourly,$4.8192 hourly,$3.4800 hourly,$7.0720 hourly,$5.7328 hourly
+R6G Eight Extra Large,r6g.8xlarge,256 GiB,32 vCPUs,AWS Graviton2 Processor,EBS only,12 Gigabit,$1.9456 hourly,$2.7392 hourly,$2.0193 hourly,unavailable,unavailable
+C7G Extra Large,c7g.xlarge,8 GiB,4 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.1819 hourly,$0.2395 hourly,$0.1776 hourly,unavailable,unavailable
+R7G Large,r7g.large,16 GiB,2 vCPUs,AWS Graviton3 Processor,EBS only,Up to 12.5 Gigabit,$0.1292 hourly,$0.1580 hourly,$0.1143 hourly,unavailable,unavailable
+A1 Large,a1.large,4 GiB,2 vCPUs,AWS Graviton Processor,EBS only,Up to 10 Gigabit,$0.0642 hourly,$0.0930 hourly,$0.0692 hourly,unavailable,unavailable
+G5 Graphics and Machine Learning GPU Double Extra Large,g5.2xlarge,32 GiB,8 vCPUs,AMD EPYC 7R32,450 GB NVMe SSD,Up to 10 Gigabit,$1.7578 hourly,$1.8730 hourly,$1.2226 hourly,$2.1258 hourly,$1.4754 hourly
+Z1D Extra Large,z1d.xlarge,32 GiB,4 vCPUs,Intel Xeon Platinum 8151,150 GB NVMe SSD,Up to 10 Gigabit,$0.4540 hourly,$0.5120 hourly,$0.3440 hourly,$0.6380 hourly,$0.4700 hourly
+I3 High I/O Large,i3.large,15.25 GiB,2 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),475 GB NVMe SSD,Up to 10 Gigabit,$0.1830 hourly,$0.2120 hourly,$0.1530 hourly,$0.2750 hourly,$0.2160 hourly
+R8G Eight Extra Large,r8g.8xlarge,256 GiB,32 vCPUs,AWS Graviton4 Processor,EBS only,15 Gigabit,$2.2739 hourly,$3.0675 hourly,$2.2978 hourly,unavailable,unavailable
+C8GD 48xlarge,c8gd.48xlarge,384 GiB,192 vCPUs,AWS Graviton4 Processor,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$11.9539 hourly,$13.7971 hourly,unavailable,unavailable,unavailable
+M8GD Eight Extra Large,m8gd.8xlarge,128 GiB,32 vCPUs,AWS Graviton4 Processor,1900 GB NVMe SSD,15 Gigabit,$2.3840 hourly,$2.7296 hourly,unavailable,unavailable,unavailable
+G6e Graphics and Machine Learning GPU 16xlarge,g6e.16xlarge,512 GiB,64 vCPUs,AMD EPYC 7R13 Processor,1900 GB (2×950 GB NVMe SSD),35 Gigabit,$10.9892 hourly,$12.5764 hourly,$8.5104 hourly,$13.9332 hourly,$9.8672 hourly
+I7IE 48xlarge,i7ie.48xlarge,1536 GiB,192 vCPUs,Intel Xeon Scalable (Emerald Rapids),120000 GB (16×7500 GB NVMe SSD),100 Gigabit,$29.3664 hourly,$31.2096 hourly,unavailable,$38.1984 hourly,unavailable
+R6IN Large,r6in.large,16 GiB,2 vCPUs,Intel Xeon 8375C (Ice Lake),EBS only,Up to 25 Gigabit,$0.2118 hourly,$0.2406 hourly,$0.1622 hourly,$0.3038 hourly,$0.2254 hourly
+M6G Eight Extra Large,m6g.8xlarge,128 GiB,32 vCPUs,AWS Graviton2 Processor,EBS only,12 Gigabit,$1.5840 hourly,$1.9296 hourly,$1.3535 hourly,unavailable,unavailable
+M6GD Large,m6gd.large,8 GiB,2 vCPUs,AWS Graviton2 Processor,118 GB NVMe SSD,Up to 10 Gigabit,$0.1170 hourly,$0.1808 hourly,$0.1373 hourly,unavailable,unavailable
+M7GD Eight Extra Large,m7gd.8xlarge,128 GiB,32 vCPUs,AWS Graviton3 Processor,1900 GB NVMe SSD,15 Gigabit,$2.2075 hourly,$2.5531 hourly,$1.7363 hourly,unavailable,unavailable
+R4 High-Memory Extra Large,r4.xlarge,30.5 GiB,4 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,Up to 10 Gigabit,$0.3200 hourly,$0.3776 hourly,$0.2592 hourly,$0.5040 hourly,$0.3856 hourly
+R8GD Double Extra Large,r8gd.2xlarge,64 GiB,8 vCPUs,AWS Graviton4 Processor,474 GB NVMe SSD,Up to 15 Gigabit,$0.7103 hourly,$0.8255 hourly,unavailable,unavailable,unavailable
+Gr6 Graphics and Machine Learning GPU High RAM ratio Quadruple Extra Large,gr6.4xlarge,128 GiB,16 vCPUs,AMD EPYC 7R32,600 GB NVMe SSD,Up to 25 Gigabit,$2.2323 hourly,$2.6291 hourly,$1.8500 hourly,$2.9683 hourly,$2.1892 hourly
+C7I-FLEX Extra Large,c7i-flex.xlarge,8 GiB,4 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,Up to 12.5 Gigabit,$0.2135 hourly,$0.2711 hourly,$0.1984 hourly,$0.3883 hourly,$0.3156 hourly
+C6GN Double Extra Large,c6gn.2xlarge,16 GiB,8 vCPUs,AWS Graviton2 Processor,EBS only,Up to 25 Gigabit,$0.4360 hourly,$0.5512 hourly,$0.3882 hourly,unavailable,unavailable
+R6G Double Extra Large,r6g.2xlarge,64 GiB,8 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.4864 hourly,$0.6016 hourly,$0.4216 hourly,unavailable,unavailable
+M8GD 12xlarge,m8gd.12xlarge,192 GiB,48 vCPUs,AWS Graviton4 Processor,2850 GB (3×950 GB NVMe SSD),22.5 Gigabit,$3.5760 hourly,$4.0944 hourly,unavailable,unavailable,unavailable
+G6 Graphics and Machine Learning GPU 48xlarge,g6.48xlarge,768 GiB,192 vCPUs,AMD EPYC 7R13 Processor,7520 GB (8×940 GB NVMe SSD),100 Gigabit,$19.3621 hourly,$23.2213 hourly,$16.4639 hourly,$28.1941 hourly,$21.4367 hourly
+M8GD Medium,m8gd.medium,4 GiB,1 vCPUs,AWS Graviton4 Processor,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0745 hourly,$0.1064 hourly,unavailable,unavailable,unavailable
+X2GD Extra Large,x2gd.xlarge,64 GiB,4 vCPUs,AWS Graviton2 Processor,237 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+INF2 48xlarge,inf2.48xlarge,768 GiB,192 vCPUs,AMD EPYC 7R13 Processor,EBS only,100 Gigabit,$19.4719 hourly,$21.3151 hourly,$14.1105 hourly,unavailable,unavailable
+HPC6A 48xlarge,hpc6a.48xlarge,384 GiB,96 vCPUs,AMD EPYC 7R13 Processor,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R6G Metal,r6g.metal,512 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$3.8912 hourly,$4.5824 hourly,$3.1427 hourly,unavailable,unavailable
+M8GD 24xlarge,m8gd.24xlarge,384 GiB,96 vCPUs,AWS Graviton4 Processor,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$7.1520 hourly,$8.1888 hourly,unavailable,unavailable,unavailable
+R7G Eight Extra Large,r7g.8xlarge,256 GiB,32 vCPUs,AWS Graviton3 Processor,EBS only,15 Gigabit,$2.0672 hourly,$2.4128 hourly,$1.7131 hourly,unavailable,unavailable
+HPC7A 48xlarge,hpc7a.48xlarge,768 GiB,96 vCPUs,AMD EPYC 9R14 Processor,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R6GD Large,r6gd.large,16 GiB,2 vCPUs,AWS Graviton2 Processor,118 GB NVMe SSD,Up to 10 Gigabit,$0.1390 hourly,$0.2028 hourly,$0.1520 hourly,unavailable,unavailable
+C7G Double Extra Large,c7g.2xlarge,16 GiB,8 vCPUs,AWS Graviton3 Processor,EBS only,Up to 15 Gigabit,$0.3638 hourly,$0.6190 hourly,$0.4951 hourly,unavailable,unavailable
+M8GD Double Extra Large,m8gd.2xlarge,32 GiB,8 vCPUs,AWS Graviton4 Processor,474 GB NVMe SSD,Up to 15 Gigabit,$0.5960 hourly,$0.8512 hourly,unavailable,unavailable,unavailable
+R8G Quadruple Extra Large,r8g.4xlarge,128 GiB,16 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,$1.1370 hourly,$1.5338 hourly,$1.1489 hourly,unavailable,unavailable
+G5 Graphics and Machine Learning GPU Extra Large,g5.xlarge,16 GiB,4 vCPUs,AMD EPYC 7R32,250 GB NVMe SSD,Up to 10 Gigabit,$1.4590 hourly,$1.5866 hourly,$1.0468 hourly,$1.6430 hourly,$1.1032 hourly
+T3A Nano,t3a.nano,0.5 GiB,2 vCPUs (1h 12m burst),AMD EPYC 7571,EBS only,Up to 5 Gigabit,$0.0061 hourly,unavailable,unavailable,$0.0107 hourly,$0.0085 hourly
+IS4GEN Eight Extra Large,is4gen.8xlarge,192 GiB,32 vCPUs,AWS Graviton2 Processor,30000 GB (4×7500 GB NVMe SSD),50 Gigabit,$5.4264 hourly,$5.7720 hourly,$4.0502 hourly,unavailable,unavailable
+R7G Double Extra Large,r7g.2xlarge,64 GiB,8 vCPUs,AWS Graviton3 Processor,EBS only,Up to 15 Gigabit,$0.5168 hourly,$0.7720 hourly,$0.5971 hourly,unavailable,unavailable
+C6G Large,c6g.large,4 GiB,2 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.0856 hourly,$0.1494 hourly,$0.1177 hourly,unavailable,unavailable
+C6GN Extra Large,c6gn.xlarge,8 GiB,4 vCPUs,AWS Graviton2 Processor,EBS only,Up to 25 Gigabit,$0.2180 hourly,$0.2756 hourly,$0.1941 hourly,unavailable,unavailable
+C6GN 16xlarge,c6gn.16xlarge,128 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,100 Gigabit,$3.4880 hourly,$5.0752 hourly,$3.7711 hourly,unavailable,unavailable
+R6GD Metal,r6gd.metal,512 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.4480 hourly,$5.1392 hourly,$3.5135 hourly,unavailable,unavailable
+C7GN Quadruple Extra Large,c7gn.4xlarge,32 GiB,16 vCPUs,AWS Graviton3 Processor,EBS only,50 Gigabit,$1.2592 hourly,$1.6560 hourly,$1.1835 hourly,unavailable,unavailable
+C7GD Eight Extra Large,c7gd.8xlarge,64 GiB,32 vCPUs,AWS Graviton3 Processor,1900 GB NVMe SSD,15 Gigabit,$1.8448 hourly,$2.1904 hourly,$1.5601 hourly,unavailable,unavailable
+C6G Metal,c6g.metal,128 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$2.7392 hourly,$4.3264 hourly,$3.3129 hourly,unavailable,unavailable
+X2GD 12xlarge,x2gd.12xlarge,768 GiB,48 vCPUs,AWS Graviton2 Processor,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6GD Medium,c6gd.medium,2 GiB,1 vCPUs,AWS Graviton2 Processor,59 GB NVMe SSD,Up to 10 Gigabit,$0.0490 hourly,$0.0809 hourly,$0.0629 hourly,unavailable,unavailable
+M8G Metal-24xl,m8g.metal-24xl,384 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,$5.5651 hourly,$6.6019 hourly,$4.7240 hourly,unavailable,unavailable
+TRN2 48xlarge,trn2.48xlarge,2048 GiB,192 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R8G Extra Large,r8g.xlarge,32 GiB,4 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,$0.2842 hourly,$0.4118 hourly,$0.3156 hourly,unavailable,unavailable
+M6G Metal,m6g.metal,256 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$3.1680 hourly,$3.8592 hourly,$2.7070 hourly,unavailable,unavailable
+X2GD Medium,x2gd.medium,16 GiB,1 vCPUs,AWS Graviton2 Processor,59 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M6G 16xlarge,m6g.16xlarge,256 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$3.1680 hourly,$4.7552 hourly,$3.6030 hourly,unavailable,unavailable
+IM4GN Double Extra Large,im4gn.2xlarge,32 GiB,8 vCPUs,AWS Graviton2 Processor,3750 GB NVMe SSD,Up to 25 Gigabit,$0.8535 hourly,$0.9687 hourly,$0.6647 hourly,unavailable,unavailable
+C6GD Quadruple Extra Large,c6gd.4xlarge,32 GiB,16 vCPUs,AWS Graviton2 Processor,950 GB NVMe SSD,Up to 10 Gigabit,$0.7840 hourly,$1.1808 hourly,$0.8924 hourly,unavailable,unavailable
+M8GD Metal-24xl,m8gd.metal-24xl,384 GiB,96 vCPUs,AWS Graviton4 Processor,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$7.1520 hourly,$9.5328 hourly,unavailable,unavailable,unavailable
+TRN1 Double Extra Large,trn1.2xlarge,32 GiB,8 vCPUs,Intel Xeon Scalable (Icelake),474 GB NVMe SSD,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4G Double Extra Large,i4g.2xlarge,64 GiB,8 vCPUs,AWS Graviton2 Processor,1875 GB NVMe SSD,Up to 12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+INF2 24xlarge,inf2.24xlarge,384 GiB,96 vCPUs,AMD EPYC 7R13 Processor,EBS only,50 Gigabit,$9.7360 hourly,$10.7728 hourly,$7.1704 hourly,unavailable,unavailable
+R8G 24xlarge,r8g.24xlarge,768 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,$6.8218 hourly,$9.2026 hourly,$6.8934 hourly,unavailable,unavailable
+R6G 12xlarge,r6g.12xlarge,384 GiB,48 vCPUs,AWS Graviton2 Processor,EBS only,20 Gigabit,$2.9184 hourly,$4.1088 hourly,$3.0290 hourly,unavailable,unavailable
+G6e Graphics and Machine Learning GPU 48xlarge,g6e.48xlarge,1536 GiB,192 vCPUs,AMD EPYC 7R13 Processor,7600 GB (4×1900 GB NVMe SSD),400 Gigabit,$43.6991 hourly,$47.5583 hourly,$31.3896 hourly,$52.5311 hourly,$36.3624 hourly
+M7G Double Extra Large,m7g.2xlarge,32 GiB,8 vCPUs,AWS Graviton3 Processor,EBS only,Up to 15 Gigabit,$0.4216 hourly,$0.5368 hourly,$0.3945 hourly,unavailable,unavailable
+TRN1N 32xlarge,trn1n.32xlarge,512 GiB,128 vCPUs,Intel Xeon Scalable (Icelake),7600 GB (4×1900 GB NVMe SSD),16x 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+IS4GEN Large,is4gen.large,12 GiB,2 vCPUs,AWS Graviton2 Processor,1875 GB NVMe SSD,Up to 25 Gigabit,$0.3392 hourly,$0.3679 hourly,$0.2603 hourly,unavailable,unavailable
+R6GD Medium,r6gd.medium,8 GiB,1 vCPUs,AWS Graviton2 Processor,59 GB NVMe SSD,Up to 10 Gigabit,$0.0695 hourly,$0.0839 hourly,$0.0585 hourly,unavailable,unavailable
+M7G 12xlarge,m7g.12xlarge,192 GiB,48 vCPUs,AWS Graviton3 Processor,EBS only,22.5 Gigabit,$2.5296 hourly,$3.7200 hourly,$2.8664 hourly,unavailable,unavailable
+IS4GEN Quadruple Extra Large,is4gen.4xlarge,96 GiB,16 vCPUs,AWS Graviton2 Processor,15000 GB (2×7500 GB NVMe SSD),25 Gigabit,$2.7132 hourly,$3.1100 hourly,$2.2491 hourly,unavailable,unavailable
+C7G 16xlarge,c7g.16xlarge,128 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,30 Gigabit,$2.9107 hourly,$3.6019 hourly,$2.6105 hourly,unavailable,unavailable
+C6G Quadruple Extra Large,c6g.4xlarge,32 GiB,16 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.6848 hourly,$0.8576 hourly,$0.6042 hourly,unavailable,unavailable
+IS4GEN Extra Large,is4gen.xlarge,24 GiB,4 vCPUs,AWS Graviton2 Processor,3750 GB NVMe SSD,Up to 25 Gigabit,$0.6783 hourly,$0.7359 hourly,$0.5207 hourly,unavailable,unavailable
+G4AD Quadruple Extra Large,g4ad.4xlarge,64 GiB,16 vCPUs,AMD EPYC 7R32,600 GB NVMe SSD,Up to 10 Gigabit,$1.1700 hourly,$1.3428 hourly,$0.9714 hourly,$1.9060 hourly,$1.5346 hourly
+I4G Eight Extra Large,i4g.8xlarge,256 GiB,32 vCPUs,AWS Graviton2 Processor,7500 GB (2×3750 GB NVMe SSD),18.75 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6G Double Extra Large,c6g.2xlarge,16 GiB,8 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.3424 hourly,$0.5976 hourly,$0.4709 hourly,unavailable,unavailable
+IS4GEN Double Extra Large,is4gen.2xlarge,48 GiB,8 vCPUs,AWS Graviton2 Processor,7500 GB NVMe SSD,Up to 25 Gigabit,$1.3566 hourly,$1.4718 hourly,$1.0413 hourly,unavailable,unavailable
+C6GD Metal,c6gd.metal,128 GiB,64 vCPUs,AWS Graviton2 Processor,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.1360 hourly,$3.8272 hourly,$2.6735 hourly,unavailable,unavailable
+U-9TB1 Metal,u-9tb1.metal,9216 GiB,448 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-6TB1 Metal,u-6tb1.metal,6144 GiB,448 vCPUs,Intel Xeon Scalable (Skylake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C7GD Medium,c7gd.medium,2 GiB,1 vCPUs,AWS Graviton3 Processor,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0577 hourly,$0.0896 hourly,$0.0699 hourly,unavailable,unavailable
+P2 General Purpose GPU 16xlarge,p2.16xlarge,732 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),EBS only,20 Gigabit,$24.6720 hourly,$25.3630 hourly,unavailable,$27.6160 hourly,unavailable
+C8GD 12xlarge,c8gd.12xlarge,96 GiB,48 vCPUs,AWS Graviton4 Processor,2850 GB (3×950 GB NVMe SSD),22.5 Gigabit,$2.9885 hourly,$3.5069 hourly,unavailable,unavailable,unavailable
+T4G Extra Large,t4g.xlarge,16 GiB,4 vCPUs (9h 36m burst),AWS Graviton2 Processor,EBS only,Up to 5 Gigabit,$0.1728 hourly,$0.2304 hourly,$0.1664 hourly,unavailable,unavailable
+T2 Nano,t2.nano,0.5 GiB,1 vCPUs (1h 12m burst),Intel Xeon Family,EBS only,Low to Moderate,$0.0076 hourly,unavailable,unavailable,$0.0099 hourly,$0.0074 hourly
+C7G Metal,c7g.metal,128 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,30 Gigabit,$2.9107 hourly,$4.4979 hourly,$3.5065 hourly,unavailable,unavailable
+M7GD Quadruple Extra Large,m7gd.4xlarge,64 GiB,16 vCPUs,AWS Graviton3 Processor,950 GB NVMe SSD,Up to 15 Gigabit,$1.1038 hourly,$1.5006 hourly,$1.0922 hourly,unavailable,unavailable
+R8G 48xlarge,r8g.48xlarge,1536 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,$13.6435 hourly,$15.4867 hourly,$10.8684 hourly,unavailable,unavailable
+I4G 16xlarge,i4g.16xlarge,512 GiB,64 vCPUs,AWS Graviton2 Processor,15000 GB (4×3750 GB NVMe SSD),37.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8G Metal-24xl,c8g.metal-24xl,192 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,$4.8029 hourly,$7.1837 hourly,$5.5478 hourly,unavailable,unavailable
+C8GD Quadruple Extra Large,c8gd.4xlarge,32 GiB,16 vCPUs,AWS Graviton4 Processor,950 GB NVMe SSD,Up to 15 Gigabit,$0.9962 hourly,$1.3930 hourly,unavailable,unavailable,unavailable
+INF2 Extra Large,inf2.xlarge,16 GiB,4 vCPUs,AMD EPYC 7R13 Processor,EBS only,Up to 15 Gigabit,$1.1373 hourly,$1.1949 hourly,$0.7741 hourly,unavailable,unavailable
+I2 Large,i2.large,15 GiB,2 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge),EBS only,Moderate,unavailable,unavailable,unavailable,unavailable,unavailable
+IM4GN Eight Extra Large,im4gn.8xlarge,128 GiB,32 vCPUs,AWS Graviton2 Processor,15000 GB (2×7500 GB NVMe SSD),50 Gigabit,$3.4141 hourly,$3.7597 hourly,$2.5438 hourly,unavailable,unavailable
+X2GD Quadruple Extra Large,x2gd.4xlarge,256 GiB,16 vCPUs,AWS Graviton2 Processor,950 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+A1 Metal,a1.metal,32 GiB,16 vCPUs,AWS Graviton Processor,EBS only,Up to 10 Gigabit,$0.5140 hourly,$0.6860 hourly,$0.4960 hourly,unavailable,unavailable
+IS4GEN Medium,is4gen.medium,6 GiB,1 vCPUs,AWS Graviton2 Processor,937 GB NVMe SSD,Up to 25 Gigabit,$0.1696 hourly,$0.1840 hourly,$0.1302 hourly,unavailable,unavailable
+MAC1 Metal,mac1.metal,32 GiB,12 vCPUs,Intel Core i7-8700B CPU,EBS only,25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2-M2 Metal,mac2-m2.metal,24 GiB,8 vCPUs,Apple M2 Chip,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2 Metal,mac2.metal,16 GiB,8 vCPUs,"Apple M1 chip with 8-core CPU, 8-core GPU, and 16-core Neural Engine",EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2-M2PRO Metal,mac2-m2pro.metal,32 GiB,12 vCPUs,Apple M2 Pro,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+D3EN 12xlarge,d3en.12xlarge,192 GiB,48 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),335520 GB (24×13980 GB NVMe HDD),75 Gigabit,$9.1476 hourly,$10.3380 hourly,$6.9534 hourly,$11.3556 hourly,$7.9710 hourly
+D3EN Eight Extra Large,d3en.8xlarge,128 GiB,32 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),223680 GB (16×13980 GB NVMe HDD),50 Gigabit,$6.0984 hourly,$6.8920 hourly,$4.6356 hourly,$7.5704 hourly,$5.3140 hourly
+X2IEZN 12xlarge,x2iezn.12xlarge,1536 GiB,48 vCPUs,Intel Xeon Platinum 8252,EBS only,100 Gigabit,$14.5080 hourly,$15.0264 hourly,$9.4519 hourly,$16.7160 hourly,$11.1415 hourly
+U7I-8TB 112xlarge,u7i-8tb.112xlarge,8192 GiB,448 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7IN-24TB 224xlarge,u7in-24tb.224xlarge,24576 GiB,896 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+DL1 24xlarge,dl1.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8275L,4000 GB (4×1000 GB NVMe SSD),4x 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G 48xlarge,x8g.48xlarge,3072 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7I-6TB 112xlarge,u7i-6tb.112xlarge,6144 GiB,448 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Double Extra Large,i8g.2xlarge,64 GiB,8 vCPUs,AWS Graviton4 Processor,1875 GB NVMe SSD,Up to 12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C3 High-CPU Quadruple Extra Large,c3.4xlarge,30 GiB,16 vCPUs,Intel Xeon E5-2680 v2 (Ivy Bridge),320 GB (2×160 GB SSD),High,$1.0210 hourly,$1.4210 hourly,$1.1340 hourly,$1.8490 hourly,$1.4890 hourly
+X8G Extra Large,x8g.xlarge,64 GiB,4 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C3 High-CPU Large,c3.large,3.75 GiB,2 vCPUs,Intel Xeon E5-2680 v2 (Ivy Bridge),32 GB (2×16 GB SSD),Moderate,$0.1280 hourly,$0.1570 hourly,$0.1210 hourly,$0.2310 hourly,$0.1870 hourly
+X2IEZN 6xlarge,x2iezn.6xlarge,768 GiB,24 vCPUs,Intel Xeon Platinum 8252,EBS only,50 Gigabit,$7.2540 hourly,$7.5132 hourly,$4.7259 hourly,$8.3580 hourly,$5.5707 hourly
+X8G Large,x8g.large,32 GiB,2 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7IN-32TB 224xlarge,u7in-32tb.224xlarge,32768 GiB,896 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2IEZN Double Extra Large,x2iezn.2xlarge,256 GiB,8 vCPUs,Intel Xeon Platinum 8252,EBS only,Up to 25 Gigabit,$2.4180 hourly,$2.5332 hourly,$1.6041 hourly,$2.7860 hourly,$1.8569 hourly
+M3 General Purpose Double Extra Large,m3.2xlarge,30 GiB,8 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge/Sandy Bridge),160 GB (2×80 GB SSD),High,$0.7700 hourly,$1.0230 hourly,$0.7130 hourly,$1.1660 hourly,$0.9100 hourly
+C3 High-CPU Double Extra Large,c3.2xlarge,15 GiB,8 vCPUs,Intel Xeon E5-2680 v2 (Ivy Bridge),160 GB (2×80 GB SSD),High,$0.5110 hourly,$0.6270 hourly,$0.4840 hourly,$0.9250 hourly,$0.7440 hourly
+X2IEZN Quadruple Extra Large,x2iezn.4xlarge,512 GiB,16 vCPUs,Intel Xeon Platinum 8252,EBS only,Up to 25 Gigabit,$4.8360 hourly,$5.0088 hourly,$3.1506 hourly,$5.5720 hourly,$3.7138 hourly
+C8GN 24xlarge,c8gn.24xlarge,192 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+D3EN Extra Large,d3en.xlarge,16 GiB,4 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),27960 GB (2×13980 GB NVMe HDD),Up to 25 Gigabit,$0.7620 hourly,$0.8900 hourly,$0.6080 hourly,$0.9460 hourly,$0.6640 hourly
+F2 6xlarge,f2.6xlarge,256 GiB,24 vCPUs,AMD EPYC 7R13 Processor,940 GB NVMe SSD,12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Extra Large,c8gn.xlarge,8 GiB,4 vCPUs,AWS Graviton4 Processor,EBS only,Up to 40 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M3 General Purpose Large,m3.large,7.5 GiB,2 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge/Sandy Bridge),32 GB SSD,Moderate,$0.1930 hourly,$0.2210 hourly,$0.1430 hourly,$0.2920 hourly,$0.2280 hourly
+F2 12xlarge,f2.12xlarge,512 GiB,48 vCPUs,AMD EPYC 7R13 Processor,1880 GB (2×940 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+D3EN Double Extra Large,d3en.2xlarge,32 GiB,8 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),55920 GB (4×13980 GB NVMe HDD),Up to 25 Gigabit,$1.5250 hourly,$1.6400 hourly,$1.0760 hourly,$1.8930 hourly,$1.3280 hourly
+VT1 24xlarge,vt1.24xlarge,192 GiB,96 vCPUs,Intel Xeon Platinum 8259CL,EBS only,25 Gigabit,$6.5459 hourly,$7.5827 hourly,$5.1479 hourly,unavailable,unavailable
+X2IEZN Metal,x2iezn.metal,1536 GiB,48 vCPUs,Intel Xeon Platinum 8252,EBS only,100 Gigabit,$14.5080 hourly,$15.0264 hourly,$9.4519 hourly,$16.7160 hourly,$11.1415 hourly
+P3DN 24xlarge,p3dn.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8175 (Skylake),1800 GB (2×900 GB NVMe SSD),100 Gigabit,$42.7830 hourly,$43.8200 hourly,$28.0620 hourly,$47.1990 hourly,$31.4410 hourly
+C3 High-CPU Eight Extra Large,c3.8xlarge,60 GiB,32 vCPUs,Intel Xeon E5-2680 v2 (Ivy Bridge),640 GB (2×320 GB SSD),10 Gigabit,$2.0430 hourly,$2.8420 hourly,$2.2690 hourly,$3.6990 hourly,$2.9780 hourly
+I8G Large,i8g.large,16 GiB,2 vCPUs,AWS Graviton4 Processor,468 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Eight Extra Large,x8g.8xlarge,512 GiB,32 vCPUs,AWS Graviton4 Processor,EBS only,15 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M3 General Purpose Medium,m3.medium,3.75 GiB,1 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge/Sandy Bridge),4 GB SSD,Moderate,$0.0960 hourly,$0.1100 hourly,$0.0720 hourly,$0.1460 hourly,$0.1140 hourly
+I8G 16xlarge,i8g.16xlarge,512 GiB,64 vCPUs,AWS Graviton4 Processor,15000 GB (4×3750 GB NVMe SSD),Up to 37.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Eight Extra Large,c8gn.8xlarge,64 GiB,32 vCPUs,AWS Graviton4 Processor,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Metal-24xl,x8g.metal-24xl,1536 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C3 High-CPU Extra Large,c3.xlarge,7.5 GiB,4 vCPUs,Intel Xeon E5-2680 v2 (Ivy Bridge),80 GB (2×40 GB SSD),Moderate,$0.2550 hourly,$0.3840 hourly,$0.3120 hourly,$0.4620 hourly,$0.3740 hourly
+D3EN 6xlarge,d3en.6xlarge,96 GiB,24 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),167760 GB (12×13980 GB NVMe HDD),40 Gigabit,$4.5740 hourly,$5.1690 hourly,$3.4770 hourly,$5.6780 hourly,$3.9850 hourly
+U7I-12TB 224xlarge,u7i-12tb.224xlarge,12288 GiB,896 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M1 General Purpose Extra Large,m1.xlarge,15 GiB,4 vCPUs,Intel Xeon Family,1680 GB (4×420 GB HDD),High,$0.4860 hourly,$0.6160 hourly,$0.3540 hourly,$0.7060 hourly,$0.5300 hourly
+HPC7G Eight Extra Large,hpc7g.8xlarge,128 GiB,32 vCPUs,AWS Graviton3 Processor,EBS only,200 Gigabit,$2.1117 hourly,$2.4573 hourly,$2.0086 hourly,unavailable,unavailable
+C8GN 16xlarge,c8gn.16xlarge,128 GiB,64 vCPUs,AWS Graviton4 Processor,EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M3 General Purpose Extra Large,m3.xlarge,15 GiB,4 vCPUs,Intel Xeon E5-2670 v2 (Ivy Bridge/Sandy Bridge),80 GB (2×40 GB SSD),High,$0.3850 hourly,$0.5120 hourly,$0.3560 hourly,$0.5830 hourly,$0.4570 hourly
+M1 General Purpose Medium,m1.medium,3.75 GiB,1 vCPUs,Intel Xeon Family,410 GB HDD,Moderate,$0.1220 hourly,$0.1360 hourly,$0.0880 hourly,$0.1770 hourly,$0.1330 hourly
+U7IN-16TB 224xlarge,u7in-16tb.224xlarge,16384 GiB,896 vCPUs,Intel Xeon Scalable (Sapphire Rapids),EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2IEZN Eight Extra Large,x2iezn.8xlarge,1024 GiB,32 vCPUs,Intel Xeon Platinum 8252,EBS only,75 Gigabit,$9.6720 hourly,$10.4656 hourly,$6.7492 hourly,$11.1440 hourly,$7.4276 hourly
+M1 General Purpose Small,m1.small,1.7 GiB,1 vCPUs,Intel Xeon Family,160 GB HDD,Low,$0.0610 hourly,$0.0750 hourly,$0.0510 hourly,$0.0880 hourly,$0.0660 hourly
+M1 General Purpose Large,m1.large,7.5 GiB,2 vCPUs,Intel Xeon Family,840 GB (2×420 GB HDD),Moderate,$0.2430 hourly,$0.2720 hourly,$0.1770 hourly,$0.3530 hourly,$0.2650 hourly
+C8GN Quadruple Extra Large,c8gn.4xlarge,32 GiB,16 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G 24xlarge,i8g.24xlarge,768 GiB,96 vCPUs,AWS Graviton4 Processor,22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F2 48xlarge,f2.48xlarge,2048 GiB,192 vCPUs,AMD EPYC 7R13 Processor,7520 GB (8×940 GB NVMe SSD),100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Extra Large,i8g.xlarge,32 GiB,4 vCPUs,AWS Graviton4 Processor,937 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+D3EN Quadruple Extra Large,d3en.4xlarge,64 GiB,16 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),111840 GB (8×13980 GB NVMe HDD),25 Gigabit,$3.0490 hourly,$3.2220 hourly,$2.0940 hourly,$3.7850 hourly,$2.6570 hourly
+C8GN Metal-24xl,c8gn.metal-24xl,192 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F1 Quadruple Extra Large,f1.4xlarge,244 GiB,16 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),940 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F1 Double Extra Large,f1.2xlarge,122 GiB,8 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),470 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN 12xlarge,c8gn.12xlarge,96 GiB,48 vCPUs,AWS Graviton4 Processor,EBS only,150 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G2 Double Extra Large,g2.2xlarge,15 GiB,8 vCPUs,Intel Xeon E5-2670 (Sandy Bridge),EBS only,Moderate,$0.8980 hourly,$1.0130 hourly,unavailable,$1.0100 hourly,unavailable
+C8GN 48xlarge,c8gn.48xlarge,384 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,600 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Metal-48xl,c8gn.metal-48xl,384 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,600 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7G 16xlarge,hpc7g.16xlarge,128 GiB,64 vCPUs,AWS Graviton3 Processor,EBS only,200 Gigabit,$2.1117 hourly,$2.8029 hourly,$2.3542 hourly,unavailable,unavailable
+U-18TB1 Metal,u-18tb1.metal,18432 GiB,448 vCPUs,Intel Xeon Platinum 8280L (Cascade Lake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G5G Metal,g5g.metal,128 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$3.7039 hourly,$5.2911 hourly,$4.1151 hourly,unavailable,unavailable
+X8G 24xlarge,x8g.24xlarge,1536 GiB,96 vCPUs,AWS Graviton4 Processor,EBS only,40 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+VT1 3xlarge,vt1.3xlarge,24 GiB,12 vCPUs,Intel Xeon Platinum 8259CL,EBS only,3.12 Gigabit,$0.8182 hourly,$1.1158 hourly,$0.8115 hourly,unavailable,unavailable
+X8G 12xlarge,x8g.12xlarge,768 GiB,48 vCPUs,AWS Graviton4 Processor,EBS only,22.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G 48xlarge,i8g.48xlarge,1536 GiB,192 vCPUs,AWS Graviton4 Processor,45000 GB (12×3750 GB NVMe SSD),Up to 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Medium,x8g.medium,16 GiB,1 vCPUs,AWS Graviton4 Processor,EBS only,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G 16xlarge,x8g.16xlarge,1024 GiB,64 vCPUs,AWS Graviton4 Processor,EBS only,30 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+P4DE 24xlarge,p4de.24xlarge,1152 GiB,96 vCPUs,Intel Xeon Platinum 8275L,8000 GB (8×1000 GB NVMe SSD),4x 100 Gigabit,$37.6223 hourly,$40.0031 hourly,$26.8554 hourly,unavailable,unavailable
+X8G Double Extra Large,x8g.2xlarge,128 GiB,8 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7G Quadruple Extra Large,hpc7g.4xlarge,128 GiB,16 vCPUs,AWS Graviton3 Processor,EBS only,200 Gigabit,$2.1117 hourly,$2.2845 hourly,$1.8358 hourly,unavailable,unavailable
+I8G Quadruple Extra Large,i8g.4xlarge,128 GiB,16 vCPUs,AWS Graviton4 Processor,3750 GB NVMe SSD,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G2 Eight Extra Large,g2.8xlarge,60 GiB,32 vCPUs,Intel Xeon E5-2670 (Sandy Bridge),EBS only,High,$3.5920 hourly,$3.9380 hourly,unavailable,$3.8700 hourly,unavailable
+X8G Metal-48xl,x8g.metal-48xl,3072 GiB,192 vCPUs,AWS Graviton4 Processor,EBS only,50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M2 High Memory Quadruple Extra Large,m2.4xlarge,68.4 GiB,8 vCPUs,Intel Xeon Family,1680 GB (2×840 GB HDD),High,$1.1500 hourly,$1.2700 hourly,$0.7190 hourly,$1.4100 hourly,$1.2480 hourly
+G5G 16xlarge,g5g.16xlarge,128 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,25 Gigabit,$3.7039 hourly,$4.3951 hourly,$3.2191 hourly,unavailable,unavailable
+M2 High Memory Extra Large,m2.xlarge,17.1 GiB,2 vCPUs,Intel Xeon Family,420 GB HDD,Moderate,$0.2870 hourly,$0.3160 hourly,$0.1800 hourly,$0.3520 hourly,$0.3120 hourly
+C1 High-CPU Medium,c1.medium,1.7 GiB,2 vCPUs,Intel Xeon Family,350 GB HDD,Moderate,$0.1580 hourly,$0.1870 hourly,$0.1490 hourly,$0.2580 hourly,$0.2080 hourly
+I8G Eight Extra Large,i8g.8xlarge,256 GiB,32 vCPUs,AWS Graviton4 Processor,7500 GB (2×3750 GB NVMe SSD),Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Metal-24xl,i8g.metal-24xl,768 GiB,96 vCPUs,AWS Graviton4 Processor,22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Large,c8gn.large,4 GiB,2 vCPUs,AWS Graviton4 Processor,EBS only,Up to 30 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C1 High-CPU Extra Large,c1.xlarge,7 GiB,8 vCPUs,Intel Xeon Family,1680 GB (4×420 GB HDD),High,$0.6320 hourly,$0.7470 hourly,$0.5950 hourly,$1.0320 hourly,$0.8320 hourly
+G5G Double Extra Large,g5g.2xlarge,16 GiB,8 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.7505 hourly,$1.0057 hourly,$0.7674 hourly,unavailable,unavailable
+X8G Quadruple Extra Large,x8g.4xlarge,256 GiB,16 vCPUs,AWS Graviton4 Processor,EBS only,Up to 15 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Double Extra Large,c8gn.2xlarge,16 GiB,8 vCPUs,AWS Graviton4 Processor,EBS only,Up to 50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+M2 High Memory Double Extra Large,m2.2xlarge,34.2 GiB,4 vCPUs,Intel Xeon Family,850 GB HDD,Moderate,$0.5750 hourly,$0.6330 hourly,$0.3600 hourly,$0.7050 hourly,$0.6240 hourly
+MAC2-M1ULTRA Metal,mac2-m1ultra.metal,128 GiB,20 vCPUs,Apple silicon M1 Ultra,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G5G Quadruple Extra Large,g5g.4xlarge,32 GiB,16 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$1.1176 hourly,$1.2904 hourly,$0.9356 hourly,unavailable,unavailable
+High Memory Cluster Eight Extra Large,cr1.8xlarge,244 GiB,32 vCPUs,Intel Xeon E5-2670,EBS only,10 Gigabit,$4.1050 hourly,$4.4510 hourly,unavailable,$4.4200 hourly,unavailable
+I8G 12xlarge,i8g.12xlarge,384 GiB,48 vCPUs,AWS Graviton4 Processor,11250 GB (3×3750 GB NVMe SSD),Up to 28.12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F1 16xlarge,f1.16xlarge,976 GiB,64 vCPUs,Intel Xeon E5-2686 v4 (Broadwell),3760 GB (4×940 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Medium,c8gn.medium,2 GiB,1 vCPUs,AWS Graviton4 Processor,EBS only,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G5G Extra Large,g5g.xlarge,8 GiB,4 vCPUs,AWS Graviton2 Processor,EBS only,Up to 10 Gigabit,$0.5669 hourly,$0.6245 hourly,$0.4445 hourly,unavailable,unavailable
+VT1 6xlarge,vt1.6xlarge,48 GiB,24 vCPUs,Intel Xeon Platinum 8259CL,EBS only,6.25 Gigabit,$1.6365 hourly,$2.2317 hourly,$1.6230 hourly,unavailable,unavailable
+U-24TB1 Metal,u-24tb1.metal,24576 GiB,448 vCPUs,Intel Xeon Platinum 8280L (Cascade Lake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G5G Eight Extra Large,g5g.8xlarge,64 GiB,32 vCPUs,AWS Graviton2 Processor,EBS only,12 Gigabit,$1.8519 hourly,$2.6455 hourly,$2.0576 hourly,unavailable,unavailable
+High Storage Eight Extra Large,hs1.8xlarge,117 GiB,16 vCPUs,Intel Xeon E5-2650,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+T1 Micro,t1.micro,0.613 GiB,1 vCPUs,Variable,EBS only,Very Low,$0.0260 hourly,$0.0400 hourly,$0.0320 hourly,$0.0330 hourly,$0.0290 hourly
+Cluster Compute Eight Extra Large,cc2.8xlarge,60.5 GiB,32 vCPUs,Intel Xeon E5-2670,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+DL2Q 24xlarge,dl2q.24xlarge,768 GiB,96 vCPUs,Intel Xeon Platinum 8259 (Cascade Lake),EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6GN Metal,c6gn.metal,128 GiB,64 vCPUs,AWS Graviton2 Processor,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
