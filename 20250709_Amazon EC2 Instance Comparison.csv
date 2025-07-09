@@ -1,0 +1,956 @@
+Name,API Name,Instance Memory,vCPUs,Instance Storage,Network Performance,On Demand,Linux Reserved cost,Linux Spot Minimum cost,Windows On Demand cost,Windows Reserved cost
+A1 Double Extra Large,a1.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.2568 hourly,$0.1618 hourly,unavailable,unavailable,unavailable
+A1 Extra Large,a1.xlarge,8 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.1284 hourly,$0.0809 hourly,unavailable,unavailable,unavailable
+A1 Large,a1.large,4 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.0642 hourly,$0.0404 hourly,unavailable,unavailable,unavailable
+A1 Medium,a1.medium,2 GiB,1 vCPUs,EBS only,Up to 10 Gigabit,$0.0321 hourly,$0.0202 hourly,unavailable,unavailable,unavailable
+A1 Metal,a1.metal,32 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.5140 hourly,$0.3240 hourly,unavailable,unavailable,unavailable
+A1 Quadruple Extra Large,a1.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.5136 hourly,$0.3236 hourly,unavailable,unavailable,unavailable
+C1 High-CPU Extra Large,c1.xlarge,7 GiB,8 vCPUs,1680 GB (4×420 GB HDD),High,$0.6320 hourly,$0.4800 hourly,unavailable,$1.0320 hourly,$0.8320 hourly
+C1 High-CPU Medium,c1.medium,1.7 GiB,2 vCPUs,350 GB HDD,Moderate,$0.1580 hourly,$0.1200 hourly,unavailable,$0.2580 hourly,$0.2080 hourly
+C3 High-CPU Double Extra Large,c3.2xlarge,15 GiB,8 vCPUs,160 GB (2×80 GB SSD),High,$0.5110 hourly,$0.3880 hourly,unavailable,$0.9250 hourly,$0.7440 hourly
+C3 High-CPU Eight Extra Large,c3.8xlarge,60 GiB,32 vCPUs,640 GB (2×320 GB SSD),10 Gigabit,$2.0430 hourly,$1.5520 hourly,unavailable,$3.6990 hourly,$2.9780 hourly
+C3 High-CPU Extra Large,c3.xlarge,7.5 GiB,4 vCPUs,80 GB (2×40 GB SSD),Moderate,$0.2550 hourly,$0.1940 hourly,unavailable,$0.4620 hourly,$0.3740 hourly
+C3 High-CPU Large,c3.large,3.75 GiB,2 vCPUs,32 GB (2×16 GB SSD),Moderate,$0.1280 hourly,$0.0970 hourly,unavailable,$0.2310 hourly,$0.1870 hourly
+C3 High-CPU Quadruple Extra Large,c3.4xlarge,30 GiB,16 vCPUs,320 GB (2×160 GB SSD),High,$1.0210 hourly,$0.7760 hourly,unavailable,$1.8490 hourly,$1.4890 hourly
+C4 High-CPU Double Extra Large,c4.2xlarge,15 GiB,8 vCPUs,EBS only,High,$0.5040 hourly,$0.3610 hourly,unavailable,$0.8720 hourly,$0.7290 hourly
+C4 High-CPU Eight Extra Large,c4.8xlarge,60 GiB,36 vCPUs,EBS only,10 Gigabit,$2.0160 hourly,$1.4450 hourly,unavailable,$3.6720 hourly,$3.1010 hourly
+C4 High-CPU Extra Large,c4.xlarge,7.5 GiB,4 vCPUs,EBS only,High,$0.2520 hourly,$0.1810 hourly,unavailable,$0.4360 hourly,$0.3650 hourly
+C4 High-CPU Large,c4.large,3.75 GiB,2 vCPUs,EBS only,Moderate,$0.1260 hourly,$0.0900 hourly,unavailable,$0.2180 hourly,$0.1820 hourly
+C4 High-CPU Quadruple Extra Large,c4.4xlarge,30 GiB,16 vCPUs,EBS only,High,$1.0080 hourly,$0.7220 hourly,unavailable,$1.7440 hourly,$1.4580 hourly
+C5 High-CPU 9xlarge,c5d.9xlarge,72 GiB,36 vCPUs,900 GB NVMe SSD,12 Gigabit,$2.1960 hourly,$1.3830 hourly,unavailable,$3.8520 hourly,$3.0390 hourly
+C5 High-CPU 9xlarge,c5.9xlarge,72 GiB,36 vCPUs,EBS only,12 Gigabit,$1.9260 hourly,$1.2130 hourly,unavailable,$3.5820 hourly,$2.8690 hourly
+C5 High-CPU 12xlarge,c5.12xlarge,96 GiB,48 vCPUs,EBS only,12 Gigabit,$2.5680 hourly,$1.6180 hourly,unavailable,$4.7760 hourly,$3.8260 hourly
+C5 High-CPU 12xlarge,c5d.12xlarge,96 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),12 Gigabit,$2.9280 hourly,$1.8450 hourly,unavailable,$5.1360 hourly,$4.0530 hourly
+C5 High-CPU 18xlarge,c5.18xlarge,144 GiB,72 vCPUs,EBS only,25 Gigabit,$3.8520 hourly,$2.4270 hourly,unavailable,$7.1640 hourly,$5.7390 hourly
+C5 High-CPU 18xlarge,c5d.18xlarge,144 GiB,72 vCPUs,1800 GB (2×900 GB NVMe SSD),25 Gigabit,$4.3920 hourly,$2.7670 hourly,unavailable,$7.7040 hourly,$6.0790 hourly
+C5 High-CPU 24xlarge,c5d.24xlarge,192 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$3.6890 hourly,unavailable,$10.2720 hourly,$8.1050 hourly
+C5 High-CPU 24xlarge,c5.24xlarge,192 GiB,96 vCPUs,EBS only,25 Gigabit,$5.1360 hourly,$3.2360 hourly,unavailable,$9.5520 hourly,$7.6520 hourly
+C5 High-CPU Double Extra Large,c5.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.4280 hourly,$0.2700 hourly,unavailable,$0.7960 hourly,$0.6380 hourly
+C5 High-CPU Double Extra Large,c5d.2xlarge,16 GiB,8 vCPUs,200 GB NVMe SSD,Up to 10 Gigabit,$0.4880 hourly,$0.3070 hourly,unavailable,$0.8560 hourly,$0.6750 hourly
+C5 High-CPU Extra Large,c5.xlarge,8 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.2140 hourly,$0.1350 hourly,unavailable,$0.3980 hourly,$0.3190 hourly
+C5 High-CPU Extra Large,c5d.xlarge,8 GiB,4 vCPUs,100 GB NVMe SSD,Up to 10 Gigabit,$0.2440 hourly,$0.1540 hourly,unavailable,$0.4280 hourly,$0.3380 hourly
+C5 High-CPU Large,c5d.large,4 GiB,2 vCPUs,50 GB NVMe SSD,Up to 10 Gigabit,$0.1220 hourly,$0.0770 hourly,unavailable,$0.2140 hourly,$0.1690 hourly
+C5 High-CPU Large,c5.large,4 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1070 hourly,$0.0670 hourly,unavailable,$0.1990 hourly,$0.1590 hourly
+C5 High-CPU Metal,c5d.metal,192 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$3.6890 hourly,unavailable,$10.2720 hourly,$8.1050 hourly
+C5 High-CPU Metal,c5.metal,192 GiB,96 vCPUs,EBS only,25 Gigabit,$5.1360 hourly,$3.2360 hourly,unavailable,$9.5520 hourly,$7.6520 hourly
+C5 High-CPU Quadruple Extra Large,c5.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.8560 hourly,$0.5390 hourly,unavailable,$1.5920 hourly,$1.2750 hourly
+C5 High-CPU Quadruple Extra Large,c5d.4xlarge,32 GiB,16 vCPUs,400 GB NVMe SSD,Up to 10 Gigabit,$0.9760 hourly,$0.6150 hourly,unavailable,$1.7120 hourly,$1.3510 hourly
+C5A 12xlarge,c5a.12xlarge,96 GiB,48 vCPUs,EBS only,12 Gigabit,$2.3040 hourly,$1.4520 hourly,unavailable,$4.5120 hourly,$3.6600 hourly
+C5A 16xlarge,c5a.16xlarge,128 GiB,64 vCPUs,EBS only,20 Gigabit,$3.0720 hourly,$1.9350 hourly,unavailable,$6.0160 hourly,$4.8790 hourly
+C5A 24xlarge,c5a.24xlarge,192 GiB,96 vCPUs,EBS only,20 Gigabit,$4.6080 hourly,$2.9030 hourly,unavailable,$9.0240 hourly,$7.3190 hourly
+C5A Double Extra Large,c5a.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.3840 hourly,$0.2420 hourly,unavailable,$0.7520 hourly,$0.6100 hourly
+C5A Eight Extra Large,c5a.8xlarge,64 GiB,32 vCPUs,EBS only,10 Gigabit,$1.5360 hourly,$0.9680 hourly,unavailable,$3.0080 hourly,$2.4400 hourly
+C5A Extra Large,c5a.xlarge,8 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.1920 hourly,$0.1210 hourly,unavailable,$0.3760 hourly,$0.3050 hourly
+C5A Large,c5a.large,4 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.0960 hourly,$0.0600 hourly,unavailable,$0.1880 hourly,$0.1520 hourly
+C5A Quadruple Extra Large,c5a.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.7680 hourly,$0.4840 hourly,unavailable,$1.5040 hourly,$1.2200 hourly
+C5AD 12xlarge,c5ad.12xlarge,96 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD 16xlarge,c5ad.16xlarge,128 GiB,64 vCPUs,2400 GB (2×1200 GB NVMe SSD),20 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD 24xlarge,c5ad.24xlarge,192 GiB,96 vCPUs,3800 GB (2×1900 GB NVMe SSD),20 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD Double Extra Large,c5ad.2xlarge,16 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD Eight Extra Large,c5ad.8xlarge,64 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD Extra Large,c5ad.xlarge,8 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD Large,c5ad.large,4 GiB,2 vCPUs,75 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5AD Quadruple Extra Large,c5ad.4xlarge,32 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C5N 9xlarge,c5n.9xlarge,96 GiB,36 vCPUs,EBS only,50 Gigabit,$2.4480 hourly,$1.5420 hourly,unavailable,$4.1040 hourly,$3.1980 hourly
+C5N 18xlarge,c5n.18xlarge,192 GiB,72 vCPUs,EBS only,100 Gigabit,$4.8960 hourly,$3.0840 hourly,unavailable,$8.2080 hourly,$6.3960 hourly
+C5N Double Extra Large,c5n.2xlarge,21 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$0.5440 hourly,$0.3430 hourly,unavailable,$0.9120 hourly,$0.7110 hourly
+C5N Extra Large,c5n.xlarge,10.5 GiB,4 vCPUs,EBS only,Up to 25 Gigabit,$0.2720 hourly,$0.1710 hourly,unavailable,$0.4560 hourly,$0.3550 hourly
+C5N Large,c5n.large,5.25 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.1360 hourly,$0.0860 hourly,unavailable,$0.2280 hourly,$0.1780 hourly
+C5N Metal,c5n.metal,192 GiB,72 vCPUs,EBS only,100 Gigabit,$4.8960 hourly,$3.0840 hourly,unavailable,$8.2080 hourly,$6.3960 hourly
+C5N Quadruple Extra Large,c5n.4xlarge,42 GiB,16 vCPUs,EBS only,Up to 25 Gigabit,$1.0880 hourly,$0.6850 hourly,unavailable,$1.8240 hourly,$1.4210 hourly
+C6A 12xlarge,c6a.12xlarge,96 GiB,48 vCPUs,EBS only,18.75 Gigabit,$2.3112 hourly,$1.5241 hourly,unavailable,$4.5192 hourly,$3.7321 hourly
+C6A 16xlarge,c6a.16xlarge,128 GiB,64 vCPUs,EBS only,25 Gigabit,$3.0816 hourly,$2.0321 hourly,unavailable,$6.0256 hourly,$4.9761 hourly
+C6A 24xlarge,c6a.24xlarge,192 GiB,96 vCPUs,EBS only,37.5 Gigabit,$4.6224 hourly,$3.0482 hourly,unavailable,$9.0384 hourly,$7.4642 hourly
+C6A 32xlarge,c6a.32xlarge,256 GiB,128 vCPUs,EBS only,50 Gigabit,$6.1632 hourly,$4.0643 hourly,unavailable,$12.0512 hourly,$9.9522 hourly
+C6A 48xlarge,c6a.48xlarge,384 GiB,192 vCPUs,EBS only,50 Gigabit,$9.2448 hourly,$6.0964 hourly,unavailable,$18.0768 hourly,$14.9284 hourly
+C6A Double Extra Large,c6a.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.3852 hourly,$0.2540 hourly,unavailable,$0.7532 hourly,$0.6220 hourly
+C6A Eight Extra Large,c6a.8xlarge,64 GiB,32 vCPUs,EBS only,12.5 Gigabit,$1.5408 hourly,$1.0161 hourly,unavailable,$3.0128 hourly,$2.4881 hourly
+C6A Extra Large,c6a.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1926 hourly,$0.1270 hourly,unavailable,$0.3766 hourly,$0.3110 hourly
+C6A Large,c6a.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0963 hourly,$0.0635 hourly,unavailable,$0.1883 hourly,$0.1555 hourly
+C6A Metal,c6a.metal,384 GiB,192 vCPUs,EBS only,50 Gigabit,$9.2448 hourly,$6.0964 hourly,unavailable,$18.0768 hourly,$14.9284 hourly
+C6A Quadruple Extra Large,c6a.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.7704 hourly,$0.5080 hourly,unavailable,$1.5064 hourly,$1.2440 hourly
+C6G 12xlarge,c6g.12xlarge,96 GiB,48 vCPUs,EBS only,20 Gigabit,$2.0544 hourly,$1.2943 hourly,unavailable,unavailable,unavailable
+C6G 16xlarge,c6g.16xlarge,128 GiB,64 vCPUs,EBS only,25 Gigabit,$2.7392 hourly,$1.7257 hourly,unavailable,unavailable,unavailable
+C6G Double Extra Large,c6g.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.3424 hourly,$0.2157 hourly,unavailable,unavailable,unavailable
+C6G Eight Extra Large,c6g.8xlarge,64 GiB,32 vCPUs,EBS only,12 Gigabit,$1.3696 hourly,$0.8628 hourly,unavailable,unavailable,unavailable
+C6G Extra Large,c6g.xlarge,8 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.1712 hourly,$0.1079 hourly,unavailable,unavailable,unavailable
+C6G Large,c6g.large,4 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.0856 hourly,$0.0539 hourly,unavailable,unavailable,unavailable
+C6G Medium,c6g.medium,2 GiB,1 vCPUs,EBS only,Up to 10 Gigabit,$0.0428 hourly,$0.0270 hourly,unavailable,unavailable,unavailable
+C6G Metal,c6g.metal,128 GiB,64 vCPUs,EBS only,25 Gigabit,$2.7392 hourly,$1.7257 hourly,unavailable,unavailable,unavailable
+C6G Quadruple Extra Large,c6g.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.6848 hourly,$0.4314 hourly,unavailable,unavailable,unavailable
+C6GD 12xlarge,c6gd.12xlarge,96 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,$2.3520 hourly,$1.4867 hourly,unavailable,unavailable,unavailable
+C6GD 16xlarge,c6gd.16xlarge,128 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.1360 hourly,$1.9823 hourly,unavailable,unavailable,unavailable
+C6GD Double Extra Large,c6gd.2xlarge,16 GiB,8 vCPUs,474 GB NVMe SSD,Up to 10 Gigabit,$0.3920 hourly,$0.2478 hourly,unavailable,unavailable,unavailable
+C6GD Eight Extra Large,c6gd.8xlarge,64 GiB,32 vCPUs,1900 GB NVMe SSD,12 Gigabit,$1.5680 hourly,$0.9911 hourly,unavailable,unavailable,unavailable
+C6GD Extra Large,c6gd.xlarge,8 GiB,4 vCPUs,237 GB NVMe SSD,Up to 10 Gigabit,$0.1960 hourly,$0.1239 hourly,unavailable,unavailable,unavailable
+C6GD Large,c6gd.large,4 GiB,2 vCPUs,118 GB NVMe SSD,Up to 10 Gigabit,$0.0980 hourly,$0.0619 hourly,unavailable,unavailable,unavailable
+C6GD Medium,c6gd.medium,2 GiB,1 vCPUs,59 GB NVMe SSD,Up to 10 Gigabit,$0.0490 hourly,$0.0310 hourly,unavailable,unavailable,unavailable
+C6GD Metal,c6gd.metal,128 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.1360 hourly,$1.9823 hourly,unavailable,unavailable,unavailable
+C6GD Quadruple Extra Large,c6gd.4xlarge,32 GiB,16 vCPUs,950 GB NVMe SSD,Up to 10 Gigabit,$0.7840 hourly,$0.4956 hourly,unavailable,unavailable,unavailable
+C6GN 12xlarge,c6gn.12xlarge,96 GiB,48 vCPUs,EBS only,75 Gigabit,$2.6160 hourly,$1.6379 hourly,unavailable,unavailable,unavailable
+C6GN 16xlarge,c6gn.16xlarge,128 GiB,64 vCPUs,EBS only,100 Gigabit,$3.4880 hourly,$2.1839 hourly,unavailable,unavailable,unavailable
+C6GN Double Extra Large,c6gn.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$0.4360 hourly,$0.2730 hourly,unavailable,unavailable,unavailable
+C6GN Eight Extra Large,c6gn.8xlarge,64 GiB,32 vCPUs,EBS only,50 Gigabit,$1.7440 hourly,$1.0919 hourly,unavailable,unavailable,unavailable
+C6GN Extra Large,c6gn.xlarge,8 GiB,4 vCPUs,EBS only,Up to 25 Gigabit,$0.2180 hourly,$0.1365 hourly,unavailable,unavailable,unavailable
+C6GN Large,c6gn.large,4 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.1090 hourly,$0.0683 hourly,unavailable,unavailable,unavailable
+C6GN Medium,c6gn.medium,2 GiB,1 vCPUs,EBS only,Up to 16 Gigabit,$0.0545 hourly,$0.0341 hourly,unavailable,unavailable,unavailable
+C6GN Metal,c6gn.metal,128 GiB,64 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C6GN Quadruple Extra Large,c6gn.4xlarge,32 GiB,16 vCPUs,EBS only,25 Gigabit,$0.8720 hourly,$0.5460 hourly,unavailable,unavailable,unavailable
+C6I 12xlarge,c6i.12xlarge,96 GiB,48 vCPUs,EBS only,18.75 Gigabit,$2.5680 hourly,$1.6934 hourly,unavailable,$4.7760 hourly,$3.9014 hourly
+C6I 16xlarge,c6i.16xlarge,128 GiB,64 vCPUs,EBS only,25 Gigabit,$3.4240 hourly,$2.2579 hourly,unavailable,$6.3680 hourly,$5.2019 hourly
+C6I 24xlarge,c6i.24xlarge,192 GiB,96 vCPUs,EBS only,37.5 Gigabit,$5.1360 hourly,$3.3869 hourly,unavailable,$9.5520 hourly,$7.8029 hourly
+C6I 32xlarge,c6i.32xlarge,256 GiB,128 vCPUs,EBS only,50 Gigabit,$6.8480 hourly,$4.5158 hourly,unavailable,$12.7360 hourly,$10.4038 hourly
+C6I Double Extra Large,c6i.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4280 hourly,$0.2822 hourly,unavailable,$0.7960 hourly,$0.6502 hourly
+C6I Eight Extra Large,c6i.8xlarge,64 GiB,32 vCPUs,EBS only,12.5 Gigabit,$1.7120 hourly,$1.1290 hourly,unavailable,$3.1840 hourly,$2.6010 hourly
+C6I Extra Large,c6i.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2140 hourly,$0.1411 hourly,unavailable,$0.3980 hourly,$0.3251 hourly
+C6I Large,c6i.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1070 hourly,$0.0706 hourly,unavailable,$0.1990 hourly,$0.1626 hourly
+C6I Metal,c6i.metal,256 GiB,128 vCPUs,EBS only,50 Gigabit,$6.8480 hourly,$4.5158 hourly,unavailable,$12.7360 hourly,$10.4038 hourly
+C6I Quadruple Extra Large,c6i.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.8560 hourly,$0.5645 hourly,unavailable,$1.5920 hourly,$1.3005 hourly
+C6ID 12xlarge,c6id.12xlarge,96 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),18.75 Gigabit,$3.0744 hourly,$2.0242 hourly,unavailable,$5.2824 hourly,$4.2322 hourly
+C6ID 16xlarge,c6id.16xlarge,128 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.0992 hourly,$2.6989 hourly,unavailable,$7.0432 hourly,$5.6429 hourly
+C6ID 24xlarge,c6id.24xlarge,192 GiB,96 vCPUs,5700 GB (4×1425 GB NVMe SSD),37.5 Gigabit,$6.1488 hourly,$4.0484 hourly,unavailable,$10.5648 hourly,$8.4644 hourly
+C6ID 32xlarge,c6id.32xlarge,256 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$8.1984 hourly,$5.3978 hourly,unavailable,$14.0864 hourly,$11.2858 hourly
+C6ID Double Extra Large,c6id.2xlarge,16 GiB,8 vCPUs,474 GB NVMe SSD,Up to 12.5 Gigabit,$0.5124 hourly,$0.3374 hourly,unavailable,$0.8804 hourly,$0.7054 hourly
+C6ID Eight Extra Large,c6id.8xlarge,64 GiB,32 vCPUs,1900 GB NVMe SSD,12.5 Gigabit,$2.0496 hourly,$1.3495 hourly,unavailable,$3.5216 hourly,$2.8215 hourly
+C6ID Extra Large,c6id.xlarge,8 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2562 hourly,$0.1687 hourly,unavailable,$0.4402 hourly,$0.3527 hourly
+C6ID Large,c6id.large,4 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1281 hourly,$0.0843 hourly,unavailable,$0.2201 hourly,$0.1763 hourly
+C6ID Metal,c6id.metal,256 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$8.1984 hourly,$5.3978 hourly,unavailable,$14.0864 hourly,$11.2858 hourly
+C6ID Quadruple Extra Large,c6id.4xlarge,32 GiB,16 vCPUs,950 GB NVMe SSD,Up to 12.5 Gigabit,$1.0248 hourly,$0.6747 hourly,unavailable,$1.7608 hourly,$1.4107 hourly
+C6IN 12xlarge,c6in.12xlarge,96 GiB,48 vCPUs,EBS only,75 Gigabit,$3.4272 hourly,$2.1591 hourly,unavailable,$5.6352 hourly,$4.3671 hourly
+C6IN 16xlarge,c6in.16xlarge,128 GiB,64 vCPUs,EBS only,100 Gigabit,$4.5696 hourly,$2.8788 hourly,unavailable,$7.5136 hourly,$5.8228 hourly
+C6IN 24xlarge,c6in.24xlarge,192 GiB,96 vCPUs,EBS only,150 Gigabit,$6.8544 hourly,$4.3183 hourly,unavailable,$11.2704 hourly,$8.7343 hourly
+C6IN 32xlarge,c6in.32xlarge,256 GiB,128 vCPUs,EBS only,200 Gigabit,$9.1392 hourly,$5.7577 hourly,unavailable,$15.0272 hourly,$11.6457 hourly
+C6IN Double Extra Large,c6in.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 40 Gigabit,$0.5712 hourly,$0.3599 hourly,unavailable,$0.9392 hourly,$0.7279 hourly
+C6IN Eight Extra Large,c6in.8xlarge,64 GiB,32 vCPUs,EBS only,50 Gigabit,$2.2848 hourly,$1.4394 hourly,unavailable,$3.7568 hourly,$2.9114 hourly
+C6IN Extra Large,c6in.xlarge,8 GiB,4 vCPUs,EBS only,Up to 30 Gigabit,$0.2856 hourly,$0.1799 hourly,unavailable,$0.4696 hourly,$0.3639 hourly
+C6IN Large,c6in.large,4 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.1428 hourly,$0.0900 hourly,unavailable,$0.2348 hourly,$0.1820 hourly
+C6IN Metal,c6in.metal,256 GiB,128 vCPUs,EBS only,200 Gigabit,$9.1392 hourly,$5.7577 hourly,unavailable,$15.0272 hourly,$11.6457 hourly
+C6IN Quadruple Extra Large,c6in.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 50 Gigabit,$1.1424 hourly,$0.7197 hourly,unavailable,$1.8784 hourly,$1.4557 hourly
+C7A 12xlarge,c7a.12xlarge,96 GiB,48 vCPUs,EBS only,18.75 Gigabit,$3.1008 hourly,$2.0448 hourly,unavailable,$5.3088 hourly,$4.2528 hourly
+C7A 16xlarge,c7a.16xlarge,128 GiB,64 vCPUs,EBS only,25 Gigabit,$4.1344 hourly,$2.7264 hourly,unavailable,$7.0784 hourly,$5.6704 hourly
+C7A 24xlarge,c7a.24xlarge,192 GiB,96 vCPUs,EBS only,37.5 Gigabit,$6.2016 hourly,$4.0896 hourly,unavailable,$10.6176 hourly,$8.5056 hourly
+C7A 32xlarge,c7a.32xlarge,256 GiB,128 vCPUs,EBS only,50 Gigabit,$8.2688 hourly,$5.4528 hourly,unavailable,$14.1568 hourly,$11.3408 hourly
+C7A 48xlarge,c7a.48xlarge,384 GiB,192 vCPUs,EBS only,50 Gigabit,$12.4032 hourly,$8.1792 hourly,unavailable,$21.2352 hourly,$17.0112 hourly
+C7A Double Extra Large,c7a.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.5168 hourly,$0.3408 hourly,unavailable,$0.8848 hourly,$0.7088 hourly
+C7A Eight Extra Large,c7a.8xlarge,64 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.0672 hourly,$1.3632 hourly,unavailable,$3.5392 hourly,$2.8352 hourly
+C7A Extra Large,c7a.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2584 hourly,$0.1704 hourly,unavailable,$0.4424 hourly,$0.3544 hourly
+C7A Large,c7a.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1292 hourly,$0.0852 hourly,unavailable,$0.2212 hourly,$0.1772 hourly
+C7A Medium,c7a.medium,2 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0646 hourly,$0.0426 hourly,unavailable,$0.1106 hourly,$0.0886 hourly
+C7A Metal-48xl,c7a.metal-48xl,384 GiB,192 vCPUs,EBS only,50 Gigabit,$12.4032 hourly,$8.1792 hourly,unavailable,$21.2352 hourly,$17.0112 hourly
+C7A Quadruple Extra Large,c7a.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.0336 hourly,$0.6816 hourly,unavailable,$1.7696 hourly,$1.4176 hourly
+C7G 12xlarge,c7g.12xlarge,96 GiB,48 vCPUs,EBS only,22.5 Gigabit,$2.1830 hourly,$1.4395 hourly,unavailable,unavailable,unavailable
+C7G 16xlarge,c7g.16xlarge,128 GiB,64 vCPUs,EBS only,30 Gigabit,$2.9107 hourly,$1.9193 hourly,unavailable,unavailable,unavailable
+C7G Double Extra Large,c7g.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,$0.3638 hourly,$0.2399 hourly,unavailable,unavailable,unavailable
+C7G Eight Extra Large,c7g.8xlarge,64 GiB,32 vCPUs,EBS only,15 Gigabit,$1.4554 hourly,$0.9597 hourly,unavailable,unavailable,unavailable
+C7G Extra Large,c7g.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1819 hourly,$0.1200 hourly,unavailable,unavailable,unavailable
+C7G Large,c7g.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0910 hourly,$0.0600 hourly,unavailable,unavailable,unavailable
+C7G Medium,c7g.medium,2 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0455 hourly,$0.0300 hourly,unavailable,unavailable,unavailable
+C7G Metal,c7g.metal,128 GiB,64 vCPUs,EBS only,30 Gigabit,$2.9107 hourly,$1.9193 hourly,unavailable,unavailable,unavailable
+C7G Quadruple Extra Large,c7g.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,$0.7277 hourly,$0.4798 hourly,unavailable,unavailable,unavailable
+C7GD 12xlarge,c7gd.12xlarge,96 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),22.5 Gigabit,$2.7672 hourly,$1.8218 hourly,unavailable,unavailable,unavailable
+C7GD 16xlarge,c7gd.16xlarge,128 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$3.6896 hourly,$2.4291 hourly,unavailable,unavailable,unavailable
+C7GD Double Extra Large,c7gd.2xlarge,16 GiB,8 vCPUs,474 GB NVMe SSD,Up to 15 Gigabit,$0.4612 hourly,$0.3036 hourly,unavailable,unavailable,unavailable
+C7GD Eight Extra Large,c7gd.8xlarge,64 GiB,32 vCPUs,1900 GB NVMe SSD,15 Gigabit,$1.8448 hourly,$1.2145 hourly,unavailable,unavailable,unavailable
+C7GD Extra Large,c7gd.xlarge,8 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2306 hourly,$0.1518 hourly,unavailable,unavailable,unavailable
+C7GD Large,c7gd.large,4 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1153 hourly,$0.0759 hourly,unavailable,unavailable,unavailable
+C7GD Medium,c7gd.medium,2 GiB,1 vCPUs,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0577 hourly,$0.0380 hourly,unavailable,unavailable,unavailable
+C7GD Metal,c7gd.metal,128 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$3.6896 hourly,$2.4291 hourly,unavailable,unavailable,unavailable
+C7GD Quadruple Extra Large,c7gd.4xlarge,32 GiB,16 vCPUs,950 GB NVMe SSD,Up to 15 Gigabit,$0.9224 hourly,$0.6073 hourly,unavailable,unavailable,unavailable
+C7GN 12xlarge,c7gn.12xlarge,96 GiB,48 vCPUs,EBS only,150 Gigabit,$3.7776 hourly,$2.3601 hourly,unavailable,unavailable,unavailable
+C7GN 16xlarge,c7gn.16xlarge,128 GiB,64 vCPUs,EBS only,200 Gigabit,$5.0368 hourly,$3.1467 hourly,unavailable,unavailable,unavailable
+C7GN Double Extra Large,c7gn.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 50 Gigabit,$0.6296 hourly,$0.3933 hourly,unavailable,unavailable,unavailable
+C7GN Eight Extra Large,c7gn.8xlarge,64 GiB,32 vCPUs,EBS only,100 Gigabit,$2.5184 hourly,$1.5734 hourly,unavailable,unavailable,unavailable
+C7GN Extra Large,c7gn.xlarge,8 GiB,4 vCPUs,EBS only,Up to 40 Gigabit,$0.3148 hourly,$0.1967 hourly,unavailable,unavailable,unavailable
+C7GN Large,c7gn.large,4 GiB,2 vCPUs,EBS only,Up to 30 Gigabit,$0.1574 hourly,$0.0983 hourly,unavailable,unavailable,unavailable
+C7GN Medium,c7gn.medium,2 GiB,1 vCPUs,EBS only,Up to 25 Gigabit,$0.0787 hourly,$0.0492 hourly,unavailable,unavailable,unavailable
+C7GN Metal,c7gn.metal,128 GiB,64 vCPUs,EBS only,200 Gigabit,$5.0368 hourly,$3.1467 hourly,unavailable,unavailable,unavailable
+C7GN Quadruple Extra Large,c7gn.4xlarge,32 GiB,16 vCPUs,EBS only,50 Gigabit,$1.2592 hourly,$0.7867 hourly,unavailable,unavailable,unavailable
+C7I 12xlarge,c7i.12xlarge,96 GiB,48 vCPUs,EBS only,18.75 Gigabit,$2.6964 hourly,$1.7781 hourly,unavailable,$4.9044 hourly,$3.9861 hourly
+C7I 16xlarge,c7i.16xlarge,128 GiB,64 vCPUs,EBS only,25 Gigabit,$3.5952 hourly,$2.3708 hourly,unavailable,$6.5392 hourly,$5.3148 hourly
+C7I 24xlarge,c7i.24xlarge,192 GiB,96 vCPUs,EBS only,37.5 Gigabit,$5.3928 hourly,$3.5562 hourly,unavailable,$9.8088 hourly,$7.9722 hourly
+C7I 48xlarge,c7i.48xlarge,384 GiB,192 vCPUs,EBS only,50 Gigabit,$10.7856 hourly,$7.1125 hourly,unavailable,$19.6176 hourly,$15.9445 hourly
+C7I Double Extra Large,c7i.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4494 hourly,$0.2964 hourly,unavailable,$0.8174 hourly,$0.6643 hourly
+C7I Eight Extra Large,c7i.8xlarge,64 GiB,32 vCPUs,EBS only,12.5 Gigabit,$1.7976 hourly,$1.1854 hourly,unavailable,$3.2696 hourly,$2.6574 hourly
+C7I Extra Large,c7i.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2247 hourly,$0.1482 hourly,unavailable,$0.4087 hourly,$0.3322 hourly
+C7I Large,c7i.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1124 hourly,$0.0741 hourly,unavailable,$0.2044 hourly,$0.1661 hourly
+C7I Metal-24xl,c7i.metal-24xl,192 GiB,96 vCPUs,EBS only,37.5 Gigabit,$5.3928 hourly,$3.5562 hourly,unavailable,$9.8088 hourly,$7.9722 hourly
+C7I Metal-48xl,c7i.metal-48xl,384 GiB,192 vCPUs,EBS only,50 Gigabit,$10.7856 hourly,$7.1125 hourly,unavailable,$19.6176 hourly,$15.9445 hourly
+C7I Quadruple Extra Large,c7i.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.8988 hourly,$0.5927 hourly,unavailable,$1.6348 hourly,$1.3287 hourly
+C7I-FLEX 12xlarge,c7i-flex.12xlarge,96 GiB,48 vCPUs,EBS only,Up to 18.75 Gigabit,$2.5616 hourly,$1.6892 hourly,unavailable,$4.7696 hourly,$3.8972 hourly
+C7I-FLEX 16xlarge,c7i-flex.16xlarge,128 GiB,64 vCPUs,EBS only,Up to 25 Gigabit,$3.4154 hourly,$2.2523 hourly,unavailable,$6.3594 hourly,$5.1963 hourly
+C7I-FLEX Double Extra Large,c7i-flex.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4269 hourly,$0.2815 hourly,unavailable,$0.7765 hourly,$0.6311 hourly
+C7I-FLEX Eight Extra Large,c7i-flex.8xlarge,64 GiB,32 vCPUs,EBS only,Up to 12.5 Gigabit,$1.7077 hourly,$1.1261 hourly,unavailable,$3.1061 hourly,$2.5245 hourly
+C7I-FLEX Extra Large,c7i-flex.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2135 hourly,$0.1408 hourly,unavailable,$0.3883 hourly,$0.3156 hourly
+C7I-FLEX Large,c7i-flex.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1067 hourly,$0.0704 hourly,unavailable,$0.1941 hourly,$0.1578 hourly
+C7I-FLEX Quadruple Extra Large,c7i-flex.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.8539 hourly,$0.5631 hourly,unavailable,$1.5531 hourly,$1.2623 hourly
+C8G 12xlarge,c8g.12xlarge,96 GiB,48 vCPUs,EBS only,22.5 Gigabit,$2.4014 hourly,$1.5835 hourly,unavailable,unavailable,unavailable
+C8G 16xlarge,c8g.16xlarge,128 GiB,64 vCPUs,EBS only,30 Gigabit,$3.2019 hourly,$2.1113 hourly,unavailable,unavailable,unavailable
+C8G 24xlarge,c8g.24xlarge,192 GiB,96 vCPUs,EBS only,40 Gigabit,$4.8029 hourly,$3.1670 hourly,unavailable,unavailable,unavailable
+C8G 48xlarge,c8g.48xlarge,384 GiB,192 vCPUs,EBS only,50 Gigabit,$9.6058 hourly,$6.3340 hourly,unavailable,unavailable,unavailable
+C8G Double Extra Large,c8g.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,$0.4002 hourly,$0.2639 hourly,unavailable,unavailable,unavailable
+C8G Eight Extra Large,c8g.8xlarge,64 GiB,32 vCPUs,EBS only,15 Gigabit,$1.6010 hourly,$1.0557 hourly,unavailable,unavailable,unavailable
+C8G Extra Large,c8g.xlarge,8 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2001 hourly,$0.1320 hourly,unavailable,unavailable,unavailable
+C8G Large,c8g.large,4 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1001 hourly,$0.0660 hourly,unavailable,unavailable,unavailable
+C8G Medium,c8g.medium,2 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0500 hourly,$0.0330 hourly,unavailable,unavailable,unavailable
+C8G Metal-24xl,c8g.metal-24xl,192 GiB,96 vCPUs,EBS only,40 Gigabit,$4.8029 hourly,$3.1670 hourly,unavailable,unavailable,unavailable
+C8G Metal-48xl,c8g.metal-48xl,384 GiB,192 vCPUs,EBS only,50 Gigabit,$9.6058 hourly,$6.3340 hourly,unavailable,unavailable,unavailable
+C8G Quadruple Extra Large,c8g.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,$0.8005 hourly,$0.5278 hourly,unavailable,unavailable,unavailable
+C8GD 12xlarge,c8gd.12xlarge,96 GiB,48 vCPUs,2850 GB (3×950 GB NVMe SSD),22.5 Gigabit,$2.9885 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD 16xlarge,c8gd.16xlarge,128 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$3.9846 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD 24xlarge,c8gd.24xlarge,192 GiB,96 vCPUs,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$5.9770 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD 48xlarge,c8gd.48xlarge,384 GiB,192 vCPUs,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$11.9539 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Double Extra Large,c8gd.2xlarge,16 GiB,8 vCPUs,474 GB NVMe SSD,Up to 15 Gigabit,$0.4981 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Eight Extra Large,c8gd.8xlarge,64 GiB,32 vCPUs,1900 GB NVMe SSD,15 Gigabit,$1.9923 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Extra Large,c8gd.xlarge,8 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2490 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Large,c8gd.large,4 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1245 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Medium,c8gd.medium,2 GiB,1 vCPUs,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0623 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Metal-24xl,c8gd.metal-24xl,192 GiB,96 vCPUs,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$5.9770 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Metal-48xl,c8gd.metal-48xl,384 GiB,192 vCPUs,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$11.9539 hourly,unavailable,unavailable,unavailable,unavailable
+C8GD Quadruple Extra Large,c8gd.4xlarge,32 GiB,16 vCPUs,950 GB NVMe SSD,Up to 15 Gigabit,$0.9962 hourly,unavailable,unavailable,unavailable,unavailable
+C8GN 12xlarge,c8gn.12xlarge,96 GiB,48 vCPUs,EBS only,150 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN 16xlarge,c8gn.16xlarge,128 GiB,64 vCPUs,EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN 24xlarge,c8gn.24xlarge,192 GiB,96 vCPUs,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN 48xlarge,c8gn.48xlarge,384 GiB,192 vCPUs,EBS only,600 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Double Extra Large,c8gn.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Eight Extra Large,c8gn.8xlarge,64 GiB,32 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Extra Large,c8gn.xlarge,8 GiB,4 vCPUs,EBS only,Up to 40 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Large,c8gn.large,4 GiB,2 vCPUs,EBS only,Up to 30 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Medium,c8gn.medium,2 GiB,1 vCPUs,EBS only,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Metal-24xl,c8gn.metal-24xl,192 GiB,96 vCPUs,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Metal-48xl,c8gn.metal-48xl,384 GiB,192 vCPUs,EBS only,600 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+C8GN Quadruple Extra Large,c8gn.4xlarge,32 GiB,16 vCPUs,EBS only,50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+Cluster Compute Eight Extra Large,cc2.8xlarge,60.5 GiB,32 vCPUs,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+D2 Double Extra Large,d2.2xlarge,61 GiB,8 vCPUs,12288 GB (6×2048 GB HDD),High,$1.6880 hourly,$1.0580 hourly,unavailable,$1.9090 hourly,$1.1380 hourly
+D2 Eight Extra Large,d2.8xlarge,244 GiB,36 vCPUs,49152 GB (24×2048 GB HDD),10 Gigabit,$6.7520 hourly,$4.2320 hourly,unavailable,$7.4300 hourly,$4.3110 hourly
+D2 Extra Large,d2.xlarge,30.5 GiB,4 vCPUs,6144 GB (3×2048 GB HDD),Moderate,$0.8440 hourly,$0.5290 hourly,unavailable,$0.9750 hourly,$0.5990 hourly
+D2 Quadruple Extra Large,d2.4xlarge,122 GiB,16 vCPUs,24576 GB (12×2048 GB HDD),High,$3.3760 hourly,$2.1160 hourly,unavailable,$3.6780 hourly,$2.1960 hourly
+D3 Double Extra Large,d3.2xlarge,64 GiB,8 vCPUs,11880 GB (6×1980 GB NVMe HDD),Up to 15 Gigabit,$1.4480 hourly,$0.9120 hourly,unavailable,$1.8160 hourly,$1.2800 hourly
+D3 Eight Extra Large,d3.8xlarge,256 GiB,32 vCPUs,47520 GB (24×1980 GB NVMe HDD),25 Gigabit,$5.7934 hourly,$3.6499 hourly,unavailable,$7.2654 hourly,$5.1219 hourly
+D3 Extra Large,d3.xlarge,32 GiB,4 vCPUs,5940 GB (3×1980 GB NVMe HDD),Up to 15 Gigabit,$0.7240 hourly,$0.4560 hourly,unavailable,$0.9080 hourly,$0.6400 hourly
+D3 Quadruple Extra Large,d3.4xlarge,128 GiB,16 vCPUs,23760 GB (12×1980 GB NVMe HDD),Up to 15 Gigabit,$2.8970 hourly,$1.8250 hourly,unavailable,$3.6330 hourly,$2.5610 hourly
+D3EN 6xlarge,d3en.6xlarge,96 GiB,24 vCPUs,167760 GB (12×13980 GB NVMe HDD),40 Gigabit,$4.5740 hourly,$2.8810 hourly,unavailable,$5.6780 hourly,$3.9850 hourly
+D3EN 12xlarge,d3en.12xlarge,192 GiB,48 vCPUs,335520 GB (24×13980 GB NVMe HDD),75 Gigabit,$9.1476 hourly,$5.7630 hourly,unavailable,$11.3556 hourly,$7.9710 hourly
+D3EN Double Extra Large,d3en.2xlarge,32 GiB,8 vCPUs,55920 GB (4×13980 GB NVMe HDD),Up to 25 Gigabit,$1.5250 hourly,$0.9600 hourly,unavailable,$1.8930 hourly,$1.3280 hourly
+D3EN Eight Extra Large,d3en.8xlarge,128 GiB,32 vCPUs,223680 GB (16×13980 GB NVMe HDD),50 Gigabit,$6.0984 hourly,$3.8420 hourly,unavailable,$7.5704 hourly,$5.3140 hourly
+D3EN Extra Large,d3en.xlarge,16 GiB,4 vCPUs,27960 GB (2×13980 GB NVMe HDD),Up to 25 Gigabit,$0.7620 hourly,$0.4800 hourly,unavailable,$0.9460 hourly,$0.6640 hourly
+D3EN Quadruple Extra Large,d3en.4xlarge,64 GiB,16 vCPUs,111840 GB (8×13980 GB NVMe HDD),25 Gigabit,$3.0490 hourly,$1.9210 hourly,unavailable,$3.7850 hourly,$2.6570 hourly
+DL1 24xlarge,dl1.24xlarge,768 GiB,96 vCPUs,4000 GB (4×1000 GB NVMe SSD),4x 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+DL2Q 24xlarge,dl2q.24xlarge,768 GiB,96 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F1 16xlarge,f1.16xlarge,976 GiB,64 vCPUs,3760 GB (4×940 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F1 Double Extra Large,f1.2xlarge,122 GiB,8 vCPUs,470 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F1 Quadruple Extra Large,f1.4xlarge,244 GiB,16 vCPUs,940 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F2 6xlarge,f2.6xlarge,256 GiB,24 vCPUs,940 GB NVMe SSD,12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F2 12xlarge,f2.12xlarge,512 GiB,48 vCPUs,1880 GB (2×940 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+F2 48xlarge,f2.48xlarge,2048 GiB,192 vCPUs,7520 GB (8×940 GB NVMe SSD),100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+G2 Double Extra Large,g2.2xlarge,15 GiB,8 vCPUs,EBS only,Moderate,$0.8980 hourly,unavailable,unavailable,$1.0100 hourly,unavailable
+G2 Eight Extra Large,g2.8xlarge,60 GiB,32 vCPUs,EBS only,High,$3.5920 hourly,unavailable,unavailable,$3.8700 hourly,unavailable
+G3 Graphics GPU 16xlarge,g3.16xlarge,488 GiB,64 vCPUs,EBS only,20 Gigabit,$6.3200 hourly,unavailable,unavailable,$9.2640 hourly,unavailable
+G3 Graphics GPU Eight Extra Large,g3.8xlarge,244 GiB,32 vCPUs,EBS only,10 Gigabit,$3.1600 hourly,unavailable,unavailable,$4.6320 hourly,unavailable
+G3 Graphics GPU Quadruple Extra Large,g3.4xlarge,122 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$1.5800 hourly,unavailable,unavailable,$2.3160 hourly,unavailable
+G3S Extra Large,g3s.xlarge,30.5 GiB,4 vCPUs,EBS only,10 Gigabit,$1.0400 hourly,unavailable,unavailable,$1.2240 hourly,unavailable
+G4AD 16xlarge,g4ad.16xlarge,256 GiB,64 vCPUs,2400 GB (2×1200 GB NVMe SSD),25 Gigabit,$4.6800 hourly,$3.1943 hourly,unavailable,$7.6240 hourly,$6.1383 hourly
+G4AD Double Extra Large,g4ad.2xlarge,32 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,$0.7303 hourly,$0.4985 hourly,unavailable,$1.0983 hourly,$0.8665 hourly
+G4AD Eight Extra Large,g4ad.8xlarge,128 GiB,32 vCPUs,1200 GB NVMe SSD,15 Gigabit,$2.3400 hourly,$1.5972 hourly,unavailable,$3.8120 hourly,$3.0692 hourly
+G4AD Extra Large,g4ad.xlarge,16 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,$0.5108 hourly,$0.3487 hourly,unavailable,$0.6948 hourly,$0.5327 hourly
+G4AD Quadruple Extra Large,g4ad.4xlarge,64 GiB,16 vCPUs,600 GB NVMe SSD,Up to 10 Gigabit,$1.1700 hourly,$0.7986 hourly,unavailable,$1.9060 hourly,$1.5346 hourly
+G4DN 12xlarge,g4dn.12xlarge,192 GiB,48 vCPUs,900 GB NVMe SSD,50 Gigabit,$5.2810 hourly,$3.6040 hourly,unavailable,$7.4890 hourly,$5.8120 hourly
+G4DN 16xlarge,g4dn.16xlarge,256 GiB,64 vCPUs,900 GB NVMe SSD,50 Gigabit,$5.8750 hourly,$4.0100 hourly,unavailable,$8.8190 hourly,$6.9540 hourly
+G4DN Double Extra Large,g4dn.2xlarge,32 GiB,8 vCPUs,225 GB NVMe SSD,Up to 25 Gigabit,$1.0150 hourly,$0.6930 hourly,unavailable,$1.3830 hourly,$1.0610 hourly
+G4DN Eight Extra Large,g4dn.8xlarge,128 GiB,32 vCPUs,900 GB NVMe SSD,50 Gigabit,$2.9380 hourly,$2.0050 hourly,unavailable,$4.4100 hourly,$3.4770 hourly
+G4DN Extra Large,g4dn.xlarge,16 GiB,4 vCPUs,125 GB NVMe SSD,Up to 25 Gigabit,$0.7100 hourly,$0.4850 hourly,unavailable,$0.8940 hourly,$0.6690 hourly
+G4DN Metal,g4dn.metal,384 GiB,96 vCPUs,1800 GB (2×900 GB NVMe SSD),100 Gigabit,$10.5620 hourly,$7.2090 hourly,unavailable,$14.9780 hourly,$11.6250 hourly
+G4DN Quadruple Extra Large,g4dn.4xlarge,64 GiB,16 vCPUs,225 GB NVMe SSD,Up to 25 Gigabit,$1.6250 hourly,$1.1090 hourly,unavailable,$2.3610 hourly,$1.8450 hourly
+G5 Graphics and Machine Learning GPU 12xlarge,g5.12xlarge,192 GiB,48 vCPUs,3800 GB NVMe SSD,40 Gigabit,$8.2261 hourly,$5.1824 hourly,unavailable,$10.4341 hourly,$7.3904 hourly
+G5 Graphics and Machine Learning GPU 16xlarge,g5.16xlarge,256 GiB,64 vCPUs,1900 GB NVMe SSD,25 Gigabit,$5.9404 hourly,$3.7425 hourly,unavailable,$8.8844 hourly,$6.6865 hourly
+G5 Graphics and Machine Learning GPU 24xlarge,g5.24xlarge,384 GiB,96 vCPUs,3800 GB NVMe SSD,50 Gigabit,$11.8112 hourly,$7.4411 hourly,unavailable,$16.2272 hourly,$11.8571 hourly
+G5 Graphics and Machine Learning GPU 48xlarge,g5.48xlarge,768 GiB,192 vCPUs,7600 GB (2×3800 GB NVMe SSD),100 Gigabit,$23.6225 hourly,$14.8821 hourly,unavailable,$32.4545 hourly,$23.7142 hourly
+G5 Graphics and Machine Learning GPU Double Extra Large,g5.2xlarge,32 GiB,8 vCPUs,450 GB NVMe SSD,Up to 10 Gigabit,$1.7578 hourly,$1.1074 hourly,unavailable,$2.1258 hourly,$1.4754 hourly
+G5 Graphics and Machine Learning GPU Eight Extra Large,g5.8xlarge,128 GiB,32 vCPUs,900 GB NVMe SSD,25 Gigabit,$3.5503 hourly,$2.2367 hourly,unavailable,$5.0223 hourly,$3.7087 hourly
+G5 Graphics and Machine Learning GPU Extra Large,g5.xlarge,16 GiB,4 vCPUs,250 GB NVMe SSD,Up to 10 Gigabit,$1.4590 hourly,$0.9192 hourly,unavailable,$1.6430 hourly,$1.1032 hourly
+G5 Graphics and Machine Learning GPU Quadruple Extra Large,g5.4xlarge,64 GiB,16 vCPUs,600 GB NVMe SSD,Up to 25 Gigabit,$2.3553 hourly,$1.4838 hourly,unavailable,$3.0913 hourly,$2.2198 hourly
+G5G 16xlarge,g5g.16xlarge,128 GiB,64 vCPUs,EBS only,25 Gigabit,$3.7039 hourly,$2.5279 hourly,unavailable,unavailable,unavailable
+G5G Double Extra Large,g5g.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.7505 hourly,$0.5122 hourly,unavailable,unavailable,unavailable
+G5G Eight Extra Large,g5g.8xlarge,64 GiB,32 vCPUs,EBS only,12 Gigabit,$1.8519 hourly,$1.2640 hourly,unavailable,unavailable,unavailable
+G5G Extra Large,g5g.xlarge,8 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.5669 hourly,$0.3869 hourly,unavailable,unavailable,unavailable
+G5G Metal,g5g.metal,128 GiB,64 vCPUs,EBS only,25 Gigabit,$3.7039 hourly,$2.5279 hourly,unavailable,unavailable,unavailable
+G5G Quadruple Extra Large,g5g.4xlarge,32 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$1.1176 hourly,$0.7628 hourly,unavailable,unavailable,unavailable
+G6 Graphics and Machine Learning GPU 12xlarge,g6.12xlarge,192 GiB,48 vCPUs,3760 GB (4×940 GB NVMe SSD),40 Gigabit,$6.6737 hourly,$4.3446 hourly,unavailable,$8.8817 hourly,$6.5526 hourly
+G6 Graphics and Machine Learning GPU 16xlarge,g6.16xlarge,256 GiB,64 vCPUs,1880 GB (2×940 GB NVMe SSD),25 Gigabit,$4.9264 hourly,$3.2071 hourly,unavailable,$7.8704 hourly,$6.1511 hourly
+G6 Graphics and Machine Learning GPU 24xlarge,g6.24xlarge,384 GiB,96 vCPUs,3760 GB (4×940 GB NVMe SSD),50 Gigabit,$9.6810 hourly,$6.3023 hourly,unavailable,$14.0970 hourly,$10.7183 hourly
+G6 Graphics and Machine Learning GPU 48xlarge,g6.48xlarge,768 GiB,192 vCPUs,7520 GB (8×940 GB NVMe SSD),100 Gigabit,$19.3621 hourly,$12.6047 hourly,unavailable,$28.1941 hourly,$21.4367 hourly
+G6 Graphics and Machine Learning GPU Double Extra Large,g6.2xlarge,32 GiB,8 vCPUs,450 GB NVMe SSD,Up to 10 Gigabit,$1.4178 hourly,$0.9230 hourly,unavailable,$1.7858 hourly,$1.2910 hourly
+G6 Graphics and Machine Learning GPU Eight Extra Large,g6.8xlarge,128 GiB,32 vCPUs,900 GB (2×450 GB NVMe SSD),25 Gigabit,$2.9215 hourly,$1.9019 hourly,unavailable,$4.3935 hourly,$3.3739 hourly
+G6 Graphics and Machine Learning GPU Extra Large,g6.xlarge,16 GiB,4 vCPUs,250 GB NVMe SSD,Up to 10 Gigabit,$1.1672 hourly,$0.7599 hourly,unavailable,$1.3512 hourly,$0.9438 hourly
+G6 Graphics and Machine Learning GPU Quadruple Extra Large,g6.4xlarge,64 GiB,16 vCPUs,600 GB NVMe SSD,Up to 25 Gigabit,$1.9190 hourly,$1.2493 hourly,unavailable,$2.6550 hourly,$1.9853 hourly
+G6e Graphics and Machine Learning GPU 12xlarge,g6e.12xlarge,384 GiB,48 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$15.2174 hourly,$9.5870 hourly,unavailable,$17.4254 hourly,$11.7950 hourly
+G6e Graphics and Machine Learning GPU 16xlarge,g6e.16xlarge,512 GiB,64 vCPUs,1900 GB (2×950 GB NVMe SSD),35 Gigabit,$10.9892 hourly,$6.9232 hourly,unavailable,$13.9332 hourly,$9.8672 hourly
+G6e Graphics and Machine Learning GPU 24xlarge,g6e.24xlarge,768 GiB,96 vCPUs,3800 GB (2×1900 GB NVMe SSD),200 Gigabit,$21.8496 hourly,$13.7652 hourly,unavailable,$26.2656 hourly,$18.1812 hourly
+G6e Graphics and Machine Learning GPU 48xlarge,g6e.48xlarge,1536 GiB,192 vCPUs,7600 GB (4×1900 GB NVMe SSD),400 Gigabit,$43.6991 hourly,$27.5304 hourly,unavailable,$52.5311 hourly,$36.3624 hourly
+G6e Graphics and Machine Learning GPU Double Extra Large,g6e.2xlarge,64 GiB,8 vCPUs,450 GB NVMe SSD,Up to 20 Gigabit,$3.2517 hourly,$2.0486 hourly,unavailable,$3.6197 hourly,$2.4166 hourly
+G6e Graphics and Machine Learning GPU Eight Extra Large,g6e.8xlarge,256 GiB,32 vCPUs,900 GB (2×450 GB NVMe SSD),25 Gigabit,$6.5678 hourly,$4.1377 hourly,unavailable,$8.0397 hourly,$5.6097 hourly
+G6e Graphics and Machine Learning GPU Extra Large,g6e.xlarge,32 GiB,4 vCPUs,250 GB NVMe SSD,Up to 20 Gigabit,$2.6990 hourly,$1.7004 hourly,unavailable,$2.8830 hourly,$1.8844 hourly
+G6e Graphics and Machine Learning GPU Quadruple Extra Large,g6e.4xlarge,128 GiB,16 vCPUs,600 GB NVMe SSD,20 Gigabit,$4.3570 hourly,$2.7449 hourly,unavailable,$5.0930 hourly,$3.4809 hourly
+Gr6 Graphics and Machine Learning GPU High RAM ratio Eight Extra Large,gr6.8xlarge,256 GiB,32 vCPUs,900 GB (2×450 GB NVMe SSD),25 Gigabit,$3.5480 hourly,$2.3098 hourly,unavailable,$5.0200 hourly,$3.7818 hourly
+Gr6 Graphics and Machine Learning GPU High RAM ratio Quadruple Extra Large,gr6.4xlarge,128 GiB,16 vCPUs,600 GB NVMe SSD,Up to 25 Gigabit,$2.2323 hourly,$1.4532 hourly,unavailable,$2.9683 hourly,$2.1892 hourly
+H1 16xlarge,h1.16xlarge,256 GiB,64 vCPUs,16000 GB (8×2000 GB HDD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+H1 Double Extra Large,h1.2xlarge,32 GiB,8 vCPUs,2000 GB HDD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+H1 Eight Extra Large,h1.8xlarge,128 GiB,32 vCPUs,8000 GB (4×2000 GB HDD),10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+H1 Quadruple Extra Large,h1.4xlarge,64 GiB,16 vCPUs,4000 GB (2×2000 GB HDD),Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+High Memory Cluster Eight Extra Large,cr1.8xlarge,244 GiB,32 vCPUs,EBS only,10 Gigabit,$4.1050 hourly,unavailable,unavailable,$4.4200 hourly,unavailable
+High Storage Eight Extra Large,hs1.8xlarge,117 GiB,16 vCPUs,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC6A 48xlarge,hpc6a.48xlarge,384 GiB,96 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC6ID 32xlarge,hpc6id.32xlarge,1024 GiB,64 vCPUs,EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7A 12xlarge,hpc7a.12xlarge,768 GiB,24 vCPUs,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7A 24xlarge,hpc7a.24xlarge,768 GiB,48 vCPUs,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7A 48xlarge,hpc7a.48xlarge,768 GiB,96 vCPUs,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7A 96xlarge,hpc7a.96xlarge,768 GiB,192 vCPUs,EBS only,300 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+HPC7G 16xlarge,hpc7g.16xlarge,128 GiB,64 vCPUs,EBS only,200 Gigabit,$2.1117 hourly,$1.6630 hourly,unavailable,unavailable,unavailable
+HPC7G Eight Extra Large,hpc7g.8xlarge,128 GiB,32 vCPUs,EBS only,200 Gigabit,$2.1117 hourly,$1.6630 hourly,unavailable,unavailable,unavailable
+HPC7G Quadruple Extra Large,hpc7g.4xlarge,128 GiB,16 vCPUs,EBS only,200 Gigabit,$2.1117 hourly,$1.6630 hourly,unavailable,unavailable,unavailable
+I2 Double Extra Large,i2.2xlarge,61 GiB,8 vCPUs,1600 GB (2×800 GB SSD),High,$2.0010 hourly,$1.2460 hourly,unavailable,$2.2260 hourly,$1.6600 hourly
+I2 Eight Extra Large,i2.8xlarge,244 GiB,32 vCPUs,6400 GB (8×800 GB SSD),10 Gigabit,$8.0040 hourly,$4.9840 hourly,unavailable,$8.9030 hourly,$6.6310 hourly
+I2 Extra Large,i2.xlarge,30.5 GiB,4 vCPUs,800 GB SSD,Moderate,$1.0010 hourly,$0.6230 hourly,unavailable,$1.1130 hourly,$0.8290 hourly
+I2 Large,i2.large,15 GiB,2 vCPUs,EBS only,Moderate,unavailable,unavailable,unavailable,unavailable,unavailable
+I2 Quadruple Extra Large,i2.4xlarge,122 GiB,16 vCPUs,3200 GB (4×800 GB SSD),High,$4.0020 hourly,$2.4920 hourly,unavailable,$4.4510 hourly,$3.3160 hourly
+I3 High I/O 16xlarge,i3.16xlarge,488 GiB,64 vCPUs,15200 GB (8×1900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$3.9650 hourly,unavailable,$8.8000 hourly,$6.9090 hourly
+I3 High I/O Double Extra Large,i3.2xlarge,61 GiB,8 vCPUs,1900 GB NVMe SSD,Up to 10 Gigabit,$0.7320 hourly,$0.4960 hourly,unavailable,$1.1000 hourly,$0.8640 hourly
+I3 High I/O Eight Extra Large,i3.8xlarge,244 GiB,32 vCPUs,7600 GB (4×1900 GB NVMe SSD),10 Gigabit,$2.9280 hourly,$1.9820 hourly,unavailable,$4.4000 hourly,$3.4540 hourly
+I3 High I/O Extra Large,i3.xlarge,30.5 GiB,4 vCPUs,950 GB NVMe SSD,Up to 10 Gigabit,$0.3660 hourly,$0.2480 hourly,unavailable,$0.5500 hourly,$0.4320 hourly
+I3 High I/O Large,i3.large,15.25 GiB,2 vCPUs,475 GB NVMe SSD,Up to 10 Gigabit,$0.1830 hourly,$0.1240 hourly,unavailable,$0.2750 hourly,$0.2160 hourly
+I3 High I/O Metal,i3.metal,512 GiB,72 vCPUs,15200 GB (8×1900 GB NVMe SSD),25 Gigabit,$5.8560 hourly,$3.9650 hourly,unavailable,$8.8000 hourly,$6.9090 hourly
+I3 High I/O Quadruple Extra Large,i3.4xlarge,122 GiB,16 vCPUs,3800 GB (2×1900 GB NVMe SSD),Up to 10 Gigabit,$1.4640 hourly,$0.9910 hourly,unavailable,$2.2000 hourly,$1.7270 hourly
+I3EN 3xlarge,i3en.3xlarge,96 GiB,12 vCPUs,7500 GB NVMe SSD,Up to 25 Gigabit,$1.5960 hourly,$1.0900 hourly,unavailable,$2.1480 hourly,$1.6420 hourly
+I3EN 6xlarge,i3en.6xlarge,192 GiB,24 vCPUs,15000 GB (2×7500 GB NVMe SSD),25 Gigabit,$3.1920 hourly,$2.1790 hourly,unavailable,$4.2960 hourly,$3.2830 hourly
+I3EN 12xlarge,i3en.12xlarge,384 GiB,48 vCPUs,30000 GB (4×7500 GB NVMe SSD),50 Gigabit,$6.3840 hourly,$4.3580 hourly,unavailable,$8.5920 hourly,$6.5660 hourly
+I3EN 24xlarge,i3en.24xlarge,768 GiB,96 vCPUs,60000 GB (8×7500 GB NVMe SSD),100 Gigabit,$12.7680 hourly,$8.7160 hourly,unavailable,$17.1840 hourly,$13.1320 hourly
+I3EN Double Extra Large,i3en.2xlarge,64 GiB,8 vCPUs,5000 GB (2×2500 GB NVMe SSD),Up to 25 Gigabit,$1.0640 hourly,$0.7260 hourly,unavailable,$1.4320 hourly,$1.0940 hourly
+I3EN Extra Large,i3en.xlarge,32 GiB,4 vCPUs,2500 GB NVMe SSD,Up to 25 Gigabit,$0.5320 hourly,$0.3630 hourly,unavailable,$0.7160 hourly,$0.5470 hourly
+I3EN Large,i3en.large,16 GiB,2 vCPUs,1250 GB NVMe SSD,Up to 25 Gigabit,$0.2660 hourly,$0.1820 hourly,unavailable,$0.3580 hourly,$0.2740 hourly
+I3EN Metal,i3en.metal,768 GiB,96 vCPUs,60000 GB (8×7500 GB NVMe SSD),100 Gigabit,$12.7680 hourly,$8.7160 hourly,unavailable,$17.1840 hourly,$13.1320 hourly
+I4G 16xlarge,i4g.16xlarge,512 GiB,64 vCPUs,15000 GB (4×3750 GB NVMe SSD),37.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4G Double Extra Large,i4g.2xlarge,64 GiB,8 vCPUs,1875 GB NVMe SSD,Up to 12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4G Eight Extra Large,i4g.8xlarge,256 GiB,32 vCPUs,7500 GB (2×3750 GB NVMe SSD),18.75 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4G Extra Large,i4g.xlarge,32 GiB,4 vCPUs,937 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4G Large,i4g.large,16 GiB,2 vCPUs,468 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4G Quadruple Extra Large,i4g.4xlarge,128 GiB,16 vCPUs,3750 GB NVMe SSD,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I4I 12xlarge,i4i.12xlarge,384 GiB,48 vCPUs,11250 GB (3×3750 GB NVMe SSD),28.12 Gigabit,$4.8310 hourly,$3.1470 hourly,unavailable,$7.0390 hourly,$5.3550 hourly
+I4I 16xlarge,i4i.16xlarge,512 GiB,64 vCPUs,15000 GB (4×3750 GB NVMe SSD),37.5 Gigabit,$6.4420 hourly,$4.1970 hourly,unavailable,$9.3860 hourly,$7.1410 hourly
+I4I 24xlarge,i4i.24xlarge,768 GiB,96 vCPUs,22500 GB (6×3750 GB NVMe SSD),56.25 Gigabit,$9.6624 hourly,$6.2948 hourly,unavailable,$14.0784 hourly,$10.7108 hourly
+I4I 32xlarge,i4i.32xlarge,1024 GiB,128 vCPUs,30000 GB (8×3750 GB NVMe SSD),75 Gigabit,$12.8832 hourly,$8.3931 hourly,unavailable,$18.7712 hourly,$14.2811 hourly
+I4I Double Extra Large,i4i.2xlarge,64 GiB,8 vCPUs,1875 GB NVMe SSD,Up to 12 Gigabit,$0.8050 hourly,$0.5250 hourly,unavailable,$1.1730 hourly,$0.8930 hourly
+I4I Eight Extra Large,i4i.8xlarge,256 GiB,32 vCPUs,7500 GB (2×3750 GB NVMe SSD),18.75 Gigabit,$3.2210 hourly,$2.0980 hourly,unavailable,$4.6930 hourly,$3.5700 hourly
+I4I Extra Large,i4i.xlarge,32 GiB,4 vCPUs,937 GB NVMe SSD,Up to 10 Gigabit,$0.4030 hourly,$0.2620 hourly,unavailable,$0.5870 hourly,$0.4460 hourly
+I4I Large,i4i.large,16 GiB,2 vCPUs,468 GB NVMe SSD,Up to 10 Gigabit,$0.2010 hourly,$0.1310 hourly,unavailable,$0.2930 hourly,$0.2230 hourly
+I4I Metal,i4i.metal,1024 GiB,128 vCPUs,30000 GB (8×3750 GB NVMe SSD),75 Gigabit,$12.8830 hourly,$8.3930 hourly,unavailable,$18.7710 hourly,$14.2810 hourly
+I4I Quadruple Extra Large,i4i.4xlarge,128 GiB,16 vCPUs,3750 GB NVMe SSD,Up to 25 Gigabit,$1.6100 hourly,$1.0490 hourly,unavailable,$2.3460 hourly,$1.7850 hourly
+I7I 12xlarge,i7i.12xlarge,384 GiB,48 vCPUs,11250 GB (3×3750 GB NVMe SSD),Up to 28 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I 16xlarge,i7i.16xlarge,512 GiB,64 vCPUs,15000 GB (4×3750 GB NVMe SSD),Up to 37.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I 24xlarge,i7i.24xlarge,768 GiB,96 vCPUs,22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I 48xlarge,i7i.48xlarge,1536 GiB,192 vCPUs,45000 GB (12×3750 GB NVMe SSD),Up to 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Double Extra Large,i7i.2xlarge,64 GiB,8 vCPUs,1875 GB NVMe SSD,Up to 12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Eight Extra Large,i7i.8xlarge,256 GiB,32 vCPUs,7500 GB (2×3750 GB NVMe SSD),Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Extra Large,i7i.xlarge,32 GiB,4 vCPUs,937 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Large,i7i.large,16 GiB,2 vCPUs,468 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Metal-24xl,i7i.metal-24xl,768 GiB,96 vCPUs,22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Metal-48xl,i7i.metal-48xl,1536 GiB,192 vCPUs,45000 GB (12×3750 GB NVMe SSD),Up to 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7I Quadruple Extra Large,i7i.4xlarge,128 GiB,16 vCPUs,3750 GB NVMe SSD,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I7IE 3xlarge,i7ie.3xlarge,96 GiB,12 vCPUs,7500 GB NVMe SSD,Up to 25 Gigabit,$1.8354 hourly,unavailable,unavailable,$2.3874 hourly,unavailable
+I7IE 6xlarge,i7ie.6xlarge,192 GiB,24 vCPUs,15000 GB (2×7500 GB NVMe SSD),Up to 25 Gigabit,$3.6708 hourly,unavailable,unavailable,$4.7748 hourly,unavailable
+I7IE 12xlarge,i7ie.12xlarge,384 GiB,48 vCPUs,30000 GB (4×7500 GB NVMe SSD),Up to 50 Gigabit,$7.3416 hourly,unavailable,unavailable,$9.5496 hourly,unavailable
+I7IE 18xlarge,i7ie.18xlarge,576 GiB,72 vCPUs,45000 GB (6×7500 GB NVMe SSD),Up to 75 Gigabit,$11.0124 hourly,unavailable,unavailable,$14.3244 hourly,unavailable
+I7IE 24xlarge,i7ie.24xlarge,768 GiB,96 vCPUs,60000 GB (8×7500 GB NVMe SSD),Up to 100 Gigabit,$14.6832 hourly,unavailable,unavailable,$19.0992 hourly,unavailable
+I7IE 48xlarge,i7ie.48xlarge,1536 GiB,192 vCPUs,120000 GB (16×7500 GB NVMe SSD),100 Gigabit,$29.3664 hourly,unavailable,unavailable,$38.1984 hourly,unavailable
+I7IE Double Extra Large,i7ie.2xlarge,64 GiB,8 vCPUs,5000 GB (2×2500 GB NVMe SSD),Up to 25 Gigabit,$1.2236 hourly,unavailable,unavailable,$1.5916 hourly,unavailable
+I7IE Extra Large,i7ie.xlarge,32 GiB,4 vCPUs,2500 GB NVMe SSD,Up to 25 Gigabit,$0.6118 hourly,unavailable,unavailable,$0.7958 hourly,unavailable
+I7IE Large,i7ie.large,16 GiB,2 vCPUs,1250 GB NVMe SSD,Up to 25 Gigabit,$0.3059 hourly,unavailable,unavailable,$0.3979 hourly,unavailable
+I7IE Metal-24xl,i7ie.metal-24xl,768 GiB,96 vCPUs,60000 GB (8×7500 GB NVMe SSD),Up to 100 Gigabit,$14.6832 hourly,unavailable,unavailable,$19.0992 hourly,unavailable
+I7IE Metal-48xl,i7ie.metal-48xl,1536 GiB,192 vCPUs,120000 GB (16×7500 GB NVMe SSD),100 Gigabit,$29.3664 hourly,unavailable,unavailable,$38.1984 hourly,unavailable
+I8G 12xlarge,i8g.12xlarge,384 GiB,48 vCPUs,11250 GB (3×3750 GB NVMe SSD),Up to 28.12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G 16xlarge,i8g.16xlarge,512 GiB,64 vCPUs,15000 GB (4×3750 GB NVMe SSD),Up to 37.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G 24xlarge,i8g.24xlarge,768 GiB,96 vCPUs,22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G 48xlarge,i8g.48xlarge,1536 GiB,192 vCPUs,45000 GB (12×3750 GB NVMe SSD),Up to 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Double Extra Large,i8g.2xlarge,64 GiB,8 vCPUs,1875 GB NVMe SSD,Up to 12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Eight Extra Large,i8g.8xlarge,256 GiB,32 vCPUs,7500 GB (2×3750 GB NVMe SSD),Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Extra Large,i8g.xlarge,32 GiB,4 vCPUs,937 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Large,i8g.large,16 GiB,2 vCPUs,468 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Metal-24xl,i8g.metal-24xl,768 GiB,96 vCPUs,22500 GB (6×3750 GB NVMe SSD),Up to 56.25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+I8G Quadruple Extra Large,i8g.4xlarge,128 GiB,16 vCPUs,3750 GB NVMe SSD,Up to 25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+IM4GN 16xlarge,im4gn.16xlarge,256 GiB,64 vCPUs,30000 GB (4×7500 GB NVMe SSD),100 Gigabit,$6.8281 hourly,$4.3964 hourly,unavailable,unavailable,unavailable
+IM4GN Double Extra Large,im4gn.2xlarge,32 GiB,8 vCPUs,3750 GB NVMe SSD,Up to 25 Gigabit,$0.8535 hourly,$0.5495 hourly,unavailable,unavailable,unavailable
+IM4GN Eight Extra Large,im4gn.8xlarge,128 GiB,32 vCPUs,15000 GB (2×7500 GB NVMe SSD),50 Gigabit,$3.4141 hourly,$2.1982 hourly,unavailable,unavailable,unavailable
+IM4GN Extra Large,im4gn.xlarge,16 GiB,4 vCPUs,1875 GB NVMe SSD,Up to 25 Gigabit,$0.4268 hourly,$0.2748 hourly,unavailable,unavailable,unavailable
+IM4GN Large,im4gn.large,8 GiB,2 vCPUs,937 GB NVMe SSD,Up to 25 Gigabit,$0.2134 hourly,$0.1374 hourly,unavailable,unavailable,unavailable
+IM4GN Quadruple Extra Large,im4gn.4xlarge,64 GiB,16 vCPUs,7500 GB NVMe SSD,25 Gigabit,$1.7070 hourly,$1.0991 hourly,unavailable,unavailable,unavailable
+INF1 6xlarge,inf1.6xlarge,48 GiB,24 vCPUs,EBS only,25 Gigabit,$1.5940 hourly,$1.0040 hourly,unavailable,unavailable,unavailable
+INF1 24xlarge,inf1.24xlarge,192 GiB,96 vCPUs,EBS only,100 Gigabit,$6.3760 hourly,$4.0170 hourly,unavailable,unavailable,unavailable
+INF1 Double Extra Large,inf1.2xlarge,16 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$0.4890 hourly,$0.3080 hourly,unavailable,unavailable,unavailable
+INF1 Extra Large,inf1.xlarge,8 GiB,4 vCPUs,EBS only,Up to 25 Gigabit,$0.3080 hourly,$0.1940 hourly,unavailable,unavailable,unavailable
+INF2 24xlarge,inf2.24xlarge,384 GiB,96 vCPUs,EBS only,50 Gigabit,$9.7360 hourly,$6.1337 hourly,unavailable,unavailable,unavailable
+INF2 48xlarge,inf2.48xlarge,768 GiB,192 vCPUs,EBS only,100 Gigabit,$19.4719 hourly,$12.2673 hourly,unavailable,unavailable,unavailable
+INF2 Eight Extra Large,inf2.8xlarge,128 GiB,32 vCPUs,EBS only,Up to 25 Gigabit,$2.9518 hourly,$1.8596 hourly,unavailable,unavailable,unavailable
+INF2 Extra Large,inf2.xlarge,16 GiB,4 vCPUs,EBS only,Up to 15 Gigabit,$1.1373 hourly,$0.7165 hourly,unavailable,unavailable,unavailable
+IS4GEN Double Extra Large,is4gen.2xlarge,48 GiB,8 vCPUs,7500 GB NVMe SSD,Up to 25 Gigabit,$1.3566 hourly,$0.9262 hourly,unavailable,unavailable,unavailable
+IS4GEN Eight Extra Large,is4gen.8xlarge,192 GiB,32 vCPUs,30000 GB (4×7500 GB NVMe SSD),50 Gigabit,$5.4264 hourly,$3.7046 hourly,unavailable,unavailable,unavailable
+IS4GEN Extra Large,is4gen.xlarge,24 GiB,4 vCPUs,3750 GB NVMe SSD,Up to 25 Gigabit,$0.6783 hourly,$0.4631 hourly,unavailable,unavailable,unavailable
+IS4GEN Large,is4gen.large,12 GiB,2 vCPUs,1875 GB NVMe SSD,Up to 25 Gigabit,$0.3392 hourly,$0.2315 hourly,unavailable,unavailable,unavailable
+IS4GEN Medium,is4gen.medium,6 GiB,1 vCPUs,937 GB NVMe SSD,Up to 25 Gigabit,$0.1696 hourly,$0.1158 hourly,unavailable,unavailable,unavailable
+IS4GEN Quadruple Extra Large,is4gen.4xlarge,96 GiB,16 vCPUs,15000 GB (2×7500 GB NVMe SSD),25 Gigabit,$2.7132 hourly,$1.8523 hourly,unavailable,unavailable,unavailable
+M1 General Purpose Extra Large,m1.xlarge,15 GiB,4 vCPUs,1680 GB (4×420 GB HDD),High,$0.4860 hourly,$0.2960 hourly,unavailable,$0.7060 hourly,$0.5300 hourly
+M1 General Purpose Large,m1.large,7.5 GiB,2 vCPUs,840 GB (2×420 GB HDD),Moderate,$0.2430 hourly,$0.1480 hourly,unavailable,$0.3530 hourly,$0.2650 hourly
+M1 General Purpose Medium,m1.medium,3.75 GiB,1 vCPUs,410 GB HDD,Moderate,$0.1220 hourly,$0.0740 hourly,unavailable,$0.1770 hourly,$0.1330 hourly
+M1 General Purpose Small,m1.small,1.7 GiB,1 vCPUs,160 GB HDD,Low,$0.0610 hourly,$0.0370 hourly,unavailable,$0.0880 hourly,$0.0660 hourly
+M2 High Memory Double Extra Large,m2.2xlarge,34.2 GiB,4 vCPUs,850 GB HDD,Moderate,$0.5750 hourly,$0.3020 hourly,unavailable,$0.7050 hourly,$0.6240 hourly
+M2 High Memory Extra Large,m2.xlarge,17.1 GiB,2 vCPUs,420 GB HDD,Moderate,$0.2870 hourly,$0.1510 hourly,unavailable,$0.3520 hourly,$0.3120 hourly
+M2 High Memory Quadruple Extra Large,m2.4xlarge,68.4 GiB,8 vCPUs,1680 GB (2×840 GB HDD),High,$1.1500 hourly,$0.6040 hourly,unavailable,$1.4100 hourly,$1.2480 hourly
+M3 General Purpose Double Extra Large,m3.2xlarge,30 GiB,8 vCPUs,160 GB (2×80 GB SSD),High,$0.7700 hourly,$0.5090 hourly,unavailable,$1.1660 hourly,$0.9100 hourly
+M3 General Purpose Extra Large,m3.xlarge,15 GiB,4 vCPUs,80 GB (2×40 GB SSD),High,$0.3850 hourly,$0.2550 hourly,unavailable,$0.5830 hourly,$0.4570 hourly
+M3 General Purpose Large,m3.large,7.5 GiB,2 vCPUs,32 GB SSD,Moderate,$0.1930 hourly,$0.1270 hourly,unavailable,$0.2920 hourly,$0.2280 hourly
+M3 General Purpose Medium,m3.medium,3.75 GiB,1 vCPUs,4 GB SSD,Moderate,$0.0960 hourly,$0.0640 hourly,unavailable,$0.1460 hourly,$0.1140 hourly
+M4 General Purpose 16xlarge,m4.16xlarge,256 GiB,64 vCPUs,EBS only,25 Gigabit,$4.1280 hourly,$2.7888 hourly,unavailable,$7.0720 hourly,$5.7328 hourly
+M4 General Purpose Deca Extra Large,m4.10xlarge,160 GiB,40 vCPUs,EBS only,10 Gigabit,$2.5800 hourly,$1.7430 hourly,unavailable,$4.4200 hourly,$3.5830 hourly
+M4 General Purpose Double Extra Large,m4.2xlarge,32 GiB,8 vCPUs,EBS only,High,$0.5160 hourly,$0.3486 hourly,unavailable,$0.8840 hourly,$0.7166 hourly
+M4 General Purpose Extra Large,m4.xlarge,16 GiB,4 vCPUs,EBS only,High,$0.2580 hourly,$0.1743 hourly,unavailable,$0.4420 hourly,$0.3583 hourly
+M4 General Purpose Large,m4.large,8 GiB,2 vCPUs,EBS only,Moderate,$0.1290 hourly,$0.0871 hourly,unavailable,$0.2210 hourly,$0.1791 hourly
+M4 General Purpose Quadruple Extra Large,m4.4xlarge,64 GiB,16 vCPUs,EBS only,High,$1.0320 hourly,$0.6972 hourly,unavailable,$1.7680 hourly,$1.4332 hourly
+M5 General Purpose 12xlarge,m5.12xlarge,192 GiB,48 vCPUs,EBS only,12 Gigabit,$2.9760 hourly,$1.8750 hourly,unavailable,$5.1840 hourly,$4.0830 hourly
+M5 General Purpose 12xlarge,m5d.12xlarge,192 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),12 Gigabit,$3.5040 hourly,$2.2080 hourly,unavailable,$5.7120 hourly,$4.4160 hourly
+M5 General Purpose 16xlarge,m5d.16xlarge,256 GiB,64 vCPUs,2400 GB (4×600 GB NVMe SSD),20 Gigabit,$4.6720 hourly,$2.9430 hourly,unavailable,$7.6160 hourly,$5.8870 hourly
+M5 General Purpose 16xlarge,m5.16xlarge,256 GiB,64 vCPUs,EBS only,20 Gigabit,$3.9680 hourly,$2.5000 hourly,unavailable,$6.9120 hourly,$5.4440 hourly
+M5 General Purpose 24xlarge,m5d.24xlarge,384 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$7.0080 hourly,$4.4150 hourly,unavailable,$11.4240 hourly,$8.8310 hourly
+M5 General Purpose 24xlarge,m5.24xlarge,384 GiB,96 vCPUs,EBS only,25 Gigabit,$5.9520 hourly,$3.7500 hourly,unavailable,$10.3680 hourly,$8.1660 hourly
+M5 General Purpose Double Extra Large,m5d.2xlarge,32 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,$0.5840 hourly,$0.3680 hourly,unavailable,$0.9520 hourly,$0.7360 hourly
+M5 General Purpose Double Extra Large,m5.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.4960 hourly,$0.3120 hourly,unavailable,$0.8640 hourly,$0.6800 hourly
+M5 General Purpose Eight Extra Large,m5d.8xlarge,128 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),10 Gigabit,$2.3360 hourly,$1.4720 hourly,unavailable,$3.8080 hourly,$2.9440 hourly
+M5 General Purpose Eight Extra Large,m5.8xlarge,128 GiB,32 vCPUs,EBS only,10 Gigabit,$1.9840 hourly,$1.2500 hourly,unavailable,$3.4560 hourly,$2.7220 hourly
+M5 General Purpose Extra Large,m5.xlarge,16 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.2480 hourly,$0.1560 hourly,unavailable,$0.4320 hourly,$0.3400 hourly
+M5 General Purpose Extra Large,m5d.xlarge,16 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,$0.2920 hourly,$0.1840 hourly,unavailable,$0.4760 hourly,$0.3680 hourly
+M5 General Purpose Large,m5.large,8 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1240 hourly,$0.0780 hourly,unavailable,$0.2160 hourly,$0.1700 hourly
+M5 General Purpose Large,m5d.large,8 GiB,2 vCPUs,75 GB NVMe SSD,Up to 10 Gigabit,$0.1460 hourly,$0.0920 hourly,unavailable,$0.2380 hourly,$0.1840 hourly
+M5 General Purpose Metal,m5d.metal,384 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$7.0080 hourly,$4.4150 hourly,unavailable,$11.4240 hourly,$8.8310 hourly
+M5 General Purpose Metal,m5.metal,384 GiB,96 vCPUs,EBS only,25 Gigabit,$5.9520 hourly,$3.7500 hourly,unavailable,$10.3680 hourly,$8.1660 hourly
+M5 General Purpose Quadruple Extra Large,m5.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.9920 hourly,$0.6250 hourly,unavailable,$1.7280 hourly,$1.3610 hourly
+M5 General Purpose Quadruple Extra Large,m5d.4xlarge,64 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.1680 hourly,$0.7360 hourly,unavailable,$1.9040 hourly,$1.4720 hourly
+M5A 12xlarge,m5a.12xlarge,192 GiB,48 vCPUs,EBS only,10 Gigabit,$2.6880 hourly,$1.6930 hourly,unavailable,$4.8960 hourly,$3.9010 hourly
+M5A 16xlarge,m5a.16xlarge,256 GiB,64 vCPUs,EBS only,12 Gigabit,$3.5840 hourly,$2.2580 hourly,unavailable,$6.5280 hourly,$5.2020 hourly
+M5A 24xlarge,m5a.24xlarge,384 GiB,96 vCPUs,EBS only,20 Gigabit,$5.3760 hourly,$3.3870 hourly,unavailable,$9.7920 hourly,$7.8030 hourly
+M5A Double Extra Large,m5a.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.4480 hourly,$0.2820 hourly,unavailable,$0.8160 hourly,$0.6500 hourly
+M5A Eight Extra Large,m5a.8xlarge,128 GiB,32 vCPUs,EBS only,Up to 10 Gigabit,$1.7920 hourly,$1.1290 hourly,unavailable,$3.2640 hourly,$2.6010 hourly
+M5A Extra Large,m5a.xlarge,16 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.2240 hourly,$0.1410 hourly,unavailable,$0.4080 hourly,$0.3250 hourly
+M5A Large,m5a.large,8 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1120 hourly,$0.0710 hourly,unavailable,$0.2040 hourly,$0.1630 hourly
+M5A Quadruple Extra Large,m5a.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.8960 hourly,$0.5640 hourly,unavailable,$1.6320 hourly,$1.3000 hourly
+M5AD 12xlarge,m5ad.12xlarge,192 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),10 Gigabit,$3.2160 hourly,$2.0260 hourly,unavailable,$5.4240 hourly,$4.2340 hourly
+M5AD 16xlarge,m5ad.16xlarge,256 GiB,64 vCPUs,2400 GB (4×600 GB NVMe SSD),12 Gigabit,$4.2880 hourly,$2.7010 hourly,unavailable,$7.2320 hourly,$5.6450 hourly
+M5AD 24xlarge,m5ad.24xlarge,384 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),20 Gigabit,$6.4320 hourly,$4.0520 hourly,unavailable,$10.8480 hourly,$8.4680 hourly
+M5AD Double Extra Large,m5ad.2xlarge,32 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,$0.5360 hourly,$0.3380 hourly,unavailable,$0.9040 hourly,$0.7060 hourly
+M5AD Eight Extra Large,m5ad.8xlarge,128 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),Up to 10 Gigabit,$2.1440 hourly,$1.3510 hourly,unavailable,$3.6160 hourly,$2.8230 hourly
+M5AD Extra Large,m5ad.xlarge,16 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,$0.2680 hourly,$0.1690 hourly,unavailable,$0.4520 hourly,$0.3530 hourly
+M5AD Large,m5ad.large,8 GiB,2 vCPUs,75 GB NVMe SSD,Up to 10 Gigabit,$0.1340 hourly,$0.0840 hourly,unavailable,$0.2260 hourly,$0.1760 hourly
+M5AD Quadruple Extra Large,m5ad.4xlarge,64 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.0720 hourly,$0.6750 hourly,unavailable,$1.8080 hourly,$1.4110 hourly
+M5DN 12xlarge,m5dn.12xlarge,192 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),50 Gigabit,$4.2000 hourly,$2.6460 hourly,unavailable,$6.4080 hourly,$4.8540 hourly
+M5DN 16xlarge,m5dn.16xlarge,256 GiB,64 vCPUs,2400 GB (4×600 GB NVMe SSD),75 Gigabit,$5.6000 hourly,$3.5280 hourly,unavailable,$8.5440 hourly,$6.4720 hourly
+M5DN 24xlarge,m5dn.24xlarge,384 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),100 Gigabit,$8.4000 hourly,$5.2920 hourly,unavailable,$12.8160 hourly,$9.7080 hourly
+M5DN Double Extra Large,m5dn.2xlarge,32 GiB,8 vCPUs,300 GB NVMe SSD,Up to 25 Gigabit,$0.7000 hourly,$0.4410 hourly,unavailable,$1.0680 hourly,$0.8090 hourly
+M5DN Eight Extra Large,m5dn.8xlarge,128 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),25 Gigabit,$2.8000 hourly,$1.7640 hourly,unavailable,$4.2720 hourly,$3.2360 hourly
+M5DN Extra Large,m5dn.xlarge,16 GiB,4 vCPUs,150 GB NVMe SSD,Up to 25 Gigabit,$0.3500 hourly,$0.2210 hourly,unavailable,$0.5340 hourly,$0.4050 hourly
+M5DN Large,m5dn.large,8 GiB,2 vCPUs,75 GB NVMe SSD,Up to 25 Gigabit,$0.1750 hourly,$0.1100 hourly,unavailable,$0.2670 hourly,$0.2020 hourly
+M5DN Metal,m5dn.metal,384 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),100 Gigabit,$8.4000 hourly,$5.2920 hourly,unavailable,$12.8160 hourly,$9.7080 hourly
+M5DN Quadruple Extra Large,m5dn.4xlarge,64 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 25 Gigabit,$1.4000 hourly,$0.8820 hourly,unavailable,$2.1360 hourly,$1.6180 hourly
+M5N 12xlarge,m5n.12xlarge,192 GiB,48 vCPUs,EBS only,50 Gigabit,$3.6720 hourly,$2.3130 hourly,unavailable,$5.8800 hourly,$4.5210 hourly
+M5N 16xlarge,m5n.16xlarge,256 GiB,64 vCPUs,EBS only,75 Gigabit,$4.8960 hourly,$3.0840 hourly,unavailable,$7.8400 hourly,$6.0280 hourly
+M5N 24xlarge,m5n.24xlarge,384 GiB,96 vCPUs,EBS only,100 Gigabit,$7.3440 hourly,$4.6270 hourly,unavailable,$11.7600 hourly,$9.0430 hourly
+M5N Double Extra Large,m5n.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$0.6120 hourly,$0.3860 hourly,unavailable,$0.9800 hourly,$0.7540 hourly
+M5N Eight Extra Large,m5n.8xlarge,128 GiB,32 vCPUs,EBS only,25 Gigabit,$2.4480 hourly,$1.5420 hourly,unavailable,$3.9200 hourly,$3.0140 hourly
+M5N Extra Large,m5n.xlarge,16 GiB,4 vCPUs,EBS only,Up to 25 Gigabit,$0.3060 hourly,$0.1930 hourly,unavailable,$0.4900 hourly,$0.3770 hourly
+M5N Large,m5n.large,8 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.1530 hourly,$0.0960 hourly,unavailable,$0.2450 hourly,$0.1880 hourly
+M5N Metal,m5n.metal,384 GiB,96 vCPUs,EBS only,100 Gigabit,$7.3440 hourly,$4.6270 hourly,unavailable,$11.7600 hourly,$9.0430 hourly
+M5N Quadruple Extra Large,m5n.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 25 Gigabit,$1.2240 hourly,$0.7710 hourly,unavailable,$1.9600 hourly,$1.5070 hourly
+M5ZN 3xlarge,m5zn.3xlarge,48 GiB,12 vCPUs,EBS only,Up to 25 Gigabit,$1.2801 hourly,$0.8013 hourly,unavailable,$1.8321 hourly,$1.3533 hourly
+M5ZN 6xlarge,m5zn.6xlarge,96 GiB,24 vCPUs,EBS only,50 Gigabit,$2.5602 hourly,$1.6027 hourly,unavailable,$3.6642 hourly,$2.7067 hourly
+M5ZN 12xlarge,m5zn.12xlarge,192 GiB,48 vCPUs,EBS only,100 Gigabit,$5.1204 hourly,$3.2053 hourly,unavailable,$7.3284 hourly,$5.4133 hourly
+M5ZN Double Extra Large,m5zn.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$0.8534 hourly,$0.5342 hourly,unavailable,$1.2214 hourly,$0.9022 hourly
+M5ZN Extra Large,m5zn.xlarge,16 GiB,4 vCPUs,EBS only,Up to 25 Gigabit,$0.4267 hourly,$0.2671 hourly,unavailable,$0.6107 hourly,$0.4511 hourly
+M5ZN Large,m5zn.large,8 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.2134 hourly,$0.1336 hourly,unavailable,$0.3054 hourly,$0.2256 hourly
+M5ZN Metal,m5zn.metal,192 GiB,48 vCPUs,EBS only,100 Gigabit,$5.1204 hourly,$3.2053 hourly,unavailable,$7.3284 hourly,$5.4133 hourly
+M6A 12xlarge,m6a.12xlarge,192 GiB,48 vCPUs,EBS only,18.75 Gigabit,$2.6784 hourly,$1.7747 hourly,unavailable,$4.8864 hourly,$3.9827 hourly
+M6A 16xlarge,m6a.16xlarge,256 GiB,64 vCPUs,EBS only,25 Gigabit,$3.5712 hourly,$2.3663 hourly,unavailable,$6.5152 hourly,$5.3103 hourly
+M6A 24xlarge,m6a.24xlarge,384 GiB,96 vCPUs,EBS only,37.5 Gigabit,$5.3568 hourly,$3.5494 hourly,unavailable,$9.7728 hourly,$7.9654 hourly
+M6A 32xlarge,m6a.32xlarge,512 GiB,128 vCPUs,EBS only,50 Gigabit,$7.1424 hourly,$4.7326 hourly,unavailable,$13.0304 hourly,$10.6206 hourly
+M6A 48xlarge,m6a.48xlarge,768 GiB,192 vCPUs,EBS only,50 Gigabit,$10.7136 hourly,$7.0988 hourly,unavailable,$19.5456 hourly,$15.9308 hourly
+M6A Double Extra Large,m6a.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4464 hourly,$0.2958 hourly,unavailable,$0.8144 hourly,$0.6638 hourly
+M6A Eight Extra Large,m6a.8xlarge,128 GiB,32 vCPUs,EBS only,12.5 Gigabit,$1.7856 hourly,$1.1831 hourly,unavailable,$3.2576 hourly,$2.6551 hourly
+M6A Extra Large,m6a.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2232 hourly,$0.1479 hourly,unavailable,$0.4072 hourly,$0.3319 hourly
+M6A Large,m6a.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1116 hourly,$0.0740 hourly,unavailable,$0.2036 hourly,$0.1659 hourly
+M6A Metal,m6a.metal,768 GiB,192 vCPUs,EBS only,50 Gigabit,$10.7136 hourly,$7.0988 hourly,unavailable,$19.5456 hourly,$15.9308 hourly
+M6A Quadruple Extra Large,m6a.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.8928 hourly,$0.5916 hourly,unavailable,$1.6288 hourly,$1.3276 hourly
+M6G 12xlarge,m6g.12xlarge,192 GiB,48 vCPUs,EBS only,20 Gigabit,$2.3760 hourly,$1.5118 hourly,unavailable,unavailable,unavailable
+M6G 16xlarge,m6g.16xlarge,256 GiB,64 vCPUs,EBS only,25 Gigabit,$3.1680 hourly,$2.0158 hourly,unavailable,unavailable,unavailable
+M6G Double Extra Large,m6g.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.3960 hourly,$0.2520 hourly,unavailable,unavailable,unavailable
+M6G Eight Extra Large,m6g.8xlarge,128 GiB,32 vCPUs,EBS only,12 Gigabit,$1.5840 hourly,$1.0079 hourly,unavailable,unavailable,unavailable
+M6G Extra Large,m6g.xlarge,16 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.1980 hourly,$0.1260 hourly,unavailable,unavailable,unavailable
+M6G Large,m6g.large,8 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.0990 hourly,$0.0630 hourly,unavailable,unavailable,unavailable
+M6G Medium,m6g.medium,4 GiB,1 vCPUs,EBS only,Up to 10 Gigabit,$0.0495 hourly,$0.0315 hourly,unavailable,unavailable,unavailable
+M6G Metal,m6g.metal,256 GiB,64 vCPUs,EBS only,25 Gigabit,$3.1680 hourly,$2.0158 hourly,unavailable,unavailable,unavailable
+M6G Quadruple Extra Large,m6g.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.7920 hourly,$0.5039 hourly,unavailable,unavailable,unavailable
+M6GD 12xlarge,m6gd.12xlarge,192 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,$2.8080 hourly,$1.7640 hourly,unavailable,unavailable,unavailable
+M6GD 16xlarge,m6gd.16xlarge,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.7440 hourly,$2.3520 hourly,unavailable,unavailable,unavailable
+M6GD Double Extra Large,m6gd.2xlarge,32 GiB,8 vCPUs,474 GB NVMe SSD,Up to 10 Gigabit,$0.4680 hourly,$0.2940 hourly,unavailable,unavailable,unavailable
+M6GD Eight Extra Large,m6gd.8xlarge,128 GiB,32 vCPUs,1900 GB NVMe SSD,12 Gigabit,$1.8720 hourly,$1.1760 hourly,unavailable,unavailable,unavailable
+M6GD Extra Large,m6gd.xlarge,16 GiB,4 vCPUs,237 GB NVMe SSD,Up to 10 Gigabit,$0.2340 hourly,$0.1470 hourly,unavailable,unavailable,unavailable
+M6GD Large,m6gd.large,8 GiB,2 vCPUs,118 GB NVMe SSD,Up to 10 Gigabit,$0.1170 hourly,$0.0735 hourly,unavailable,unavailable,unavailable
+M6GD Medium,m6gd.medium,4 GiB,1 vCPUs,59 GB NVMe SSD,Up to 10 Gigabit,$0.0585 hourly,$0.0368 hourly,unavailable,unavailable,unavailable
+M6GD Metal,m6gd.metal,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$3.7440 hourly,$2.3520 hourly,unavailable,unavailable,unavailable
+M6GD Quadruple Extra Large,m6gd.4xlarge,64 GiB,16 vCPUs,950 GB NVMe SSD,Up to 10 Gigabit,$0.9360 hourly,$0.5880 hourly,unavailable,unavailable,unavailable
+M6I 12xlarge,m6i.12xlarge,192 GiB,48 vCPUs,EBS only,18.75 Gigabit,$2.9760 hourly,$1.9719 hourly,unavailable,$5.1840 hourly,$4.1799 hourly
+M6I 16xlarge,m6i.16xlarge,256 GiB,64 vCPUs,EBS only,25 Gigabit,$3.9680 hourly,$2.6292 hourly,unavailable,$6.9120 hourly,$5.5732 hourly
+M6I 24xlarge,m6i.24xlarge,384 GiB,96 vCPUs,EBS only,37.5 Gigabit,$5.9520 hourly,$3.9438 hourly,unavailable,$10.3680 hourly,$8.3598 hourly
+M6I 32xlarge,m6i.32xlarge,512 GiB,128 vCPUs,EBS only,50 Gigabit,$7.9360 hourly,$5.2584 hourly,unavailable,$13.8240 hourly,$11.1464 hourly
+M6I Double Extra Large,m6i.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4960 hourly,$0.3286 hourly,unavailable,$0.8640 hourly,$0.6966 hourly
+M6I Eight Extra Large,m6i.8xlarge,128 GiB,32 vCPUs,EBS only,12.5 Gigabit,$1.9840 hourly,$1.3146 hourly,unavailable,$3.4560 hourly,$2.7866 hourly
+M6I Extra Large,m6i.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2480 hourly,$0.1643 hourly,unavailable,$0.4320 hourly,$0.3483 hourly
+M6I Large,m6i.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1240 hourly,$0.0822 hourly,unavailable,$0.2160 hourly,$0.1742 hourly
+M6I Metal,m6i.metal,512 GiB,128 vCPUs,EBS only,50 Gigabit,$7.9360 hourly,$5.2584 hourly,unavailable,$13.8240 hourly,$11.1464 hourly
+M6I Quadruple Extra Large,m6i.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.9920 hourly,$0.6573 hourly,unavailable,$1.7280 hourly,$1.3933 hourly
+M6ID 12xlarge,m6id.12xlarge,192 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),18.75 Gigabit,$3.6792 hourly,$2.3179 hourly,unavailable,$5.8872 hourly,$4.5259 hourly
+M6ID 16xlarge,m6id.16xlarge,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.9056 hourly,$3.0905 hourly,unavailable,$7.8496 hourly,$6.0345 hourly
+M6ID 24xlarge,m6id.24xlarge,384 GiB,96 vCPUs,5700 GB (4×1425 GB NVMe SSD),37.5 Gigabit,$7.3584 hourly,$4.6358 hourly,unavailable,$11.7744 hourly,$9.0518 hourly
+M6ID 32xlarge,m6id.32xlarge,512 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$9.8112 hourly,$6.1811 hourly,unavailable,$15.6992 hourly,$12.0691 hourly
+M6ID Double Extra Large,m6id.2xlarge,32 GiB,8 vCPUs,474 GB NVMe SSD,Up to 12.5 Gigabit,$0.6132 hourly,$0.3863 hourly,unavailable,$0.9812 hourly,$0.7543 hourly
+M6ID Eight Extra Large,m6id.8xlarge,128 GiB,32 vCPUs,1900 GB NVMe SSD,12.5 Gigabit,$2.4528 hourly,$1.5453 hourly,unavailable,$3.9248 hourly,$3.0173 hourly
+M6ID Extra Large,m6id.xlarge,16 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3066 hourly,$0.1932 hourly,unavailable,$0.4906 hourly,$0.3772 hourly
+M6ID Large,m6id.large,8 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1533 hourly,$0.0966 hourly,unavailable,$0.2453 hourly,$0.1886 hourly
+M6ID Metal,m6id.metal,512 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$9.8112 hourly,$6.1811 hourly,unavailable,$15.6992 hourly,$12.0691 hourly
+M6ID Quadruple Extra Large,m6id.4xlarge,64 GiB,16 vCPUs,950 GB NVMe SSD,Up to 12.5 Gigabit,$1.2264 hourly,$0.7726 hourly,unavailable,$1.9624 hourly,$1.5086 hourly
+M6IDN 12xlarge,m6idn.12xlarge,192 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$4.9140 hourly,$3.0958 hourly,unavailable,$7.1220 hourly,$5.3038 hourly
+M6IDN 16xlarge,m6idn.16xlarge,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$6.5520 hourly,$4.1278 hourly,unavailable,$9.4960 hourly,$7.0718 hourly
+M6IDN 24xlarge,m6idn.24xlarge,384 GiB,96 vCPUs,5700 GB (4×1425 GB NVMe SSD),150 Gigabit,$9.8280 hourly,$6.1916 hourly,unavailable,$14.2440 hourly,$10.6076 hourly
+M6IDN 32xlarge,m6idn.32xlarge,512 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$13.1040 hourly,$8.2555 hourly,unavailable,$18.9920 hourly,$14.1435 hourly
+M6IDN Double Extra Large,m6idn.2xlarge,32 GiB,8 vCPUs,474 GB NVMe SSD,Up to 40 Gigabit,$0.8190 hourly,$0.5160 hourly,unavailable,$1.1870 hourly,$0.8840 hourly
+M6IDN Eight Extra Large,m6idn.8xlarge,128 GiB,32 vCPUs,1900 GB NVMe SSD,50 Gigabit,$3.2760 hourly,$2.0639 hourly,unavailable,$4.7480 hourly,$3.5359 hourly
+M6IDN Extra Large,m6idn.xlarge,16 GiB,4 vCPUs,237 GB NVMe SSD,Up to 30 Gigabit,$0.4095 hourly,$0.2580 hourly,unavailable,$0.5935 hourly,$0.4420 hourly
+M6IDN Large,m6idn.large,8 GiB,2 vCPUs,118 GB NVMe SSD,Up to 25 Gigabit,$0.2047 hourly,$0.1290 hourly,unavailable,$0.2968 hourly,$0.2210 hourly
+M6IDN Metal,m6idn.metal,512 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$13.1040 hourly,$8.2555 hourly,unavailable,$18.9920 hourly,$14.1435 hourly
+M6IDN Quadruple Extra Large,m6idn.4xlarge,64 GiB,16 vCPUs,950 GB NVMe SSD,Up to 50 Gigabit,$1.6380 hourly,$1.0319 hourly,unavailable,$2.3740 hourly,$1.7679 hourly
+M6IN 12xlarge,m6in.12xlarge,192 GiB,48 vCPUs,EBS only,75 Gigabit,$4.2962 hourly,$2.7066 hourly,unavailable,$6.5042 hourly,$4.9146 hourly
+M6IN 16xlarge,m6in.16xlarge,256 GiB,64 vCPUs,EBS only,100 Gigabit,$5.7283 hourly,$3.6088 hourly,unavailable,$8.6723 hourly,$6.5528 hourly
+M6IN 24xlarge,m6in.24xlarge,384 GiB,96 vCPUs,EBS only,150 Gigabit,$8.5925 hourly,$5.4133 hourly,unavailable,$13.0085 hourly,$9.8293 hourly
+M6IN 32xlarge,m6in.32xlarge,512 GiB,128 vCPUs,EBS only,200 Gigabit,$11.4566 hourly,$7.2177 hourly,unavailable,$17.3446 hourly,$13.1057 hourly
+M6IN Double Extra Large,m6in.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 40 Gigabit,$0.7160 hourly,$0.4511 hourly,unavailable,$1.0840 hourly,$0.8191 hourly
+M6IN Eight Extra Large,m6in.8xlarge,128 GiB,32 vCPUs,EBS only,50 Gigabit,$2.8642 hourly,$1.8044 hourly,unavailable,$4.3362 hourly,$3.2764 hourly
+M6IN Extra Large,m6in.xlarge,16 GiB,4 vCPUs,EBS only,Up to 30 Gigabit,$0.3580 hourly,$0.2256 hourly,unavailable,$0.5420 hourly,$0.4096 hourly
+M6IN Large,m6in.large,8 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.1790 hourly,$0.1128 hourly,unavailable,$0.2710 hourly,$0.2048 hourly
+M6IN Metal,m6in.metal,512 GiB,128 vCPUs,EBS only,200 Gigabit,$11.4566 hourly,$7.2177 hourly,unavailable,$17.3446 hourly,$13.1057 hourly
+M6IN Quadruple Extra Large,m6in.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 50 Gigabit,$1.4321 hourly,$0.9022 hourly,unavailable,$2.1681 hourly,$1.6382 hourly
+M7A 12xlarge,m7a.12xlarge,192 GiB,48 vCPUs,EBS only,18.75 Gigabit,$3.5935 hourly,$2.3811 hourly,unavailable,$5.8015 hourly,$4.5891 hourly
+M7A 16xlarge,m7a.16xlarge,256 GiB,64 vCPUs,EBS only,25 Gigabit,$4.7914 hourly,$3.1748 hourly,unavailable,$7.7354 hourly,$6.1188 hourly
+M7A 24xlarge,m7a.24xlarge,384 GiB,96 vCPUs,EBS only,37.5 Gigabit,$7.1870 hourly,$4.7622 hourly,unavailable,$11.6030 hourly,$9.1782 hourly
+M7A 32xlarge,m7a.32xlarge,512 GiB,128 vCPUs,EBS only,50 Gigabit,$9.5827 hourly,$6.3495 hourly,unavailable,$15.4707 hourly,$12.2375 hourly
+M7A 48xlarge,m7a.48xlarge,768 GiB,192 vCPUs,EBS only,50 Gigabit,$14.3741 hourly,$9.5243 hourly,unavailable,$23.2061 hourly,$18.3563 hourly
+M7A Double Extra Large,m7a.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.5989 hourly,$0.3968 hourly,unavailable,$0.9669 hourly,$0.7649 hourly
+M7A Eight Extra Large,m7a.8xlarge,128 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.3957 hourly,$1.5874 hourly,unavailable,$3.8677 hourly,$3.0594 hourly
+M7A Extra Large,m7a.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2995 hourly,$0.1984 hourly,unavailable,$0.4835 hourly,$0.3824 hourly
+M7A Large,m7a.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1497 hourly,$0.0992 hourly,unavailable,$0.2417 hourly,$0.1912 hourly
+M7A Medium,m7a.medium,4 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0749 hourly,$0.0496 hourly,unavailable,$0.1209 hourly,$0.0956 hourly
+M7A Metal-48xl,m7a.metal-48xl,768 GiB,192 vCPUs,EBS only,50 Gigabit,$14.3741 hourly,$9.5243 hourly,unavailable,$23.2061 hourly,$18.3563 hourly
+M7A Quadruple Extra Large,m7a.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.1978 hourly,$0.7937 hourly,unavailable,$1.9338 hourly,$1.5297 hourly
+M7G 12xlarge,m7g.12xlarge,192 GiB,48 vCPUs,EBS only,22.5 Gigabit,$2.5296 hourly,$1.6760 hourly,unavailable,unavailable,unavailable
+M7G 16xlarge,m7g.16xlarge,256 GiB,64 vCPUs,EBS only,30 Gigabit,$3.3728 hourly,$2.2346 hourly,unavailable,unavailable,unavailable
+M7G Double Extra Large,m7g.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,$0.4216 hourly,$0.2793 hourly,unavailable,unavailable,unavailable
+M7G Eight Extra Large,m7g.8xlarge,128 GiB,32 vCPUs,EBS only,15 Gigabit,$1.6864 hourly,$1.1173 hourly,unavailable,unavailable,unavailable
+M7G Extra Large,m7g.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2108 hourly,$0.1397 hourly,unavailable,unavailable,unavailable
+M7G Large,m7g.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1054 hourly,$0.0698 hourly,unavailable,unavailable,unavailable
+M7G Medium,m7g.medium,4 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0527 hourly,$0.0349 hourly,unavailable,unavailable,unavailable
+M7G Metal,m7g.metal,256 GiB,64 vCPUs,EBS only,30 Gigabit,$3.3728 hourly,$2.2346 hourly,unavailable,unavailable,unavailable
+M7G Quadruple Extra Large,m7g.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,$0.8432 hourly,$0.5587 hourly,unavailable,unavailable,unavailable
+M7GD 12xlarge,m7gd.12xlarge,192 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),22.5 Gigabit,$3.3113 hourly,$2.0861 hourly,unavailable,unavailable,unavailable
+M7GD 16xlarge,m7gd.16xlarge,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$4.4150 hourly,$2.7815 hourly,unavailable,unavailable,unavailable
+M7GD Double Extra Large,m7gd.2xlarge,32 GiB,8 vCPUs,474 GB NVMe SSD,Up to 15 Gigabit,$0.5519 hourly,$0.3477 hourly,unavailable,unavailable,unavailable
+M7GD Eight Extra Large,m7gd.8xlarge,128 GiB,32 vCPUs,1900 GB NVMe SSD,15 Gigabit,$2.2075 hourly,$1.3907 hourly,unavailable,unavailable,unavailable
+M7GD Extra Large,m7gd.xlarge,16 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2759 hourly,$0.1738 hourly,unavailable,unavailable,unavailable
+M7GD Large,m7gd.large,8 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1380 hourly,$0.0869 hourly,unavailable,unavailable,unavailable
+M7GD Medium,m7gd.medium,4 GiB,1 vCPUs,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0690 hourly,$0.0435 hourly,unavailable,unavailable,unavailable
+M7GD Metal,m7gd.metal,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$4.4150 hourly,$2.7815 hourly,unavailable,unavailable,unavailable
+M7GD Quadruple Extra Large,m7gd.4xlarge,64 GiB,16 vCPUs,950 GB NVMe SSD,Up to 15 Gigabit,$1.1038 hourly,$0.6954 hourly,unavailable,unavailable,unavailable
+M7I 12xlarge,m7i.12xlarge,192 GiB,48 vCPUs,EBS only,18.75 Gigabit,$3.1248 hourly,$2.0705 hourly,unavailable,$5.3328 hourly,$4.2785 hourly
+M7I 16xlarge,m7i.16xlarge,256 GiB,64 vCPUs,EBS only,25 Gigabit,$4.1664 hourly,$2.7607 hourly,unavailable,$7.1104 hourly,$5.7047 hourly
+M7I 24xlarge,m7i.24xlarge,384 GiB,96 vCPUs,EBS only,37.5 Gigabit,$6.2496 hourly,$4.1410 hourly,unavailable,$10.6656 hourly,$8.5570 hourly
+M7I 48xlarge,m7i.48xlarge,768 GiB,192 vCPUs,EBS only,50 Gigabit,$12.4992 hourly,$8.2820 hourly,unavailable,$21.3312 hourly,$17.1140 hourly
+M7I Double Extra Large,m7i.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.5208 hourly,$0.3451 hourly,unavailable,$0.8888 hourly,$0.7131 hourly
+M7I Eight Extra Large,m7i.8xlarge,128 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.0832 hourly,$1.3803 hourly,unavailable,$3.5552 hourly,$2.8523 hourly
+M7I Extra Large,m7i.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2604 hourly,$0.1725 hourly,unavailable,$0.4444 hourly,$0.3565 hourly
+M7I Large,m7i.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1302 hourly,$0.0863 hourly,unavailable,$0.2222 hourly,$0.1783 hourly
+M7I Metal-24xl,m7i.metal-24xl,384 GiB,96 vCPUs,EBS only,37.5 Gigabit,$6.2496 hourly,$4.1410 hourly,unavailable,$10.6656 hourly,$8.5570 hourly
+M7I Metal-48xl,m7i.metal-48xl,768 GiB,192 vCPUs,EBS only,50 Gigabit,$12.4992 hourly,$8.2820 hourly,unavailable,$21.3312 hourly,$17.1140 hourly
+M7I Quadruple Extra Large,m7i.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.0416 hourly,$0.6902 hourly,unavailable,$1.7776 hourly,$1.4262 hourly
+M7I-FLEX 12xlarge,m7i-flex.12xlarge,192 GiB,48 vCPUs,EBS only,Up to 18.75 Gigabit,$2.9686 hourly,$1.9669 hourly,unavailable,$5.1766 hourly,$4.1749 hourly
+M7I-FLEX 16xlarge,m7i-flex.16xlarge,256 GiB,64 vCPUs,EBS only,Up to 25 Gigabit,$3.9581 hourly,$2.6225 hourly,unavailable,$6.9021 hourly,$5.5666 hourly
+M7I-FLEX Double Extra Large,m7i-flex.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4948 hourly,$0.3278 hourly,unavailable,$0.8444 hourly,$0.6774 hourly
+M7I-FLEX Eight Extra Large,m7i-flex.8xlarge,128 GiB,32 vCPUs,EBS only,Up to 12.5 Gigabit,$1.9790 hourly,$1.3113 hourly,unavailable,$3.3774 hourly,$2.7097 hourly
+M7I-FLEX Extra Large,m7i-flex.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2474 hourly,$0.1639 hourly,unavailable,$0.4222 hourly,$0.3387 hourly
+M7I-FLEX Large,m7i-flex.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1237 hourly,$0.0819 hourly,unavailable,$0.2111 hourly,$0.1694 hourly
+M7I-FLEX Quadruple Extra Large,m7i-flex.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$0.9895 hourly,$0.6556 hourly,unavailable,$1.6887 hourly,$1.3548 hourly
+M8G 12xlarge,m8g.12xlarge,192 GiB,48 vCPUs,EBS only,22.5 Gigabit,$2.7826 hourly,$1.8436 hourly,unavailable,unavailable,unavailable
+M8G 16xlarge,m8g.16xlarge,256 GiB,64 vCPUs,EBS only,30 Gigabit,$3.7101 hourly,$2.4581 hourly,unavailable,unavailable,unavailable
+M8G 24xlarge,m8g.24xlarge,384 GiB,96 vCPUs,EBS only,40 Gigabit,$5.5651 hourly,$3.6872 hourly,unavailable,unavailable,unavailable
+M8G 48xlarge,m8g.48xlarge,768 GiB,192 vCPUs,EBS only,50 Gigabit,$11.1302 hourly,$7.3743 hourly,unavailable,unavailable,unavailable
+M8G Double Extra Large,m8g.2xlarge,32 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,$0.4638 hourly,$0.3073 hourly,unavailable,unavailable,unavailable
+M8G Eight Extra Large,m8g.8xlarge,128 GiB,32 vCPUs,EBS only,15 Gigabit,$1.8550 hourly,$1.2291 hourly,unavailable,unavailable,unavailable
+M8G Extra Large,m8g.xlarge,16 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2319 hourly,$0.1536 hourly,unavailable,unavailable,unavailable
+M8G Large,m8g.large,8 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1159 hourly,$0.0768 hourly,unavailable,unavailable,unavailable
+M8G Medium,m8g.medium,4 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0580 hourly,$0.0384 hourly,unavailable,unavailable,unavailable
+M8G Metal-24xl,m8g.metal-24xl,384 GiB,96 vCPUs,EBS only,40 Gigabit,$5.5651 hourly,$3.6872 hourly,unavailable,unavailable,unavailable
+M8G Metal-48xl,m8g.metal-48xl,768 GiB,192 vCPUs,EBS only,50 Gigabit,$11.1302 hourly,$7.3743 hourly,unavailable,unavailable,unavailable
+M8G Quadruple Extra Large,m8g.4xlarge,64 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,$0.9275 hourly,$0.6145 hourly,unavailable,unavailable,unavailable
+M8GD 12xlarge,m8gd.12xlarge,192 GiB,48 vCPUs,2850 GB (3×950 GB NVMe SSD),22.5 Gigabit,$3.5760 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD 16xlarge,m8gd.16xlarge,256 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$4.7680 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD 24xlarge,m8gd.24xlarge,384 GiB,96 vCPUs,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$7.1520 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD 48xlarge,m8gd.48xlarge,768 GiB,192 vCPUs,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$14.3040 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Double Extra Large,m8gd.2xlarge,32 GiB,8 vCPUs,474 GB NVMe SSD,Up to 15 Gigabit,$0.5960 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Eight Extra Large,m8gd.8xlarge,128 GiB,32 vCPUs,1900 GB NVMe SSD,15 Gigabit,$2.3840 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Extra Large,m8gd.xlarge,16 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.2980 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Large,m8gd.large,8 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1490 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Medium,m8gd.medium,4 GiB,1 vCPUs,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0745 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Metal-24xl,m8gd.metal-24xl,384 GiB,96 vCPUs,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$7.1520 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Metal-48xl,m8gd.metal-48xl,768 GiB,192 vCPUs,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$14.3040 hourly,unavailable,unavailable,unavailable,unavailable
+M8GD Quadruple Extra Large,m8gd.4xlarge,64 GiB,16 vCPUs,950 GB NVMe SSD,Up to 15 Gigabit,$1.1920 hourly,unavailable,unavailable,unavailable,unavailable
+MAC1 Metal,mac1.metal,32 GiB,12 vCPUs,EBS only,25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2 Metal,mac2.metal,16 GiB,8 vCPUs,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2-M1ULTRA Metal,mac2-m1ultra.metal,128 GiB,20 vCPUs,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2-M2 Metal,mac2-m2.metal,24 GiB,8 vCPUs,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+MAC2-M2PRO Metal,mac2-m2pro.metal,32 GiB,12 vCPUs,EBS only,10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+P2 General Purpose GPU 16xlarge,p2.16xlarge,732 GiB,64 vCPUs,EBS only,20 Gigabit,$24.6720 hourly,unavailable,unavailable,$27.6160 hourly,unavailable
+P2 General Purpose GPU Eight Extra Large,p2.8xlarge,488 GiB,32 vCPUs,EBS only,10 Gigabit,$12.3360 hourly,unavailable,unavailable,$13.8080 hourly,unavailable
+P2 General Purpose GPU Extra Large,p2.xlarge,61 GiB,4 vCPUs,EBS only,High,$1.5420 hourly,unavailable,unavailable,$1.7260 hourly,unavailable
+P3 High Performance GPU 16xlarge,p3.16xlarge,488 GiB,64 vCPUs,EBS only,25 Gigabit,$33.5520 hourly,unavailable,unavailable,$36.4960 hourly,unavailable
+P3 High Performance GPU Double Extra Large,p3.2xlarge,61 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$4.1940 hourly,unavailable,unavailable,$4.5620 hourly,unavailable
+P3 High Performance GPU Eight Extra Large,p3.8xlarge,244 GiB,32 vCPUs,EBS only,10 Gigabit,$16.7760 hourly,unavailable,unavailable,$18.2480 hourly,unavailable
+P3DN 24xlarge,p3dn.24xlarge,768 GiB,96 vCPUs,1800 GB (2×900 GB NVMe SSD),100 Gigabit,$42.7830 hourly,$27.0250 hourly,unavailable,$47.1990 hourly,$31.4410 hourly
+P4D Highest Performance GPU 24xlarge,p4d.24xlarge,1152 GiB,96 vCPUs,8000 GB (8×1000 GB NVMe SSD),4x 100 Gigabit,$30.0978 hourly,$19.5797 hourly,unavailable,unavailable,unavailable
+P4DE 24xlarge,p4de.24xlarge,1152 GiB,96 vCPUs,8000 GB (8×1000 GB NVMe SSD),4x 100 Gigabit,$37.6223 hourly,$24.4746 hourly,unavailable,unavailable,unavailable
+P5 48xlarge,p5.48xlarge,2048 GiB,192 vCPUs,30400 GB (8×3800 GB NVMe SSD),3200 Gigabit,$68.8000 hourly,unavailable,unavailable,unavailable,unavailable
+P5e High Performance Computing GPU 48xlarge,p5e.48xlarge,2048 GiB,192 vCPUs,EBS only,3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+P5en High Performance Computing GPU 48xlarge,p5en.48xlarge,2048 GiB,192 vCPUs,30400 GB (8×3800 GB NVMe SSD),3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+P6-B200 High Performance and Machine Learning GPU 48xlarge,p6-b200.48xlarge,2048 GiB,192 vCPUs,EBS only,3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+R3 High-Memory Double Extra Large,r3.2xlarge,61 GiB,8 vCPUs,160 GB SSD,High,$0.7980 hourly,$0.5970 hourly,unavailable,$1.1770 hourly,$0.9650 hourly
+R3 High-Memory Eight Extra Large,r3.8xlarge,244 GiB,32 vCPUs,640 GB (2×320 GB SSD),10 Gigabit,$3.1920 hourly,$2.3860 hourly,unavailable,$4.2500 hourly,$2.6740 hourly
+R3 High-Memory Extra Large,r3.xlarge,30.5 GiB,4 vCPUs,80 GB SSD,Moderate,$0.3990 hourly,$0.2980 hourly,unavailable,$0.5990 hourly,$0.4890 hourly
+R3 High-Memory Large,r3.large,15.25 GiB,2 vCPUs,32 GB SSD,Moderate,$0.2000 hourly,$0.1490 hourly,unavailable,$0.3000 hourly,$0.2530 hourly
+R3 High-Memory Quadruple Extra Large,r3.4xlarge,122 GiB,16 vCPUs,320 GB SSD,High,$1.5960 hourly,$1.1930 hourly,unavailable,$2.2760 hourly,$1.7150 hourly
+R4 High-Memory 16xlarge,r4.16xlarge,488 GiB,64 vCPUs,EBS only,25 Gigabit,$5.1200 hourly,$3.2256 hourly,unavailable,$8.0640 hourly,$6.1696 hourly
+R4 High-Memory Double Extra Large,r4.2xlarge,61 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.6400 hourly,$0.4032 hourly,unavailable,$1.0080 hourly,$0.7712 hourly
+R4 High-Memory Eight Extra Large,r4.8xlarge,244 GiB,32 vCPUs,EBS only,10 Gigabit,$2.5600 hourly,$1.6128 hourly,unavailable,$4.0320 hourly,$3.0848 hourly
+R4 High-Memory Extra Large,r4.xlarge,30.5 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.3200 hourly,$0.2016 hourly,unavailable,$0.5040 hourly,$0.3856 hourly
+R4 High-Memory Large,r4.large,15.25 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1600 hourly,$0.1008 hourly,unavailable,$0.2520 hourly,$0.1928 hourly
+R4 High-Memory Quadruple Extra Large,r4.4xlarge,122 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$1.2800 hourly,$0.8064 hourly,unavailable,$2.0160 hourly,$1.5424 hourly
+R5 12xlarge,r5.12xlarge,384 GiB,48 vCPUs,EBS only,12 Gigabit,$3.6480 hourly,$2.2980 hourly,unavailable,$5.8560 hourly,$4.5060 hourly
+R5 16xlarge,r5.16xlarge,512 GiB,64 vCPUs,EBS only,20 Gigabit,$4.8640 hourly,$3.0640 hourly,unavailable,$7.8080 hourly,$6.0080 hourly
+R5 24xlarge,r5.24xlarge,768 GiB,96 vCPUs,EBS only,25 Gigabit,$7.2960 hourly,$4.5960 hourly,unavailable,$11.7120 hourly,$9.0120 hourly
+R5 Double Extra Large,r5.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.6080 hourly,$0.3830 hourly,unavailable,$0.9760 hourly,$0.7510 hourly
+R5 Eight Extra Large,r5.8xlarge,256 GiB,32 vCPUs,EBS only,10 Gigabit,$2.4320 hourly,$1.5320 hourly,unavailable,$3.9040 hourly,$3.0040 hourly
+R5 Extra Large,r5.xlarge,32 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.3040 hourly,$0.1920 hourly,unavailable,$0.4880 hourly,$0.3760 hourly
+R5 Large,r5.large,16 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1520 hourly,$0.0960 hourly,unavailable,$0.2440 hourly,$0.1880 hourly
+R5 Metal,r5.metal,768 GiB,96 vCPUs,EBS only,25 Gigabit,$7.2960 hourly,$4.5960 hourly,unavailable,$11.7120 hourly,$9.0120 hourly
+R5 Quadruple Extra Large,r5.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$1.2160 hourly,$0.7660 hourly,unavailable,$1.9520 hourly,$1.5020 hourly
+R5A 12xlarge,r5a.12xlarge,384 GiB,48 vCPUs,EBS only,10 Gigabit,$3.2880 hourly,$2.0680 hourly,unavailable,$5.4960 hourly,$4.2760 hourly
+R5A 16xlarge,r5a.16xlarge,512 GiB,64 vCPUs,EBS only,12 Gigabit,$4.3840 hourly,$2.7570 hourly,unavailable,$7.3280 hourly,$5.7010 hourly
+R5A 24xlarge,r5a.24xlarge,768 GiB,96 vCPUs,EBS only,20 Gigabit,$6.5760 hourly,$4.1360 hourly,unavailable,$10.9920 hourly,$8.5520 hourly
+R5A Double Extra Large,r5a.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.5480 hourly,$0.3450 hourly,unavailable,$0.9160 hourly,$0.7130 hourly
+R5A Eight Extra Large,r5a.8xlarge,256 GiB,32 vCPUs,EBS only,Up to 10 Gigabit,$2.1920 hourly,$1.3790 hourly,unavailable,$3.6640 hourly,$2.8510 hourly
+R5A Extra Large,r5a.xlarge,32 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.2740 hourly,$0.1720 hourly,unavailable,$0.4580 hourly,$0.3560 hourly
+R5A Large,r5a.large,16 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1370 hourly,$0.0860 hourly,unavailable,$0.2290 hourly,$0.1780 hourly
+R5A Quadruple Extra Large,r5a.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$1.0960 hourly,$0.6890 hourly,unavailable,$1.8320 hourly,$1.4250 hourly
+R5AD 12xlarge,r5ad.12xlarge,384 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),10 Gigabit,$3.8160 hourly,$2.4040 hourly,unavailable,$6.0240 hourly,$4.6120 hourly
+R5AD 16xlarge,r5ad.16xlarge,512 GiB,64 vCPUs,2400 GB (4×600 GB NVMe SSD),12 Gigabit,$5.0880 hourly,$3.2050 hourly,unavailable,$8.0320 hourly,$6.1490 hourly
+R5AD 24xlarge,r5ad.24xlarge,768 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),20 Gigabit,$7.6320 hourly,$4.8080 hourly,unavailable,$12.0480 hourly,$9.2240 hourly
+R5AD Double Extra Large,r5ad.2xlarge,64 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,$0.6360 hourly,$0.4010 hourly,unavailable,$1.0040 hourly,$0.7690 hourly
+R5AD Eight Extra Large,r5ad.8xlarge,256 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),Up to 10 Gigabit,$2.5440 hourly,$1.6030 hourly,unavailable,$4.0160 hourly,$3.0750 hourly
+R5AD Extra Large,r5ad.xlarge,32 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,$0.3180 hourly,$0.2000 hourly,unavailable,$0.5020 hourly,$0.3840 hourly
+R5AD Large,r5ad.large,16 GiB,2 vCPUs,75 GB NVMe SSD,Up to 10 Gigabit,$0.1590 hourly,$0.1000 hourly,unavailable,$0.2510 hourly,$0.1920 hourly
+R5AD Quadruple Extra Large,r5ad.4xlarge,128 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.2720 hourly,$0.8010 hourly,unavailable,$2.0080 hourly,$1.5370 hourly
+R5B 12xlarge,r5b.12xlarge,384 GiB,48 vCPUs,EBS only,12 Gigabit,$4.3440 hourly,$2.7367 hourly,unavailable,$6.5520 hourly,$4.9447 hourly
+R5B 16xlarge,r5b.16xlarge,512 GiB,64 vCPUs,EBS only,20 Gigabit,$5.7920 hourly,$3.6490 hourly,unavailable,$8.7360 hourly,$6.5930 hourly
+R5B 24xlarge,r5b.24xlarge,768 GiB,96 vCPUs,EBS only,25 Gigabit,$8.6880 hourly,$5.4734 hourly,unavailable,$13.1040 hourly,$9.8894 hourly
+R5B Double Extra Large,r5b.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.7240 hourly,$0.4561 hourly,unavailable,$1.0920 hourly,$0.8241 hourly
+R5B Eight Extra Large,r5b.8xlarge,256 GiB,32 vCPUs,EBS only,10 Gigabit,$2.8960 hourly,$1.8245 hourly,unavailable,$4.3680 hourly,$3.2965 hourly
+R5B Extra Large,r5b.xlarge,32 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.3620 hourly,$0.2281 hourly,unavailable,$0.5460 hourly,$0.4121 hourly
+R5B Large,r5b.large,16 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1810 hourly,$0.1140 hourly,unavailable,$0.2730 hourly,$0.2060 hourly
+R5B Metal,r5b.metal,768 GiB,96 vCPUs,EBS only,25 Gigabit,$8.6880 hourly,$5.4734 hourly,unavailable,$13.1040 hourly,$9.8894 hourly
+R5B Quadruple Extra Large,r5b.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$1.4480 hourly,$0.9122 hourly,unavailable,$2.1840 hourly,$1.6482 hourly
+R5D 12xlarge,r5d.12xlarge,384 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),12 Gigabit,$4.1760 hourly,$2.6310 hourly,unavailable,$6.3840 hourly,$4.8390 hourly
+R5D 16xlarge,r5d.16xlarge,512 GiB,64 vCPUs,2400 GB (4×600 GB NVMe SSD),20 Gigabit,$5.5680 hourly,$3.5080 hourly,unavailable,$8.5120 hourly,$6.4520 hourly
+R5D 24xlarge,r5d.24xlarge,768 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$8.3520 hourly,$5.2620 hourly,unavailable,$12.7680 hourly,$9.6780 hourly
+R5D Double Extra Large,r5d.2xlarge,64 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,$0.6960 hourly,$0.4380 hourly,unavailable,$1.0640 hourly,$0.8060 hourly
+R5D Eight Extra Large,r5d.8xlarge,256 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),10 Gigabit,$2.7840 hourly,$1.7540 hourly,unavailable,$4.2560 hourly,$3.2260 hourly
+R5D Extra Large,r5d.xlarge,32 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,$0.3480 hourly,$0.2190 hourly,unavailable,$0.5320 hourly,$0.4030 hourly
+R5D Large,r5d.large,16 GiB,2 vCPUs,75 GB NVMe SSD,Up to 10 Gigabit,$0.1740 hourly,$0.1100 hourly,unavailable,$0.2660 hourly,$0.2020 hourly
+R5D Metal,r5d.metal,768 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),25 Gigabit,$8.3520 hourly,$5.2620 hourly,unavailable,$12.7680 hourly,$9.6780 hourly
+R5D Quadruple Extra Large,r5d.4xlarge,128 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 10 Gigabit,$1.3920 hourly,$0.8770 hourly,unavailable,$2.1280 hourly,$1.6130 hourly
+R5DN 12xlarge,r5dn.12xlarge,384 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),50 Gigabit,$4.8720 hourly,$3.0690 hourly,unavailable,$7.0800 hourly,$5.2770 hourly
+R5DN 16xlarge,r5dn.16xlarge,512 GiB,64 vCPUs,2400 GB (4×600 GB NVMe SSD),75 Gigabit,$6.4960 hourly,$4.0920 hourly,unavailable,$9.4400 hourly,$7.0360 hourly
+R5DN 24xlarge,r5dn.24xlarge,768 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),100 Gigabit,$9.7440 hourly,$6.1390 hourly,unavailable,$14.1600 hourly,$10.5550 hourly
+R5DN Double Extra Large,r5dn.2xlarge,64 GiB,8 vCPUs,300 GB NVMe SSD,Up to 25 Gigabit,$0.8120 hourly,$0.5120 hourly,unavailable,$1.1800 hourly,$0.8800 hourly
+R5DN Eight Extra Large,r5dn.8xlarge,256 GiB,32 vCPUs,1200 GB (2×600 GB NVMe SSD),25 Gigabit,$3.2480 hourly,$2.0460 hourly,unavailable,$4.7200 hourly,$3.5180 hourly
+R5DN Extra Large,r5dn.xlarge,32 GiB,4 vCPUs,150 GB NVMe SSD,Up to 25 Gigabit,$0.4060 hourly,$0.2560 hourly,unavailable,$0.5900 hourly,$0.4400 hourly
+R5DN Large,r5dn.large,16 GiB,2 vCPUs,75 GB NVMe SSD,Up to 25 Gigabit,$0.2030 hourly,$0.1280 hourly,unavailable,$0.2950 hourly,$0.2200 hourly
+R5DN Metal,r5dn.metal,768 GiB,96 vCPUs,3600 GB (4×900 GB NVMe SSD),100 Gigabit,$9.7440 hourly,$6.1390 hourly,unavailable,$14.1600 hourly,$10.5550 hourly
+R5DN Quadruple Extra Large,r5dn.4xlarge,128 GiB,16 vCPUs,600 GB (2×300 GB NVMe SSD),Up to 25 Gigabit,$1.6240 hourly,$1.0230 hourly,unavailable,$2.3600 hourly,$1.7590 hourly
+R5N 12xlarge,r5n.12xlarge,384 GiB,48 vCPUs,EBS only,50 Gigabit,$4.3440 hourly,$2.7370 hourly,unavailable,$6.5520 hourly,$4.9450 hourly
+R5N 16xlarge,r5n.16xlarge,512 GiB,64 vCPUs,EBS only,75 Gigabit,$5.7920 hourly,$3.6490 hourly,unavailable,$8.7360 hourly,$6.5930 hourly
+R5N 24xlarge,r5n.24xlarge,768 GiB,96 vCPUs,EBS only,100 Gigabit,$8.6880 hourly,$5.4730 hourly,unavailable,$13.1040 hourly,$9.8890 hourly
+R5N Double Extra Large,r5n.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$0.7240 hourly,$0.4560 hourly,unavailable,$1.0920 hourly,$0.8240 hourly
+R5N Eight Extra Large,r5n.8xlarge,256 GiB,32 vCPUs,EBS only,25 Gigabit,$2.8960 hourly,$1.8240 hourly,unavailable,$4.3680 hourly,$3.2960 hourly
+R5N Extra Large,r5n.xlarge,32 GiB,4 vCPUs,EBS only,Up to 25 Gigabit,$0.3620 hourly,$0.2280 hourly,unavailable,$0.5460 hourly,$0.4120 hourly
+R5N Large,r5n.large,16 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.1810 hourly,$0.1140 hourly,unavailable,$0.2730 hourly,$0.2060 hourly
+R5N Metal,r5n.metal,768 GiB,96 vCPUs,EBS only,100 Gigabit,$8.6880 hourly,$5.4730 hourly,unavailable,$13.1040 hourly,$9.8890 hourly
+R5N Quadruple Extra Large,r5n.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 25 Gigabit,$1.4480 hourly,$0.9120 hourly,unavailable,$2.1840 hourly,$1.6480 hourly
+R6A 12xlarge,r6a.12xlarge,384 GiB,48 vCPUs,EBS only,18.75 Gigabit,$3.2832 hourly,$2.1718 hourly,unavailable,$5.4912 hourly,$4.3798 hourly
+R6A 16xlarge,r6a.16xlarge,512 GiB,64 vCPUs,EBS only,25 Gigabit,$4.3776 hourly,$2.8958 hourly,unavailable,$7.3216 hourly,$5.8398 hourly
+R6A 24xlarge,r6a.24xlarge,768 GiB,96 vCPUs,EBS only,37.5 Gigabit,$6.5664 hourly,$4.3437 hourly,unavailable,$10.9824 hourly,$8.7597 hourly
+R6A 32xlarge,r6a.32xlarge,1024 GiB,128 vCPUs,EBS only,50 Gigabit,$8.7552 hourly,$5.7916 hourly,unavailable,$14.6432 hourly,$11.6796 hourly
+R6A 48xlarge,r6a.48xlarge,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$13.1328 hourly,$8.6874 hourly,unavailable,$21.9648 hourly,$17.5193 hourly
+R6A Double Extra Large,r6a.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.5472 hourly,$0.3620 hourly,unavailable,$0.9152 hourly,$0.7300 hourly
+R6A Eight Extra Large,r6a.8xlarge,256 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.1888 hourly,$1.4479 hourly,unavailable,$3.6608 hourly,$2.9199 hourly
+R6A Extra Large,r6a.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2736 hourly,$0.1810 hourly,unavailable,$0.4576 hourly,$0.3650 hourly
+R6A Large,r6a.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1368 hourly,$0.0905 hourly,unavailable,$0.2288 hourly,$0.1825 hourly
+R6A Metal,r6a.metal,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$13.1328 hourly,$8.6874 hourly,unavailable,$21.9648 hourly,$17.5193 hourly
+R6A Quadruple Extra Large,r6a.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.0944 hourly,$0.7239 hourly,unavailable,$1.8304 hourly,$1.4600 hourly
+R6G 12xlarge,r6g.12xlarge,384 GiB,48 vCPUs,EBS only,20 Gigabit,$2.9184 hourly,$1.8386 hourly,unavailable,unavailable,unavailable
+R6G 16xlarge,r6g.16xlarge,512 GiB,64 vCPUs,EBS only,25 Gigabit,$3.8912 hourly,$2.4515 hourly,unavailable,unavailable,unavailable
+R6G Double Extra Large,r6g.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 10 Gigabit,$0.4864 hourly,$0.3064 hourly,unavailable,unavailable,unavailable
+R6G Eight Extra Large,r6g.8xlarge,256 GiB,32 vCPUs,EBS only,12 Gigabit,$1.9456 hourly,$1.2257 hourly,unavailable,unavailable,unavailable
+R6G Extra Large,r6g.xlarge,32 GiB,4 vCPUs,EBS only,Up to 10 Gigabit,$0.2432 hourly,$0.1532 hourly,unavailable,unavailable,unavailable
+R6G Large,r6g.large,16 GiB,2 vCPUs,EBS only,Up to 10 Gigabit,$0.1216 hourly,$0.0766 hourly,unavailable,unavailable,unavailable
+R6G Medium,r6g.medium,8 GiB,1 vCPUs,EBS only,Up to 10 Gigabit,$0.0608 hourly,$0.0383 hourly,unavailable,unavailable,unavailable
+R6G Metal,r6g.metal,512 GiB,64 vCPUs,EBS only,25 Gigabit,$3.8912 hourly,$2.4515 hourly,unavailable,unavailable,unavailable
+R6G Quadruple Extra Large,r6g.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 10 Gigabit,$0.9728 hourly,$0.6129 hourly,unavailable,unavailable,unavailable
+R6GD 12xlarge,r6gd.12xlarge,384 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,$3.3360 hourly,$2.1167 hourly,unavailable,unavailable,unavailable
+R6GD 16xlarge,r6gd.16xlarge,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.4480 hourly,$2.8223 hourly,unavailable,unavailable,unavailable
+R6GD Double Extra Large,r6gd.2xlarge,64 GiB,8 vCPUs,474 GB NVMe SSD,Up to 10 Gigabit,$0.5560 hourly,$0.3528 hourly,unavailable,unavailable,unavailable
+R6GD Eight Extra Large,r6gd.8xlarge,256 GiB,32 vCPUs,1900 GB NVMe SSD,12 Gigabit,$2.2240 hourly,$1.4112 hourly,unavailable,unavailable,unavailable
+R6GD Extra Large,r6gd.xlarge,32 GiB,4 vCPUs,237 GB NVMe SSD,Up to 10 Gigabit,$0.2780 hourly,$0.1764 hourly,unavailable,unavailable,unavailable
+R6GD Large,r6gd.large,16 GiB,2 vCPUs,118 GB NVMe SSD,Up to 10 Gigabit,$0.1390 hourly,$0.0882 hourly,unavailable,unavailable,unavailable
+R6GD Medium,r6gd.medium,8 GiB,1 vCPUs,59 GB NVMe SSD,Up to 10 Gigabit,$0.0695 hourly,$0.0441 hourly,unavailable,unavailable,unavailable
+R6GD Metal,r6gd.metal,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$4.4480 hourly,$2.8223 hourly,unavailable,unavailable,unavailable
+R6GD Quadruple Extra Large,r6gd.4xlarge,128 GiB,16 vCPUs,950 GB NVMe SSD,Up to 10 Gigabit,$1.1120 hourly,$0.7056 hourly,unavailable,unavailable,unavailable
+R6I 12xlarge,r6i.12xlarge,384 GiB,48 vCPUs,EBS only,18.75 Gigabit,$3.6480 hourly,$2.4131 hourly,unavailable,$5.8560 hourly,$4.6212 hourly
+R6I 16xlarge,r6i.16xlarge,512 GiB,64 vCPUs,EBS only,25 Gigabit,$4.8640 hourly,$3.2175 hourly,unavailable,$7.8080 hourly,$6.1615 hourly
+R6I 24xlarge,r6i.24xlarge,768 GiB,96 vCPUs,EBS only,37.5 Gigabit,$7.2960 hourly,$4.8263 hourly,unavailable,$11.7120 hourly,$9.2423 hourly
+R6I 32xlarge,r6i.32xlarge,1024 GiB,128 vCPUs,EBS only,50 Gigabit,$9.7280 hourly,$6.4351 hourly,unavailable,$15.6160 hourly,$12.3231 hourly
+R6I Double Extra Large,r6i.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.6080 hourly,$0.4022 hourly,unavailable,$0.9760 hourly,$0.7702 hourly
+R6I Eight Extra Large,r6i.8xlarge,256 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.4320 hourly,$1.6088 hourly,unavailable,$3.9040 hourly,$3.0808 hourly
+R6I Extra Large,r6i.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.3040 hourly,$0.2011 hourly,unavailable,$0.4880 hourly,$0.3851 hourly
+R6I Large,r6i.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1520 hourly,$0.1006 hourly,unavailable,$0.2440 hourly,$0.1925 hourly
+R6I Metal,r6i.metal,1024 GiB,128 vCPUs,EBS only,50 Gigabit,$9.7280 hourly,$6.4351 hourly,unavailable,$15.6160 hourly,$12.3231 hourly
+R6I Quadruple Extra Large,r6i.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.2160 hourly,$0.8044 hourly,unavailable,$1.9520 hourly,$1.5404 hourly
+R6ID 12xlarge,r6id.12xlarge,384 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),18.75 Gigabit,$4.3848 hourly,$2.7624 hourly,unavailable,$6.5928 hourly,$4.9704 hourly
+R6ID 16xlarge,r6id.16xlarge,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,$5.8464 hourly,$3.6832 hourly,unavailable,$8.7904 hourly,$6.6272 hourly
+R6ID 24xlarge,r6id.24xlarge,768 GiB,96 vCPUs,5700 GB (4×1425 GB NVMe SSD),37.5 Gigabit,$8.7696 hourly,$5.5248 hourly,unavailable,$13.1856 hourly,$9.9408 hourly
+R6ID 32xlarge,r6id.32xlarge,1024 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$11.6928 hourly,$7.3665 hourly,unavailable,$17.5808 hourly,$13.2545 hourly
+R6ID Double Extra Large,r6id.2xlarge,64 GiB,8 vCPUs,474 GB NVMe SSD,Up to 12.5 Gigabit,$0.7308 hourly,$0.4604 hourly,unavailable,$1.0988 hourly,$0.8284 hourly
+R6ID Eight Extra Large,r6id.8xlarge,256 GiB,32 vCPUs,1900 GB NVMe SSD,12.5 Gigabit,$2.9232 hourly,$1.8416 hourly,unavailable,$4.3952 hourly,$3.3136 hourly
+R6ID Extra Large,r6id.xlarge,32 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3654 hourly,$0.2302 hourly,unavailable,$0.5494 hourly,$0.4142 hourly
+R6ID Large,r6id.large,16 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1827 hourly,$0.1151 hourly,unavailable,$0.2747 hourly,$0.2071 hourly
+R6ID Metal,r6id.metal,1024 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),50 Gigabit,$11.6928 hourly,$7.3665 hourly,unavailable,$17.5808 hourly,$13.2545 hourly
+R6ID Quadruple Extra Large,r6id.4xlarge,128 GiB,16 vCPUs,950 GB NVMe SSD,Up to 12.5 Gigabit,$1.4616 hourly,$0.9208 hourly,unavailable,$2.1976 hourly,$1.6568 hourly
+R6IDN 12xlarge,r6idn.12xlarge,384 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$5.7002 hourly,$3.5911 hourly,unavailable,$7.9082 hourly,$5.7992 hourly
+R6IDN 16xlarge,r6idn.16xlarge,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$7.6003 hourly,$4.7882 hourly,unavailable,$10.5443 hourly,$7.7322 hourly
+R6IDN 24xlarge,r6idn.24xlarge,768 GiB,96 vCPUs,5700 GB (4×1425 GB NVMe SSD),150 Gigabit,$11.4005 hourly,$7.1823 hourly,unavailable,$15.8165 hourly,$11.5983 hourly
+R6IDN 32xlarge,r6idn.32xlarge,1024 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$15.2006 hourly,$9.5764 hourly,unavailable,$21.0886 hourly,$15.4644 hourly
+R6IDN Double Extra Large,r6idn.2xlarge,64 GiB,8 vCPUs,474 GB NVMe SSD,Up to 40 Gigabit,$0.9500 hourly,$0.5985 hourly,unavailable,$1.3180 hourly,$0.9665 hourly
+R6IDN Eight Extra Large,r6idn.8xlarge,256 GiB,32 vCPUs,1900 GB NVMe SSD,50 Gigabit,$3.8002 hourly,$2.3941 hourly,unavailable,$5.2722 hourly,$3.8661 hourly
+R6IDN Extra Large,r6idn.xlarge,32 GiB,4 vCPUs,237 GB NVMe SSD,Up to 30 Gigabit,$0.4750 hourly,$0.2993 hourly,unavailable,$0.6590 hourly,$0.4833 hourly
+R6IDN Large,r6idn.large,16 GiB,2 vCPUs,118 GB NVMe SSD,Up to 25 Gigabit,$0.2375 hourly,$0.1496 hourly,unavailable,$0.3295 hourly,$0.2416 hourly
+R6IDN Metal,r6idn.metal,1024 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),200 Gigabit,$15.2006 hourly,$9.5764 hourly,unavailable,$21.0886 hourly,$15.4644 hourly
+R6IDN Quadruple Extra Large,r6idn.4xlarge,128 GiB,16 vCPUs,950 GB NVMe SSD,Up to 50 Gigabit,$1.9001 hourly,$1.1970 hourly,unavailable,$2.6361 hourly,$1.9330 hourly
+R6IN 12xlarge,r6in.12xlarge,384 GiB,48 vCPUs,EBS only,75 Gigabit,$5.0825 hourly,$3.2020 hourly,unavailable,$7.2905 hourly,$5.4100 hourly
+R6IN 16xlarge,r6in.16xlarge,512 GiB,64 vCPUs,EBS only,100 Gigabit,$6.7766 hourly,$4.2693 hourly,unavailable,$9.7206 hourly,$7.2133 hourly
+R6IN 24xlarge,r6in.24xlarge,768 GiB,96 vCPUs,EBS only,150 Gigabit,$10.1650 hourly,$6.4039 hourly,unavailable,$14.5810 hourly,$10.8199 hourly
+R6IN 32xlarge,r6in.32xlarge,1024 GiB,128 vCPUs,EBS only,200 Gigabit,$13.5533 hourly,$8.5386 hourly,unavailable,$19.4413 hourly,$14.4266 hourly
+R6IN Double Extra Large,r6in.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 40 Gigabit,$0.8471 hourly,$0.5337 hourly,unavailable,$1.2151 hourly,$0.9017 hourly
+R6IN Eight Extra Large,r6in.8xlarge,256 GiB,32 vCPUs,EBS only,50 Gigabit,$3.3883 hourly,$2.1346 hourly,unavailable,$4.8603 hourly,$3.6066 hourly
+R6IN Extra Large,r6in.xlarge,32 GiB,4 vCPUs,EBS only,Up to 30 Gigabit,$0.4235 hourly,$0.2668 hourly,unavailable,$0.6075 hourly,$0.4508 hourly
+R6IN Large,r6in.large,16 GiB,2 vCPUs,EBS only,Up to 25 Gigabit,$0.2118 hourly,$0.1334 hourly,unavailable,$0.3038 hourly,$0.2254 hourly
+R6IN Metal,r6in.metal,1024 GiB,128 vCPUs,EBS only,200 Gigabit,$13.5533 hourly,$8.5386 hourly,unavailable,$19.4413 hourly,$14.4266 hourly
+R6IN Quadruple Extra Large,r6in.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 50 Gigabit,$1.6942 hourly,$1.0673 hourly,unavailable,$2.4302 hourly,$1.8033 hourly
+R7A 12xlarge,r7a.12xlarge,384 GiB,48 vCPUs,EBS only,18.75 Gigabit,$4.4050 hourly,$2.9139 hourly,unavailable,$6.6130 hourly,$5.1219 hourly
+R7A 16xlarge,r7a.16xlarge,512 GiB,64 vCPUs,EBS only,25 Gigabit,$5.8733 hourly,$3.8852 hourly,unavailable,$8.8173 hourly,$6.8292 hourly
+R7A 24xlarge,r7a.24xlarge,768 GiB,96 vCPUs,EBS only,37.5 Gigabit,$8.8099 hourly,$5.8278 hourly,unavailable,$13.2259 hourly,$10.2438 hourly
+R7A 32xlarge,r7a.32xlarge,1024 GiB,128 vCPUs,EBS only,50 Gigabit,$11.7466 hourly,$7.7703 hourly,unavailable,$17.6346 hourly,$13.6584 hourly
+R7A 48xlarge,r7a.48xlarge,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$17.6198 hourly,$11.6555 hourly,unavailable,$26.4518 hourly,$20.4875 hourly
+R7A Double Extra Large,r7a.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.7342 hourly,$0.4857 hourly,unavailable,$1.1022 hourly,$0.8537 hourly
+R7A Eight Extra Large,r7a.8xlarge,256 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.9366 hourly,$1.9426 hourly,unavailable,$4.4086 hourly,$3.4146 hourly
+R7A Extra Large,r7a.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.3671 hourly,$0.2428 hourly,unavailable,$0.5511 hourly,$0.4268 hourly
+R7A Large,r7a.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1835 hourly,$0.1214 hourly,unavailable,$0.2755 hourly,$0.2134 hourly
+R7A Medium,r7a.medium,8 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0918 hourly,$0.0607 hourly,unavailable,$0.1378 hourly,$0.1067 hourly
+R7A Metal-48xl,r7a.metal-48xl,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$17.6198 hourly,$11.6555 hourly,unavailable,$26.4518 hourly,$20.4875 hourly
+R7A Quadruple Extra Large,r7a.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.4683 hourly,$0.9713 hourly,unavailable,$2.2043 hourly,$1.7073 hourly
+R7G 12xlarge,r7g.12xlarge,384 GiB,48 vCPUs,EBS only,22.5 Gigabit,$3.1008 hourly,$2.0512 hourly,unavailable,unavailable,unavailable
+R7G 16xlarge,r7g.16xlarge,512 GiB,64 vCPUs,EBS only,30 Gigabit,$4.1344 hourly,$2.7349 hourly,unavailable,unavailable,unavailable
+R7G Double Extra Large,r7g.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,$0.5168 hourly,$0.3419 hourly,unavailable,unavailable,unavailable
+R7G Eight Extra Large,r7g.8xlarge,256 GiB,32 vCPUs,EBS only,15 Gigabit,$2.0672 hourly,$1.3675 hourly,unavailable,unavailable,unavailable
+R7G Extra Large,r7g.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2584 hourly,$0.1709 hourly,unavailable,unavailable,unavailable
+R7G Large,r7g.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1292 hourly,$0.0855 hourly,unavailable,unavailable,unavailable
+R7G Medium,r7g.medium,8 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0646 hourly,$0.0427 hourly,unavailable,unavailable,unavailable
+R7G Metal,r7g.metal,512 GiB,64 vCPUs,EBS only,30 Gigabit,$4.1344 hourly,$2.7349 hourly,unavailable,unavailable,unavailable
+R7G Quadruple Extra Large,r7g.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,$1.0336 hourly,$0.6837 hourly,unavailable,unavailable,unavailable
+R7GD 12xlarge,r7gd.12xlarge,384 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),22.5 Gigabit,$3.9463 hourly,$2.4862 hourly,unavailable,unavailable,unavailable
+R7GD 16xlarge,r7gd.16xlarge,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$5.2618 hourly,$3.3149 hourly,unavailable,unavailable,unavailable
+R7GD Double Extra Large,r7gd.2xlarge,64 GiB,8 vCPUs,474 GB NVMe SSD,Up to 15 Gigabit,$0.6577 hourly,$0.4144 hourly,unavailable,unavailable,unavailable
+R7GD Eight Extra Large,r7gd.8xlarge,256 GiB,32 vCPUs,1900 GB NVMe SSD,15 Gigabit,$2.6309 hourly,$1.6575 hourly,unavailable,unavailable,unavailable
+R7GD Extra Large,r7gd.xlarge,32 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3289 hourly,$0.2072 hourly,unavailable,unavailable,unavailable
+R7GD Large,r7gd.large,16 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1644 hourly,$0.1036 hourly,unavailable,unavailable,unavailable
+R7GD Medium,r7gd.medium,8 GiB,1 vCPUs,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0822 hourly,$0.0518 hourly,unavailable,unavailable,unavailable
+R7GD Metal,r7gd.metal,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$5.2618 hourly,$3.3149 hourly,unavailable,unavailable,unavailable
+R7GD Quadruple Extra Large,r7gd.4xlarge,128 GiB,16 vCPUs,950 GB NVMe SSD,Up to 15 Gigabit,$1.3154 hourly,$0.8287 hourly,unavailable,unavailable,unavailable
+R7I 12xlarge,r7i.12xlarge,384 GiB,48 vCPUs,EBS only,18.75 Gigabit,$3.8304 hourly,$2.5338 hourly,unavailable,$6.0384 hourly,$4.7418 hourly
+R7I 16xlarge,r7i.16xlarge,512 GiB,64 vCPUs,EBS only,25 Gigabit,$5.1072 hourly,$3.3784 hourly,unavailable,$8.0512 hourly,$6.3224 hourly
+R7I 24xlarge,r7i.24xlarge,768 GiB,96 vCPUs,EBS only,37.5 Gigabit,$7.6608 hourly,$5.0676 hourly,unavailable,$12.0768 hourly,$9.4836 hourly
+R7I 48xlarge,r7i.48xlarge,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$15.3216 hourly,$10.1352 hourly,unavailable,$24.1536 hourly,$18.9672 hourly
+R7I Double Extra Large,r7i.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.6384 hourly,$0.4223 hourly,unavailable,$1.0064 hourly,$0.7903 hourly
+R7I Eight Extra Large,r7i.8xlarge,256 GiB,32 vCPUs,EBS only,12.5 Gigabit,$2.5536 hourly,$1.6892 hourly,unavailable,$4.0256 hourly,$3.1612 hourly
+R7I Extra Large,r7i.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.3192 hourly,$0.2112 hourly,unavailable,$0.5032 hourly,$0.3952 hourly
+R7I Large,r7i.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1596 hourly,$0.1056 hourly,unavailable,$0.2516 hourly,$0.1976 hourly
+R7I Metal-24xl,r7i.metal-24xl,768 GiB,96 vCPUs,EBS only,37.5 Gigabit,$7.6608 hourly,$5.0676 hourly,unavailable,$12.0768 hourly,$9.4836 hourly
+R7I Metal-48xl,r7i.metal-48xl,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$15.3216 hourly,$10.1352 hourly,unavailable,$24.1536 hourly,$18.9672 hourly
+R7I Quadruple Extra Large,r7i.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.2768 hourly,$0.8446 hourly,unavailable,$2.0128 hourly,$1.5806 hourly
+R7IZ 12xlarge,r7iz.12xlarge,384 GiB,48 vCPUs,EBS only,25 Gigabit,$5.4480 hourly,$3.4322 hourly,unavailable,$7.6560 hourly,$5.6402 hourly
+R7IZ 16xlarge,r7iz.16xlarge,512 GiB,64 vCPUs,EBS only,25 Gigabit,$7.2640 hourly,$4.5763 hourly,unavailable,$10.2080 hourly,$7.5203 hourly
+R7IZ 32xlarge,r7iz.32xlarge,1024 GiB,128 vCPUs,EBS only,50 Gigabit,$14.5280 hourly,$9.1526 hourly,unavailable,$20.4160 hourly,$15.0406 hourly
+R7IZ Double Extra Large,r7iz.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 12.5 Gigabit,$0.9080 hourly,$0.5720 hourly,unavailable,$1.2760 hourly,$0.9400 hourly
+R7IZ Eight Extra Large,r7iz.8xlarge,256 GiB,32 vCPUs,EBS only,12.5 Gigabit,$3.6320 hourly,$2.2882 hourly,unavailable,$5.1040 hourly,$3.7602 hourly
+R7IZ Extra Large,r7iz.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.4540 hourly,$0.2860 hourly,unavailable,$0.6380 hourly,$0.4700 hourly
+R7IZ Large,r7iz.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2270 hourly,$0.1430 hourly,unavailable,$0.3190 hourly,$0.2350 hourly
+R7IZ Metal-16xl,r7iz.metal-16xl,512 GiB,64 vCPUs,EBS only,25 Gigabit,$7.2640 hourly,$4.5763 hourly,unavailable,$10.2080 hourly,$7.5203 hourly
+R7IZ Metal-32xl,r7iz.metal-32xl,1024 GiB,128 vCPUs,EBS only,50 Gigabit,$14.5280 hourly,$9.1526 hourly,unavailable,$20.4160 hourly,$15.0406 hourly
+R7IZ Quadruple Extra Large,r7iz.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 12.5 Gigabit,$1.8160 hourly,$1.1441 hourly,unavailable,$2.5520 hourly,$1.8801 hourly
+R8G 12xlarge,r8g.12xlarge,384 GiB,48 vCPUs,EBS only,22.5 Gigabit,$3.4109 hourly,$2.2563 hourly,unavailable,unavailable,unavailable
+R8G 16xlarge,r8g.16xlarge,512 GiB,64 vCPUs,EBS only,30 Gigabit,$4.5478 hourly,$3.0084 hourly,unavailable,unavailable,unavailable
+R8G 24xlarge,r8g.24xlarge,768 GiB,96 vCPUs,EBS only,40 Gigabit,$6.8218 hourly,$4.5126 hourly,unavailable,unavailable,unavailable
+R8G 48xlarge,r8g.48xlarge,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$13.6435 hourly,$9.0252 hourly,unavailable,unavailable,unavailable
+R8G Double Extra Large,r8g.2xlarge,64 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,$0.5685 hourly,$0.3760 hourly,unavailable,unavailable,unavailable
+R8G Eight Extra Large,r8g.8xlarge,256 GiB,32 vCPUs,EBS only,15 Gigabit,$2.2739 hourly,$1.5042 hourly,unavailable,unavailable,unavailable
+R8G Extra Large,r8g.xlarge,32 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,$0.2842 hourly,$0.1880 hourly,unavailable,unavailable,unavailable
+R8G Large,r8g.large,16 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,$0.1421 hourly,$0.0940 hourly,unavailable,unavailable,unavailable
+R8G Medium,r8g.medium,8 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,$0.0711 hourly,$0.0470 hourly,unavailable,unavailable,unavailable
+R8G Metal-24xl,r8g.metal-24xl,768 GiB,96 vCPUs,EBS only,40 Gigabit,$6.8218 hourly,$4.5126 hourly,unavailable,unavailable,unavailable
+R8G Metal-48xl,r8g.metal-48xl,1536 GiB,192 vCPUs,EBS only,50 Gigabit,$13.6435 hourly,$9.0252 hourly,unavailable,unavailable,unavailable
+R8G Quadruple Extra Large,r8g.4xlarge,128 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,$1.1370 hourly,$0.7521 hourly,unavailable,unavailable,unavailable
+R8GD 12xlarge,r8gd.12xlarge,384 GiB,48 vCPUs,2850 GB (3×950 GB NVMe SSD),22.5 Gigabit,$4.2619 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD 16xlarge,r8gd.16xlarge,512 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),30 Gigabit,$5.6826 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD 24xlarge,r8gd.24xlarge,768 GiB,96 vCPUs,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$8.5238 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD 48xlarge,r8gd.48xlarge,1536 GiB,192 vCPUs,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$17.0477 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Double Extra Large,r8gd.2xlarge,64 GiB,8 vCPUs,474 GB NVMe SSD,Up to 15 Gigabit,$0.7103 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Eight Extra Large,r8gd.8xlarge,256 GiB,32 vCPUs,1900 GB NVMe SSD,15 Gigabit,$2.8413 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Extra Large,r8gd.xlarge,32 GiB,4 vCPUs,237 GB NVMe SSD,Up to 12.5 Gigabit,$0.3552 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Large,r8gd.large,16 GiB,2 vCPUs,118 GB NVMe SSD,Up to 12.5 Gigabit,$0.1776 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Medium,r8gd.medium,8 GiB,1 vCPUs,59 GB NVMe SSD,Up to 12.5 Gigabit,$0.0888 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Metal-24xl,r8gd.metal-24xl,768 GiB,96 vCPUs,5700 GB (3×1900 GB NVMe SSD),40 Gigabit,$8.5238 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Metal-48xl,r8gd.metal-48xl,1536 GiB,192 vCPUs,11400 GB (6×1900 GB NVMe SSD),50 Gigabit,$17.0477 hourly,unavailable,unavailable,unavailable,unavailable
+R8GD Quadruple Extra Large,r8gd.4xlarge,128 GiB,16 vCPUs,950 GB NVMe SSD,Up to 15 Gigabit,$1.4206 hourly,unavailable,unavailable,unavailable,unavailable
+T1 Micro,t1.micro,0.613 GiB,1 vCPUs,EBS only,Very Low,$0.0260 hourly,$0.0180 hourly,unavailable,$0.0330 hourly,$0.0290 hourly
+T2 Double Extra Large,t2.2xlarge,32 GiB,8 vCPUs (4h 4.799999999999983m burst),EBS only,Moderate,$0.4864 hourly,$0.3286 hourly,unavailable,$0.5484 hourly,$0.3906 hourly
+T2 Extra Large,t2.xlarge,16 GiB,4 vCPUs (5h 24m burst),EBS only,Moderate,$0.2432 hourly,$0.1643 hourly,unavailable,$0.2842 hourly,$0.2053 hourly
+T2 Large,t2.large,8 GiB,2 vCPUs (7h 12m burst),EBS only,Low to Moderate,$0.1216 hourly,$0.0822 hourly,unavailable,$0.1496 hourly,$0.1102 hourly
+T2 Medium,t2.medium,4 GiB,2 vCPUs (4h 48m burst),EBS only,Low to Moderate,$0.0608 hourly,$0.0411 hourly,unavailable,$0.0788 hourly,$0.0591 hourly
+T2 Micro,t2.micro,1 GiB,1 vCPUs (2h 24m burst),EBS only,Low to Moderate,$0.0152 hourly,$0.0103 hourly,unavailable,$0.0198 hourly,$0.0149 hourly
+T2 Nano,t2.nano,0.5 GiB,1 vCPUs (1h 12m burst),EBS only,Low to Moderate,$0.0076 hourly,$0.0051 hourly,unavailable,$0.0099 hourly,$0.0074 hourly
+T2 Small,t2.small,2 GiB,1 vCPUs (4h 48m burst),EBS only,Low to Moderate,$0.0304 hourly,$0.0205 hourly,unavailable,$0.0396 hourly,$0.0297 hourly
+T3 Double Extra Large,t3.2xlarge,32 GiB,8 vCPUs (9h 36m burst),EBS only,Up to 5 Gigabit,$0.4352 hourly,$0.2742 hourly,unavailable,$0.5824 hourly,$0.4214 hourly
+T3 Extra Large,t3.xlarge,16 GiB,4 vCPUs (9h 36m burst),EBS only,Up to 5 Gigabit,$0.2176 hourly,$0.1371 hourly,unavailable,$0.2912 hourly,$0.2107 hourly
+T3 Large,t3.large,8 GiB,2 vCPUs (7h 12m burst),EBS only,Up to 5 Gigabit,$0.1088 hourly,$0.0685 hourly,unavailable,$0.1364 hourly,$0.0961 hourly
+T3 Medium,t3.medium,4 GiB,2 vCPUs (4h 48m burst),EBS only,Up to 5 Gigabit,$0.0544 hourly,$0.0343 hourly,unavailable,$0.0728 hourly,$0.0527 hourly
+T3 Micro,t3.micro,1 GiB,2 vCPUs (2h 24m burst),EBS only,Up to 5 Gigabit,$0.0136 hourly,$0.0086 hourly,unavailable,$0.0228 hourly,$0.0178 hourly
+T3 Nano,t3.nano,0.5 GiB,2 vCPUs (1h 12m burst),EBS only,Up to 5 Gigabit,$0.0068 hourly,$0.0043 hourly,unavailable,$0.0114 hourly,$0.0089 hourly
+T3 Small,t3.small,2 GiB,2 vCPUs (4h 48m burst),EBS only,Up to 5 Gigabit,$0.0272 hourly,$0.0171 hourly,unavailable,$0.0456 hourly,$0.0355 hourly
+T3A Double Extra Large,t3a.2xlarge,32 GiB,8 vCPUs (9h 36m burst),EBS only,Up to 5 Gigabit,$0.3917 hourly,$0.2468 hourly,unavailable,$0.5389 hourly,$0.3940 hourly
+T3A Extra Large,t3a.xlarge,16 GiB,4 vCPUs (9h 36m burst),EBS only,Up to 5 Gigabit,$0.1958 hourly,$0.1234 hourly,unavailable,$0.2694 hourly,$0.1970 hourly
+T3A Large,t3a.large,8 GiB,2 vCPUs (7h 12m burst),EBS only,Up to 5 Gigabit,$0.0979 hourly,$0.0617 hourly,unavailable,$0.1255 hourly,$0.0893 hourly
+T3A Medium,t3a.medium,4 GiB,2 vCPUs (4h 48m burst),EBS only,Up to 5 Gigabit,$0.0490 hourly,$0.0308 hourly,unavailable,$0.0674 hourly,$0.0492 hourly
+T3A Micro,t3a.micro,1 GiB,2 vCPUs (2h 24m burst),EBS only,Up to 5 Gigabit,$0.0122 hourly,$0.0077 hourly,unavailable,$0.0214 hourly,$0.0169 hourly
+T3A Nano,t3a.nano,0.5 GiB,2 vCPUs (1h 12m burst),EBS only,Up to 5 Gigabit,$0.0061 hourly,$0.0039 hourly,unavailable,$0.0107 hourly,$0.0085 hourly
+T3A Small,t3a.small,2 GiB,2 vCPUs (4h 48m burst),EBS only,Up to 5 Gigabit,$0.0245 hourly,$0.0154 hourly,unavailable,$0.0429 hourly,$0.0338 hourly
+T4G Double Extra Large,t4g.2xlarge,32 GiB,8 vCPUs (9h 36m burst),EBS only,Up to 5 Gigabit,$0.3456 hourly,$0.2176 hourly,unavailable,unavailable,unavailable
+T4G Extra Large,t4g.xlarge,16 GiB,4 vCPUs (9h 36m burst),EBS only,Up to 5 Gigabit,$0.1728 hourly,$0.1088 hourly,unavailable,unavailable,unavailable
+T4G Large,t4g.large,8 GiB,2 vCPUs (7h 12m burst),EBS only,Up to 5 Gigabit,$0.0864 hourly,$0.0544 hourly,unavailable,unavailable,unavailable
+T4G Medium,t4g.medium,4 GiB,2 vCPUs (4h 48m burst),EBS only,Up to 5 Gigabit,$0.0432 hourly,$0.0272 hourly,unavailable,unavailable,unavailable
+T4G Micro,t4g.micro,1 GiB,2 vCPUs (2h 24m burst),EBS only,Up to 5 Gigabit,$0.0108 hourly,$0.0068 hourly,unavailable,unavailable,unavailable
+T4G Nano,t4g.nano,0.5 GiB,2 vCPUs (1h 12m burst),EBS only,Up to 5 Gigabit,$0.0054 hourly,$0.0034 hourly,unavailable,unavailable,unavailable
+T4G Small,t4g.small,2 GiB,2 vCPUs (4h 48m burst),EBS only,Up to 5 Gigabit,$0.0216 hourly,$0.0136 hourly,unavailable,unavailable,unavailable
+TRN1 32xlarge,trn1.32xlarge,512 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),8x 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+TRN1 Double Extra Large,trn1.2xlarge,32 GiB,8 vCPUs,474 GB NVMe SSD,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+TRN1N 32xlarge,trn1n.32xlarge,512 GiB,128 vCPUs,7600 GB (4×1900 GB NVMe SSD),16x 100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+TRN2 48xlarge,trn2.48xlarge,2048 GiB,192 vCPUs,EBS only,3200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7I-6TB 112xlarge,u7i-6tb.112xlarge,6144 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7I-8TB 112xlarge,u7i-8tb.112xlarge,8192 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7I-12TB 224xlarge,u7i-12tb.224xlarge,12288 GiB,896 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7IN-16TB 224xlarge,u7in-16tb.224xlarge,16384 GiB,896 vCPUs,EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7IN-24TB 224xlarge,u7in-24tb.224xlarge,24576 GiB,896 vCPUs,EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U7IN-32TB 224xlarge,u7in-32tb.224xlarge,32768 GiB,896 vCPUs,EBS only,200 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-3TB1 56xlarge,u-3tb1.56xlarge,3072 GiB,224 vCPUs,EBS only,50 Gigabit,$32.9333 hourly,$20.2950 hourly,unavailable,$43.2373 hourly,$30.5990 hourly
+U-6TB1 56xlarge,u-6tb1.56xlarge,6144 GiB,224 vCPUs,EBS only,100 Gigabit,$55.9796 hourly,$34.4971 hourly,unavailable,$66.2836 hourly,$44.8011 hourly
+U-6TB1 112xlarge,u-6tb1.112xlarge,6144 GiB,448 vCPUs,EBS only,100 Gigabit,$65.8670 hourly,$40.5902 hourly,unavailable,$86.4750 hourly,$61.1982 hourly
+U-6TB1 Metal,u-6tb1.metal,6144 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-9TB1 112xlarge,u-9tb1.112xlarge,9216 GiB,448 vCPUs,EBS only,100 Gigabit,$98.8000 hourly,unavailable,unavailable,$119.4080 hourly,unavailable
+U-9TB1 Metal,u-9tb1.metal,9216 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-12TB1 112xlarge,u-12tb1.112xlarge,12288 GiB,448 vCPUs,EBS only,100 Gigabit,$131.7330 hourly,unavailable,unavailable,$152.3410 hourly,unavailable
+U-12TB1 Metal,u-12tb1.metal,12288 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-18TB1 112xlarge,u-18tb1.112xlarge,18432 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-18TB1 Metal,u-18tb1.metal,18432 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-24TB1 112xlarge,u-24tb1.112xlarge,24576 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+U-24TB1 Metal,u-24tb1.metal,24576 GiB,448 vCPUs,EBS only,100 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+VT1 3xlarge,vt1.3xlarge,24 GiB,12 vCPUs,EBS only,3.12 Gigabit,$0.8182 hourly,$0.5139 hourly,unavailable,unavailable,unavailable
+VT1 6xlarge,vt1.6xlarge,48 GiB,24 vCPUs,EBS only,6.25 Gigabit,$1.6365 hourly,$1.0278 hourly,unavailable,unavailable,unavailable
+VT1 24xlarge,vt1.24xlarge,192 GiB,96 vCPUs,EBS only,25 Gigabit,$6.5459 hourly,$4.1110 hourly,unavailable,unavailable,unavailable
+X1 Extra High-Memory 16xlarge,x1.16xlarge,976 GiB,64 vCPUs,1920 GB SSD,10 Gigabit,$9.6710 hourly,$5.9590 hourly,unavailable,$12.6150 hourly,$8.9030 hourly
+X1 Extra High-Memory 32xlarge,x1.32xlarge,1952 GiB,128 vCPUs,3840 GB (2×1920 GB SSD),25 Gigabit,$19.3410 hourly,$11.9180 hourly,unavailable,$25.2290 hourly,$17.8060 hourly
+X1E 16xlarge,x1e.16xlarge,1952 GiB,64 vCPUs,1920 GB SSD,10 Gigabit,$19.3440 hourly,$11.9190 hourly,unavailable,$22.2880 hourly,$14.8630 hourly
+X1E 32xlarge,x1e.32xlarge,3904 GiB,128 vCPUs,3840 GB (2×1920 GB SSD),25 Gigabit,$38.6880 hourly,$23.8390 hourly,unavailable,$44.5760 hourly,$29.7270 hourly
+X1E Double Extra Large,x1e.2xlarge,244 GiB,8 vCPUs,240 GB SSD,Up to 10 Gigabit,$2.4180 hourly,$1.4900 hourly,unavailable,$2.7860 hourly,$1.8580 hourly
+X1E Eight Extra Large,x1e.8xlarge,976 GiB,32 vCPUs,960 GB SSD,Up to 10 Gigabit,$9.6720 hourly,$5.9600 hourly,unavailable,$11.1440 hourly,$7.4320 hourly
+X1E Extra Large,x1e.xlarge,122 GiB,4 vCPUs,120 GB SSD,Up to 10 Gigabit,$1.2090 hourly,$0.7450 hourly,unavailable,$1.3930 hourly,$0.9290 hourly
+X1E Quadruple Extra Large,x1e.4xlarge,488 GiB,16 vCPUs,480 GB SSD,Up to 10 Gigabit,$4.8360 hourly,$2.9800 hourly,unavailable,$5.5720 hourly,$3.7160 hourly
+X2GD 12xlarge,x2gd.12xlarge,768 GiB,48 vCPUs,2850 GB (2×1425 GB NVMe SSD),20 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD 16xlarge,x2gd.16xlarge,1024 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Double Extra Large,x2gd.2xlarge,128 GiB,8 vCPUs,475 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Eight Extra Large,x2gd.8xlarge,512 GiB,32 vCPUs,1900 GB NVMe SSD,12 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Extra Large,x2gd.xlarge,64 GiB,4 vCPUs,237 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Large,x2gd.large,32 GiB,2 vCPUs,118 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Medium,x2gd.medium,16 GiB,1 vCPUs,59 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Metal,x2gd.metal,1024 GiB,64 vCPUs,3800 GB (2×1900 GB NVMe SSD),25 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2GD Quadruple Extra Large,x2gd.4xlarge,256 GiB,16 vCPUs,950 GB NVMe SSD,Up to 10 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X2IDN 16xlarge,x2idn.16xlarge,1024 GiB,64 vCPUs,1900 GB NVMe SSD,50 Gigabit,$9.6705 hourly,$5.9503 hourly,unavailable,$12.6145 hourly,$8.8943 hourly
+X2IDN 24xlarge,x2idn.24xlarge,1536 GiB,96 vCPUs,2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$14.5058 hourly,$8.9254 hourly,unavailable,$18.9217 hourly,$13.3414 hourly
+X2IDN 32xlarge,x2idn.32xlarge,2048 GiB,128 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$19.3410 hourly,$11.9005 hourly,unavailable,$25.2290 hourly,$17.7885 hourly
+X2IDN Metal,x2idn.metal,2048 GiB,128 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$19.3410 hourly,$11.9005 hourly,unavailable,$25.2290 hourly,$17.7885 hourly
+X2IEDN 16xlarge,x2iedn.16xlarge,2048 GiB,64 vCPUs,1900 GB NVMe SSD,50 Gigabit,$19.3410 hourly,$11.9005 hourly,unavailable,$22.2850 hourly,$14.8445 hourly
+X2IEDN 24xlarge,x2iedn.24xlarge,3072 GiB,96 vCPUs,2850 GB (2×1425 GB NVMe SSD),75 Gigabit,$29.0115 hourly,$17.8508 hourly,unavailable,$33.4275 hourly,$22.2668 hourly
+X2IEDN 32xlarge,x2iedn.32xlarge,4096 GiB,128 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$38.6820 hourly,$23.8010 hourly,unavailable,$44.5700 hourly,$29.6890 hourly
+X2IEDN Double Extra Large,x2iedn.2xlarge,256 GiB,8 vCPUs,237 GB NVMe SSD,Up to 25 Gigabit,$2.4176 hourly,$1.4876 hourly,unavailable,$2.7856 hourly,$1.8556 hourly
+X2IEDN Eight Extra Large,x2iedn.8xlarge,1024 GiB,32 vCPUs,950 GB NVMe SSD,25 Gigabit,$9.6705 hourly,$5.9503 hourly,unavailable,$11.1425 hourly,$7.4223 hourly
+X2IEDN Extra Large,x2iedn.xlarge,128 GiB,4 vCPUs,118 GB NVMe SSD,Up to 25 Gigabit,$1.2088 hourly,$0.7438 hourly,unavailable,$1.3928 hourly,$0.9278 hourly
+X2IEDN Metal,x2iedn.metal,4096 GiB,128 vCPUs,3800 GB (2×1900 GB NVMe SSD),100 Gigabit,$38.6820 hourly,$23.8010 hourly,unavailable,$44.5700 hourly,$29.6890 hourly
+X2IEDN Quadruple Extra Large,x2iedn.4xlarge,512 GiB,16 vCPUs,475 GB NVMe SSD,Up to 25 Gigabit,$4.8353 hourly,$2.9751 hourly,unavailable,$5.5713 hourly,$3.7111 hourly
+X2IEZN 6xlarge,x2iezn.6xlarge,768 GiB,24 vCPUs,EBS only,50 Gigabit,$7.2540 hourly,$4.4667 hourly,unavailable,$8.3580 hourly,$5.5707 hourly
+X2IEZN 12xlarge,x2iezn.12xlarge,1536 GiB,48 vCPUs,EBS only,100 Gigabit,$14.5080 hourly,$8.9335 hourly,unavailable,$16.7160 hourly,$11.1415 hourly
+X2IEZN Double Extra Large,x2iezn.2xlarge,256 GiB,8 vCPUs,EBS only,Up to 25 Gigabit,$2.4180 hourly,$1.4889 hourly,unavailable,$2.7860 hourly,$1.8569 hourly
+X2IEZN Eight Extra Large,x2iezn.8xlarge,1024 GiB,32 vCPUs,EBS only,75 Gigabit,$9.6720 hourly,$5.9557 hourly,unavailable,$11.1440 hourly,$7.4276 hourly
+X2IEZN Metal,x2iezn.metal,1536 GiB,48 vCPUs,EBS only,100 Gigabit,$14.5080 hourly,$8.9335 hourly,unavailable,$16.7160 hourly,$11.1415 hourly
+X2IEZN Quadruple Extra Large,x2iezn.4xlarge,512 GiB,16 vCPUs,EBS only,Up to 25 Gigabit,$4.8360 hourly,$2.9778 hourly,unavailable,$5.5720 hourly,$3.7138 hourly
+X8G 12xlarge,x8g.12xlarge,768 GiB,48 vCPUs,EBS only,22.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G 16xlarge,x8g.16xlarge,1024 GiB,64 vCPUs,EBS only,30 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G 24xlarge,x8g.24xlarge,1536 GiB,96 vCPUs,EBS only,40 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G 48xlarge,x8g.48xlarge,3072 GiB,192 vCPUs,EBS only,50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Double Extra Large,x8g.2xlarge,128 GiB,8 vCPUs,EBS only,Up to 15 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Eight Extra Large,x8g.8xlarge,512 GiB,32 vCPUs,EBS only,15 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Extra Large,x8g.xlarge,64 GiB,4 vCPUs,EBS only,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Large,x8g.large,32 GiB,2 vCPUs,EBS only,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Medium,x8g.medium,16 GiB,1 vCPUs,EBS only,Up to 12.5 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Metal-24xl,x8g.metal-24xl,1536 GiB,96 vCPUs,EBS only,40 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Metal-48xl,x8g.metal-48xl,3072 GiB,192 vCPUs,EBS only,50 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+X8G Quadruple Extra Large,x8g.4xlarge,256 GiB,16 vCPUs,EBS only,Up to 15 Gigabit,unavailable,unavailable,unavailable,unavailable,unavailable
+Z1D 3xlarge,z1d.3xlarge,96 GiB,12 vCPUs,450 GB NVMe SSD,Up to 10 Gigabit,$1.3620 hourly,$0.8580 hourly,unavailable,$1.9140 hourly,$1.4100 hourly
+Z1D 6xlarge,z1d.6xlarge,192 GiB,24 vCPUs,900 GB NVMe SSD,12 Gigabit,$2.7240 hourly,$1.7160 hourly,unavailable,$3.8280 hourly,$2.8200 hourly
+Z1D 12xlarge,z1d.12xlarge,384 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),25 Gigabit,$5.4480 hourly,$3.4320 hourly,unavailable,$7.6560 hourly,$5.6400 hourly
+Z1D Double Extra Large,z1d.2xlarge,64 GiB,8 vCPUs,300 GB NVMe SSD,Up to 10 Gigabit,$0.9080 hourly,$0.5720 hourly,unavailable,$1.2760 hourly,$0.9400 hourly
+Z1D Extra Large,z1d.xlarge,32 GiB,4 vCPUs,150 GB NVMe SSD,Up to 10 Gigabit,$0.4540 hourly,$0.2860 hourly,unavailable,$0.6380 hourly,$0.4700 hourly
+Z1D Large,z1d.large,16 GiB,2 vCPUs,75 GB NVMe SSD,Up to 10 Gigabit,$0.2270 hourly,$0.1430 hourly,unavailable,$0.3190 hourly,$0.2350 hourly
+Z1D Metal,z1d.metal,384 GiB,48 vCPUs,1800 GB (2×900 GB NVMe SSD),25 Gigabit,$5.4480 hourly,$3.4320 hourly,unavailable,$7.6560 hourly,$5.6400 hourly
