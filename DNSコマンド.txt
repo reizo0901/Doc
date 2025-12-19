@@ -1,0 +1,173 @@
+コマンド１
+
+Get-DnsServerResourceRecord -ZoneName "_msdcs.jpt.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "jpcloud.local" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "jpt.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "local.jp-post.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "relay.vpn.ocn.ad.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "test-tsg.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "tps-test.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "tps.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "tsg.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "yumu.pnet.yusei.go.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "1.67.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "10.20.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "100.18.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "100.20.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "115.16.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "117.16.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "12.81.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "2.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "221.16.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "3.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "31.18.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "4.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "5.65.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "5.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "6.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+Get-DnsServerResourceRecord -ZoneName "9.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_befor.txt
+
+コマンド２
+
+Remove-DnsServerResourceRecord   -ZoneName "_msdcs.jpt.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+
+コマンド３
+
+Remove-DnsServerResourceRecord   -ZoneName "jpcloud.local"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "jpt.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "local.jp-post.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "relay.vpn.ocn.ad.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "test-tsg.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "tps-test.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "tps.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "tsg.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "yumu.pnet.yusei.go.jp"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "_msdcs.jpt.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "jpcloud.local"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "jpt.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "local.jp-post.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "relay.vpn.ocn.ad.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "test-tsg.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "tps-test.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "tps.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "tsg.jptransport.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "yumu.pnet.yusei.go.jp"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+
+コマンド４
+
+Remove-DnsServerResourceRecord   -ZoneName "1.67.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+
+コマンド５
+
+Remove-DnsServerResourceRecord   -ZoneName "10.20.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "100.18.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "100.20.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "115.16.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "117.16.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "12.81.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "2.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "221.16.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "3.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "31.18.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "4.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "5.65.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "5.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "6.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "9.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad03.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "1.67.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "10.20.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "100.18.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "100.20.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "115.16.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "117.16.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "12.81.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "2.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "221.16.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "3.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "31.18.172.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "4.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "5.65.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "5.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "6.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+Remove-DnsServerResourceRecord   -ZoneName "9.66.10.in-addr.arpa"   -Name "."  -RRType NS -RecordData "pnwsad04.jpt.jptransport.jp" -ComputerName "pad01.jpt.jptransport.jp"
+
+コマンド６
+
+Get-DnsServerResourceRecord -ZoneName "_msdcs.jpt.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "jpcloud.local" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "jpt.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "local.jp-post.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "relay.vpn.ocn.ad.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "test-tsg.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "tps-test.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "tps.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "tsg.jptransport.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "yumu.pnet.yusei.go.jp" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "1.67.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "10.20.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "100.18.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "100.20.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "115.16.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "117.16.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "12.81.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "2.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "221.16.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "3.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "31.18.172.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "4.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "5.65.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "5.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "6.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+Get-DnsServerResourceRecord -ZoneName "9.66.10.in-addr.arpa" -RRType NS -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_ns_after.txt
+
+コマンド７
+
+Get-DnsServerResourceRecord -ZoneName "jpt.jptransport.jp" -RRType A -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_A_befor.txt
+
+コマンド８
+
+Remove-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "jpt.jptransport.jp" -Name "pnwsad03" -RRType "A" -RecordData "10.66.9.11" -Force
+Remove-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "jpt.jptransport.jp" -Name "pnwsad04" -RRType "A" -RecordData "10.66.9.12" -Force
+
+コマンド９
+
+Get-DnsServerResourceRecord -ZoneName "jpt.jptransport.jp" -RRType A -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_A_after.txt
+
+コマンド１０
+
+Get-DnsServerResourceRecord -ZoneName "jpt.jptransport.jp" -RRType SRV -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_SRV_befor.txt
+
+コマンド１１
+
+Get-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "ForestDnsZones.jpt.jptransport.jp" -Name "_ldap._tcp" -RRType "SRV" |
+Where-Object { $_.RecordData.DomainName -eq "pnwsad03.jpt.jptransport.jp." } |
+Remove
+
+Get-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "DomainDnsZones.jpt.jptransport.jp" -Name "_ldap._tcp" -RRType "SRV" |
+Where-Object { $_.RecordData.DomainName -eq "pnwsad03.jpt.jptransport.jp." } |
+Remove
+
+Get-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "ForestDnsZones.jpt.jptransport.jp" -Name "_ldap._tcp" -RRType "SRV" |
+Where-Object { $_.RecordData.DomainName -eq "pnwsad04.jpt.jptransport.jp." } |
+Remove
+
+Get-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "DomainDnsZones.jpt.jptransport.jp" -Name "_ldap._tcp" -RRType "SRV" |
+Where-Object { $_.RecordData.DomainName -eq "pnwsad04.jpt.jptransport.jp." } |
+Remove
+
+コマンド１２
+
+Get-DnsServerResourceRecord -ZoneName "jpt.jptransport.jp" -RRType SRV -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_SRV_after.txt
+
+コマンド１３
+
+Get-DnsServerResourceRecord -ZoneName "9.66.10.in-addr.arpa" -RRType PTR -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_PTR_befor.txt
+
+コマンド１４
+
+Remove-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "9.66.10.in-addr.arpa" -Name "12" -RRType PTR -Force
+Remove-DnsServerResourceRecord -ComputerName "pad01.jpt.jptransport.jp" -ZoneName "9.66.10.in-addr.arpa" -Name "11" -RRType PTR -Force
+
+コマンド１５
+
+Get-DnsServerResourceRecord -ZoneName "9.66.10.in-addr.arpa" -RRType PTR -ComputerName "pad01.jpt.jptransport.jp" >> c:\temp\20251219_PTR_after.txt
